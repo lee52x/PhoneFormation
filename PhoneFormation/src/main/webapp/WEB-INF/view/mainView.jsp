@@ -8,23 +8,13 @@
 </head>
 <body>
 <div id="container">
-		<table>
-		<tr>
-			<td><!-- nav 메뉴/로그인바 -->
+		
 				<jsp:include page="./header.jsp" flush="true"/>
-			</td>
-		</tr>
-		<tr>
-			<td><!-- body -->
+
 				<jsp:include page="./body.jsp" flush="true"/>
-			</td>
-		</tr>
-		<tr>
-			<td><!-- footer -->
-			<hr><jsp:include page="./footer.jsp" flush="true"/><hr>
-			</td>
-		</tr>
-	</table>
+
+			<jsp:include page="./footer.jsp" flush="true"/><hr>
+
 	</div>
 
 
