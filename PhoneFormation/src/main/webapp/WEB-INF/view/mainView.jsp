@@ -10,14 +10,14 @@
 <div id="container">
 
 
-            <jsp:include page="./header.jsp" flush="true"/>
+         <jsp:include page="./header.jsp" flush="true"/>
 
 
 
-            <jsp:include page="${body}" flush="true"/>
+         <jsp:include page="${body}" flush="true"/>
 
 
-         <hr><jsp:include page="./footer.jsp" flush="true"/><hr>
+         <jsp:include page="./footer.jsp" flush="true"/>
 
    </div>
 
