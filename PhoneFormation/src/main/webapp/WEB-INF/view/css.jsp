@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
+
 <!-- Define Charset -->
 <meta charset="utf-8">
 
@@ -14,7 +12,7 @@
 <meta name="author" content="Square Media">
 
 <!-- Bootstrap CSS  -->
-<link rel="stylesheet" href="../resources/bootstrap/css/bootstrap.min.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css" type="text/css" media="screen">
 
 <!-- Font Awesome CSS -->
 <link rel="stylesheet" href="/resources/css/font-awesome.min.css" type="text/css" media="screen">
@@ -37,9 +35,3 @@
 <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>

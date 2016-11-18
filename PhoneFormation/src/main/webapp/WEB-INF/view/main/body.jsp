@@ -12,7 +12,6 @@
 <body>
 
     <!-- Start Home Page Slider -->
-
     <section id="home">
         <div class="slider-1_container">
             <div class="slider-1_wrapper">
@@ -725,6 +724,9 @@
         </div>
         <!-- .container --> 
         <!-- End Clients/Partner Section --> 
+        
+    </div>
+    <!-- End Content --> 
         
     </div>
     

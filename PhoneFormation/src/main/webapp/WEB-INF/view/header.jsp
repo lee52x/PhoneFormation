@@ -21,6 +21,31 @@
         <!-- Start Top Bar -->
         <div class="top-bar">
             <div class="container">
+                <div class="row">
+                    <div class="col-md-6"> 
+                        <!-- Start Contact Info -->
+                        <ul class="contact-details">
+                            <li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a> </li>
+                            <li><a href="#"><i class="fa fa-envelope-o"></i> info@yourcompany.com</a> </li>
+                        </ul>
+                        <!-- End Contact Info --> 
+                    </div>
+                    <!-- .col-md-6 -->
+                    <div class="col-md-6"> 
+                        <!-- Start Social Links -->
+                        <ul class="social-list">
+                            <li> <a class="facebook" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a> </li>
+                            <li> <a class="twitter" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a> </li>
+                            <li> <a class="google" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a> </li>
+                            <li> <a class="dribbble" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a> </li>
+                            <li> <a class="linkdin" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a> </li>
+                            <li> <a class="flickr" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a> </li>
+                            <li> <a class="tumblr" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a> </li>
+                        </ul>
+                        <!-- End Social Links --> 
+                    </div>
+                    <!-- .col-md-6 --> 
+                </div>
                 <!-- .row --> 
             </div>
             <!-- .container --> 
