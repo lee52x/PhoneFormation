@@ -21,7 +21,7 @@
 <link rel="stylesheet" type="text/css" href="/resources/css/style.css" media="screen">
 
 <!-- Revolution Slider CSS Styles  -->
-<link href="/resources/Fcss/settings.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/resources/css/settings.css" rel="stylesheet" type="text/css" media="screen" />
 
 <!-- Responsive CSS Styles  -->
 <link rel="stylesheet" type="text/css" href="/resources/css/responsive.css" media="screen">
