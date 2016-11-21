@@ -1,14 +1,14 @@
 package com.phonefo.main.domain;
 
-import java.sql.Date;
+import java.util.Date;
 
-public class MemberDTO {
+public class MemberVO {
 	
 	private String userid;
 	private String userpwd;
 	private String username;
 	private String birth;
-	private String rdate;
+	private Date rdate;
 	private String gender;
 	private String email;
 	private String tel;
@@ -16,7 +16,7 @@ public class MemberDTO {
 	private int status;
 	
 	
-	public MemberDTO() {
+	public MemberVO() {
 		
 	}
 
@@ -61,12 +61,14 @@ public class MemberDTO {
 	}
 
 
-	public String getRdate() {
+
+
+	public Date getRdate() {
 		return rdate;
 	}
 
 
-	public void setRdate(String rdate) {
+	public void setRdate(Date rdate) {
 		this.rdate = rdate;
 	}
 

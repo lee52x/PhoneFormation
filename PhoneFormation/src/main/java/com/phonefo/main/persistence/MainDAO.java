@@ -1,9 +1,9 @@
 package com.phonefo.main.persistence;
 
-import com.phonefo.main.domain.MemberDTO;
+import com.phonefo.main.domain.MemberVO;
 
 public interface MainDAO {
 	
-	public void insertMember(MemberDTO dto)throws Exception;
+	public void insertMember(MemberVO dto)throws Exception;
 	public boolean checkId(String userid)throws Exception;
 }

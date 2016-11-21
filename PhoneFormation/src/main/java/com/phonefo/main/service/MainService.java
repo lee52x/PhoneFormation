@@ -1,10 +1,10 @@
 package com.phonefo.main.service;
 
-import com.phonefo.main.domain.MemberDTO;
+import com.phonefo.main.domain.MemberVO;
 
 public interface MainService {
 	
-	public void insertMember(MemberDTO dto)throws Exception;
+	public void insertMember(MemberVO dto)throws Exception;
 	public boolean checkId(String userid)throws Exception;
 
 }

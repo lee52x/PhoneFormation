@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.phonefo.main.domain.MemberDTO;
+import com.phonefo.main.domain.MemberVO;
 import com.phonefo.main.service.MainService;
 
 
@@ -56,7 +56,7 @@ public class MainController {
 			,String email1,String email2,String tel1,String tel2,
 			String tel3,Model model)throws Exception{
 		
-		MemberDTO dto=new MemberDTO();
+		MemberVO dto=new MemberVO();
 		
 		System.out.println(birth1);
 		System.out.println(birth2);

@@ -3,7 +3,7 @@ create table ph_member(
 userid varchar2(50) primary key,
 userpwd varchar2(50) ,
 username varchar2(50),
-rdate varchar2(50) ,
+rdate Date ,
 birth varchar2(50),
 gender varchar2(10),
 email varchar2(50),

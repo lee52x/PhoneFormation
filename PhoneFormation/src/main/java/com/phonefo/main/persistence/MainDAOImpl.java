@@ -5,7 +5,9 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.phonefo.main.domain.MemberDTO;
+import com.phonefo.main.domain.MemberVO;
+
+
 
 @Repository
 public class MainDAOImpl implements MainDAO {
@@ -14,7 +16,7 @@ public class MainDAOImpl implements MainDAO {
 	SqlSession sql;
 	
 	@Override
-	public void insertMember(MemberDTO dto) throws Exception {
+	public void insertMember(MemberVO dto) throws Exception {
 		sql.insert("member.insertMember",dto);
 		
 	}

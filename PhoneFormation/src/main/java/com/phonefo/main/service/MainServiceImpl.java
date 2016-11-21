@@ -4,7 +4,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.phonefo.main.domain.MemberDTO;
+import com.phonefo.main.domain.MemberVO;
 import com.phonefo.main.persistence.MainDAO;
 
 @Service
@@ -14,7 +14,7 @@ public class MainServiceImpl implements MainService {
 	MainDAO dao;
 	
 	@Override
-	public void insertMember(MemberDTO dto) throws Exception {
+	public void insertMember(MemberVO dto) throws Exception {
 		
 		dao.insertMember(dto);
 	}
