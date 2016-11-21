@@ -1,8 +1,6 @@
-package com.phonefo.main;
+package com.phonefo.main.controller;
 
 
-
-import java.util.Date;
 
 import javax.inject.Inject;
 
@@ -10,8 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.phonefo.domain.MemberDTO;
-import com.phonefo.service.MainService;
+import com.phonefo.main.domain.MemberDTO;
+import com.phonefo.main.service.MainService;
+
+
 
 @Controller
 @RequestMapping("/phonefo")

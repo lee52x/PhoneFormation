@@ -1,4 +1,4 @@
-package com.phonefo.main;
+package com.phonefo.main.controller;
 
 import java.util.regex.Pattern;
 
@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.phonefo.service.MainService;
+import com.phonefo.main.service.MainService;
 
 @RestController
 @RequestMapping("/phonefo")

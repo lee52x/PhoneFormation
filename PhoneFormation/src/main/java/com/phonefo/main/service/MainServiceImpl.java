@@ -1,13 +1,11 @@
-package com.phonefo.service;
+package com.phonefo.main.service;
 
 import javax.inject.Inject;
 
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Service;
 
-import com.phonefo.domain.MemberDTO;
-import com.phonefo.persistence.MainDAO;
-
+import com.phonefo.main.domain.MemberDTO;
+import com.phonefo.main.persistence.MainDAO;
 
 @Service
 public class MainServiceImpl implements MainService {

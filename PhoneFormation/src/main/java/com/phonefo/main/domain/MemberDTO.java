@@ -1,4 +1,4 @@
-package com.phonefo.domain;
+package com.phonefo.main.domain;
 
 import java.sql.Date;
 

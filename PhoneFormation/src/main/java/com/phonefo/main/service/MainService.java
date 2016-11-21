@@ -1,6 +1,6 @@
-package com.phonefo.service;
+package com.phonefo.main.service;
 
-import com.phonefo.domain.MemberDTO;
+import com.phonefo.main.domain.MemberDTO;
 
 public interface MainService {
 	

@@ -1,6 +1,6 @@
-package com.phonefo.persistence;
+package com.phonefo.main.persistence;
 
-import com.phonefo.domain.MemberDTO;
+import com.phonefo.main.domain.MemberDTO;
 
 public interface MainDAO {
 	

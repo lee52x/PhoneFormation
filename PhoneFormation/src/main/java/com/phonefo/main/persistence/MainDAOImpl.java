@@ -1,12 +1,11 @@
-package com.phonefo.persistence;
+package com.phonefo.main.persistence;
 
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.phonefo.domain.MemberDTO;
-
+import com.phonefo.main.domain.MemberDTO;
 
 @Repository
 public class MainDAOImpl implements MainDAO {
