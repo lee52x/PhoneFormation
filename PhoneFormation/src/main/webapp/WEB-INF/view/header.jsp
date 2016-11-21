@@ -89,17 +89,15 @@
                         </li>
                         <li> <a href="portfolio-3.html">이벤트</a>
                             <ul class="dropdown">
-                                <li><a href="portfolio-2.html">제조사</a> </li>
-                                <li><a href="portfolio-3.html">통신사</a> </li>
+                                <li><a href="portfolio-2.html">KT</a> </li>
+                                <li><a href="portfolio-3.html">LGU+</a> </li>
+                                <li><a href="portfolio-3.html">SKT</a> </li>
                             </ul>
                         </li>
                         <li> <a href="blog.html">게시판</a>
                             <ul class="dropdown">
                             	<li><a href="blog.html">공지사항</a> </li>
-                                <li><a href="blog.html">중고게시판</a> </li>
                                 <li><a href="blog-left-sidebar.html">자유게시판</a> </li>
-                                <li><a href="single-post.html">QnA</a> </li>
-                                <li><a href="single-post.html">자주묻는질문</a> </li>
                             </ul>
                         </li>
                         <li><a href="contact.html">Contact</a> </li>
