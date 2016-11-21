@@ -19,6 +19,25 @@ public class AdminMemberVO {
 		
 	}
 
+	
+	
+	public AdminMemberVO(String userid, String userpwd, String username, String birth, String rdate, String gender,
+			String email, String tel, int root, int status) {
+		super();
+		this.userid = userid;
+		this.userpwd = userpwd;
+		this.username = username;
+		this.birth = birth;
+		this.rdate = rdate;
+		this.gender = gender;
+		this.email = email;
+		this.tel = tel;
+		this.root = root;
+		this.status = status;
+	}
+
+
+
 	public String getUserid() {
 		return userid;
 	}

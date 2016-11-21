@@ -23,7 +23,7 @@
      <property name="configLocation"
                value="classpath:/mybatis-config.xml"/>  
      <property name="mapperLocations"
-               value="classpath:mainMappers/*Mapper.xml"></property> 
+               value="classpath:**/*Mapper.xml"></property> 
    </bean>
    
    <!-- SqlSession객체 생성(mapper(XML파일)에 있는 sql문 호출) -->
