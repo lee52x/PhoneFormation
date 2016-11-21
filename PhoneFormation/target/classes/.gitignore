@@ -1,4 +1,5 @@
 /com/
+<<<<<<< HEAD
 /sql/
 /mappers/
 /phoneMapper/
@@ -10,3 +11,6 @@
 /eventMappers/
 /boardMappers/
 /mainMappers/
+=======
+/mappers/
+>>>>>>> refs/remotes/origin/master
