@@ -244,10 +244,6 @@
 	
 	function check(){
 		
-		alert($('#birth1').val());
-		alert($('#birth2').val());
-		alert($('#birth3').val());
-
 
 		if( $('#userid').val()=='' || idStatus==-1){
 			alert('아이디를 확인하세요');
