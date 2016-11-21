@@ -26,12 +26,12 @@ public class AdminController {
 		pageMaker.setTotalCount(service.listSearchCount(cri));
 		model.addAttribute("pageMaker", pageMaker);
 
-		model.addAttribute("body", "./admin/body.jsp");
+		model.addAttribute("body", "./admin/adminMember.jsp");
 
 		return "mainView";
 	}
 
-	@RequestMapping("admin_onoBoard")
+	@RequestMapping("adminOno")
 	public void admin_onoBoard() {
 
 	}
