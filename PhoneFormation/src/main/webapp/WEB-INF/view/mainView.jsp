@@ -5,6 +5,8 @@
 <head>
 <jsp:include page="./css.jsp"></jsp:include>
 <jsp:include page="./jquery.jsp"></jsp:include>
+
+
 </head>
 <body>
 <div id="container">
@@ -16,7 +18,7 @@
 
          <jsp:include page="${body}" flush="true"/>
 
-
+		
          <jsp:include page="./footer.jsp" flush="true"/>
 
    </div>

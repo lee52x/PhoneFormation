@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!doctype html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
@@ -34,13 +37,11 @@
                     <div class="col-md-6"> 
                         <!-- Start Social Links -->
                         <ul class="social-list">
-                            <li> <a class="facebook" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a> </li>
-                            <li> <a class="twitter" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a> </li>
-                            <li> <a class="google" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a> </li>
-                            <li> <a class="dribbble" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a> </li>
-                            <li> <a class="linkdin" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a> </li>
-                            <li> <a class="flickr" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a> </li>
-                            <li> <a class="tumblr" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a> </li>
+                           
+                           
+                            <li> <a href="#" class="btn-custom btn-small border-btn btn-gray">로그인</a></li>
+                             <li> <a href="/phonefo/join" class="btn-custom btn-small border-btn btn-gray">회원가입</a></li>
+                           
                         </ul>
                         <!-- End Social Links --> 
                     </div>
@@ -62,54 +63,43 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <!-- End Toggle Nav Link For Mobiles --> 
-                    <a class="navbar-brand" href="index.html"> <img alt="" src="/resources/images/venue.png"> </a> </div>
+                    <a class="navbar-brand" href="/phonefo/main"> <img alt="" src="/resources/images/phoneformation.png" width="200px"> </a> </div>
                 <div class="navbar-collapse collapse"> 
                     <!-- Start Navigation List -->
                     <ul class="nav navbar-nav navbar-right">
-                        <li> <a class="active" href="index.html">Home</a>
+                        <li> <a class="active" href="">최신폰</a>
                             <ul class="dropdown">
-                                <li><a class="active" href="index.html">Default Version</a> </li>
-                                <li><a href="homepage-1.html">Home Version 1</a> </li>
-                                <li><a href="homepage-2.html">Home Version 2</a> </li>
-                                <li><a href="homepage-3.html">Home Version 3</a> </li>
-                                <li><a href="homepage-4.html">Home Version 4</a> </li>
-                                <li><a href="homepage-5.html">Home Version 5</a> </li>
-                                <li><a href="homepage-6.html">Home Version 6</a> </li>
-                                <li><a href="homepage-7.html">Home Version 7</a> </li>
+                                <li><a class="active" href="/phonefo/information">삼성</a> </li>
+                                <li><a href="">LG</a> </li>
+                                <li><a href="homepage-2.html">애플</a> </li>
                             </ul>
                         </li>
-                        <li> <a href="about.html">Pages</a>
+                        <li> <a href="about.html">견적</a>
                             <ul class="dropdown">
-                                <li><a href="about.html">About</a> </li>
-                                <li><a href="services.html">Services</a> </li>
-                                <li><a href="404.html">404 Page</a> </li>
+                                <li><a href="services.html">중고</a> </li>
+                                <li><a href="about.html">수리</a> </li>
                             </ul>
                         </li>
-                        <li> <a href="#">Shortcodes</a>
+                        <li> <a href="#">요금제</a>
                             <ul class="dropdown">
-                                <li><a href="tabs.html">Tabs</a> </li>
-                                <li><a href="buttons.html">Buttons</a> </li>
-                                <li><a href="testimonials.html">Testimonials</a> </li>
-                                <li><a href="latest-posts.html">Latest Posts</a> </li>
-                                <li><a href="latest-projects.html">Latest Projects</a> </li>
-                                <li><a href="pricing.html">Pricing Tables</a> </li>
-                                <li><a href="animated-graphs.html">Animated Graphs</a> </li>
-                                <li><a href="accordion-toggles.html">Accordion & Toggles</a> </li>
+                                <li><a href="tabs.html">SKT</a> </li>
+                                <li><a href="buttons.html">KT</a> </li>
+                                <li><a href="testimonials.html">LG</a> </li>
                             </ul>
                         </li>
-                        <li> <a href="portfolio-3.html">Portfolio</a>
+                        <li> <a href="portfolio-3.html">이벤트</a>
                             <ul class="dropdown">
-                                <li><a href="portfolio-2.html">2 Columns</a> </li>
-                                <li><a href="portfolio-3.html">3 Columns</a> </li>
-                                <li><a href="portfolio-4.html">4 Columns</a> </li>
-                                <li><a href="single-project.html">Single Project</a> </li>
+                                <li><a href="portfolio-2.html">제조사</a> </li>
+                                <li><a href="portfolio-3.html">통신사</a> </li>
                             </ul>
                         </li>
-                        <li> <a href="blog.html">Blog</a>
+                        <li> <a href="blog.html">게시판</a>
                             <ul class="dropdown">
-                                <li><a href="blog.html">Blog - right Sidebar</a> </li>
-                                <li><a href="blog-left-sidebar.html">Blog - Left Sidebar</a> </li>
-                                <li><a href="single-post.html">Blog Single Post</a> </li>
+                            	<li><a href="blog.html">공지사항</a> </li>
+                                <li><a href="blog.html">중고게시판</a> </li>
+                                <li><a href="blog-left-sidebar.html">자유게시판</a> </li>
+                                <li><a href="single-post.html">QnA</a> </li>
+                                <li><a href="single-post.html">자주묻는질문</a> </li>
                             </ul>
                         </li>
                         <li><a href="contact.html">Contact</a> </li>
