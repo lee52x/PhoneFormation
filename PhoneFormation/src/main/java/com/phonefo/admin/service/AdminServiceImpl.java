@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.phonefo.admin.domain.AdminMemberVO;
+import com.phonefo.admin.domain.AdminOnoBoardVO;
 import com.phonefo.admin.domain.SearchCriteria;
 import com.phonefo.admin.persistence.AdminDAO;
 
@@ -17,15 +18,27 @@ public class AdminServiceImpl implements AdminService{
 	private AdminDAO dao;
 	
 	@Override
-	public List<AdminMemberVO> listSearchCriteria(SearchCriteria cri) throws Exception {
+	public List<AdminMemberVO> memberSearchCriteria(SearchCriteria cri) throws Exception {
 	
 		return dao.listMember(cri);
 	}
 
 	@Override
-	public int listSearchCount(SearchCriteria cri) throws Exception {
+	public int memberSearchCount(SearchCriteria cri) throws Exception {
 		
-		return dao.listSearchCount(cri);
+		return dao.memberSearchCount(cri);
+	}
+
+	@Override
+	public List<AdminOnoBoardVO> onoSearchCriteria(SearchCriteria cri) throws Exception {
+		
+		return dao.listOno(cri);
+	}
+
+	@Override
+	public int onoSearchCount(SearchCriteria cri) throws Exception {
+	
+		return dao.OnoSearchCount(cri);
 	}
 
 }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 
 import com.phonefo.admin.domain.AdminMemberVO;
+import com.phonefo.admin.domain.AdminOnoBoardVO;
 import com.phonefo.admin.domain.SearchCriteria;
 
 @Repository
@@ -25,9 +26,21 @@ public class AdminDAOImpl implements AdminDAO{
 	}
 
 	@Override
-	public int listSearchCount(SearchCriteria cri) throws Exception {
+	public int memberSearchCount(SearchCriteria cri) throws Exception {
 		
-		return sqlSession.selectOne("admin.listSearchCount",cri);
+		return sqlSession.selectOne("admin.memberSearchCount",cri);
+	}
+
+	@Override
+	public List<AdminOnoBoardVO> listOno(SearchCriteria cri) throws Exception {
+		
+		return sqlSession.selectList("admin.listOno",cri, new RowBounds(cri.getPageStart(), cri.getPerPageNum()));
+	}
+
+	@Override
+	public int OnoSearchCount(SearchCriteria cri) throws Exception {
+		
+		return sqlSession.selectOne("admin.onoSearchCount",cri);
 	}
 
 

@@ -3,7 +3,7 @@
 <mapper namespace="admin">
 
   
-   <!-- 검색어를 통한 리스트 조회 -->
+   <!-- 멤버 검색어를 통한 리스트 조회 -->
    <select id="listMember" resultType="admin">
      select userid,userpwd,username,rdate,birth,gender,email,tel,root,status 
      from ph_member
@@ -18,9 +18,29 @@
 	 order by rdate desc	   
    </select>
    
-   <select id="listSearchCount" resultType="int">
+   <select id="memberSearchCount" resultType="int">
       select count(userid)
       from ph_member
+   </select>
+  
+   <!-- 1대1 검색어를 통한 리스트 조회 -->
+   <select id="listOno" resultType="admin">
+     select userid,userpwd,username,rdate,birth,gender,email,tel,root,status 
+     from ph_ono
+	  <if test="searchType != null">
+	    <if test="searchType == 'i'.toString() ">
+	        where userid like '%'||#{keyword}||'%'
+	    </if>
+	    <if test="searchType == 'n'.toString()">
+	       where username like '%'||#{keyword}||'%'
+	    </if>
+	  </if>       
+	 order by rdate desc	   
+   </select>
+   
+   <select id="onoSearchCount" resultType="int">
+      select count(userid)
+      from ph_ono
    </select>
   
 </mapper>
