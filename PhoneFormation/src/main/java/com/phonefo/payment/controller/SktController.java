@@ -13,7 +13,7 @@ public class SktController {
 	@RequestMapping("/skt_payment")
 	public String payment(Model model){
 		
-		model.addAttribute("body","./phone/skt.jsp");
+		model.addAttribute("body","./payment/skt.jsp");
 		
 		return "mainView";
 	}
@@ -21,7 +21,7 @@ public class SktController {
 	@RequestMapping("/skt_payment/details")
 	public String details(Model model){
 		
-		model.addAttribute("body", "./phone/skt_Details.jsp");
+		model.addAttribute("body", "./payment/skt_Details.jsp");
 		
 		return "mainView";
 	}
