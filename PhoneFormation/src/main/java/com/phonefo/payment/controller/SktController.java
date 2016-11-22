@@ -17,4 +17,12 @@ public class SktController {
 		
 		return "mainView";
 	}
+	
+	@RequestMapping("/skt_payment/details")
+	public String details(Model model){
+		
+		model.addAttribute("body", "./phone/skt_Details.jsp");
+		
+		return "mainView";
+	}
 }

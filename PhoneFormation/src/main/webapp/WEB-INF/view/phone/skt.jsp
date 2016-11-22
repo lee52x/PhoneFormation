@@ -106,113 +106,6 @@
 .caution2 a:hover{text-decoration:none}
 </style>
 <script type="text/javascript">
-//상품 리스트 조회
-		$('#getProdList').click(function(){			
-			var gnrlProdThm2 	= $('#gnrlProdThm2').val();	
-			var prodThmNm2 		= $("#gnrlProdThm2 option:selected").text();
-			var gnrlProdThm3 	= $('#gnrlProdThm3').val();	
-			var prodThmNm3 		= $("#gnrlProdThm3 option:selected").text();
-			
-			//alert("gnrlProdThm2 : " + gnrlProdThm2 + "  -  prodThmNm2 : " + prodThmNm2 );
-			//alert("gnrlProdThm3 : " + gnrlProdThm3 + "  -  prodThmNm3 : " + prodThmNm3 );
-
-			$('#sAllThmId').val("");
-			var f = document.listForm;		
-			f.action = '/normal.do?serviceId=S_PROD1001&viewId=V_PROD1001&paramThmId=TC0101';
-			f.submit();
-			
-		});
-		
-		// 상품 리스트 더보기
-		$('#viewMore').click(function(){
-			var totCnt 			= 82;
-			var pageSize 		= $('#pageSize').val();
-			var addPageNo		= $('#addPageNo').val();
-			var sGnrlProdThmId 	= $('#sGnrlProdThmId').val();
-			var sAllThmId		= $('#sAllThmId').val();/* 전체검색일 경우는 상위 테마 ID 셋팅됨 */
-			var bodyArea 		= "";
-			var fareNum			= "";
-			addPageNo++;
-
-			$.ajax({
-					type : "POST",
-					url : '/normal.do?viewId=V_PROD1023&serviceId=S_PROD6037',
-					dataType : "JSON",
-					data :{
-						"pageNo" 			: addPageNo,
-						"sGnrlProdThmId" 	: sGnrlProdThmId,
-						"sAllThmId" 		: sAllThmId
-					},
-					success : function(data, textStatus) {
-						if( data.resultCount != null && data.resultList.length > 0 ){							
-
-							var idx = 0;													
-							$.each(data.resultList, function(index, entry){
-								fareNum = addPageNo * pageSize - pageSize + idx;
-								
-								//24개월 요금약정 금액값없을 경우 표기하지 않음
-								if(entry.m24AgrmtDc == null){
-									m24DcAmtTxtHtml = '<li class="noData">데이터가 없습니다.</li>'
-								}else{
-									m24DcAmtTxtHtml = '<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>' + entry.m24DcAmtTxt + '</li>'
-								}
-								
-								bodyArea +='<li>'
-										+'<div class="title">'
-										+'	 <div class="checkbox">'
-										+'		 <input type="checkbox" id="fareType' + fareNum + '"><label for="fareType' + fareNum + '">'
-										+'			 <strong>' + entry.prodNm + '</strong>'
-										+'		 </label>'
-										+'	 </div>'
-										+'	 <span class="blank"></span>'
-										+'</div>'
-										+'<div class="infoArea">'
-										+'	 <span class="blank"></span>'
-										+'	 <ul class="list1">'
-										+'		 <li><img src="/poc/img/product/ico_data.png" alt="데이터 기본 제공량">'
-										+'			 <strong>' + entry.basDataTxt + '</strong>'
-										+'			 <span></span>'
-										+'		 </li>'
-										+'		 <li><img src="/poc/img/product/ico_call.png" alt="음성 기본 제공량">'
-										+'			 <strong>' + entry.basOfrVcallTmsTxt + '</strong>'
-										+'			 <span></span>'
-										+'		 </li>'
-										+'		 <li><img src="/poc/img/product/ico_sms.png" alt="문자 기본 제공량">'
-										+'			 <strong>' + entry.basOfrLtrAmtTxt + '</strong>'
-										+'		 </li>'
-										+'	 </ul>'
-										+'	 <ul class="list2">'
-										+'		 <li class="monthly"><strong>월정액 (부가세포함) : </strong>' + entry.basFeeAreaTxt + '</li>'
-										+		 m24DcAmtTxtHtml
-										+'	 </ul>'
-										+'	 <div class="btnBox">'
-										+'		 <a href="javascript:goProductDetail(\''+ entry.prodNm + '\', \''+  entry.prodId + '\', \''+  entry.ctgCd + '\');" class="btnS btnDgray" title="' + entry.prodNm + ' 자세히보기">자세히보기</a>'
-										+'		 <a href="javascript:;" onclick="prAddLibraryOpen(\''+ entry.prodNm + '\', \''+  entry.prodId + '\', \''+  entry.ctgCd + '\', this);" class="btnS btnWhite" title="' + entry.prodNm + ' 보관함담기"><img src="/poc/img/product/ico_add_library2.png" alt="보관함담기 버튼 이미지"></a>'
-										+'		 <a href="#prViewBenefit" onclick="javascript:prViewBenefitOpen(\''+ entry.prodNm + '\', \''+  entry.prodId + '\', \''+  entry.ctgCd + '\', event);" class="btnS btnWhite id_layerOpen" title="' + entry.prodNm + ' 혜택보기"><img src="/poc/img/product/ico_view_benefit.png" alt="혜택보기 버튼 이미지"></a>'
-										+'	 </div>'
-										+'</div>'
-										+'</li>';	
-								idx++;
-	    					});
-							
-						 	$('#productList').append(bodyArea);
-						 	$('#addPageNo').val(addPageNo);// 더보기 후 페이지 번호 셋팅
-						 	
-						 	var focusNum = addPageNo * pageSize - pageSize;
-						 	$("#fareType"+focusNum).focus();//더보기 후 포커스를 다음 상품으로 이동
-						 	
-						 	if( totCnt <= pageSize * addPageNo ){// 더보기 버튼 제거
-						 		$('#viewMoreBtn').remove();
-						 	}
-
-						}
-					},
-					error : function(xhr, status, error) {
-						alert("요금상품 조회에 실패 하였습니다. 다시 선택하여 주십시오.");
-					}
-			});
-			
-		});
 
 </script>
 
@@ -223,7 +116,8 @@
 				<div class="container">	
 					<div class="resultTop">
 						<div class="infoBox">
-							<ul class="filtering">
+						<h3 style="margin-left: 20px">SKT</h3><br>
+							<ul class="filtering" style="text-align: left;">
 								<li class="on"><a href="#" onclick="javascript:getProdList('T00560')" title="전체 상품 조회">전체</a></li>
 								
 							
@@ -292,7 +186,7 @@
 										
 									</ul>
 									<div class="btnBox">
-										<a href="javascript:goProductDetail('T시그니처 Master', 'NA00005292', 'A101');" title="T시그니처 Master 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="skt_payment/details" title="T시그니처 Master 자세히보기" class="btnS btnDgray">자세히보기</a>
 										
 									</div>
 								</div>
@@ -552,7 +446,7 @@
 							<li>
 								<div class="title">
 									<div class="checkbox">
-										<!-- <input type="checkbox" id="fareType8"><label for="fareType8"> -->
+										
 											<strong>band 데이터 퍼펙트</strong>
 										
 									</div>
@@ -581,20 +475,20 @@
 									</ul>
 									<div class="btnBox">
 										<a href="javascript:goProductDetail('band 데이터 퍼펙트', 'NA00004775', 'A101');" title="band 데이터 퍼펙트 자세히보기" class="btnS btnDgray">자세히보기</a>
-										/div>
+										</div>
 								</div>
 							</li>
 							
 							<li>
 								<div class="title">
-									
-										<!-- <input type="checkbox" id="fareType9"><label for="fareType9"> -->
+									<div class="checkbox">
+										
 											<strong>band 데이터 6.5G</strong>
-
-
+										
+									</div>
 									<span class="blank"><!-- design --></span>
 								</div>
-								<div class="infoArea" style="height: 500px">
+								<div class="infoArea">
 									<span class="blank"><!-- design --></span>
 									<ul class="list1">
 										<li><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
@@ -613,6 +507,474 @@
 										<li class="monthly"><strong>월정액 (부가세포함) : </strong>56,100원</li>
 										
 										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										
+									</ul>
+									<div class="btnBox">
+										<a href="javascript:goProductDetail('band 데이터 6.5G', 'NA00004773', 'A101');" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="title">
+									<div class="checkbox">
+										
+											<strong>band 데이터 3.5G</strong>
+										
+									</div>
+									<span class="blank"><!-- design --></span>
+								</div>
+								<div class="infoArea">
+									<span class="blank"><!-- design --></span>
+									<ul class="list1">
+										<li><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
+											<strong>3.5GB</strong>
+											<span></span><!-- 부가설명 -->
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
+											<strong>집전화·이동전화 무제한</strong>
+											<span></span>
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
+											<strong>기본제공</strong>
+										</li>
+									</ul>
+									<ul class="list2">
+										<li class="monthly"><strong>월정액 (부가세포함) : </strong>51,700원</li>
+										
+										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										
+									</ul>
+									<div class="btnBox">
+										<a href="javascript:goProductDetail('band 데이터 6.5G', 'NA00004773', 'A101');" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="title">
+									<div class="checkbox">
+										
+											<strong>band 데이터 2.2G</strong>
+										
+									</div>
+									<span class="blank"><!-- design --></span>
+								</div>
+								<div class="infoArea">
+									<span class="blank"><!-- design --></span>
+									<ul class="list1">
+										<li><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
+											<strong>2.2GB</strong>
+											<span></span><!-- 부가설명 -->
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
+											<strong>집전화·이동전화 무제한</strong>
+											<span></span>
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
+											<strong>기본제공</strong>
+										</li>
+									</ul>
+									<ul class="list2">
+										<li class="monthly"><strong>월정액 (부가세포함) : </strong>46,200원</li>
+										
+										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										
+									</ul>
+									<div class="btnBox">
+										<a href="javascript:goProductDetail('band 데이터 6.5G', 'NA00004773', 'A101');" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="title">
+									<div class="checkbox">
+										
+											<strong>band 데이터 1.2G</strong>
+										
+									</div>
+									<span class="blank"><!-- design --></span>
+								</div>
+								<div class="infoArea">
+									<span class="blank"><!-- design --></span>
+									<ul class="list1">
+										<li><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
+											<strong>1.2GB</strong>
+											<span></span><!-- 부가설명 -->
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
+											<strong>집전화·이동전화 무제한</strong>
+											<span></span>
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
+											<strong>기본제공</strong>
+										</li>
+									</ul>
+									<ul class="list2">
+										<li class="monthly"><strong>월정액 (부가세포함) : </strong>39,600원</li>
+										
+										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										
+									</ul>
+									<div class="btnBox">
+										<a href="javascript:goProductDetail('band 데이터 6.5G', 'NA00004773', 'A101');" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										</div>
+								</div>
+							</li>
+				
+							<li>
+								<div class="title">
+									<div class="checkbox">
+										
+											<strong>band 데이터t 세이브</strong>
+										
+									</div>
+									<span class="blank"><!-- design --></span>
+								</div>
+								<div class="infoArea">
+									<span class="blank"><!-- design --></span>
+									<ul class="list1">
+										<li><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
+											<strong>300MB</strong>
+											<span></span><!-- 부가설명 -->
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
+											<strong>집전화·이동전화 무제한</strong>
+											<span></span>
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
+											<strong>기본제공</strong>
+										</li>
+									</ul>
+									<ul class="list2">
+										<li class="monthly"><strong>월정액 (부가세포함) : </strong>32,890원</li>
+										
+										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										
+									</ul>
+									<div class="btnBox">
+										<a href="javascript:goProductDetail('band 데이터 6.5G', 'NA00004773', 'A101');" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="title">
+									<div class="checkbox">
+										
+											<strong>전국민 무한 100</strong>
+										
+									</div>
+									<span class="blank"><!-- design --></span>
+								</div>
+								<div class="infoArea">
+									<span class="blank"><!-- design --></span>
+									<ul class="list1">
+										<li><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
+											<strong>16GB</strong>
+											<span></span><!-- 부가설명 -->
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
+											<strong>집전화·이동전화 무제한</strong>
+											<span></span>
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
+											<strong>기본제공</strong>
+										</li>
+									</ul>
+									<ul class="list2">
+										<li class="monthly"><strong>월정액 (부가세포함) : </strong>110,000원</li>
+										
+										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>83,600원</li>
+										
+									</ul>
+									<div class="btnBox">
+										<a href="javascript:goProductDetail('band 데이터 6.5G', 'NA00004773', 'A101');" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="title">
+									<div class="checkbox">
+										
+											<strong>전국민 무한 85</strong>
+										
+									</div>
+									<span class="blank"><!-- design --></span>
+								</div>
+								<div class="infoArea">
+									<span class="blank"><!-- design --></span>
+									<ul class="list1">
+										<li><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
+											<strong>12GB</strong>
+											<span></span><!-- 부가설명 -->
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
+											<strong>집전화·이동전화 무제한</strong>
+											<span></span>
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
+											<strong>기본제공</strong>
+										</li>
+									</ul>
+									<ul class="list2">
+										<li class="monthly"><strong>월정액 (부가세포함) : </strong>93,500원</li>
+										
+										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>71,500원</li>
+										
+									</ul>
+									<div class="btnBox">
+										<a href="javascript:goProductDetail('band 데이터 6.5G', 'NA00004773', 'A101');" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="title">
+									<div class="checkbox">
+										
+											<strong>LTE데이터 무제한 80팩</strong>
+										
+									</div>
+									<span class="blank"><!-- design --></span>
+								</div>
+								<div class="infoArea">
+									<span class="blank"><!-- design --></span>
+									<ul class="list1">
+										<li><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
+											<strong>8GB</strong>
+											<span></span><!-- 부가설명 -->
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
+											<strong>집전화·이동전화 무제한</strong>
+											<span></span>
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
+											<strong>기본제공</strong>
+										</li>
+									</ul>
+									<ul class="list2">
+										<li class="monthly"><strong>월정액 (부가세포함) : </strong>88,000원</li>
+										
+										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>67,375원</li>
+										
+									</ul>
+									<div class="btnBox">
+										<a href="javascript:goProductDetail('band 데이터 6.5G', 'NA00004773', 'A101');" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="title">
+									<div class="checkbox">
+										
+											<strong>전국민 무한 75</strong>
+										
+									</div>
+									<span class="blank"><!-- design --></span>
+								</div>
+								<div class="infoArea">
+									<span class="blank"><!-- design --></span>
+									<ul class="list1">
+										<li><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
+											<strong>8GB</strong>
+											<span></span><!-- 부가설명 -->
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
+											<strong>집전화·이동전화 무제한</strong>
+											<span></span>
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
+											<strong>기본제공</strong>
+										</li>
+									</ul>
+									<ul class="list2">
+										<li class="monthly"><strong>월정액 (부가세포함) : </strong>82,500원</li>
+										
+										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>61,875원</li>
+										
+									</ul>
+									<div class="btnBox">
+										<a href="javascript:goProductDetail('band 데이터 6.5G', 'NA00004773', 'A101');" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="title">
+									<div class="checkbox">
+										
+											<strong>전국민 무한 69</strong>
+										
+									</div>
+									<span class="blank"><!-- design --></span>
+								</div>
+								<div class="infoArea">
+									<span class="blank"><!-- design --></span>
+									<ul class="list1">
+										<li><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
+											<strong>5GB</strong>
+											<span></span><!-- 부가설명 -->
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
+											<strong>집전화·이동전화 무제한</strong>
+											<span></span>
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
+											<strong>기본제공</strong>
+										</li>
+									</ul>
+									<ul class="list2">
+										<li class="monthly"><strong>월정액 (부가세포함) : </strong>75,900원</li>
+										
+										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>56,650원</li>
+										
+									</ul>
+									<div class="btnBox">
+										<a href="javascript:goProductDetail('band 데이터 6.5G', 'NA00004773', 'A101');" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="title">
+									<div class="checkbox">
+										
+											<strong>T끼리 65</strong>
+										
+									</div>
+									<span class="blank"><!-- design --></span>
+								</div>
+								<div class="infoArea">
+									<span class="blank"><!-- design --></span>
+									<ul class="list1">
+										<li><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
+											<strong>5GB</strong>
+											<span></span><!-- 부가설명 -->
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
+											<strong>SKT 고객관 무제한</strong>
+											<span></span>
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
+											<strong>기본제공</strong>
+										</li>
+									</ul>
+									<ul class="list2">
+										<li class="monthly"><strong>월정액 (부가세포함) : </strong>71,500원</li>
+										
+										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>53,075원</li>
+										
+									</ul>
+									<div class="btnBox">
+										<a href="javascript:goProductDetail('band 데이터 6.5G', 'NA00004773', 'A101');" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="title">
+									<div class="checkbox">
+										
+											<strong>T끼리 55</strong>
+										
+									</div>
+									<span class="blank"><!-- design --></span>
+								</div>
+								<div class="infoArea">
+									<span class="blank"><!-- design --></span>
+									<ul class="list1">
+										<li><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
+											<strong>2GB</strong>
+											<span></span><!-- 부가설명 -->
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
+											<strong>SKT 고객관 무제한</strong>
+											<span></span>
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
+											<strong>기본제공</strong>
+										</li>
+									</ul>
+									<ul class="list2">
+										<li class="monthly"><strong>월정액 (부가세포함) : </strong>60,500원</li>
+										
+										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>44,825원</li>
+										
+									</ul>
+									<div class="btnBox">
+										<a href="javascript:goProductDetail('band 데이터 6.5G', 'NA00004773', 'A101');" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="title">
+									<div class="checkbox">
+										
+											<strong>T끼리 45</strong>
+										
+									</div>
+									<span class="blank"><!-- design --></span>
+								</div>
+								<div class="infoArea">
+									<span class="blank"><!-- design --></span>
+									<ul class="list1">
+										<li><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
+											<strong>5GB</strong>
+											<span></span><!-- 부가설명 -->
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
+											<strong>SKT 고객관 무제한</strong>
+											<span></span>
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
+											<strong>기본제공</strong>
+										</li>
+									</ul>
+									<ul class="list2">
+										<li class="monthly"><strong>월정액 (부가세포함) : </strong>49,500원</li>
+										
+										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>37,125원</li>
+										
+									</ul>
+									<div class="btnBox">
+										<a href="javascript:goProductDetail('band 데이터 6.5G', 'NA00004773', 'A101');" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="title">
+									<div class="checkbox">
+										
+											<strong>T끼리 35</strong>
+										
+									</div>
+									<span class="blank"><!-- design --></span>
+								</div>
+								<div class="infoArea">
+									<span class="blank"><!-- design --></span>
+									<ul class="list1">
+										<li><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
+											<strong>550MB</strong>
+											<span></span><!-- 부가설명 -->
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
+											<strong>SKT 고객관 무제한</strong>
+											<span></span>
+										</li>
+										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
+											<strong>기본제공</strong>
+										</li>
+									</ul>
+									<ul class="list2">
+										<li class="monthly"><strong>월정액 (부가세포함) : </strong>38,500원</li>
+										
+										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>30,580원</li>
 										
 									</ul>
 									<div class="btnBox">
