@@ -11,16 +11,30 @@
 	    <if test="searchType == 'i'.toString() ">
 	        where userid like '%'||#{keyword}||'%'
 	    </if>
-	    <if test="searchType == 'n'.toString()">
+	    <if test="searchType == 'm'.toString()">
 	       where username like '%'||#{keyword}||'%'
+	    </if>
+	      <if test="searchType == 'im'.toString()">
+	       where username like '%'||#{keyword}||'%' or userid like '%'||#{keyword}||'%'
 	    </if>
 	  </if>       
 	 order by rdate desc	   
    </select>
    
    <select id="memberSearchCount" resultType="int">
-      select count(userid)
+      select count(*)
       from ph_member
+       <if test="searchType != null">
+	    <if test="searchType == 'i'.toString() ">
+	        where userid like '%'||#{keyword}||'%'
+	    </if>
+	    <if test="searchType == 'm'.toString()">
+	       where username like '%'||#{keyword}||'%'
+	    </if>
+	      <if test="searchType == 'im'.toString()">
+	       where username like '%'||#{keyword}||'%' or userid like '%'||#{keyword}||'%'
+	    </if>
+	  </if>       
    </select>
 
    <!-- 1대1 검색어를 통한 리스트 조회 -->
@@ -35,7 +49,7 @@
 	       where username like '%'||#{keyword}||'%'
 	    </if>
 	  </if>       
-	 order by rdate desc	   
+	 order by ono desc	   
    </select>
    
    <select id="onoSearchCount" resultType="int">

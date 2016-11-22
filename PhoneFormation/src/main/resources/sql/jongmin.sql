@@ -22,3 +22,36 @@ create sequence ph_ono_seq
 
 
 select*from ph_ono;
+
+
+select * from ph_member;
+
+insert into ph_member values('qweqwe4','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe5','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqw6','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe7','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe8','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe9','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe10','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe11','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe12','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe13','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe14','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe15','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe16','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe17','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe18','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe19','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe20','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe21','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe22','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe23','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe24','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe25','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe26','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe27','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe28','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');
+
+
+
+
