@@ -80,9 +80,9 @@
                                 <li><a href="about.html">수리</a> </li>
                             </ul>
                         </li>
-                        <li> <a href="#">요금제</a>
+                        <li> <a href="skt_payment">요금제</a>
                             <ul class="dropdown">
-                                <li><a href="tabs.html">SKT</a> </li>
+                                <li><a href="skt_payment">SKT</a> </li>
                                 <li><a href="buttons.html">KT</a> </li>
                                 <li><a href="testimonials.html">LG</a> </li>
                             </ul>
