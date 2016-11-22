@@ -277,6 +277,7 @@
 			$('#root').focus();
 		}else{
 			document.frm.submit();
+			alert("회원 가입이 완료 되었습니다!!");
 		}
 	}
 </script>

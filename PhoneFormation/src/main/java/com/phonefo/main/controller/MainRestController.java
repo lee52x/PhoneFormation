@@ -3,6 +3,7 @@ package com.phonefo.main.controller;
 import java.util.regex.Pattern;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,6 +43,21 @@ public class MainRestController {
 			return "<font color='blue'>사용하실 수 있는 비밀번호입니다. (안전도 등급 높음)</font>";
 		}
 
+	}
+	
+	@RequestMapping("/confirm_member")
+	public String confirm_member(String userid,String userpwd,HttpSession session)throws Exception{
+		
+		boolean result=false;
+		result = service.check_general_member(userid, userpwd);
+		
+		if(result==true){
+			session.setAttribute("userid", userid);
+			return "성공";
+		}else{
+			return "실패";
+		}
+		
 	}
 }
 

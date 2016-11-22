@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.phonefo.main.domain.B_MemberVO;
 import com.phonefo.main.domain.MemberVO;
 import com.phonefo.main.service.MainService;
 
@@ -19,7 +20,7 @@ public class MainController {
 	@Inject
 	MainService service;
 
-	
+	//메인화면 띄우기
 	@RequestMapping("/main")
 	public String test(Model model){
 		
@@ -28,13 +29,26 @@ public class MainController {
 		return "mainView";
 	}
 	
+	//회원가입(개인,기업 선택 페이지 띄우기)
 	@RequestMapping("/join")
-	public String login(Model model){
+	public String join(Model model){
 		
 		model.addAttribute("body", "./main/join.jsp");
 		
 		return "mainView";
 	}
+	
+	//로그인폼 띄우기
+	
+	@RequestMapping("/login")
+	public String login(Model model){
+		
+		model.addAttribute("body","./main/login.jsp");
+		
+		return "mainView";
+	}
+	
+	
 	
 	@RequestMapping("/general_member")
 	public String general(Model model){
@@ -58,17 +72,6 @@ public class MainController {
 		
 		MemberVO dto=new MemberVO();
 		
-		System.out.println(birth1);
-		System.out.println(birth2);
-		System.out.println(birth3);
-		System.out.println(email1);
-		System.out.println(email2);
-		System.out.println(tel1);
-		System.out.println(tel2);
-		System.out.println(tel3);
-		System.out.println("root"+root);
-		
-		
 		String birth=birth1+"/"+birth2+"/"+birth3;
 		String email=email1+"@"+email2;
 		String tel=tel1+"-"+tel2+"-"+tel3;
@@ -90,6 +93,41 @@ public class MainController {
 		return "mainView";
 	}
 	
+	
+	@RequestMapping("/insertMember_b")
+	public String insertB_member(String userid,String userpwd,String tel1,String tel2,String tel3,
+			String email1,String email2,String businessNum1,String businessNum2,String businessNum3,String companyName,String leader,String address,
+					int root,Model model)throws Exception{
+		
+
+		String email=email1+"@"+email2;
+		String tel=tel1+"-"+tel2+"-"+tel3;
+		String businessNum=businessNum1+"-"+businessNum2+"-"+businessNum3;
+		
+		B_MemberVO vo=new B_MemberVO();
+		vo.setUserid(userid);
+		vo.setUserpwd(userpwd);
+		vo.setTel(tel);
+		vo.setEmail(email);
+		vo.setBusinessNum(businessNum);
+		vo.setCompanyName(companyName);
+		vo.setLeader(leader);
+		vo.setAddress(address);
+		vo.setRoot(root);
+		
+		
+
+		service.insertMemberB(vo);
+		model.addAttribute("body", "./main/body.jsp");
+		
+		return "mainView";
+		
+		
+	}
+	
+	
+	
+
 	
 	
 }

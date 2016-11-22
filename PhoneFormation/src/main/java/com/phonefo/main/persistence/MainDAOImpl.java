@@ -1,16 +1,20 @@
 package com.phonefo.main.persistence;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.phonefo.main.domain.B_MemberVO;
 import com.phonefo.main.domain.MemberVO;
 
 
 
 @Repository
-public class MainDAOImpl implements MainDAO {
+public class MainDAOImpl implements MainDAO{
 
 	@Inject
 	SqlSession sql;
@@ -28,6 +32,27 @@ public class MainDAOImpl implements MainDAO {
 		 if(t==1)result=false;
 		 else result=true;
 		return result;
+	}
+
+	@Override
+	public void insertMember(B_MemberVO vo)throws Exception {
+		sql.insert("member.insertMemberB",vo);
+		
+	}
+
+	@Override
+	public boolean check_general_member(String userid, String userpwd) throws Exception {
+		Map<String, String> map=new HashMap<>();
+		map.put("userid", userid);
+		map.put("userpwd", userpwd);
+		
+		int t = sql.selectOne("member.check_general_memeber", map);
+		if(t==1)
+			return true;
+		else
+			return false;
+		
+		
 	}
 
 }

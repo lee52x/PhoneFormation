@@ -12,5 +12,16 @@
 			where userid=#{userid}
 		
 	</select>
+	
+	
+	<insert id="insertMemberB">
+	insert into ph_business_member
+		values(#{userid},#{userpwd},#{tel},#{email},#{businessNum},#{companyName},#{leader},#{address},sysdate,#{root})
+	</insert>
+	
+	<select id="check_general_memeber"  resultType="int">
+		select count(*) from ph_member
+			where userid=#{userid} and userpwd=#{userpwd}
+	</select>
 
 </mapper>

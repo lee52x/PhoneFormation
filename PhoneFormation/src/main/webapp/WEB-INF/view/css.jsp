@@ -11,8 +11,7 @@
 <meta name="description" content="Venue - Responsive HTML5 Template">
 <meta name="author" content="Square Media">
 
-<!-- Bootstrap CSS  -->
-<link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css" type="text/css" media="screen">
+
 
 <!-- Font Awesome CSS -->
 <link rel="stylesheet" href="/resources/css/font-awesome.min.css" type="text/css" media="screen">
@@ -35,6 +34,11 @@
 <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">

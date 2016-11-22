@@ -313,6 +313,7 @@
 			$('#root').focus();
 		} else {
 			document.frm.submit();
+			alert("회원 가입이 완료 되었습니다!!");
 		}
 	}
 </script>
@@ -364,7 +365,7 @@
 						<!-- Start Services Icons -->
 						<div class="row">
 
-							<form action="/phonefo/insertMember" id="frm" method="post"
+							<form action="/phonefo/insertMember_b" id="frm" method="post"
 								name="frm">
 								<input id="dev_Ident_e" name="UserIdentE" type="hidden" value="" /><input
 									id="dev_certGubun" name="CertPathType" type="hidden"
@@ -500,7 +501,7 @@
 													<tr>
 														<th><h3>회사/점포명</h3></th>
 														<td><h3>
-																<input type="text" name="userid" id="userid"
+																<input type="text" name="companyName" id="companyName"
 																	class="tBox tPwd" maxlength="16" />
 															</h3>
 
@@ -510,7 +511,7 @@
 													<tr>
 														<th><h3>대표자명</h3></th>
 														<td><h3>
-																<input type="text" name="userid" id="userid"
+																<input type="text" name="leader" id="leader"
 																	class="tBox tPwd" maxlength="16" />
 															</h3>
 
@@ -520,7 +521,7 @@
 													<tr>
 														<th><h3>주소</h3></th>
 																							<td><h3>
-																<input type="text" name="userid" id="userid"
+																<input type="text" name="address" id="address"
 																	class="tBox tPwd" maxlength="16" />
 							<button class="btn btn-default btn-lg">
 																	<small><font style="font-weight: bold;">검색</font></small>

@@ -4,6 +4,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import com.phonefo.main.domain.B_MemberVO;
 import com.phonefo.main.domain.MemberVO;
 import com.phonefo.main.persistence.MainDAO;
 
@@ -23,6 +24,20 @@ public class MainServiceImpl implements MainService {
 	public boolean checkId(String userid) throws Exception {
 		boolean result=false;
 		result=dao.checkId(userid);
+		return result;
+	}
+
+	@Override
+	public void insertMemberB(B_MemberVO vo) throws Exception {
+		dao.insertMember(vo);
+		
+	}
+
+	@Override
+	public boolean check_general_member(String userid, String userpwd) throws Exception {
+		
+		
+		boolean result = dao.check_general_member(userid, userpwd);
 		return result;
 	}
 
