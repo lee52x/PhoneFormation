@@ -41,4 +41,10 @@ public class MainServiceImpl implements MainService {
 		return result;
 	}
 
+	@Override
+	public MemberVO getVO(String userid) throws Exception {
+		return dao.getVO(userid);
+		
+	}
+
 }

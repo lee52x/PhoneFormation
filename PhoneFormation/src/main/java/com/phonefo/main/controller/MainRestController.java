@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.phonefo.main.domain.MemberVO;
 import com.phonefo.main.service.MainService;
 
 @RestController
@@ -52,12 +53,22 @@ public class MainRestController {
 		result = service.check_general_member(userid, userpwd);
 		
 		if(result==true){
+			MemberVO vo= service.getVO(userid);
 			session.setAttribute("userid", userid);
+			session.setAttribute("username", vo.getUsername());
+			session.setAttribute("loginVO", vo);
+			
 			return "성공";
 		}else{
 			return "실패";
 		}
 		
+	}
+	
+	@RequestMapping("/logout")
+	public void logout(HttpSession session){
+		session.invalidate();
+	
 	}
 }
 

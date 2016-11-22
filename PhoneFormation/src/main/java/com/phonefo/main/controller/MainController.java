@@ -3,10 +3,13 @@ package com.phonefo.main.controller;
 
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.phonefo.main.domain.B_MemberVO;
 import com.phonefo.main.domain.MemberVO;
@@ -23,7 +26,7 @@ public class MainController {
 	//메인화면 띄우기
 	@RequestMapping("/main")
 	public String test(Model model){
-		
+
 		model.addAttribute("body","./main/body.jsp");
 		
 		return "mainView";
@@ -119,11 +122,12 @@ public class MainController {
 
 		service.insertMemberB(vo);
 		model.addAttribute("body", "./main/body.jsp");
-		
 		return "mainView";
 		
 		
 	}
+	
+
 	
 	
 	

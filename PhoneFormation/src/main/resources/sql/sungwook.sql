@@ -27,10 +27,15 @@ root number(20)
 );
 select *from ph_business_member
 
-`
+		select * from ph_member
+			where userid='lee52x'
 
 		select count(*) from ph_member
 			where userid='lee52x'
 			
 		select count(*) from ph_member
 			where userid='lee52x' and userpwd='qldirt'
+			
+			
+					select userid,userpwd,username,rdate,birth,gender,email,tel,root,status from ph_member
+			where userid='lee52x'

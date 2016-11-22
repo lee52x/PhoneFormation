@@ -55,4 +55,11 @@ public class MainDAOImpl implements MainDAO{
 		
 	}
 
+	@Override
+	public MemberVO getVO(String userid) throws Exception {
+		
+		return sql.selectOne("member.getVO", userid);
+
+	}
+
 }
