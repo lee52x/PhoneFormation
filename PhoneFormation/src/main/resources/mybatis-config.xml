@@ -4,5 +4,6 @@
 
 <typeAliases>
 <typeAlias type="com.phonefo.admin.domain.AdminMemberVO" alias="admin"/>
+<typeAlias type="com.phonefo.payment.domain.SktVO" alias="skt_payment"/>
 </typeAliases>
 </configuration>
