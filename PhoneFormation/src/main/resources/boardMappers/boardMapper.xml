@@ -6,7 +6,7 @@
    <select id="selectlist" resultType="boardVO">
      select title,content,writer,regdate,viewcnt 
      from ph_board
-     where bno = #bno# 
+     where bno = #{bno} 
 	 order by tno desc	   
    </select>
   
