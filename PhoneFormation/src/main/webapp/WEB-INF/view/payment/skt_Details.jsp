@@ -5,15 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>요금제 - SKT 상세페이지</title>
-<link href="http://www.tworld.co.kr/poc/inc/css/common.css"
-	rel="stylesheet" type="text/css">
-<link href="http://www.tworld.co.kr/poc/inc/css/purchase.css"
-	rel="stylesheet" type="text/css">
-<link href="http://www.tworld.co.kr/poc/inc/css/product.css"
-	rel="stylesheet" type="text/css">
+<link href="http://www.tworld.co.kr/poc/inc/css/common.css" rel="stylesheet" type="text/css">
+<link href="http://www.tworld.co.kr/poc/inc/css/purchase.css" rel="stylesheet" type="text/css">
+<link href="http://www.tworld.co.kr/poc/inc/css/product.css"	rel="stylesheet" type="text/css">
 
-<link href="http://www.tworld.co.kr/poc/gnb/inc/css/gnb.css"
-	rel="stylesheet" type="text/css">
+<link href="http://www.tworld.co.kr/poc/gnb/inc/css/gnb.css" rel="stylesheet" type="text/css">
 
 
 <script type="text/javascript"
@@ -32,14 +28,8 @@
 <script type="text/javascript"
 	src="http://www.tworld.co.kr/poc/inc/js/lib/wddo.selectbox-1.5.4.js"></script>
 <script type="text/javascript">
-	$.SelectBoxSet('.selectBox > select', {height:200, scrollHeight:100-8});
-	
-	$(ducument).ready(function() {
-		$('#fareViewType2_1').click(function() {
-			
-		})
 
-	});
+
 </script>
 <!-- //select box 관련 -->
 <script type="text/javascript"
@@ -139,7 +129,7 @@
 										</strong><span class="dLine"><em>20GB<br>+
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
 									<li class="balloon1 on"><a
-										href="http://www.tworld.co.kr/normal.do?serviceId=S_PROD2001&viewId=V_PROD2001&prod_id=NA00005292"><strong>T
+										href="/phonefo/skt_payment/details"><strong>T
 												시그니처<br>(Master)
 										</strong><span><em>35GB<br>+
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>

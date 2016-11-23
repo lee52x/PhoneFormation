@@ -5,7 +5,92 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>요금제 - SKT</title>
 <link href="http://www.tworld.co.kr/poc/inc/css/common.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="/resources/css/payment.css"/>
+
+<!-- <link href="http://www.tworld.co.kr/poc/inc/css/product.css"	rel="stylesheet" type="text/css"> -->
+<style type="text/css">
+/*검색결과*/
+.resultTop .infoBox{overflow:hidden}
+.resultTop .infoBox .filtering{width:1000px;margin:0 auto;text-align:center}
+.resultTop .infoBox .filtering li{display:inline-block;*display:inline;*zoom:1;padding-bottom:20px}
+.resultTop .infoBox .filtering li a{display:block;padding:0 10px 0 15px;font-size:16px;line-height:20px}
+.resultTop .infoBox .filtering li+li a{border-left:1px solid #e4e4e4}
+.resultTop .infoBox .filtering li.on a{color:#ea002c;font-weight:bold}
+.resultTop .infoBox .guide{text-align:right}
+.resultTop .infoBox .guide span{padding-left: 22px;font-size:16px}
+.resultTop .infoBox .guide span+span{margin-left:15px}
+
+#monthly{color:#fb6400}
+#stipulation{color:#00a49a}
+/*table*/
+.infoBox{position:relative;margin:0;padding-bottom:17px}/*테이블 상단*/
+.infoBox .addInfo{position:absolute;bottom:17px;right:0}
+.infoBox .titDep1,.infoBox .titDep2,.infoBox .titDep3,.infoBox .titDep4,.infoBox .titDep5,.infoBox .titDep6{padding:0}
+.infoBox .title{padding-right:16px;font-size:20px;line-height:20px;color:#111;letter-spacing:-2px}
+.infoBox .btnS{margin-left:6px}
+.infoBox.pd0{padding-bottom:0}
+
+.popCon .infoBox{padding-bottom:12px}
+.popCon .infoBox .titDep1,.popCon .infoBox .titDep2,.popCon .infoBox .titDep3,.popCon .infoBox .titDep4,.popCon .infoBox .titDep5,.popCon .infoBox .titDep6{padding:0}
+.popCon .infoBox .addInfo{bottom:12px}
+
+
+
+.fareList>ul{border-bottom:1px solid #ccc}
+.fareList>ul>li{padding:29px;*zoom:1;border:1px solid #fff;border-top:1px solid #ccc;vertical-align:top}
+.fareList>ul>li+li{margin-top:-1px;border-top:1px solid #e4e4e4}
+.fareList>ul>li:after{content:'';display:block;clear:both}
+.fareList>ul>li .blank{display:inline-block !important;height:108px;margin-left:-5px;vertical-align:middle}
+.fareList>ul>li .title{float:left;width:415px;min-height:108px}
+.fareList>ul>li .title>div{display:inline-block;*display:inline;*zoom:1;vertical-align:middle}
+.fareList>ul>li .title strong{display:block;color:#333;font-weight:normal;font-size:28px;line-height:36px;letter-spacing:-1px}
+.fareList>ul>li .title strong sup{font-size:16px;vertical-align:10px}
+.fareList>ul>li .title span{display:block;color:#666;font-size:16px;line-height:22px;letter-spacing:-1px}
+.fareList>ul>li .title .checkbox{width:410px}
+.fareList>ul>li .title .checkbox label{min-height:40px;padding-left:70px;}
+.fareList>ul>li .title .checkbox label span{margin-top:7px}
+.fareList>ul>li .title .checkbox.checked label{background-position:-1180px 50%}
+.fareList>ul>li .title .fareTit{width:340px;min-height:40px;padding-left:70px;}
+.fareList>ul>li .title .fareTit span{margin-top:7px}
+.fareList>ul>li .infoArea{float:right;width:701px;min-height:108px;text-align:right}
+.fareList>ul>li .infoArea>*{display:inline-block;*display:inline;*zoom:1;vertical-align:middle}
+.fareList>ul>li .infoArea>*:after{content:'';display:block;clear:both}
+.fareList>ul>li .infoArea .list1{height:auto}
+.fareList>ul>li .infoArea .list2{margin-left:15px}
+.fareList>ul>li .infoArea .list2 li{float:left;width:108px;height:71px;padding-top:37px;stext-align:center;font-size:15px;font-weight:bold;vertical-align:top}
+.fareList>ul>li .infoArea .list2 li+li{margin-left:10px}
+.fareList>ul>li .infoArea .list2 li strong{position:absolute;left:-9999px;font-size:0;line-height:0;text-indent:-9999px}
+.fareList>ul>li .infoArea .list2 li span{display:block;font-size:14px}
+.fareList>ul>li .infoArea .list2 li.monthly{background-position:0 0;color:#fb6400}
+.fareList>ul>li .infoArea .list2 li.stipulation{background-position:0 -108px;color:#00a49a}
+.fareList>ul>li .infoArea .list2 li.noData{background:none;text-indent:-9999px;font-size:0;line-height:0}
+.fareList>ul>li .infoArea .list2 li span.free{font-weight:bold;font-size:18px;line-height:32px}
+.fareList>ul>li .infoArea .list3{height:auto}
+.fareList>ul>li .infoArea>.btnBox{width:100px;padding:0;margin-left:20px}
+.fareList>ul>li .infoArea>.btnBox>a{float:left;width:100px;min-width:auto;padding:0}
+.fareList>ul>li .infoArea>.btnBox>a~a{float:left;width:45px;margin:5px 0 0}
+.fareList>ul>li .infoArea>.btnBox>a~a~a{float:right}
+.fareList>ul>li .infoArea>.btnBox>a img{display:inline-block;margin-top:9px}
+.fareList>ul>li.mbRouter .title{width:755px}
+.fareList>ul>li.mbRouter .title .checkbox{width:750px}
+.fareList>ul>li.mbRouter .title .fareTit{width:680px}
+.fareList>ul>li.mbRouter .infoArea{width:320px}
+.fareList>ul>li.mbRouter .infoArea .list1 li{width:50px}
+.fareList .btnMore{margin-top:-1px}
+
+
+infoArea .list1{overflow:hidden;height:120px}
+.infoArea .list1 li{float:left;width:107px;text-align:center}
+.infoArea .list1 li+li+li{background:none}
+.infoArea .list1 li img{vertical-align:top}
+.infoArea .list1 li strong{display:block;padding-top:7px;color:#333;font-size:16px;line-height:24px;letter-spacing:-2px;word-break:break-all}
+.infoArea .list1 li:first-child strong{letter-spacing:-1px}
+.infoArea .list1 li span{display:block;font-size:12px;line-height:14px}
+.infoArea .list3{overflow:hidden;height:120px}
+.infoArea .list3 li{float:left;min-width:60px;padding-right:10px;color:#333;text-align:center}
+.infoArea .list3 li+li{margin-left:-10px;padding-left:20px;background:url(/poc/img/product/ico_cb_plus.gif) no-repeat 1px 7px}
+.infoArea .list3 li strong{display:block;margin-top:10px;font-size:16px;line-height:22px;letter-spacing:-1px}
+.infoArea .list3 li.cp4{padding-left:40px}
+</style>
 
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -93,8 +178,8 @@
 							</ul>
 							<br>
 							<div class="guide">
-								<span class="monthly">월정액(부가세포함)</span>
-								<span class="stipulation">24개월약정시(부가세포함)</span>
+								<span id="monthly" style="height: 108px">월정액(부가세포함)</span>
+								<span id="stipulation" style="height: 108px">24개월약정시(부가세포함)</span>
 							</div>
 						</div>
 					</div>
@@ -110,7 +195,7 @@
 							<!-- loop -->
 							
 							<li id="signiture">
-								<div class="title">
+								<div class="title" style="width: 300px">
 														<div class="checkbox">
 	
 											<strong>T시그니처 Master</strong>
@@ -134,9 +219,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly" style=""><strong>월정액 (부가세포함) : </strong>110,000원</li>
+										<li id="monthly" style="height: 108px""><strong>월정액 (부가세포함) : </strong>110,000원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -147,7 +232,7 @@
 							</li>
 							
 							<li id="signiture">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										<!-- <input type="checkbox" id="fareType1"><label for="fareType1"> -->
 											<strong>T시그니처 Classic</strong>
@@ -171,9 +256,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>88,000원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>88,000원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -183,7 +268,7 @@
 							</li>
 							
 							<li id="band_yf">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
 											<strong>band YT 퍼펙트</strong>
@@ -207,9 +292,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>71,000원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>71,000원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -219,7 +304,7 @@
 							</li>
 							
 							<li id="band_yf">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 											<strong>band YT 7G</strong>
 										
@@ -242,9 +327,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>62,000원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>62,000원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -254,7 +339,7 @@
 							</li>
 							
 							<li id="band_yf">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										<!-- <input type="checkbox" id="fareType4"><label for="fareType4"> -->
 											<strong>band YT 3G</strong>
@@ -278,9 +363,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>52,000원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>52,000원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -290,7 +375,7 @@
 							</li>
 							
 							<li id="band_yf">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 									<!-- 	<input type="checkbox" id="fareType5"><label for="fareType5"> -->
 											<strong>band YT 1G</strong>
@@ -314,9 +399,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>42,000원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>42,000원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -326,7 +411,7 @@
 							</li>
 							
 							<li id="band_yf">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										<!-- <input type="checkbox" id="fareType6"><label for="fareType6"> -->
 											<strong>band YT 세이브</strong>
@@ -350,9 +435,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>38,000원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>38,000원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -362,7 +447,7 @@
 							</li>
 							
 							<li id="band_data">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										<!-- <input type="checkbox" id="fareType7"><label for="fareType7"> -->
 											<strong>band 데이터 퍼펙트S</strong>
@@ -386,9 +471,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>75,900원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>75,900원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -398,7 +483,7 @@
 							</li>
 							
 							<li id="band_data">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
 											<strong>band 데이터 퍼펙트</strong>
@@ -422,9 +507,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>65,890원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>65,890원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -434,7 +519,7 @@
 							</li>
 							
 							<li id="band_data">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
 											<strong>band 데이터 6.5G</strong>
@@ -458,9 +543,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>56,100원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>56,100원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -470,7 +555,7 @@
 							</li>
 							
 							<li id="band_data">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
 											<strong>band 데이터 3.5G</strong>
@@ -494,9 +579,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>51,700원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>51,700원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -506,7 +591,7 @@
 							</li>
 							
 							<li id="band_data">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
 											<strong>band 데이터 2.2G</strong>
@@ -530,9 +615,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>46,200원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>46,200원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -542,7 +627,7 @@
 							</li>
 							
 							<li id="band_data">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
 											<strong>band 데이터 1.2G</strong>
@@ -566,9 +651,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>39,600원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>39,600원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -578,7 +663,7 @@
 							</li>
 				
 							<li id="band_data">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
 											<strong>band 데이터 세이브</strong>
@@ -602,9 +687,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>32,890원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>32,890원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -614,7 +699,7 @@
 							</li>
 							
 							<li id="everyone_unlimited">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
 											<strong>전국민 무한 100</strong>
@@ -638,9 +723,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>110,000원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>110,000원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>83,600원</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>83,600원</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -650,7 +735,7 @@
 							</li>
 							
 							<li id="everyone_unlimited">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
 											<strong>전국민 무한 85</strong>
@@ -674,9 +759,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>93,500원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>93,500원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>71,500원</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>71,500원</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -686,7 +771,7 @@
 							</li>
 							
 							<li id="everyone_unlimited">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
 											<strong>LTE데이터 무제한 80팩</strong>
@@ -710,9 +795,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>88,000원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>88,000원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>67,375원</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>67,375원</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -722,7 +807,7 @@
 							</li>
 							
 							<li id="everyone_unlimited">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
 											<strong>전국민 무한 75</strong>
@@ -746,9 +831,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>82,500원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>82,500원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>61,875원</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>61,875원</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -758,7 +843,7 @@
 							</li>
 							
 							<li id="everyone_unlimited">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
 											<strong>전국민 무한 69</strong>
@@ -782,9 +867,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>75,900원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>75,900원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>56,650원</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>56,650원</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -794,7 +879,7 @@
 							</li>
 							
 							<li id="t_together">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
 											<strong>T끼리 65</strong>
@@ -818,9 +903,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>71,500원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>71,500원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>53,075원</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>53,075원</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -830,7 +915,7 @@
 							</li>
 							
 							<li id="t_together">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
 											<strong>T끼리 55</strong>
@@ -854,9 +939,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>60,500원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>60,500원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>44,825원</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>44,825원</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -866,7 +951,7 @@
 							</li>
 							
 							<li id="t_together">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
 											<strong>T끼리 45</strong>
@@ -890,9 +975,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>49,500원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>49,500원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>37,125원</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>37,125원</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -902,7 +987,7 @@
 							</li>
 							
 							<li id="t_together">
-								<div class="title">
+								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
 											<strong>T끼리 35</strong>
@@ -926,9 +1011,9 @@
 										</li>
 									</ul>
 									<ul class="list2">
-										<li class="monthly"><strong>월정액 (부가세포함) : </strong>38,500원</li>
+										<li id="monthly"><strong>월정액 (부가세포함) : </strong>38,500원</li>
 										
-										<li class="stipulation"><strong>24개월약정시 (부가세포함) : </strong>30,580원</li>
+										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>30,580원</li>
 										
 									</ul>
 									<div class="btnBox">
