@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.phonefo.board.domain;
+package com.phonefo.board.persistence;
 
 import com.phonefo.board.persistence.BoardDAO;
 
