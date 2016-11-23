@@ -131,4 +131,16 @@ INSERT INTO LG_PAY VALUES('LTE-알190', '300MB', '20000알', '20000알', 20900, 
 
 
 
+		select *
+		from skt_pay
+		where payment like '%시그니처%'
+		order by fixed_month;
+
+
+
+
+
+
+
+
 

@@ -4,10 +4,13 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.stereotype.Service;
+
 import com.phonefo.payment.domain.SktVO;
 import com.phonefo.payment.persistence.SktDAO;
 
-public class ServiceDAOImpl implements ServiceDAO {
+@Service
+public class SktServiceImpl implements SktService {
 	
 	@Inject
 	private SktDAO dao;
