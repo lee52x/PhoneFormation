@@ -47,4 +47,27 @@ public class MainServiceImpl implements MainService {
 		
 	}
 
+	@Override
+	public boolean check_business_member(String userid, String userpwd) throws Exception {
+		boolean result = dao.check_business_member(userid, userpwd);
+		return result;
+	}
+
+	@Override
+	public boolean checkBId(String userid) throws Exception {
+		boolean result=false;
+		result=dao.checkBId(userid);
+		return result;
+	}
+
+	@Override
+	public B_MemberVO getBVO(String userid) throws Exception {
+		return dao.getBVO(userid);
+	}
+
+	
+
+
+
+
 }

@@ -162,6 +162,25 @@
 				}
 			});
 		});
+		$("#login2").click(function(){
+			$.ajax({
+				
+				url:"/phonefo/confirm_business_member",
+				data:{userid:$('#userid2').val(),
+					  userpwd:$('#userpwd2').val()
+				},
+				success:function(result){
+					if(result=='성공')
+						location.href='/phonefo/main'
+					else
+						alert('아이디 또는 비밀번호가 일치하지 않습니다.');
+					$('#userid2').val('');
+					$('#userpwd2').val('');
+					$('#userid2').focus();
+					
+				}
+			});
+		});	
 	});
 </script>
 
@@ -193,6 +212,7 @@
                     <h1> <span class="accent-color">PhoneFormation</span>에 오신것을 환영합니다.</h1>
                     <p class="title-desc">저희 PhoneFormation은 개인회원과 기업회원 로그인이 가능합니다.</p>
                 </div>
+             
                 <div class="hr5 margin-40"></div>
                 <h3 style="font: bold;">로그인이 필요한 서비스입니다.</h3>
                 PhoneFormation 회원이 아니면 지금, <font color="blue">회원가입</font>을 해주세요.<br><br>
@@ -295,13 +315,13 @@
 			<div class="login-form" sty>
 				<div class="id-input-box focus" style="width: 420px;">
 	    			
-	    			<input type="text" id="id" name="id" class="txt_tool" value="" placeholder="아이디">
+	    			<input type="text" id="userid2" name="userid2" class="txt_tool" value="" placeholder="아이디">
 	    		</div>
 	    		<div class="pw-input-box" style="width: 420px;">
 	    			<label id="password-label" for="password"></label>
-	    			<input  placeholder="비밀번호" type="password" id="password" name="password" class="txt_tool" value="" maxlength="32" onkeyup="if(this.value.length==32) alert('비밀번호는 영문,숫자,특수문자 조합 6~32자 입니다.');"  onblur="if((0 < this.value.length && this.value.length < 4) || this.value.length > 32 ){ alert('비밀번호는 영문,숫자,특수문자 조합 6~32자 입니다.');}">
+	    			<input  placeholder="비밀번호" type="password" id="userpwd2" name="userpwd2" class="txt_tool" value="" maxlength="32" onkeyup="if(this.value.length==32) alert('비밀번호는 영문,숫자,특수문자 조합 6~32자 입니다.');"  onblur="if((0 < this.value.length && this.value.length < 4) || this.value.length > 32 ){ alert('비밀번호는 영문,숫자,특수문자 조합 6~32자 입니다.');}">
 	    		</div>
-	    		<button type="submit" class="btn-login">로그인</button>
+	    		<button type="submit" class="btn-login" id="login2">로그인</button>
 	    	</div>
 	    	<br>
 	    	<div>

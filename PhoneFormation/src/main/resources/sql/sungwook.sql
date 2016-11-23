@@ -39,3 +39,6 @@ select *from ph_business_member
 			
 					select userid,userpwd,username,rdate,birth,gender,email,tel,root,status from ph_member
 			where userid='lee52x'
+			
+			select*from ph_member
+			select*from ph_business_member

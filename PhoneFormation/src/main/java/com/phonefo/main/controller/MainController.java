@@ -52,21 +52,21 @@ public class MainController {
 	}
 	
 	
-	
+	//일반회원가입폼
 	@RequestMapping("/general_member")
 	public String general(Model model){
 		
 		model.addAttribute("body", "./main/general_member_form.jsp");
 		return "mainView";
 	}
-	
+	//기업회원 가입폼
 	@RequestMapping("/business_member")
 	public String business(Model model){
 		
 		model.addAttribute("body", "./main/business_member_form.jsp");
 		return "mainView";
 	}
-
+	//일반회원가입하기
 	@RequestMapping("/insertMember")
 	public String insertMember(String userid,String userpwd,String username,String gender,int root,
 			String birth1,String birth2,String birth3
@@ -96,7 +96,7 @@ public class MainController {
 		return "mainView";
 	}
 	
-	
+	//기업회원 가입하기
 	@RequestMapping("/insertMember_b")
 	public String insertB_member(String userid,String userpwd,String tel1,String tel2,String tel3,
 			String email1,String email2,String businessNum1,String businessNum2,String businessNum3,String companyName,String leader,String address,

@@ -62,4 +62,32 @@ public class MainDAOImpl implements MainDAO{
 
 	}
 
+	@Override
+	public boolean check_business_member(String userid, String userpwd) throws Exception {
+		Map<String, String> map=new HashMap<>();
+		map.put("userid", userid);
+		map.put("userpwd", userpwd);
+		
+		int t = sql.selectOne("member.check_business_memeber", map);
+		if(t==1)
+			return true;
+		else
+			return false;
+	}
+
+	@Override
+	public B_MemberVO getBVO(String userid) throws Exception {
+		return sql.selectOne("member.getBVO", userid);
+
+	}
+
+	@Override
+	public boolean checkBId(String userid) throws Exception {
+		boolean result;
+		 int t = sql.selectOne("member.checkBId",userid);
+		 if(t==1)result=false;
+		 else result=true;
+		return result;
+	}
+
 }

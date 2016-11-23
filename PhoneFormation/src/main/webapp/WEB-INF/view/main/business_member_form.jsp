@@ -27,7 +27,7 @@
 
 						$('#userid').keyup(function() {
 							$.ajax({
-								url : "/phonefo/checkId",
+								url : "/phonefo/checkBId",
 								data : {
 									userid : $("#userid").val()
 								},
