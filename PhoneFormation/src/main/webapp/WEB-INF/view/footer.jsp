@@ -17,7 +17,7 @@
                 <div class="col-sm-offset-2 col-md-3">
                     <div class="footer-widget contact-widget">
                         
-                        <img alt="logo" src="/resources/images/logo.png">
+                        <img alt="logo" src="/resources/images/logo.png"width="200px">
                     </div>
                 </div>
                 <!-- .col-md-3 --> 

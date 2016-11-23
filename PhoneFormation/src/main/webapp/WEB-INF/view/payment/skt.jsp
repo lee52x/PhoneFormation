@@ -95,6 +95,18 @@ infoArea .list1{overflow:hidden;height:120px}
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#all').click(function(){ 		
+			$('#all').css("font-weight", "bold");
+			$('#all').css("color", "red");
+			$('#t_si').css("font-weight", "normal");
+			$('#t_si').css("color", "black");
+			$('#b_yf').css("font-weight", "normal");
+			$('#b_yf').css("color", "black");
+			$('#b_data').css("font-weight", "normal");
+			$('#b_data').css("color", "black");
+			$('#e_unlimited').css("font-weight", "normal");
+			$('#e_unlimited').css("color", "black");
+			$('#t_together').css("font-weight", "normal");
+			$('#t_together').css("color", "black");
 			$('li[id=signiture]').show();
 			$('li[id=band_yf]').show();
 			$('li[id=band_data]').show();
@@ -103,6 +115,18 @@ infoArea .list1{overflow:hidden;height:120px}
 		});
 		
 		$('#t_si').click(function() {
+			$('#all').css("font-weight", "normal");
+			$('#all').css("color", "black");
+			$('#t_si').css("font-weight", "bold");
+			$('#t_si').css("color", "red");
+			$('#band_yf').css("font-weight", "normal");
+			$('#band_yf').css("color", "black");
+			$('#band_data').css("font-weight", "normal");
+			$('#band_data').css("color", "black");
+			$('#everyone_unlimited').css("font-weight", "normal");
+			$('#everyone_unlimited').css("color", "black");
+			$('#t_together').css("font-weight", "normal");
+			$('#t_together').css("color", "black");
 			$('li').show();
 			$('li[id=band_yf]').hide();
 			$('li[id=band_data]').hide();
@@ -111,6 +135,18 @@ infoArea .list1{overflow:hidden;height:120px}
 		});
 		
 		$('#b_yf').click(function() {
+			$('#all').css("font-weight", "normal");
+			$('#all').css("color", "black");
+			$('#t_si').css("font-weight", "normal");
+			$('#t_si').css("color", "black");
+			$('#b_yf').css("font-weight", "bold");
+			$('#b_yf').css("color", "red");
+			$('#b_data').css("font-weight", "normal");
+			$('#b_data').css("color", "black");
+			$('#e_unlimited').css("font-weight", "normal");
+			$('#e_unlimited').css("color", "black");
+			$('#t_together').css("font-weight", "normal");
+			$('#t_together').css("color", "black");
 			$('li').show();
 			$('li[id=signiture]').hide();
 			$('li[id=band_data]').hide();
@@ -119,6 +155,18 @@ infoArea .list1{overflow:hidden;height:120px}
 		});
 		
 		$('#b_data').click(function() {	
+			$('#all').css("font-weight", "normal");
+			$('#all').css("color", "black");
+			$('#t_si').css("font-weight", "normal");
+			$('#t_si').css("color", "black");
+			$('#b_yf').css("font-weight", "normal");
+			$('#b_yf').css("color", "black");
+			$('#b_data').css("font-weight", "bold");
+			$('#b_data').css("color", "red");
+			$('#e_unlimited').css("font-weight", "normal");
+			$('#e_unlimited').css("color", "black");
+			$('#t_together').css("font-weight", "normal");
+			$('#t_together').css("color", "black");
 			$('li').show();
 			$('li[id=signiture]').hide();
 			$('li[id=band_yf]').hide();
@@ -127,6 +175,18 @@ infoArea .list1{overflow:hidden;height:120px}
 		});
 		
 		$('#e_unlimited').click(function() {	
+			$('#all').css("font-weight", "normal");
+			$('#all').css("color", "black");
+			$('#t_si').css("font-weight", "normal");
+			$('#t_si').css("color", "black");
+			$('#b_yf').css("font-weight", "normal");
+			$('#b_yf').css("color", "black");
+			$('#b_data').css("font-weight", "normal");
+			$('#b_data').css("color", "black");
+			$('#e_unlimited').css("font-weight", "bold");
+			$('#e_unlimited').css("color", "red");
+			$('#t_together').css("font-weight", "normal");
+			$('#t_together').css("color", "black");
 			$('li').show();
 			$('li[id=signiture]').hide();
 			$('li[id=band_yf]').hide();
@@ -135,6 +195,18 @@ infoArea .list1{overflow:hidden;height:120px}
 		});
 		
 		$('#t_together').click(function() {	
+			$('#all').css("font-weight", "normal");
+			$('#all').css("color", "black");
+			$('#t_si').css("font-weight", "normal");
+			$('#t_si').css("color", "black");
+			$('#b_yf').css("font-weight", "normal");
+			$('#b_yf').css("color", "black");
+			$('#b_data').css("font-weight", "normal");
+			$('#b_data').css("color", "black");
+			$('#e_unlimited').css("font-weight", "normal");
+			$('#e_unlimited').css("color", "black");
+			$('#t_together').css("font-weight", "bold");
+			$('#t_together').css("color", "red");
 			$('li').show();
 			$('li[id=signiture]').hide();
 			$('li[id=band_yf]').hide();
