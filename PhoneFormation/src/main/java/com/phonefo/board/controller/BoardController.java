@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.phonefo.admin.domain.PageMaker;
 import com.phonefo.admin.domain.SearchCriteria;
@@ -20,16 +21,25 @@ public class BoardController {
 	private BoardService service;
 	
 	@RequestMapping("/boardlist")
-	public String listPage(@ModelAttribute("cri") SearchCriteria cri,Model model) throws Exception {
-		int tno = 4;
-		model.addAttribute("list", service.listSearchCriteria(cri,tno));
+	public String listPage(@ModelAttribute("cri") SearchCriteria cri,@RequestParam("tno") int tno,Model model) throws Exception {
+		model.addAttribute("list", service.selectlist(cri,tno));
 
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.setTotalCount(service.listCount(tno));
-		model.addAttribute("pageMaker", pageMaker);
 		
-		model.addAttribute("body", "./admin/adminOno.jsp");
+		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("title",service.selecttitle(tno));
+		model.addAttribute("body", "./board/boardlist.jsp");
+
+		return "mainView";
+	}
+	
+	@RequestMapping("/boardinput")
+	public String inputpage(@ModelAttribute("cri") SearchCriteria cri,@ModelAttribute("tno") int tno,Model model) throws Exception {
+
+		model.addAttribute("title",service.selecttitle(tno));
+		model.addAttribute("body", "./board/boardinput.jsp");
 
 		return "mainView";
 	}

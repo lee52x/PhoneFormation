@@ -4,12 +4,19 @@
 
 	<!-- 게시판 전체리스트출럭 -->
 	<select id="selectlist" resultType="boardVO">
-		select title,content,writer,regdate,viewcnt
+		select
+		title,content,writer,regdate,viewcnt
 		from ph_board
 		where tno = #{tno}
 		order by bno desc
 	</select>
-
+	
+	<select id="selecttitle" resultType="String">
+		select	title
+		from ph_boardtype
+		where tno = #{tno}
+	</select>
+	
 	<select id="listcount" resultType="int">
 		select count(bno)
 		from ph_board

@@ -47,9 +47,9 @@ create sequence ph_board_seq
    nocache
    nocycle;
    
-insert into ph_boardtype values (ph_boardtype_seq.nextval,'KT');
-insert into ph_boardtype values (ph_boardtype_seq.nextval,'LGU+');
-insert into ph_boardtype values (ph_boardtype_seq.nextval,'SKT');
+insert into ph_boardtype values (ph_boardtype_seq.nextval,'KT 이벤트');
+insert into ph_boardtype values (ph_boardtype_seq.nextval,'LGU+ 이벤트');
+insert into ph_boardtype values (ph_boardtype_seq.nextval,'SKT 이벤트');
 
 insert into ph_boardtype values (ph_boardtype_seq.nextval,'공지사항');
 insert into ph_boardtype values (ph_boardtype_seq.nextval,'자유게시판');

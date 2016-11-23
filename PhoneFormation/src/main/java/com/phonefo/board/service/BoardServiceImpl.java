@@ -15,13 +15,18 @@ public class BoardServiceImpl implements BoardService{
 	@Inject
 	private BoardDAO dao;
 	@Override
-	public List<BoardVO> listSearchCriteria(SearchCriteria cri, int tno) throws Exception {
-		return dao.listSearch(cri, tno);
+	public List<BoardVO> selectlist(SearchCriteria cri, int tno) throws Exception {
+		return dao.selectlist(cri, tno);
 	}
 	
 	@Override
 	public int listCount(int tno) throws Exception {		
 		return dao.listCount(tno);
+	}
+
+	@Override
+	public String selecttitle(int tno) throws Exception {
+		return dao.selecttitle(tno);
 	}
 
 }
