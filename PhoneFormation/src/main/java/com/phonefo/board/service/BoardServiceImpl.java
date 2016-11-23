@@ -4,10 +4,12 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.stereotype.Service;
+
 import com.phonefo.admin.domain.SearchCriteria;
 import com.phonefo.board.domain.BoardVO;
 import com.phonefo.board.persistence.BoardDAO;
-
+@Service
 public class BoardServiceImpl implements BoardService{
 
 	@Inject

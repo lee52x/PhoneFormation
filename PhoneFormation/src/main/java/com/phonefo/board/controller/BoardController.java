@@ -20,7 +20,7 @@ public class BoardController {
 	private BoardService service;
 	
 	@RequestMapping("/boardlist")
-	public void listPage(@ModelAttribute("cri") SearchCriteria cri,Model model) throws Exception {
+	public String listPage(@ModelAttribute("cri") SearchCriteria cri,Model model) throws Exception {
 		int tno = 4;
 		model.addAttribute("list", service.listSearchCriteria(cri,tno));
 
@@ -28,6 +28,10 @@ public class BoardController {
 		pageMaker.setCri(cri);
 		pageMaker.setTotalCount(service.listCount(tno));
 		model.addAttribute("pageMaker", pageMaker);
+		
+		model.addAttribute("body", "./admin/adminOno.jsp");
+
+		return "mainView";
 	}
 
 }

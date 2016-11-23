@@ -10,7 +10,7 @@
 		order by bno desc
 	</select>
 
-	<select id="listcount" resultType="boardVO">
+	<select id="listcount" resultType="int">
 		select count(bno)
 		from ph_board
 		where tno = #{tno}
