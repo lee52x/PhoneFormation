@@ -36,11 +36,13 @@
    <context:component-scan base-package="com.phonefo.main.persistence"/>
    <context:component-scan base-package="com.phonefo.admin.persistence"/>
    <context:component-scan base-package="com.phonefo.payment.persistence"/>
+   <context:component-scan base-package="com.phonefo.board.persistence"/>
    
    <!-- 비지니스객체 등록 -->
    <context:component-scan base-package="com.phonefo.main.service"></context:component-scan>
    <context:component-scan base-package="com.phonefo.admin.service"></context:component-scan>
    <context:component-scan base-package="com.phonefo.payment.service"></context:component-scan>
+   <context:component-scan base-package="com.phonefo.board.service"></context:component-scan>
 
 		
 </beans>

@@ -19,9 +19,12 @@ public class BoardDAOImpl implements BoardDAO {
 	private SqlSession sqlSession;	
 	
 	@Override
-	public List<BoardVO> listSearch(SearchCriteria cri) throws Exception {
-		return sqlSession.selectList("board.listSearch",cri,
+	public List<BoardVO> listSearch(SearchCriteria cri, int tno) throws Exception {
+		return sqlSession.selectList("board.listSearch",tno,
 		        new RowBounds(cri.getPageStart(), cri.getPerPageNum()) );
 	}
-
+	@Override
+	public int listCount(int tno) throws Exception {		
+		return sqlSession.selectOne("listCount",tno);
+	}
 }

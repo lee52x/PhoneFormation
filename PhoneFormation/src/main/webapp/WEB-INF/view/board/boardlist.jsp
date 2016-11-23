@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -53,38 +54,69 @@
 <center>
 
 
-<form action="review.do?action=insertpage" method="post" name="frm">
-   <table cellpadding="8" style=" font-size:18px; border-collapse:collapse; line-height:30px;" width="900px" >
-            <tr style="font-size: 30px; font-weight: bold;"><td align="center" class="border2" colspan="4" height="110px" align="center">REVIEW</td></tr>
-      <tr height="35px"  bgcolor="#dae6f4">
-         <th class="border1" width="10%" >번호</th>
-         <th class="border1" width="60%">제목</th>
-         <!-- <th class="border1" width="5%"></th> -->
-         <th class="border1" width="10%" >작성자</th>
-         <th class="border1" width="20%" >작성일</th>
-      </tr>
-      
-      <core:forEach items="${review}" var="review" varStatus="stat">
-      <tr>
-         <td class="border1" align="center">${stat.count + (page-1)*10}</td>
-         <td class="border1" align="center"><a href="review.do?action=select&no=${review.no}&page=${page}">${review.title}</a></td>
-         <!-- <td align="right"><img src="../mellowtest/image/clip.png" width="30px" height="30px"></td> --> 
-         <td class="border1" align="center">${review.writer}</td>
-         <td class="border1" align="center">${review.gdate}</td>
-      </tr>
-      </core:forEach>
-      <tr><td colspan="4" height="50px" align="right"><input type="button" value="글쓰기" class="button2" onclick="check()"></td></tr>
-   <tr><td colspan="4" align="center">
-   <core:if test="${page==1}">이전</core:if>
-   <core:if test="${page>1}"><a href="../review/list.do?control=review&action=selectPage&page=${page-1}">이전</a></core:if>
-   <core:if test="${page==pageCount}">다음</core:if>
-   <core:if test="${page<pageCount}"><a href="../review/list.do?control=review&action=selectPage&page=${page+1}">다음</a></core:if>
-    </td></tr>
-    <tr height="100px"></tr>
+			<div class="box">
+				<div class="box-header with-border">
+					<h3 class="box-title">LIST PAGING</h3>
+				</div>
+				<div class="box-body">
+					<table class="table table-bordered">
+						<tr>
+							<th style="width: 10px">BNO</th>
+							<th>TITLE</th>
+							<th>WRITER</th>
+							<th>REGDATE</th>
+							<th style="width: 40px">VIEWCNT</th>
+						</tr>
 
-   </table>
-   
-</form>
+						<c:forEach items="${list}" var="boardVO">
+
+							<tr>
+								<td>${boardVO.bno}</td>
+								<td><a
+									href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.bno}'>
+										${boardVO.title} </a></td>
+								<td>${boardVO.writer}</td>
+								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+										value="${boardVO.regdate}" /></td>
+								<td><span class="badge bg-red">${boardVO.viewcnt }</span></td>
+							</tr>
+
+						</c:forEach>
+
+					</table>
+				</div>
+				<!-- /.box-body -->
+
+
+				<div class="box-footer">
+
+					<div class="text-center">
+						<ul class="pagination">
+
+							<c:if test="${pageMaker.prev}">
+								<li><a
+									href="list${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
+							</c:if>
+
+							<c:forEach begin="${pageMaker.startPage }"
+								end="${pageMaker.endPage }" var="idx">
+								<li
+									<c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
+									<a href="list${pageMaker.makeSearch(idx)}">${idx}</a>
+								</li>
+							</c:forEach>
+
+							<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+								<li><a
+									href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
+							</c:if>
+
+						</ul>
+					</div>
+
+				</div>
+				<!-- /.box-footer-->
+			</div>
 </center>
 </body>
 </html>
