@@ -6,7 +6,8 @@ import com.phonefo.quote.domain.PhoneVO;
 
 public interface PhoneDAO {
 	
-	public List<PhoneVO> samsung(String manufacture)throws Exception;
+	public List<PhoneVO> machine(String manufacture)throws Exception;
+
 	
 	
 }

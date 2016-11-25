@@ -1,10 +1,13 @@
 package com.phonefo.quote.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.http.HttpMethod;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.phonefo.quote.domain.PhoneVO;
@@ -17,15 +20,19 @@ public class QuoteRestController {
 	@Inject
 	PhoneService service;
 
-	@RequestMapping("/samsung")
-	public String samsung(String manufacture)throws Exception{
+	@RequestMapping(value="/machine")
+	public List<PhoneVO> samsung(String manufacture)throws Exception{
 		
-		System.out.println("선택한 제조사:"+manufacture);
-		List<PhoneVO> list = service.samsung(manufacture);
+		System.out.println(manufacture);
+			List<PhoneVO> list=null;
+			
+			
+			
+			list = service.machine(manufacture);
+
 		
-		System.out.println("DB에서 뽑아낸 데이터:"+list.get(0).getName());
-		
-		return manufacture;
+		return list;
 	}
+
 	
 }

@@ -1,15 +1,7 @@
 /adminMappers/
-<<<<<<< HEAD
-/mainMappers/
-/phoneMappers/
-/sql/
-/com/
 /boardMappers/
+/mainMappers/
+/paymentMappers/
 /quoteMappers/
-=======
-/boardMappers/
-/mainMappers/
-/phoneMappers/
 /sql/
-/com/
->>>>>>> branch 'master' of https://github.com/lee52x/PhoneFormation
+/paymentMappers/

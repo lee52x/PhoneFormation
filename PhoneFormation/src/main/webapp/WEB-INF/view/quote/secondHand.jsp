@@ -37,29 +37,42 @@ $(document).ready(function(){
         
     });
 	
+	var purchaseYear = $("select#purchaseYear");
+    
+	purchaseYear.change(function(){
+        var select_name = $(this).children("option:selected").text();
+        $(this).siblings("label").text(select_name);
+        
+    });
+	var purchaseMonth = $("select#purchaseMonth");
+    
+	purchaseMonth.change(function(){
+        var select_name = $(this).children("option:selected").text();
+        $(this).siblings("label").text(select_name);
+        
+    });
+	
 	$('#manufacture').change(function(){
-		if($('#manufacture').val()=='samsung'){		
+	
 		
 			$.ajax({
-				url:"/phonefo/samsung",
-				data:{"manufacture":"samsung"},
+				url:"/phonefo/machine",
+				data:{manufacture:$('#manufacture').val()},
 				success:function(result){
-					
+					//alert(result); result==배열 [{name:갤럭시},{}]
+					//alert(result[0].name);
+					var options='';
+				   for(var i=0;i<result.length;i++){
+					   //alert(result[i].name);
+					       options += '<option>'+result[i].name+'</option>';
+				   }
+				   $('#machine').html(options);
 				}
-				
-			});	
-		
-			
-			
-		}else if($('#manufacture').val()=='lg'){
-			
+			});
+
 		$("option[value=Galaxy6]").remove();
 		$("option[value=Galaxy5]").remove();
 
-
-		}else{
-
-		}
 	});
 
 	});
@@ -723,6 +736,25 @@ div#select_box select#capacity {
 	filter: alpha(opacity = 0);
 }
 
+div#select_box select#purchaseYear {
+	width: 100%;
+	height: 30px;
+	min-height: 30px;
+	line-height: 30px;
+	padding: 0 10px;
+	opacity: 0;
+	filter: alpha(opacity = 0);
+}
+div#select_box select#purchaseMonth{
+	width: 100%;
+	height: 30px;
+	min-height: 30px;
+	line-height: 30px;
+	padding: 0 10px;
+	opacity: 0;
+	filter: alpha(opacity = 0);
+}
+
 label.label_text {
 	color: #727272;
 	padding: 0 5px;
@@ -1031,9 +1063,9 @@ label.checkbox-label {
 					<select id="manufacture"
 						name="category">
 						<option value="">제조사 선택</option>
-						<option value="samsung">삼성</option>
-						<option value="lg">LG</option>
-						<option value="apple">애플</option>
+						<option value="삼성전자">삼성</option>
+						<option value="LG전자">LG</option>
+						<option value="애플">애플</option>
 					</select>
 				</div> &nbsp&nbsp&nbsp
 			</td>
@@ -1063,7 +1095,7 @@ label.checkbox-label {
 			<td height="60" class="t_s_title">구매년월</td>
 			<td bgcolor="#FFFFFF">
 				<div id="select_box">
-					<label for="color">년</label> <select id="color" name="date">
+					<label for="color">년</label> <select id="purchaseYear" name="date">
 						<option value="2016">2016년</option>
 						<option value="2015">2015년</option>
 						<option value="2014">2014년</option>
@@ -1152,7 +1184,7 @@ label.checkbox-label {
 					</select>
 				</div>
 				<div id="select_box">
-					<label for="color">월</label> <select id="color" name="date">
+					<label for="color">월</label> <select id="purchaseMonth" name="date">
 						<option value="">월</option>
 						<option value="01">01월</option>
 						<option value="02">02월</option>

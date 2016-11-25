@@ -17,11 +17,11 @@ public class PhoneServiceImpl implements PhoneService{
 	PhoneDAO dao;
 	
 	@Override
-	public List<PhoneVO> samsung(String manufacture) throws Exception {
+	public List<PhoneVO> machine(String manufacture) throws Exception {
 		
-		return dao.samsung(manufacture);
+		return dao.machine(manufacture);
 	}
-	
+
 	
 	
 	

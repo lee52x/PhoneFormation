@@ -42,3 +42,8 @@ select *from ph_business_member
 			
 			select*from ph_member
 			select*from ph_business_member
+			
+			
+			select name from ph_phone
+ 			where manufacture=
+ 

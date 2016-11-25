@@ -16,12 +16,12 @@ public class PhoneDAOImpl implements PhoneDAO{
 	SqlSession sql;
 	
 	@Override
-	public List<PhoneVO> samsung(String manufacture) throws Exception {
+	public List<PhoneVO> machine(String manufacture) throws Exception {
 		
 		List<PhoneVO> list=null;
-		list =sql.selectList("quote.samsung",manufacture);
-		
+		list =sql.selectList("quote.machine",manufacture);
 		return list;
 	}
+
 
 }
