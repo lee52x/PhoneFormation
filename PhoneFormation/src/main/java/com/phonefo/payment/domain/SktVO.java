@@ -3,9 +3,11 @@ package com.phonefo.payment.domain;
 public class SktVO {
 	private String payment;
 	private String	data;
+	private String	extra_data;
 	private String call;
 	private String	sms;
 	private int		fixed_month;
+	private int		fixed_month_dis;
 	private int		fares_month;
 	private int		fares_24month;
 	private int		discount;
@@ -23,6 +25,12 @@ public class SktVO {
 	public void setData(String data) {
 		this.data = data;
 	}
+	public String getExtra_data() {
+		return extra_data;
+	}
+	public void setExtra_data(String extra_data) {
+		this.extra_data = extra_data;
+	}	
 	public String getCall() {
 		return call;
 	}
@@ -39,7 +47,13 @@ public class SktVO {
 		return fixed_month;
 	}
 	public void setFixed_month(int fixed_month) {
-		this.fixed_month = fixed_month;
+		this.fixed_month = fixed_month;	
+	}
+	public int getFixed_month_dis() {
+		return fixed_month_dis;
+	}
+	public void setFixed_month_dis(int fixed_month_dis) {
+		this.fixed_month_dis = fixed_month_dis;
 	}
 	public int getFares_month() {
 		return fares_month;

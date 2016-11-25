@@ -1,16 +1,16 @@
-/adminMappers/
 <<<<<<< HEAD
-/mainMappers/
-/phoneMappers/
-/sql/
-/com/
-/boardMappers/
-/quoteMappers/
 =======
+/adminMappers/
 /boardMappers/
 /mainMappers/
-/phoneMappers/
-/sql/
-/com/
 >>>>>>> branch 'master' of https://github.com/lee52x/PhoneFormation
 /paymentMappers/
+<<<<<<< HEAD
+/adminMappers/
+/boardMappers/
+/mainMappers/
+=======
+>>>>>>> branch 'master' of https://github.com/lee52x/PhoneFormation
+/quoteMappers/
+/sql/
+/com/
