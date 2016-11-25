@@ -30,7 +30,7 @@ select *
 		order by fixed_month desc
 	</select>
 	
-	<!-- band 데이터 요금제 -->
+	<!--  -->
 	<select id="payment_band_data" resultType="Skt_payment">
 		select *
 		from skt_pay
@@ -38,7 +38,6 @@ select *
 		order by fixed_month desc
 	</select>
 	
-	<!-- 전국민 무한 요금제 -->
 	<select id="payment_everyone_unlimited" resultType="Skt_payment">
 		select *
 		from skt_pay
@@ -46,7 +45,6 @@ select *
 		order by fixed_month desc
 	</select>
 	
-	<!-- T끼리 -->
 	<select id="payment_t_together" resultType="Skt_payment">
 		select *
 		from skt_pay
