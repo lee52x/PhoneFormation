@@ -22,5 +22,8 @@
 		from ph_board
 		where tno = #{tno}
 	</select>
-
+	<insert id="insert">
+		insert into ph_board(bno,tno,title,content,image,writer,viewcount)
+			values(ph_boardtype_seq.nextval,#{tno},#{title},#{content},#{image},#{writer},0)
+	</insert>
 </mapper>

@@ -11,4 +11,5 @@ public interface BoardService {
     public List<BoardVO> selectlist(SearchCriteria cri, int tno)throws Exception;
     public int listCount(int tno) throws Exception;
     public String selecttitle(int tno) throws Exception;
+    public void insert(BoardVO board) throws Exception;
 }

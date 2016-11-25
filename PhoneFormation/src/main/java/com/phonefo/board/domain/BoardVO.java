@@ -11,6 +11,11 @@ public class BoardVO {
 	private String writer;
 	private Date regdate;
 	private int viewcnt;
+	
+	@Override
+	public String toString() {
+		return "bno="+bno+",tno="+tno+",title="+title+",content="+content+",writer="+writer+"";
+	}
 
 	public int getBno() {
 		return bno;

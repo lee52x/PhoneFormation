@@ -25,7 +25,8 @@
 </head>
 <body>
 <center>
-	<div class="box">
+	<div class="container">
+	<div id="content">
 		<div class="box-header with-border">
 			<h3 class="box-title">${title}</h3>
 		</div>
@@ -50,8 +51,8 @@
 				</c:forEach>
 			</table>
 		</div>
-		<form role="form" action="boardinput" method="post">
-			<input type="button" value="글쓰기"/>
+		<form role="form" action="boardinput" method="get">
+			<input type="submit" value="글쓰기"/>			<!-- submit으로하면 css적용되고 button으로하면안됨 머임? -->
 			<input type='hidden' name='tno' value="${tno}">
 			<input type='hidden' name='page' value="${cri.page}">
 			<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
@@ -77,6 +78,7 @@
 					</div>
 				</div>
 				<!-- /.box-footer-->
+			</div>
 			</div>
 	</center>
 </body>
