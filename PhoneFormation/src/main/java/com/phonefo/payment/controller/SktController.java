@@ -5,7 +5,6 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.phonefo.payment.service.SktService;
 
@@ -18,9 +17,15 @@ public class SktController {
 
 	
 	@RequestMapping("/payment/skt")
-	public String payment(Model model) throws Exception{
+	public String payment(String payment, Model model) throws Exception{
 
 		model.addAttribute("body","./payment/skt.jsp");
+		
+		model.addAttribute("signiture", service.payment_signiture(payment));
+		model.addAttribute("band_yf", service.payment_band_yf(payment));
+		model.addAttribute("band_data", service.payment_band_data(payment));
+		model.addAttribute("everyone_unlimited", service.payment_everyone_unlimited(payment));
+		model.addAttribute("t_together", service.payment_t_together(payment));
 		
 		return "mainView";
 	}
@@ -28,7 +33,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/signiture_master")
 	public String skt_signiture_master(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_signiture_master.jsp");
+		model.addAttribute("body", "./payment/skt_signiture.jsp");
 		
 		model.addAttribute("signiture", service.payment_signiture(payment));
 		model.addAttribute("signiture_master", service.payment_signiture_master(payment));
@@ -40,7 +45,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/signiture_classic")
 	public String skt_signiture_classic(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_signiture_master.jsp");
+		model.addAttribute("body", "./payment/skt_signiture.jsp");
 		
 		model.addAttribute("signiture", service.payment_signiture(payment));
 		model.addAttribute("signiture_master", service.payment_signiture_master(payment));

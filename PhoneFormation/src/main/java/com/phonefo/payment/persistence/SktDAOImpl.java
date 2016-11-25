@@ -30,4 +30,24 @@ public class SktDAOImpl implements SktDAO {
 		return sqlSesstion.selectList("skt.payment_signiture_classic", payment);
 	}
 
+	@Override
+	public List<SktVO> payment_band_yf(String payment) throws Exception {
+		return sqlSesstion.selectList("skt.payment_band_yf", payment);
+	}
+
+	@Override
+	public List<SktVO> payment_band_data(String payment) throws Exception {
+		return sqlSesstion.selectList("skt.payment_band_data", payment);
+	}
+
+	@Override
+	public List<SktVO> payment_everyone_unlimited(String payment) throws Exception {
+		return sqlSesstion.selectList("skt.payment_everyone_unlimited", payment);
+	}
+
+	@Override
+	public List<SktVO> payment_t_together(String payment) throws Exception {
+		return sqlSesstion.selectList("skt.payment_t_together", payment);
+	}
+
 }
