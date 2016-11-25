@@ -19,7 +19,7 @@ public class AdminController {
 	private AdminService service;
 
 	@RequestMapping("/adminMember")//°ü¸®ÀÚ ¸â¹ö
-	public String listPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+	public String memberListPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		model.addAttribute("list", service.memberSearchCriteria(cri));
 
 		PageMaker pageMaker = new PageMaker();

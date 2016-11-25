@@ -297,7 +297,7 @@ infoArea .list1{overflow:hidden;height:120px}
 										
 									</ul>
 									<div class="btnBox">
-										<a href="skt_payment/details" title="T시그니처 Master 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="/phonefo/payment/skt/signiture_master" title="T시그니처 Master 자세히보기" class="btnS btnDgray">자세히보기</a>
 										
 									</div>
 								</div>
@@ -328,13 +328,13 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>88,000원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>88,000원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
-										<a href="javascript:goProductDetail('T시그니처 Classic', 'NA00005293', 'A101');" title="T시그니처 Classic 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="/phonefo/payment/skt/signiture_classic" title="T시그니처 Classic 자세히보기" class="btnS btnDgray">자세히보기</a>
 										</div>
 								</div>
 							</li>
@@ -364,9 +364,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>71,000원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>71,000원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -399,9 +399,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>62,000원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>62,000원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -435,9 +435,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>52,000원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>52,000원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -471,9 +471,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>42,000원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>42,000원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -507,9 +507,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>38,000원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>38,000원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -543,9 +543,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>75,900원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>75,900원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -579,9 +579,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>65,890원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>65,890원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -615,9 +615,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>56,100원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>56,100원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -651,9 +651,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>51,700원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>51,700원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -687,9 +687,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>46,200원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>46,200원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -723,9 +723,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>39,600원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>39,600원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -759,9 +759,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>32,890원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>32,890원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>요금약정<br>해당없음</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -795,9 +795,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>110,000원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>110,000원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>83,600원</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>83,600원</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -831,9 +831,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>93,500원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>93,500원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>71,500원</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>71,500원</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -867,9 +867,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>88,000원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>88,000원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>67,375원</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>67,375원</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -903,9 +903,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>82,500원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>82,500원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>61,875원</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>61,875원</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -939,9 +939,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>75,900원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>75,900원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>56,650원</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>56,650원</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -975,9 +975,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>71,500원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>71,500원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>53,075원</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>53,075원</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -1011,9 +1011,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>60,500원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>60,500원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>44,825원</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>44,825원</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -1047,9 +1047,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>49,500원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>49,500원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>37,125원</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>37,125원</li>
 										
 									</ul>
 									<div class="btnBox">
@@ -1083,9 +1083,9 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly"><strong>월정액 (부가세포함) : </strong>38,500원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>38,500원</li>
 										
-										<li id="stipulation"><strong>24개월약정시 (부가세포함) : </strong>30,580원</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>30,580원</li>
 										
 									</ul>
 									<div class="btnBox">
