@@ -29,4 +29,9 @@ public class BoardServiceImpl implements BoardService{
 		return dao.selecttitle(tno);
 	}
 
+	@Override
+	public void insert(BoardVO board) throws Exception {
+		dao.insert(board);
+	}
+
 }

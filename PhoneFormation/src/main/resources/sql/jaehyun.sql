@@ -35,10 +35,10 @@ create sequence ph_boardtype_seq
 
 drop sequence ph_reply_seq;
 create sequence ph_reply_seq
-start with 1
-increment by 1 
-nocache
-nocycle;
+	start with 1
+	increment by 1 
+	nocache
+	nocycle;
 
 drop sequence ph_board_seq;
 create sequence ph_board_seq

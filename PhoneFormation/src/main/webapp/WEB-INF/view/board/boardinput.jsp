@@ -6,68 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
-<style>
-
-/* 첨부파일 css */
-#imgInp{display: none;}
-#fileName{ font-family: '맑은 고딕'; width:600px; height:25px;  border:solid #b9b9b9 1px; }
-#fileFind{
- background: #704d1a;
- font-size:13px;
- padding:6px;
- color: white;
- font-family: '맑은 고딕';
- position: relative;
- cursor: pointer;
- 
-
-}
-
-
-
-.border1 {
-   border: solid #b9b9b9 1px;
-   border-top: 0;
-}
-
-.border2 {
-   border: solid #b9b9b9 1px;
-   border-top: 0;
-   border-left: 0;
-   border-right: 0;
-}
-
-.button1 {
-   border: 0;
-   height: 28px;
-   color: #fff;
-   background-color: #704d1a;
-   cursor: pointer;
-   font-size: 13px;
-}
-
-.button2 {
-   border: 0;
-   height: 30px;
-   color: #fff;
-   background-color: #545250;
-   cursor: pointer;
-   font-size: 18px;
-}
-
-.ttr {
-   width: 900px;
-   height: 400px;
-   margin: 0;
-   border: 0;
-}
-
-
-</style>
-
-<script src="//code.jquery.com/jquery.min.js"></script>
 <script>
-var check_file =0;
 $(document).ready(function(){
    $("#blah").hide();   
 
@@ -91,79 +30,84 @@ $(document).ready(function(){
     
     //file 양식으로 이미지를 선택(값이 변경) 되었을때 처리하는 코드
     $("#imgInp").change(function(){
-        check_file=1;  
-       readURL(this);
-    });
 
+       	readURL(this);
+  
+    });
+    
+    
+	$("#addBtn").on("click", function(){
+		var formObj = $("form[role='addform']");
+		formObj.submit();
+	});
+	$("#listBtn").on("click", function(){
+		var formObj = $("form[role='listform']");
+		formObj.submit();
+	});
  });
  
-function check(){
-   
-   var title = document.frm.title.value;
-   var contents = document.frm.contents.value;
-   if(title.trim()==''){
-      alert("제목을 입력하세요");
-   }else if(contents.trim() == ''){
-      alert("내용을 입력하세요");
-   }else if(check_file!=1){
-      alert("사진을 업로드하세요");
-   }else {
-      document.frm.submit();
-   }
-}
+
 </script>
 </head>
 <body>
-   <center>
-      <form action="review.do?action=insert" method="post" name="frm"
-         enctype="multipart/form-data">
-          <table cellpadding="8"
-            style="font-size: 18px; border-collapse: collapse; line-height: 30px;"
-            width="900px">
-            <tr style="font-size: 30px; font-weight: bold;">
-               <td align="center" class="border2" colspan="4" height="110px"
-                  align="center">REVIEW</td>
-            </tr>
+	<div class="container"  style="background-color: silver">
+   <div id="content" style="border: 1">
+		<!-- left column -->
+		<div class="col-md-12">
+			<!-- general form elements -->
+			<div class="box box-primary">
+				<div class="box-header">
+					<h3 class="box-title">글쓰기</h3>
+				</div>
+				<!-- /.box-header -->
 
-            <tr>
-               <td bgcolor="#dae6f4" class="border1" align="center" width="150px">작성자</td>
-               <td class="border1" align="center">${id}</td>
-            </tr>
+				<form role="addform" method="post" enctype="multipart/form-data" action="boardinput?tno=${tno}">
+					<div class="box-body">
+						<div class="form-group">
+							<label for="title">제목</label>
+							<input type="text" id='title' name='title' class="form-control" placeholder="Enter Title">
+						</div>
+						<div class="form-group">
+							<label for="content">파일첨부</label>
+							<input type="text" id="filename" class="form-control">
+							<label for="imgInp"><span id="fileFind">파일찾기</span></label>&nbsp;
+							<input type="file" id="imgInp" name="file" accept=".gif, .jpg, .png" style="display: none"onchange="javascript: document.getElementById('filename').value = this.value"> 
+						</div>
+						<div class="form-group">
+							<label>내용</label>
+							<div id="ta1" style="overflow-x:auto; width:500px; height: 300px; border: solid; 1px; margin: 20px; line-height: 20px; ">
+							<label for="content">
+								<img id="blah" src="#" />
+								<textarea name="content" id="content"style="border:0;width:490px; height:290px;"></textarea>
+							</label>
+							</div>
+							
+						</div>
+					</div>
+					<!-- /.box-body -->
 
-           <tr>
-               <td class="border1" align="center" bgcolor="#dae6f4" width="150px">첨부파일</td>
+					<div class="box-footer">
+						<button type="submit" class="btn btn-warning" id="addBtn">등록하기</button>
+						<button type="submit" class="btn btn-warning" id="listBtn">돌아가기</button>
+					</div>
+				</form>
+				<form role="listform" method="get" action="boardlist">
+					<input type='hidden' name='tno' value="${tno}">
+					<input type='hidden' name='page' value="${cri.page}">
+					<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
+					<input type='hidden' name='searchType' value="${cri.searchType}">
+					<input type='hidden' name='keyword' value="${cri.keyword}">
+				</form>
 
-               <td align="center" class="border1"><input type="file" id="imgInp" name="file" accept=".gif, .jpg, .png" onchange="javascript: document.getElementById('fileName').value = this.value"> 
-               <input type="text" id="fileName"> &nbsp; <label for="imgInp"><span id="fileFind">파일찾기</span></label>
-                  &nbsp;<input type="button" class="button1" value="취소" id="filecancle" />
-                  </td>
-            </tr>
+			</div>
+			<!-- /.box -->
+		</div>
+		<!--/.col (left) -->
 
-           
-           <tr>
-               <td bgcolor="#dae6f4" class="border1" align="center" width="150px">제목</td>
-               <td class="border1" width="420px"><input type="text"
-                  name="title"
-                  style="width: 750px; height: 30px; margin: 0; border: 0;"></td>
-
-            </tr>
-
-
-             <tr>
-               <td class="border1" colspan="2" align="center"> <img id="blah" src="#" />
-               <textarea class="ttr" rows="27" cols="71" name="contents" id="contents"> </textarea></td>
-            </tr>
-           
-           <tr>
-               <td class="border1" colspan="2" align="right"><input
-                  type="button" class="button2" value="등록" onclick="check()"/> <input type="button"
-                  class="button2" value="취소" onclick="location.href='review.do'" /></td>
-            </tr>
-         
-         <tr height="100px"></tr>
-         
-         </table>
-      </form>
-   </center>
-</body>
+	</div>
+	<!-- /.row -->
+</div>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 </html>
