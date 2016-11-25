@@ -87,7 +87,7 @@
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p>${master.data }</p>
+										<p>${master.data } + ${master.extra_data}</p>
 										<!-- 추가 안내 문구가 있을 경우 -->
 									</div> <span>무제한</span>
 								</li>
@@ -188,9 +188,9 @@
 												<th scope="row" class="left "><span>${signiture.payment}
 														></span></th>
 												<td>${signiture.fixed_month}원</td>
-												<td>${signiture.call }원</td>
+												<td>${signiture.call }</td>
 												<td>${signiture.sms }</td>
-												<td>${signiture.data}원</td>
+												<td>${signiture.data} + ${signiture.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -229,7 +229,7 @@
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p>${classic.data }</p>
+										<p>${classic.data } + ${classic.extra_data}</p>
 										<!-- 추가 안내 문구가 있을 경우 -->
 									</div> <span>무제한</span>
 								</li>
@@ -330,9 +330,9 @@
 												<th scope="row" class="left "><span>${signiture.payment}
 														></span></th>
 												<td>${signiture.fixed_month}원</td>
-												<td>${signiture.call }원</td>
+												<td>${signiture.call }</td>
 												<td>${signiture.sms }</td>
-												<td>${signiture.data}원</td>
+												<td>${signiture.data} + ${signiture.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
