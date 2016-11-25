@@ -1,15 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>요금제 - SKT 상세페이지</title>
-<link href="http://www.tworld.co.kr/poc/inc/css/common.css" rel="stylesheet" type="text/css">
-<link href="http://www.tworld.co.kr/poc/inc/css/purchase.css" rel="stylesheet" type="text/css">
-<link href="http://www.tworld.co.kr/poc/inc/css/product.css"	rel="stylesheet" type="text/css">
+<link href="http://www.tworld.co.kr/poc/inc/css/common.css"
+	rel="stylesheet" type="text/css">
+<link href="http://www.tworld.co.kr/poc/inc/css/purchase.css"
+	rel="stylesheet" type="text/css">
+<link href="http://www.tworld.co.kr/poc/inc/css/product.css"
+	rel="stylesheet" type="text/css">
 
-<link href="http://www.tworld.co.kr/poc/gnb/inc/css/gnb.css" rel="stylesheet" type="text/css">
+<link href="http://www.tworld.co.kr/poc/gnb/inc/css/gnb.css"
+	rel="stylesheet" type="text/css">
 
 
 <script type="text/javascript"
@@ -40,11 +45,12 @@
 		});
 		
 		$('a[id=siginiture_classic]').click(function() {
-			$('div[id=classic]').show();
 			$('div[id=master]').hide();
+			$('div[id=classic]').show();
 		});
 	});
 </script>
+
 
 
 </head>
@@ -56,33 +62,32 @@
 		<div id="content">
 			<!-- 기본정보 -->
 			<!-- 2016.06.23 수정 -->
-			
-			
-			
-			<!-- signiture_classic -->
-			<div class="prCont basicArea" id="classic">
+			<!-- signiture_master -->
+			<div class="prCont basicArea" id="master">
+			<c:forEach items="${signiture_master}" var="master">
 				<div class="inner">
 					<div class="titTop">
-					<br><br>
-						<h1>T시그니처 Classic</h1>
+						<br>
+						<br>
+						
+						<h1>${master.payment }</h1>
 					</div>
 					<!-- 다이어그램 내용 : 어드민에서 입력 버그 조치되면 우측 태그 살릴 것 <dl class="prTopType type1"></dl>-->
 					<dl class="prTopType type1">
 						<dt>
-							<img
-								src="/resources/images/payment/skt/signiture_classic.jpg"
+							<img src="/resources/images/payment/skt/signiture_master.jpg"
 								alt="T 시그니처 Master">
 						</dt>
 						<dd>
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
-							<ul class="graphArea">
+							<ul class="graphArea" style="width: 350px">
 								<!-- 제공량의 텍스트가 길 경우 class="type2" 추가 -->
 								<li class="full">
 									<!-- 무제한일 경우 class="full" --> <em class="data">데이터</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p>35GB+매일2GB 이후 속도제어</p>
+										<p>${master.data }</p>
 										<!-- 추가 안내 문구가 있을 경우 -->
 									</div> <span>무제한</span>
 								</li>
@@ -90,20 +95,21 @@
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p>집전화·이동전화 무제한</p>
+										<p>${master.call }</p>
 									</div> <span>무제한</span></li>
 								<li class="full"><em class="mail">문자</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-									</div><span>기본제공</span></li>
+									</div>
+									<span>${master.sms}</span></li>
 							</ul>
 						<dd>
 							<strong class="benefitTit">SKT만의 혜택</strong>
 							<div class="txt">통신/ Device / 안심 Care 서비스 제공</div>
 							<br> <strong class="tit">월정액 (VAT포함)</strong>
 							<p class="price">
-								<em>110,000</em><span>원</span>
+								<em>${master.fixed_month }</em><span>원</span>
 							</p>
 					</dl>
 					<br>
@@ -117,6 +123,8 @@
 						<div class="prTabCon pr_band100"></div>
 					</div>
 				</div>
+				</c:forEach>
+				
 				<div id="prTabCon2">
 					<h2 class="hidden">시리즈 안내</h2>
 					<div class="prCont bandData bg_gray">
@@ -136,14 +144,12 @@
 							<h4 class="hidden">이미지로 보기</h4>
 							<div class="graphic">
 								<ul>
-									<li class="balloon2 on"><a
-										href="#classic" id="siginiture_classic"><strong>T
-												시그니처<br>(Classic)
+									<li class="balloon2"><a href="#classic"
+										id="siginiture_classic"><strong>T 시그니처<br>(Classic)
 										</strong><span class="dLine"><em>20GB<br>+
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon1"><a
-										href="#master" id="siginiture_master"><strong>T
-												시그니처<br>(Master)
+									<li class="balloon1 on"><a href="#master"
+										id="siginiture_master"><strong>T 시그니처<br>(Master)
 										</strong><span><em>35GB<br>+
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
 									<!--두줄이상일때  class="dLine" 추가-->
@@ -177,55 +183,53 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<th scope="row" class="left bg_gray"><span>T
-													시그니처(Classic)</span></th>
-											<td class="right bg_gray">88,000원</td>
-											<td  class="bg_gray">집전화, 이동전화 무제한</td>
-											<td  class="bg_gray">기본제공</td>
-											<td  class="bg_gray">무제한<br>20GB+매일2GB 이후 속도제어
-											</td>
-										</tr>
-										<tr>
-											<th scope="row" class="left "><span>T
-													시그니처(Master)</span></th>
-											<td class="right ">88,000원</td>
-											<td>집전화, 이동전화 무제한</td>
-											<td>기본제공</td>
-											<td>무제한<br>20GB+매일2GB 이후 속도제어</td>
-										</tr>
+										<c:forEach items="${signiture}" var="signiture">
+											<tr>
+												<th scope="row" class="left "><span>${signiture.payment}
+														></span></th>
+												<td>${signiture.fixed_month}원</td>
+												<td>${signiture.call }원</td>
+												<td>${signiture.sms }</td>
+												<td>${signiture.data}원</td>
+											</tr>
+											
+										</c:forEach>
 									</tbody>
 								</table>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div><!-- signiture_classic -->
+			</div>
 			
 			<!-- signiture_master -->
-			<div class="prCont basicArea" id="master" style="display: none;">
+
+
+			<!-- signiture_classic -->
+			<div class="prCont basicArea" id="classic" >
+			<c:forEach items="${signiture_classic}" var="classic">
 				<div class="inner">
 					<div class="titTop">
-					<br><br>
-						<h1>T시그니처 Master</h1>
+						<br>
+						<br>
+						<h1>${classic.payment }</h1>
 					</div>
 					<!-- 다이어그램 내용 : 어드민에서 입력 버그 조치되면 우측 태그 살릴 것 <dl class="prTopType type1"></dl>-->
 					<dl class="prTopType type1">
 						<dt>
-							<img
-								src="/resources/images/payment/skt/signiture_master.jpg"
+							<img src="/resources/images/payment/skt/signiture_classic.jpg"
 								alt="T 시그니처 Master">
 						</dt>
 						<dd>
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
-							<ul class="graphArea">
+							<ul class="graphArea" style="width: 350px">
 								<!-- 제공량의 텍스트가 길 경우 class="type2" 추가 -->
 								<li class="full">
 									<!-- 무제한일 경우 class="full" --> <em class="data">데이터</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p>35GB+매일2GB 이후 속도제어</p>
+										<p>${classic.data }</p>
 										<!-- 추가 안내 문구가 있을 경우 -->
 									</div> <span>무제한</span>
 								</li>
@@ -233,20 +237,21 @@
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p>집전화·이동전화 무제한</p>
+										<p>${classic.call }</p>
 									</div> <span>무제한</span></li>
 								<li class="full"><em class="mail">문자</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-									</div><span>기본제공</span></li>
+									</div>
+									<span>${classic.sms }</span></li>
 							</ul>
 						<dd>
 							<strong class="benefitTit">SKT만의 혜택</strong>
 							<div class="txt">통신/ Device / 안심 Care 서비스 제공</div>
 							<br> <strong class="tit">월정액 (VAT포함)</strong>
 							<p class="price">
-								<em>110,000</em><span>원</span>
+								<em>${classic.fixed_month }</em><span>원</span>
 							</p>
 					</dl>
 					<br>
@@ -260,6 +265,8 @@
 						<div class="prTabCon pr_band100"></div>
 					</div>
 				</div>
+				</c:forEach>
+				
 				<div id="prTabCon2">
 					<h2 class="hidden">시리즈 안내</h2>
 					<div class="prCont bandData bg_gray">
@@ -279,14 +286,12 @@
 							<h4 class="hidden">이미지로 보기</h4>
 							<div class="graphic">
 								<ul>
-									<li class="balloon2"><a
-										href="#classic" id="siginiture_classic"><strong>T
-												시그니처<br>(Classic)
+									<li class="balloon2 on"><a href="#classic"
+										id="siginiture_classic"><strong>T 시그니처<br>(Classic)
 										</strong><span class="dLine"><em>20GB<br>+
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon1 on"><a
-										href="#master" id="siginiture_master"><strong>T
-												시그니처<br>(Master)
+									<li class="balloon1"><a href="#master"
+										id="siginiture_master"><strong>T 시그니처<br>(Master)
 										</strong><span><em>35GB<br>+
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
 									<!--두줄이상일때  class="dLine" 추가-->
@@ -320,35 +325,52 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<th scope="row" class="left "><span>T
-													시그니처(Classic)</span></th>
-											<td class="right">88,000원</td>
-											<td>집전화, 이동전화 무제한</td>
-											<td>기본제공</td>
-											<td>무제한<br>20GB+매일2GB 이후 속도제어
-											</td>
-										</tr>
-										<tr>
-											<th scope="row" class="left bg_gray"><span>T
-													시그니처(Master)</span></th>
-											<td class="right bg_gray">110,000원</td>
-											<td class="bg_gray">집전화, 이동전화 무제한</td>
-											<td class="bg_gray">기본제공</td>
-											<td class="bg_gray">무제한<br>35GB+매일2GB 이후 속도제어</td>
-										</tr>
+										<c:forEach items="${signiture}" var="signiture">
+											<tr>
+												<th scope="row" class="left "><span>${signiture.payment}
+														></span></th>
+												<td>${signiture.fixed_month}원</td>
+												<td>${signiture.call }원</td>
+												<td>${signiture.sms }</td>
+												<td>${signiture.data}원</td>
+											</tr>
+											
+										</c:forEach>
+
 									</tbody>
 								</table>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div><!-- signiture_master -->
-			
-			
-			
+			</div>
+	
+
+			<!-- signiture_classic -->
+
+
+
+
 		</div>
 	</div>
 
+
+
 </body>
+<script type="text/javascript">
+
+/* 	var url = document.URL;
+	alert(url); */
+	
+	if(location.href.match('classic')){
+		// alert("하이 클래식");
+		$('#master').hide();
+		$('#classic').show();
+	}else{
+		// alert("하이 마스터");
+		$('div[id=classic]').css("display", "none");
+		$('div[id=master]').show();
+	} 
+	
+</script>
 </html>

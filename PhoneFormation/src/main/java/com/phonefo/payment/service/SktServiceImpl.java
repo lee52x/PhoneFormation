@@ -16,8 +16,18 @@ public class SktServiceImpl implements SktService {
 	private SktDAO dao;
 
 	@Override
-	public List<SktVO> payment(String payment) throws Exception {
-		return dao.payment(payment);
+	public List<SktVO> payment_signiture(String payment) throws Exception {
+		return dao.payment_signiture(payment);
+	}
+
+	@Override
+	public List<SktVO> payment_signiture_master(String payment) throws Exception {
+		return dao.payment_signiture_master(payment);
+	}
+
+	@Override
+	public List<SktVO> payment_signiture_classic(String payment) throws Exception {
+		return dao.payment_signiture_classic(payment);
 	}
 
 }

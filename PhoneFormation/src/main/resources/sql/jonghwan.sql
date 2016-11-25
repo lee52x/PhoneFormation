@@ -9,7 +9,7 @@ create table skt_pay(
 	sms					varchar2(50),
 	fixed_month		number,
 	fares_month		number,
-	fares_24month	number,
+	fares_24month		number,
 	discount				number
 
 );
@@ -23,7 +23,7 @@ create table kt_pay(
 	sms					varchar2(50),
 	fixed_month		number,
 	fares_month		number,
-	fares_24month	number,
+	fares_24month		number,
 	discount				number
 
 );
@@ -37,7 +37,7 @@ create table lg_pay(
 	sms					varchar2(50),
 	fixed_month		number,
 	fares_month		number,
-	fares_24month	number,
+	fares_24month		number,
 	discount				number
 
 );
@@ -48,25 +48,25 @@ select * from SKT_PAY
 where payment like '%시그니처%'; 
 
 --SKT 요금제 INSERT
-INSERT INTO SKT_PAY VALUES('T 시그니처 Master', '35GB + 2GB/일', '무제한', '기본제공', 110000, 22000, 528000, 88000);
-INSERT INTO SKT_PAY VALUES('T 시그니처 Classic', '20GB + 2GB/일', '무제한', '기본제공', 88000,	17600,	422400,	70400);
-INSERT INTO SKT_PAY VALUES('band YF 퍼펙트', '12GB + 2GB/일', '무제한', '기본제공', 71000,	14200,	340800,	56800);
-INSERT INTO SKT_PAY VALUES('band YF 7G', '7G', '무제한', '기본제공', 62000, 12400, 297600, 49600);
-INSERT INTO SKT_PAY VALUES('band YF 3G', '3G', '무제한', '기본제공', 52000, 10400, 249600, 41600);
-INSERT INTO SKT_PAY VALUES('band YF 1G', '1G', '무제한', '기본제공', 42000,	8400,	201600,	33600);
-INSERT INTO SKT_PAY VALUES('band YF 세이브', '500MB', '무제한', '기본제공', 38000,	7600,	182400,	30400);
-INSERT INTO SKT_PAY VALUES('band 데이터 퍼펙트S', '16GB + 2GB/일', '무제한', '기본제공', 75000, 15180, 364320, 59820);
-INSERT INTO SKT_PAY VALUES('band 데이터 퍼펙트', '11GB + 2GB/일', '무제한', '기본제공', 65890, 13200, 316800, 52690);
-INSERT INTO SKT_PAY VALUES('band 데이터 6.5G',	'6.5GB', '무제한', '기본제공', 56100, 11220, 269280, 44880);
-INSERT INTO SKT_PAY VALUES('band 데이터 3.5G', '3.5GB', '무제한', '기본제공', 51700, 10340, 248160, 41360);
-INSERT INTO SKT_PAY VALUES('band 데이터 2.2G', '2.3GB', '무제한', '기본제공', 46200,	9240,	221760,	36960);
-INSERT INTO SKT_PAY VALUES('band 데이터 1.2G', '1.2GB', '무제한', '기본제공', 39600, 7920, 190080, 31680);
-INSERT INTO SKT_PAY VALUES('band 데이터 save', '300MB', '무제한', '기본제공', 32890, 6600, 158400, 26290);
-INSERT INTO SKT_PAY VALUES('전국민 무한 100', '16GB	+ 2GB/일', '무제한 부가 / 영상 300분', '기본제공', 83600, 16720, 401280, 66880);
-INSERT INTO SKT_PAY VALUES('전국민 무한 85', '12GB	+ 2GB/일', '무제한 부가 / 영상 300분', '기본제공', 71500, 14300, 343200, 57200);
-INSERT INTO SKT_PAY VALUES('LTE 데이터 무제한 80팩', '8GB	+ 2GB/일 ', '무제한 부가 / 영상 300분', '기본제공', 	67375, 12375, 297000, 55000);
-INSERT INTO SKT_PAY VALUES('전국민 무한 75', '8GB', '무제한 부가 / 영상 300분', '기본제공', 61875, 12375 , 297000, 49500);
-INSERT INTO SKT_PAY VALUES('전국민 무한 69', '5GB', '무제한 부가 / 영상 200분', '기본제공', 56650, 11330, 271920, 45320);
+INSERT INTO SKT_PAY VALUES('T 시그니처 Master', '35GB + 매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한', '기본제공', 110000, 22000, 528000, 88000);
+INSERT INTO SKT_PAY VALUES('T 시그니처 Classic', '20GB + 매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한', '기본제공', 88000,	17600,	422400,	70400);
+INSERT INTO SKT_PAY VALUES('band YF 퍼펙트', '12GB + 매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한', '기본제공', 71000,	14200,	340800,	56800);
+INSERT INTO SKT_PAY VALUES('band YF 7G', '7G', '집전화, 이동전화 무제한', '기본제공', 62000, 12400, 297600, 49600);
+INSERT INTO SKT_PAY VALUES('band YF 3G', '3G', '집전화, 이동전화 무제한', '기본제공', 52000, 10400, 249600, 41600);
+INSERT INTO SKT_PAY VALUES('band YF 1G', '1G', '집전화, 이동전화 무제한', '기본제공', 42000,	8400,	201600,	33600);
+INSERT INTO SKT_PAY VALUES('band YF 세이브', '500MB', '집전화, 이동전화 무제한', '기본제공', 38000,	7600,	182400,	30400);
+INSERT INTO SKT_PAY VALUES('band 데이터 퍼펙트S', '16GB + 매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한', '기본제공', 75000, 15180, 364320, 59820);
+INSERT INTO SKT_PAY VALUES('band 데이터 퍼펙트', '11GB + 매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한', '기본제공', 65890, 13200, 316800, 52690);
+INSERT INTO SKT_PAY VALUES('band 데이터 6.5G',	'6.5GB', '집전화, 이동전화 무제한', '기본제공', 56100, 11220, 269280, 44880);
+INSERT INTO SKT_PAY VALUES('band 데이터 3.5G', '3.5GB', '집전화, 이동전화 무제한', '기본제공', 51700, 10340, 248160, 41360);
+INSERT INTO SKT_PAY VALUES('band 데이터 2.2G', '2.3GB', '집전화, 이동전화 무제한', '기본제공', 46200,	9240,	221760,	36960);
+INSERT INTO SKT_PAY VALUES('band 데이터 1.2G', '1.2GB', '집전화, 이동전화 무제한', '기본제공', 39600, 7920, 190080, 31680);
+INSERT INTO SKT_PAY VALUES('band 데이터 save', '300MB', 'ㅍ무제한', '기본제공', 32890, 6600, 158400, 26290);
+INSERT INTO SKT_PAY VALUES('전국민 무한 100', '16GB	+ 매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한 부가 / 영상 300분', '기본제공', 83600, 16720, 401280, 66880);
+INSERT INTO SKT_PAY VALUES('전국민 무한 85', '12GB	+ 매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한 부가 / 영상 300분', '기본제공', 71500, 14300, 343200, 57200);
+INSERT INTO SKT_PAY VALUES('LTE 데이터 무제한 80팩', '8GB	+ 매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한 부가 / 영상 300분', '기본제공', 	67375, 12375, 297000, 55000);
+INSERT INTO SKT_PAY VALUES('전국민 무한 75', '8GB', '집전화, 이동전화 무제한 부가 / 영상 300분', '기본제공', 61875, 12375 , 297000, 49500);
+INSERT INTO SKT_PAY VALUES('전국민 무한 69', '5GB', '집전화, 이동전화 무제한 부가 / 영상 200분', '기본제공', 56650, 11330, 271920, 45320);
 INSERT INTO SKT_PAY VALUES('T끼리 65', '5GB', 'SKT 고객간 무제한 그 외 280분' , '기본제공', 53075, 10615, 254760, 42460);
 INSERT INTO SKT_PAY VALUES('T끼리 55', '2GB', 'SKT 고객간 무제한 그 외 180분', '기본제공', 44825, 8965, 215160, 35860);
 INSERT INTO SKT_PAY VALUES('T끼리 45', '1.1GB', 'SKT 고객간 무제한 그 외 130분', '기본제공', 37125, 7425, 178200, 29700);
@@ -135,6 +135,10 @@ INSERT INTO LG_PAY VALUES('LTE-알190', '300MB', '20000알', '20000알', 20900, 
 		from skt_pay
 		where payment like '%시그니처%'
 		order by fixed_month;
+		
+		select *
+		from skt_pay
+		where payment like 'T 시그니처 Master';
 
 
 
