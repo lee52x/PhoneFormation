@@ -31,8 +31,6 @@
          id="sqlSession">
       <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>      
    </bean>
-   <!-- 파일업로드할때 필요한 multipartrequest사용하기위해등록 -->
-   <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
    
    <!-- DAOImpl 클래스 객체 등록 -->
    <context:component-scan base-package="com.phonefo.main.persistence"/>

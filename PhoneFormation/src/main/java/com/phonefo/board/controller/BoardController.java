@@ -1,7 +1,6 @@
 package com.phonefo.board.controller;
 
 import javax.inject.Inject;
-import javax.servlet.annotation.MultipartConfig;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,15 +47,11 @@ public class BoardController {
 	}
 	// 입력
 	@RequestMapping(value = "/boardinput", method = RequestMethod.POST)
-	public String inputpagePOST(SearchCriteria cri, BoardVO board,@ModelAttribute("tno")int tno ,RedirectAttributes attr) throws Exception {
+	public String inputpagePOST(BoardVO board,@ModelAttribute("tno")int tno ,RedirectAttributes attr) throws Exception {
 		board.setWriter("테스트");
 		System.out.println(board);
 		service.insert(board);
-		
-		attr.addAttribute("page", cri.getPage());
-		attr.addAttribute("perPageNum", cri.getPerPageNum());
-		attr.addAttribute("searchType", cri.getSearchType());
-		attr.addAttribute("keyword", cri.getKeyword());
+
 		return "redirect:/phonefo/boardlist?tno="+tno;
 	}
 
