@@ -155,25 +155,25 @@
 							</ul></li>
 						<li><a href="about.html">견적</a>
 							<ul class="dropdown">
-								<li><a href="services.html">중고</a></li>
+								<li><a href="/phonefo/secondHand">중고</a></li>
 								<li><a href="about.html">수리</a></li>
 							</ul></li>
-						<li><a href="/phonefo/skt_payment">요금제</a>
+						<li><a href="/phonefo/payment/skt">요금제</a>
 							<ul class="dropdown">
-								<li><a href="/phonefo/skt_payment">SKT</a></li>
+								<li><a href="/phonefo/payment/skt">SKT</a></li>
 								<li><a href="buttons.html">KT</a></li>
 								<li><a href="testimonials.html">LG</a></li>
 							</ul></li>
 						<li><a href="portfolio-3.html">이벤트</a>
 							<ul class="dropdown">
-								<li><a href="portfolio-2.html">KT</a></li>
-								<li><a href="portfolio-3.html">LGU+</a></li>
-								<li><a href="portfolio-3.html">SKT</a></li>
+								<li><a href="/phonefo/boardlist?tno=1">KT</a></li>
+								<li><a href="/phonefo/boardlist?tno=2">LGU+</a></li>
+								<li><a href="/phonefo/boardlist?tno=3">SKT</a></li>
 							</ul></li>
 						<li><a href="blog.html">게시판</a>
 							<ul class="dropdown">
-								<li><a href="blog.html">공지사항</a></li>
-								<li><a href="blog-left-sidebar.html">자유게시판</a></li>
+								<li><a href="/phonefo/boardlist?tno=4">공지사항</a></li>
+								<li><a href="/phonefo/boardlist?tno=5">자유게시판</a></li>
 							</ul></li>
 						<li><a href="contact.html">Contact</a></li>
 					</ul>

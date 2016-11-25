@@ -1,17 +1,7 @@
-/com/
-<<<<<<< HEAD
-/sql/
-/mappers/
-/phoneMapper/
-/quoteMapper/
-/feeMapper/
-/phoneMappers/
-/quoteMappers/
-/feeMappers/
-/eventMappers/
-/boardMappers/
-/mainMappers/
-=======
-/mappers/
->>>>>>> refs/remotes/origin/master
 /adminMappers/
+/mainMappers/
+/phoneMappers/
+/sql/
+/com/
+/boardMappers/
+/quoteMappers/
