@@ -6,5 +6,6 @@
 <typeAlias type="com.phonefo.admin.domain.AdminMemberVO" alias="admin"/>
 <typeAlias type="com.phonefo.payment.domain.SktVO" alias="skt_payment"/>
 <typeAlias type="com.phonefo.board.domain.BoardVO" alias="boardVO"/>
+<typeAlias type="com.phonefo.phone.domain.PhoneInfoVO" alias="phone"/>
 </typeAliases>
 </configuration>
