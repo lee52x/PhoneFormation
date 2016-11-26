@@ -78,17 +78,51 @@ $(document).ready(function(){
 			url:"/phonefo/capacity",
 			data:{machine:$('#machine').val()},
 			success:function(result){
+				var options='';
+				for(var i=0;i<result.length;i++){
+					options += '<option>'+result[i].capacity+'</option>';
+					if(i==0){
+					options += '<option>용량선택</option>';	
+					}
+				}
+				$('#capacity').html(options);
+				
 				
 			}
 		});
 		
 	});
-	
+
 	
 	
 	
 
 	});
+	function check(){
+		
+		var f=document.frm;
+/* 		alert(f.radid_01.value);
+		alert(f.manufacture.value);
+		alert(f.machine.value);
+		alert(f.capacity.value); 
+		alert(f.year.value);
+		alert(f.month.value);
+		alert(f.radid_02.value);
+		alert(f.radid_03.value);
+		alert(f.radid_04.value);
+	*/	
+	$.ajax({
+		url:"/phonefo/calculator",
+		type:'POST',
+		data:{howsend:f.radid_01.value, manufacture:f.manufacture.value, machine:f.machine.value, capacity:f.capacity.value, year:f.year.value, month:f.month.value, power:f.radid_02.value, glass:f.radid_03.value, equipment:f.radid_04.value},
+		success:function(result){
+			
+		}
+	});	
+	
+	
+	}
+	
 
 </script>
 <style type="text/css">
@@ -1019,6 +1053,7 @@ label.checkbox-label {
 </head>
 
 <body>
+<form name="frm">
 <div class="page-banner">
 		<div class="container">
 			<div class="row">
@@ -1055,9 +1090,9 @@ label.checkbox-label {
 		<tr>
 			<td width="310px" height="60px" class="t_b_title">매각 선택</td>
 			<td bgcolor="#FFFFFF"><input type="radio" name="radid_01"
-				id="radio1" class="css-checkbox" checked="checked" /> <label
+				id="radio1" class="css-checkbox" value="방문" checked="checked"  /> <label
 				for="radio1" class="radio-label">방문</label>
-				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="radid_01"
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" value="택배" name="radid_01"
 				id="radio2" class="css-checkbox" /> <label for="radio2"
 				class="radio-label">택배</label></td>
 		</tr>
@@ -1074,7 +1109,7 @@ label.checkbox-label {
 				<div id="select_box">
 					<label for="color" id="selec">제조사 선택</label> 
 					<select id="manufacture"
-						name="category">
+						name="manufacture">
 						<option value="">제조사 선택</option>
 						<option value="삼성전자">삼성</option>
 						<option value="LG전자">LG</option>
@@ -1088,7 +1123,7 @@ label.checkbox-label {
 			<td bgcolor="#FFFFFF">
 				<div id="select_box">
 					<label for="color">기기명 선택</label> <select id="machine"
-						name="category">
+						name="machine">
 					</select>
 				</div> &nbsp&nbsp&nbsp
 		</tr>
@@ -1097,10 +1132,8 @@ label.checkbox-label {
 			<td bgcolor="#FFFFFF">
 				<div id="select_box">
 					<label for="color">용량선택</label> <select id="capacity"
-						name="category">
+						name="capacity">
 						<option value="">용량선택</option>
-						<option value="kt">16GB</option>
-						<option value="LGU+">32GB</option>
 					</select>
 				</div> &nbsp&nbsp&nbsp
 		</tr>
@@ -1108,7 +1141,7 @@ label.checkbox-label {
 			<td height="60" class="t_s_title">구매년월</td>
 			<td bgcolor="#FFFFFF">
 				<div id="select_box">
-					<label for="color">년</label> <select id="purchaseYear" name="date">
+					<label for="color">년</label> <select id="purchaseYear" name="year">
 						<option value="2016">2016년</option>
 						<option value="2015">2015년</option>
 						<option value="2014">2014년</option>
@@ -1197,7 +1230,7 @@ label.checkbox-label {
 					</select>
 				</div>
 				<div id="select_box">
-					<label for="color">월</label> <select id="purchaseMonth" name="date">
+					<label for="color">월</label> <select id="purchaseMonth" name="month">
 						<option value="">월</option>
 						<option value="01">01월</option>
 						<option value="02">02월</option>
@@ -1218,9 +1251,9 @@ label.checkbox-label {
 		<tr>
 			<td height="60" class="t_s_title">전원상태</td>
 			<td bgcolor="#FFFFFF">
-			<input type="radio" name="radid_02" id="radio3" class="css-checkbox" checked="checked" />
+			<input type="radio" name="radid_02" id="radio3" class="css-checkbox" checked="checked" value="작동" />
 			 <label for="radio3" class="radio-label">작동</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-			 <input type="radio" name="radid_02" id="radio4" class="css-checkbox" /> 
+			 <input type="radio" name="radid_02" id="radio4" class="css-checkbox" value="미작동" /> 
 			 <label for="radio4" class="radio-label">미작동</label></td>
 
 			</td>
@@ -1228,16 +1261,16 @@ label.checkbox-label {
 		<tr>
 			<td height="60" class="t_s_title">액정상태</td>
 		<td bgcolor="#FFFFFF">
-			<input type="radio" name="radid_03" id="radio5" class="css-checkbox" checked="checked" />
+			<input type="radio" name="radid_03" id="radio5" class="css-checkbox" value="파손" checked="checked" />
 			 <label for="radio5" class="radio-label">파손</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			 
-			 <input type="radio" name="radid_03" id="radio6" class="css-checkbox" /> 
+			 <input type="radio" name="radid_03" id="radio6" value="기스심함" class="css-checkbox" /> 
 			 <label for="radio6" class="radio-label">기스심함</label>
 			 
-			 <input type="radio" name="radid_03" id="radio7" class="css-checkbox" />
+			 <input type="radio" name="radid_03" id="radio7" value="기스보통" class="css-checkbox" />
 			 <label for="radio7" class="radio-label">기스보통</label>
 			 
-			 <input type="radio" name="radid_03" id="radio8" class="css-checkbox" />
+			 <input type="radio" name="radid_03" id="radio8" value="기스없음" class="css-checkbox" />
 			 <label for="radio8" class="radio-label">기스없음</label>
 		</td>
 
@@ -1246,13 +1279,13 @@ label.checkbox-label {
 			<td height="60" class="t_s_title">기기상태</td>
 		<td bgcolor="#FFFFFF">
 			 
-			 <input type="radio" name="radid_04" id="radio9" class="css-checkbox" checked="checked"/> 
+			 <input type="radio" name="radid_04" id="radio9" value="기스심함" class="css-checkbox" checked="checked"/> 
 			 <label for="radio9" class="radio-label">기스심함</label>
 			 
-			 <input type="radio" name="radid_04" id="radio10" class="css-checkbox" />
+			 <input type="radio" name="radid_04" id="radio10" value="기스보통" class="css-checkbox" />
 			 <label for="radio10" class="radio-label">기스보통</label>
 			 
-			 <input type="radio" name="radid_04" id="radio11" class="css-checkbox" />
+			 <input type="radio" name="radid_04" id="radio11" value="기스없음" class="css-checkbox" />
 			 <label for="radio11" class="radio-label">기스없음</label>
 		</td>
 
@@ -1262,9 +1295,10 @@ label.checkbox-label {
 		<table width="1160px" border="0" align="center" cellpadding="10" cellspacing="1">
 	<br><br><br><br>
 	<tr>
-		<td height="60" align="center" ><button class="btn_counsel">견적보기</button></td>
+		<td height="60" align="center" ><button type="button" class="btn_counsel" id="calculator" onclick="check()">견적보기</button></td>
 	</tr>
 </table>
 <br><br><br>
+</form>
 </body>
 </html>

@@ -22,6 +22,21 @@ public class PhoneServiceImpl implements PhoneService{
 		return dao.machine(manufacture);
 	}
 
+	@Override
+	public List<PhoneVO> capacity(String machine) throws Exception {
+			
+		return dao.capacity(machine);
+	}
+
+	@Override
+	public PhoneVO price(String machine, String capacity)throws Exception{
+		
+		System.out.println(machine);
+		System.out.println(capacity);
+		return dao.price(machine,capacity);
+		
+	}
+
 	
 	
 	
