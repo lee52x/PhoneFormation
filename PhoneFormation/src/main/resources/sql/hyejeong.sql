@@ -61,10 +61,10 @@ insert into ph_phone values (ph_phone_seq.nextval, 'G3', '/resources/images/phon
 
 
 create table ph_color( --핸드폰 색상
-	name varchar2(100) not null,
+	name varchar2(100),
 	color varchar2(30) not null,
-	image LONG not null
-	const
+	image LONG not null,
+	foreign key(name) references ph_phone(name)
 );
 
 --삼성전자
@@ -217,9 +217,10 @@ insert into ph_color values ('G3', '샤인골드', '/resources/images/phone/G3_샤인�
 
 
 create table ph_capacity( --핸드폰 용량
-	name varchar2(100) not null,
+	name varchar2(100),
 	capacity varchar2(15) not null,
-	release_price number not null --출고가
+	release_price number not null, --출고가
+	foreign key(name) references ph_phone(name)
 );
 
 --삼성전자
