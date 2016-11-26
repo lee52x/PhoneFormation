@@ -70,10 +70,23 @@ $(document).ready(function(){
 				}
 			});
 
-		$("option[value=Galaxy6]").remove();
-		$("option[value=Galaxy5]").remove();
-
 	});
+	
+	$('#machine').change(function(){
+		
+		$.ajax({
+			url:"/phonefo/capacity",
+			data:{machine:$('#machine').val()},
+			success:function(result){
+				
+			}
+		});
+		
+	});
+	
+	
+	
+	
 
 	});
 
@@ -1083,9 +1096,9 @@ label.checkbox-label {
 			<td height="60" class="t_s_title">용량</td>
 			<td bgcolor="#FFFFFF">
 				<div id="select_box">
-					<label for="color">제조사 선택</label> <select id="capacity"
+					<label for="color">용량선택</label> <select id="capacity"
 						name="category">
-						<option value="">제조사 선택</option>
+						<option value="">용량선택</option>
 						<option value="kt">16GB</option>
 						<option value="LGU+">32GB</option>
 					</select>

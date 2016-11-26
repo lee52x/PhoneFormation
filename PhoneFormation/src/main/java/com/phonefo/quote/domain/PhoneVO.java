@@ -6,6 +6,8 @@ public class PhoneVO {
 	private String name;
 	private String manufacture;
 	private String release_date;
+	private String capacity;
+
 	
 	
 	public PhoneVO() {

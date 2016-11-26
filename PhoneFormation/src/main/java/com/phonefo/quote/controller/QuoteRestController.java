@@ -34,5 +34,11 @@ public class QuoteRestController {
 		return list;
 	}
 
+	@RequestMapping(value="/capacity")
+	public void capacity(String machine)throws Exception{
+		
+		
+	}
+
 	
 }
