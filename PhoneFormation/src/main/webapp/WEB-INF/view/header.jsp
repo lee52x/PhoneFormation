@@ -149,9 +149,9 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a class="active" href="">최신폰</a>
 							<ul class="dropdown">
-								<li><a class="active" href="/phonefo/information">삼성</a></li>
-								<li><a href="">LG</a></li>
-								<li><a href="homepage-2.html">애플</a></li>
+								<li><a class="active" href="/phonefo/phoneInfo">삼성</a></li>
+								<li><a href="/phonefo/phoneInfo">LG</a></li>
+								<li><a href="/phonefo/phoneInfo">애플</a></li>
 							</ul></li>
 						<li><a href="about.html">견적</a>
 							<ul class="dropdown">

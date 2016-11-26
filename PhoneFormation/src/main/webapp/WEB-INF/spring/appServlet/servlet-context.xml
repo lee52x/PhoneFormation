@@ -50,6 +50,8 @@
 
 	<context:component-scan base-package="com.phonefo.payment.controller" />
 	<context:component-scan base-package="com.phonefo.board.controller" />
+	
+	<context:component-scan base-package="com.phonefo.phone.controller" />
 
 	
 	
