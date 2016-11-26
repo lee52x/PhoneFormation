@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="quote">
+
   	<!-- 삼성 기기명 가져오기 -->	
  	<select id="machine" resultType="com.phonefo.quote.domain.PhoneVO">
- 		select name from ph_phone
+ 		select name,manufacture,release_date from ph_phone
  			where manufacture=#{manufacture}
  	</select>
+
+
+ 	<select id="capacity" resultType="com.phonefo.quote.domain.PhoneVO">
+ 		select name,capacity,release_price from ph_capacity
+ 		where name=#{machine}
+ 	</select>
+ 	
+ 	<select id="price" resultType="com.phonefo.quote.domain.PhoneVO">
+ 		select name,capacity,release_price,release_date from ph_capacity
+ 		natural join ph_phone
+ 		where name=#{machine} and capacity=#{capacity}
+ 	</select>
+ 	
+ 	
 </mapper>

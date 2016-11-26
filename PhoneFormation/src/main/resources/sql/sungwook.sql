@@ -359,3 +359,9 @@ insert into ph_capacity values ('G3Screen', '32GB', 550000);
 insert into ph_capacity values ('G3A', '32GB', 451000);
 insert into ph_capacity values ('G3Cat6', '32GB', 649000);
 insert into ph_capacity values ('G3', '32GB', 499400);
+
+
+
+
+ 		select name,capacity,release_price,release_date from ph_capacity natural join ph_phone
+ 		where name='G5' and capacity='32GB'
