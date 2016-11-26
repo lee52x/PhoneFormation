@@ -147,9 +147,9 @@
 				<div class="navbar-collapse collapse">
 					<!-- Start Navigation List -->
 					<ul class="nav navbar-nav navbar-right">
-						<li><a class="active" href="">최신폰</a>
+						<li><a class="active" href="/phonefo/phoneInfo">최신폰</a>
 							<ul class="dropdown">
-								<li><a class="active" href="/phonefo/phoneInfo">삼성</a></li>
+								<li><a class="active" href="/phonefo/phoneInfo">삼성전자</a></li>
 								<li><a href="/phonefo/phoneInfo">LG</a></li>
 								<li><a href="/phonefo/phoneInfo">애플</a></li>
 							</ul></li>

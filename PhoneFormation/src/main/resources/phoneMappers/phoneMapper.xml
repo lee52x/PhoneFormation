@@ -4,5 +4,6 @@
 	<select id="selectInfo" resultType="phone">
 		select *
 		from ph_phone
+		where manufacture=#{manufacture}
 	</select>
 </mapper>
