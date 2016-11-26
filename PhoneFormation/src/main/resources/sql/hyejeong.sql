@@ -13,7 +13,7 @@ create sequence ph_phone_seq
 --핸드폰 정보, 핸드폰명, 핸드폰사진, 제조사명, 출고일
 create table ph_phone(
 	id number primary key,
-	name varchar2(100) not null,
+	name varchar2(100) unique,
 	image LONG not null,
 	manufacture varchar2(15) not null,
 	release_date varchar2(30) not null
@@ -64,6 +64,7 @@ create table ph_color( --핸드폰 색상
 	name varchar2(100) not null,
 	color varchar2(30) not null,
 	image LONG not null
+	const
 );
 
 --삼성전자
