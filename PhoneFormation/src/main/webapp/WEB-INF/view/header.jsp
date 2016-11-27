@@ -112,10 +112,6 @@
 										class="util_menu push_alarm last"
 										onclick="gnb_notif_run.gnbNotifToggle()"></a>
 								</div>
-
-
-
-
 							</c:if>
 
 						</ul>
@@ -149,9 +145,9 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a class="active" href="/phonefo/phoneInfo">최신폰</a>
 							<ul class="dropdown">
-								<li><a class="active" href="/phonefo/phoneInfo">삼성전자</a></li>
-								<li><a href="/phonefo/phoneInfo">LG</a></li>
-								<li><a href="/phonefo/phoneInfo">애플</a></li>
+								<li><a class="active" href="/phonefo/phoneInfo?manufacture=삼성전자">삼성전자</a></li>
+								<li><a href="/phonefo/phoneInfo?manufacture='LG'">LG</a></li>
+								<li><a href="/phonefo/phoneInfo?manufacture='애플'">애플</a></li>
 							</ul></li>
 						<li><a href="about.html">견적</a>
 							<ul class="dropdown">

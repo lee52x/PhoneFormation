@@ -12,7 +12,7 @@ create sequence ph_phone_seq
 
 --핸드폰 정보, 핸드폰명, 핸드폰사진, 제조사명, 출고일
 create table ph_phone(
-	id number primary key,
+	no number primary key,
 	name varchar2(100) unique,
 	image LONG not null,
 	manufacture varchar2(15) not null,
@@ -278,3 +278,9 @@ insert into ph_capacity values ('G3Screen', '32GB', 550000);
 insert into ph_capacity values ('G3A', '32GB', 451000);
 insert into ph_capacity values ('G3Cat6', '32GB', 649000);
 insert into ph_capacity values ('G3', '32GB', 499400);
+
+
+		select *
+		from ph_phone
+		where manufacture='삼성전자'
+		order by no desc;

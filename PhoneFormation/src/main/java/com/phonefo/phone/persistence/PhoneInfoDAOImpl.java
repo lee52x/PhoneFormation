@@ -16,8 +16,9 @@ public class PhoneInfoDAOImpl implements PhoneInfoDAO {
 	private SqlSession sqlSession;
 
 	@Override
-	public List<PhoneInfoVO> selectInfo() throws Exception {
-		return sqlSession.selectList("phone.selectInfo");
+	public List<PhoneInfoVO> selectInfo(String manufacture) throws Exception {
+		System.out.println(manufacture);
+		return sqlSession.selectList("phone.selectInfo", manufacture);
 	}
 
 }

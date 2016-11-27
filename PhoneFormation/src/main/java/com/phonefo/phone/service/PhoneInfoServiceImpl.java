@@ -16,8 +16,8 @@ public class PhoneInfoServiceImpl implements PhoneInfoService{
 	PhoneInfoDAO dao;
 	
 	@Override
-	public List<PhoneInfoVO> selectInfo() throws Exception {
-		return dao.selectInfo();
+	public List<PhoneInfoVO> selectInfo(String manufacture) throws Exception {
+		return dao.selectInfo(manufacture);
 	}
 
 }
