@@ -38,7 +38,7 @@
    </select>
 
    <!-- 1대1 검색어를 통한 리스트 조회 -->
-   <select id="listOno" resultType="admin">
+   <select id="listOno" resultType="adminOno">
      select ono,userid,title,categori,content,image_path,regdate,email,answer,answer_regdate
      from ph_ono
 	  <if test="searchType != null">

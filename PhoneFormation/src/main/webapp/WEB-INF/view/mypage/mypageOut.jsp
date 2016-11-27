@@ -28,7 +28,6 @@
 
 	<center>
 		<font size="8" color="black">정말로<br> 탈퇴하시겠어요? </font><br><br>
-		<font size="3" color="red"><font color="blue">30일 간 회원 탈퇴 대기상태가 됩니다.</font>  <br><br> 30일이 지난후 계정은 완전히 삭제 됩니다. <br> 회원 탈퇴를 철회 하시려면 관리자에게 문의 하세요.</font>
 	</center>
 	<br><br><br><br>
 	<form class="form-horizontal" style="margin-left: 33%" role="form" action="myprofile_withdrawalOK.do">

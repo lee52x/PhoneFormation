@@ -19,19 +19,25 @@ public class MypageDAOImpl implements MypageDAO {
 	@Override
 	public MypageMemberVO myPageMain(String userid) throws Exception {
 		
-		return sqlSession.selectOne("mypage.main",userid);
+		return sqlSession.selectOne("mypage.mypageMemberInfo",userid);
 	}
-
+ 
 	@Override
 	public int myPageUpdate(MypageMemberVO vo) throws Exception {
 
-		return sqlSession.update("mypage.update", vo);
+		return sqlSession.update("mypage.mypageMemberUp", vo);
 	}
 
 	@Override
 	public List<MypageOnoVO> myPageOnoList(String userid) throws Exception {
 	
-		return sqlSession.selectList("mypage.onoList", userid);
+		return sqlSession.selectList("mypage.mypageOnoInfo", userid);
+	}
+
+	@Override
+	public int myPageDel(String userid) throws Exception {
+		
+		return sqlSession.delete("mypage.mypageMemberDel",userid);
 	}
 
 }

@@ -2,4 +2,31 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="mypage">
 
+	<!-- 마이페이지 내정보 출력 -->
+	<select id="mypageMemberInfo" resultType="mypageMember">
+		select
+		userid,userpwd,username,rdate,birth,gender,email,tel,root,status
+		from ph_member
+		where userid = #{userid}
+	</select>
+
+	<!-- 마이페이지 1대1문의 출력 -->
+	<select id="mypageOnoInfo" resultType="mypageOno">
+		select
+		ono,userid,title,categori,content,image_path,regdate,email,answer,answer_regdate
+		from ph_ono
+		where userid = #{userid}
+	</select>
+	
+	<!-- 마이페이지 내정보 업데이트 -->
+	<update id="mypageMemberUp">
+	update ph_member set userpwd=#{userpwd}, tel=#{tel}, address=#address#,introduction=#introduction#
+		where member_id=#member_id#
+	</update>
+	
+	<!-- 마이페이지 회원탈퇴 -->
+	<delete id="mypageMemberDel">
+	delete from ph_member where userid=#{userid}
+	</delete>
+
 </mapper>

@@ -35,4 +35,10 @@ public class MypageServiceImpl implements MypageService {
 		return dao.myPageOnoList(userid);
 	}
 
+	@Override
+	public int myPageDel(String userid) throws Exception {
+		
+		return dao.myPageDel(userid);
+	}
+
 }

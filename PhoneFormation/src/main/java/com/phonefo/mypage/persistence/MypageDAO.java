@@ -17,5 +17,9 @@ public interface MypageDAO {
 	public List<MypageOnoVO> myPageOnoList(String userid)throws Exception;
 	
 	
+	//È¸¿øÅ»Åð¸®½ºÆ®
+	public int myPageDel(String userid)throws Exception;
+	
+	
 
 }

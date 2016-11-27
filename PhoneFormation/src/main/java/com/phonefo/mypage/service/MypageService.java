@@ -16,5 +16,8 @@ public interface MypageService {
 		
 		//내가 1대1 문의리스트
 		public List<MypageOnoVO> myPageOnoList(String userid)throws Exception;
+		
+		//회원탈퇴
+		public int myPageDel(String userid)throws Exception;
 
 }
