@@ -4,7 +4,7 @@
 
   
    <!-- 멤버 검색어를 통한 리스트 조회 -->
-   <select id="listMember" resultType="admin">
+   <select id="listMember" resultType="adminMember">
      select userid,userpwd,username,rdate,birth,gender,email,tel,root,status 
      from ph_member
 	  <if test="searchType != null">
