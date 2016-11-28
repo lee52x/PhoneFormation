@@ -33,4 +33,8 @@ public class BoardDAOImpl implements BoardDAO {
 	public String selecttitle(int tno) throws Exception {
 		return sqlSession.selectOne("board.selecttitle",tno);
 	}
+	@Override
+	public BoardVO selectpage(int bno) {
+		return sqlSession.selectOne("board.selectpage", bno);
+	}
 }

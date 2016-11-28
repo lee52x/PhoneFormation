@@ -34,4 +34,9 @@ public class BoardServiceImpl implements BoardService{
 		dao.insert(board);
 	}
 
+	@Override
+	public BoardVO selectpage(int bno) {
+		return dao.selectpage(bno);
+	}
+
 }
