@@ -40,7 +40,7 @@
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus
-	{
+{
 	border-color: #eee;
 	border-bottom-color: #fff;
 }
@@ -68,6 +68,16 @@
 	margin-bottom: 0;
 }
 </style>
+<script>
+$(document).ready(function(){
+	var sub = $("#sub").attr('value');
+	alert(sub);
+	
+	$("#"+sub).attr('class','active');
+ });
+ 
+
+</script>
 </head>
 <body>
 	<div id="content">
@@ -75,16 +85,17 @@
 			<div class="row sidebar-page">
 				<div class="tabs-section">
 					<!-- Nav Tabs -->
+					<input type="hidden" id="sub" value="${manufacture}"/>
 					<ul class="nav nav-tabs">
-						<li class="active"><a href="#tab-4" data-toggle="tab">삼성</a></li>
-						<li><a href="#tab-5" data-toggle="tab">LG</a></li>
-						<li><a href="#tab-6" data-toggle="tab">애플</a></li>
+						<li id="samsung" class="active"><a href="#tab-4" data-toggle="tab">삼성전자</a></li>
+						<li id="lg"><a href="#tab-4" data-toggle="tab">LG전자</a></li>
+						<li id="apple"><a href="#tab-4" data-toggle="tab">애플</a></li>
 					</ul>
 
 					<!-- Tab Panels -->
 					<div class="tab-content">
 						<!-- Tab Content 1 -->
-						<div class="tab-pane fade in active" id="tab-4">
+						<div class="tab-pane fade in active" class="tab-4">
 							<table align="center">
 								<c:forEach items="${list }" var="list" varStatus="status">
 									<c:if test="${status.index%3==0}">

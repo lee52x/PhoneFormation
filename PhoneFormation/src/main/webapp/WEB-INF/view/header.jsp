@@ -85,7 +85,7 @@
 									<div id="person_header_btn" class="util_menu v_line"
 										onmouseover="try{showSubTab('person_header_btn')}catch(e){}"
 										onmouseout="try{hideSubTab('person_header_btn')}catch(e){}">
-										<a href="/zf_user/member/persons/main" class="util_mypage">마이페이지</a>
+										<a href="/phonefo/mypageMain" class="util_mypage">마이페이지</a>
 										<div class="membership-pop"
 											style="width: 110px; display: none;">
 											<ul>
@@ -143,11 +143,11 @@
 				<div class="navbar-collapse collapse">
 					<!-- Start Navigation List -->
 					<ul class="nav navbar-nav navbar-right">
-						<li><a class="active" href="/phonefo/phoneInfo">최신폰</a>
+						<li><a class="active" href="/phonefo/phoneInfo?manufacture=삼성전자">최신폰</a>
 							<ul class="dropdown">
-								<li><a class="active" href="/phonefo/phoneInfo?manufacture=삼성전자">삼성전자</a></li>
-								<li><a href="/phonefo/phoneInfo?manufacture='LG'">LG</a></li>
-								<li><a href="/phonefo/phoneInfo?manufacture='애플'">애플</a></li>
+								<li><a href="/phonefo/phoneInfo?manufacture=삼성전자">삼성전자</a></li>
+								<li><a href="/phonefo/phoneInfo?manufacture=LG전자">LG전자</a></li>
+								<li><a href="/phonefo/phoneInfo?manufacture=애플">애플</a></li>
 							</ul></li>
 						<li><a href="about.html">견적</a>
 							<ul class="dropdown">
