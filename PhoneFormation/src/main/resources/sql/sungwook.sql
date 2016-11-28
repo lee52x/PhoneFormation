@@ -42,12 +42,37 @@ select *from ph_business_member
 			
 			select*from ph_member
 			select*from ph_business_member
-			
-			
-			select name from ph_phone
- 			where manufacture=
+
+
+<!--quote게시판 테이블 --!>
+select *from ph_quoteBoard
+drop table ph_quoteBoard;
+create table ph_quoteBoard(
+	no number(10) primary key,
+	userid varchar2(50),
+	quote_price number(10),
+	request_message varchar2(1000),
+	bank_name varchar2(50),
+	account_number varchar2(50),
+	rdate date,
+	power varchar2(50),
+	glass varchar2(50),
+	equipment varchar2(50),
+	state number(10) default 0,
+	manufacture varchar2(50),
+	machine varchar2(50),
+	capacity varchar2(50),
+	foreign key(userid) references ph_member(userid)
+
+)
+
+<!--quote 시퀀스 --!>
+create sequence ph_quoteBoard_seq
+	start with 1
+	increment by 1 
+	nocache
+	nocycle;
  
- 			
  			
  			
  			
@@ -139,6 +164,7 @@ insert into ph_phone values (ph_phone_seq.nextval, 'G3Screen', '/resources/image
 insert into ph_phone values (ph_phone_seq.nextval, 'G3A', '/resources/images/phone/G3A_화이트.png', 'LG전자', '2014년08월');
 insert into ph_phone values (ph_phone_seq.nextval, 'G3Cat6', '/resources/images/phone/G3Cat6_실크화이트.png', 'LG전자', '2014년08월');
 insert into ph_phone values (ph_phone_seq.nextval, 'G3', '/resources/images/phone/G3_실크화이트.png', 'LG전자', '2014년05월');
+insert into ph_phone values (ph_phone_seq.nextval, 'GPro', '/resources/images/phone/G3_실크화이트.png', 'LG전자', '2012년12월');
 
 
 create table ph_color( --핸드폰 색상
@@ -359,9 +385,12 @@ insert into ph_capacity values ('G3Screen', '32GB', 550000);
 insert into ph_capacity values ('G3A', '32GB', 451000);
 insert into ph_capacity values ('G3Cat6', '32GB', 649000);
 insert into ph_capacity values ('G3', '32GB', 499400);
+insert into ph_capacity values ('GPro', '32GB', 320000);
 
 
 
 
  		select name,capacity,release_price,release_date from ph_capacity natural join ph_phone
  		where name='G5' and capacity='32GB'
+ 		
+ 		select *from PH_phone

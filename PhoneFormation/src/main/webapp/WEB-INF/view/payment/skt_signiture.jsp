@@ -148,11 +148,11 @@
 								<ul>
 									<li class="balloon2"><a href="#classic"
 										id="siginiture_classic"><strong>T 시그니처<br>(Classic)
-										</strong><span class="dLine"><em>20GB<br>
+										</strong><span class="dLine"><em>20GB<br><br>
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
 									<li class="balloon1 on"><a href="#master"
 										id="siginiture_master"><strong>T 시그니처<br>(Master)
-										</strong><span><em>35GB<br>
+										</strong><span><em>35GB<br><br>
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
 									<!--두줄이상일때  class="dLine" 추가-->
 								</ul>
@@ -290,11 +290,11 @@
 								<ul>
 									<li class="balloon2 on"><a href="#classic"
 										id="siginiture_classic"><strong>T 시그니처<br>(Classic)
-										</strong><span class="dLine"><em>20GB<br>
+										</strong><span class="dLine"><em>20GB<br><br>
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
 									<li class="balloon1"><a href="#master"
 										id="siginiture_master"><strong>T 시그니처<br>(Master)
-										</strong><span><em>35GB<br>
+										</strong><span><em>35GB<br><br>
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
 									<!--두줄이상일때  class="dLine" 추가-->
 								</ul>

@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.phonefo.quote.domain.PhoneVO;
+import com.phonefo.quote.domain.QuoteVO;
 import com.phonefo.quote.persistence.PhoneDAO;
 
 
@@ -35,6 +36,12 @@ public class PhoneServiceImpl implements PhoneService{
 		System.out.println(capacity);
 		return dao.price(machine,capacity);
 		
+	}
+
+	@Override
+	public void insertBoard(QuoteVO vo) throws Exception {
+		
+		 dao.insertBoard(vo);
 	}
 
 	

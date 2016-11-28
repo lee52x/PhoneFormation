@@ -86,6 +86,42 @@ select *
 		where payment like '%band 데이터%'
 		order by fixed_month desc
 	</select>
+	<select id="band_data_perfectS" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%band 데이터 퍼펙트S%'
+	</select>
+	<select id="band_data_perfect" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment = 'band 데이터 퍼펙트'
+	</select>
+	<select id="band_data_6_5g" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%band 데이터 6.5G%'
+	</select>
+	<select id="band_data_3_5g" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%band 데이터 3.5G%'
+	</select>
+	<select id="band_data_2_2g" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%band 데이터 2.2G%'
+	</select>
+	<select id="band_data_1_2g" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%band 데이터 1.2G%'
+	</select>
+	<select id="band_data_save" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%band 데이터 세이브%'
+	</select>
+	
 	
 	<!-- 전국민 무한 -->
 	<select id="everyone_unlimited" resultType="Skt_payment">
@@ -94,6 +130,31 @@ select *
 		where payment like '%전국민 무한%' or payment like '%LTE 데이터%'
 		order by fixed_month desc
 	</select>
+	<select id="everyone_unlimited_100" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%전국민 무한 100%'
+	</select>
+	<select id="everyone_unlimited_85" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%전국민 무한 85%'
+	</select>
+	<select id="lte_data_80pack" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%LTE 데이터 무제한 80팩%'
+	</select>
+	<select id="everyone_unlimited_75" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%전국민 무한 75%'
+	</select>
+	<select id="everyone_unlimited_69" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%전국민 무한 69%'
+	</select>
 	
 	<!-- T끼리 -->
 	<select id="t_together" resultType="Skt_payment">
@@ -101,6 +162,26 @@ select *
 		from skt_pay
 		where payment like '%T끼리%'
 		order by fixed_month desc
+	</select>
+	<select id="t_together_65" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%T끼리 65%'
+	</select>
+	<select id="t_together_55" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%T끼리 55%'
+	</select>
+	<select id="t_together_45" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%T끼리 45%'
+	</select>
+	<select id="t_together_35" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%T끼리 35%'
 	</select>
 	
 </mapper>

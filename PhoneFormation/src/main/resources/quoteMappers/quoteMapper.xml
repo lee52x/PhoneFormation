@@ -19,6 +19,12 @@
  		natural join ph_phone
  		where name=#{machine} and capacity=#{capacity}
  	</select>
- 	
+
+ 	<insert id="insertBoard">
+ 		insert into ph_quoteBoard values(ph_quoteBoard_seq.nextval,#{userid},#{quote_price},
+ 		#{request_message},#{bank_name},#{account_number},sysdate,#{power},#{glass},#{equipment},
+ 		0,${manufacture},${machine},${machine})
+ 	</insert>
+
  	
 </mapper>
