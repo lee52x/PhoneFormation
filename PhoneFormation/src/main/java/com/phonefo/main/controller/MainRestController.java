@@ -104,9 +104,10 @@ public class MainRestController {
 	}
 	//·Î±×¾Æ¿ô
 	@RequestMapping("/logout")
-	public void logout(HttpSession session){
+	public void logout(HttpSession session)throws Exception{
 		session.invalidate();
 	
 	}
+
 }
 

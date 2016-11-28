@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.phonefo.quote.domain.PhoneVO;
+import com.phonefo.quote.domain.QuoteVO;
 
 @Repository
 public class PhoneDAOImpl implements PhoneDAO{
@@ -43,6 +44,14 @@ public class PhoneDAOImpl implements PhoneDAO{
 		return sql.selectOne("quote.price",map);
 		
 
+	}
+
+	@Override
+	public void insertBoard(QuoteVO vo) throws Exception {
+		
+		
+		 sql.insert("quote.insertBoard",vo);
+		
 	}
 
 
