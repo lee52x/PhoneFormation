@@ -1,6 +1,7 @@
 package com.phonefo.payment.domain;
 
 public class SktVO {
+	// 요금제
 	private String payment;
 	private String	data;
 	private String	extra_data;
@@ -11,6 +12,14 @@ public class SktVO {
 	private int		fares_month;
 	private int		fares_24month;
 	private int		discount;
+	
+	// band YT 추가 혜택
+	private String data_option1;
+	private String data_option2;
+	private String data_option3;
+	private String contents_sale;
+	private String partnership_sale;
+	
 	
 	
 	public String getPayment() {
@@ -72,6 +81,39 @@ public class SktVO {
 	}
 	public void setDiscount(int discount) {
 		this.discount = discount;
+	}
+	
+	
+	public String getData_option1() {
+		return data_option1;
+	}
+	public void setData_option1(String data_option) {
+		this.data_option1 = data_option;
+	}
+	public String getData_option2() {
+		return data_option2;
+	}
+	public void setData_option2(String data_option) {
+		this.data_option2 = data_option;
+	}
+	public String getData_option3() {
+		return data_option3;
+	}
+	public void setData_option3(String data_option) {
+		this.data_option3 = data_option;
+	}
+	
+	public String getContents_sale() {
+		return contents_sale;
+	}
+	public void setContents_sale(String contents_sale) {
+		this.contents_sale = contents_sale;
+	}
+	public String getPartnership_sale() {
+		return partnership_sale;
+	}
+	public void setPartnership_sale(String partnership_sale) {
+		this.partnership_sale = partnership_sale;
 	}
 	
 	

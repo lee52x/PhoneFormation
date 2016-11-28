@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="skt">
+<mapper namespace="skt_payment">
 
 	
 	<!-- T 시그니처 요금제 -->
-	<select id="payment_signiture" resultType="Skt_payment">
+	<select id="signiture" resultType="Skt_payment">
 select *
 		from skt_pay
-		where payment like '%시그니처%'
+		where payment like '%T 시그니처%'
 		order by fixed_month desc
 	</select>
-	<select id="payment_signiture_master" resultType="Skt_payment">
+	<select id="signiture_master" resultType="Skt_payment">
 		select *
 		from skt_pay
 		where payment like 'T 시그니처 Master'
 	</select>
-	<select id="payment_signiture_classic" resultType="Skt_payment">
+	<select id="signiture_classic" resultType="Skt_payment">
 		select *
 		from skt_pay
 		where payment like 'T 시그니처 Classic'
@@ -23,15 +23,64 @@ select *
 	
 	
 	<!-- band YF 요금제 -->
-	<select id="payment_band_yf" resultType="Skt_payment">
+	<select id="band_yt" resultType="Skt_payment">
 		select *
 		from skt_pay
-		where payment like '%band YF%'
+		where payment like '%band YT%'
 		order by fixed_month desc
 	</select>
 	
+	<!-- band YT 퍼펙트 요금제 -->
+	<select id="band_yt_perfect" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%band YT 퍼펙트%'
+	</select>
+	
+	<!-- band YT 7G 요금제 -->
+	<select id="band_yt_7g" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%band YT 7G%'
+	</select>
+	
+	<!-- band YT 3G 요금제 -->
+	<select id="band_yt_3g" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%band YT 3G%'
+	</select>
+	
+	<!-- band YT 1G 요금제 -->
+	<select id="band_yt_1g" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%band YT 1G%'
+	</select>
+	
+	<!-- band YT 세이브 요금제 -->
+	<select id="band_yt_save" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%band YT 세이브%'
+	</select>
+	
+	<select id="band_yt_option1" resultType="Skt_payment">
+		select payment, data_option1, data_option2, data_option3, contents_sale, partnership_sale
+		from SKT_PAY natural join skt_band_yt
+		where payment not like'T끼리 35' and payment like '%band YT%'and contents_sale not like '무료'
+	</select>
+	
+	<select id="band_yt_option2" resultType="Skt_payment">
+		select payment, data_option1, data_option2, data_option3, contents_sale, partnership_sale
+		from SKT_PAY natural join skt_band_yt
+		where payment = 'T끼리 35' and contents_sale = '무료'
+	</select>
+	
+	
+	
 	<!-- band 데이터 -->
-	<select id="payment_band_data" resultType="Skt_payment">
+	<select id="band_data" resultType="Skt_payment">
 		select *
 		from skt_pay
 		where payment like '%band 데이터%'
@@ -39,7 +88,7 @@ select *
 	</select>
 	
 	<!-- 전국민 무한 -->
-	<select id="payment_everyone_unlimited" resultType="Skt_payment">
+	<select id="everyone_unlimited" resultType="Skt_payment">
 		select *
 		from skt_pay
 		where payment like '%전국민 무한%' or payment like '%LTE 데이터%'
@@ -47,7 +96,7 @@ select *
 	</select>
 	
 	<!-- T끼리 -->
-	<select id="payment_t_together" resultType="Skt_payment">
+	<select id="t_together" resultType="Skt_payment">
 		select *
 		from skt_pay
 		where payment like '%T끼리%'

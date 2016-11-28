@@ -16,6 +16,21 @@ create table skt_pay(
 
 );
 
+-- SKT band YT 추가 옵션
+drop table skt_band_yt;
+create table skt_band_yt(
+	data_option1			varchar2(70),
+	data_option2			varchar2(70),
+	data_option3			varchar2(70),
+	contents_sale			varchar2(20),
+	Partnership_sale		varchar2(50)
+);
+
+INSERT INTO skt_band_yt VALUES('선택1 -캠퍼스 데이터 무제한*', '선택2 - 매일 6시간 데이터 무제한*', '선택3 - 안심옵션 중 택 1 *일 1GB 이후 속도제한', '50% 할인', '파리바게뜨 T페이 결제시 할인율 2배');
+INSERT INTO skt_band_yt VALUES('선택1 -캠퍼스 데이터 무제한*', '선택2 - 매일 6시간 데이터 무제한*', '선택3 - 안심옵션 중 택 1 *일 1GB 이후 속도제한', '무료', '파리바게뜨 T페이 결제시 할인율 2배');
+
+select * from skt_band_yt;
+
 -- KT 테이블
 drop table kt_pay;
 create table kt_pay(
@@ -52,18 +67,18 @@ where payment like '%시그니처%';
 --SKT 요금제 INSERT
 INSERT INTO SKT_PAY VALUES('T 시그니처 Master', '35GB',  '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한', '기본제공', 110000, 110000, 22000, 528000, 88000);
 INSERT INTO SKT_PAY VALUES('T 시그니처 Classic', '20GB', '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한', '기본제공', 88000, 88000, 17600,	422400,	70400);
-INSERT INTO SKT_PAY VALUES('band YF 퍼펙트', '12GB', '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한', '기본제공', 71000, 71000,	14200, 340800,	56800);
-INSERT INTO SKT_PAY VALUES('band YF 7G', '7G', '',  '집전화, 이동전화 무제한', '기본제공', 62000, 62000, 12400, 297600, 49600);
-INSERT INTO SKT_PAY VALUES('band YF 3G', '3G', '', '집전화, 이동전화 무제한', '기본제공', 52000, 52000, 10400, 249600, 41600);
-INSERT INTO SKT_PAY VALUES('band YF 1G', '1G', '', '집전화, 이동전화 무제한', '기본제공', 42000, 42000, 8400,	201600,	33600);
-INSERT INTO SKT_PAY VALUES('band YF 세이브', '500MB', '', '집전화, 이동전화 무제한', '기본제공', 38000, 38000, 7600, 182400, 30400);
+INSERT INTO SKT_PAY VALUES('band YT 퍼펙트', '12GB', '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한 / 영상 및 부가통화 300분', '기본제공', 71000, 71000,	14200, 340800,	56800);
+INSERT INTO SKT_PAY VALUES('band YT 7G', '7G', '(데이터 옵션 추가 제공 )',  '집전화, 이동전화 무제한 / 영상 및 부가통화 300분', '기본제공', 62000, 62000, 12400, 297600, 49600);
+INSERT INTO SKT_PAY VALUES('band YT 3G', '3G', '(데이터 옵션 추가 제공 )', '집전화, 이동전화 무제한', '기본제공', 52000, 52000, 10400, 249600, 41600);
+INSERT INTO SKT_PAY VALUES('band YT 1G', '1G', '(데이터 옵션 추가 제공 )', '집전화, 이동전화 무제한', '기본제공', 42000, 42000, 8400,	201600,	33600);
+INSERT INTO SKT_PAY VALUES('band YT 세이브', '500MB', '(데이터 옵션 추가 제공 )', '집전화, 이동전화 무제한', '기본제공', 38000, 38000, 7600, 182400, 30400);
 INSERT INTO SKT_PAY VALUES('band 데이터 퍼펙트S', '16GB', '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한', '기본제공', 75000, 75000, 15180, 364320, 59820);
 INSERT INTO SKT_PAY VALUES('band 데이터 퍼펙트', '11GB', '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한', '기본제공', 65890, 65890, 13200, 316800, 52690);
 INSERT INTO SKT_PAY VALUES('band 데이터 6.5G',	'6.5GB',  '', '집전화, 이동전화 무제한', '기본제공', 56100, 56100, 11220, 269280, 44880);
 INSERT INTO SKT_PAY VALUES('band 데이터 3.5G', '3.5GB', '', '집전화, 이동전화 무제한', '기본제공', 51700, 51700, 10340, 248160, 41360);
 INSERT INTO SKT_PAY VALUES('band 데이터 2.2G', '2.3GB', '', '집전화, 이동전화 무제한', '기본제공', 46200, 46200,	9240,	221760,	36960);
 INSERT INTO SKT_PAY VALUES('band 데이터 1.2G', '1.2GB', '', '집전화, 이동전화 무제한', '기본제공', 39600, 39600, 7920, 190080, 31680);
-INSERT INTO SKT_PAY VALUES('band 데이터 save', '300MB', '', '무제한', '기본제공', 32890, 32890, 6600, 158400, 26290);
+INSERT INTO SKT_PAY VALUES('band 데이터 세이브', '300MB', '', '무제한', '기본제공', 32890, 32890, 6600, 158400, 26290);
 INSERT INTO SKT_PAY VALUES('전국민 무한 100', '16GB', '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한 부가 / 영상 300분', '기본제공', 110000, 83600, 16720, 401280, 66880);
 INSERT INTO SKT_PAY VALUES('전국민 무한 85', '12GB', '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한 부가 / 영상 300분', '기본제공', 93500, 71500, 14300, 343200, 57200);
 INSERT INTO SKT_PAY VALUES('LTE 데이터 무제한 80팩', '8GB', '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한 부가 / 영상 300분', '기본제공',88000, 67375, 12375, 297000, 55000);
@@ -132,16 +147,72 @@ INSERT INTO LG_PAY VALUES('LTE-알190', '300MB', '20000알', '20000알', 20900, 
 
 
 
-
+		-- T 시그니처 요금제 	
 		select *
 		from skt_pay
-		where payment like '%시그니처%'
-		order by fixed_month;
+		where payment like '%T 시그니처%'
+		order by fixed_month desc;
 		
+		-- T 시그니처 마스터
 		select *
 		from skt_pay
 		where payment like 'T 시그니처 Master';
+		
+		-- T 시그니처 클래식
+		select *
+		from skt_pay
+		where payment like 'T 시그니처 Classic';
 
+		-- band YT 요금제
+		select *
+		from skt_pay
+		where payment like '%band YT%'
+		order by fixed_month desc;
+		
+		-- band YT 퍼펙트
+		select *
+		from skt_pay
+		where payment like '%band YT 퍼펙트%';
+		
+		-- band YT 7G
+		select *
+		from skt_pay
+		where payment like '%band YT 7G%';
+		
+		-- band YT 3G
+		select *
+		from skt_pay
+		where payment like '%band YT 3G%';
+		
+		
+		-- band YT 1G
+		select *
+		from skt_pay
+		where payment like '%band YT 1G%';
+		
+		
+		-- band YT 세이브
+		select *
+		from skt_pay
+		where payment like '%band YT 세이브%';
+		
+		select payment
+		from (
+		select payment, data_option1, data_option2, data_option3, contents_sale, partnership_sale
+		from SKT_PAY natural join skt_band_yt
+		where payment != 'T끼리 35' and contents_sale != '무료'
+		);
+		
+		select payment, data_option1, data_option2, data_option3, contents_sale, partnership_sale
+		from SKT_PAY natural join skt_band_yt
+		where payment not like'T끼리 35' and payment like '%band YT%'and contents_sale not like '무료';
+		
+		select payment, data_option1, data_option2, data_option3, contents_sale, partnership_sale
+		from SKT_PAY natural join skt_band_yt
+		where payment = 'T끼리 35' and contents_sale = '무료';
+		
+		
+		
 
 
 

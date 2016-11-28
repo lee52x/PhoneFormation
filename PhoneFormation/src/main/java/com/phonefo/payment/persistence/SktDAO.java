@@ -12,7 +12,14 @@ public interface SktDAO {
 	public List<SktVO> payment_signiture_classic(String payment)throws Exception;
 	
 	// band YF  요금제 조회
-	public List<SktVO> payment_band_yf(String payment)throws Exception;
+	public List<SktVO> payment_band_yt(String payment)throws Exception;
+	public List<SktVO> payment_band_yt_perfect(String payment)throws Exception;
+	public List<SktVO> payment_band_yt_7g(String payment)throws Exception;
+	public List<SktVO> payment_band_yt_3g(String payment)throws Exception;
+	public List<SktVO> payment_band_yt_1g(String payment)throws Exception;
+	public List<SktVO> payment_band_yt_save(String payment)throws Exception;
+	public List<SktVO> payment_band_yt_option1(String payment)throws Exception;
+	public List<SktVO> payment_band_yt_option2(String payment)throws Exception;
 	
 	// band 데이터
 	public List<SktVO> payment_band_data(String payment)throws Exception;

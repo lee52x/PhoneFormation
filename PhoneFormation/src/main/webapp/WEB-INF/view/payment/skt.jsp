@@ -100,8 +100,8 @@ infoArea .list1{overflow:hidden;height:120px}
 			$('#all').css("color", "red");
 			$('#t_si').css("font-weight", "normal");
 			$('#t_si').css("color", "black");
-			$('#b_yf').css("font-weight", "normal");
-			$('#b_yf').css("color", "black");
+			$('#b_yt').css("font-weight", "normal");
+			$('#b_yt').css("color", "black");
 			$('#b_data').css("font-weight", "normal");
 			$('#b_data').css("color", "black");
 			$('#e_unlimited').css("font-weight", "normal");
@@ -109,7 +109,7 @@ infoArea .list1{overflow:hidden;height:120px}
 			$('#t_together').css("font-weight", "normal");
 			$('#t_together').css("color", "black");
 			$('li[id=signiture]').show();
-			$('li[id=band_yf]').show();
+			$('li[id=band_yt]').show();
 			$('li[id=band_data]').show();
 			$('li[id=everyone_unlimited]').show();
 			$('li[id=t_together]').show();
@@ -120,8 +120,8 @@ infoArea .list1{overflow:hidden;height:120px}
 			$('#all').css("color", "black");
 			$('#t_si').css("font-weight", "bold");
 			$('#t_si').css("color", "red");
-			$('#band_yf').css("font-weight", "normal");
-			$('#band_yf').css("color", "black");
+			$('#band_yt').css("font-weight", "normal");
+			$('#band_yt').css("color", "black");
 			$('#band_data').css("font-weight", "normal");
 			$('#band_data').css("color", "black");
 			$('#everyone_unlimited').css("font-weight", "normal");
@@ -129,19 +129,19 @@ infoArea .list1{overflow:hidden;height:120px}
 			$('#t_together').css("font-weight", "normal");
 			$('#t_together').css("color", "black");
 			$('li').show();
-			$('li[id=band_yf]').hide();
+			$('li[id=band_yt]').hide();
 			$('li[id=band_data]').hide();
 			$('li[id=everyone_unlimited]').hide();
 			$('li[id=t_together]').hide();
 		});
 		
-		$('#b_yf').click(function() {
+		$('#b_yt').click(function() {
 			$('#all').css("font-weight", "normal");
 			$('#all').css("color", "black");
 			$('#t_si').css("font-weight", "normal");
 			$('#t_si').css("color", "black");
-			$('#b_yf').css("font-weight", "bold");
-			$('#b_yf').css("color", "red");
+			$('#b_yt').css("font-weight", "bold");
+			$('#b_yt').css("color", "red");
 			$('#b_data').css("font-weight", "normal");
 			$('#b_data').css("color", "black");
 			$('#e_unlimited').css("font-weight", "normal");
@@ -160,8 +160,8 @@ infoArea .list1{overflow:hidden;height:120px}
 			$('#all').css("color", "black");
 			$('#t_si').css("font-weight", "normal");
 			$('#t_si').css("color", "black");
-			$('#b_yf').css("font-weight", "normal");
-			$('#b_yf').css("color", "black");
+			$('#b_yt').css("font-weight", "normal");
+			$('#b_yt').css("color", "black");
 			$('#b_data').css("font-weight", "bold");
 			$('#b_data').css("color", "red");
 			$('#e_unlimited').css("font-weight", "normal");
@@ -170,7 +170,7 @@ infoArea .list1{overflow:hidden;height:120px}
 			$('#t_together').css("color", "black");
 			$('li').show();
 			$('li[id=signiture]').hide();
-			$('li[id=band_yf]').hide();
+			$('li[id=band_yt]').hide();
 			$('li[id=everyone_unlimited]').hide();
 			$('li[id=t_together]').hide();
 		});
@@ -180,8 +180,8 @@ infoArea .list1{overflow:hidden;height:120px}
 			$('#all').css("color", "black");
 			$('#t_si').css("font-weight", "normal");
 			$('#t_si').css("color", "black");
-			$('#b_yf').css("font-weight", "normal");
-			$('#b_yf').css("color", "black");
+			$('#b_yt').css("font-weight", "normal");
+			$('#b_yt').css("color", "black");
 			$('#b_data').css("font-weight", "normal");
 			$('#b_data').css("color", "black");
 			$('#e_unlimited').css("font-weight", "bold");
@@ -190,7 +190,7 @@ infoArea .list1{overflow:hidden;height:120px}
 			$('#t_together').css("color", "black");
 			$('li').show();
 			$('li[id=signiture]').hide();
-			$('li[id=band_yf]').hide();
+			$('li[id=band_yt]').hide();
 			$('li[id=band_data]').hide();
 			$('li[id=t_together]').hide();
 		});
@@ -200,8 +200,8 @@ infoArea .list1{overflow:hidden;height:120px}
 			$('#all').css("color", "black");
 			$('#t_si').css("font-weight", "normal");
 			$('#t_si').css("color", "black");
-			$('#b_yf').css("font-weight", "normal");
-			$('#b_yf').css("color", "black");
+			$('#b_yt').css("font-weight", "normal");
+			$('#b_yt').css("color", "black");
 			$('#b_data').css("font-weight", "normal");
 			$('#b_data').css("color", "black");
 			$('#e_unlimited').css("font-weight", "normal");
@@ -210,7 +210,7 @@ infoArea .list1{overflow:hidden;height:120px}
 			$('#t_together').css("color", "red");
 			$('li').show();
 			$('li[id=signiture]').hide();
-			$('li[id=band_yf]').hide();
+			$('li[id=band_yt]').hide();
 			$('li[id=band_data]').hide();
 			$('li[id=everyone_unlimited]').hide();
 		});
@@ -236,7 +236,7 @@ infoArea .list1{overflow:hidden;height:120px}
 									<li id="payment"><a href="#" id="t_si" title="T시그니처 상품 조회">T시그니처</a></li>
 								
 							
-									<li id="payment"><a href="#" id="b_yf" title="band YT 상품 조회">band YT</a></li>
+									<li id="payment"><a href="#" id="b_yt" title="band YT 상품 조회">band YT</a></li>
 								
 							
 									<li id="payment"><a href="#" id="b_data" title="band 데이터 상품 조회">band 데이터</a></li>
@@ -298,19 +298,19 @@ infoArea .list1{overflow:hidden;height:120px}
 										
 									</ul>
 									<div class="btnBox">
-										<a href="/phonefo/payment/skt/signiture_master" title="T시그니처 Master 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="/phonefo/payment/skt/${signiture.payment }" title="T시그니처 Master 자세히보기" class="btnS btnDgray">자세히보기</a>
 										
 									</div>
 								</div>
 							</li>
 							</c:forEach>
 							
-							<c:forEach items="${band_yf }" var="band_yf">
-							<li id="band_yf">
+							<c:forEach items="${band_yt }" var="band_yt">
+							<li id="band_yt">
 								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
-											<strong>${band_yf.payment }</strong>
+											<strong>${band_yt.payment }</strong>
 										
 									</div>
 									<span class="blank"><!-- design --></span>
@@ -319,11 +319,11 @@ infoArea .list1{overflow:hidden;height:120px}
 									<span class="blank"><!-- design --></span>
 									<ul class="list1">
 										<li style="width: 70px"><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
-											<strong>${band_yf.data }</strong>
+											<strong>${band_yt.data }</strong>
 											<span></span><!-- 부가설명 -->
 										</li>
 										<li style="width: 150px"><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
-											<strong>${band_yf.call }</strong>
+											<strong>${band_yt.call }</strong>
 											<span></span>
 										</li>
 										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
@@ -331,13 +331,13 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함w) : </strong>${band_yf.fixed_month }원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함w) : </strong>${band_yt.fixed_month }원</li>
 										
-										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>${band_yf.fixed_month_dis }원</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>${band_yt.fixed_month_dis }원</li>
 										
 									</ul>
 									<div class="btnBox">
-										<a href="javascript:goProductDetail('band YT 퍼펙트', 'NA00005017', 'A101');" title="band YT 퍼펙트 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="/phonefo/payment/skt/${band_yt.payment }" title="band YT 퍼펙트 자세히보기" class="btnS btnDgray">자세히보기</a>
 										</div>
 								</div>
 							</li>
@@ -376,7 +376,7 @@ infoArea .list1{overflow:hidden;height:120px}
 										
 									</ul>
 									<div class="btnBox">
-										<a href="javascript:goProductDetail('band 데이터 퍼펙트S', 'NA00005134', 'A101');" title="band 데이터 퍼펙트S 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="/phonefo/payment/skt/${band_data.payment }" title="band 데이터 퍼펙트S 자세히보기" class="btnS btnDgray">자세히보기</a>
 										</div>
 								</div>
 							</li>
@@ -414,7 +414,7 @@ infoArea .list1{overflow:hidden;height:120px}
 										
 									</ul>
 									<div class="btnBox">
-										<a href="javascript:goProductDetail('band 데이터 6.5G', 'NA00004773', 'A101');" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="/phonefo/payment/skt/${everyone_unlimited.payment }" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
 										</div>
 								</div>
 							</li>
@@ -452,7 +452,7 @@ infoArea .list1{overflow:hidden;height:120px}
 										
 									</ul>
 									<div class="btnBox">
-										<a href="javascript:goProductDetail('band 데이터 6.5G', 'NA00004773', 'A101');" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="/phonefo/payment/skt/${t_together.payment }" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
 										</div>
 								</div>
 							</li>

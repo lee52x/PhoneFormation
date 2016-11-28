@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -50,8 +49,11 @@
 		});
 	});
 </script>
+<script type="text/javascript">
+	
 
 
+</script>
 
 </head>
 <body>
@@ -87,7 +89,7 @@
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p>${master.data } + ${master.extra_data}</p>
+										<p>${master.data }  ${master.extra_data}</p>
 										<!-- 추가 안내 문구가 있을 경우 -->
 									</div> <span>무제한</span>
 								</li>
@@ -146,11 +148,11 @@
 								<ul>
 									<li class="balloon2"><a href="#classic"
 										id="siginiture_classic"><strong>T 시그니처<br>(Classic)
-										</strong><span class="dLine"><em>20GB<br>+
+										</strong><span class="dLine"><em>20GB<br>
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
 									<li class="balloon1 on"><a href="#master"
 										id="siginiture_master"><strong>T 시그니처<br>(Master)
-										</strong><span><em>35GB<br>+
+										</strong><span><em>35GB<br>
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
 									<!--두줄이상일때  class="dLine" 추가-->
 								</ul>
@@ -190,7 +192,7 @@
 												<td>${signiture.fixed_month}원</td>
 												<td>${signiture.call }</td>
 												<td>${signiture.sms }</td>
-												<td>${signiture.data} + ${signiture.extra_data}</td>
+												<td>${signiture.data}  ${signiture.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -229,7 +231,7 @@
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p>${classic.data } + ${classic.extra_data}</p>
+										<p>${classic.data }  ${classic.extra_data}</p>
 										<!-- 추가 안내 문구가 있을 경우 -->
 									</div> <span>무제한</span>
 								</li>
@@ -288,11 +290,11 @@
 								<ul>
 									<li class="balloon2 on"><a href="#classic"
 										id="siginiture_classic"><strong>T 시그니처<br>(Classic)
-										</strong><span class="dLine"><em>20GB<br>+
+										</strong><span class="dLine"><em>20GB<br>
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
 									<li class="balloon1"><a href="#master"
 										id="siginiture_master"><strong>T 시그니처<br>(Master)
-										</strong><span><em>35GB<br>+
+										</strong><span><em>35GB<br>
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
 									<!--두줄이상일때  class="dLine" 추가-->
 								</ul>
@@ -309,7 +311,7 @@
 									summary="T 시그니처, 한눈에 보기 테이블은 요금제(T 시그니처(Classic),T 시그니처(Master), 월정액(VAT포함), 음성, 문자, 데이터로 구성되어 있습니다.">
 									<caption>T 시그니처, 한눈에 보기</caption>
 									<colgroup>
-										<col width="*">
+										<col width="30%">
 										<col width="15%">
 										<col width="15%">
 										<col width="15%">
@@ -332,7 +334,7 @@
 												<td>${signiture.fixed_month}원</td>
 												<td>${signiture.call }</td>
 												<td>${signiture.sms }</td>
-												<td>${signiture.data} + ${signiture.extra_data}</td>
+												<td>${signiture.data}  ${signiture.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -362,7 +364,7 @@
 /* 	var url = document.URL;
 	alert(url); */
 	
-	if(location.href.match('master')){
+	if(location.href.match('Master')){
 		// alert("하이 마스터");
 		$('div[id=classic]').css("display", "none");
 		$('div[id=master]').show();
