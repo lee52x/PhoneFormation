@@ -120,7 +120,9 @@ public class SktController {
 		
 		
 		return "mainView";
-	}@RequestMapping("/payment/skt/band YT 세이브")
+	}
+	
+	@RequestMapping("/payment/skt/band YT 세이브")
 	public String band_yt_save(String payment, Model model) throws Exception{
 		
 		model.addAttribute("body", "./payment/skt_band_yt.jsp");
