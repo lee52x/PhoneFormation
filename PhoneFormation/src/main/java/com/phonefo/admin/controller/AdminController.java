@@ -32,7 +32,7 @@ public class AdminController {
 		return "mainView";
 	}
 
-	@RequestMapping("adminOno")//包府磊 1措1
+	@RequestMapping("/adminOno")//包府磊 1措1
 	public String admin_onoBoard(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		
 

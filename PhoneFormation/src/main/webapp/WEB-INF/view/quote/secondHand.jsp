@@ -13,7 +13,7 @@
 $(document).ready(function(){
 	
 	/*셀렉트박스*/
-	
+	$('#quote').hide();//견적서 숨기기
 	
 	var manufacture = $("select#manufacture");
     
@@ -99,28 +99,29 @@ $(document).ready(function(){
 
 	});
 	function check(){
-		
-		var f=document.frm;
-/* 		alert(f.radid_01.value);
-		alert(f.manufacture.value);
-		alert(f.machine.value);
-		alert(f.capacity.value); 
-		alert(f.year.value);
-		alert(f.month.value);
-		alert(f.radid_02.value);
-		alert(f.radid_03.value);
-		alert(f.radid_04.value);
-	*/	
+	var f=document.frm;
 	$.ajax({
 		url:"/phonefo/calculator",
 		type:'POST',
-		data:{howsend:f.radid_01.value, manufacture:f.manufacture.value, machine:f.machine.value, capacity:f.capacity.value, year:f.year.value, month:f.month.value, power:f.radid_02.value, glass:f.radid_03.value, equipment:f.radid_04.value},
-		success:function(result){
-			
+		data:{howsend:f.radid_01.value, manufacture:f.manufacture.value, machine:f.machine.value, capacity:f.capacity.value, power:f.radid_02.value, glass:f.radid_03.value, equipment:f.radid_04.value},
+		success:function(vo2){
+			$('#release_price').val(vo2.release_price);
+			$('#quote_price').val(vo2.quote_price);
+			var cut_price=vo2.release_price-vo2.quote_price;
+			$('#cut_price').val('-'+cut_price);
+			$('#quote').show();
 		}
 	});	
 	
 	
+	}
+	
+	function sellPhone(){
+		var f=document.frm;
+		f.submit();
+		
+		
+		
 	}
 	
 
@@ -1053,7 +1054,7 @@ label.checkbox-label {
 </head>
 
 <body>
-<form name="frm">
+<form name="frm" action="/phonefo/sell" method="post">
 <div class="page-banner">
 		<div class="container">
 			<div class="row">
@@ -1137,117 +1138,7 @@ label.checkbox-label {
 					</select>
 				</div> &nbsp&nbsp&nbsp
 		</tr>
-		<tr>
-			<td height="60" class="t_s_title">구매년월</td>
-			<td bgcolor="#FFFFFF">
-				<div id="select_box">
-					<label for="color">년</label> <select id="purchaseYear" name="year">
-						<option value="2016">2016년</option>
-						<option value="2015">2015년</option>
-						<option value="2014">2014년</option>
-						<option value="2013">2013년</option>
-						<option value="2012">2012년</option>
-						<option value="2011">2011년</option>
-						<option value="2010">2010년</option>
-						<option value="2009">2009년</option>
-						<option value="2008">2008년</option>
-						<option value="2007">2007년</option>
-						<option value="2006">2006년</option>
-						<option value="2005">2005년</option>
-						<option value="2004">2004년</option>
-						<option value="2003">2003년</option>
-						<option value="2002">2002년</option>
-						<option value="2001">2001년</option>
-						<option value="2000">2000년</option>
-						<option value="1999">1999년</option>
-						<option value="1998">1998년</option>
-						<option value="1997">1997년</option>
-						<option value="1996">1996년</option>
-						<option value="1995">1995년</option>
-						<option value="1994">1994년</option>
-						<option value="1993">1993년</option>
-						<option value="1992">1992년</option>
-						<option value="1991">1991년</option>
-						<option value="1990">1990년</option>
-						<option value="1989">1989년</option>
-						<option value="1988">1988년</option>
-						<option value="1987">1987년</option>
-						<option value="1986">1986년</option>
-						<option value="1985">1985년</option>
-						<option value="1984">1984년</option>
-						<option value="1983">1983년</option>
-						<option value="1982">1982년</option>
-						<option value="1981">1981년</option>
-						<option value="1980">1980년</option>
-						<option value="1979">1979년</option>
-						<option value="1978">1978년</option>
-						<option value="1977">1977년</option>
-						<option value="1976">1976년</option>
-						<option value="1975">1975년</option>
-						<option value="1974">1974년</option>
-						<option value="1973">1973년</option>
-						<option value="1972">1972년</option>
-						<option value="1971">1971년</option>
-						<option value="1970">1970년</option>
-						<option value="1969">1969년</option>
-						<option value="1968">1968년</option>
-						<option value="1967">1967년</option>
-						<option value="1966">1966년</option>
-						<option value="1965">1965년</option>
-						<option value="1964">1964년</option>
-						<option value="1963">1963년</option>
-						<option value="1962">1962년</option>
-						<option value="1961">1961년</option>
-						<option value="1960">1960년</option>
-						<option value="1959">1959년</option>
-						<option value="1958">1958년</option>
-						<option value="1957">1957년</option>
-						<option value="1956">1956년</option>
-						<option value="1955">1955년</option>
-						<option value="1954">1954년</option>
-						<option value="1953">1953년</option>
-						<option value="1952">1952년</option>
-						<option value="1951">1951년</option>
-						<option value="1950">1950년</option>
-						<option value="1949">1949년</option>
-						<option value="1948">1948년</option>
-						<option value="1947">1947년</option>
-						<option value="1946">1946년</option>
-						<option value="1945">1945년</option>
-						<option value="1944">1944년</option>
-						<option value="1943">1943년</option>
-						<option value="1942">1942년</option>
-						<option value="1941">1941년</option>
-						<option value="1940">1940년</option>
-						<option value="1939">1939년</option>
-						<option value="1938">1938년</option>
-						<option value="1937">1937년</option>
-						<option value="1936">1936년</option>
-						<option value="1935">1935년</option>
-						<option value="1934">1934년</option>
-						<option value="1933">1933년</option>
-						<option value="1932">1932년</option>
-					</select>
-				</div>
-				<div id="select_box">
-					<label for="color">월</label> <select id="purchaseMonth" name="month">
-						<option value="">월</option>
-						<option value="01">01월</option>
-						<option value="02">02월</option>
-						<option value="03">03월</option>
-						<option value="04">04월</option>
-						<option value="05">05월</option>
-						<option value="06">06월</option>
-						<option value="07">07월</option>
-						<option value="08">08월</option>
-						<option value="09">09월</option>
-						<option value="10">10월</option>
-						<option value="11">11월</option>
-						<option value="12">12월</option>
-					</select>
-				</div>
-			</td>
-		</tr>
+
 		<tr>
 			<td height="60" class="t_s_title">전원상태</td>
 			<td bgcolor="#FFFFFF">
@@ -1293,12 +1184,45 @@ label.checkbox-label {
 		
 	</table>
 		<table width="1160px" border="0" align="center" cellpadding="10" cellspacing="1">
-	<br><br><br><br>
+	<br>
 	<tr>
 		<td height="60" align="center" ><button type="button" class="btn_counsel" id="calculator" onclick="check()">견적보기</button></td>
 	</tr>
-</table>
+	
+	<tr>
+	<td>
+	<br><br>
+	<div style="margin-top:5px;width:80%;background:#eee" align="center" id="quote">
+				<table>
+					<tr>
+						<td rowspan="4" width="100" style="text-align:center;font-size:20px;font-weight:900">가격</td>
+						<td width="100" style="text-align:right">출고가격　</td>
+						<td><input type="text" id="release_price" name="user_add43"  value="" readonly style="text-align:right"/>원</td>
+					</tr>
+					<tr>
+						<td width="100" style="text-align:right">차감가격　</td>
+						<td><input type="text" id="cut_price" name="user_add44"  value="" readonly style="text-align:right"/>원</td>
+					</tr>
+<!-- 					<tr>
+						<td width="100" style="text-align:right">차감내역　</td>
+						<td id="itemsReduction"></td>
+					</tr> -->
+					<tr>
+						<td width="100" style="text-align:right">견적가격　</td>
+						<td><input type="text" id="quote_price" name="user_add45"  value="" readonly style="text-align:right"/>원</td>
+					</tr>
+				</table>
+				<font color="red">※견적금액은 예상금액이며 실제 거래 금액과 차이가 있을 수 있습니다.</font>
+				<br><br>
+				<button type="button"  id="sell" onclick="sellPhone()">판매하기</button>
+			</div>
+	</td>
+	
+	</tr>
+		</table>
+		
 <br><br><br>
+			
 </form>
 </body>
 </html>

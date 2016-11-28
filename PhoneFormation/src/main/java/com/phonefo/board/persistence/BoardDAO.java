@@ -12,4 +12,5 @@ public interface BoardDAO {
 	   public int listCount(int tno) throws Exception;
 	   public void insert(BoardVO board)throws Exception;
 	   public String selecttitle(int tno) throws Exception;
+	   public BoardVO selectpage(int bno);
 }
