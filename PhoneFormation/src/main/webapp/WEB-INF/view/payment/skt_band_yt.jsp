@@ -40,43 +40,43 @@
 
 	$(document).ready(function() {
 		$('a[id=band_yt_perfect]').click(function() {
-			$('div[id=prefect]').show();
-			$('div[id=7g]').hide();
-			$('div[id=3g]').hide();
-			$('div[id=1g]').hide();
-			$('div[id=save]').hide();
+			$('#perfect').show();
+			$('#7g').hide();
+			$('#3g').hide();
+			$('#1g').hide();
+			$('#save').hide();
 		});
 		
 		$('a[id=band_yt_7g]').click(function() {
-			$('div[id=prefect]').hide();
-			$('div[id=7g]').show();
-			$('div[id=3g]').hide();
-			$('div[id=1g]').hide();
-			$('div[id=save]').hide();
+			$('#perfect').hide();
+			$('#7g').show();
+			$('#3g').hide();
+			$('#1g').hide();
+			$('#save').hide();
 		});
 		
 		$('a[id=band_yt_3g]').click(function() {
-			$('div[id=prefect]').hide();
-			$('div[id=7g]').hide();
-			$('div[id=3g]').show();
-			$('div[id=1g]').hide();
-			$('div[id=save]').hide();
+			$('#perfect').hide();
+			$('#7g').hide();
+			$('#3g').show();
+			$('#1g').hide();
+			$('#save').hide();
 		});
 		
 		$('a[id=band_yt_1g]').click(function() {
-			$('div[id=prefect]').hide();
-			$('div[id=7g]').hide();
-			$('div[id=3g]').hide();
-			$('div[id=1g]').show();
-			$('div[id=save]').hide();
+			$('#perfect').hide();
+			$('#7g').hide();
+			$('#3g').hide();
+			$('#1g').show();
+			$('#save').hide();
 		});
 		
 		$('a[id=band_yt_save]').click(function() {
-			$('div[id=prefect]').hide();
-			$('div[id=7g]').hide();
-			$('div[id=3g]').hide();
-			$('div[id=1g]').hide();
-			$('div[id=save]').show();
+			$('#perfect').hide();
+			$('#7g').hide();
+			$('#3g').hide();
+			$('#1g').hide();
+			$('#save').show();
 		});
 		
 		
@@ -181,21 +181,21 @@
 										id="band_yt_save"><strong>band YT<br>(세이브)
 										</strong><span class="dLine"><em>500MB
 											</em></span></a></li>
-									<li class="balloon4"><a href="#1G"
+									<li class="balloon4"><a href="#1g"
 										id="band_yt_1g"><strong>band YT<br>(1G)
 										</strong><span class="dLine"><em>1GB<br>
 											</em></span></a></li>
-									<li class="balloon3"><a href="#3G"
+									<li class="balloon3"><a href="#3g"
 										id="band_yt_3g"><strong>band YT<br>(3G)
 										</strong><span class="dLine"><em>3GB<br>
 											</em></span></a></li>
-									<li class="balloon2"><a href="#7G"
+									<li class="balloon2"><a href="#7g"
 										id="band_yt_7g"><strong>band YT<br>(7G)
 										</strong><span class="dLine"><em>7GB<br>
 											</em></span></a></li>
 									<li class="balloon1 on"><a href="#perfect"
 										id="band_yt_perfect"><strong>band YT<br>(퍼펙트)
-										</strong><span><em>12GB<br>
+										</strong><span><em>12GB<br><br>
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
 									<!--두줄이상일때  class="dLine" 추가-->
 								</ul>
@@ -306,7 +306,7 @@
 					<dl class="prTopType type1">
 						<dt>
 							<img src="/resources/images/payment/skt/band_yt_7g.png"
-								alt="band YT 퍼펙트">
+								alt="band YT 7G">
 						</dt>
 						<dd>
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
@@ -374,21 +374,21 @@
 										id="band_yt_save"><strong>band YT<br>(세이브)
 										</strong><span class="dLine"><em>500MB
 											</em></span></a></li>
-									<li class="balloon4"><a href="#1G"
+									<li class="balloon4"><a href="#1g"
 										id="band_yt_1g"><strong>band YT<br>(1G)
 										</strong><span class="dLine"><em>1GB<br>
 											</em></span></a></li>
-									<li class="balloon3"><a href="#3G"
+									<li class="balloon3"><a href="#3g"
 										id="band_yt_3g"><strong>band YT<br>(3G)
 										</strong><span class="dLine"><em>3GB<br>
 											</em></span></a></li>
-									<li class="balloon2 on"><a href="#7G"
+									<li class="balloon2 on"><a href="#7g"
 										id="band_yt_7g"><strong>band YT<br>(7G)
 										</strong><span class="dLine"><em>7GB<br>
 											</em></span></a></li>
 									<li class="balloon1"><a href="#perfect"
 										id="band_yt_perfect"><strong>band YT<br>(퍼펙트)
-										</strong><span><em>12GB<br>
+										</strong><span><em>12GB<br><br>
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
 									<!--두줄이상일때  class="dLine" 추가-->
 								</ul>
@@ -500,7 +500,7 @@
 					<dl class="prTopType type1">
 						<dt>
 							<img src="/resources/images/payment/skt/band_yt_3g.png"
-								alt="band YT 퍼펙트">
+								alt="band YT 3G">
 						</dt>
 						<dd>
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
@@ -568,21 +568,21 @@
 										id="band_yt_save"><strong>band YT<br>(세이브)
 										</strong><span class="dLine"><em>500MB
 											</em></span></a></li>
-									<li class="balloon4"><a href="#1G"
+									<li class="balloon4"><a href="#1g"
 										id="band_yt_1g"><strong>band YT<br>(1G)
 										</strong><span class="dLine"><em>1GB<br>
 											</em></span></a></li>
-									<li class="balloon3 on"><a href="#3G"
+									<li class="balloon3 on"><a href="#3g"
 										id="band_yt_3g"><strong>band YT<br>(3G)
 										</strong><span class="dLine"><em>3GB<br>
 											</em></span></a></li>
-									<li class="balloon2"><a href="#7G"
+									<li class="balloon2"><a href="#7g"
 										id="band_yt_7g"><strong>band YT<br>(7G)
 										</strong><span class="dLine"><em>7GB<br>
 											</em></span></a></li>
 									<li class="balloon1"><a href="#perfect"
 										id="band_yt_perfect"><strong>band YT<br>(퍼펙트)
-										</strong><span><em>12GB<br>
+										</strong><span><em>12GB<br><br>
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
 									<!--두줄이상일때  class="dLine" 추가-->
 								</ul>
@@ -694,7 +694,7 @@
 					<dl class="prTopType type1">
 						<dt>
 							<img src="/resources/images/payment/skt/band_yt_1g.png"
-								alt="band YT 퍼펙트">
+								alt="band YT 1G">
 						</dt>
 						<dd>
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
@@ -762,21 +762,21 @@
 										id="band_yt_save"><strong>band YT<br>(세이브)
 										</strong><span class="dLine"><em>500MB
 											</em></span></a></li>
-									<li class="balloon4 on"><a href="#1G"
+									<li class="balloon4 on"><a href="#1g"
 										id="band_yt_1g"><strong>band YT<br>(1G)
 										</strong><span class="dLine"><em>1GB<br>
 											</em></span></a></li>
-									<li class="balloon3"><a href="#3G"
+									<li class="balloon3"><a href="#3g"
 										id="band_yt_3g"><strong>band YT<br>(3G)
 										</strong><span class="dLine"><em>3GB<br>
 											</em></span></a></li>
-									<li class="balloon2"><a href="#7G"
+									<li class="balloon2"><a href="#7g"
 										id="band_yt_7g"><strong>band YT<br>(7G)
 										</strong><span class="dLine"><em>7GB<br>
 											</em></span></a></li>
 									<li class="balloon1"><a href="#perfect"
 										id="band_yt_perfect"><strong>band YT<br>(퍼펙트)
-										</strong><span><em>12GB<br>
+										</strong><span><em>12GB<br><br>
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
 									<!--두줄이상일때  class="dLine" 추가-->
 								</ul>
@@ -888,7 +888,7 @@
 					<dl class="prTopType type1">
 						<dt>
 							<img src="/resources/images/payment/skt/band_yt_save.png"
-								alt="band YT 퍼펙트">
+								alt="band YT 세이브">
 						</dt>
 						<dd>
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
@@ -956,21 +956,21 @@
 										id="band_yt_save"><strong>band YT<br>(세이브)
 										</strong><span class="dLine"><em>500MB
 											</em></span></a></li>
-									<li class="balloon4"><a href="#1G"
+									<li class="balloon4"><a href="#1g"
 										id="band_yt_1g"><strong>band YT<br>(1G)
 										</strong><span class="dLine"><em>1GB<br>
 											</em></span></a></li>
-									<li class="balloon3"><a href="#3G"
+									<li class="balloon3"><a href="#3g"
 										id="band_yt_3g"><strong>band YT<br>(3G)
 										</strong><span class="dLine"><em>3GB<br>
 											</em></span></a></li>
-									<li class="balloon2"><a href="#7G"
+									<li class="balloon2"><a href="#7g"
 										id="band_yt_7g"><strong>band YT<br>(7G)
 										</strong><span class="dLine"><em>7GB<br>
 											</em></span></a></li>
 									<li class="balloon1"><a href="#perfect"
 										id="band_yt_perfect"><strong>band YT<br>(퍼펙트)
-										</strong><span><em>12GB<br>
+										</strong><span><em>16GB<br><br>
 											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
 									<!--두줄이상일때  class="dLine" 추가-->
 								</ul>
@@ -1076,9 +1076,10 @@
 </body>
 <script type="text/javascript" charset="UTF-8">
 
+	/* 
 	var url = document.URL;
 	alert(url);
-
+ */
 	
 	
 	if(location.href.match('0%ED%8D%BC%ED%8E%99%ED%8A%B8')){
