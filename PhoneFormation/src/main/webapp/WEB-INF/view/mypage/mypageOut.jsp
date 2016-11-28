@@ -15,6 +15,11 @@
 
 
 <body>
+<div class="container">
+	<div id="content">
+	<div>
+<%@include file="mypageHeader.jsp"%>
+	</div>
 	<br>
 	<br>
 	<br>
@@ -47,6 +52,6 @@
 		<br>
 		<br>
 	</form>
-
+</div></div>
 </body>
 </html>

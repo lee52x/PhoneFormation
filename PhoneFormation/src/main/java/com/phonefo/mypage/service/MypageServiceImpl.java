@@ -3,6 +3,7 @@ package com.phonefo.mypage.service;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
@@ -18,9 +19,9 @@ public class MypageServiceImpl implements MypageService {
 	private MypageDAO dao;
 	
 	@Override
-	public MypageMemberVO myPageMain(String userid) throws Exception {
+	public MypageMemberVO myPageMain(HttpSession session) throws Exception {
 		
-		return dao.myPageMain(userid);
+		return dao.myPageMain(session);
 	}
 
 	@Override
@@ -30,15 +31,15 @@ public class MypageServiceImpl implements MypageService {
 	}
 
 	@Override
-	public List<MypageOnoVO> myPageOnoList(String userid) throws Exception {
+	public List<MypageOnoVO> myPageOnoList(HttpSession session) throws Exception {
 		
-		return dao.myPageOnoList(userid);
+		return dao.myPageOnoList(session);
 	}
 
 	@Override
-	public int myPageDel(String userid) throws Exception {
+	public int myPageDel(HttpSession session) throws Exception {
 		
-		return dao.myPageDel(userid);
+		return dao.myPageDel(session);
 	}
 
 }

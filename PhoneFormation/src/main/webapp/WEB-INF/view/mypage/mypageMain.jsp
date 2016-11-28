@@ -7,10 +7,25 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<div class="container">
+	<div id="content">
+	<div>
+<%@include file="mypageHeader.jsp"%>
+	</div>
 <a href="/phonefo/mypageUpdate">정보수정</a>
 <a href="/phonefo/mypageOno">1대1문의보기</a>
 
+${object.userid }
+${object.userpwd }
+${object.username }
+${object.birth }
+${object.rdate }
+${object.gender }
+${object.email }
+${object.tel }
+${object.root }
+${object.status }
 
+</div></div>
 </body>
 </html>

@@ -1,6 +1,7 @@
 package com.phonefo.mypage.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,18 +23,18 @@ public class MypageController {
 	private MypageService service;
 	
 	@RequestMapping("/mypageMain")//마이페이지 내정보 화면(메인)
-	public String myPageMain(Model model,String userid) throws Exception {
-		model.addAttribute("object", service.myPageMain(userid));
+	public String myPageMain(Model model,HttpSession session) throws Exception {
+		model.addAttribute("object", service.myPageMain(session));
 
 	
-		model.addAttribute("body", "./admin/mypageMain.jsp");
+		model.addAttribute("body", "./mypage/mypageMain.jsp");
 
 		return "mainView";
 	}
 	@RequestMapping(value="/mypageUpdate", method=RequestMethod.GET)//마이페이지 내정보 수정페이지 불러오기
-	public String myPageUpdateGET(Model model,String userid) throws Exception {
-		model.addAttribute("object", service.myPageMain(userid));
-		model.addAttribute("body", "./admin/mypageUpdate.jsp");
+	public String myPageUpdateGET(Model model,HttpSession session) throws Exception {
+		model.addAttribute("object", service.myPageMain(session));
+		model.addAttribute("body", "./mypage/mypageUpdate.jsp");
 		
 		return "mainView";
 	}
@@ -43,30 +44,30 @@ public class MypageController {
 		attr.addFlashAttribute("msg", "SUCCESS");    	
 		
 		
-		model.addAttribute("body", "./admin/mypageMain.jsp");
+		model.addAttribute("body", "./mypage/mypageMain.jsp");
 		
 		return "redirect:/mainView";
 	}
 	@RequestMapping("/mypageOno")//마이페이지 1대1문의
-	public String myPageOnO(Model model,String userid) throws Exception {
-		model.addAttribute("list", service.myPageOnoList(userid));
+	public String myPageOnO(Model model,HttpSession session) throws Exception {
+		model.addAttribute("list", service.myPageOnoList(session));
 		
 		
-		model.addAttribute("body", "./admin/mypageOno.jsp");
+		model.addAttribute("body", "./mypage/mypageOno.jsp");
 		
 		return "mainView";
 	}
 	@RequestMapping(value="/mypageOut", method=RequestMethod.GET)//마이페이지 회원탈퇴페이지 불러오기
 	public String myPageOutGET(Model model) throws Exception {
 		
-		model.addAttribute("body", "./admin/mypageOut.jsp");
+		model.addAttribute("body", "./mypage/mypageOut.jsp");
 		
 		return "mainView";
 	}
 	
 	@RequestMapping(value="/mypageOut", method=RequestMethod.POST)//마이페이지 회원탈퇴처리
-	public String myPageOutPOST(Model model,String userid,RedirectAttributes attr) throws Exception {
-		model.addAttribute("result", service.myPageDel(userid));
+	public String myPageOutPOST(Model model,HttpSession session,RedirectAttributes attr) throws Exception {
+		model.addAttribute("result", service.myPageDel(session));
 		
 		
 		model.addAttribute("body", "./main/body.jsp");

@@ -3,6 +3,7 @@ package com.phonefo.mypage.persistence;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -17,9 +18,9 @@ public class MypageDAOImpl implements MypageDAO {
 	private SqlSession sqlSession;	
 	
 	@Override
-	public MypageMemberVO myPageMain(String userid) throws Exception {
+	public MypageMemberVO myPageMain(HttpSession session) throws Exception {
 		
-		return sqlSession.selectOne("mypage.mypageMemberInfo",userid);
+		return sqlSession.selectOne("mypage.mypageMemberInfo",session.getAttribute("userid"));
 	}
  
 	@Override
@@ -29,15 +30,15 @@ public class MypageDAOImpl implements MypageDAO {
 	}
 
 	@Override
-	public List<MypageOnoVO> myPageOnoList(String userid) throws Exception {
+	public List<MypageOnoVO> myPageOnoList(HttpSession session) throws Exception {
 	
-		return sqlSession.selectList("mypage.mypageOnoInfo", userid);
+		return sqlSession.selectList("mypage.mypageOnoInfo",session.getAttribute("userid"));
 	}
 
 	@Override
-	public int myPageDel(String userid) throws Exception {
+	public int myPageDel(HttpSession session) throws Exception {
 		
-		return sqlSession.delete("mypage.mypageMemberDel",userid);
+		return sqlSession.delete("mypage.mypageMemberDel",session.getAttribute("userid"));
 	}
 
 }
