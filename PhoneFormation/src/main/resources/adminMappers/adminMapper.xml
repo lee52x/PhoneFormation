@@ -20,7 +20,7 @@
 	  </if>       
 	 order by rdate desc	   
    </select>
-   
+   <!-- 멤버검색카운트 -->
    <select id="memberSearchCount" resultType="int">
       select count(*)
       from ph_member
@@ -33,6 +33,41 @@
 	    </if>
 	      <if test="searchType == 'im'.toString()">
 	       where username like '%'||#{keyword}||'%' or userid like '%'||#{keyword}||'%'
+	    </if>
+	  </if>       
+   </select>
+   
+   <!-- 비즈니스멤버 검색어를 통한 리스트 조회 -->
+   <select id="listB_Member" resultType="adminMember">
+     select userid,userpwd,tel,email,businessNum,companyName,leader,address,rdate,root 
+     from ph_business_member
+	
+	  <if test="searchType != null">
+	    <if test="searchType == 'i'.toString() ">
+	        where userid like '%'||#{keyword}||'%'
+	    </if>
+	    <if test="searchType == 'm'.toString()">
+	       where companyName like '%'||#{keyword}||'%'
+	    </if>
+	      <if test="searchType == 'im'.toString()">
+	       where companyName like '%'||#{keyword}||'%' or userid like '%'||#{keyword}||'%'
+	    </if>
+	  </if>       
+	 order by rdate desc	   
+   </select>
+   <!-- 비즈니스멤버검색카운트 -->
+   <select id="b_memberSearchCount" resultType="int">
+      select count(*)
+      from ph_business_member
+       <if test="searchType != null">
+	    <if test="searchType == 'i'.toString() ">
+	        where userid like '%'||#{keyword}||'%'
+	    </if>
+	    <if test="searchType == 'm'.toString()">
+	       where companyName like '%'||#{keyword}||'%'
+	    </if>
+	      <if test="searchType == 'im'.toString()">
+	       where companyName like '%'||#{keyword}||'%' or userid like '%'||#{keyword}||'%'
 	    </if>
 	  </if>       
    </select>

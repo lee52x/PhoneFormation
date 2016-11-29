@@ -31,6 +31,20 @@ public class AdminController {
 
 		return "mainView";
 	}
+	
+	@RequestMapping("/adminB_Member")//관리자 비즈니스멤버
+	public String b_memberListPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		model.addAttribute("list", service.b_memberSearchCriteria(cri));
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.b_memberSearchCount(cri));
+		model.addAttribute("pageMaker", pageMaker);
+		
+		model.addAttribute("body", "./admin/adminB_Member.jsp");
+		
+		return "mainView";
+	}
 
 	@RequestMapping("/adminOno")//관리자 1대1
 	public String admin_onoBoard(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
