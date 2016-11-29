@@ -2,14 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="mypage">
 
-	<!-- 마이페이지 내정보 출력 -->
+	<!-- 마이페이지 일반멤버 출력 -->
 	<select id="mypageMemberInfo" resultType="mypageMember">
 		select
 		userid,userpwd,username,rdate,birth,gender,email,tel,root,status
 		from ph_member
 		where userid = #{userid}
 	</select>
-
+	
+	<!-- 마이페이지 비즈니스멤버 출력 -->
+	<select id="" resultType="">
+	select userid,userpwd,tel,email,businessNum,companyName,leader,address,rdate,root from ph_business_member
+			where userid=#{userid}
+	
+	</select>
 	<!-- 마이페이지 1대1문의 출력 -->
 	<select id="mypageOnoInfo" resultType="mypageOno">
 		select
