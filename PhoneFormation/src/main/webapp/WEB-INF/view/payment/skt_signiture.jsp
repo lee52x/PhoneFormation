@@ -49,11 +49,11 @@
 		});
 	});
 </script>
-<script type="text/javascript">
-	
-
-
-</script>
+<style type="text/css">
+div{
+	font-family: Comic Sans MS;
+}
+</style>
 
 </head>
 <body>
@@ -220,7 +220,7 @@
 					<dl class="prTopType type1">
 						<dt>
 							<img src="/resources/images/payment/skt/signiture_classic.jpg"
-								alt="T 시그니처 Master">
+								alt="T 시그니처 Classic">
 						</dt>
 						<dd>
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>

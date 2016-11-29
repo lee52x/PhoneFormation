@@ -15,6 +15,7 @@ public interface KtServiceDAO {
 	public List<KtVO> all(String payment) throws Exception;
 	public List<KtVO> all41(String payment) throws Exception;
 	public List<KtVO> all34(String payment) throws Exception;
+	public List<KtVO> all28(String payment) throws Exception;
 	
 	public List<KtVO>yTeen(String payment) throws Exception;
 	public List<KtVO>yTeen38(String payment) throws Exception;

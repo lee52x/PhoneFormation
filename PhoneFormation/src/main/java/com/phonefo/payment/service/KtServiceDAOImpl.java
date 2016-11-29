@@ -59,6 +59,11 @@ public class KtServiceDAOImpl implements KtServiceDAO {
 	public List<KtVO> all34(String payment) throws Exception {
 		return dao.all34(payment);
 	}
+	
+	@Override
+	public List<KtVO> all28(String payment) throws Exception {
+		return dao.all28(payment);
+	}
 
 	@Override
 	public List<KtVO> yTeen(String payment) throws Exception {

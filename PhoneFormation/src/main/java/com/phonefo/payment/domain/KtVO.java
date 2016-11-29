@@ -4,6 +4,7 @@ public class KtVO {
 
 	private String payment;
 	private String	data;
+	private String	extra_data;
 	private String call;
 	private String	sms;
 	private int		fixed_month;
@@ -46,6 +47,12 @@ public class KtVO {
 	}
 	public void setFares_month(int fares_month) {
 		this.fares_month = fares_month;
+	}
+	public String getExtra_data() {
+		return extra_data;
+	}
+	public void setExtra_data(String extra_data) {
+		this.extra_data = extra_data;
 	}
 	public int getFares_24month() {
 		return fares_24month;

@@ -48,6 +48,11 @@
 		from kt_pay
 		where payment like '%모두다올레34%'
 	</select>
+		<select id="all28" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%모두다올레28%'
+	</select>
 	
 
 	<select id="yTeen" resultType="kt_payment">

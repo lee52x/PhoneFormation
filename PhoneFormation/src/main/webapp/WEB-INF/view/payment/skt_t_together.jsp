@@ -69,7 +69,11 @@
 		
 	});
 </script>
-
+<style type="text/css">
+div{
+	font-family: Comic Sans MS;
+}
+</style>
 
 
 </head>

@@ -39,7 +39,7 @@
 <script type="text/javascript">
 
 	$(document).ready(function() {
-		$('a[id=everyone_unlimited_100').click(function() {
+		$('a[id=everyone_unlimited_100]').click(function() {
 			$('#100').show();
 			$('#85').hide();
 			$('#80pack').hide();
@@ -47,7 +47,7 @@
 			$('#69').hide();
 		});
 		
-		$('a[id=everyone_unlimited_85').click(function() {
+		$('a[id=everyone_unlimited_85]').click(function() {
 			$('#100').hide();
 			$('#85').show();
 			$('#80pack').hide();
@@ -55,7 +55,7 @@
 			$('#69').hide();
 		});
 		
-		$('a[id=everyone_unlimited_80pack').click(function() {
+		$('a[id=everyone_unlimited_80pack]').click(function() {
 			$('#100').hide();
 			$('#85').hide();
 			$('#80pack').show();
@@ -63,7 +63,7 @@
 			$('#69').hide();
 		});
 		
-		$('a[id=everyone_unlimited_75').click(function() {
+		$('a[id=everyone_unlimited_75]').click(function() {
 			$('#100').hide();
 			$('#85').hide();
 			$('#80pack').hide();
@@ -71,7 +71,7 @@
 			$('#69').hide();
 		});
 		
-		$('a[id=everyone_unlimited_69').click(function() {
+		$('a[id=everyone_unlimited_69]').click(function() {
 			$('#100').hide();
 			$('#85').hide();
 			$('#80pack').hide();
@@ -82,7 +82,11 @@
 		
 	});
 </script>
-
+<style type="text/css">
+div{
+	font-family: Comic Sans MS;
+}
+</style>
 
 
 </head>

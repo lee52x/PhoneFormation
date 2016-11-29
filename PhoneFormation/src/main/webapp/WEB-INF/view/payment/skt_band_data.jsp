@@ -39,7 +39,7 @@
 <script type="text/javascript">
 
 	$(document).ready(function() {
-		$('a[id=band_data_perfectS').click(function() {
+		$('a[id=band_data_perfectS]').click(function() {
 			$('#perfectS').show();
 			$('#perfect').hide();
 			$('#6_5g').hide();
@@ -49,7 +49,7 @@
 			$('#save').hide();
 		});
 		
-		$('a[id=band_data_perfect').click(function() {
+		$('a[id=band_data_perfect]').click(function() {
 			$('#perfectS').hide();
 			$('#perfect').show();
 			$('#6_5g').hide();
@@ -59,7 +59,7 @@
 			$('#save').hide();
 		});
 		
-		$('a[id=band_data_6_5g').click(function() {
+		$('a[id=band_data_6_5g]').click(function() {
 			$('#perfectS').hide();
 			$('#perfect').hide();
 			$('#6_5g').show();
@@ -69,7 +69,7 @@
 			$('#save').hide();
 		});
 		
-		$('a[id=band_data_3_5g').click(function() {
+		$('a[id=band_data_3_5g]').click(function() {
 			$('#perfectS').hide();
 			$('#perfect').hide();
 			$('#6_5g').hide();
@@ -79,7 +79,7 @@
 			$('#save').hide();
 		});
 		
-		$('a[id=band_data_2_2g').click(function() {
+		$('a[id=band_data_2_2g]').click(function() {
 			$('#perfectS').hide();
 			$('#perfect').hide();
 			$('#6_5g').hide();
@@ -89,7 +89,7 @@
 			$('#save').hide();
 		});
 		
-		$('a[id=band_data_1_2g').click(function() {
+		$('a[id=band_data_1_2g]').click(function() {
 			$('#perfectS').hide();
 			$('#perfect').hide();
 			$('#6_5g').hide();
@@ -99,7 +99,7 @@
 			$('#save').hide();
 		});
 		
-		$('a[id=band_data_save').click(function() {
+		$('a[id=band_data_save]').click(function() {
 			$('#perfectS').hide();
 			$('#perfect').hide();
 			$('#6_5g').hide();
@@ -117,7 +117,11 @@
 		
 	});
 </script>
-
+<style type="text/css">
+div{
+	font-family: Comic Sans MS;
+}
+</style>
 
 
 </head>

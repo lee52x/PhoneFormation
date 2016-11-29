@@ -58,6 +58,11 @@ public class KtDAOImpl implements KtDAO {
 	public List<KtVO> all34(String payment) throws Exception {
 		return sqlSession.selectList("kt_payment.all34", payment);
 	}
+	
+	@Override
+	public List<KtVO> all28(String payment) throws Exception {
+		return sqlSession.selectList("kt_payment.all28", payment);
+	}
 
 	@Override
 	public List<KtVO> yTeen(String payment) throws Exception {
