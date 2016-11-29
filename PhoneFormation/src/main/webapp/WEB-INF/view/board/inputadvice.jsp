@@ -52,7 +52,7 @@ $(document).ready(function(){
 			<!-- general form elements -->
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3 class="box-title">글쓰기</h3>
+					<h3 class="box-title">1대1 문의하기</h3>
 				</div>
 				<!-- /.box-header -->
 
@@ -62,6 +62,13 @@ $(document).ready(function(){
 							<label for="title">제목</label>
 							<input type="text" id='title' name='title' class="form-control" placeholder="Enter Title">
 						</div>
+						<div class="form-group">
+							<select name="category" >
+							<option value="에러1">에러1</option>
+							<option value="에러2">에러2</option>
+							<option value="에러3">에러3</option>
+							<option value="에러4">에러4</option>
+						</select></div>
 						<div class="form-group">
 							<label for="content">파일첨부</label>
 							<input type="text" id="filename" readonly="readonly" class="form-control">
@@ -86,14 +93,6 @@ $(document).ready(function(){
 						<input type="button" class="btn btn-warning" id="listBtn" value="돌아가기">
 					</div>
 				</form>
-				<form role="listform" method="get" action="boardlist">
-					<input type='hidden' name='tno' value="${cri.tno}">
-					<input type='hidden' name='page' value="${cri.page}">
-					<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
-					<input type='hidden' name='searchType' value="${cri.searchType}">
-					<input type='hidden' name='keyword' value="${cri.keyword}">
-				</form>
-
 			</div>
 			<!-- /.box -->
 		</div>

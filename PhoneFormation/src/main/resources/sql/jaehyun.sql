@@ -8,7 +8,7 @@ create table ph_ono(
 ono number primary key,
 userid varchar2(50) foreign key,
 title varchar2(100)	not null,
-categori varchar2(30) not null,
+category varchar2(30) not null,
 content varchar2(100) not null,
 image varchar2(500),
 regdate date default sysdate,
