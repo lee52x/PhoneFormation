@@ -19,7 +19,7 @@
 	<!-- 마이페이지 1대1문의 출력 -->
 	<select id="mypageOnoInfo" resultType="mypageOno">
 		select
-		ono,userid,title,categori,content,image_path,regdate,answer,answer_regdate
+		ono,userid,title,category,content,image,regdate,answer,answer_regdate
 		from ph_ono
 		where userid = #{userid}
 	</select>

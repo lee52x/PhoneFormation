@@ -6,9 +6,9 @@ public class MypageOnoVO {
 	private int ono;
 	private String userid;
 	private String title;
-	private String categori;
+	private String category;
 	private String content;
-	private String image_path;
+	private String image;
 	private Date regdate;
 	private String answer;
 	private Date answer_regdate;
@@ -16,16 +16,16 @@ public class MypageOnoVO {
 	public MypageOnoVO() {
 		
 	}
-	
-	public MypageOnoVO(int ono, String userid, String title, String categori, String content, String image_path,
+
+	public MypageOnoVO(int ono, String userid, String title, String category, String content, String image,
 			Date regdate, String answer, Date answer_regdate) {
 		super();
 		this.ono = ono;
 		this.userid = userid;
 		this.title = title;
-		this.categori = categori;
+		this.category = category;
 		this.content = content;
-		this.image_path = image_path;
+		this.image = image;
 		this.regdate = regdate;
 		this.answer = answer;
 		this.answer_regdate = answer_regdate;
@@ -55,12 +55,12 @@ public class MypageOnoVO {
 		this.title = title;
 	}
 
-	public String getCategori() {
-		return categori;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setCategori(String categori) {
-		this.categori = categori;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public String getContent() {
@@ -71,12 +71,12 @@ public class MypageOnoVO {
 		this.content = content;
 	}
 
-	public String getImage_path() {
-		return image_path;
+	public String getImage() {
+		return image;
 	}
 
-	public void setImage_path(String image_path) {
-		this.image_path = image_path;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public Date getRegdate() {
@@ -103,5 +103,6 @@ public class MypageOnoVO {
 		this.answer_regdate = answer_regdate;
 	}
 	
+
 	
 }

@@ -55,9 +55,9 @@ $(function(){
 							<th>ono</th>
 							<th>userid</th>
 							<th>title</th>
-							<th>categori</th>
+							<th>category</th>
 							<th>content</th>
-							<th>image_path</th>
+							<th>image</th>
 							<th>regdate</th>
 							<th>answer</th>
 							<th>answer_regdate</th>
@@ -72,14 +72,14 @@ $(function(){
 					<td>${adminOno.ono}</td>
 					<td>${adminOno.userid}</td>
 					<td>${adminOno.title}</td>
-					<td>${adminOno.categori}</td>
+					<td>${adminOno.category}</td>
 					<td>${adminOno.content}</td>
-					<td>${adminOno.image_path}</td>
+					<td>${adminOno.image}</td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 										value="${adminOno.regdate}" /></td>
 					<td>${adminOno.answer}</td>
 					<td>${adminOno.answer_regdate}</td>
-						<td><button class="btn-custom btn-large border-btn btn-gray" onclick="callTable('${adminOno.title}','${adminOno.categori}','${adminOno.content}','${adminOno.image_path}')">상세보기</button></td>
+						<td><button class="btn-custom btn-large border-btn btn-gray" onclick="callTable('${adminOno.title}','${adminOno.category}','${adminOno.content}','${adminOno.image}')">상세보기</button></td>
 						<c:choose>
 							<c:when test="${empty adminOno.answer_regdate}">
 								<td>답변대기</td>
