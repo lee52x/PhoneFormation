@@ -6,7 +6,7 @@ drop table ph_ono;
 
 create table ph_ono(
 ono number primary key,
-userid varchar2(50) foreign key,
+userid varchar2(50) ,
 title varchar2(100)	not null,
 category varchar2(30) not null,
 content varchar2(100) not null,
