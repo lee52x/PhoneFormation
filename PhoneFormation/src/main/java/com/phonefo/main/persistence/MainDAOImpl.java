@@ -7,8 +7,6 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
-
-import com.phonefo.main.domain.B_MemberVO;
 import com.phonefo.main.domain.MemberVO;
 
 
@@ -32,12 +30,6 @@ public class MainDAOImpl implements MainDAO{
 		 if(t==1)result=false;
 		 else result=true;
 		return result;
-	}
-
-	@Override
-	public void insertMember(B_MemberVO vo)throws Exception {
-		sql.insert("member.insertMemberB",vo);
-		
 	}
 
 	@Override
@@ -76,7 +68,7 @@ public class MainDAOImpl implements MainDAO{
 	}
 
 	@Override
-	public B_MemberVO getBVO(String userid) throws Exception {
+	public MemberVO getBVO(String userid) throws Exception {
 		return sql.selectOne("member.getBVO", userid);
 
 	}
@@ -88,6 +80,12 @@ public class MainDAOImpl implements MainDAO{
 		 if(t==1)result=false;
 		 else result=true;
 		return result;
+	}
+
+	@Override
+	public void insertBusiness(MemberVO vo) throws Exception {
+		sql.insert("insertBusiness",vo);
+		
 	}
 
 }

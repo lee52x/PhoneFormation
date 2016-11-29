@@ -50,10 +50,32 @@
 			${vo.machine }		</td>
 	</tr>
 	<tr>
-		<th class="last"><span>예상매입가</span></th>
+		<th class="last"><span>예상견적가</span></th>
 		<td class="last" colspan="3">
 			${vo.quote_price }
 		</td>
+
+	</tr>
+	<tr>
+		<th class="last"><span>전원상태</span></th>
+		<td class="last" colspan="3">
+			${vo.power }
+		</td>
+
+	</tr>
+	<tr>
+		<th class="last"><span>액정상태</span></th>
+		<td class="last" colspan="3">
+			${vo.glass }
+		</td>
+
+	</tr>
+	<tr>
+		<th class="last"><span>기기상태</span></th>
+		<td class="last" colspan="3">
+			${vo.equipment }
+		</td>
+
 	</tr>
 </table>
 

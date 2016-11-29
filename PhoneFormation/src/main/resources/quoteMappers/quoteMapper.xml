@@ -35,7 +35,7 @@
  	</select>
  	
  	<select id="quoteConfirm" resultType="com.phonefo.quote.domain.QuoteVO">
- 		select *from ph_quoteBoard
+ 		select *from ph_quoteBoard 
  		where no=#{no}
  	</select>
 

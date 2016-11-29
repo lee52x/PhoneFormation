@@ -27,7 +27,7 @@
 
 						$('#userid').keyup(function() {
 							$.ajax({
-								url : "/phonefo/checkBId",
+								url : "/phonefo/checkId",
 								data : {
 									userid : $("#userid").val()
 								},
@@ -467,6 +467,130 @@
 															</h3>
 															<div id="emailCheck1"></div>
 													</tr>
+																										<tr>
+														<th><h3>생년월일</h3></th>
+														<td><h3>
+																<select class="tBox joinBx tBirth_yy" data-val="true"
+																	data-val-number="SelectedBirthYearValue 필드는 숫자여야 합니다."
+																	data-val-required="SelectedBirthYearValue 필드가 필요합니다."
+																	id="birth1" name="birth1" title="생년월일 연도"><option
+																		value="">년</option>
+																	<option value="2016">2016년</option>
+																	<option value="2015">2015년</option>
+																	<option value="2014">2014년</option>
+																	<option value="2013">2013년</option>
+																	<option value="2012">2012년</option>
+																	<option value="2011">2011년</option>
+																	<option value="2010">2010년</option>
+																	<option value="2009">2009년</option>
+																	<option value="2008">2008년</option>
+																	<option value="2007">2007년</option>
+																	<option value="2006">2006년</option>
+																	<option value="2005">2005년</option>
+																	<option value="2004">2004년</option>
+																	<option value="2003">2003년</option>
+																	<option value="2002">2002년</option>
+																	<option value="2001">2001년</option>
+																	<option value="2000">2000년</option>
+																	<option value="1999">1999년</option>
+																	<option value="1998">1998년</option>
+																	<option value="1997">1997년</option>
+																	<option value="1996">1996년</option>
+																	<option value="1995">1995년</option>
+																	<option value="1994">1994년</option>
+																	<option value="1993">1993년</option>
+																	<option value="1992">1992년</option>
+																	<option value="1991">1991년</option>
+																	<option value="1990">1990년</option>
+																	<option value="1989">1989년</option>
+																	<option value="1988">1988년</option>
+																	<option value="1987">1987년</option>
+																	<option value="1986">1986년</option>
+																	<option value="1985">1985년</option>
+																	<option value="1984">1984년</option>
+																	<option value="1983">1983년</option>
+																	<option value="1982">1982년</option>
+																	<option value="1981">1981년</option>
+																	<option value="1980">1980년</option>
+																	<option value="1979">1979년</option>
+																	<option value="1978">1978년</option>
+																	<option value="1977">1977년</option>
+																	<option value="1976">1976년</option>
+																	<option value="1975">1975년</option>
+																	<option value="1974">1974년</option>
+																	<option value="1973">1973년</option>
+																	<option value="1972">1972년</option>
+																	<option value="1971">1971년</option>
+																	<option value="1970">1970년</option>
+																	<option value="1969">1969년</option>
+																	<option value="1968">1968년</option>
+																	<option value="1967">1967년</option>
+																	<option value="1966">1966년</option>
+																	<option value="1965">1965년</option>
+																	<option value="1964">1964년</option>
+																	<option value="1963">1963년</option>
+																	<option value="1962">1962년</option>
+																	<option value="1961">1961년</option>
+																	<option value="1960">1960년</option>
+																	<option value="1959">1959년</option>
+																	<option value="1958">1958년</option>
+																	<option value="1957">1957년</option>
+																	<option value="1956">1956년</option>
+																	<option value="1955">1955년</option>
+																	<option value="1954">1954년</option>
+																	<option value="1953">1953년</option>
+																	<option value="1952">1952년</option>
+																	<option value="1951">1951년</option>
+																	<option value="1950">1950년</option>
+																	<option value="1949">1949년</option>
+																	<option value="1948">1948년</option>
+																	<option value="1947">1947년</option>
+																	<option value="1946">1946년</option>
+																	<option value="1945">1945년</option>
+																	<option value="1944">1944년</option>
+																	<option value="1943">1943년</option>
+																	<option value="1942">1942년</option>
+																	<option value="1941">1941년</option>
+																	<option value="1940">1940년</option>
+																	<option value="1939">1939년</option>
+																	<option value="1938">1938년</option>
+																	<option value="1937">1937년</option>
+																	<option value="1936">1936년</option>
+																	<option value="1935">1935년</option>
+																	<option value="1934">1934년</option>
+																	<option value="1933">1933년</option>
+																	<option value="1932">1932년</option>
+																</select> <select name="birth2" class="tBox joinBx tBirth_mm"
+																	id="birth2" title="생년월일 월">
+																	<option value="">월</option>
+																	<option value="01">01월</option>
+																	<option value="02">02월</option>
+																	<option value="03">03월</option>
+																	<option value="04">04월</option>
+																	<option value="05">05월</option>
+																	<option value="06">06월</option>
+																	<option value="07">07월</option>
+																	<option value="08">08월</option>
+																	<option value="09">09월</option>
+																	<option value="10">10월</option>
+																	<option value="11">11월</option>
+																	<option value="12">12월</option>
+																</select> <select name="birth3" class="tBox joinBx tBirth_mm"
+																	id="birth3" title="생년월일 일">
+																	<option value="">일</option>
+																</select>
+																<p class="compul" id="txtBirth"></p>
+																<input id="dev_birthChkStat" name="dev_birthChkStat"
+																	type="hidden" value="" /></td>
+													</tr>
+													<tr>
+														<th><h3>성별</h3></th>
+														<td><input type="radio" name="gender" title="남자"
+															id="male" value="남자" checked="checked"><label for="male">남자</label>
+															<input type="radio" name="Gender" title="여자" id="female"
+															value="여자"><label for="female">여자</label>
+															<p class="compul" id="txtGender"></p></td>
+													</tr>
 
 													<tr>
 														<td colspan="2" class="tLine"><hr>
@@ -511,7 +635,7 @@
 													<tr>
 														<th><h3>대표자명</h3></th>
 														<td><h3>
-																<input type="text" name="leader" id="leader"
+																<input type="text" name="leaderName" id="leaderName"
 																	class="tBox tPwd" maxlength="16" />
 															</h3>
 

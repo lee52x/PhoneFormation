@@ -36,7 +36,7 @@ public class QuoteController {
 	public String quoteSell(Model model,HttpSession session,QuoteVO quote){
 		MemberVO vo= (MemberVO)session.getAttribute("loginVO");
 		model.addAttribute("vo", vo);
-
+		System.out.println(vo.getTel());
 		model.addAttribute("body", "./quote/sell.jsp");
 		return "mainView";
 	}
@@ -49,7 +49,7 @@ public class QuoteController {
 		vo.setUserid(userid);
 		vo.setUsername((String)session.getAttribute("username"));
 		
-
+		
 		service.insertBoard(vo);
 
 		return "redirect:/phonefo/listBoard";

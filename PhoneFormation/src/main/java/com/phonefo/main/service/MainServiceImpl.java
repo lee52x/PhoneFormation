@@ -3,8 +3,6 @@ package com.phonefo.main.service;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
-
-import com.phonefo.main.domain.B_MemberVO;
 import com.phonefo.main.domain.MemberVO;
 import com.phonefo.main.persistence.MainDAO;
 
@@ -14,11 +12,6 @@ public class MainServiceImpl implements MainService {
 	@Inject
 	MainDAO dao;
 	
-	@Override
-	public void insertMember(MemberVO dto) throws Exception {
-		
-		dao.insertMember(dto);
-	}
 
 	@Override
 	public boolean checkId(String userid) throws Exception {
@@ -26,10 +19,20 @@ public class MainServiceImpl implements MainService {
 		result=dao.checkId(userid);
 		return result;
 	}
+	
+	@Override
+	public void insertMember(MemberVO dto) throws Exception {
+		
+		dao.insertMember(dto);
+	}
 
 	@Override
-	public void insertMemberB(B_MemberVO vo) throws Exception {
+	public void insertMemberB(MemberVO vo) throws Exception {
+		dao.insertBusiness(vo);
 		dao.insertMember(vo);
+		
+		
+		//dao.insertMember(vo);
 		
 	}
 
@@ -61,7 +64,7 @@ public class MainServiceImpl implements MainService {
 	}
 
 	@Override
-	public B_MemberVO getBVO(String userid) throws Exception {
+	public MemberVO getBVO(String userid) throws Exception {
 		return dao.getBVO(userid);
 	}
 

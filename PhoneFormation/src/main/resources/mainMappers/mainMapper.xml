@@ -4,17 +4,18 @@
 
 	<insert id="insertMember">
 	insert into ph_member 
-		values(#{userid},#{userpwd},#{username},sysdate,#{birth},#{gender},#{email},#{tel},#{root},#{status})
+		values(ph_member_seq.nextval,#{userid},#{userpwd},#{username},#{birth},#{gender},#{email},sysdate,#{tel},#{root},#{businessNum})
 	</insert>
 	
+	
+	<insert id="insertBusiness">
+	insert into ph_business
+		values(#{businessNum},#{companyName},#{leaderName},#{address})
+	</insert>
+
+
 	<select id="checkId" resultType="int">
 		select count(*) from ph_member
-			where userid=#{userid}
-		
-	</select>
-	
-	<select id="checkBId" resultType="int">
-		select count(*) from ph_business_member
 			where userid=#{userid}
 		
 	</select>
@@ -41,7 +42,7 @@
 			where userid=#{userid}
 	</select>
 	
-	<select id="getBVO" resultType="com.phonefo.main.domain.B_MemberVO">
+	<select id="getBVO" resultType="com.phonefo.main.domain.MemberVO">
 		select userid,userpwd,tel,email,businessNum,companyName,leader,address,rdate,root from ph_business_member
 			where userid=#{userid}
 	</select>
