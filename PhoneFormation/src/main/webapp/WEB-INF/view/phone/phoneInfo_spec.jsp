@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-폰 스펙입니당
+<h1>폰스펙넣을거당</h1>
 </body>
 </html>

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.phonefo.phone.service.PhoneInfoService;
 
 @Controller
-@RequestMapping("/phone")
+@RequestMapping("/phonefo")
 public class PhoneController {
 	
 	@Inject
@@ -24,7 +24,8 @@ public class PhoneController {
 	}
 	
 	@RequestMapping("/phoneInfo_spec")
-	public String phoneInfo_spec()throws Exception{
+	public String phoneInfo_spec(Model model)throws Exception{
+		model.addAttribute("body", "./phone/phoneInfo_spec.jsp");
 		return "mainView";
 	}
 
