@@ -11,7 +11,7 @@
 	</select>
 	
 	<!-- 마이페이지 비즈니스멤버 출력 -->
-	<select id="" resultType="">
+	<select id="mypageB_MemberInfo" resultType="mypageB_Member">
 	select userid,userpwd,tel,email,businessNum,companyName,leader,address,rdate,root from ph_business_member
 			where userid=#{userid}
 	
