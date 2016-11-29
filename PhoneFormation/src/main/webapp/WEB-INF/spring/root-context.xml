@@ -54,9 +54,7 @@
    <context:component-scan base-package="com.phonefo.payment.service"></context:component-scan>
 
    <context:component-scan base-package="com.phonefo.quote.service"></context:component-scan>
- <context:component-scan base-package="com.phonefo.board.service"></context:component-scan>
-
-   <context:component-scan base-package="com.phonefo.board.service"></context:component-scan>
+  <context:component-scan base-package="com.phonefo.board.service"></context:component-scan>
    
    <context:component-scan base-package="com.phonefo.phone.service"></context:component-scan>
    

@@ -157,8 +157,8 @@
 						<li><a href="/phonefo/payment/skt">요금제</a>
 							<ul class="dropdown">
 								<li><a href="/phonefo/payment/skt">SKT</a></li>
-								<li><a href="buttons.html">KT</a></li>
-								<li><a href="testimonials.html">LG</a></li>
+								<li><a href="/phonefo/payment/kt">KT</a></li>
+								<li><a href="/phonefo/payment/lg">LG</a></li>
 							</ul></li>
 						<li><a href="portfolio-3.html">이벤트</a>
 							<ul class="dropdown">

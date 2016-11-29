@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="kt_payment">
+
+	<select id="limited" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%완전무한%'
+	</select>
+	<select id="limited99" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%완전무한99%'
+	</select>
+	<select id="limited77" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%완전무한77%'
+	</select>
+	<select id="limited67" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%완전무한67%'
+	</select>
+	<select id="limited61" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%완전무한61%'
+	</select>
+	<select id="limited51" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%완전무한51%'
+	</select>
+	
+	<select id="all" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%모두다올레%'
+	</select>
+	<select id="all41" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%모두다올레41%'
+	</select>
+		<select id="all34" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%모두다올레34%'
+	</select>
+	
+
+	<select id="yTeen" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%Y틴%'
+	</select>
+	<select id="yTeen38" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%Y틴 38%'
+	</select>
+	<select id="yTeen32" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%Y틴 32%'
+	</select>
+	<select id="yTeen27" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%Y틴 27%'
+	</select>
+	<select id="yTeen20" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%Y틴 20%'
+	</select>
+	
+	
+	
+	<select id="y24" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%Y24%'
+	</select>
+	<select id="y24_658" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%Y24 65.8%'
+	</select>
+	<select id="y24_548" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%Y24 54.8%'
+	</select>
+	<select id="y24_493" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%Y24 49.3%'
+	</select>
+	<select id="y24_438" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%Y24 43.8%'
+	</select>
+	<select id="y24_383" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%Y24 38.3%'
+	</select>
+	<select id="y24_328" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%Y24 32.8%'
+	</select>
+	
+	
+	
+	<select id="lteEgg" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%LTE-알%'
+	</select>
+	<select id="lteEgg520" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%LTE-알520%'
+	</select>
+	<select id="lteEgg420" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%LTE-알420%'
+	</select>
+	<select id="lteEgg340" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%LTE-알340%'
+	</select>
+	<select id="lteEgg240" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%LTE-알240%'
+	</select>
+	<select id="lteEgg190" resultType="kt_payment">
+		select *
+		from kt_pay
+		where payment like '%LTE-알190%'
+	</select>
+	
+</mapper>

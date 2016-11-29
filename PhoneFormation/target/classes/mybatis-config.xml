@@ -8,6 +8,8 @@
 <typeAlias type="com.phonefo.mypage.domain.MypageMemberVO" alias="mypageMember"/>
 <typeAlias type="com.phonefo.mypage.domain.MypageOnoVO" alias="mypageOno"/>
 <typeAlias type="com.phonefo.payment.domain.SktVO" alias="skt_payment"/>
+<typeAlias type="com.phonefo.payment.domain.KtVO" alias="kt_payment"/>
+<typeAlias type="com.phonefo.payment.domain.LgVO" alias="lg_payment"/>
 <typeAlias type="com.phonefo.board.domain.BoardVO" alias="boardVO"/>
 <typeAlias type="com.phonefo.phone.domain.PhoneInfoVO" alias="phone"/>
 

@@ -95,124 +95,123 @@ infoArea .list1{overflow:hidden;height:120px}
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#all').click(function(){ 		
+		$('a[id=all]').click(function(){ 		
 			$('#all').css("font-weight", "bold");
 			$('#all').css("color", "red");
-			$('#t_si').css("font-weight", "normal");
-			$('#t_si').css("color", "black");
-			$('#b_yt').css("font-weight", "normal");
-			$('#b_yt').css("color", "black");
-			$('#b_data').css("font-weight", "normal");
-			$('#b_data').css("color", "black");
-			$('#e_unlimited').css("font-weight", "normal");
-			$('#e_unlimited').css("color", "black");
-			$('#t_together').css("font-weight", "normal");
-			$('#t_together').css("color", "black");
-			$('li[id=signiture]').show();
-			$('li[id=band_yt]').show();
-			$('li[id=band_data]').show();
-			$('li[id=everyone_unlimited]').show();
-			$('li[id=t_together]').show();
+			$('#k_limited').css("font-weight", "normal");
+			$('#k_limited').css("color", "black");
+			$('#k_all').css("font-weight", "normal");
+			$('#k_all').css("color", "black");
+			$('#k_yTeen').css("font-weight", "normal");
+			$('#k_yTeen').css("color", "black");
+			$('#k_y24').css("font-weight", "normal");
+			$('#k_y24').css("color", "black");
+			$('#k_y24Egg').css("font-weight", "normal");
+			$('#k_y24Egg').css("color", "black");
+			$('li[id=limited]').show();
+			$('li[id=all]').show();
+			$('li[id=yTeen]').show();
+			$('li[id=y24]').show();
+			$('li[id=lteEgg]').show();
 		});
 		
-		$('#t_si').click(function() {
+		$('#k_limited').click(function() {
 			$('#all').css("font-weight", "normal");
 			$('#all').css("color", "black");
-			$('#t_si').css("font-weight", "bold");
-			$('#t_si').css("color", "red");
-			$('#band_yt').css("font-weight", "normal");
-			$('#band_yt').css("color", "black");
-			$('#band_data').css("font-weight", "normal");
-			$('#band_data').css("color", "black");
-			$('#everyone_unlimited').css("font-weight", "normal");
-			$('#everyone_unlimited').css("color", "black");
-			$('#t_together').css("font-weight", "normal");
-			$('#t_together').css("color", "black");
+			$('#k_limited').css("font-weight", "bold");
+			$('#k_limited').css("color", "red");
+			$('#k_all').css("font-weight", "normal");
+			$('#k_all').css("color", "black");
+			$('#k_yTeen').css("font-weight", "normal");
+			$('#k_yTeen').css("color", "black");
+			$('#k_y24').css("font-weight", "normal");
+			$('#k_y24').css("color", "black");
+			$('#k_lteEgg').css("font-weight", "normal");
+			$('#k_lteEgg').css("color", "black");
 			$('li').show();
-			$('li[id=band_yt]').hide();
-			$('li[id=band_data]').hide();
-			$('li[id=everyone_unlimited]').hide();
-			$('li[id=t_together]').hide();
+			
+			$('li[id=all]').hide();
+			$('li[id=yTeen]').hide();
+			$('li[id=y24]').hide();
+			$('li[id=lteEgg]').hide();
 		});
 		
-		$('#b_yt').click(function() {
+		$('#k_all').click(function() {
 			$('#all').css("font-weight", "normal");
 			$('#all').css("color", "black");
-			$('#t_si').css("font-weight", "normal");
-			$('#t_si').css("color", "black");
-			$('#b_yt').css("font-weight", "bold");
-			$('#b_yt').css("color", "red");
-			$('#b_data').css("font-weight", "normal");
-			$('#b_data').css("color", "black");
-			$('#e_unlimited').css("font-weight", "normal");
-			$('#e_unlimited').css("color", "black");
-			$('#t_together').css("font-weight", "normal");
-			$('#t_together').css("color", "black");
+			$('#k_limited').css("font-weight", "normal");
+			$('#k_limited').css("color", "black");
+			$('#k_all').css("font-weight", "bold");
+			$('#k_all').css("color", "red");
+			$('#k_yTeen').css("font-weight", "normal");
+			$('#k_yTeen').css("color", "black");
+			$('#k_y24').css("font-weight", "normal");
+			$('#k_y24').css("color", "black");
+			$('#k_lteEgg').css("font-weight", "normal");
+			$('#k_lteEgg').css("color", "black");
 			$('li').show();
-			$('li[id=signiture]').hide();
-			$('li[id=band_data]').hide();
-			$('li[id=everyone_unlimited]').hide();
-			$('li[id=t_together]').hide();
+			$('li[id=limited]').hide();
+			$('li[id=yTeen]').hide();
+			$('li[id=y24]').hide();
+			$('li[id=lteEgg]').hide();
 		});
 		
-		$('#b_data').click(function() {	
+		$('#k_yTeen').click(function() {	
 			$('#all').css("font-weight", "normal");
 			$('#all').css("color", "black");
-			$('#t_si').css("font-weight", "normal");
-			$('#t_si').css("color", "black");
-			$('#b_yt').css("font-weight", "normal");
-			$('#b_yt').css("color", "black");
-			$('#b_data').css("font-weight", "bold");
-			$('#b_data').css("color", "red");
-			$('#e_unlimited').css("font-weight", "normal");
-			$('#e_unlimited').css("color", "black");
-			$('#t_together').css("font-weight", "normal");
-			$('#t_together').css("color", "black");
+			$('#k_limited').css("font-weight", "normal");
+			$('#k_limited').css("color", "black");
+			$('#k_all').css("font-weight", "normal");
+			$('#k_all').css("color", "black");
+			$('#k_yTeen').css("font-weight", "bold");
+			$('#k_yTeen').css("color", "red");
+			$('#k_y24').css("font-weight", "normal");
+			$('#k_y24').css("color", "black");
+			$('#k_lteEgg').css("font-weight", "normal");
+			$('#k_lteEgg').css("color", "black");
 			$('li').show();
-			$('li[id=signiture]').hide();
-			$('li[id=band_yt]').hide();
-			$('li[id=everyone_unlimited]').hide();
-			$('li[id=t_together]').hide();
+			$('li[id=limited]').hide();
+			$('li[id=all]').hide();
+			$('li[id=y24]').hide();
+			$('li[id=lteEgg]').hide();
 		});
 		
-		$('#e_unlimited').click(function() {	
+		$('#k_y24').click(function() {	
 			$('#all').css("font-weight", "normal");
 			$('#all').css("color", "black");
-			$('#t_si').css("font-weight", "normal");
-			$('#t_si').css("color", "black");
-			$('#b_yt').css("font-weight", "normal");
-			$('#b_yt').css("color", "black");
-			$('#b_data').css("font-weight", "normal");
-			$('#b_data').css("color", "black");
-			$('#e_unlimited').css("font-weight", "bold");
-			$('#e_unlimited').css("color", "red");
-			$('#t_together').css("font-weight", "normal");
-			$('#t_together').css("color", "black");
+			$('#k_limited').css("font-weight", "normal");
+			$('#k_limited').css("color", "black");
+			$('#k_all').css("font-weight", "normal");
+			$('#k_all').css("color", "black");
+			$('#k_yTeen').css("font-weight", "normal");
+			$('#k_yTeen').css("color", "black");
+			$('#k_y24').css("font-weight", "bold");
+			$('#k_y24').css("color", "red");
+			$('#k_lteEgg').css("font-weight", "normal");
+			$('#k_lteEgg').css("color", "black");
 			$('li').show();
-			$('li[id=signiture]').hide();
-			$('li[id=band_yt]').hide();
-			$('li[id=band_data]').hide();
-			$('li[id=t_together]').hide();
+			$('li[id=limited]').hide();
+			$('li[id=all]').hide();
+			$('li[id=yTeen]').hide();
+			$('li[id=lteEgg]').hide();
 		});
 		
-		$('#t_together').click(function() {	
+		$('#k_lteEgg').click(function() {	
 			$('#all').css("font-weight", "normal");
 			$('#all').css("color", "black");
-			$('#t_si').css("font-weight", "normal");
-			$('#t_si').css("color", "black");
-			$('#b_yt').css("font-weight", "normal");
-			$('#b_yt').css("color", "black");
-			$('#b_data').css("font-weight", "normal");
-			$('#b_data').css("color", "black");
-			$('#e_unlimited').css("font-weight", "normal");
-			$('#e_unlimited').css("color", "black");
-			$('#t_together').css("font-weight", "bold");
-			$('#t_together').css("color", "red");
+			$('#k_limited').css("font-weight", "normal");
+			$('#k_limited').css("color", "black");
+			$('#k_yTeen').css("font-weight", "normal");
+			$('#k_yTeen').css("color", "black");
+			$('#k_y24').css("font-weight", "normal");
+			$('#k_y24').css("color", "black");
+			$('#k_lteEgg').css("font-weight", "bold");
+			$('#k_lteEgg').css("color", "red");
 			$('li').show();
-			$('li[id=signiture]').hide();
-			$('li[id=band_yt]').hide();
-			$('li[id=band_data]').hide();
-			$('li[id=everyone_unlimited]').hide();
+			$('li[id=limited]').hide();
+			$('li[id=all]').hide();
+			$('li[id=yTeen]').hide();
+			$('li[id=y24]').hide();
 		});
 		
 	});
@@ -228,25 +227,24 @@ infoArea .list1{overflow:hidden;height:120px}
 				<div class="container">	
 					<div class="resultTop">
 						<div class="infoBox">
-						<h3 style="margin-left: 20px">SKT</h3><br>
+						<h3 style="margin-left: 20px">Olleh KT</h3><br>
 							<ul class="filtering" style="text-align: left;">
-								<li class="on"><a href="#" id="all" title="전체 상품 조회">전체</a></li>
+								<li class="on"><a href="#" id="all" title="전체 요금제 조회">전체</a></li>
 								
 							
-									<li id="payment"><a href="#" id="t_si" title="T시그니처 상품 조회">T시그니처</a></li>
+									<li id="payment"><a href="#" id="k_limited" title="순 완전무한 요금제 조회">순 완전무한 요금제</a></li>
 								
 							
-									<li id="payment"><a href="#" id="b_yt" title="band YT 상품 조회">band YT</a></li>
+									<li id="payment"><a href="#" id="k_all" title="순 모두다올래 요금제 조회">순 모두다올레 요금제</a></li>
 								
 							
-									<li id="payment"><a href="#" id="b_data" title="band 데이터 상품 조회">band 데이터</a></li>
+									<li id="payment"><a href="#" id="k_yTeen" title="Y틴 요금제 조회">Y틴 요금제</a></li>
 								
 							
-									<li id="payment"><a href="#" id="e_unlimited" title="전국민 무한 상품 조회">전국민 무한</a></li>
+									<li id="payment"><a href="#" id=k_y24 title="Y24 요금제 조회">Y24 요금제</a></li>
 								
-							
-									<li id="payment"><a href="#" id="t_together" title="T끼리">T끼리</a></li>
-								
+									<li id="payment"><a href="#" id=k_lteEgg title="LTE-알 요금제 조회">LTE-알 요금제</a></li>
+
 																
 							</ul>
 							<br>
@@ -266,12 +264,12 @@ infoArea .list1{overflow:hidden;height:120px}
 					<div class="fareList">
 						<ul id="productList">
 							<!-- loop -->
-							<c:forEach items="${signiture}" var="signiture">
-							<li id="signiture">
+							<c:forEach items="${limited}" var="limited">
+							<li id="limited">
 								<div class="title" style="width: 300px">
 														<div class="checkbox">
 	
-											<strong>${signiture.payment }</strong>
+											<strong>${limited.payment }</strong>
 										
 									</div>
 									<span class="blank"><!-- design --></span>
@@ -280,37 +278,37 @@ infoArea .list1{overflow:hidden;height:120px}
 									<span class="blank"><!-- design --></span>
 									<ul class="list1">
 										<li style="width: 70px"><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
-											<strong>${signiture.data }</strong>
-											<span></span><!-- 부가설명 -->
+											<strong>${limited.data }</strong>
+						<span></span><!-- 부가설명 -->
 										</li>
 										<li style="width: 150px"><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
-											<strong>${signiture.call }</strong>
+											<strong style="width: 130px; margin-left: 10px">${limited.call }</strong>
 											<span></span>
 										</li>
 										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
-											<strong>${signiture.sms }</strong>
+											<strong>${limited.sms }</strong>
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>${signiture.fixed_month }원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함w) : </strong>${limited.fixed_month }원</li>
 										
-										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>${signiture.fixed_month_dis }원</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>${limited.discount }원</li>
 										
 									</ul>
 									<div class="btnBox">
-										<a href="/phonefo/payment/skt/${signiture.payment }" title="T시그니처 Master 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="/phonefo/payment/skt/${limited.payment }" title="T시그니처 Master 자세히보기" class="btnS btnDgray">자세히보기</a>
 										
 									</div>
 								</div>
 							</li>
 							</c:forEach>
 							
-							<c:forEach items="${band_yt }" var="band_yt">
-							<li id="band_yt">
+							<c:forEach items="${all }" var="all">
+							<li id="all">
 								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
-											<strong>${band_yt.payment }</strong>
+											<strong>${all.payment }</strong>
 										
 									</div>
 									<span class="blank"><!-- design --></span>
@@ -319,11 +317,11 @@ infoArea .list1{overflow:hidden;height:120px}
 									<span class="blank"><!-- design --></span>
 									<ul class="list1">
 										<li style="width: 70px"><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
-											<strong>${band_yt.data }</strong>
+											<strong>${all.data }</strong>
 											<span></span><!-- 부가설명 -->
 										</li>
 										<li style="width: 150px"><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
-											<strong>${band_yt.call }</strong>
+											<strong>${all.call }</strong>
 											<span></span>
 										</li>
 										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
@@ -331,25 +329,25 @@ infoArea .list1{overflow:hidden;height:120px}
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함w) : </strong>${band_yt.fixed_month }원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함w) : </strong>${all.fixed_month }원</li>
 										
-										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>${band_yt.fixed_month_dis }원</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>${all.discount }원</li>
 										
 									</ul>
 									<div class="btnBox">
-										<a href="/phonefo/payment/skt/${band_yt.payment }" title="band YT 퍼펙트 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="/phonefo/payment/skt/${all.payment }" title="band YT 퍼펙트 자세히보기" class="btnS btnDgray">자세히보기</a>
 										</div>
 								</div>
 							</li>
 							</c:forEach>
 							
 							
-							<c:forEach items="${band_data }" var="band_data">
-							<li id="band_data">
+							<c:forEach items="${yTeen }" var="yTeen">
+							<li id="yTeen">
 								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										<!-- <input type="checkbox" id="fareType7"><label for="fareType7"> -->
-											<strong>${band_data.payment }</strong>
+											<strong>${yTeen.payment }</strong>
 										
 									</div>
 									<span class="blank"><!-- design --></span>
@@ -358,36 +356,36 @@ infoArea .list1{overflow:hidden;height:120px}
 									<span class="blank"><!-- design --></span>
 									<ul class="list1">
 										<li style="width: 70px"><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
-											<strong>${band_data.data }</strong>
+											<strong>${yTeen.data }</strong>
 											<span></span><!-- 부가설명 -->
 										</li>
-										<li style="width: 150px"><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
-											<strong>${band_data.call }</strong>
+										<li style="width: 150px;"><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
+											<strong style="width: 80px; margin-left: 40px">${yTeen.call }</strong>
 											<span></span>
 										</li>
 										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
-											<strong>${band_data.sms }</strong>
+											<strong>${yTeen.sms }</strong>
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>${band_data.fixed_month }원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>${yTeen.fixed_month }원</li>
 										
-										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>${band_data.fixed_month_dis }원</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>${yTeen.discount }원</li>
 										
 									</ul>
 									<div class="btnBox">
-										<a href="/phonefo/payment/skt/${band_data.payment }" title="band 데이터 퍼펙트S 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="/phonefo/payment/skt/${yTeen.payment }" title="band 데이터 퍼펙트S 자세히보기" class="btnS btnDgray">자세히보기</a>
 										</div>
 								</div>
 							</li>
 							</c:forEach>
 			
-							<c:forEach items="${everyone_unlimited }" var="everyone_unlimited">
-							<li id="everyone_unlimited">
+							<c:forEach items="${y24 }" var="y24">
+							<li id="y24">
 								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
-											<strong>${everyone_unlimited.payment }</strong>
+											<strong>${y24.payment }</strong>
 										
 									</div>
 									<span class="blank"><!-- design --></span>
@@ -396,36 +394,37 @@ infoArea .list1{overflow:hidden;height:120px}
 									<span class="blank"><!-- design --></span>
 									<ul class="list1">
 										<li style="width: 70px"><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
-											<strong>${everyone_unlimited.data}</strong>
+											<strong>${y24.data}</strong>
 											<span></span><!-- 부가설명 -->
 										</li>
 										<li style="width: 150px"><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
-											<strong>${everyone_unlimited.call}</strong>
+											<strong style="width: 130px; margin-left: 10px">${y24.call}</strong>
 											<span></span>
 										</li>
 										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
-											<strong>${everyone_unlimited.sms}</strong>
+											<strong>${y24.sms}</strong>
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>${everyone_unlimited.fixed_month}원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>${y24.fixed_month}원</li>
 										
-										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>${everyone_unlimited.fixed_month_dis}원</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>${y24.discount}원</li>
 										
 									</ul>
 									<div class="btnBox">
-										<a href="/phonefo/payment/skt/${everyone_unlimited.payment }" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="/phonefo/payment/skt/${y24.payment }" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
 										</div>
 								</div>
 							</li>
 							</c:forEach>
-							
-							<c:forEach items="${t_together }" var="t_together">
-							<li id="t_together">
+
+			
+							<c:forEach items="${lteEgg }" var="lteEgg">
+							<li id="lteEgg">
 								<div class="title" style="width: 300px">
 									<div class="checkbox">
 										
-											<strong>${t_together.payment }</strong>
+											<strong>${lteEgg.payment }</strong>
 										
 									</div>
 									<span class="blank"><!-- design --></span>
@@ -434,25 +433,25 @@ infoArea .list1{overflow:hidden;height:120px}
 									<span class="blank"><!-- design --></span>
 									<ul class="list1">
 										<li style="width: 70px"><img src="/resources/images/payment/skt/ico_data.png" alt="데이터 기본 제공량">
-											<strong>${t_together.data }</strong>
+											<strong>${lteEgg.data}</strong>
 											<span></span><!-- 부가설명 -->
 										</li>
-										<li style="width: 130px;margin-left: 10px"><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
-											<strong>${t_together.call }</strong>
+										<li style="width: 150px"><img src="/resources/images/payment/skt/ico_call.png" alt="음성 기본 제공량">
+											<strong>${lteEgg.call}</strong>
 											<span></span>
 										</li>
 										<li><img src="/resources/images/payment/skt/ico_sms.png" alt="문자 기본 제공량">
-											<strong>${t_together.sms }</strong>
+											<strong>${lteEgg.sms}</strong>
 										</li>
 									</ul>
 									<ul class="list2">
-										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>${t_together.fixed_month }원</li>
+										<li id="monthly" style="height: 108px"><strong>월정액 (부가세포함) : </strong>${lteEgg.fixed_month}원</li>
 										
-										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>${t_together.fixed_month_dis }원</li>
+										<li id="stipulation" style="height: 108px"><strong>24개월약정시 (부가세포함) : </strong>${lteEgg.discount}원</li>
 										
 									</ul>
 									<div class="btnBox">
-										<a href="/phonefo/payment/skt/${t_together.payment }" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="/phonefo/payment/skt/${lteEgg.payment }" title="band 데이터 6.5G 자세히보기" class="btnS btnDgray">자세히보기</a>
 										</div>
 								</div>
 							</li>
