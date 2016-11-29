@@ -17,7 +17,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.phonefo.board.domain.PageMaker;
 import com.phonefo.board.domain.SearchCriteria;
-import com.phonefo.board.domain.AdviceVO;
 import com.phonefo.board.domain.BoardVO;
 import com.phonefo.board.service.BoardService;
 
@@ -28,33 +27,6 @@ public class BoardController {
    @Inject
    private BoardService service;
    
-   @RequestMapping(value = "/adviceinput", method = RequestMethod.GET)
-   public String advicelist( Model model) throws Exception {
-      model.addAttribute("body", "./board/11advice.jsp");
-      return "mainView";
-   }
-   
-   @RequestMapping(value = "/adviceinput", method = RequestMethod.POST)
-   public String adviceinput(HttpServletRequest request, MultipartFile file,AdviceVO advice, Model model, HttpSession session) throws Exception {
-      String savedName = file.getOriginalFilename();
-      if (savedName != null) {
-         String uploadpath = request.getSession().getServletContext().getRealPath("/resources/upload");
-         File target = new File(uploadpath, savedName);
-         FileCopyUtils.copy(file.getBytes(), target);
-
-         advice.setImage("/resources/upload/" + savedName);
-      }
-      
-      advice.setUserid((String)session.getAttribute("userid"));
-      model.addAttribute("body", "./board/11advice.jsp");
-      return "mainView";
-   }
-   
-   
-   
-   
-   
-   //-------------------------------------------
    @RequestMapping("/boardlist")
    public String listPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
       model.addAttribute("list", service.selectlist(cri));

@@ -4,6 +4,7 @@ drop table ph_board;
 drop table ph_boardtype;
 drop table ph_ono;
 
+select * from ph_ono;
 create table ph_ono(
 ono number primary key,
 userid varchar2(50) ,
