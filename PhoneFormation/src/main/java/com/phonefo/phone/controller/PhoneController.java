@@ -24,7 +24,10 @@ public class PhoneController {
 	}
 	
 	@RequestMapping("/phoneInfo_spec")
-	public String phoneInfo_spec(Model model)throws Exception{
+	public String phoneInfo_spec(Model model, int no)throws Exception{
+		model.addAttribute("list_color", service.select_color(no));
+		model.addAttribute("list_capacity", service.select_capacity(no));
+		model.addAttribute("list_Sspec_processor", service.select_Sspec_processor(no));
 		model.addAttribute("body", "./phone/phoneInfo_spec.jsp");
 		return "mainView";
 	}

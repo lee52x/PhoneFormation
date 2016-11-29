@@ -117,7 +117,7 @@
 									</c:if>
 									<td>
 									<div class="tab-image">
-									<a href="/phonefo/phoneInfo_spec">
+									<a href="/phonefo/phoneInfo_spec?no=${list.no}">
 										<center>
 											<img src="${list.image }">
 											<p>${list.name }</p>

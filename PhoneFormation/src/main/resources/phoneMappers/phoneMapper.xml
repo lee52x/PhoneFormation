@@ -7,4 +7,22 @@
 		where manufacture=#{manufacture}
 		order by no desc
 	</select>
+	<select id="select_color" parameterType="int" resultType="com.phonefo.phone.domain.PhoneColorVO">
+		select *
+		from ph_color
+		where no=#{no}
+		order by no desc
+	</select>
+	<select id="select_capacity" parameterType="int" resultType="com.phonefo.phone.domain.PhoneCapaVO">
+		select *
+		from ph_capacity
+		where no=#{no}
+		order by no desc
+	</select>
+	<select id="select_Sspec_processor" parameterType="int" resultType="com.phonefo.phone.domain.Sspec_processorVO">
+		select *
+		from Sspec_processor
+		where no=#{no}
+		order by no desc
+	</select>
 </mapper>

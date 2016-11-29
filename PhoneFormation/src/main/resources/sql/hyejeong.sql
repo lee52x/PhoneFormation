@@ -82,7 +82,8 @@ insert into ph_phone values (ph_phone_seq.nextval, 'G3A', '/resources/images/pho
 insert into ph_phone values (ph_phone_seq.nextval, 'G3Cat6', '/resources/images/phone/G3Cat6_실크화이트.png', 'LG전자', '2014년08월');
 insert into ph_phone values (ph_phone_seq.nextval, 'G3', '/resources/images/phone/G3_실크화이트.png', 'LG전자', '2014년05월');
 
-select no, name from ph_phone;
+--select no, name from ph_phone;
+--drop table ph_color;
 create table ph_color( --핸드폰 색상
 	no number,
 	color varchar2(30) not null,
@@ -239,13 +240,13 @@ insert into ph_color values (34, '메탈릭블랙', '/resources/images/phone/G3_메탈�
 insert into ph_color values (34, '실크화이트', '/resources/images/phone/G3_실크화이트.png');
 insert into ph_color values (34, '샤인골드', '/resources/images/phone/G3_샤인골드.png');
 
-
+--drop table ph_capacity;
 create table ph_capacity( --핸드폰 용량
 	no number,
 	capacity varchar2(15) not null,
 	release_price number not null, --출고가
 	foreign key(no) references ph_phone(no),
-	primary(no,capacity)
+	primary key(no, capacity)
 );
 
 --삼성전자
@@ -450,7 +451,7 @@ create table Sspec_connect(
 	foreign key(no) references ph_phone(no)
 );
 
-insert into Sspec_connect values 1,'ANT+','USB 버전','위치 기술','이어잭','MHL','Wi-Fi','Wi-Fi Direct','블루투스 버전','NFC','블루투스 프로파일','PC싱크');
+insert into Sspec_connect values (1,'ANT+','USB 버전','위치 기술','이어잭','MHL','Wi-Fi','Wi-Fi Direct','블루투스 버전','NFC','블루투스 프로파일','PC싱크');
 
 create table Sspec_connect_value(
 	no number primary key,
