@@ -24,6 +24,10 @@ create sequence ph_ono_seq
 
 select*from ph_ono;
 insert into ph_ono(ono,userid,title,categori,content,image_path) values('1','qweqwe','제목','카테고리','내용','이미지');
+insert into ph_ono(ono,userid,title,categori,content,image_path) values('2','qweqwe','제목','카테고리','내용','이미지');
+insert into ph_ono(ono,userid,title,categori,content,image_path) values('3','qweqwe','제목','카테고리','내용','이미지');
+insert into ph_ono(ono,userid,title,categori,content,image_path) values('4','qweqwe','제목','카테고리','내용','이미지');
+update PH_ONO set answer='답변테스트',answer_regdate=sysdate;
 
 
 select * from ph_member;

@@ -40,13 +40,13 @@ public class MypageController {
 	}
 	@RequestMapping(value="/mypageUpdate", method=RequestMethod.POST)//마이페이지 내정보 수정처리
 	public String myPageUpdatePOST(Model model,MypageMemberVO vo,RedirectAttributes attr) throws Exception {
-		model.addAttribute("object", service.myPageUpdate(vo));
+		//model.addAttribute("object", service.myPageUpdate(vo));
 		attr.addFlashAttribute("msg", "SUCCESS");    	
 		
 		
-		model.addAttribute("body", "./mypage/mypageMain.jsp");
+		//model.addAttribute("body", "./mypage/mypageMain.jsp");
 		
-		return "redirect:/mainView";
+		return "redirect:/phonefo/mypageMain";
 	}
 	@RequestMapping("/mypageOno")//마이페이지 1대1문의
 	public String myPageOnO(Model model,HttpSession session) throws Exception {
@@ -69,10 +69,11 @@ public class MypageController {
 	public String myPageOutPOST(Model model,HttpSession session,RedirectAttributes attr) throws Exception {
 		model.addAttribute("result", service.myPageDel(session));
 		
-		
-		model.addAttribute("body", "./main/body.jsp");
+		session.invalidate();
+		//model.addAttribute("body", "./main/body.jsp");
 		attr.addFlashAttribute("msg", "SUCCESS");
-		return "redirect:/mainView";
+		//return "redirect:/mainView";
+		return "redirect:/phonefo/main";
 	}
 
 }

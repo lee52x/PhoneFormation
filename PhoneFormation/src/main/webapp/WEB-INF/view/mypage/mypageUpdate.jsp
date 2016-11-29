@@ -6,6 +6,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	$("#pageback").click(function(){//돌아가기
+		
+		location.href="/phonefo/mypageMain";
+		
+	});
+	
+});
+
+
+</script>
 </head>
 
 <div class="container">
@@ -80,7 +96,7 @@
                             <div class="row">
                      
                                     <input type="submit" name="submit" class="btn btn-primary btn-md" value="수정하기" />
-                                    <input type="button" name="reset" class="btn btn-danger btn-sm"  value="취소" />
+                                    <input type="button" name="reset" class="btn btn-danger btn-sm" id="pageback"  value="취소" />
                                 </div>
                         
                         </form>    </div>

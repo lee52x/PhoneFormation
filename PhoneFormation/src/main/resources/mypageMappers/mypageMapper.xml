@@ -19,15 +19,15 @@
 	<!-- 마이페이지 1대1문의 출력 -->
 	<select id="mypageOnoInfo" resultType="mypageOno">
 		select
-		ono,userid,title,categori,content,image_path,regdate,email,answer,answer_regdate
+		ono,userid,title,categori,content,image_path,regdate,answer,answer_regdate
 		from ph_ono
 		where userid = #{userid}
 	</select>
 	
 	<!-- 마이페이지 내정보 업데이트 -->
 	<update id="mypageMemberUp">
-	update ph_member set userpwd=#{userpwd}, tel=#{tel}, address=#address#,introduction=#introduction#
-		where member_id=#member_id#
+	update ph_member set userpwd=#{userpwd}, tel=#{tel}
+		where userid=#{userid}
 	</update>
 	
 	<!-- 마이페이지 회원탈퇴 -->
