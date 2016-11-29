@@ -2,6 +2,27 @@ drop table ph_phone;
 drop table ph_color;
 drop table ph_capacity;
 
+drop table Sspec_processor;
+drop table Sspec_processor_value;
+drop table Sspec_display;
+drop table Sspec_display_value;
+drop table Sspec_camera;
+drop table Sspec_camera_value;
+drop table Sspec_memory;
+drop table Sspec_memory_value;
+drop table Sspec_network;
+drop table Sspec_network_value;
+drop table Sspec_connect;
+drop table Sspec_connect_value;
+drop table Sspec_specifications;
+drop table Sspec_specifications_value;
+drop table Sspec_battery;
+drop table Sspec_battery_value;
+drop table Sspec_audio;
+drop table Sspec_audio_value;
+drop table Sspec_service;
+drop table Sspec_service_value;
+
 drop sequence ph_phone_seq;
 create sequence ph_phone_seq
 	start with 1
@@ -278,6 +299,283 @@ insert into ph_capacity values ('G3Screen', '32GB', 550000);
 insert into ph_capacity values ('G3A', '32GB', 451000);
 insert into ph_capacity values ('G3Cat6', '32GB', 649000);
 insert into ph_capacity values ('G3', '32GB', 499400);
+
+--삼성전자스펙
+
+--프로세서
+
+create table Sspec_processor(
+	name varchar2(100) primary key,
+	기능1 varchar2(50),
+	기능2 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_processor values('Galaxy S7 edge Olympic Games Limited Edition', 'CPU속도', 'CPU종류');
+
+create table Sspec_processor_value(
+	name varchar2(100) primary key,
+	값1 varchar2(50),
+	값2 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+--디스플레이
+insert into Sspec_processor_value values('Galaxy S7 edge Olympic Games Limited Edition', 's.1GHz, 1.5GHz', 'Octa-Core');
+
+create table Sspec_display(
+	name varchar2(100) primary key,
+	기능1 varchar2(50),
+	기능2 varchar2(50),
+	기능3 varchar2(50),
+	기능4 varchar2(50),
+	기능5 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_display values ('Galaxy S7 edge Olympic Games Limited Edition', '크기(Main)', '해상도(Main)', '종류(Main)', '색심도(Main)', 'S펜 지원');
+
+create table Sspec_display_value(
+	name varchar2(100) primary key,
+	값1 varchar2(50),
+	값2 varchar2(50),
+	값3 varchar2(50),
+	값4 varchar2(50),
+	값5 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_display_value values ('Galaxy S7 edge Olympic Games Limited Edition','139.5mm','2560 X 1440 (Quad HD)','dual edge Super AMOLED', '16M', '아니오');
+
+--카메라
+create table Sspec_camera(
+	name varchar2(100) primary key,
+	기능1 varchar2(50),
+	기능2 varchar2(50),
+	기능3 varchar2(50),
+	기능4 varchar2(50),
+	기능5 varchar2(50),
+	기능6 varchar2(50),
+	기능7 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_camera values ('Galaxy S7 edge Olympic Games Limited Edition','동영상 녹화 해상도','메인 카메라 - 화소','메인 카메라 - 조리개 값','전면 카메라 - 화소','전면 카메라 - 조리개 값','메인 카메라 - 플래쉬', '메인 카메라 - 오토 포커스');
+
+create table Sspec_camera_value(
+	name varchar2(100) primary key,
+	값1 varchar2(50),
+	값2 varchar2(50),
+	값3 varchar2(50),
+	값4 varchar2(50),
+	값5 varchar2(50),
+	값6 varchar2(50),
+	값7 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_camera_value values ('Galaxy S7 edge Olympic Games Limited Edition','UHD 4K (3840 x 2160) @30fps','Dual Pixel 12.0 MP','f/1.7','CMOS 5.0 MP','f/1.7','예', '예');
+
+--메모리
+
+create table Sspec_memory(
+	name varchar2(100) primary key,
+	기능1 varchar2(50),
+	기능2 varchar2(50),
+	기능3 varchar2(50),
+	기능4 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_memory values ('Galaxy S7 edge Olympic Games Limited Edition','Ram Size(GB)','ROM Size(GB)','사용할 수 있는 메모리','외장 메모리 지원');
+
+create table Sspec_memory_value(
+	name varchar2(100) primary key,
+	값1 varchar2(50),
+	값2 varchar2(50),
+	값3 varchar2(50),
+	값4 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_memory_value values ('Galaxy S7 edge Olympic Games Limited Edition','4GB','32GB','23.5GB','MicroSD (최대256GB)');
+
+--네트워크
+
+create table Sspec_network(
+	name varchar2(100) primary key,
+	기능1 varchar2(50),
+	기능2 varchar2(50),
+	기능3 varchar2(50),
+	기능4 varchar2(50),
+	기능5 varchar2(50),
+	기능6 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_network values ('Galaxy S7 edge Olympic Games Limited Edition','Type of SIM Slot','2G GSM','3G UMTS','3G TD-SCDMA','4G FDD LTE','4G TDD LTE');
+
+create table Sspec_network_value(
+	name varchar2(100) primary key,
+	값1 varchar2(50),
+	값2 varchar2(50),
+	값3 varchar2(50),
+	값4 varchar2(50),
+	값5 varchar2(200),
+	값6 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_network_value values ('Galaxy S7 edge Olympic Games Limited Edition','SIM 1 + MicroSD','GSM900, DCS1800, PCS1900','B1(2100), B2(1900), B5(850)','B34(2010), B39(1880)','B1(2100), B2(1900), B3(1800), B4(AWS), B5(850), B7(2600), B8(900), B12(700), B17(700), B18(800), B19(800), B20(800), B25(1900), B26(800), B28(700)','B38(2600), B39(1900), B40(2300), B41(2500)');
+
+--연결
+create table Sspec_connect(
+	name varchar2(100) primary key,
+	기능1 varchar2(50),
+	기능2 varchar2(50),
+	기능3 varchar2(50),
+	기능4 varchar2(50),
+	기능5 varchar2(50),
+	기능6 varchar2(50),
+	기능7 varchar2(50),
+	기능8 varchar2(50),
+	기능9 varchar2(50),
+	기능10 varchar2(50),
+	기능11 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_connect values ('Galaxy S7 edge Olympic Games Limited Edition','ANT+','USB 버전','위치 기술','이어잭','MHL','Wi-Fi','Wi-Fi Direct','블루투스 버전','NFC','블루투스 프로파일','PC싱크');
+
+create table Sspec_connect_value(
+	name varchar2(100) primary key,
+	값1 varchar2(50),
+	값2 varchar2(50),
+	값3 varchar2(50),
+	값4 varchar2(50),
+	값5 varchar2(50),
+	값6 varchar2(50),
+	값7 varchar2(50),
+	값8 varchar2(50),
+	값9 varchar2(50),
+	값10 varchar2(100),
+	값11 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_connect_value values ('Galaxy S7 edge Olympic Games Limited Edition','예','USB 2.0','GPS, Glonass, Beidou','3.5mm Stereo','아니오','802.11 a/b/g/n/ac 2.4G+5GHz, VHT80 MU-MIMO','예','Bluetooth v4.2','예','A2DP, AVRCP, DI, HFP, HID, HOGP, HSP, MAP, OPP, PAN, PBAP','Smart Switch (PC version)');
+
+--운영체제, 기본사양, 센서, 외관사양
+
+create table Sspec_specifications(
+	name varchar2(100) primary key,
+	기능1 varchar2(50),
+	기능2 varchar2(50),
+	기능3 varchar2(50),
+	기능4 varchar2(50),
+	기능5 varchar2(50),
+	기능6 varchar2(50),
+	기능7 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_specifications values ('Galaxy S7 edge Olympic Games Limited Edition','ANT+','운영체제','색상','형태','크기(세로X가로X두께, mm)', '무게(g)','센서');
+
+create table Sspec_specifications_value(
+	name varchar2(100) primary key,
+	값1 varchar2(50),
+	값2 varchar2(50),
+	값3 varchar2(50),
+	값4 varchar2(50),
+	값5 varchar2(50),
+	값6 varchar2(50),
+	값7 varchar2(200),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_specifications_value values ('Galaxy S7 edge Olympic Games Limited Edition','예','Android','블랙 오닉스','터치 바','150.9 x 72.6 x 7.7','157','가속도 센서, 기압 센서, 지문 센서, 자이로 센서, 지자기 센서, 홀 센서, 심박수 측정 센서, 근접 센서, RGB 광 센서');
+
+--배터리
+
+create table Sspec_battery(
+	name varchar2(100) primary key,
+	기능1 varchar2(50),
+	기능2 varchar2(50),
+	기능3 varchar2(50),
+	기능4 varchar2(50),
+	기능5 varchar2(50),
+	기능6 varchar2(50),
+	기능7 varchar2(50),
+	기능8 varchar2(200),
+	기능9 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_battery values ('Galaxy S7 edge Olympic Games Limited Edition','인터넷 사용 시간(3G)(Hours)','인터넷 사용 시간(LTE)(Hours)','인터넷 사용시간(Wi-Fi)(Hours)','비디오 재생 시간(Hours)','표준 배터리 용량(mAh)', '교체 가능','오디오 재생 시간(Hours)','오디오 재생 시간(Hours, Always OnDisplay Off)','연속 통화시간(3G WCDMA)(Hours)');
+
+create table Sspec_battery_value(
+	name varchar2(100) primary key,
+	값1 varchar2(50),
+	값2 varchar2(50),
+	값3 varchar2(50),
+	값4 varchar2(50),
+	값5 varchar2(50),
+	값6 varchar2(50),
+	값7 varchar2(50),
+	값8 varchar2(50),
+	값9 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_battery_value values ('Galaxy S7 edge Olympic Games Limited Edition','최대12','최대15','최대16','최대18','3600','아니오','최대62','최대81','최대27');
+
+--오디오/비디오
+
+create table Sspec_audio(
+	name varchar2(100) primary key,
+	기능1 varchar2(50),
+	기능2 varchar2(50),
+	기능3 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_audio values ('Galaxy S7 edge Olympic Games Limited Edition','동영상 지원 포맷','동영상 지원 해상도','오디오 지원 포맷');
+
+create table Sspec_audio_value(
+	name varchar2(100) primary key,
+	값1 varchar2(100),
+	값2 varchar2(100),
+	값3 varchar2(100),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_audio_value values ('Galaxy S7 edge Olympic Games Limited Edition','MP4, M4V, 3GP, 3G2, WMV, ASF, AVI, FLV, MKV, WEBM','UHD 4K (3840 x 2160) @60fps','MP3, M4A, 3GA, AAC, OGG, OGA, WAV, WMA, AMR, AWB, FLAC, MID, MIDI, XMF, MXMF, IMY, RTTTL, RTX, OTA');
+
+--서비스
+
+create table Sspec_service(
+	name varchar2(100) primary key,
+	기능1 varchar2(50),
+	기능2 varchar2(50),
+	기능3 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_service values ('Galaxy S7 edge Olympic Games Limited Edition','Gear 서포트','S보이스','모바일TV');
+
+create table Sspec_service_value(
+	name varchar2(100) primary key,
+	값1 varchar2(200),
+	값2 varchar2(50),
+	값3 varchar2(50),
+	foreign key(name) references ph_phone(name)
+);
+
+insert into Sspec_service_value values ('Galaxy S7 edge Olympic Games Limited Edition','기어 서클(매니저 서포트), 기어 핏, 기어1, 기어2, 기어2 네오, 기어 S, 기어 S2, 기어 VR','예','예');
+
+
+
+
 
 
 		select *

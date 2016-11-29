@@ -40,7 +40,7 @@
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus
-{
+	{
 	border-color: #eee;
 	border-bottom-color: #fff;
 }
@@ -68,15 +68,30 @@
 	margin-bottom: 0;
 }
 </style>
-<script>
-$(document).ready(function(){
-	var sub = $("#sub").attr('value');
-	alert(sub);
-	
-	$("#"+sub).attr('class','active');
- });
- 
-
+<script type="text/javascript">
+	//var manufacture = $('.samsung').attr().val;
+	//alert(manufacture)
+	$(document).ready(function() {
+		if($('.samsung').click(function(){
+			alert('삼성선택');
+			 $.ajax({
+			      type: "post",
+			      url: "queryJSON.jsp",
+			      datatype:"json",
+			      data: { cat: calledCat, point:pPoint[i]},
+			      success:function( data ) {
+			       console.log('check');
+			  		console.log(data.NUM);
+			        }
+			 });
+		}));
+		if($('.lg').click(function(){
+			alert('lg선택');
+		}));
+		if($('.apple').click(function(){
+			alert('apple선택');
+		}));
+	});
 </script>
 </head>
 <body>
@@ -85,11 +100,10 @@ $(document).ready(function(){
 			<div class="row sidebar-page">
 				<div class="tabs-section">
 					<!-- Nav Tabs -->
-					<input type="hidden" id="sub" value="${manufacture}"/>
-					<ul class="nav nav-tabs">
-						<li id="samsung" class="active"><a href="#tab-4" data-toggle="tab">삼성전자</a></li>
-						<li id="lg"><a href="#tab-4" data-toggle="tab">LG전자</a></li>
-						<li id="apple"><a href="#tab-4" data-toggle="tab">애플</a></li>
+					<ul class="nav nav-tabs" id="manufacture-tab">
+						<li class="active"><a href="#tab-4" data-toggle="tab" class="samsung">삼성전자</a></li>
+						<li class=""><a href="#tab-4" data-toggle="tab" class="lg">LG전자</a></li>
+						<li class=""><a href="#tab-4" data-toggle="tab" class="apple">애플</a></li>
 					</ul>
 
 					<!-- Tab Panels -->
@@ -103,51 +117,21 @@ $(document).ready(function(){
 									</c:if>
 									<td>
 									<div class="tab-image">
+									<a href="/phonefo/phoneInfo_spec">
 										<center>
 											<img src="${list.image }">
 											<p>${list.name }</p>
 										</center>
+									</a>
 									</div>
 									</td>
 									<c:if test="${status.index%3==2}">
 										</tr>
 									</c:if>
-
 								</c:forEach>
 							</table>
 						</div>
-						<!-- Tab Content 2 -->
-						<div class="tab-pane fade" id="tab-5">
-							<p>Sed ut perspiciatis unde omnis iste natus error sit
-								voluptatem accusantium doloremque laudantium, totam rem aperiam,
-								eaque ipsa quae ab illo inventore veritatis et quasi architecto
-								beatae vitae dicta sunt explica. Nemo enim ipsam voluptatem quia
-								voluptas sit aspernatur aut odit aut fugit, sed quia
-								consequuntur magni dolores eos qui ratione voluptatem sequi
-								nesciunt. But I must explain to you how all this mistaken idea
-								of denouncing pleasure and praising pain was born and I will
-								give you a complete account of the system, and expound the
-								actual teachings of the great explorer of the truth, the
-								master-builder of human happiness. No one rejects, dislikes, or
-								avoids pleasure itself, because it is pleasure, but because
-								those who do not know how to pursue pleasure rational encounter
-								consequences that are extremely painful.</p>
-						</div>
-						<!-- Tab Content 3 -->
-						<div class="tab-pane fade" id="tab-6">
-							<p>
-								<strong>Lorem ipsum</strong> dolor sit amet, consectetur
-								adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-								dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-								exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat. Duis aute irure dolor in reprehenderit in voluptate
-								velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-								sint occaecat cupidatat non proident, sunt in culpa qui officia
-								deserunt mollit anim id est laborum.
-							</p>
-						</div>
 					</div>
-					<!-- End Tab Panels -->
 				</div>
 			</div>
 		</div>
