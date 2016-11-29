@@ -10,7 +10,9 @@
 
 <div class="container">
 	<div id="content">
-				
+					<div>
+<%@include file="adminHeader.jsp"%>
+	</div>		
 				<div class='widget widget-search'>
 					<select name="searchType">
 						<option value="n"
@@ -18,13 +20,13 @@
 							---</option>
 						<option value="i"
 							<c:out value="${cri.searchType eq 'i'?'selected':''}"/>>
-							ID</option>
+							아이디</option>
 						<option value="m"
 							<c:out value="${cri.searchType eq 'm'?'selected':''}"/>>
-							Name</option>
+							이름</option>
 						<option value="im"
 							<c:out value="${cri.searchType eq 'im'?'selected':''}"/>>
-							ID OR Name</option></select>
+							아이디 OR 이름</option></select>
 					 <input type="text" name='keyword' id="keywordInput"
 						value='${cri.keyword }'>
 					<button class="search-btn" id='searchBtn'><i class="fa fa-search"></i></button>

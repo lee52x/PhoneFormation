@@ -10,7 +10,9 @@
 
 <div class="container">
 	<div id="content">
-				
+					<div>
+<%@include file="adminHeader.jsp"%>
+	</div>		
 				<div class='widget widget-search'>
 					<select name="searchType">
 						<option value="n"
@@ -56,7 +58,8 @@
 								<td>${adminOno.categori}</td>
 								<td>${adminOno.content}</td>
 								<td>${adminOno.image_path}</td>
-								<td>${adminOno.regdate}</td>
+								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+										value="${adminOno.regdate}" /></td>
 								<td>${adminOno.answer}</td>
 								<td>${adminOno.answer_regdate}</td>
 						
