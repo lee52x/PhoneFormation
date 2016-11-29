@@ -2,6 +2,27 @@
 drop table ph_reply;
 drop table ph_board;
 drop table ph_boardtype;
+drop table ph_ono;
+
+create table ph_ono(
+ono number primary key,
+userid varchar2(50) foreign key,
+title varchar2(100)	not null,
+categori varchar2(30) not null,
+content varchar2(100) not null,
+image varchar2(500),
+regdate date default sysdate,
+answer varchar2(100),
+answer_regdate date
+);
+
+drop sequence ph_ono_seq;
+create sequence ph_ono_seq
+   start with 1
+   increment by 1 
+   nocache
+   nocycle;
+
 
 create table ph_boardtype(
 	tno number primary key,

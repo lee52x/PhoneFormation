@@ -8,7 +8,7 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.phonefo.admin.domain.SearchCriteria;
+import com.phonefo.board.domain.SearchCriteria;
 import com.phonefo.board.domain.BoardVO;
 import com.phonefo.board.persistence.BoardDAO;
 @Repository
@@ -17,8 +17,8 @@ public class BoardDAOImpl implements BoardDAO {
 	private SqlSession sqlSession;	
 	
 	@Override
-	public List<BoardVO> selectlist(SearchCriteria cri, int tno) throws Exception {
-		return sqlSession.selectList("board.selectlist",tno,
+	public List<BoardVO> selectlist(SearchCriteria cri) throws Exception {
+		return sqlSession.selectList("board.selectlist",cri,
 		        new RowBounds(cri.getPageStart(), cri.getPerPageNum()) );
 	}
 	@Override
@@ -34,7 +34,21 @@ public class BoardDAOImpl implements BoardDAO {
 		return sqlSession.selectOne("board.selecttitle",tno);
 	}
 	@Override
-	public BoardVO selectpage(int bno) {
+	public BoardVO selectpage(int bno) throws Exception{
 		return sqlSession.selectOne("board.selectpage", bno);
+	}
+	@Override
+	public void delete(int bno) throws Exception {
+		sqlSession.delete("board.delete", bno);
+		
+	}
+	@Override
+	public void update(BoardVO board) throws Exception {
+		sqlSession.update("board.update",board);
+	}
+	@Override
+	public void update_viewcnt(int bno) throws Exception {
+		sqlSession.update("board.update_viewcnt",bno);
+		
 	}
 }

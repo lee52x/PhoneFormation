@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,8 +8,10 @@
 
 <script>
 $(document).ready(function(){
-   $("#blah").hide();   
-      
+   $("#fileselect").hide();   
+   $("#submitBtn").hide();
+   $("#cancleBtn").hide(); 
+   
    function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader(); //파일을 읽기 위한 FileReader객체 생성
@@ -30,20 +32,44 @@ $(document).ready(function(){
     
     //file 양식으로 이미지를 선택(값이 변경) 되었을때 처리하는 코드
     $("#imgInp").change(function(){
-
        	readURL(this);
-  
-    });
+      });
     
-    $('[id=updateBtn],[id=delBtn]').on("click", function(){
-    	
-    });
-	$("#addBtn").on("click", function(){
-		var formObj = $("form[role='addform']");
+	$("#updateBtn").on("click", function(){
+		 $('#title').attr("readonly", false);
+		 $('#contents').attr("readonly",false);
+		 
+		 $('#contents').focus();
+
+		 $("#fileselect").show(); 
+		 $("#submitBtn").show();
+		 $("#cancleBtn").show(); 
+		 $("#updateBtn").hide();
+		 $("#removeBtn").hide(); 
+	});
+
+	$("#removeBtn").on("click", function(){
+		var formObj = $("form[role='listform']");
+		formObj.attr("method", "delete");
+		formObj.attr("action", "boardremove");
 		formObj.submit();
 	});
 	$("#listBtn").on("click", function(){
 		var formObj = $("form[role='listform']");
+		formObj.attr("method", "get");
+		formObj.attr("action", "boardlist");
+		formObj.submit();
+	});
+	$("#cancleBtn").on("click", function(){
+		var formObj = $("form[role='listform']");
+		formObj.attr("method", "get");
+		formObj.attr("action", "boardpage");
+		formObj.submit();
+	});
+	$("#submitBtn").on("click", function(){
+		var formObj = $("form[role='form']");
+		formObj.attr("method", "post");
+		formObj.attr("action", "boardupdate");
 		formObj.submit();
 	});
  });
@@ -62,25 +88,38 @@ $(document).ready(function(){
 					<h3 class="box-title">글쓰기</h3>
 				</div>
 				<!-- /.box-header -->
-
-				<form role="updateform" method="post" enctype="multipart/form-data" action="boardinput?tno=${tno}">
+				<form role="form" method="post" enctype="multipart/form-data" action="boardupdate">
 					<div class="box-body">
 						<div class="form-group">
-							<label for="title">제목</label>
-							<input type="text" id='title' name='title' class="form-control" placeholder="Enter Title">
+							<label for="writer">작성자</label> <input type="text" id='writer'
+								name='writer' class="form-control" readonly="readonly"
+								value="${boardVO.writer }">
 						</div>
 						<div class="form-group">
-							<label for="content">파일첨부</label>
-							<input type="text" id="filename" class="form-control">
-							<label for="imgInp"><span id="fileFind">파일찾기</span></label>&nbsp;
+							<label for="regdate">작성일</label> <input type="text" id='regdate'
+								class="form-control" readonly="readonly"
+								value="${boardVO.regdate }">
+						</div>
+						<div class="form-group">
+							<label for="viewcnt">조회수</label> <input type="text" id='viewcnt'
+								name='viewcnt' class="form-control" readonly="readonly"
+								value="${boardVO.viewcnt }">
+						</div>
+						<div class="form-group">
+							<label for="title">제목</label>
+							<input type="text" id='title' name='title' class="form-control" readonly="readonly" value="${boardVO.title }">
+						</div>
+						<div class="form-group" id="fileselect">
+							<input type="text" id="filename" readonly="readonly" class="form-control">
+							<label for="imgInp"><span id="fileFind">사진변경하기</span></label>&nbsp;
 							<input type="file" id="imgInp" name="file" accept=".gif, .jpg, .png" style="display: none"onchange="javascript: document.getElementById('filename').value = this.value"> 
 						</div>
 						<div class="form-group">
 							<label>내용</label>
-							<div id="ta1" style="overflow-x:auto; width:500px; height: 300px; border: solid; 1px; margin: 20px; line-height: 20px; ">
+							<div id="ta1" align="center" style="overflow-x:auto; width:500px; height: 300px; border: solid; 1px; margin: 20px; line-height: 20px; ">
 							<label for="content">
-								<img id="blah" src="#" />
-								<textarea name="content" id="content"style="border:0;width:490px; height:290px;"></textarea>
+								<img id="blah" src="${boardVO.image}" />
+								<textarea name="content" id="contents" style="border:0;width:490px; height:290px;"  readonly="readonly">${boardVO.content }</textarea>
 							</label>
 							</div>
 							
@@ -90,22 +129,29 @@ $(document).ready(function(){
 
 					<div class="box-footer">
 						<input type="button" class="btn btn-warning" id="updateBtn" value="수정하기" />
-						<input type="submit" class="btn btn-warning" id="delBtn" value="삭제하기"/>
+						<input type="button" class="btn btn-warning" id="removeBtn" value="삭제하기"/>
 						
-						<input type="submit" class="btn btn-warning" id="submitBtn" value="완료하기"/>
-						<input type="submit" class="btn btn-warning" id="cancleBtn" value="취소하기"/>
+						<input type="button" class="btn btn-warning" id="submitBtn" value="완료하기"/>
+						<input type="button" class="btn btn-warning" id="cancleBtn" value="취소하기"/>
 						
-						<input type="submit" class="btn btn-warning" id="listBtn" value="돌아가기"/>
+						<input type="button" class="btn btn-warning" id="listBtn" value="돌아가기"/>
+						
+						<input type='hidden' name='bno' value="${boardVO.bno}">
+						<input type='hidden' name='tno' value="${cri.tno}">
+						<input type='hidden' name='page' value="${cri.page}">
+						<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
+						<input type='hidden' name='searchType' value="${cri.searchType}">
+						<input type='hidden' name='keyword' value="${cri.keyword}">
 					</div>
-				</form>
-				<form role="listform" method="get" action="boardlist">
-					<input type='hidden' name='tno' value="${tno}">
-					<input type='hidden' name='page' value="${cri.page}">
-					<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
-					<input type='hidden' name='searchType' value="${cri.searchType}">
-					<input type='hidden' name='keyword' value="${cri.keyword}">
-				</form>
-
+					</form>
+					<form role="listform" method="post" action="boardlist">
+						<input type='hidden' name='bno' value="${boardVO.bno}">
+						<input type='hidden' name='tno' value="${cri.tno}">
+						<input type='hidden' name='page' value="${cri.page}">
+						<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
+						<input type='hidden' name='searchType' value="${cri.searchType}">
+						<input type='hidden' name='keyword' value="${cri.keyword}">
+					</form>
 			</div>
 			<!-- /.box -->
 		</div>
@@ -115,6 +161,6 @@ $(document).ready(function(){
 	<!-- /.row -->
 </div>
 <!-- /.content -->
-</div>
+</body>
 <!-- /.content-wrapper -->
 </html>

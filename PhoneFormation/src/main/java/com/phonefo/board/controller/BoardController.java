@@ -1,8 +1,6 @@
 package com.phonefo.board.controller;
 
 import java.io.File;
-import java.util.UUID;
-
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
@@ -16,64 +14,109 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.phonefo.admin.domain.PageMaker;
-import com.phonefo.admin.domain.SearchCriteria;
+import com.phonefo.board.domain.PageMaker;
+import com.phonefo.board.domain.SearchCriteria;
 import com.phonefo.board.domain.BoardVO;
 import com.phonefo.board.service.BoardService;
-
 
 @Controller
 @RequestMapping("/phonefo")
 public class BoardController {
-	
+
 	@Inject
 	private BoardService service;
-	
+
 	@RequestMapping("/boardlist")
-	public String listPage(@ModelAttribute("cri") SearchCriteria cri,@ModelAttribute("tno")int tno,Model model) throws Exception {
-		model.addAttribute("list", service.selectlist(cri,tno));
-		
+	public String listPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		model.addAttribute("list", service.selectlist(cri));
+
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
-		pageMaker.setTotalCount(service.listCount(tno));
-		
+		pageMaker.setTotalCount(service.listCount(cri.getTno()));
+
 		model.addAttribute("pageMaker", pageMaker);
-		model.addAttribute("title",service.selecttitle(tno));
+		model.addAttribute("title", service.selecttitle(cri.getTno()));
 		model.addAttribute("body", "./board/boardlist.jsp");
 
 		return "mainView";
 	}
-	//입력폼요청
+
+	// 입력폼요청
 	@RequestMapping(value = "/boardinput", method = RequestMethod.GET)
-	public String inputpageGET(@ModelAttribute("cri") SearchCriteria cri,@ModelAttribute("tno")int tno,Model model) throws Exception {
-		model.addAttribute("title",service.selecttitle(tno));
+	public String inputpageGET(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		model.addAttribute("title", service.selecttitle(cri.getTno()));
 		model.addAttribute("body", "./board/boardinput.jsp");
 
 		return "mainView";
 	}
+
 	// 입력
 	@RequestMapping(value = "/boardinput", method = RequestMethod.POST)
-	public String inputpagePOST(HttpServletRequest request,MultipartFile file,BoardVO board,@ModelAttribute("tno")int tno ,RedirectAttributes attr) throws Exception {
-		board.setWriter("테스트");
-		//------
-		UUID uid = UUID.randomUUID();
-		String savedName = uid.toString() +"_"+file.getOriginalFilename();
-		String uploadPath=request.getSession().getServletContext().getRealPath("upload");
-		
-		//String uploadPath="C:/Users/jaehyun/Desktop/java/.metadata/.plugins/org.eclipse.wst.server.core/tmp3/wtpwebapps/PhoneFormation/upload";
-		System.out.println(uploadPath);
-		File target = new File(uploadPath,savedName);
-		FileCopyUtils.copy(file.getBytes(),target );
-		//----
-		board.setImage(savedName);
-		System.out.println(board);
+	public String inputpagePOST(HttpServletRequest request, MultipartFile file, BoardVO board, RedirectAttributes attr)
+			throws Exception {
+		//board.setWriter("테스트");
+		String savedName = file.getOriginalFilename();
+		if (savedName != null) {
+			int index = -1;
+			String virtualPath = request.getSession().getServletContext().getRealPath("/resources/upload");
+			File target = new File(virtualPath, savedName);
+			FileCopyUtils.copy(file.getBytes(), target);
+
+			board.setImage("/resources/upload/" + savedName);
+		}
 		service.insert(board);
 
-		return "redirect:/phonefo/boardlist?tno="+tno;
+		return "redirect:/phonefo/boardlist?tno=" + board.getTno();
 	}
-	@RequestMapping("/readPage")
-	public void read(@RequestParam("bno") int bno,@ModelAttribute("tno") int tno ,@ModelAttribute("cri") SearchCriteria cri, Model model)
+
+	@RequestMapping("/boardpage")
+	public String read(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model)
 			throws Exception {
-		model.addAttribute(service.selectpage(bno));
+		System.out.println("bno="+bno);
+		service.update_viewcnt(bno);
+		BoardVO board = service.selectpage(bno);
+		model.addAttribute("body", "./board/boardpage.jsp");
+		model.addAttribute(board);
+		return "mainView";
 	}
+
+	@RequestMapping("/boardremove")
+	public String removePage(@RequestParam("bno") int bno, SearchCriteria cri, RedirectAttributes attr)
+			throws Exception {
+		service.delete(bno);
+
+		attr.addAttribute("tno", cri.getTno());
+		attr.addAttribute("page", cri.getPage());
+		attr.addAttribute("perPageNum", cri.getPerPageNum());
+		attr.addAttribute("searchType", cri.getSearchType());
+		attr.addAttribute("keyword", cri.getKeyword());
+		return "redirect:/phonefo/boardlist";
+	}
+
+	@RequestMapping("/boardupdate")
+	public String update(HttpServletRequest request, MultipartFile file, BoardVO board,
+			SearchCriteria cri ,RedirectAttributes attr)	throws Exception {
+		String savedName = file.getOriginalFilename();
+		System.out.println("fff="+savedName.toString());
+		System.out.println(savedName!= "");
+		if (savedName != "") {
+			int index = -1;
+			String virtualPath = request.getSession().getServletContext().getRealPath("upload");
+
+			for (int i = 0; i < 3; i++) {
+				index = virtualPath.indexOf('\\', index + 1);
+			}
+			String uploadpath = virtualPath.substring(0, index + 1)
+					+ "git\\PhoneFormation\\PhoneFormation\\src\\main\\webapp\\resources\\upload";
+			File target = new File(uploadpath, savedName);
+			FileCopyUtils.copy(file.getBytes(), target);
+
+			board.setImage("/resources/upload/" + savedName);
+		}
+		attr.addAttribute("bno",board.getBno());
+		attr.addAttribute("cri",cri);
+		service.update(board);
+		return "redirect:/phonefo/boardpage";
+	}
+
 }

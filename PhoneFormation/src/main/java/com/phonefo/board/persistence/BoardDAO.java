@@ -2,15 +2,18 @@ package com.phonefo.board.persistence;
 
 import java.util.List;
 
-import com.phonefo.admin.domain.SearchCriteria;
+import com.phonefo.board.domain.SearchCriteria;
 import com.phonefo.board.domain.BoardVO;
 
 
 public interface BoardDAO {
 	   //검색어에 대한 리스트 조회
-	   public List<BoardVO> selectlist(SearchCriteria cri, int tno)throws Exception; 
+	   public List<BoardVO> selectlist(SearchCriteria cri)throws Exception; 
 	   public int listCount(int tno) throws Exception;
 	   public void insert(BoardVO board)throws Exception;
 	   public String selecttitle(int tno) throws Exception;
-	   public BoardVO selectpage(int bno);
+	   public BoardVO selectpage (int bno)throws Exception;
+	   public void delete(int bno)throws Exception;
+	   public void update(BoardVO board)throws Exception;
+	   public void update_viewcnt(int bno)throws Exception;
 }

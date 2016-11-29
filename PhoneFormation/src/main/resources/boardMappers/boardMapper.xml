@@ -5,25 +5,51 @@
 	<!-- 게시판 전체리스트출럭 -->
 	<select id="selectlist" resultType="boardVO">
 		select
-		title,content,writer,regdate,viewcnt
+		bno,title,content,writer,regdate,viewcnt
 		from ph_board
-		where tno = #{tno}
+		where tno =
+		#{tno}
 		order by bno desc
 	</select>
-	
+
 	<select id="selecttitle" resultType="String">
-		select	title
-		from ph_boardtype
+		select title
+		from
+		ph_boardtype
 		where tno = #{tno}
 	</select>
-	
+	<select id="selectpage" resultType="boardVO">
+		select
+		bno,title,content,writer,regdate,viewcnt,image
+		from ph_board
+		where
+		bno=#{bno}
+	</select>
 	<select id="listcount" resultType="int">
 		select count(bno)
 		from ph_board
 		where tno = #{tno}
 	</select>
 	<insert id="insert">
-		insert into ph_board(bno,tno,title,content,image,writer,viewcount)
-			values(ph_boardtype_seq.nextval,#{tno},#{title},#{content},#{image},#{writer},0)
+		insert into
+		ph_board(bno,tno,title,content,image,writer)
+		values(ph_board_seq.nextval,#{tno},#{title},#{content},#{image},#{writer})
 	</insert>
+	<delete id="delete">
+		delete from ph_board
+		where bno=#{bno}
+	</delete>
+	<update id="update">
+		<!-- 기존 타이틀과 내용에 대한 수정 -->
+		update ph_board set title=#{title} , content=#{content}
+		<if test="image != null">
+			,image=#{image}
+		</if>
+		where bno=#{bno}
+	</update>
+	<update id="update_viewcnt">
+		<!-- 기존 타이틀과 내용에 대한 수정 -->
+		update ph_board set viewcnt=(select viewcnt+1 from ph_board where bno=#{bno})
+		where bno=#{bno}
+	</update>
 </mapper>

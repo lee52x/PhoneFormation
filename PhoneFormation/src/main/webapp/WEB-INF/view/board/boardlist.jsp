@@ -42,7 +42,7 @@
 				<c:forEach items="${list}" var="boardVO">
 					<tr>
 						<td>${boardVO.bno}</td>
-						<td><a href='/phonefo/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.bno}&tno=${tno}'>
+						<td><a href='/phonefo/boardpage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}&tno=${cri.tno}'>
 										${boardVO.title} </a></td>
 						<td>${boardVO.writer}</td>
 						<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${boardVO.regdate}" /></td>
@@ -53,7 +53,7 @@
 		</div>
 		<form role="form" action="boardinput" method="get">
 			<input type="submit" value="글쓰기"/>			<!-- submit으로하면 css적용되고 button으로하면안됨 머임? -->
-			<input type='hidden' name='tno' value="${tno}">
+			<input type='hidden' name='tno' value="${cri.tno}">
 			<input type='hidden' name='page' value="${cri.page}">
 			<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
 			<input type='hidden' name='searchType' value="${cri.searchType}">

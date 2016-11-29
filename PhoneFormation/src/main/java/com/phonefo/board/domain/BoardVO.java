@@ -20,7 +20,6 @@ public class BoardVO {
 	public int getBno() {
 		return bno;
 	}
-
 	public void setBno(int bno) {
 		this.bno = bno;
 	}

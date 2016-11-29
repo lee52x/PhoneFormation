@@ -6,7 +6,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.phonefo.admin.domain.SearchCriteria;
+import com.phonefo.board.domain.SearchCriteria;
 import com.phonefo.board.domain.BoardVO;
 import com.phonefo.board.persistence.BoardDAO;
 @Service
@@ -15,8 +15,8 @@ public class BoardServiceImpl implements BoardService{
 	@Inject
 	private BoardDAO dao;
 	@Override
-	public List<BoardVO> selectlist(SearchCriteria cri, int tno) throws Exception {
-		return dao.selectlist(cri, tno);
+	public List<BoardVO> selectlist(SearchCriteria cri) throws Exception {
+		return dao.selectlist(cri);
 	}
 	
 	@Override
@@ -28,15 +28,31 @@ public class BoardServiceImpl implements BoardService{
 	public String selecttitle(int tno) throws Exception {
 		return dao.selecttitle(tno);
 	}
-
+  
 	@Override
 	public void insert(BoardVO board) throws Exception {
 		dao.insert(board);
 	}
 
 	@Override
-	public BoardVO selectpage(int bno) {
+	public BoardVO selectpage(int bno) throws Exception{
 		return dao.selectpage(bno);
+	}
+
+	@Override
+	public void delete(int bno) throws Exception {
+		dao.delete(bno);
+	}
+
+	@Override
+	public void update(BoardVO board) throws Exception {
+		dao.update(board);
+	}
+
+	@Override
+	public void update_viewcnt(int bno) throws Exception {
+		dao.update_viewcnt(bno);
+		
 	}
 
 }
