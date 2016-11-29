@@ -16,16 +16,6 @@
 	</div>
 
 
-${object.userid }
-${object.userpwd }
-${object.username }
-${object.birth }
-${object.rdate }
-${object.gender }
-${object.email }
-${object.tel }
-${object.root }
-${object.status }
   <!-- Start Content -->
     <div id="content">
         <div class="container">

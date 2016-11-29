@@ -3,14 +3,15 @@
 drop table ph_ono;
 create table ph_ono(
 ono number primary key,
-userid varchar2(50) foreign key,
+userid varchar2(50),
 title varchar2(100)	not null,
 categori varchar2(30) not null,
 content varchar2(100) not null,
 image_path varchar2(500),
 regdate date default sysdate,
 answer varchar2(100),
-answer_regdate date
+answer_regdate date,
+foreign key(userid) REFERENCES ph_member(userid)
 );
 
 drop sequence ph_ono_seq;
@@ -22,6 +23,11 @@ create sequence ph_ono_seq
 
 
 select*from ph_ono;
+insert into ph_ono(ono,userid,title,categori,content,image_path) values('1','qweqwe','제목','카테고리','내용','이미지');
+insert into ph_ono(ono,userid,title,categori,content,image_path) values('2','qweqwe','제목','카테고리','내용','이미지');
+insert into ph_ono(ono,userid,title,categori,content,image_path) values('3','qweqwe','제목','카테고리','내용','이미지');
+insert into ph_ono(ono,userid,title,categori,content,image_path) values('4','qweqwe','제목','카테고리','내용','이미지');
+update PH_ONO set answer='답변테스트',answer_regdate=sysdate;
 
 
 select * from ph_member;

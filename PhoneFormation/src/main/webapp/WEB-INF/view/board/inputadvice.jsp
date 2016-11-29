@@ -34,9 +34,9 @@ $(document).ready(function(){
        	readURL(this);
   
     });
-    
+
+	var formObj = $("form[role='addform']");
 	$("#listBtn").on("click", function(){
-		var formObj = $("form[role='listform']");
 		formObj.submit();
 	});
  });
@@ -56,13 +56,14 @@ $(document).ready(function(){
 				</div>
 				<!-- /.box-header -->
 
-				<form role="addform" method="post" enctype="multipart/form-data" action="boardinput?tno=${cri.tno}">
+				<form role="addform" method="post" enctype="multipart/form-data" action="adviceinputpage">
 					<div class="box-body">
 						<div class="form-group">
 							<label for="title">제목</label>
 							<input type="text" id='title' name='title' class="form-control" placeholder="Enter Title">
 						</div>
 						<div class="form-group">
+							<label for="category">분류</label>
 							<select name="category" >
 							<option value="에러1">에러1</option>
 							<option value="에러2">에러2</option>
