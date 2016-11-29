@@ -44,6 +44,19 @@ public class PhoneServiceImpl implements PhoneService{
 		 dao.insertBoard(vo);
 	}
 
+	@Override
+	public List<QuoteVO> listBoard() throws Exception {
+	
+		return dao.listBoard();
+	}
+
+	@Override
+	public QuoteVO quoteConfirm(int no) throws Exception {
+		
+		return dao.quoteConfirm(no);
+		
+	}
+
 	
 	
 	

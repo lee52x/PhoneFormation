@@ -50,6 +50,7 @@ drop table ph_quoteBoard;
 create table ph_quoteBoard(
 	no number(10) primary key,
 	userid varchar2(50),
+	username varchar2(50),
 	quote_price number(10),
 	request_message varchar2(1000),
 	bank_name varchar2(50),
@@ -75,6 +76,12 @@ create sequence ph_quoteBoard_seq
  
  			
  			
+ 	 		select username from ph_quoteBoard natural join ph_member
+ 			
+ 	 		order by no desc		
+ 			
+ 			 		select * from ph_quoteBoard
+ 					order by no desc
  			
  			
  			
@@ -93,10 +100,7 @@ create sequence ph_quoteBoard_seq
  			
  			
  			
- 			
- 			
- 			
- 			
+ 			select*from ph_business_member
  			
  			
  			

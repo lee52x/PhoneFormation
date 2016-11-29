@@ -14,5 +14,9 @@ public interface PhoneDAO {
 	public PhoneVO price(String machine, String capacity);
 
 	public void insertBoard(QuoteVO vo)throws Exception;
+
+	public List<QuoteVO> listBoard()throws Exception;
+
+	public QuoteVO quoteConfirm(int no)throws Exception;
 	
 }

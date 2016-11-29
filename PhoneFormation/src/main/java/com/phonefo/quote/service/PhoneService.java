@@ -10,5 +10,7 @@ public interface PhoneService {
 	public List<PhoneVO> capacity(String machine)throws Exception;
 	public PhoneVO price(String machine, String capacity)throws Exception;
 	public void insertBoard(QuoteVO vo)throws Exception;
+	public List<QuoteVO>  listBoard()throws Exception;
+	public QuoteVO quoteConfirm(int no)throws Exception;
 
 }

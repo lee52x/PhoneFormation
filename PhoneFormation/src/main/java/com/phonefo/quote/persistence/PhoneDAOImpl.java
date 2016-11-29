@@ -54,5 +54,20 @@ public class PhoneDAOImpl implements PhoneDAO{
 		
 	}
 
+	@Override
+	public List<QuoteVO> listBoard() throws Exception {
+		
+		
+		return sql.selectList("quote.listBoard");
+	}
+
+	@Override
+	public QuoteVO quoteConfirm(int no) throws Exception {
+		
+		return sql.selectOne("quote.quoteConfirm",no);
+	}
+	
+
+
 
 }

@@ -5,6 +5,7 @@ import java.util.Date;
 public class QuoteVO {
 	private int no;
 	private String userid;//아이디
+	private String username;
 	private int release_price;//출고가격
 	private int quote_price; //견적가격
 	private String request_message;//요청사항
@@ -32,6 +33,14 @@ public class QuoteVO {
 
 
 
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
 	public String getManufacture() {
 		return manufacture;

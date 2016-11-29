@@ -1,6 +1,7 @@
 package com.phonefo.quote.controller;
 
 import java.lang.reflect.Member;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
@@ -40,37 +41,40 @@ public class QuoteController {
 		return "mainView";
 	}
 	
+	//게시글 등록
 	@RequestMapping("/quoteBoard")
 	public String quoteBoard(QuoteVO vo, Model model,HttpSession session)throws Exception{
-		
-/*		private int no;
-		private int release_price;//출고가격
-		private int quote_price; //견적가격
-		private String id;//아이디
-		private String request_message;//요청사항
-		private String bank_name;//은행명
-		private String account_number;//계좌번호
-*/		
-
-		System.out.println("견적가격"+vo.getQuote_price());
-		System.out.println("파워:"+vo.getPower());
-		System.out.println("액정:"+vo.getGlass());
-		System.out.println("기기"+vo.getEquipment());
-		System.out.println(vo.getRequest_message());
-		System.out.println(vo.getBank_name());
-		System.out.println(vo.getAccount_number());
-		System.out.println(session.getAttribute("userid"));
-		
+				
 		String userid = (String)session.getAttribute("userid");
 		vo.setUserid(userid);
-		
-		
-		service.insertBoard(vo);
-	
-		
+		vo.setUsername((String)session.getAttribute("username"));
 		
 
+		service.insertBoard(vo);
+
+		return "redirect:/phonefo/listBoard";
+	}
+	
+	//게시글 리스트
+	@RequestMapping("/listBoard")
+	public String listBoard(Model model)throws Exception{
+		
+		
+		List<QuoteVO> list = service.listBoard();
+		model.addAttribute("list", list);
 		model.addAttribute("body", "./quote/listBoard.jsp");
 		return "mainView";
+		
+		
+	}
+	//글보기
+	@RequestMapping("/popup")
+	public String popup(Model model,int no)throws Exception{
+		System.out.println(no);
+		QuoteVO vo = service.quoteConfirm(no);
+		System.out.println(vo.getUsername());
+		model.addAttribute("vo", vo);
+		
+		return "./quote/popup";
 	}
 }

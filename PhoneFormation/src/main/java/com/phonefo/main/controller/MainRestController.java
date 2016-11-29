@@ -23,8 +23,9 @@ public class MainRestController {
 	public String checkId(String userid)throws Exception{
 		
 		boolean result=service.checkId(userid);
+		boolean result1=service.checkBId(userid);
 		
-		if(result==false){
+		if(result==false || result1==false){
 			return "<font color='red'>이미 존재하는 아이디 입니다.</font>";
 		}else if(result==true){
 			if(!Pattern.matches("^[a-zA-Z0-9]{5,15}$", userid))
@@ -32,15 +33,17 @@ public class MainRestController {
 			else
 				return "<font color='blue'>사용 가능한 아이디 입니다</font>";
 		}
+
 		return "";
 	}
 	//기업  아이디 중복검사
 	@RequestMapping("/checkBId")
 	public String checkBId(String userid)throws Exception{
 		
-		boolean result=service.checkBId(userid);
+		boolean result=service.checkId(userid);
+		boolean result1=service.checkBId(userid);
 		
-		if(result==false){
+		if(result==false || result1==false){
 			return "<font color='red'>이미 존재하는 아이디 입니다.</font>";
 		}else if(result==true){
 			if(!Pattern.matches("^[a-zA-Z0-9]{5,15}$", userid))
