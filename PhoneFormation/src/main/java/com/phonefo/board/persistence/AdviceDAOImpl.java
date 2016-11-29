@@ -23,7 +23,7 @@ public class AdviceDAOImpl implements AdviceDAO {
 		System.out.println(advice.getUserid());
 		System.out.println(advice.getAnswer_regdate());
 		System.out.println(advice.getRegdate());
-		sqlSession.selectOne("advice.insert",advice);
+		sqlSession.insert("advice.insert",advice);
 	}
 
 }

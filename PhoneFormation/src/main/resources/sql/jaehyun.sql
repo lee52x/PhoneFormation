@@ -29,6 +29,7 @@ create table ph_boardtype(
 	tno number primary key,
 	title varchar2(50) not null
 );
+select * from ph_board;
 create table ph_board(
    bno number primary key,
    tno number references ph_boardtype(tno),

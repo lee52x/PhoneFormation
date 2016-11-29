@@ -26,8 +26,17 @@ public class BoardDAOImpl implements BoardDAO {
 		return sqlSession.selectOne("board.listcount",tno);
 	}
 	@Override
-	public void insert(BoardVO board) throws Exception {		
-		sqlSession.selectOne("board.insert",board);
+	public void insert(BoardVO board) throws Exception {	
+		System.out.println("bno"+board.getBno());
+		System.out.println("content"+board.getContent());
+		System.out.println("image"+board.getImage());
+		System.out.println("title"+board.getTitle());
+		System.out.println("tno"+board.getTno());
+		System.out.println("viewcnt"+board.getViewcnt());
+		System.out.println("writer"+board.getWriter());
+		System.out.println("regdate"+board.getRegdate());
+		
+		sqlSession.insert("board.insert",board);
 	}
 	@Override
 	public String selecttitle(int tno) throws Exception {

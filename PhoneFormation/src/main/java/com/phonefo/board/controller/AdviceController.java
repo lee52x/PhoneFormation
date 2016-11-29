@@ -32,6 +32,7 @@ public class AdviceController {
 	public String adviceinput(HttpServletRequest request, MultipartFile file, AdviceVO advice, Model model,
 			HttpSession session) throws Exception {
 		String savedName = file.getOriginalFilename();
+		advice.setImage("");
 		if (savedName != null) {
 			String uploadpath = request.getSession().getServletContext().getRealPath("/resources/upload");
 			File target = new File(uploadpath, savedName);

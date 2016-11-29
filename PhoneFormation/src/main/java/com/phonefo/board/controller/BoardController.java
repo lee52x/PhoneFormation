@@ -24,90 +24,92 @@ import com.phonefo.board.service.BoardService;
 @RequestMapping("/phonefo")
 public class BoardController {
 
-   @Inject
-   private BoardService service;
-   
-   @RequestMapping("/boardlist")
-   public String listPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
-      model.addAttribute("list", service.selectlist(cri));
+	@Inject
+	private BoardService service;
 
-      PageMaker pageMaker = new PageMaker();
-      pageMaker.setCri(cri);
-      pageMaker.setTotalCount(service.listCount(cri.getTno()));
+	@RequestMapping("/boardlist")
+	public String listPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		model.addAttribute("list", service.selectlist(cri));
 
-      model.addAttribute("pageMaker", pageMaker);
-      model.addAttribute("title", service.selecttitle(cri.getTno()));
-      model.addAttribute("body", "./board/boardlist.jsp");
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.listCount(cri.getTno()));
 
-      return "mainView";
-   }
+		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("title", service.selecttitle(cri.getTno()));
+		model.addAttribute("body", "./board/boardlist.jsp");
 
-   // 입력폼요청
-   @RequestMapping(value = "/boardinput", method = RequestMethod.GET)
-   public String inputpageGET(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
-      model.addAttribute("title", service.selecttitle(cri.getTno()));
-      model.addAttribute("body", "./board/boardinput.jsp");
+		return "mainView";
+	}
 
-      return "mainView";
-   }
+	// 입력폼요청
+	@RequestMapping(value = "/boardinput", method = RequestMethod.GET)
+	public String inputpageGET(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		model.addAttribute("title", service.selecttitle(cri.getTno()));
+		model.addAttribute("body", "./board/boardinput.jsp");
 
-   // 입력
-   @RequestMapping(value = "/boardinput", method = RequestMethod.POST)
-   public String inputpagePOST(HttpServletRequest request, MultipartFile file, BoardVO board, RedirectAttributes attr, HttpSession session)
-         throws Exception {
-      board.setWriter((String)session.getAttribute("userid"));
-      String savedName = file.getOriginalFilename();
-      if (savedName != null) {
-         String uploadpath = request.getSession().getServletContext().getRealPath("/resources/upload");
-         File target = new File(uploadpath, savedName);
-         FileCopyUtils.copy(file.getBytes(), target);
+		return "mainView";
+	}
 
-         board.setImage("/resources/upload/" + savedName);
-      }
-      service.insert(board);
+	// 입력
+	@RequestMapping(value = "/boardinput", method = RequestMethod.POST)
+	public String inputpagePOST(HttpServletRequest request, MultipartFile file, BoardVO board, RedirectAttributes attr,
+			HttpSession session) throws Exception {
 
-      return "redirect:/phonefo/boardlist?tno=" + board.getTno();
-   }
+		board.setWriter((String) session.getAttribute("userid"));
+		board.setImage("");
+		String savedName = file.getOriginalFilename();
+		
+		if (savedName != "") {
+			String uploadpath = request.getSession().getServletContext().getRealPath("/resources/upload");
+			File target = new File(uploadpath, savedName);
+			FileCopyUtils.copy(file.getBytes(), target);
 
-   @RequestMapping("/boardpage")
-   public String read(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model)
-         throws Exception {
-      System.out.println("bno="+bno);
-      service.update_viewcnt(bno);
-      BoardVO board = service.selectpage(bno);
-      model.addAttribute("body", "./board/boardpage.jsp");
-      model.addAttribute(board);
-      return "mainView";
-   }
+			board.setImage("/resources/upload/" + savedName);
+		}
+		service.insert(board);
 
-   @RequestMapping("/boardremove")
-   public String removePage(@RequestParam("bno") int bno, SearchCriteria cri, RedirectAttributes attr)
-         throws Exception {
-      service.delete(bno);
+		return "redirect:/phonefo/boardlist?tno=" + board.getTno();
+	}
 
-      attr.addAttribute("tno", cri.getTno());
-      attr.addAttribute("page", cri.getPage());
-      attr.addAttribute("perPageNum", cri.getPerPageNum());
-      attr.addAttribute("searchType", cri.getSearchType());
-      attr.addAttribute("keyword", cri.getKeyword());
-      return "redirect:/phonefo/boardlist";
-   }
+	@RequestMapping("/boardpage")
+	public String read(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		System.out.println("bno=" + bno);
+		service.update_viewcnt(bno);
+		BoardVO board = service.selectpage(bno);
+		model.addAttribute("body", "./board/boardpage.jsp");
+		model.addAttribute(board);
+		return "mainView";
+	}
 
-   @RequestMapping("/boardupdate")
-   public String update(HttpServletRequest request, MultipartFile file, BoardVO board,
-         SearchCriteria cri ,RedirectAttributes attr)   throws Exception {
-      String savedName = file.getOriginalFilename();
-      if (savedName != null) {
-         String uploadpath = request.getSession().getServletContext().getRealPath("/resources/upload");
-         File target = new File(uploadpath, savedName);
-         FileCopyUtils.copy(file.getBytes(), target);
+	@RequestMapping("/boardremove")
+	public String removePage(@RequestParam("bno") int bno, SearchCriteria cri, RedirectAttributes attr)
+			throws Exception {
+		service.delete(bno);
 
-         board.setImage("/resources/upload/" + savedName);
-      }
-      attr.addAttribute("bno",board.getBno());
-      attr.addAttribute("cri",cri);
-      service.update(board);
-      return "redirect:/phonefo/boardpage";
-   }
+		attr.addAttribute("tno", cri.getTno());
+		attr.addAttribute("page", cri.getPage());
+		attr.addAttribute("perPageNum", cri.getPerPageNum());
+		attr.addAttribute("searchType", cri.getSearchType());
+		attr.addAttribute("keyword", cri.getKeyword());
+		return "redirect:/phonefo/boardlist";
+	}
+
+	@RequestMapping("/boardupdate")
+	public String update(HttpServletRequest request, MultipartFile file, BoardVO board, SearchCriteria cri,
+			RedirectAttributes attr) throws Exception {
+		String savedName = file.getOriginalFilename();
+		if (savedName != "") {
+			String uploadpath = request.getSession().getServletContext().getRealPath("/resources/upload");
+			File target = new File(uploadpath, savedName);
+			FileCopyUtils.copy(file.getBytes(), target);
+
+			board.setImage("/resources/upload/" + savedName);
+		}
+		attr.addAttribute("bno", board.getBno());
+		attr.addAttribute("cri", cri);
+		service.update(board);
+		return "redirect:/phonefo/boardpage";
+	}
 
 }
