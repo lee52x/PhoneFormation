@@ -38,7 +38,7 @@
    </select>
    
    <!-- 비즈니스멤버 검색어를 통한 리스트 조회 -->
-   <select id="listB_Member" resultType="adminMember">
+   <select id="listB_Member" resultType="adminB_Member">
      select userid,userpwd,tel,email,businessNum,companyName,leader,address,rdate,root 
      from ph_business_member
 	
@@ -74,7 +74,7 @@
 
    <!-- 1대1 검색어를 통한 리스트 조회 -->
    <select id="listOno" resultType="adminOno">
-     select ono,userid,title,categori,content,image_path,regdate,email,answer,answer_regdate
+     select ono,userid,title,categori,content,image_path,regdate,answer,answer_regdate
      from ph_ono
 	  <if test="searchType != null">
 	    <if test="searchType == 'i'.toString() ">
