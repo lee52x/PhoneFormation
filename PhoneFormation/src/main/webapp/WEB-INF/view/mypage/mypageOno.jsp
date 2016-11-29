@@ -16,11 +16,11 @@
 </head>
 <body>
 <script type="text/javascript">
-function callTable(title,categori,content,image_path){
+function callTable(title,category,content,image){
 	$("#title").text(title);
-	$("#categori").text(categori);
+	$("#category").text(category);
 	$("#contents").text(content);
-	$("#image_path").text(image_path);
+	$("#image").text(image);
 	$("#popup").fadeIn(700);
 }
 function callAnsTable(answer,answer_regdate){
@@ -109,7 +109,7 @@ $(function(){
 				</tr>
 				<tr>
 					<td>카테고리</td>
-					<td><div id="categori"></div></td>
+					<td><div id="category"></div></td>
 				</tr>
 				<tr>
 					<td>내용</td>
@@ -117,7 +117,7 @@ $(function(){
 				</tr>
 				<tr>
 					<td>이미지</td>
-					<td><img alt="이미지" src="image_path"></td>
+					<td><img alt="이미지" src="image"></td>
 				</tr>
 			</table>
 			<button type="button" class="btn btn-danger btn-sm" id="close">닫기</button>
