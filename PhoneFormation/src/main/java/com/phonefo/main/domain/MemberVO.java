@@ -14,6 +14,8 @@ public class MemberVO {
 	private String birth;
 	private String gender;
 	private int root;
+	
+	
 	private String businessNum;
 	private String companyName;
 	private String leaderName;

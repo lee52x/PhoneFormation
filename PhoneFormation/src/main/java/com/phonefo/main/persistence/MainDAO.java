@@ -6,7 +6,11 @@ import com.phonefo.main.domain.MemberVO;
 public interface MainDAO {
 	
 	//일반회원 회원가입
-	public void insertMember(MemberVO dto)throws Exception;
+	public void insertMember(MemberVO vo)throws Exception;
+	//일반회원 회원가입
+	public void insertMemberB(MemberVO vo)throws Exception;
+	
+	
 	//일반회원 아이디중복검사
 	public boolean checkId(String userid)throws Exception;
 	//기업회원 아이디중복검사
@@ -15,6 +19,7 @@ public interface MainDAO {
 	
 	//일반회원 로그인하기
 	public boolean check_general_member(String userid,String userpwd)throws Exception;
+	
 	//기업회원 로그인하기
 	public boolean check_business_member(String userid,String userpwd)throws Exception;
 		

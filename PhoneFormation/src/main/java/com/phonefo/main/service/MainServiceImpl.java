@@ -22,14 +22,14 @@ public class MainServiceImpl implements MainService {
 	
 	@Override
 	public void insertMember(MemberVO dto) throws Exception {
-		
+
 		dao.insertMember(dto);
 	}
 
 	@Override
 	public void insertMemberB(MemberVO vo) throws Exception {
 		dao.insertBusiness(vo);
-		dao.insertMember(vo);
+		dao.insertMemberB(vo);
 		
 		
 		//dao.insertMember(vo);
@@ -49,6 +49,11 @@ public class MainServiceImpl implements MainService {
 		return dao.getVO(userid);
 		
 	}
+	
+	@Override
+	public MemberVO getBVO(String userid) throws Exception {
+		return dao.getBVO(userid);
+	}
 
 	@Override
 	public boolean check_business_member(String userid, String userpwd) throws Exception {
@@ -63,10 +68,6 @@ public class MainServiceImpl implements MainService {
 		return result;
 	}
 
-	@Override
-	public MemberVO getBVO(String userid) throws Exception {
-		return dao.getBVO(userid);
-	}
 
 	
 

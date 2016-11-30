@@ -18,9 +18,12 @@ public class MainDAOImpl implements MainDAO{
 	SqlSession sql;
 	
 	@Override
-	public void insertMember(MemberVO dto) throws Exception {
-		sql.insert("member.insertMember",dto);
-		
+	public void insertMember(MemberVO vo) throws Exception {
+		sql.insert("member.insertMember",vo);
+	}
+	@Override
+	public void insertMemberB(MemberVO vo) throws Exception {
+		sql.insert("member.insertMemberB",vo);
 	}
 
 	@Override
@@ -38,14 +41,36 @@ public class MainDAOImpl implements MainDAO{
 		map.put("userid", userid);
 		map.put("userpwd", userpwd);
 		
-		int t = sql.selectOne("member.check_general_memeber", map);
-		if(t==1)
+		int t = sql.selectOne("member.check_general_memeber", map);//아이디존재여부 확인
+				
+		if(t==1){//아이디가 존재한다면
+			String businessNum=sql.selectOne("member.check_business_member",userid);//businessNum으로 일반회원/기업회원 확인
+			if(businessNum==null)//일반
 			return true;
-		else
+		}else{
 			return false;
-		
-		
+		}
+		return false;
 	}
+	
+	@Override
+	public boolean check_business_member(String userid, String userpwd) throws Exception {
+		Map<String, String> map=new HashMap<>();
+		map.put("userid", userid);
+		map.put("userpwd", userpwd);
+		
+		int t = sql.selectOne("member.check_general_memeber", map);//아이디존재여부 확인
+				
+		if(t==1){//아이디가 존재한다면
+			String businessNum=sql.selectOne("member.check_business_member",userid);//businessNum으로 일반회원/기업회원 확인
+			if(businessNum!=null)//기업
+			return true;
+		}else{
+			return false;
+		}
+		return false;
+	}
+
 
 	@Override
 	public MemberVO getVO(String userid) throws Exception {
@@ -54,18 +79,6 @@ public class MainDAOImpl implements MainDAO{
 
 	}
 
-	@Override
-	public boolean check_business_member(String userid, String userpwd) throws Exception {
-		Map<String, String> map=new HashMap<>();
-		map.put("userid", userid);
-		map.put("userpwd", userpwd);
-		
-		int t = sql.selectOne("member.check_business_memeber", map);
-		if(t==1)
-			return true;
-		else
-			return false;
-	}
 
 	@Override
 	public MemberVO getBVO(String userid) throws Exception {

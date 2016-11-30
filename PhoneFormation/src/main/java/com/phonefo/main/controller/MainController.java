@@ -3,13 +3,11 @@ package com.phonefo.main.controller;
 
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpSession;
 
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import com.phonefo.main.domain.MemberVO;
 import com.phonefo.main.service.MainService;
 
@@ -74,23 +72,25 @@ public class MainController {
 			,String email1,String email2,String tel1,String tel2,
 			String tel3,Model model)throws Exception{
 		
-		MemberVO dto=new MemberVO();
+		MemberVO vo=new MemberVO();
 		
 		String birth=birth1+"/"+birth2+"/"+birth3;
 		String email=email1+"@"+email2;
 		String tel=tel1+"-"+tel2+"-"+tel3;
 		
-		dto.setUserid(userid);
-		dto.setUserpwd(userpwd);
-		dto.setUsername(username);
-		dto.setBirth(birth);
-		dto.setGender(gender);
-		dto.setEmail(email);
-		dto.setTel(tel);
-		dto.setRoot(root);
-		dto.setBusinessNum(null);
+		vo.setUserid(userid);
+		vo.setUserpwd(userpwd);
+		vo.setUsername(username);
+		vo.setBirth(birth);
+		vo.setGender(gender);
+		vo.setEmail(email);
+		vo.setTel(tel);
+		vo.setRoot(root);
+		vo.setBusinessNum(null);
 
-		service.insertMember(dto);
+
+		service.insertMember(vo);
+		
 		model.addAttribute("body","./main/body.jsp");
 		
 		
@@ -124,23 +124,8 @@ public class MainController {
 		vo.setCompanyName(companyName);
 		vo.setLeaderName(leaderName);
 		vo.setAddress(address);
-		
-		System.out.println("Ω√¿€~~~~~~~~~~~");
-		System.out.println(vo.getAddress());
-		System.out.println(vo.getBirth());
-		System.out.println(vo.getBusinessNum());
-		System.out.println(vo.getCompanyName());
-		System.out.println(vo.getEmail());
-		System.out.println(vo.getGender());
-		System.out.println(vo.getLeaderName());
-		System.out.println(vo.getRoot());
-		System.out.println(vo.getTel());
-		System.out.println(vo.getUserid());
-		System.out.println(vo.getUsername());
-		System.out.println(vo.getUserpwd());
-		
-
-
+	
+	
 		service.insertMemberB(vo);
 		model.addAttribute("body", "./main/body.jsp");
 		return "mainView";

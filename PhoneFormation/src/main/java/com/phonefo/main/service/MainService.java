@@ -5,7 +5,7 @@ import com.phonefo.main.domain.MemberVO;
 public interface MainService {
 	
 	//일반회원 등록
-	public void insertMember(MemberVO dto)throws Exception;
+	public void insertMember(MemberVO vo)throws Exception;
 	//일반회원 아이디 중복검사
 	public boolean checkId(String userid)throws Exception;
 	

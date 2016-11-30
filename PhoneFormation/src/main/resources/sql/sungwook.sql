@@ -1,5 +1,6 @@
 
-<!--새로운 회원 테이블 -->
+<!--회원 테이블의 부모 -->
+drop table ph_business;
 create table ph_business(
 businessNum varchar(50) primary key,
 companyName varchar(50),
@@ -8,9 +9,10 @@ address varchar(50)
 );
 
 drop table ph_member;
+<!--회원 테이블-->
 create table ph_member(
 memberno number(10) primary key,
-userid varchar2(50),
+userid varchar2(50) unique,
 userpwd varchar2(50) ,
 username varchar2(50),
 birth varchar2(50),
@@ -23,41 +25,12 @@ businessNum varchar(50),
 foreign key(businessNum)  references ph_business(businessNum)
 )
 
+<!--멤버시퀀스-->
 create sequence ph_member_seq
 start with 1
 increment by 1
 nocache
 nocycle
-
-
-select *from ph_business
-select * from ph_member
-
-insert into ph_member values(1,'kk','kk','kk','kk',sysdate,'kk',1,null)
-
-
-
-
-
-
-select *from ph_business_member
-
-		select * from ph_member
-			where userid='lee52x'
-
-		select count(*) from ph_member
-			where userid='lee52x'
-			
-		select count(*) from ph_member
-			where userid='lee52x' and userpwd='qldirt'
-			
-			
-					select userid,userpwd,username,rdate,birth,gender,email,tel,root,status from ph_member
-			where userid='lee52x'
-			
-			select*from ph_member
-			select*from ph_business_member
-
 
 <!--quote게시판 테이블 --!>
 select *from ph_quoteBoard
@@ -78,7 +51,6 @@ create table ph_quoteBoard(
 	machine varchar2(50),
 	capacity varchar2(50),
 	foreign key(userid) references ph_member(userid)
-
 )
 
 <!--quote 시퀀스 --!>
@@ -88,25 +60,13 @@ create sequence ph_quoteBoard_seq
 	nocache
 	nocycle;
  
- 			
- 			
- 	 		select username from ph_quoteBoard natural join ph_member
- 			
- 	 		order by no desc		
- 			
- 			 		select * from ph_quoteBoard
- 					order by no desc
- 			
- 			
- 			
- 			
- 			
- 			
- 			
- 			
- 			
- 			
- 			
+ 	select *from ph_member		
+ 	select *from ph_business		
+	
+			
+ 			select memberno,userid,userpwd,username,birth,gender,email,rdate,tel,root,businessNum,
+		companyName,leaderName,address from ph_member natural join ph_business	
+		where userid='test12345'
  			
  			
  			

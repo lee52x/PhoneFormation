@@ -74,7 +74,7 @@ public class MainRestController {
 		
 		boolean result=false;
 		result = service.check_business_member(userid, userpwd);
-
+		System.out.println(result);
 		
 		if(result==true){
 			MemberVO vo= service.getBVO(userid);
