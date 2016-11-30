@@ -19,12 +19,20 @@
 							<img src="${list_color.image }">
 							<p>${list_color.color }</p>
 							<c:forEach items="${list_capacity }" var="list_capacity">
-							<p>${list_capacity.capacity }</p>
-							<p>${list_capacity.release_price }</p>
+							<p>${list_capacity.capacity } ${list_capacity.release_price }</p>
 							</c:forEach>
 							<c:forEach items="${list_Sspec_processor }" var="list_Sspec_processor">
-							<p>${list_Sspec_processor.func1 }</p>
-							<p>${list_Sspec_processor.func2 }</p>
+								<c:forEach items="${list_Sspec_processor_value }" var="list_Sspec_processor_value">
+									<c:forEach items="${list_Sspec_display }" var="list_Sspec_display">
+										<p>${list_Sspec_processor.func1 } ${list_Sspec_processor_value.value1 }</p>
+										<p>${list_Sspec_processor.func2 } ${list_Sspec_processor_value.value2 }</p>
+										<p>${list_Sspec_display.func1 }</p>
+										<p>${list_Sspec_display.func2 }</p>
+										<p>${list_Sspec_display.func3 }</p>
+										<p>${list_Sspec_display.func4 }</p>
+										<p>${list_Sspec_display.func5 }</p>
+									</c:forEach>
+								</c:forEach>
 							</c:forEach>
 						</center>
 				</div>

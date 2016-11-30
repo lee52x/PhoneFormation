@@ -25,4 +25,22 @@
 		where no=#{no}
 		order by no desc
 	</select>
+	<select id="select_Sspec_processor_value" parameterType="int" resultType="com.phonefo.phone.domain.Sspec_processor_valueVO">
+		select * 
+		from Sspec_processor_value
+		where no=#{no}
+		order by no desc	
+	</select>
+	<select id="select_Sspec_display" parameterType="int" resultType="com.phonefo.phone.domain.Sspec_displayVO">
+		select *
+		from Sspec_display
+		where no=#{no}
+		order by no desc
+	</select>
+	<select id="select_Sspec_display_value" parameterType="int" resultType="com.phonefo.phone.domain.Sspec_display_valueVO">
+		select *
+		from Sspec_display_value
+		where no=#{no}
+		order by no desc
+	</select>
 </mapper>
