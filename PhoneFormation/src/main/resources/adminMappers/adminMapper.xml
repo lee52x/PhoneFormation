@@ -2,89 +2,100 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="admin">
 
-  
    <!-- 멤버 검색어를 통한 리스트 조회 -->
    <select id="listMember" resultType="adminMember">
-     select userid,userpwd,username,rdate,birth,gender,email,tel,root,status 
-     from ph_member
+     select memberno,userid,userpwd,username,birth,gender,email,rdate,tel,root,businessNum from ph_member
+			where businessNum is NULL
 	  <if test="searchType != null">
 	    <if test="searchType == 'i'.toString() ">
-	        where userid like '%'||#{keyword}||'%'
+	        and userid like '%'||#{keyword}||'%'
 	    </if>
 	    <if test="searchType == 'm'.toString()">
-	       where username like '%'||#{keyword}||'%'
+	       and username like '%'||#{keyword}||'%'
 	    </if>
 	      <if test="searchType == 'im'.toString()">
-	       where username like '%'||#{keyword}||'%' or userid like '%'||#{keyword}||'%'
+	       and (username like '%'||#{keyword}||'%' or userid like '%'||#{keyword}||'%')
 	    </if>
 	  </if>       
-	 order by rdate desc	   
+	 order by memberno desc	   
    </select>
    <!-- 멤버검색카운트 -->
    <select id="memberSearchCount" resultType="int">
       select count(*)
-      from ph_member
+      from ph_member where businessNum is NULL
        <if test="searchType != null">
 	    <if test="searchType == 'i'.toString() ">
-	        where userid like '%'||#{keyword}||'%'
+	        and userid like '%'||#{keyword}||'%'
 	    </if>
 	    <if test="searchType == 'm'.toString()">
-	       where username like '%'||#{keyword}||'%'
+	       and username like '%'||#{keyword}||'%'
 	    </if>
 	      <if test="searchType == 'im'.toString()">
-	       where username like '%'||#{keyword}||'%' or userid like '%'||#{keyword}||'%'
+	       and (username like '%'||#{keyword}||'%' or userid like '%'||#{keyword}||'%')
 	    </if>
 	  </if>       
    </select>
    
    <!-- 비즈니스멤버 검색어를 통한 리스트 조회 -->
-   <select id="listB_Member" resultType="adminB_Member">
-     select userid,userpwd,tel,email,businessNum,companyName,leader,address,rdate,root 
-     from ph_business_member
-	
+   <select id="listB_Member" resultType="adminMember">
+     select memberno,userid,userpwd,username,birth,gender,email,rdate,tel,root,businessNum,
+		companyName,leaderName,address from ph_member natural join ph_business
+	where businessNum is not NULL
 	  <if test="searchType != null">
 	    <if test="searchType == 'i'.toString() ">
-	        where userid like '%'||#{keyword}||'%'
+	        and userid like '%'||#{keyword}||'%'
 	    </if>
 	    <if test="searchType == 'm'.toString()">
-	       where companyName like '%'||#{keyword}||'%'
+	       and companyName like '%'||#{keyword}||'%'
 	    </if>
 	      <if test="searchType == 'im'.toString()">
-	       where companyName like '%'||#{keyword}||'%' or userid like '%'||#{keyword}||'%'
+	       and (companyName like '%'||#{keyword}||'%' or userid like '%'||#{keyword}||'%')
 	    </if>
 	  </if>       
-	 order by rdate desc	   
+	 order by memberno desc	   
    </select>
    <!-- 비즈니스멤버검색카운트 -->
    <select id="b_memberSearchCount" resultType="int">
       select count(*)
-      from ph_business_member
+      from ph_business_member where businessNum is not NULL
        <if test="searchType != null">
 	    <if test="searchType == 'i'.toString() ">
-	        where userid like '%'||#{keyword}||'%'
+	        and userid like '%'||#{keyword}||'%'
 	    </if>
 	    <if test="searchType == 'm'.toString()">
-	       where companyName like '%'||#{keyword}||'%'
+	       and companyName like '%'||#{keyword}||'%'
 	    </if>
 	      <if test="searchType == 'im'.toString()">
-	       where companyName like '%'||#{keyword}||'%' or userid like '%'||#{keyword}||'%'
+	       and (companyName like '%'||#{keyword}||'%' or userid like '%'||#{keyword}||'%')
 	    </if>
 	  </if>       
    </select>
 
    <!-- 1대1 검색어를 통한 리스트 조회 -->
    <select id="listOno" resultType="adminOno">
-     select ono,userid,title,categori,content,image_path,regdate,answer,answer_regdate
+     select ono,userid,title,category,content,image,regdate,answer,answer_regdate
      from ph_ono
-	  <if test="searchType != null">
-	    <if test="searchType == 'i'.toString() ">
-	        where userid like '%'||#{keyword}||'%'
+	  <if test="searchType != null or keyword != null">
+	  <if test="keyword !=null">
+	 		 where title like '%'||#{keyword}||'%' 
+		<if test="searchType != null">
+	  
+	    <if test="searchType == '에러1'.toString() ">
+	        and category like '%'||#{searchType}||'%'
 	    </if>
-	    <if test="searchType == 'n'.toString()">
-	       where username like '%'||#{keyword}||'%'
+	    <if test="searchType == '에러2'.toString()">
+	       and category like '%'||#{searchType}||'%'
 	    </if>
-	  </if>       
-	 order by ono desc	   
+	    <if test="searchType == '에러3'.toString()">
+	       and category like '%'||#{searchType}||'%'
+	    </if>
+	    <if test="searchType == '에러4'.toString()">
+	       and category like '%'||#{searchType}||'%'
+	     </if>
+	     </if>
+	    </if>
+	  </if>
+	order by ono desc	   
    </select>
    
    <select id="onoSearchCount" resultType="int">

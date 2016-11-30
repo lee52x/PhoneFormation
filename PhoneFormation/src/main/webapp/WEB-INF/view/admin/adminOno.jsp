@@ -18,15 +18,19 @@
 						<option value="n"
 							<c:out value="${cri.searchType == null?'selected':''}"/>>
 							---</option>
-						<option value="i"
-							<c:out value="${cri.searchType eq 'i'?'selected':''}"/>>
-							ID</option>
-						<option value="m"
-							<c:out value="${cri.searchType eq 'm'?'selected':''}"/>>
-							Name</option>
-						<option value="im"
-							<c:out value="${cri.searchType eq 'im'?'selected':''}"/>>
-							ID OR Name</option></select>
+						<option value="에러1"
+							<c:out value="${cri.searchType eq '에러1'?'selected':''}"/>>
+							에러1</option>
+						<option value="에러2"
+							<c:out value="${cri.searchType eq '에러2'?'selected':''}"/>>
+							에러2</option>
+						<option value="에러3"
+							<c:out value="${cri.searchType eq '에러3'?'selected':''}"/>>
+							에러3</option>
+						<option value="에러4"
+							<c:out value="${cri.searchType eq '에러4'?'selected':''}"/>>
+							에러4</option>
+						</select>
 					 <input type="text" name='keyword' id="keywordInput"
 						value='${cri.keyword }'>
 					<button class="search-btn" id='searchBtn'><i class="fa fa-search"></i></button>
@@ -40,9 +44,9 @@
 							<th>ono</th>
 							<th>userid</th>
 							<th>title</th>
-							<th>categori</th>
+							<th>category</th>
 							<th>content</th>
-							<th>image_path</th>
+							<th>image</th>
 							<th>regdate</th>
 							<th>answer</th>
 							<th>answer_regdate</th>
@@ -55,9 +59,9 @@
 								<td>${adminOno.ono}</td>
 								<td>${adminOno.userid}</td>
 								<td>${adminOno.title}</td>
-								<td>${adminOno.categori}</td>
+								<td>${adminOno.category}</td>
 								<td>${adminOno.content}</td>
-								<td>${adminOno.image_path}</td>
+								<td>${adminOno.image}</td>
 								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 										value="${adminOno.regdate}" /></td>
 								<td>${adminOno.answer}</td>

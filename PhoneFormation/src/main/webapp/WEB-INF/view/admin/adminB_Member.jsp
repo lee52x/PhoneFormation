@@ -37,32 +37,40 @@
 		<div class="box-body">
 					<table class="table table-bordered">
 						<tr>
-							<th>ID</th>
-							<th>PW</th>
-							<th>Tel</th>
-							<th>Email</th>
+							<th>memberno</th>
+							<th>userid</th>
+							<th>username</th>
+							<th>birth</th>
+							<th>gender</th>
+							<th>email</th>
+							<th>rdate</th>
+							<th>tel</th>
+							<th>root</th>
 							<th>businessNum</th>
 							<th>companyName</th>
-							<th>leader</th>
+							<th>leaderName</th>
 							<th>address</th>
-							<th>rdate</th>
-							<th>root</th>
 						
 						</tr>
 
 						<c:forEach items="${list}" var="member">
 	
 							<tr>
+								<td>${member.memberno}</td>
 								<td>${member.userid}</td>
-								<td>${member.userpwd}</td>
-								<td>${member.tel}</td>
+								<td>${member.username}</td>
+								<td>${member.birth}</td>
+								<td>${member.gender}</td>
 								<td>${member.email}</td>
+								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+										value="${member.rdate}" /></td>
+								<td>${member.tel}</td>
+								<td>${member.root}</td>
 								<td>${member.businessNum}</td>
 								<td>${member.companyName}</td>
-								<td>${member.leader}</td>
+								<td>${member.leaderName}</td>
 								<td>${member.address}</td>
-								<td>${member.rdate}</td>
-								<td>${member.root}</td>
+
 								
 							</tr>
 

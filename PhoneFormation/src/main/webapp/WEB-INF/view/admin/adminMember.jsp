@@ -37,31 +37,31 @@
 		<div class="box-body">
 					<table class="table table-bordered">
 						<tr>
-							<th>ID</th>
-							<th>PW</th>
-							<th>Name</th>
-							<th>Birth</th>
-							<th>Rdate</th>
-							<th>Gender</th>
-							<th>Email</th>
-							<th>Tel</th>
-							<th>Root</th>
-							<th>Status</th>
-						</tr>
+							<th>memberno</th>
+							<th>userid</th>
+							<th>username</th>
+							<th>birth</th>
+							<th>gender</th>
+							<th>email</th>
+							<th>rdate</th>
+							<th>tel</th>
+							<th>root</th>
 
-						<c:forEach items="${list}" var="member">
+						</tr>
+					<c:forEach items="${list}" var="member">
 	
 							<tr>
+								<td>${member.memberno}</td>
 								<td>${member.userid}</td>
-								<td>${member.userpwd}</td>
 								<td>${member.username}</td>
 								<td>${member.birth}</td>
-								<td>${member.rdate}</td>
 								<td>${member.gender}</td>
 								<td>${member.email}</td>
+								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+										value="${member.rdate}" /></td>
 								<td>${member.tel}</td>
 								<td>${member.root}</td>
-								<td>${member.status}</td>
+
 								
 							</tr>
 

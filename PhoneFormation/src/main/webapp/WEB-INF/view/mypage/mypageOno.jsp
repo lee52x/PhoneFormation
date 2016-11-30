@@ -74,7 +74,14 @@ $(function(){
 					<td>${adminOno.title}</td>
 					<td>${adminOno.category}</td>
 					<td>${adminOno.content}</td>
-					<td>${adminOno.image}</td>
+					<c:choose>
+							<c:when test="${empty adminOno.image=='/resources/upload/'}">
+								<td>무</td>
+							</c:when>
+							<c:otherwise>
+								<td>유</td>
+							</c:otherwise>
+						</c:choose>
 					<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 										value="${adminOno.regdate}" /></td>
 					<td>${adminOno.answer}</td>

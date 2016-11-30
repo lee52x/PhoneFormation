@@ -4,8 +4,7 @@
 
 	<!-- 마이페이지 일반멤버 출력 -->
 	<select id="mypageMemberInfo" resultType="mypageMember">
-		select
-		userid,userpwd,username,rdate,birth,gender,email,tel,root,status
+		select memberno,userid,userpwd,username,birth,gender,email,rdate,tel,root,businessNum 
 		from ph_member
 		where userid = #{userid}
 	</select>
