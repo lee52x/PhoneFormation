@@ -19,7 +19,7 @@ public class SktController {
 	@RequestMapping("/payment/skt")
 	public String skt_payment(String payment, Model model) throws Exception{
 
-		model.addAttribute("body","./payment/skt.jsp");
+		model.addAttribute("body","./payment/skt/skt.jsp");
 		
 		model.addAttribute("signiture", service.payment_signiture(payment));
 		model.addAttribute("band_yt", service.payment_band_yt(payment));
@@ -33,7 +33,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/T 시그니처 Master")
 	public String signiture_master(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_signiture.jsp");
+		model.addAttribute("body", "./payment/skt/skt_signiture.jsp");
 		
 		model.addAttribute("signiture", service.payment_signiture(payment));
 		model.addAttribute("signiture_master", service.payment_signiture_master(payment));
@@ -45,7 +45,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/T 시그니처 Classic")
 	public String signiture_classic(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_signiture.jsp");
+		model.addAttribute("body", "./payment/skt/skt_signiture.jsp");
 		
 		model.addAttribute("signiture", service.payment_signiture(payment));
 		model.addAttribute("signiture_master", service.payment_signiture_master(payment));
@@ -57,7 +57,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/band YT 퍼펙트")
 	public String band_yt_perfect(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_band_yt.jsp");
+		model.addAttribute("body", "./payment/skt/skt_band_yt.jsp");
 		
 		model.addAttribute("band_yt", service.payment_band_yt(payment));
 		model.addAttribute("band_yt_perfect", service.payment_band_yt_perfect(payment));
@@ -75,7 +75,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/band YT 7G")
 	public String band_yt_7g(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_band_yt.jsp");
+		model.addAttribute("body", "./payment/skt/skt_band_yt.jsp");
 		
 		model.addAttribute("band_yt", service.payment_band_yt(payment));
 		model.addAttribute("band_yt_perfect", service.payment_band_yt_perfect(payment));
@@ -91,7 +91,7 @@ public class SktController {
 	}@RequestMapping("/payment/skt/band YT 3G")
 	public String band_yt_3g(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_band_yt.jsp");
+		model.addAttribute("body", "./payment/skt/skt_band_yt.jsp");
 		
 		model.addAttribute("band_yt", service.payment_band_yt(payment));
 		model.addAttribute("band_yt_perfect", service.payment_band_yt_perfect(payment));
@@ -107,7 +107,7 @@ public class SktController {
 	}@RequestMapping("/payment/skt/band YT 1G")
 	public String band_yt_1g(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_band_yt.jsp");
+		model.addAttribute("body", "./payment/skt/skt_band_yt.jsp");
 		
 		model.addAttribute("band_yt", service.payment_band_yt(payment));
 		model.addAttribute("band_yt_perfect", service.payment_band_yt_perfect(payment));
@@ -125,7 +125,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/band YT 세이브")
 	public String band_yt_save(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_band_yt.jsp");
+		model.addAttribute("body", "./payment/skt/skt_band_yt.jsp");
 		
 		model.addAttribute("band_yt", service.payment_band_yt(payment));
 		model.addAttribute("band_yt_perfect", service.payment_band_yt_perfect(payment));
@@ -140,10 +140,10 @@ public class SktController {
 		return "mainView";
 	}
 	
-	@RequestMapping("/payment/skt/band 데이터 퍼펙트S")
+	@RequestMapping("/payment/skt/skt/band 데이터 퍼펙트S")
 	public String band_data_perfectS(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_band_data.jsp");
+		model.addAttribute("body", "./payment/skt/skt_band_data.jsp");
 		
 		model.addAttribute("band_data", service.payment_band_data(payment));
 		model.addAttribute("band_data_perfectS", service.payment_band_data_perfectS(payment));
@@ -161,7 +161,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/band 데이터 퍼펙트")
 	public String band_data_perfect(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_band_data.jsp");
+		model.addAttribute("body", "./payment/skt/skt_band_data.jsp");
 		
 		model.addAttribute("band_data", service.payment_band_data(payment));
 		model.addAttribute("band_data_perfectS", service.payment_band_data_perfectS(payment));
@@ -179,7 +179,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/band 데이터 6.5G")
 	public String band_data_perfect_6_5g(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_band_data.jsp");
+		model.addAttribute("body", "./payment/skt/skt_band_data.jsp");
 		
 		model.addAttribute("band_data", service.payment_band_data(payment));
 		model.addAttribute("band_data_perfectS", service.payment_band_data_perfectS(payment));
@@ -197,7 +197,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/band 데이터 3.5G")
 	public String band_data_perfect_3_5g(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_band_data.jsp");
+		model.addAttribute("body", "./payment/skt/skt_band_data.jsp");
 		
 		model.addAttribute("band_data", service.payment_band_data(payment));
 		model.addAttribute("band_data_perfectS", service.payment_band_data_perfectS(payment));
@@ -215,7 +215,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/band 데이터 2.2G")
 	public String band_data_perfect_2_2g(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_band_data.jsp");
+		model.addAttribute("body", "./payment/skt/skt_band_data.jsp");
 		
 		model.addAttribute("band_data", service.payment_band_data(payment));
 		model.addAttribute("band_data_perfectS", service.payment_band_data_perfectS(payment));
@@ -233,7 +233,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/band 데이터 1.2G")
 	public String band_data_perfect_1_2g(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_band_data.jsp");
+		model.addAttribute("body", "./payment/skt/skt_band_data.jsp");
 		
 		model.addAttribute("band_data", service.payment_band_data(payment));
 		model.addAttribute("band_data_perfectS", service.payment_band_data_perfectS(payment));
@@ -251,7 +251,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/band 데이터 세이브")
 	public String band_data_perfect_save(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_band_data.jsp");
+		model.addAttribute("body", "./payment/skt/skt_band_data.jsp");
 		
 		model.addAttribute("band_data", service.payment_band_data(payment));
 		model.addAttribute("band_data_perfectS", service.payment_band_data_perfectS(payment));
@@ -269,7 +269,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/전국민 무한 100")
 	public String everyone_unlimited_100(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_everyone_unlimited.jsp");
+		model.addAttribute("body", "./payment/skt/skt_everyone_unlimited.jsp");
 		
 		model.addAttribute("everyone_unlimited", service.payment_everyone_unlimited(payment));
 		model.addAttribute("everyone_unlimited_100", service.payment_everyone_unlimited_100(payment));
@@ -285,7 +285,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/전국민 무한 85")
 	public String everyone_unlimited_85(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_everyone_unlimited.jsp");
+		model.addAttribute("body", "./payment/skt/skt_everyone_unlimited.jsp");
 		
 		model.addAttribute("everyone_unlimited", service.payment_everyone_unlimited(payment));
 		model.addAttribute("everyone_unlimited_100", service.payment_everyone_unlimited_100(payment));
@@ -301,7 +301,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/LTE 데이터 무제한 80팩")
 	public String everyone_unlimited_80pack(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_everyone_unlimited.jsp");
+		model.addAttribute("body", "./payment/skt/skt_everyone_unlimited.jsp");
 		
 		model.addAttribute("everyone_unlimited", service.payment_everyone_unlimited(payment));
 		model.addAttribute("everyone_unlimited_100", service.payment_everyone_unlimited_100(payment));
@@ -317,7 +317,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/전국민 무한 75")
 	public String everyone_unlimited_75(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_everyone_unlimited.jsp");
+		model.addAttribute("body", "./payment/skt/skt_everyone_unlimited.jsp");
 		
 		model.addAttribute("everyone_unlimited", service.payment_everyone_unlimited(payment));
 		model.addAttribute("everyone_unlimited_100", service.payment_everyone_unlimited_100(payment));
@@ -333,7 +333,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/전국민 무한 69")
 	public String everyone_unlimited_69(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_everyone_unlimited.jsp");
+		model.addAttribute("body", "./payment/skt/skt_everyone_unlimited.jsp");
 		
 		model.addAttribute("everyone_unlimited", service.payment_everyone_unlimited(payment));
 		model.addAttribute("everyone_unlimited_100", service.payment_everyone_unlimited_100(payment));
@@ -349,7 +349,7 @@ public class SktController {
 	@RequestMapping("/payment/skt/T끼리 65")
 	public String t_together_65(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/skt_t_together.jsp");
+		model.addAttribute("body", "./payment/skt/skt_t_together.jsp");
 		
 		model.addAttribute("t_together", service.payment_t_together(payment));
 		model.addAttribute("t_together_65", service.payment_t_together_65(payment));

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>요금제 - SKT 상세페이지</title>
+<title>요금제 - KT 상세페이지</title>
 <link href="http://www.tworld.co.kr/poc/inc/css/common.css"
 	rel="stylesheet" type="text/css">
 <link href="http://www.tworld.co.kr/poc/inc/css/purchase.css"
@@ -39,44 +39,44 @@
 <script type="text/javascript">
 
 	$(document).ready(function() {
-		$('a[id=51]').click(function() {
-			$('#limited99').hide();
-			$('#limited77').hide();
-			$('#limited67').hide();
-			$('#limited61').hide();
-			$('#limited51').show();
+		$('a[id=520]').click(function() {
+			$('#lteEgg520').show();
+			$('#lteEgg420').hide();
+			$('#lteEgg340').hide();
+			$('#lteEgg240').hide();
+			$('#lteEgg190').hide();
 		});
 		
-		$('a[id=61]').click(function() {
-			$('#limited99').hide();
-			$('#limited77').hide();
-			$('#limited67').hide();
-			$('#limited61').show();
-			$('#limited51').hide();
+		$('a[id=420]').click(function() {
+			$('#lteEgg520').hide();
+			$('#lteEgg420').show();
+			$('#lteEgg340').hide();
+			$('#lteEgg240').hide();
+			$('#lteEgg190').hide();
 		});
 		
-		$('a[id=67]').click(function() {
-			$('#limited99').hide();
-			$('#limited77').hide();
-			$('#limited67').show();
-			$('#limited61').hide();
-			$('#limited51').hide();
+		$('a[id=340]').click(function() {
+			$('#lteEgg520').hide();
+			$('#lteEgg420').hide();
+			$('#lteEgg340').show();
+			$('#lteEgg240').hide();
+			$('#lteEgg190').hide();
 		});
 		
-		$('a[id=77]').click(function() {
-			$('#limited99').hide();
-			$('#limited77').show();
-			$('#limited67').hide();
-			$('#limited61').hide();
-			$('#limited51').hide();
+		$('a[id=240]').click(function() {
+			$('#lteEgg520').hide();
+			$('#lteEgg420').hide();
+			$('#lteEgg340').hide();
+			$('#lteEgg240').show();
+			$('#lteEgg190').hide();
 		});
 		
-		$('a[id=99]').click(function() {
-			$('#limited99').show();
-			$('#limited77').hide();
-			$('#limited67').hide();
-			$('#limited61').hide();
-			$('#limited51').hide();
+		$('a[id=190]').click(function() {
+			$('#lteEgg520').hide();
+			$('#lteEgg420').hide();
+			$('#lteEgg340').hide();
+			$('#lteEgg240').hide();
+			$('#lteEgg190').show();
 		});
 		
 		
@@ -98,21 +98,21 @@ div{
 		<div id="content">
 			<!-- 기본정보 -->
 			<!-- 2016.06.23 수정 -->
-			<!-- limited99 -->
-			<div class="prCont basicArea" id="limited99">
-			<c:forEach items="${limited99}" var="limited99">
+			<!-- lteEgg520 -->
+			<div class="prCont basicArea" id="lteEgg520">
+			<c:forEach items="${lteEgg520}" var="lteEgg520">
 				<div class="inner">
 					<div class="titTop">
 						<br>
 						<br>
 						
-						<h1>${limited99.payment }</h1>
+						<h1>${lteEgg520.payment }</h1>
 					</div>
 					<!-- 다이어그램 내용 : 어드민에서 입력 버그 조치되면 우측 태그 살릴 것 <dl class="prTopType type1"></dl>-->
 					<dl class="prTopType type1">
 						<dt>
-							<img src="/resources/images/payment/kt/limited99.png"
-								alt="순 완전무한 99(LTE)">
+							<img src="/resources/images/payment/kt/lteEgg520.png"
+								alt="LTE-일520">
 						</dt>
 						<dd>
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
@@ -123,29 +123,29 @@ div{
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p>${limited99.extra_data}</p>
+										<p>${lteEgg520.extra_data}</p>
 										<!-- 추가 안내 문구가 있을 경우 -->
-									</div> <span>${limited99.data }</span>
+									</div> <span>${lteEgg520.data }</span>
 								</li>
 								<li class="full"><em class="call">음성</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p style="font-size: 8px">${limited99.call }</p>
+										<p style="font-size: 8px">${lteEgg520.call }</p>
 									</div> <span>무제한</span></li>
 								<li class="full"><em class="mail">문자</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
 									</div>
-									<span>${limited99.sms}</span></li>
+									<span>${lteEgg520.sms}</span></li>
 							</ul>
 						<dd>
 							<strong class="benefitTit">KT만의 혜택</strong>
-							<div class="txt">실시간 방송부터 음악. 영화할인까지<br>요금약정, 요금위약금 없는 순액요금제</div>
+							<div class="txt">기본알 무제한 이월</div>
 							<br> <strong class="tit">월정액 (VAT포함)</strong>
 							<p class="price">
-								<em>${limited99.fixed_month }</em><span>원</span>
+								<em>${lteEgg520.fixed_month }</em><span>원</span>
 							</p>
 					</dl>
 					<br>
@@ -166,9 +166,9 @@ div{
 					<div class="prCont bandData bg_gray">
 						<div class="inner">
 							<h3 class="prTit2">
-								<em class="fColor3">순 완전무한 한눈에 보기</em> <strong>집 / 이동전화부터 데이터까지 완전 무제한</strong>
+								<em class="fColor3">LTE-알 한눈에 보기</em> <strong>문자전용 20000알, 데이터 최대 2.5GB</strong>
 							</h3>
-							<p class="prCopy">올레 tv 모바일팩, 링투유, 개치콜 등 최대 6가지 혜택을 제공하는 알짜팩을 누려보세요</p>
+							<p class="prCopy">만18세 이하 고객이라면 알을 자유롭게 조절하고 무제한 이월</p>
 
 							<div class="tabType3"></div>
 						</div>
@@ -176,26 +176,26 @@ div{
 							<h4 class="hidden">이미지로 보기</h4>
 							<div class="graphic">
 								<ul>
-									<li class="balloon5"><a href="#limited51"
-										id="51"><strong>순 완전무한<br>(51)
-										</strong><span class="dLine"><em>5GB<br>
-											</em>남은데이터 이월</span></a></li>
-									<li class="balloon4"><a href="#limited61"
-										id="61"><strong>순 완전무한<br>(61)
-										</strong><span class="dLine"><em>10GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon3"><a href="#limited67"
-										id="67"><strong>순 완전무한<br>(67)
-										</strong><span class="dLine"><em>12GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon2"><a href="#limited77"
-										id="77"><strong>순 완전무한<br>(77)
-										</strong><span><em>17GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon1 on"><a href="#limited99"
-										id="99"><strong>순 완전무한<br>(99)
-										</strong><span><em>25GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
+									<li class="balloon5"><a href="#lteEgg190"
+										id="190"><strong>LTE-알<br>(190)
+										</strong><span class="dLine"><em>300MB<br>
+											</em></span></a></li>
+									<li class="balloon4"><a href="#lteEgg240"
+										id="240"><strong>LTE-알<br>(240)
+										</strong><span class="dLine"><em>500MB<br>
+											</em></span></a></li>
+									<li class="balloon3"><a href="#lteEgg340"
+										id="67"><strong>LTE-알<br>(340)
+										</strong><span class="dLine"><em>750MB<br>
+											</em></span></a></li>
+									<li class="balloon2"><a href="#lteEgg420"
+										id="420"><strong>LTE-알<br>(420)
+										</strong><span><em>1.5GB<br>
+											</em></span></a></li>
+									<li class="balloon1 on"><a href="#lteEgg520"
+										id="520"><strong>LTE-알<br>(520)
+										</strong><span><em>2.5GB<br>
+											</em></span></a></li>
 									<!--두줄이상일때  class="dLine" 추가-->
 								</ul>
 								<div class="clearfix">
@@ -226,14 +226,14 @@ div{
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach items="${limited}" var="limited">
+										<c:forEach items="${lteEgg}" var="lteEgg">
 											<tr>
-												<th scope="row" class="left "><span>${limited.payment}
+												<th scope="row" class="left "><span>${lteEgg.payment}
 														></span></th>
-												<td>${limited.fixed_month}원</td>
-												<td>${limited.call }</td>
-												<td>${limited.sms }</td>
-												<td>${limited.data}  ${limited.extra_data}</td>
+												<td>${lteEgg.fixed_month}원</td>
+												<td>${lteEgg.call }</td>
+												<td>${lteEgg.sms }</td>
+												<td>${lteEgg.data}  ${lteEgg.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -243,45 +243,42 @@ div{
 							<!-- 추가혜택있을때 사용 -->
 							<br><hr><br><br><br>
 									<h3 class="prTit2">
-									<em class="fColor3">요금제 혜택 한눈에 보기<br><b style="color: red;font-size: 15px;"> * 순 완전무한 51은 이용 불가</b></em> 
+									<em class="fColor3">자동전환(만 20세) 한눈에 보기<br></em> 
 									</h3>
 							<div class="tableType1">
 								<table border="1">
 									<colgroup>
 										
-										<col width="10%">
-										<col width="10%">
-										<col width="15%">
-										<col width="25%">
+										<col width="*%">
+										<col width="16%">
+										<col width="16%">
+										<col width="16%">
+										<col width="16%">
+										<col width="16%">
 									</colgroup>
 									<thead>
 										<tr>
-											<th scope="col">상품명</th>
-											<th scope="col">이용요금</th>
-											<th scope="col">제공혜택</th>
-											<th scope="col">혜택</th>
+											<th scope="col" colspan="7">요금제</th>
 									</thead>
 									
 									<tbody>		
 													
 										<tr>
-										<th scope="row" rowspan="4"><span>알짜팩<br></span></th>
-											<td rowspan="4">8800원</td>
-											<td>영상 서비스</td>
-											<td>올레 tv 모바일팩<br>(실사간 TV채널 및 VOD + 전용)</td>
+										<th scope="row"><span>자동 전환 전<br></span></th>
+											<td>LTE-알190</td>
+											<td>LTE-알240</td>
+											<td>LTE-알340</td>
+											<td>LTE-알420</td>
+											<td>LTE-알520</td>
 										</tr>
 										<tr>
-											<th>음악 부가서비스</th>
-											<th>링투유<br>(모바일 통화연결음)</th>
-										</tr>									
-										<tr>
-											<th>통화 부가서비스</th>
-											<th>캐치콜<br>(받지못한 통화를 SMS로 알려주는 상품)</th>
-										</tr>									
-										<tr>
-											<th>영화 할인쿠폰</th>
-											<th>매월 2장<br>(1장당 2000원 할인)</th>
-										</tr>									
+											<th>자동 전환 후</th>
+											<th></th>
+											<th>LTE-340</th>
+											<th></th>
+											<th>LTE-420</th>
+											<th>LTE-520</th>
+										</tr>																	
 									</tbody>
 								</table>
 								
@@ -292,23 +289,24 @@ div{
 				</div>
 				</div>
 			
-			<!-- limited99 -->
+			<!-- lteEgg520 -->
 			
-			<!-- limited77 -->
-			<div class="prCont basicArea" id="limited77">
-			<c:forEach items="${limited77}" var="limited77">
+			
+			<!-- lteEgg420 -->
+			<div class="prCont basicArea" id="lteEgg420">
+			<c:forEach items="${lteEgg420}" var="lteEgg420">
 				<div class="inner">
 					<div class="titTop">
 						<br>
 						<br>
 						
-						<h1>${limited77.payment }</h1>
+						<h1>${lteEgg420.payment }</h1>
 					</div>
 					<!-- 다이어그램 내용 : 어드민에서 입력 버그 조치되면 우측 태그 살릴 것 <dl class="prTopType type1"></dl>-->
 					<dl class="prTopType type1">
 						<dt>
-							<img src="/resources/images/payment/kt/limited77.png"
-								alt="순 완전무한 77(LTE)">
+							<img src="/resources/images/payment/kt/lteEgg420.png"
+								alt="LTE-알420">
 						</dt>
 						<dd>
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
@@ -319,29 +317,29 @@ div{
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p>${limited77.extra_data}</p>
+										<p>${lteEgg420.extra_data}</p>
 										<!-- 추가 안내 문구가 있을 경우 -->
-									</div> <span>${limited77.data }</span>
+									</div> <span>${lteEgg420.data }</span>
 								</li>
 								<li class="full"><em class="call">음성</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p style="font-size: 8px">${limited77.call }</p>
+										<p style="font-size: 8px">${lteEgg420.call }</p>
 									</div> <span>무제한</span></li>
 								<li class="full"><em class="mail">문자</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
 									</div>
-									<span>${limited77.sms}</span></li>
+									<span>${lteEgg420.sms}</span></li>
 							</ul>
 						<dd>
 							<strong class="benefitTit">KT만의 혜택</strong>
-							<div class="txt">실시간 방송부터 음악. 영화할인까지<br>요금약정, 요금위약금 없는 순액요금제</div>
+							<div class="txt">기본알 무제한 이월</div>
 							<br> <strong class="tit">월정액 (VAT포함)</strong>
 							<p class="price">
-								<em>${limited77.fixed_month }</em><span>원</span>
+								<em>${lteEgg420.fixed_month }</em><span>원</span>
 							</p>
 					</dl>
 					<br>
@@ -362,9 +360,9 @@ div{
 					<div class="prCont bandData bg_gray">
 						<div class="inner">
 							<h3 class="prTit2">
-								<em class="fColor3">순 완전무한 한눈에 보기</em> <strong>집 / 이동전화부터 데이터까지 완전 무제한</strong>
+								<em class="fColor3">LTE-알 한눈에 보기</em> <strong>문자전용 20000알, 데이터 최대 2.5GB</strong>
 							</h3>
-							<p class="prCopy">올레 tv 모바일팩, 링투유, 개치콜 등 최대 6가지 혜택을 제공하는 알짜팩을 누려보세요</p>
+							<p class="prCopy">만18세 이하 고객이라면 알을 자유롭게 조절하고 무제한 이월</p>
 
 							<div class="tabType3"></div>
 						</div>
@@ -372,26 +370,26 @@ div{
 							<h4 class="hidden">이미지로 보기</h4>
 							<div class="graphic">
 								<ul>
-									<li class="balloon5"><a href="#limited51"
-										id="51"><strong>순 완전무한<br>(51)
-										</strong><span class="dLine"><em>5GB<br>
-											</em>남은데이터 이월</span></a></li>
-									<li class="balloon4"><a href="#limited61"
-										id="61"><strong>순 완전무한<br>(61)
-										</strong><span class="dLine"><em>10GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon3"><a href="#limited67"
-										id="67"><strong>순 완전무한<br>(67)
-										</strong><span class="dLine"><em>12GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon2 on"><a href="#limited77"
-										id="77"><strong>순 완전무한<br>(77)
-										</strong><span><em>17GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon1"><a href="#limited99"
-										id="99"><strong>순 완전무한<br>(99)
-										</strong><span><em>25GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
+									<li class="balloon5"><a href="#lteEgg190"
+										id="190"><strong>LTE-알<br>(190)
+										</strong><span class="dLine"><em>300MB<br>
+											</em></span></a></li>
+									<li class="balloon4"><a href="#lteEgg240"
+										id="240"><strong>LTE-알<br>(240)
+										</strong><span class="dLine"><em>500MB<br>
+											</em></span></a></li>
+									<li class="balloon3"><a href="#lteEgg340"
+										id="67"><strong>LTE-알<br>(340)
+										</strong><span class="dLine"><em>750MB<br>
+											</em></span></a></li>
+									<li class="balloon2"><a href="#lteEgg420"
+										id="420"><strong>LTE-알<br>(420)
+										</strong><span><em>1.5GB<br>
+											</em></span></a></li>
+									<li class="balloon1 on"><a href="#lteEgg520"
+										id="520"><strong>LTE-알<br>(520)
+										</strong><span><em>2.5GB<br>
+											</em></span></a></li>
 									<!--두줄이상일때  class="dLine" 추가-->
 								</ul>
 								<div class="clearfix">
@@ -422,14 +420,14 @@ div{
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach items="${limited}" var="limited">
+										<c:forEach items="${lteEgg}" var="lteEgg">
 											<tr>
-												<th scope="row" class="left "><span>${limited.payment}
+												<th scope="row" class="left "><span>${lteEgg.payment}
 														></span></th>
-												<td>${limited.fixed_month}원</td>
-												<td>${limited.call }</td>
-												<td>${limited.sms }</td>
-												<td>${limited.data}  ${limited.extra_data}</td>
+												<td>${lteEgg.fixed_month}원</td>
+												<td>${lteEgg.call }</td>
+												<td>${lteEgg.sms }</td>
+												<td>${lteEgg.data}  ${lteEgg.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -439,71 +437,70 @@ div{
 							<!-- 추가혜택있을때 사용 -->
 							<br><hr><br><br><br>
 									<h3 class="prTit2">
-									<em class="fColor3">요금제 혜택 한눈에 보기<br><b style="color: red;font-size: 15px;"> * 순 완전무한 51은 이용 불가</b></em> 
+									<em class="fColor3">자동전환(만 20세) 한눈에 보기<br></em> 
 									</h3>
 							<div class="tableType1">
 								<table border="1">
 									<colgroup>
 										
-										<col width="10%">
-										<col width="10%">
-										<col width="15%">
-										<col width="25%">
+										<col width="*%">
+										<col width="16%">
+										<col width="16%">
+										<col width="16%">
+										<col width="16%">
+										<col width="16%">
 									</colgroup>
 									<thead>
 										<tr>
-											<th scope="col">상품명</th>
-											<th scope="col">이용요금</th>
-											<th scope="col">제공혜택</th>
-											<th scope="col">혜택</th>
+											<th scope="col" colspan="7">요금제</th>
 									</thead>
 									
 									<tbody>		
 													
 										<tr>
-										<th scope="row" rowspan="4"><span>알짜팩</span></th>
-											<td rowspan="4">8800원</td>
-											<td>영상 서비스</td>
-											<td>올레 tv 모바일팩<br>(실사간 TV채널 및 VOD + 전용)</td>
+										<th scope="row"><span>자동 전환 전<br></span></th>
+											<td>LTE-알190</td>
+											<td>LTE-알240</td>
+											<td>LTE-알340</td>
+											<td>LTE-알420</td>
+											<td>LTE-알520</td>
 										</tr>
 										<tr>
-											<th>음악 부가서비스</th>
-											<th>링투유<br>(모바일 통화연결음)</th>
-										</tr>									
-										<tr>
-											<th>통화 부가서비스</th>
-											<th>캐치콜<br>(받지못한 통화를 SMS로 알려주는 상품)</th>
-										</tr>									
-										<tr>
-											<th>영화 할인쿠폰</th>
-											<th>매월 2장<br>(1장당 2000원 할인)</th>
-										</tr>									
+											<th>자동 전환 후</th>
+											<th></th>
+											<th>LTE-340</th>
+											<th></th>
+											<th>LTE-420</th>
+											<th>LTE-520</th>
+										</tr>																	
 									</tbody>
 								</table>
+								
 							</div>
 							
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- limited77 -->
-		
+				</div>
 			
-			<!-- limited67 -->
-			<div class="prCont basicArea" id="limited67">
-			<c:forEach items="${limited67}" var="limited67">
+			<!-- lteEgg420 -->
+			
+			
+			<!-- lteEgg340 -->
+			<div class="prCont basicArea" id="lteEgg340">
+			<c:forEach items="${lteEgg340}" var="lteEgg340">
 				<div class="inner">
 					<div class="titTop">
 						<br>
 						<br>
 						
-						<h1>${limited67.payment }</h1>
+						<h1>${lteEgg340.payment }</h1>
 					</div>
 					<!-- 다이어그램 내용 : 어드민에서 입력 버그 조치되면 우측 태그 살릴 것 <dl class="prTopType type1"></dl>-->
 					<dl class="prTopType type1">
 						<dt>
-							<img src="/resources/images/payment/kt/limited67.png"
-								alt="순 완전무한 67(LTE)">
+							<img src="/resources/images/payment/kt/lteEgg340.png"
+								alt="LTE-알340">
 						</dt>
 						<dd>
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
@@ -514,29 +511,29 @@ div{
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p>${limited67.extra_data}</p>
+										<p>${lteEgg340.extra_data}</p>
 										<!-- 추가 안내 문구가 있을 경우 -->
-									</div> <span>${limited67.data }</span>
+									</div> <span>${lteEgg340.data }</span>
 								</li>
 								<li class="full"><em class="call">음성</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p style="font-size: 8px">${limited67.call }</p>
+										<p style="font-size: 8px">${lteEgg340.call }</p>
 									</div> <span>무제한</span></li>
 								<li class="full"><em class="mail">문자</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
 									</div>
-									<span>${limited67.sms}</span></li>
+									<span>${lteEgg340.sms}</span></li>
 							</ul>
 						<dd>
 							<strong class="benefitTit">KT만의 혜택</strong>
-							<div class="txt">실시간 방송부터 음악. 영화할인까지<br>요금약정, 요금위약금 없는 순액요금제</div>
+							<div class="txt">기본알 무제한 이월</div>
 							<br> <strong class="tit">월정액 (VAT포함)</strong>
 							<p class="price">
-								<em>${limited67.fixed_month }</em><span>원</span>
+								<em>${lteEgg340.fixed_month }</em><span>원</span>
 							</p>
 					</dl>
 					<br>
@@ -557,9 +554,9 @@ div{
 					<div class="prCont bandData bg_gray">
 						<div class="inner">
 							<h3 class="prTit2">
-								<em class="fColor3">순 완전무한 한눈에 보기</em> <strong>집 / 이동전화부터 데이터까지 완전 무제한</strong>
+								<em class="fColor3">LTE-알 한눈에 보기</em> <strong>문자전용 20000알, 데이터 최대 2.5GB</strong>
 							</h3>
-							<p class="prCopy">올레 tv 모바일팩, 링투유, 개치콜 등 최대 6가지 혜택을 제공하는 알짜팩을 누려보세요</p>
+							<p class="prCopy">만18세 이하 고객이라면 알을 자유롭게 조절하고 무제한 이월</p>
 
 							<div class="tabType3"></div>
 						</div>
@@ -567,26 +564,26 @@ div{
 							<h4 class="hidden">이미지로 보기</h4>
 							<div class="graphic">
 								<ul>
-									<li class="balloon5"><a href="#limited51"
-										id="51"><strong>순 완전무한<br>(51)
-										</strong><span class="dLine"><em>5GB<br>
-											</em>남은데이터 이월</span></a></li>
-									<li class="balloon4"><a href="#limited61"
-										id="61"><strong>순 완전무한<br>(61)
-										</strong><span class="dLine"><em>10GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon3 on"><a href="#limited67"
-										id="67"><strong>순 완전무한<br>(67)
-										</strong><span class="dLine"><em>12GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon2"><a href="#limited77"
-										id="77"><strong>순 완전무한<br>(77)
-										</strong><span><em>17GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon1"><a href="#limited99"
-										id="99"><strong>순 완전무한<br>(99)
-										</strong><span><em>25GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
+									<li class="balloon5"><a href="#lteEgg190"
+										id="190"><strong>LTE-알<br>(190)
+										</strong><span class="dLine"><em>300MB<br>
+											</em></span></a></li>
+									<li class="balloon4"><a href="#lteEgg240"
+										id="240"><strong>LTE-알<br>(240)
+										</strong><span class="dLine"><em>500MB<br>
+											</em></span></a></li>
+									<li class="balloon3"><a href="#lteEgg340"
+										id="67"><strong>LTE-알<br>(340)
+										</strong><span class="dLine"><em>750MB<br>
+											</em></span></a></li>
+									<li class="balloon2"><a href="#lteEgg420"
+										id="420"><strong>LTE-알<br>(420)
+										</strong><span><em>1.5GB<br>
+											</em></span></a></li>
+									<li class="balloon1 on"><a href="#lteEgg520"
+										id="520"><strong>LTE-알<br>(520)
+										</strong><span><em>2.5GB<br>
+											</em></span></a></li>
 									<!--두줄이상일때  class="dLine" 추가-->
 								</ul>
 								<div class="clearfix">
@@ -617,14 +614,14 @@ div{
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach items="${limited}" var="limited">
+										<c:forEach items="${lteEgg}" var="lteEgg">
 											<tr>
-												<th scope="row" class="left "><span>${limited.payment}
+												<th scope="row" class="left "><span>${lteEgg.payment}
 														></span></th>
-												<td>${limited.fixed_month}원</td>
-												<td>${limited.call }</td>
-												<td>${limited.sms }</td>
-												<td>${limited.data}  ${limited.extra_data}</td>
+												<td>${lteEgg.fixed_month}원</td>
+												<td>${lteEgg.call }</td>
+												<td>${lteEgg.sms }</td>
+												<td>${lteEgg.data}  ${lteEgg.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -634,71 +631,70 @@ div{
 							<!-- 추가혜택있을때 사용 -->
 							<br><hr><br><br><br>
 									<h3 class="prTit2">
-									<em class="fColor3">요금제 혜택 한눈에 보기<br><b style="color: red;font-size: 15px;"> * 순 완전무한 51은 이용 불가</b></em> 
+									<em class="fColor3">자동전환(만 20세) 한눈에 보기<br></em> 
 									</h3>
 							<div class="tableType1">
 								<table border="1">
 									<colgroup>
 										
-										<col width="10%">
-										<col width="10%">
-										<col width="15%">
-										<col width="25%">
+										<col width="*%">
+										<col width="16%">
+										<col width="16%">
+										<col width="16%">
+										<col width="16%">
+										<col width="16%">
 									</colgroup>
 									<thead>
 										<tr>
-											<th scope="col">상품명</th>
-											<th scope="col">이용요금</th>
-											<th scope="col">제공혜택</th>
-											<th scope="col">혜택</th>
+											<th scope="col" colspan="7">요금제</th>
 									</thead>
 									
 									<tbody>		
 													
 										<tr>
-										<th scope="row" rowspan="4"><span>알짜팩</span></th>
-											<td rowspan="4">8800원</td>
-											<td>영상 서비스</td>
-											<td>올레 tv 모바일팩<br>(실사간 TV채널 및 VOD + 전용)</td>
+										<th scope="row"><span>자동 전환 전<br></span></th>
+											<td>LTE-알190</td>
+											<td>LTE-알240</td>
+											<td>LTE-알340</td>
+											<td>LTE-알420</td>
+											<td>LTE-알520</td>
 										</tr>
 										<tr>
-											<th>음악 부가서비스</th>
-											<th>링투유<br>(모바일 통화연결음)</th>
-										</tr>									
-										<tr>
-											<th>통화 부가서비스</th>
-											<th>캐치콜<br>(받지못한 통화를 SMS로 알려주는 상품)</th>
-										</tr>									
-										<tr>
-											<th>영화 할인쿠폰</th>
-											<th>매월 2장<br>(1장당 2000원 할인)</th>
-										</tr>									
+											<th>자동 전환 후</th>
+											<th></th>
+											<th>LTE-340</th>
+											<th></th>
+											<th>LTE-420</th>
+											<th>LTE-520</th>
+										</tr>																	
 									</tbody>
 								</table>
+								
 							</div>
 							
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- limited67 -->
+				</div>
+			
+			<!-- lteEgg340 -->
 			
 			
-			<!-- limited61 -->
-			<div class="prCont basicArea" id="limited61">
-			<c:forEach items="${limited61}" var="limited61">
+			<!-- lteEgg240 -->
+			<div class="prCont basicArea" id="lteEgg240">
+			<c:forEach items="${lteEgg240}" var="lteEgg240">
 				<div class="inner">
 					<div class="titTop">
 						<br>
 						<br>
 						
-						<h1>${limited61.payment }</h1>
+						<h1>${lteEgg240.payment }</h1>
 					</div>
 					<!-- 다이어그램 내용 : 어드민에서 입력 버그 조치되면 우측 태그 살릴 것 <dl class="prTopType type1"></dl>-->
 					<dl class="prTopType type1">
 						<dt>
-							<img src="/resources/images/payment/kt/limited61.png"
-								alt="순 완전무한 61(LTE)">
+							<img src="/resources/images/payment/kt/lteEgg240.png"
+								alt="LTE-알240">
 						</dt>
 						<dd>
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
@@ -709,29 +705,29 @@ div{
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p>${limited61.extra_data}</p>
+										<p>${lteEgg240.extra_data}</p>
 										<!-- 추가 안내 문구가 있을 경우 -->
-									</div> <span>${limited61.data }</span>
+									</div> <span>${lteEgg240.data }</span>
 								</li>
 								<li class="full"><em class="call">음성</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p style="font-size: 8px">${limited61.call }</p>
+										<p style="font-size: 8px">${lteEgg240.call }</p>
 									</div> <span>무제한</span></li>
 								<li class="full"><em class="mail">문자</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
 									</div>
-									<span>${limited61.sms}</span></li>
+									<span>${lteEgg240.sms}</span></li>
 							</ul>
 						<dd>
 							<strong class="benefitTit">KT만의 혜택</strong>
-							<div class="txt">실시간 방송부터 음악. 영화할인까지<br>요금약정, 요금위약금 없는 순액요금제</div>
+							<div class="txt">기본알 무제한 이월</div>
 							<br> <strong class="tit">월정액 (VAT포함)</strong>
 							<p class="price">
-								<em>${limited61.fixed_month }</em><span>원</span>
+								<em>${lteEgg240.fixed_month }</em><span>원</span>
 							</p>
 					</dl>
 					<br>
@@ -752,9 +748,9 @@ div{
 					<div class="prCont bandData bg_gray">
 						<div class="inner">
 							<h3 class="prTit2">
-								<em class="fColor3">순 완전무한 한눈에 보기</em> <strong>집 / 이동전화부터 데이터까지 완전 무제한</strong>
+								<em class="fColor3">LTE-알 한눈에 보기</em> <strong>문자전용 20000알, 데이터 최대 2.5GB</strong>
 							</h3>
-							<p class="prCopy">올레 tv 모바일팩, 링투유, 개치콜 등 최대 6가지 혜택을 제공하는 알짜팩을 누려보세요</p>
+							<p class="prCopy">만18세 이하 고객이라면 알을 자유롭게 조절하고 무제한 이월</p>
 
 							<div class="tabType3"></div>
 						</div>
@@ -762,26 +758,26 @@ div{
 							<h4 class="hidden">이미지로 보기</h4>
 							<div class="graphic">
 								<ul>
-									<li class="balloon5"><a href="#limited51"
-										id="51"><strong>순 완전무한<br>(51)
-										</strong><span class="dLine"><em>5GB<br>
-											</em>남은데이터 이월</span></a></li>
-									<li class="balloon4 on"><a href="#limited61"
-										id="61"><strong>순 완전무한<br>(61)
-										</strong><span class="dLine"><em>10GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon3"><a href="#limited67"
-										id="67"><strong>순 완전무한<br>(67)
-										</strong><span class="dLine"><em>12GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon2"><a href="#limited77"
-										id="77"><strong>순 완전무한<br>(77)
-										</strong><span><em>17GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon1"><a href="#limited99"
-										id="99"><strong>순 완전무한<br>(99)
-										</strong><span><em>25GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
+									<li class="balloon5"><a href="#lteEgg190"
+										id="190"><strong>LTE-알<br>(190)
+										</strong><span class="dLine"><em>300MB<br>
+											</em></span></a></li>
+									<li class="balloon4"><a href="#lteEgg240"
+										id="240"><strong>LTE-알<br>(240)
+										</strong><span class="dLine"><em>500MB<br>
+											</em></span></a></li>
+									<li class="balloon3"><a href="#lteEgg340"
+										id="67"><strong>LTE-알<br>(340)
+										</strong><span class="dLine"><em>750MB<br>
+											</em></span></a></li>
+									<li class="balloon2"><a href="#lteEgg420"
+										id="420"><strong>LTE-알<br>(420)
+										</strong><span><em>1.5GB<br>
+											</em></span></a></li>
+									<li class="balloon1 on"><a href="#lteEgg520"
+										id="520"><strong>LTE-알<br>(520)
+										</strong><span><em>2.5GB<br>
+											</em></span></a></li>
 									<!--두줄이상일때  class="dLine" 추가-->
 								</ul>
 								<div class="clearfix">
@@ -812,14 +808,14 @@ div{
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach items="${limited}" var="limited">
+										<c:forEach items="${lteEgg}" var="lteEgg">
 											<tr>
-												<th scope="row" class="left "><span>${limited.payment}
+												<th scope="row" class="left "><span>${lteEgg.payment}
 														></span></th>
-												<td>${limited.fixed_month}원</td>
-												<td>${limited.call }</td>
-												<td>${limited.sms }</td>
-												<td>${limited.data}  ${limited.extra_data}</td>
+												<td>${lteEgg.fixed_month}원</td>
+												<td>${lteEgg.call }</td>
+												<td>${lteEgg.sms }</td>
+												<td>${lteEgg.data}  ${lteEgg.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -829,70 +825,70 @@ div{
 							<!-- 추가혜택있을때 사용 -->
 							<br><hr><br><br><br>
 									<h3 class="prTit2">
-									<em class="fColor3">요금제 혜택 한눈에 보기<br><b style="color: red;font-size: 15px;"> * 순 완전무한 51은 이용 불가</b></em> 
+									<em class="fColor3">자동전환(만 20세) 한눈에 보기<br></em> 
 									</h3>
 							<div class="tableType1">
 								<table border="1">
 									<colgroup>
 										
-										<col width="10%">
-										<col width="10%">
-										<col width="15%">
-										<col width="25%">
+										<col width="*%">
+										<col width="16%">
+										<col width="16%">
+										<col width="16%">
+										<col width="16%">
+										<col width="16%">
 									</colgroup>
 									<thead>
 										<tr>
-											<th scope="col">상품명</th>
-											<th scope="col">이용요금</th>
-											<th scope="col">제공혜택</th>
-											<th scope="col">혜택</th>
+											<th scope="col" colspan="7">요금제</th>
 									</thead>
 									
 									<tbody>		
 													
 										<tr>
-										<th scope="row" rowspan="4"><span>알짜팩</span></th>
-											<td rowspan="4">8800원</td>
-											<td>영상 서비스</td>
-											<td>올레 tv 모바일팩<br>(실사간 TV채널 및 VOD + 전용)</td>
+										<th scope="row"><span>자동 전환 전<br></span></th>
+											<td>LTE-알190</td>
+											<td>LTE-알240</td>
+											<td>LTE-알340</td>
+											<td>LTE-알420</td>
+											<td>LTE-알520</td>
 										</tr>
 										<tr>
-											<th>음악 부가서비스</th>
-											<th>링투유<br>(모바일 통화연결음)</th>
-										</tr>									
-										<tr>
-											<th>통화 부가서비스</th>
-											<th>캐치콜<br>(받지못한 통화를 SMS로 알려주는 상품)</th>
-										</tr>									
-										<tr>
-											<th>영화 할인쿠폰</th>
-											<th>매월 2장<br>(1장당 2000원 할인)</th>
-										</tr>									
+											<th>자동 전환 후</th>
+											<th></th>
+											<th>LTE-340</th>
+											<th></th>
+											<th>LTE-420</th>
+											<th>LTE-520</th>
+										</tr>																	
 									</tbody>
 								</table>
+								
 							</div>
 							
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- limited61 -->
+				</div>
 			
-			<!-- limited51 -->
-			<div class="prCont basicArea" id="limited51">
-			<c:forEach items="${limited51}" var="limited51">
+			<!-- lteEgg240 -->
+			
+			
+			<!-- lteEgg190 -->
+			<div class="prCont basicArea" id="lteEgg190">
+			<c:forEach items="${lteEgg190}" var="lteEgg190">
 				<div class="inner">
 					<div class="titTop">
 						<br>
 						<br>
 						
-						<h1>${limited51.payment }</h1>
+						<h1>${lteEgg190.payment }</h1>
 					</div>
 					<!-- 다이어그램 내용 : 어드민에서 입력 버그 조치되면 우측 태그 살릴 것 <dl class="prTopType type1"></dl>-->
 					<dl class="prTopType type1">
 						<dt>
-							<img src="/resources/images/payment/kt/limited51.png"
-								alt="순 완전무한 51(LTE)">
+							<img src="/resources/images/payment/kt/lteEgg190.png"
+								alt="LTE-알190">
 						</dt>
 						<dd>
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
@@ -903,29 +899,29 @@ div{
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p>${limited51.extra_data}</p>
+										<p>${lteEgg190.extra_data}</p>
 										<!-- 추가 안내 문구가 있을 경우 -->
-									</div> <span>${limited51.data }</span>
+									</div> <span>${lteEgg190.data }</span>
 								</li>
 								<li class="full"><em class="call">음성</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p style="font-size: 8px">${limited51.call }</p>
+										<p style="font-size: 8px">${lteEgg190.call }</p>
 									</div> <span>무제한</span></li>
 								<li class="full"><em class="mail">문자</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
 									</div>
-									<span>${limited51.sms}</span></li>
+									<span>${lteEgg190.sms}</span></li>
 							</ul>
 						<dd>
 							<strong class="benefitTit">KT만의 혜택</strong>
-							<div class="txt">실시간 방송부터 음악. 영화할인까지<br>요금약정, 요금위약금 없는 순액요금제</div>
+							<div class="txt">기본알 무제한 이월</div>
 							<br> <strong class="tit">월정액 (VAT포함)</strong>
 							<p class="price">
-								<em>${limited51.fixed_month }</em><span>원</span>
+								<em>${lteEgg190.fixed_month }</em><span>원</span>
 							</p>
 					</dl>
 					<br>
@@ -946,9 +942,9 @@ div{
 					<div class="prCont bandData bg_gray">
 						<div class="inner">
 							<h3 class="prTit2">
-								<em class="fColor3">순 완전무한 한눈에 보기</em> <strong>집 / 이동전화부터 데이터까지 완전 무제한</strong>
+								<em class="fColor3">LTE-알 한눈에 보기</em> <strong>문자전용 20000알, 데이터 최대 2.5GB</strong>
 							</h3>
-							<p class="prCopy">올레 tv 모바일팩, 링투유, 개치콜 등 최대 6가지 혜택을 제공하는 알짜팩을 누려보세요</p>
+							<p class="prCopy">만18세 이하 고객이라면 알을 자유롭게 조절하고 무제한 이월</p>
 
 							<div class="tabType3"></div>
 						</div>
@@ -956,26 +952,26 @@ div{
 							<h4 class="hidden">이미지로 보기</h4>
 							<div class="graphic">
 								<ul>
-									<li class="balloon5 on"><a href="#limited51"
-										id="51"><strong>순 완전무한<br>(51)
-										</strong><span class="dLine"><em>5GB<br>
-											</em>남은데이터 이월</span></a></li>
-									<li class="balloon4"><a href="#limited61"
-										id="61"><strong>순 완전무한<br>(61)
-										</strong><span class="dLine"><em>10GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon3"><a href="#limited67"
-										id="67"><strong>순 완전무한<br>(67)
-										</strong><span class="dLine"><em>12GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon2"><a href="#limited77"
-										id="77"><strong>순 완전무한<br>(77)
-										</strong><span><em>17GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
-									<li class="balloon1"><a href="#limited99"
-										id="99"><strong>순 완전무한<br>(99)
-										</strong><span><em>25GB<br>
-											</em> 매일 2GB <br>이후 속도 제어</span></a></li>
+									<li class="balloon5"><a href="#lteEgg190"
+										id="190"><strong>LTE-알<br>(190)
+										</strong><span class="dLine"><em>300MB<br>
+											</em></span></a></li>
+									<li class="balloon4"><a href="#lteEgg240"
+										id="240"><strong>LTE-알<br>(240)
+										</strong><span class="dLine"><em>500MB<br>
+											</em></span></a></li>
+									<li class="balloon3"><a href="#lteEgg340"
+										id="67"><strong>LTE-알<br>(340)
+										</strong><span class="dLine"><em>750MB<br>
+											</em></span></a></li>
+									<li class="balloon2"><a href="#lteEgg420"
+										id="420"><strong>LTE-알<br>(420)
+										</strong><span><em>1.5GB<br>
+											</em></span></a></li>
+									<li class="balloon1 on"><a href="#lteEgg520"
+										id="520"><strong>LTE-알<br>(520)
+										</strong><span><em>2.5GB<br>
+											</em></span></a></li>
 									<!--두줄이상일때  class="dLine" 추가-->
 								</ul>
 								<div class="clearfix">
@@ -1006,14 +1002,14 @@ div{
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach items="${limited}" var="limited">
+										<c:forEach items="${lteEgg}" var="lteEgg">
 											<tr>
-												<th scope="row" class="left "><span>${limited.payment}
+												<th scope="row" class="left "><span>${lteEgg.payment}
 														></span></th>
-												<td>${limited.fixed_month}원</td>
-												<td>${limited.call }</td>
-												<td>${limited.sms }</td>
-												<td>${limited.data}  ${limited.extra_data}</td>
+												<td>${lteEgg.fixed_month}원</td>
+												<td>${lteEgg.call }</td>
+												<td>${lteEgg.sms }</td>
+												<td>${lteEgg.data}  ${lteEgg.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -1023,55 +1019,58 @@ div{
 							<!-- 추가혜택있을때 사용 -->
 							<br><hr><br><br><br>
 									<h3 class="prTit2">
-									<em class="fColor3">요금제 혜택 한눈에 보기<br><b style="color: red;font-size: 15px;"> * 순 완전무한 51은 이용 불가</b></em> 
+									<em class="fColor3">자동전환(만 20세) 한눈에 보기<br></em> 
 									</h3>
 							<div class="tableType1">
 								<table border="1">
 									<colgroup>
 										
-										<col width="10%">
-										<col width="10%">
-										<col width="15%">
-										<col width="25%">
+										<col width="*%">
+										<col width="16%">
+										<col width="16%">
+										<col width="16%">
+										<col width="16%">
+										<col width="16%">
 									</colgroup>
 									<thead>
 										<tr>
-											<th scope="col">상품명</th>
-											<th scope="col">이용요금</th>
-											<th scope="col">제공혜택</th>
-											<th scope="col">혜택</th>
+											<th scope="col" colspan="7">요금제</th>
 									</thead>
 									
 									<tbody>		
 													
 										<tr>
-										<th scope="row" rowspan="4"><span>알짜팩</span></th>
-											<td rowspan="4">8800원</td>
-											<td>영상 서비스</td>
-											<td>올레 tv 모바일팩<br>(실사간 TV채널 및 VOD + 전용)</td>
+										<th scope="row"><span>자동 전환 전<br></span></th>
+											<td>LTE-알190</td>
+											<td>LTE-알240</td>
+											<td>LTE-알340</td>
+											<td>LTE-알420</td>
+											<td>LTE-알520</td>
 										</tr>
 										<tr>
-											<th>음악 부가서비스</th>
-											<th>링투유<br>(모바일 통화연결음)</th>
-										</tr>									
-										<tr>
-											<th>통화 부가서비스</th>
-											<th>캐치콜<br>(받지못한 통화를 SMS로 알려주는 상품)</th>
-										</tr>									
-										<tr>
-											<th>영화 할인쿠폰</th>
-											<th>매월 2장<br>(1장당 2000원 할인)</th>
-										</tr>									
+											<th>자동 전환 후</th>
+											<th></th>
+											<th>LTE-340</th>
+											<th></th>
+											<th>LTE-420</th>
+											<th>LTE-520</th>
+										</tr>																	
 									</tbody>
 								</table>
+								
 							</div>
 							
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- limited51 -->
+				</div>
 			
+			<!-- lteEgg190 -->
+			
+			
+			
+			
+						
 		</div>
 		</div>
 
@@ -1089,39 +1088,39 @@ div{
  */
 	
 	
-	if(location.href.match('EC%88%9C%20%EC%99%84%EC%A0%84%EB%AC%B4%ED%95%9C99')){
+	if(location.href.match('LTE-%EC%95%8C520')){
 		// $('div[id=perfect]').css("display", "none");
-		$('#limited99').show();
-		$('#limited77').hide();
-		$('#limited67').hide();
-		$('#limited61').hide();
-		$('#limited51').hide();
-	}  else if(location.href.match('EC%88%9C%20%EC%99%84%EC%A0%84%EB%AC%B4%ED%95%9C77')){
-		$('#limited99').hide();
-		$('#limited77').show();
-		$('#limited67').hide();
-		$('#limited61').hide();
-		$('#limited51').hide();
-	}  else if(location.href.match('EC%88%9C%20%EC%99%84%EC%A0%84%EB%AC%B4%ED%95%9C67')){
-		$('#limited99').show();
-		$('#limited77').hide();
-		$('#limited67').show();
-		$('#limited61').hide();
-		$('#limited51').hide();
-	}else if(location.href.match('EC%88%9C%20%EC%99%84%EC%A0%84%EB%AC%B4%ED%95%9C61')){
-		$('#limited99').hide();
-		$('#limited77').hide();
-		$('#limited67').hide();
-		$('#limited61').show();
-		$('#limited51').hide();
+		$('#lteEgg520').show();
+		$('#lteEgg420').hide();
+		$('#lteEgg340').hide();
+		$('#lteEgg240').hide();
+		$('#lteEgg190').hide();
+	}else if(location.href.match('LTE-%EC%95%8C420')){
+		$('#lteEgg520').hide();
+		$('#lteEgg420').show();
+		$('#lteEgg340').hide();
+		$('#lteEgg240').hide();
+		$('#lteEgg190').hide();
+	}else if(location.href.match('LTE-%EC%95%8C340')){
+		$('#lteEgg520').hide();
+		$('#lteEgg420').hide();
+		$('#lteEgg340').show();
+		$('#lteEgg240').hide();
+		$('#lteEgg190').hide();
+	}else if(location.href.match('LTE-%EC%95%8C240')){
+		$('#lteEgg520').hide();
+		$('#lteEgg420').hide();
+		$('#lteEgg340').hide();
+		$('#lteEgg240').show();
+		$('#lteEgg190').hide();
 	}else {
-		$('#limited99').hide();
-		$('#limited77').hide();
-		$('#limited67').hide();
-		$('#limited61').hide();
-		$('#limited51').show();
+		$('#lteEgg520').hide();
+		$('#lteEgg420').hide();
+		$('#lteEgg340').hide();
+		$('#lteEgg240').hide();
+		$('#lteEgg190').show();
 	}
-	
+
 	
 
 </script>

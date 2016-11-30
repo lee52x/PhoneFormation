@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>요금제 - SKT</title>
+<title>요금제 - LG U+</title>
 <link href="http://www.tworld.co.kr/poc/inc/css/common.css" rel="stylesheet" type="text/css">
 
 <link href="/resources/css/payment.css"	rel="stylesheet" type="text/css">
@@ -85,7 +85,7 @@
 										
 									</ul>
 									<div class="btnBox">
-										<a href="/phonefo/payment/skt/${data.payment }" title="${data.payment } 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="/phonefo/payment/lg/${data.payment }" title="${data.payment } 자세히보기" class="btnS btnDgray">자세히보기</a>
 										
 									</div>
 								</div>
@@ -124,7 +124,7 @@
 										
 									</ul>
 									<div class="btnBox">
-										<a href="/phonefo/payment/skt/${special.payment }" title="${special.payment } 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="/phonefo/payment/lg/${special.payment }" title="${special.payment } 자세히보기" class="btnS btnDgray">자세히보기</a>
 										</div>
 								</div>
 							</li>
@@ -163,7 +163,7 @@
 										
 									</ul>
 									<div class="btnBox">
-										<a href="/phonefo/payment/skt/${netInside.payment }" title="${netInside.payment } 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="/phonefo/payment/lg/${netInside.payment }" title="${netInside.payment } 자세히보기" class="btnS btnDgray">자세히보기</a>
 										</div>
 								</div>
 							</li>
@@ -201,7 +201,7 @@
 										
 									</ul>
 									<div class="btnBox">
-										<a href="/phonefo/payment/skt/${lte.payment }" title="${lte.payment } 자세히보기" class="btnS btnDgray">자세히보기</a>
+										<a href="/phonefo/payment/lg/${lte.payment }" title="${lte.payment } 자세히보기" class="btnS btnDgray">자세히보기</a>
 										</div>
 								</div>
 							</li>

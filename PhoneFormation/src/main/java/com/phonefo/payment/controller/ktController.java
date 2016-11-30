@@ -18,7 +18,7 @@ public class ktController {
 	@RequestMapping("/payment/kt")
 	public String kt_payment(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt.jsp");
+		model.addAttribute("body", "./payment/kt/kt.jsp");
 		
 		model.addAttribute("limited", service.limited(payment));
 		model.addAttribute("all", service.all(payment));
@@ -32,7 +32,7 @@ public class ktController {
 	@RequestMapping("/payment/kt/순 완전무한99(LTE)")
 	public String limited99(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_limited.jsp");
+		model.addAttribute("body", "./payment/kt/kt_limited.jsp");
 		
 		model.addAttribute("limited", service.limited(payment));
 		model.addAttribute("limited99", service.limited99(payment));
@@ -48,7 +48,7 @@ public class ktController {
 	@RequestMapping("/payment/kt/순 완전무한77(LTE)")
 	public String limited77(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_limited.jsp");
+		model.addAttribute("body", "./payment/kt/kt_limited.jsp");
 		
 		model.addAttribute("limited", service.limited(payment));
 		model.addAttribute("limited99", service.limited99(payment));
@@ -64,7 +64,7 @@ public class ktController {
 	@RequestMapping("/payment/kt/순 완전무한67(LTE)")
 	public String limited67(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_limited.jsp");
+		model.addAttribute("body", "./payment/kt/kt_limited.jsp");
 		
 		model.addAttribute("limited", service.limited(payment));
 		model.addAttribute("limited99", service.limited99(payment));
@@ -80,7 +80,7 @@ public class ktController {
 	@RequestMapping("/payment/kt/순 완전무한61(LTE)")
 	public String limited61(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_limited.jsp");
+		model.addAttribute("body", "./payment/kt/kt_limited.jsp");
 		
 		model.addAttribute("limited", service.limited(payment));
 		model.addAttribute("limited99", service.limited99(payment));
@@ -96,7 +96,7 @@ public class ktController {
 	@RequestMapping("/payment/kt/순 완전무한51(LTE)")
 	public String limited51(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_limited.jsp");
+		model.addAttribute("body", "./payment/kt/kt_limited.jsp");
 		
 		model.addAttribute("limited", service.limited(payment));
 		model.addAttribute("limited99", service.limited99(payment));
@@ -112,7 +112,7 @@ public class ktController {
 	@RequestMapping("/payment/kt/순 모두다올레41(LTE)")
 	public String all41(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_all.jsp");
+		model.addAttribute("body", "./payment/kt/kt_all.jsp");
 		
 		model.addAttribute("all", service.all(payment));
 		model.addAttribute("all41", service.all41(payment));
@@ -126,7 +126,7 @@ public class ktController {
 	@RequestMapping("/payment/kt/순 모두다올레34(LTE)")
 	public String all34(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_all.jsp");
+		model.addAttribute("body", "./payment/kt/kt_all.jsp");
 		
 		model.addAttribute("all", service.all(payment));
 		model.addAttribute("all41", service.all41(payment));
@@ -140,7 +140,7 @@ public class ktController {
 	@RequestMapping("/payment/kt/순 모두다올레28(LTE)")
 	public String all28(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_all.jsp");
+		model.addAttribute("body", "./payment/kt/kt_all.jsp");
 		
 		model.addAttribute("all", service.all(payment));
 		model.addAttribute("all41", service.all41(payment));
@@ -154,7 +154,7 @@ public class ktController {
 	@RequestMapping("/payment/kt/Y틴 38")
 	public String yTeen38(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_yTeen.jsp");
+		model.addAttribute("body", "./payment/kt/kt_yTeen.jsp");
 		
 		model.addAttribute("yTeen", service.yTeen(payment));
 		model.addAttribute("yTeen38", service.yTeen38(payment));
@@ -169,7 +169,7 @@ public class ktController {
 	@RequestMapping("/payment/kt/Y틴 32")
 	public String yTeen32(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_yTeen.jsp");
+		model.addAttribute("body", "./payment/kt/kt_yTeen.jsp");
 		
 		model.addAttribute("yTeen", service.yTeen(payment));
 		model.addAttribute("yTeen38", service.yTeen38(payment));
@@ -184,7 +184,7 @@ public class ktController {
 	@RequestMapping("/payment/kt/Y틴 27")
 	public String yTeen27(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_yTeen.jsp");
+		model.addAttribute("body", "./payment/kt/kt_yTeen.jsp");
 		
 		model.addAttribute("yTeen", service.yTeen(payment));
 		model.addAttribute("yTeen38", service.yTeen38(payment));
@@ -199,7 +199,7 @@ public class ktController {
 	@RequestMapping("/payment/kt/Y틴 20")
 	public String yTeen20(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_yTeen.jsp");
+		model.addAttribute("body", "./payment/kt/kt_yTeen.jsp");
 		
 		model.addAttribute("yTeen", service.yTeen(payment));
 		model.addAttribute("yTeen38", service.yTeen38(payment));
@@ -214,7 +214,7 @@ public class ktController {
 	@RequestMapping("/payment/kt/LTE-알520")
 	public String lteEgg520(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_lteEgg.jsp");
+		model.addAttribute("body", "./payment/kt/kt_lteEgg.jsp");
 		
 		model.addAttribute("lteEgg", service.lteEgg(payment));
 		model.addAttribute("lteEgg520", service.lteEgg520(payment));
@@ -230,7 +230,7 @@ public class ktController {
 	@RequestMapping("/payment/kt/LTE-알420")
 	public String lteEgg420(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_lteEgg.jsp");
+		model.addAttribute("body", "./payment/kt/kt_lteEgg.jsp");
 		
 		model.addAttribute("lteEgg", service.lteEgg(payment));
 		model.addAttribute("lteEgg520", service.lteEgg520(payment));
@@ -243,10 +243,10 @@ public class ktController {
 		return "mainView";
 	}
 	
-	@RequestMapping("/payment/kt/LTE-알340")
+	@RequestMapping("/payment/kt/kt/LTE-알340")
 	public String lteEgg340(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_lteEgg.jsp");
+		model.addAttribute("body", "./payment/kt/kt_lteEgg.jsp");
 		
 		model.addAttribute("lteEgg", service.lteEgg(payment));
 		model.addAttribute("lteEgg520", service.lteEgg520(payment));
@@ -262,7 +262,7 @@ public class ktController {
 	@RequestMapping("/payment/kt/LTE-알240")
 	public String lteEgg240(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_lteEgg.jsp");
+		model.addAttribute("body", "./payment/kt/kt_lteEgg.jsp");
 		
 		model.addAttribute("lteEgg", service.lteEgg(payment));
 		model.addAttribute("lteEgg520", service.lteEgg520(payment));
@@ -278,7 +278,7 @@ public class ktController {
 	@RequestMapping("/payment/kt/LTE-알190")
 	public String lteEgg190(String payment, Model model) throws Exception{
 		
-		model.addAttribute("body", "./payment/kt_lteEgg.jsp");
+		model.addAttribute("body", "./payment/kt/kt_lteEgg.jsp");
 		
 		model.addAttribute("lteEgg", service.lteEgg(payment));
 		model.addAttribute("lteEgg520", service.lteEgg520(payment));

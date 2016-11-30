@@ -22,8 +22,8 @@ public class LgDAOImpl implements LgDAO {
 	}
 
 	@Override
-	public List<LgVO> payment_dataNomal(String payment) throws Exception {
-		return sqlSession.selectList("lg_payment.dataNomal", payment);
+	public List<LgVO> payment_dataNormal(String payment) throws Exception {
+		return sqlSession.selectList("lg_payment.dataNormal", payment);
 	}
 
 	@Override
@@ -93,11 +93,6 @@ public class LgDAOImpl implements LgDAO {
 	@Override
 	public List<LgVO> payment_lte(String payment) throws Exception {
 		return sqlSession.selectList("lg_payment.lte", payment);
-	}
-
-	@Override
-	public List<LgVO> payment_lteSinier(String payment) throws Exception {
-		return sqlSession.selectList("lg_payment.lteSinier", payment);
 	}
 
 	@Override

@@ -4,6 +4,7 @@ public class LgVO {
 
 	private String payment;
 	private String	data;
+	private String	extra_data;
 	private String call;
 	private String	sms;
 	private int		fixed_month;
@@ -22,6 +23,12 @@ public class LgVO {
 	}
 	public void setData(String data) {
 		this.data = data;
+	}
+	public String getExtra_data() {
+		return extra_data;
+	}
+	public void setExtra_data(String extra_data) {
+		this.extra_data = extra_data;
 	}
 	public String getCall() {
 		return call;

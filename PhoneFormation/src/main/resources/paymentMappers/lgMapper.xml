@@ -5,9 +5,9 @@
 	<select id="data" resultType="lg_payment">
 		select *
 		from lg_pay
-		where payment like '%데이터%' and payment not like '%스폐셜%'
+		where payment like '%데이터%' and payment not like '%스폐셜%'		
 	</select>
-	<select id="dataNomal" resultType="lg_payment">
+	<select id="dataNormal" resultType="lg_payment">
 		select *
 		from lg_pay
 		where payment like '%데이터 일반%'
@@ -87,11 +87,6 @@
 		select *
 		from lg_pay
 		where payment like '%LTE%' and payment not like '%망내%'
-	</select>
-	<select id="lteSinier" resultType="lg_payment">
-		select *
-		from lg_pay
-		where payment like '%LTE 시니어%'
 	</select>
 	<select id="lte34" resultType="lg_payment">
 		select *

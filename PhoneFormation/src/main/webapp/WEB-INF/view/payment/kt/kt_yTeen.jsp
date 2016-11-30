@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>요금제 - SKT 상세페이지</title>
+<title>요금제 - KT 상세페이지</title>
 <link href="http://www.tworld.co.kr/poc/inc/css/common.css"
 	rel="stylesheet" type="text/css">
 <link href="http://www.tworld.co.kr/poc/inc/css/purchase.css"

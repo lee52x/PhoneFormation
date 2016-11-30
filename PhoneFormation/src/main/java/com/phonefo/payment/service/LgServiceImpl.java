@@ -22,8 +22,8 @@ public class LgServiceImpl implements LgServiceDAO {
 	}
 
 	@Override
-	public List<LgVO> payment_dataNomal(String payment) throws Exception {
-		return dao.payment_dataNomal(payment);
+	public List<LgVO> payment_dataNormal(String payment) throws Exception {
+		return dao.payment_dataNormal(payment);
 	}
 
 	@Override
@@ -94,11 +94,6 @@ public class LgServiceImpl implements LgServiceDAO {
 	@Override
 	public List<LgVO> payment_lte(String payment) throws Exception {
 		return dao.payment_lte(payment);
-	}
-
-	@Override
-	public List<LgVO> payment_lteSinier(String payment) throws Exception {
-		return dao.payment_lteSinier(payment);
 	}
 
 	@Override

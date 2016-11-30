@@ -6,7 +6,7 @@ import com.phonefo.payment.domain.LgVO;
 
 public interface LgServiceDAO {
 	public List<LgVO> payment_data(String payment)	throws Exception;
-	public List<LgVO> payment_dataNomal(String payment)	throws Exception;
+	public List<LgVO> payment_dataNormal(String payment)	throws Exception;
 	public List<LgVO> payment_data13(String payment)	throws Exception;
 	public List<LgVO> payment_data23(String payment)	throws Exception;
 	public List<LgVO> payment_data36(String payment)	throws Exception;
@@ -24,7 +24,6 @@ public interface LgServiceDAO {
 	public List<LgVO> payment_netInside52(String payment)	throws Exception;
 			
 	public List<LgVO> payment_lte(String payment) throws Exception;
-	public List<LgVO> payment_lteSinier(String payment) throws Exception;
 	public List<LgVO> payment_lte34(String payment) throws Exception;
 	public List<LgVO> payment_lte42(String payment) throws Exception;
 	public List<LgVO> payment_lte52(String payment) throws Exception;
