@@ -17,13 +17,15 @@
 <body>
 <script type="text/javascript">
 function callTable(title,category,content,image){
-
-	
 	$("#title").text(title);
 	$("#category").text(category);
 	$("#contents").text(content);
-	$("#img").attr("src",image);
+	if(image=="/resources/upload/"){
+		$("#img").attr("src","/resources/images/noimage.jpg");
 
+	}else{
+	$("#img").attr("src",image);
+	}
 	$("#popup").fadeIn(700);
 	
 
@@ -83,9 +85,8 @@ $("#popup2").hide();
 					<td>${adminOno.title}</td>
 					<td>${adminOno.category}</td>
 					<td>${adminOno.content}</td>
-					<td>${adminOno.image}</td>
 					<c:choose>
-							<c:when test="${empty adminOno.image=='/resources/upload/'}">
+							<c:when test="${adminOno.image eq '/resources/upload/'}">
 								<td>무</td>
 							</c:when>
 							<c:otherwise>
@@ -146,7 +147,7 @@ $("#popup2").hide();
 											</tr>
 											<tr>
 											
-												<td style=" text-align: center;" colspan="2"><img alt="이미지" id="img"><img src="/resources/upload/KakaoTalk_20161017_094254205.jpg"></td>
+												<td style=" text-align: center;" colspan="2"><img alt="이미지" id="img"></td>
 											</tr>
 										</table>
 										<button type="button" class="btn btn-danger btn-sm col-sm-2 col-sm-offset-5" id="close" style="margin-bottom: 3%">닫기</button>
@@ -177,7 +178,7 @@ $("#popup2").hide();
 											
 											<tr>
 												
-												<td style=" text-align: center;" colspan="2"><img alt="이미지" src="/resources/images/abc.png"></td>
+												<td style=" text-align: center;" colspan="2"></td>
 											</tr>
 										</table>
 										<button type="button" class="btn btn-danger btn-sm col-sm-2 col-sm-offset-5" id="close2" style="margin-bottom: 3%">닫기</button>

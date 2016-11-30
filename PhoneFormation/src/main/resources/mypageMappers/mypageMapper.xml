@@ -21,6 +21,7 @@
 		ono,userid,title,category,content,image,regdate,answer,answer_regdate
 		from ph_ono
 		where userid = #{userid}
+		order by ono desc
 	</select>
 	
 	<!-- 마이페이지 내정보 업데이트 -->
