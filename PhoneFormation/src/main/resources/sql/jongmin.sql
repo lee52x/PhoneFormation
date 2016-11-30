@@ -63,7 +63,7 @@ insert into ph_ono(ono,userid,title,categori,content,image_path) values('1','qwe
 insert into ph_ono(ono,userid,title,categori,content,image_path) values('2','qweqwe','제목','카테고리','내용','이미지');
 insert into ph_ono(ono,userid,title,categori,content,image_path) values('3','qweqwe','제목','카테고리','내용','이미지');
 insert into ph_ono(ono,userid,title,categori,content,image_path) values('4','qweqwe','제목','카테고리','내용','이미지');
-update PH_ONO set answer='답변테스트',answer_regdate=sysdate;
+update PH_ONO set answer='답변테스트',answer_regdate=sysdate where userid='qweqwe';
 
 
 select * from ph_member;

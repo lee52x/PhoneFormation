@@ -12,7 +12,7 @@
 */
 (function($){
 	function injector(t, splitter, klass, after) {
-		var text = t.text()
+		var text = t.text()   
 		, a = text.split(splitter)
 		, inject = '';
 		if (a.length) {

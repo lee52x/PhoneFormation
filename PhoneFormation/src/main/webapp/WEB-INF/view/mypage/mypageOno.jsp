@@ -17,21 +17,30 @@
 <body>
 <script type="text/javascript">
 function callTable(title,category,content,image){
+
+	
 	$("#title").text(title);
 	$("#category").text(category);
 	$("#contents").text(content);
-	$("#image").text(image);
+	$("#img").attr("src",image);
+
 	$("#popup").fadeIn(700);
+	
+
 }
 function callAnsTable(answer,answer_regdate){
 	$("#answer").text(answer);
 	$("#answer_regdate").text(answer_regdate);
 	$("#popup2").fadeIn(700);
 }
-
-$(function(){
-	$("#close").click(function(){
-	$("#popup").fadeOut(500);
+$(document).ready(function(){
+	
+$("#popup").hide();
+$("#popup2").hide();
+		$(function(){
+			$("#close").click(function(){
+				$("#popup").fadeOut(10);
+		});
 });
 	$("#close2").click(function(){
 		$("#popup2").fadeOut(500);
@@ -74,6 +83,7 @@ $(function(){
 					<td>${adminOno.title}</td>
 					<td>${adminOno.category}</td>
 					<td>${adminOno.content}</td>
+					<td>${adminOno.image}</td>
 					<c:choose>
 							<c:when test="${empty adminOno.image=='/resources/upload/'}">
 								<td>무</td>
@@ -85,7 +95,8 @@ $(function(){
 					<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 										value="${adminOno.regdate}" /></td>
 					<td>${adminOno.answer}</td>
-					<td>${adminOno.answer_regdate}</td>
+					<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+										value="${adminOno.answer_regdate}" /></td>
 						<td><button class="btn-custom btn-large border-btn btn-gray" onclick="callTable('${adminOno.title}','${adminOno.category}','${adminOno.content}','${adminOno.image}')">상세보기</button></td>
 						<c:choose>
 							<c:when test="${empty adminOno.answer_regdate}">
@@ -103,57 +114,79 @@ $(function(){
 		</table>
 	</div>
 	</div></div>
-	<div id="popup" class="overlay"
-		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
-		<div
-			style="background-color: white; width: 50%; height: 60%; margin-left: 20%; margin-top: 10%;  border: 1px solid black;">
-
-			<br>
-			<table class="table">
-				<tr>
-					<td>제목</td>
-					<td><div id="title"></div></td>
-				</tr>
-				<tr>
-					<td>카테고리</td>
-					<td><div id="category"></div></td>
-				</tr>
-				<tr>
-					<td>내용</td>
-					<td><div id="contents"></div></td>
-				</tr>
-				<tr>
-					<td>이미지</td>
-					<td><img alt="이미지" src="image"></td>
-				</tr>
-			</table>
-			<button type="button" class="btn btn-danger btn-sm" id="close">닫기</button>
-
-
-		</div>
-	</div>
-
-	<div id="popup2" class="overlay"
-		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
-		<div
-			style="background-color: white; width: 50%; height: 60%; margin-left: 20%; margin-top: 10%;  border: 1px solid black;">
-
-			<br>
-			<table class="table">
-				<tr>
-					<td>답변</td>
-					<td><div id="answer"></div></td>
-				</tr>
-				<tr>
-					<td>답변날짜</td>
-					<td><div id="answer_regdate"></div></td>
-				</tr>
-			</table>
-			<button type="button" class="btn btn-danger btn-md" id="close2">닫기</button>
-
-		</div>
-	</div>
 	
+	
+
+		
+           
+                    
+
+           
+
+            <div id="popup" class="nivo-lightbox-overlay nivo-lightbox-theme-default nivo-lightbox-effect-fadeScale nivo-lightbox-open">
+			<div class="nivo-lightbox-wrap">
+			<div class="nivo-lightbox-table container" style="line-height: 607px; height: 607px; margin-top: 3%; background-color: white;overflow:auto; overflow-x:hidden;">
+
+  						 				
+										<table class="table"  style="background-color: white; width: 800px; margin-left: 15%; margin-top: 5%;">
+											<tr>
+												<td colspan="2"style="border-right: medium; border-right-color: black;  text-align: center;">문의 내역 상세 보기</td>
+											</tr>
+											<tr>
+												<td style=" text-align: center;" width="25%">제목</td>
+												<td><div id="title"></div></td>
+											</tr>
+											<tr>
+												<td style=" text-align: center;" width="25%">카테고리</td>
+												<td><div id="category"></div></td>
+											</tr>
+											<tr>
+												<td style=" text-align: center;" width="25%">내용</td>
+												<td><div id="contents"></div></td>
+											</tr>
+											<tr>
+											
+												<td style=" text-align: center;" colspan="2"><img alt="이미지" id="img"><img src="/resources/upload/KakaoTalk_20161017_094254205.jpg"></td>
+											</tr>
+										</table>
+										<button type="button" class="btn btn-danger btn-sm col-sm-2 col-sm-offset-5" id="close" style="margin-bottom: 3%">닫기</button>
+									
+								</div>
+							
+						</div>
+</div>
+                 
+                    
+    <div id="popup2" class="nivo-lightbox-overlay nivo-lightbox-theme-default nivo-lightbox-effect-fadeScale nivo-lightbox-open">
+			<div class="nivo-lightbox-wrap">
+			<div class="nivo-lightbox-table container" style="line-height: 607px; height: 607px; margin-top: 3%; background-color: white;overflow:auto; overflow-x:hidden;">
+
+  						 				
+										<table class="table"  style="background-color: white; width: 800px; margin-left: 15%; margin-top: 5%;">
+											<tr>
+												<td colspan="2"style="border-right: medium; border-right-color: black;  text-align: center;">답변 상세 보기</td>
+											</tr>
+											<tr>
+												<td style=" text-align: center;" width="25%">답변</td>
+												<td><div id="answer"></div></td>
+											</tr>
+											<tr>
+												<td style=" text-align: center;" width="25%">답변날짜</td>
+												<td><div id="answer_regdate"></div></td>
+											</tr>
+											
+											<tr>
+												
+												<td style=" text-align: center;" colspan="2"><img alt="이미지" src="/resources/images/abc.png"></td>
+											</tr>
+										</table>
+										<button type="button" class="btn btn-danger btn-sm col-sm-2 col-sm-offset-5" id="close2" style="margin-bottom: 3%">닫기</button>
+									
+								</div>
+							
+						</div>
+</div>
+   
 
 </body>
 </html>
