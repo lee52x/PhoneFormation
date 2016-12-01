@@ -59,50 +59,50 @@ create sequence ph_ono_seq
 
 
 select*from ph_ono;
-insert into ph_ono(ono,userid,title,categori,content,image_path) values('1','qweqwe','ì œëª©','ì¹´í…Œê³ ë¦¬','ë‚´ìš©','ì´ë¯¸ì§€');
-insert into ph_ono(ono,userid,title,categori,content,image_path) values('2','qweqwe','ì œëª©','ì¹´í…Œê³ ë¦¬','ë‚´ìš©','ì´ë¯¸ì§€');
-insert into ph_ono(ono,userid,title,categori,content,image_path) values('3','qweqwe','ì œëª©','ì¹´í…Œê³ ë¦¬','ë‚´ìš©','ì´ë¯¸ì§€');
-insert into ph_ono(ono,userid,title,categori,content,image_path) values('4','qweqwe','ì œëª©','ì¹´í…Œê³ ë¦¬','ë‚´ìš©','ì´ë¯¸ì§€');
-update PH_ONO set answer='ë‹µë³€í…ŒìŠ¤íŠ¸',answer_regdate=sysdate where userid='qweqwe';
+insert into ph_ono(ono,userid,title,categori,content,image_path) values('1','qweqwe','Á¦¸ñ','Ä«Å×°í¸®','³»¿ë','ÀÌ¹ÌÁö');
+insert into ph_ono(ono,userid,title,categori,content,image_path) values('2','qweqwe','Á¦¸ñ','Ä«Å×°í¸®','³»¿ë','ÀÌ¹ÌÁö');
+insert into ph_ono(ono,userid,title,categori,content,image_path) values('3','qweqwe','Á¦¸ñ','Ä«Å×°í¸®','³»¿ë','ÀÌ¹ÌÁö');
+insert into ph_ono(ono,userid,title,categori,content,image_path) values('4','qweqwe','Á¦¸ñ','Ä«Å×°í¸®','³»¿ë','ÀÌ¹ÌÁö');
+update PH_ONO set answer='´äº¯Å×½ºÆ®',answer_regdate=sysdate where userid='qweqwe';
 
 
 select * from ph_member;
 select * from ph_business;
 
 insert into ph_member 
-		values(ph_member_seq.nextval,'asdasd','123123','ì´ë‹¨í˜•','2002-12-12','ë‚¨ì','asdasd@naver.com',sysdate,'010-1234-4567','3','123-12-23123');
+		values(ph_member_seq.nextval,'asdasd','123123','ÀÌ´ÜÇü','2002-12-12','³²ÀÚ','asdasd@naver.com',sysdate,'010-1234-4567','3','123-12-23123');
 insert into ph_business
-		values('123-12-23123','ì½”ìŠ¤íƒ€','ì´ë‹¨í˜•','ê°€ì‚°');
+		values('123-12-23123','ÄÚ½ºÅ¸','ÀÌ´ÜÇü','°¡»ê');
 
 
 
 
-insert into ph_member values('qweqwe3','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe4','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe5','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqw6','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe7','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe8','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe9','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe10','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe11','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe12','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe13','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe14','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe15','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe16','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe17','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe18','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe19','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe20','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe21','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe22','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe23','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe24','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe25','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe26','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe27','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
-insert into ph_member values('qweqwe28','123123','papapap',sysdate,'1992/10/10','ë‚¨ì','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe3','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe4','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe5','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqw6','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe7','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe8','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe9','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe10','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe11','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe12','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe13','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe14','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe15','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe16','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe17','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe18','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe19','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe20','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe21','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe22','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe23','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe24','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe25','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe26','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe27','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
+insert into ph_member values('qweqwe28','123123','papapap',sysdate,'1992/10/10','³²ÀÚ','qweas@qwerr.com','010-1234-4567','3','1');
 
 
 
