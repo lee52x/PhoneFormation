@@ -14,24 +14,7 @@ public class AdminOnoBoardVO {
 	private String answer;
 	private Date answer_regdate;
 	
-	public AdminOnoBoardVO() {
-		
-	}
-
-	public AdminOnoBoardVO(int ono, String userid, String title, String category, String content, String image,
-			Date regdate, String answer, Date answer_regdate) {
-		super();
-		this.ono = ono;
-		this.userid = userid;
-		this.title = title;
-		this.category = category;
-		this.content = content;
-		this.image = image;
-		this.regdate = regdate;
-		this.answer = answer;
-		this.answer_regdate = answer_regdate;
-	}
-
+	
 	public int getOno() {
 		return ono;
 	}

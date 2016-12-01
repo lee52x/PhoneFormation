@@ -30,6 +30,8 @@ public interface AdminDAO {
 	   //1대1문의 검색어에 대한 전체 레코드수 
 	   public int OnoSearchCount(SearchCriteria cri)throws Exception;
 	   
+	   //1대1문의 답변하기
+	   public int OnoAnser(AdminOnoBoardVO vo)throws Exception;
 	   
 	   
 }

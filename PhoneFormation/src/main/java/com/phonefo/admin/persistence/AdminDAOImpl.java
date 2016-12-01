@@ -56,6 +56,12 @@ public class AdminDAOImpl implements AdminDAO{
 		return sqlSession.selectOne("admin.onoSearchCount",cri);
 	}
 
+	@Override//1대1 답변하기
+	public int OnoAnser(AdminOnoBoardVO vo) throws Exception {
+		
+		return sqlSession.update("admin.onoAnser", vo);
+	}
+
 
 
 }

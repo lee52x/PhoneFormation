@@ -3,7 +3,62 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page session="false"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
 
+
+
+
+<script>
+
+
+	$(document).ready(
+			function() {
+				
+				$("#popup").hide();
+
+				$(function() {
+					$("#close").click(function() {
+						$("#popup").fadeOut(10);
+					});
+				});
+				$('#searchBtn').on(
+						"click",
+						function(event) {
+
+							self.location = "adminOno"
+									+ '${pageMaker.makeQuery(1)}'
+									+ "&searchType="
+									+ $("select option:selected").val()
+									+ "&keyword=" + $('#keywordInput').val();
+
+						});
+				
+				
+
+			});
+	
+	
+	function callAnsTable(ono){
+		$('#ono').val(ono);
+		
+		$("#popup").fadeIn(700);
+	}
+</script>
+
+<script>
+	var result = '${msg}';
+
+	if (result == 'SUCCESS') {
+		alert("처리가 완료되었습니다.");
+	}
+</script>
+
+</head>
+<body>
 
 
 <!-- Main content -->
@@ -50,6 +105,7 @@
 							<th>regdate</th>
 							<th>answer</th>
 							<th>answer_regdate</th>
+							<th></th>
 						
 						</tr>
 
@@ -65,7 +121,9 @@
 								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 										value="${adminOno.regdate}" /></td>
 								<td>${adminOno.answer}</td>
-								<td>${adminOno.answer_regdate}</td>
+								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+										value="${adminOno.answer_regdate}" /></td>
+									<td><button class="btn-custom btn-large border-btn btn-gray" onclick="callAnsTable('${adminOno.ono}')">답변하기</button></td>
 						
 					
 								
@@ -109,34 +167,31 @@
 </div>
 
 
+  <div id="popup" class="nivo-lightbox-overlay nivo-lightbox-theme-default nivo-lightbox-effect-fadeScale nivo-lightbox-open">
+			<div class="nivo-lightbox-wrap">
+			<div class="nivo-lightbox-table container" style="line-height: 607px; height: 607px; margin-top: 3%; background-color: white;overflow:auto; overflow-x:hidden;">
 
-<script>
-	var result = '${msg}';
-
-	if (result == 'SUCCESS') {
-		alert("처리가 완료되었습니다.");
-	}
-</script>
-
-<script>
-	$(document).ready(
-			function() {
-
-				$('#searchBtn').on(
-						"click",
-						function(event) {
-
-							self.location = "adminOno"
-									+ '${pageMaker.makeQuery(1)}'
-									+ "&searchType="
-									+ $("select option:selected").val()
-									+ "&keyword=" + $('#keywordInput').val();
-
-						});
-
-				
-
-			});
-</script>
+  						 				<form method="post">
+										<table class="table"  style="background-color: white; width: 800px; margin-left: 15%; margin-top: 5%;">
+											<tr>
+												<td colspan="2"style="border-right: medium; border-right-color: black;  text-align: center;">답변하기</td>
+											</tr>
+											<tr>
+												<td colspan="2" style="border-right: medium; border-right-color: black;  text-align: center;">
+												<textarea rows="20" cols="100" name="answer"></textarea></td>
+											</tr>
+							
+											
+										</table>
+										<input type="hidden" id="ono" name="ono">
+										<button type="submit" class="btn btn-primary btn-sm col-sm-1 col-sm-offset-5" style="margin-right: 1%">답변</button>
+										</form>
+										<button type="button" class="btn btn-danger btn-sm col-sm-1 " id="close">닫기</button>
+									
+								</div>
+							
+						</div>
+</div>
+</body></html>
 
 

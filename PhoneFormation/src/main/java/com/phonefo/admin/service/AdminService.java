@@ -23,4 +23,7 @@ public interface AdminService {
     public List<AdminOnoBoardVO> onoSearchCriteria(SearchCriteria cri)throws Exception;
     //1대1검색 카운트
     public int onoSearchCount(SearchCriteria cri)throws Exception;
+    
+    //1대1답변
+    public int OnoAnswer(AdminOnoBoardVO vo)throws Exception;
 }

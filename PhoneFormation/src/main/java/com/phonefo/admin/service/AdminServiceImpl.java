@@ -53,5 +53,11 @@ public class AdminServiceImpl implements AdminService{
 		return dao.OnoSearchCount(cri);
 	}
 
+	@Override//1´ë1 ´äº¯
+	public int OnoAnswer(AdminOnoBoardVO vo) throws Exception {
+		
+		return dao.OnoAnser(vo);
+	}
+
 
 }

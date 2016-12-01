@@ -103,5 +103,8 @@
       from ph_ono
    </select>
   
+  <update id="onoAnser">
+  update ph_ono set answer=#{answer},answer_regdate=sysdate where ono=#{ono}
+  </update>
 </mapper>
 

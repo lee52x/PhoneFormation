@@ -1,5 +1,5 @@
 
-<!--business table -->
+--business table -->
 drop table ph_business;
 create table ph_business(
 businessNum varchar(50) primary key,
@@ -9,23 +9,24 @@ address varchar(50)
 );
 
 drop table ph_member;
-<!--member table->
+--member table-
 create table ph_member(
 memberno number(10) primary key,
 userid varchar2(50) unique,
-userpwd varchar2(50) ,
+userpwd varchar2(50),
 username varchar2(50),
 birth varchar2(50),
 gender varchar2(10),
 email varchar2(50),
-rdate Date ,
+rdate Date,
 tel varchar2(50),
 root number(20),
 businessNum varchar(50),
-foreign key(businessNum)  references ph_business(businessNum)
+foreign key(businessNum) references ph_business(businessNum)
 )
 
-<!--member seq-->
+--member seq--
+drop sequence ph_member_seq;
 create sequence ph_member_seq
 start with 1
 increment by 1
@@ -46,10 +47,9 @@ content varchar2(100) not null,
 image varchar2(500),
 regdate date default sysdate,
 answer varchar2(100),
-answer_regdate date,
-foreign key(userid) REFERENCES ph_member(userid)
-);
-
+answer_regdate date
+)
+ 
 drop sequence ph_ono_seq;
 create sequence ph_ono_seq
    start with 1

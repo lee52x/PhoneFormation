@@ -22,29 +22,7 @@ public class AdminMemberVO {
 	private String leaderName;
 	private String address;
 	
-	public AdminMemberVO() {
-		
-	}
 
-	public AdminMemberVO(int memberno, String userid, String userpwd, String username, String email, Date rdate,
-			String tel, String birth, String gender, int root, String businessNum, String companyName,
-			String leaderName, String address) {
-		super();
-		this.memberno = memberno;
-		this.userid = userid;
-		this.userpwd = userpwd;
-		this.username = username;
-		this.email = email;
-		this.rdate = rdate;
-		this.tel = tel;
-		this.birth = birth;
-		this.gender = gender;
-		this.root = root;
-		this.businessNum = businessNum;
-		this.companyName = companyName;
-		this.leaderName = leaderName;
-		this.address = address;
-	}
 
 	public int getMemberno() {
 		return memberno;
