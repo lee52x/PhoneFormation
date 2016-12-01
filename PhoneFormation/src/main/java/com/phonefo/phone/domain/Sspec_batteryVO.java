@@ -2,81 +2,82 @@ package com.phonefo.phone.domain;
 
 public class Sspec_batteryVO {
 	private int no;
-	private String func1;
-	private String func2;
-	private String func3;
-	private String func4;
-	private String func5;
-	private String func6;
-	private String func7;
-	private String func8;
-	private String func9;
+	private String internet_use_3g;
+	private String internet_use_lte;
+	private String internet_use_wifi;
+	private String video_play;
+	private String battery_capacity;
+	private String change_possible;
+	private String audio_play;
+	private String audio_play_ondisplay;
+	private String continuous_call;
 	public int getNo() {
 		return no;
 	}
 	public void setNo(int no) {
 		this.no = no;
 	}
-	public String getFunc1() {
-		return func1;
+	public String getInternet_use_3g() {
+		return internet_use_3g;
 	}
-	public void setFunc1(String func1) {
-		this.func1 = func1;
+	public void setInternet_use_3g(String internet_use_3g) {
+		this.internet_use_3g = internet_use_3g;
 	}
-	public String getFunc2() {
-		return func2;
+	public String getInternet_use_lte() {
+		return internet_use_lte;
 	}
-	public void setFunc2(String func2) {
-		this.func2 = func2;
+	public void setInternet_use_lte(String internet_use_lte) {
+		this.internet_use_lte = internet_use_lte;
 	}
-	public String getFunc3() {
-		return func3;
+	public String getInternet_use_wifi() {
+		return internet_use_wifi;
 	}
-	public void setFunc3(String func3) {
-		this.func3 = func3;
+	public void setInternet_use_wifi(String internet_use_wifi) {
+		this.internet_use_wifi = internet_use_wifi;
 	}
-	public String getFunc4() {
-		return func4;
+	public String getVideo_play() {
+		return video_play;
 	}
-	public void setFunc4(String func4) {
-		this.func4 = func4;
+	public void setVideo_play(String video_play) {
+		this.video_play = video_play;
 	}
-	public String getFunc5() {
-		return func5;
+	public String getBattery_capacity() {
+		return battery_capacity;
 	}
-	public void setFunc5(String func5) {
-		this.func5 = func5;
+	public void setBattery_capacity(String battery_capacity) {
+		this.battery_capacity = battery_capacity;
 	}
-	public String getFunc6() {
-		return func6;
+	public String getChange_possible() {
+		return change_possible;
 	}
-	public void setFunc6(String func6) {
-		this.func6 = func6;
+	public void setChange_possible(String change_possible) {
+		this.change_possible = change_possible;
 	}
-	public String getFunc7() {
-		return func7;
+	public String getAudio_play() {
+		return audio_play;
 	}
-	public void setFunc7(String func7) {
-		this.func7 = func7;
+	public void setAudio_play(String audio_play) {
+		this.audio_play = audio_play;
 	}
-	public String getFunc8() {
-		return func8;
+	public String getAudio_play_ondisplay() {
+		return audio_play_ondisplay;
 	}
-	public void setFunc8(String func8) {
-		this.func8 = func8;
+	public void setAudio_play_ondisplay(String audio_play_ondisplay) {
+		this.audio_play_ondisplay = audio_play_ondisplay;
 	}
-	public String getFunc9() {
-		return func9;
+	public String getContinuous_call() {
+		return continuous_call;
 	}
-	public void setFunc9(String func9) {
-		this.func9 = func9;
+	public void setContinuous_call(String continuous_call) {
+		this.continuous_call = continuous_call;
 	}
 	@Override
 	public String toString() {
-		return "Sspec_batteryVO [no=" + no + ", func1=" + func1 + ", func2=" + func2 + ", func3=" + func3 + ", func4="
-				+ func4 + ", func5=" + func5 + ", func6=" + func6 + ", func7=" + func7 + ", func8=" + func8 + ", func9="
-				+ func9 + "]";
+		return "Sspec_batteryVO [no=" + no + ", internet_use_3g=" + internet_use_3g + ", internet_use_lte="
+				+ internet_use_lte + ", internet_use_wifi=" + internet_use_wifi + ", video_play=" + video_play
+				+ ", battery_capacity=" + battery_capacity + ", change_possible=" + change_possible + ", audio_play="
+				+ audio_play + ", audio_play_ondisplay=" + audio_play_ondisplay + ", continuous_call=" + continuous_call
+				+ "]";
 	}
-	
 	
 }

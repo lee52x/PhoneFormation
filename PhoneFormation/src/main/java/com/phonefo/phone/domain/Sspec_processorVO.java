@@ -2,31 +2,29 @@ package com.phonefo.phone.domain;
 
 public class Sspec_processorVO {
 	private int no;
-	private String func1;
-	private String func2;
+	private String cpu_Speed;
+	private String cpu_type;
+	
 	public int getNo() {
 		return no;
 	}
 	public void setNo(int no) {
 		this.no = no;
 	}
-	public String getFunc1() {
-		return func1;
+	public String getCpu_Speed() {
+		return cpu_Speed;
 	}
-	public void setFunc1(String func1) {
-		this.func1 = func1;
+	public void setCpu_Speed(String cpu_Speed) {
+		this.cpu_Speed = cpu_Speed;
 	}
-	public String getFunc2() {
-		return func2;
+	public String getCpu_type() {
+		return cpu_type;
 	}
-	public void setFunc2(String func2) {
-		this.func2 = func2;
+	public void setCpu_type(String cpu_type) {
+		this.cpu_type = cpu_type;
 	}
 	@Override
 	public String toString() {
-		return "Sspec_processorVO [no=" + no + ", func1=" + func1 + ", func2=" + func2 + "]";
+		return "Sspec_processorVO [no=" + no + ", cpu_Speed=" + cpu_Speed + ", cpu_type=" + cpu_type + "]";
 	}
-	
-	
-
 }

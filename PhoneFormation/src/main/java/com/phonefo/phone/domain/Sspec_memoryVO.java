@@ -2,45 +2,45 @@ package com.phonefo.phone.domain;
 
 public class Sspec_memoryVO {
 	private int no;
-	private String func1;
-	private String func2;
-	private String func3;
-	private String func4;
+	private String ramsize;
+	private String romsize;
+	private String usable_memory;
+	private String outer_memory;
 	public int getNo() {
 		return no;
 	}
 	public void setNo(int no) {
 		this.no = no;
 	}
-	public String getFunc1() {
-		return func1;
+	public String getRamsize() {
+		return ramsize;
 	}
-	public void setFunc1(String func1) {
-		this.func1 = func1;
+	public void setRamsize(String ramsize) {
+		this.ramsize = ramsize;
 	}
-	public String getFunc2() {
-		return func2;
+	public String getRomsize() {
+		return romsize;
 	}
-	public void setFunc2(String func2) {
-		this.func2 = func2;
+	public void setRomsize(String romsize) {
+		this.romsize = romsize;
 	}
-	public String getFunc3() {
-		return func3;
+	public String getUsable_memory() {
+		return usable_memory;
 	}
-	public void setFunc3(String func3) {
-		this.func3 = func3;
+	public void setUsable_memory(String usable_memory) {
+		this.usable_memory = usable_memory;
 	}
-	public String getFunc4() {
-		return func4;
+	public String getOuter_memory() {
+		return outer_memory;
 	}
-	public void setFunc4(String func4) {
-		this.func4 = func4;
+	public void setOuter_memory(String outer_memory) {
+		this.outer_memory = outer_memory;
 	}
 	@Override
 	public String toString() {
-		return "Sspec_memoryVO [no=" + no + ", func1=" + func1 + ", func2=" + func2 + ", func3=" + func3 + ", func4="
-				+ func4 + "]";
+		return "Sspec_memoryVO [no=" + no + ", ramsize=" + ramsize + ", romsize=" + romsize + ", usable_memory="
+				+ usable_memory + ", outer_memory=" + outer_memory + "]";
 	}
 	
-	
+
 }

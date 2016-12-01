@@ -2,37 +2,37 @@ package com.phonefo.phone.domain;
 
 public class Sspec_serviceVO {
 	private int no;
-	private String func1;
-	private String func2;
-	private String func3;
+	private String gear_support;
+	private String svoice;
+	private String mobiletv;
 	public int getNo() {
 		return no;
 	}
 	public void setNo(int no) {
 		this.no = no;
 	}
-	public String getFunc1() {
-		return func1;
+	public String getGear_support() {
+		return gear_support;
 	}
-	public void setFunc1(String func1) {
-		this.func1 = func1;
+	public void setGear_support(String gear_support) {
+		this.gear_support = gear_support;
 	}
-	public String getFunc2() {
-		return func2;
+	public String getSvoice() {
+		return svoice;
 	}
-	public void setFunc2(String func2) {
-		this.func2 = func2;
+	public void setSvoice(String svoice) {
+		this.svoice = svoice;
 	}
-	public String getFunc3() {
-		return func3;
+	public String getMobiletv() {
+		return mobiletv;
 	}
-	public void setFunc3(String func3) {
-		this.func3 = func3;
+	public void setMobiletv(String mobiletv) {
+		this.mobiletv = mobiletv;
 	}
 	@Override
 	public String toString() {
-		return "Sspec_serviceVO [no=" + no + ", func1=" + func1 + ", func2=" + func2 + ", func3=" + func3 + "]";
+		return "Sspec_serviceVO [no=" + no + ", gear_support=" + gear_support + ", svoice=" + svoice + ", mobiletv="
+				+ mobiletv + "]";
 	}
-	
 	
 }

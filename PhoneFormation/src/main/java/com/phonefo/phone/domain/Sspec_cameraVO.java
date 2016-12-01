@@ -2,65 +2,67 @@ package com.phonefo.phone.domain;
 
 public class Sspec_cameraVO {
 	private int no;
-	private String func1;
-	private String func2;
-	private String func3;
-	private String func4;
-	private String func5;
-	private String func6;
-	private String func7;
+	private String video_resoluation;
+	private String maincamera_pixel;
+	private String maincamera_aperture;
+	private String frontcamera_pixel;
+	private String frontcamera_aperture;
+	private String maincamera_flash;
+	private String maincamera_autofocus;
 	public int getNo() {
 		return no;
 	}
 	public void setNo(int no) {
 		this.no = no;
 	}
-	public String getFunc1() {
-		return func1;
+	public String getVideo_resoluation() {
+		return video_resoluation;
 	}
-	public void setFunc1(String func1) {
-		this.func1 = func1;
+	public void setVideo_resoluation(String video_resoluation) {
+		this.video_resoluation = video_resoluation;
 	}
-	public String getFunc2() {
-		return func2;
+	public String getMaincamera_pixel() {
+		return maincamera_pixel;
 	}
-	public void setFunc2(String func2) {
-		this.func2 = func2;
+	public void setMaincamera_pixel(String maincamera_pixel) {
+		this.maincamera_pixel = maincamera_pixel;
 	}
-	public String getFunc3() {
-		return func3;
+	public String getMaincamera_aperture() {
+		return maincamera_aperture;
 	}
-	public void setFunc3(String func3) {
-		this.func3 = func3;
+	public void setMaincamera_aperture(String maincamera_aperture) {
+		this.maincamera_aperture = maincamera_aperture;
 	}
-	public String getFunc4() {
-		return func4;
+	public String getFrontcamera_pixel() {
+		return frontcamera_pixel;
 	}
-	public void setFunc4(String func4) {
-		this.func4 = func4;
+	public void setFrontcamera_pixel(String frontcamera_pixel) {
+		this.frontcamera_pixel = frontcamera_pixel;
 	}
-	public String getFunc5() {
-		return func5;
+	public String getFrontcamera_aperture() {
+		return frontcamera_aperture;
 	}
-	public void setFunc5(String func5) {
-		this.func5 = func5;
+	public void setFrontcamera_aperture(String frontcamera_aperture) {
+		this.frontcamera_aperture = frontcamera_aperture;
 	}
-	public String getFunc6() {
-		return func6;
+	public String getMaincamera_flash() {
+		return maincamera_flash;
 	}
-	public void setFunc6(String func6) {
-		this.func6 = func6;
+	public void setMaincamera_flash(String maincamera_flash) {
+		this.maincamera_flash = maincamera_flash;
 	}
-	public String getFunc7() {
-		return func7;
+	public String getMaincamera_autofocus() {
+		return maincamera_autofocus;
 	}
-	public void setFunc7(String func7) {
-		this.func7 = func7;
+	public void setMaincamera_autofocus(String maincamera_autofocus) {
+		this.maincamera_autofocus = maincamera_autofocus;
 	}
 	@Override
 	public String toString() {
-		return "Sspec_camera [no=" + no + ", func1=" + func1 + ", func2=" + func2 + ", func3=" + func3 + ", func4="
-				+ func4 + ", func5=" + func5 + ", func6=" + func6 + ", func7=" + func7 + "]";
+		return "Sspec_cameraVO [no=" + no + ", video_resoluation=" + video_resoluation + ", maincamera_pixel="
+				+ maincamera_pixel + ", maincamera_aperture=" + maincamera_aperture + ", frontcamera_pixel="
+				+ frontcamera_pixel + ", frontcamera_aperture=" + frontcamera_aperture + ", maincamera_flash="
+				+ maincamera_flash + ", maincamera_autofocus=" + maincamera_autofocus + "]";
 	}
 	
 }

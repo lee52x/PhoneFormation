@@ -2,94 +2,96 @@ package com.phonefo.phone.domain;
 
 public class Sspec_connectVO {
 		private int no;
-		private String func1;
-		private String func2;
-		private String func3;
-		private String func4;
-		private String func5;
-		private String func6;
-		private String func7;
-		private String func8;
-		private String func9;
-		private String func10;
-		private String func11;
+		private String ant;
+		private String usb_version;
+		private String location;
+		private String ear_adapter;
+		private String mhl;
+		private String wifi;
+		private String wifi_direct;
+		private String bluetooth_version;
+		private String nfc;
+		private String bluetooth_profile;
+		private String pcsynk;
 		public int getNo() {
 			return no;
 		}
 		public void setNo(int no) {
 			this.no = no;
 		}
-		public String getFunc1() {
-			return func1;
+		public String getAnt() {
+			return ant;
 		}
-		public void setFunc1(String func1) {
-			this.func1 = func1;
+		public void setAnt(String ant) {
+			this.ant = ant;
 		}
-		public String getFunc2() {
-			return func2;
+		public String getUsb_version() {
+			return usb_version;
 		}
-		public void setFunc2(String func2) {
-			this.func2 = func2;
+		public void setUsb_version(String usb_version) {
+			this.usb_version = usb_version;
 		}
-		public String getFunc3() {
-			return func3;
+		public String getLocation() {
+			return location;
 		}
-		public void setFunc3(String func3) {
-			this.func3 = func3;
+		public void setLocation(String location) {
+			this.location = location;
 		}
-		public String getFunc4() {
-			return func4;
+		public String getEar_adapter() {
+			return ear_adapter;
 		}
-		public void setFunc4(String func4) {
-			this.func4 = func4;
+		public void setEar_adapter(String ear_adapter) {
+			this.ear_adapter = ear_adapter;
 		}
-		public String getFunc5() {
-			return func5;
+		public String getMhl() {
+			return mhl;
 		}
-		public void setFunc5(String func5) {
-			this.func5 = func5;
+		public void setMhl(String mhl) {
+			this.mhl = mhl;
 		}
-		public String getFunc6() {
-			return func6;
+		public String getWifi() {
+			return wifi;
 		}
-		public void setFunc6(String func6) {
-			this.func6 = func6;
+		public void setWifi(String wifi) {
+			this.wifi = wifi;
 		}
-		public String getFunc7() {
-			return func7;
+		public String getWifi_direct() {
+			return wifi_direct;
 		}
-		public void setFunc7(String func7) {
-			this.func7 = func7;
+		public void setWifi_direct(String wifi_direct) {
+			this.wifi_direct = wifi_direct;
 		}
-		public String getFunc8() {
-			return func8;
+		public String getBluetooth_version() {
+			return bluetooth_version;
 		}
-		public void setFunc8(String func8) {
-			this.func8 = func8;
+		public void setBluetooth_version(String bluetooth_version) {
+			this.bluetooth_version = bluetooth_version;
 		}
-		public String getFunc9() {
-			return func9;
+		public String getNfc() {
+			return nfc;
 		}
-		public void setFunc9(String func9) {
-			this.func9 = func9;
+		public void setNfc(String nfc) {
+			this.nfc = nfc;
 		}
-		public String getFunc10() {
-			return func10;
+		public String getBluetooth_profile() {
+			return bluetooth_profile;
 		}
-		public void setFunc10(String func10) {
-			this.func10 = func10;
+		public void setBluetooth_profile(String bluetooth_profile) {
+			this.bluetooth_profile = bluetooth_profile;
 		}
-		public String getFunc11() {
-			return func11;
+		public String getPcsynk() {
+			return pcsynk;
 		}
-		public void setFunc11(String func11) {
-			this.func11 = func11;
+		public void setPcsynk(String pcsynk) {
+			this.pcsynk = pcsynk;
 		}
 		@Override
 		public String toString() {
-			return "Sspec_connectVO [no=" + no + ", func1=" + func1 + ", func2=" + func2 + ", func3=" + func3
-					+ ", func4=" + func4 + ", func5=" + func5 + ", func6=" + func6 + ", func7=" + func7 + ", func8="
-					+ func8 + ", func9=" + func9 + ", func10=" + func10 + ", func11=" + func11 + "]";
+			return "Sspec_connectVO [no=" + no + ", ant=" + ant + ", usb_version=" + usb_version + ", location="
+					+ location + ", ear_adapter=" + ear_adapter + ", mhl=" + mhl + ", wifi=" + wifi + ", wifi_direct="
+					+ wifi_direct + ", bluetooth_version=" + bluetooth_version + ", nfc=" + nfc + ", bluetooth_profile="
+					+ bluetooth_profile + ", pcsynk=" + pcsynk + "]";
 		}
-
+		
+		
 }

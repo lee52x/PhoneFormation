@@ -2,59 +2,59 @@ package com.phonefo.phone.domain;
 
 public class Sspec_networkVO {
 	private int no;
-	private String func1;
-	private String func2;
-	private String func3;
-	private String func4;
-	private String func5;
-	private String func6;
+	private String type_of_sim_slot;
+	private String gsm_2g;
+	private String umts_3g;
+	private String td_scdma_3g;
+	private String fdd_lte_4g;
+	private String tdd_lte_4g;
 	public int getNo() {
 		return no;
 	}
 	public void setNo(int no) {
 		this.no = no;
 	}
-	public String getFunc1() {
-		return func1;
+	public String getType_of_sim_slot() {
+		return type_of_sim_slot;
 	}
-	public void setFunc1(String func1) {
-		this.func1 = func1;
+	public void setType_of_sim_slot(String type_of_sim_slot) {
+		this.type_of_sim_slot = type_of_sim_slot;
 	}
-	public String getFunc2() {
-		return func2;
+	public String getGsm_2g() {
+		return gsm_2g;
 	}
-	public void setFunc2(String func2) {
-		this.func2 = func2;
+	public void setGsm_2g(String gsm_2g) {
+		this.gsm_2g = gsm_2g;
 	}
-	public String getFunc3() {
-		return func3;
+	public String getUmts_3g() {
+		return umts_3g;
 	}
-	public void setFunc3(String func3) {
-		this.func3 = func3;
+	public void setUmts_3g(String umts_3g) {
+		this.umts_3g = umts_3g;
 	}
-	public String getFunc4() {
-		return func4;
+	public String getTd_scdma_3g() {
+		return td_scdma_3g;
 	}
-	public void setFunc4(String func4) {
-		this.func4 = func4;
+	public void setTd_scdma_3g(String td_scdma_3g) {
+		this.td_scdma_3g = td_scdma_3g;
 	}
-	public String getFunc5() {
-		return func5;
+	public String getFdd_lte_4g() {
+		return fdd_lte_4g;
 	}
-	public void setFunc5(String func5) {
-		this.func5 = func5;
+	public void setFdd_lte_4g(String fdd_lte_4g) {
+		this.fdd_lte_4g = fdd_lte_4g;
 	}
-	public String getFunc6() {
-		return func6;
+	public String getTdd_lte_4g() {
+		return tdd_lte_4g;
 	}
-	public void setFunc6(String func6) {
-		this.func6 = func6;
+	public void setTdd_lte_4g(String tdd_lte_4g) {
+		this.tdd_lte_4g = tdd_lte_4g;
 	}
 	@Override
 	public String toString() {
-		return "Sspec_networkVO [no=" + no + ", func1=" + func1 + ", func2=" + func2 + ", func3=" + func3 + ", func4="
-				+ func4 + ", func5=" + func5 + ", func6=" + func6 + "]";
+		return "Sspec_networkVO [no=" + no + ", type_of_sim_slot=" + type_of_sim_slot + ", gsm_2g=" + gsm_2g
+				+ ", umts_3g=" + umts_3g + ", td_scdma_3g=" + td_scdma_3g + ", fdd_lte_4g=" + fdd_lte_4g
+				+ ", tdd_lte_4g=" + tdd_lte_4g + "]";
 	}
-	
 	
 }

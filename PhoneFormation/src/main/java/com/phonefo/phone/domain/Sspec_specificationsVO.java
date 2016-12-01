@@ -2,66 +2,65 @@ package com.phonefo.phone.domain;
 
 public class Sspec_specificationsVO {
 	private int no;
-	private String func1;
-	private String func2;
-	private String func3;
-	private String func4;
-	private String func5;
-	private String func6;
-	private String func7;
+	private String ant;
+	private String os;
+	private String color;
+	private String form;
+	private String phone_size;
+	private String weight;
+	private String sensor;
 	public int getNo() {
 		return no;
 	}
 	public void setNo(int no) {
 		this.no = no;
 	}
-	public String getFunc1() {
-		return func1;
+	public String getAnt() {
+		return ant;
 	}
-	public void setFunc1(String func1) {
-		this.func1 = func1;
+	public void setAnt(String ant) {
+		this.ant = ant;
 	}
-	public String getFunc2() {
-		return func2;
+	public String getOs() {
+		return os;
 	}
-	public void setFunc2(String func2) {
-		this.func2 = func2;
+	public void setOs(String os) {
+		this.os = os;
 	}
-	public String getFunc3() {
-		return func3;
+	public String getColor() {
+		return color;
 	}
-	public void setFunc3(String func3) {
-		this.func3 = func3;
+	public void setColor(String color) {
+		this.color = color;
 	}
-	public String getFunc4() {
-		return func4;
+	public String getForm() {
+		return form;
 	}
-	public void setFunc4(String func4) {
-		this.func4 = func4;
+	public void setForm(String form) {
+		this.form = form;
 	}
-	public String getFunc5() {
-		return func5;
+	public String getPhone_size() {
+		return phone_size;
 	}
-	public void setFunc5(String func5) {
-		this.func5 = func5;
+	public void setPhone_size(String phone_size) {
+		this.phone_size = phone_size;
 	}
-	public String getFunc6() {
-		return func6;
+	public String getWeight() {
+		return weight;
 	}
-	public void setFunc6(String func6) {
-		this.func6 = func6;
+	public void setWeight(String weight) {
+		this.weight = weight;
 	}
-	public String getFunc7() {
-		return func7;
+	public String getSensor() {
+		return sensor;
 	}
-	public void setFunc7(String func7) {
-		this.func7 = func7;
+	public void setSensor(String sensor) {
+		this.sensor = sensor;
 	}
 	@Override
 	public String toString() {
-		return "Sspec_specificationsVO [no=" + no + ", func1=" + func1 + ", func2=" + func2 + ", func3=" + func3
-				+ ", func4=" + func4 + ", func5=" + func5 + ", func6=" + func6 + ", func7=" + func7 + "]";
+		return "Sspec_specificationsVO [no=" + no + ", ant=" + ant + ", os=" + os + ", color=" + color + ", form="
+				+ form + ", phone_size=" + phone_size + ", weight=" + weight + ", sensor=" + sensor + "]";
 	}
-	
 	
 }
