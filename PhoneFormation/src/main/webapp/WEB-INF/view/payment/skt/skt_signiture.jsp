@@ -59,9 +59,11 @@ div{
 <body>
 
 	<div id="container">
-		<!-- 수정 2016.04.19 : class="product" 삭제 -->
-		<!-- content -->
 		<div id="content">
+
+					<div class="post-head container">
+                		<iframe width="854px" height="480px" src="https://www.youtube.com/embed/mcZh5RcZaOI" frameborder="0" allowfullscreen></iframe>
+                	</div>
 			<!-- 기본정보 -->
 			<!-- 2016.06.23 수정 -->
 			<!-- signiture_master -->
@@ -69,8 +71,6 @@ div{
 			<c:forEach items="${signiture_master}" var="master">
 				<div class="inner">
 					<div class="titTop">
-						<br>
-						<br>
 						
 						<h1>${master.payment }</h1>
 					</div>
@@ -126,7 +126,7 @@ div{
 					</div>
 				</div>
 				</c:forEach>
-				
+
 				<div id="prTabCon2">
 					<h2 class="hidden">시리즈 안내</h2>
 					<div class="prCont bandData bg_gray">
@@ -139,9 +139,8 @@ div{
 
 							<div class="tabType3"></div>
 						</div>
-
-
-
+						
+						
 						<div class="graphicArea" id="fareViewType1_1">
 							<h4 class="hidden">이미지로 보기</h4>
 							<div class="graphic">
@@ -187,7 +186,7 @@ div{
 									<tbody>
 										<c:forEach items="${signiture}" var="signiture">
 											<tr>
-												<th scope="row" class="left "><span>${signiture.payment}
+												<th scope="row" class="left"><span>${signiture.payment}
 														></span></th>
 												<td>${signiture.fixed_month}원</td>
 												<td>${signiture.call }</td>
@@ -268,6 +267,9 @@ div{
 					</div>
 				</div>
 				</c:forEach>
+			
+
+
 				
 				<div id="prTabCon2">
 					<h2 class="hidden">시리즈 안내</h2>

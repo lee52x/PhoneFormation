@@ -10,7 +10,7 @@ import com.phonefo.payment.service.KtServiceDAO;
 
 @Controller
 @RequestMapping("/phonefo")
-public class ktController {
+public class KtController {
 
 	@Inject
 	private KtServiceDAO service;

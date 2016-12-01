@@ -63,7 +63,7 @@ $(document).ready(function(){
 					//alert(result[0].name);
 					var options='';
 				   for(var i=0;i<result.length;i++){
-					   //alert(result[i].name);
+					   alert(result[i].name);
 					       options += '<option>'+result[i].name+'</option>';
 				   }
 				   $('#machine').html(options);
@@ -80,10 +80,9 @@ $(document).ready(function(){
 			success:function(result){
 				var options='';
 				for(var i=0;i<result.length;i++){
+					alert(result[i].capacity);
 					options += '<option>'+result[i].capacity+'</option>';
-					if(i==0){
-					options += '<option>용량선택</option>';	
-					}
+					
 				}
 				$('#capacity').html(options);
 				

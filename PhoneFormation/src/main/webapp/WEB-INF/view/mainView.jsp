@@ -9,9 +9,9 @@
 </head>
 <body>
 <div id="container">
-         <jsp:include page="./header.jsp" flush="true"/>
-         <jsp:include page="${body}" flush="true"/>
-         <jsp:include page="./footer.jsp" flush="true"/>
+         <div style="height: 120px"><jsp:include page="./header.jsp" flush="true"/></div><br>
+         <div><jsp:include page="${body}" flush="true"/></div><br>
+         <div><jsp:include page="./footer.jsp" flush="true"/></div>
    </div>
 </body>
 </html>

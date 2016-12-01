@@ -83,8 +83,10 @@ div{
 		<!-- 수정 2016.04.19 : class="product" 삭제 -->
 		<!-- content -->
 		<div id="content">
-			<!-- 기본정보 -->
-			<!-- 2016.06.23 수정 -->
+			<div class="post-head container">
+				<iframe width="640" height="360" src="https://www.youtube.com/embed/GUsq6xdoG5g" frameborder="0" allowfullscreen></iframe>
+			</div>
+
 			<!-- t_together_65 -->
 			<div class="prCont basicArea" id="65">
 			<c:forEach items="${t_together_65}" var="t_together_65">

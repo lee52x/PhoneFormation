@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.phonefo.payment.service.SktService;
 
 @Controller
-	@RequestMapping("/phonefo")
+@RequestMapping("/phonefo")
 public class SktController {
 	
 	@Inject

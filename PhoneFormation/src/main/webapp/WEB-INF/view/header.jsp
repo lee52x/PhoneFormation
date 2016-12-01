@@ -137,7 +137,7 @@
 					</button>
 					<!-- End Toggle Nav Link For Mobiles -->
 					<a class="navbar-brand" href="/phonefo/main"> <img alt=""
-						src="/resources/images/phoneformation.png" width="200px">
+						src="/resources/images/phoneformation.png" style="margin-top: -5%" width="200px">
 					</a>
 				</div>
 				<div class="navbar-collapse collapse">
@@ -154,7 +154,7 @@
 								<li><a href="/phonefo/secondHand">중고</a></li>
 								<li><a href="about.html">수리</a></li>
 							</ul></li>
-						<li><a href="/phonefo/payment/skt">요금제</a>
+						<li><a href="/phonefo/payment">요금제</a>
 							<ul class="dropdown">
 								<li><a href="/phonefo/payment/skt">SKT</a></li>
 								<li><a href="/phonefo/payment/kt">KT</a></li>

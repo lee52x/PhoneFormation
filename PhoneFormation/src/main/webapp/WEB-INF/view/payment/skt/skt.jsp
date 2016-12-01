@@ -14,7 +14,7 @@
 </head>
 <body>
 
-				<br>
+
 				<div class="container">	
 					<div class="resultTop">
 						<div class="infoBox">
