@@ -30,6 +30,7 @@ public interface PhoneInfoService {
 	public List<PhoneInfoVO> selectInfo(String manufacture)throws Exception;
 	public List<PhoneColorVO> select_color(int no)throws Exception;
 	public List<PhoneCapaVO> select_capacity(int no)throws Exception;
+	public List<PhoneInfoVO> select_spec_Info(int no)throws Exception;
 	public List<Sspec_processorVO> select_Sspec_processor(int no)throws Exception;
 	public List<Sspec_processor_valueVO> select_Sspec_processor_value(int no)throws Exception;
 	public List<Sspec_displayVO> select_Sspec_display(int no)throws Exception;

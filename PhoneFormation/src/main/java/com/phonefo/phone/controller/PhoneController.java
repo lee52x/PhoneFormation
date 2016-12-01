@@ -27,6 +27,7 @@ public class PhoneController {
 	public String phoneInfo_spec(Model model, int no)throws Exception{
 		model.addAttribute("list_color", service.select_color(no));
 		model.addAttribute("list_capacity", service.select_capacity(no));
+		model.addAttribute("list_spec_Info", service.select_spec_Info(no));
 		model.addAttribute("list_Sspec_processor", service.select_Sspec_processor(no));
 		model.addAttribute("list_Sspec_processor_value", service.select_Sspec_processor_value(no));
 		model.addAttribute("list_Sspec_display", service.select_Sspec_display(no));

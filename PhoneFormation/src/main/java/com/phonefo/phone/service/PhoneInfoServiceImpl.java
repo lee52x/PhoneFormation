@@ -51,6 +51,11 @@ public class PhoneInfoServiceImpl implements PhoneInfoService{
 	public List<PhoneCapaVO> select_capacity(int no) throws Exception {
 		return dao.select_capacity(no);
 	}
+	
+	@Override
+	public List<PhoneInfoVO> select_spec_Info(int no) throws Exception {
+		return dao.select_spec_Info(no);
+	}
 
 	@Override
 	public List<Sspec_processorVO> select_Sspec_processor(int no) throws Exception {

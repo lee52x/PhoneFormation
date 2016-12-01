@@ -7,6 +7,11 @@
 		where manufacture=#{manufacture}
 		order by no desc
 	</select>
+	<select id="select_spec_Info" parameterType="int" resultType="phone">
+		select *
+		from ph_phone
+		where no=#{no}
+	</select>
 	<select id="select_color" parameterType="int" resultType="com.phonefo.phone.domain.PhoneColorVO">
 		select *
 		from ph_color
