@@ -3,6 +3,7 @@ package com.phonefo.quote.service;
 import java.util.List;
 
 import com.phonefo.quote.domain.PhoneVO;
+import com.phonefo.quote.domain.PurchaseVO;
 import com.phonefo.quote.domain.QuoteVO;
 
 public interface PhoneService {
@@ -12,5 +13,6 @@ public interface PhoneService {
 	public void insertBoard(QuoteVO vo)throws Exception;
 	public List<QuoteVO>  listBoard()throws Exception;
 	public QuoteVO quoteConfirm(int no)throws Exception;
+	public void purchase(PurchaseVO vo)throws Exception;
 
 }

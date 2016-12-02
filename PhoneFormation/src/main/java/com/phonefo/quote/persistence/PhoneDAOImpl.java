@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.phonefo.quote.domain.PhoneVO;
+import com.phonefo.quote.domain.PurchaseVO;
 import com.phonefo.quote.domain.QuoteVO;
 
 @Repository
@@ -65,6 +66,13 @@ public class PhoneDAOImpl implements PhoneDAO{
 	public QuoteVO quoteConfirm(int no) throws Exception {
 		
 		return sql.selectOne("quote.quoteConfirm",no);
+	}
+
+	@Override
+	public void purchase(PurchaseVO vo) throws Exception {
+		
+		 sql.insert("quote.purchase_request",vo);
+		
 	}
 	
 

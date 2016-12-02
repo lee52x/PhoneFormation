@@ -63,14 +63,33 @@ create sequence ph_quoteBoard_seq
 	increment by 1 
 	nocache
 	nocycle;
+	
+	
+--중고매입 요청 목록 테이블---
+	create table purchase_request(
+		purchaseNum number(2) primary key,
+		userid varchar2(50),  
+		no number(10) references ph_quoteBoard(no),
+		state number(5)
+	)
+	
+	create sequence purchase_request_seq
+	start with 1
+	increment by 1 
+	nocache
+	nocycle;
  
+	select*from purchase_request
+	
  	select *from ph_member;		
  	select *from ph_business	;	
 	
 			
- 			select memberno,userid,userpwd,username,birth,gender,email,rdate,tel,root,businessNum,
+ 		select memberno,userid,userpwd,username,birth,gender,email,rdate,tel,root,businessNum,
 		companyName,leaderName,address from ph_member natural join ph_business	
 		where userid='test12345';
+		
+		select*from ph_member
  			
  			
  			

@@ -74,7 +74,7 @@ function popup(no) {
 		<col width="15%"/>
 		<col/>
 		<col width="15%"/>
-		<col width="10%"/>
+		<col width="30%"/>
 		<col width="10%"/>
 		<col width="10%" />
 	</colgroup>

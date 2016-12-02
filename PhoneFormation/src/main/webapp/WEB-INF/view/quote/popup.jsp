@@ -44,10 +44,11 @@ $(document).ready(function(){
 		alert($('#no').val() );
 		
 		$.ajax({
-			url:"/purchase_request",
+			url:"/phonefo/purchase_request",
 			data:{no:$('#no').val(),userid:$('#userid').val()},
 			success:function(){
-				alert('ㅋㅋ');
+				alert('신청이 완료되었습니다.');
+				window.close();
 			}
 		});
 

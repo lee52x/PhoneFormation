@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.phonefo.quote.domain.PhoneVO;
+import com.phonefo.quote.domain.PurchaseVO;
 import com.phonefo.quote.domain.QuoteVO;
 import com.phonefo.quote.persistence.PhoneDAO;
 
@@ -54,6 +55,13 @@ public class PhoneServiceImpl implements PhoneService{
 	public QuoteVO quoteConfirm(int no) throws Exception {
 		
 		return dao.quoteConfirm(no);
+		
+	}
+
+	@Override
+	public void purchase(PurchaseVO vo) throws Exception {
+		
+		dao.purchase(vo);
 		
 	}
 

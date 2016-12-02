@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.phonefo.main.domain.MemberVO;
 import com.phonefo.quote.domain.PhoneVO;
+import com.phonefo.quote.domain.PurchaseVO;
 import com.phonefo.quote.domain.QuoteVO;
 import com.phonefo.quote.service.PhoneService;
 
@@ -144,9 +145,11 @@ public class QuoteRestController {
 	}
 	
 	@RequestMapping("/purchase_request")
-	public void purchase_request(int no, String userid){
-		System.out.println("여긴오니?");
-		System.out.println("no:"+no);
-		System.out.println("userid:"+userid);
+	public void purchase_request(PurchaseVO vo)throws Exception{
+		
+		service.purchase(vo);
+		
+		
+		
 	}
 }

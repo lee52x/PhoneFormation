@@ -39,5 +39,9 @@
  		where no=#{no}
  	</select>
 
- 	
+ 	<insert id="purchase_request">
+ 		insert into purchase_request values(purchase_request_seq.nextval,#{userid},#{no},0)
+ 	</insert>
+
+
 </mapper>

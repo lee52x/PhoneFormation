@@ -3,6 +3,7 @@ package com.phonefo.quote.persistence;
 import java.util.List;
 
 import com.phonefo.quote.domain.PhoneVO;
+import com.phonefo.quote.domain.PurchaseVO;
 import com.phonefo.quote.domain.QuoteVO;
 
 public interface PhoneDAO {
@@ -18,5 +19,7 @@ public interface PhoneDAO {
 	public List<QuoteVO> listBoard()throws Exception;
 
 	public QuoteVO quoteConfirm(int no)throws Exception;
+	
+	public void purchase(PurchaseVO vo)throws Exception;
 	
 }
