@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.phonefo.mypage.domain.MypageMemberVO;
 import com.phonefo.mypage.domain.MypageOnoVO;
+import com.phonefo.mypage.domain.MypagePurchaseVO;
 import com.phonefo.mypage.domain.MypageQuoteVO;
 import com.phonefo.mypage.persistence.MypageDAO;
 
@@ -48,6 +49,12 @@ public class MypageServiceImpl implements MypageService {
 	public int myPageDel(HttpSession session) throws Exception {//¸¶ÀÌÆäÀÌÁö È¸¿øÅ»Åð
 		
 		return dao.myPageDel(session);
+	}
+
+	@Override
+	public List<MypagePurchaseVO> mypagePurchase(String no) throws Exception {
+
+		return dao.myPagePurchaseList(no);
 	}
 
 

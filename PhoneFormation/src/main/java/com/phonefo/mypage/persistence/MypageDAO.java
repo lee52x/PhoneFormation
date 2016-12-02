@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import com.phonefo.mypage.domain.MypageMemberVO;
 import com.phonefo.mypage.domain.MypageOnoVO;
+import com.phonefo.mypage.domain.MypagePurchaseVO;
 import com.phonefo.mypage.domain.MypageQuoteVO;
 
 public interface MypageDAO {
@@ -25,7 +26,8 @@ public interface MypageDAO {
 	//회원탈퇴리스트
 	public int myPageDel(HttpSession session)throws Exception;
 	
-	
+	//구매신청목록 가져오기
+	public List<MypagePurchaseVO> myPagePurchaseList(String no)throws Exception;
 	
 
 }
