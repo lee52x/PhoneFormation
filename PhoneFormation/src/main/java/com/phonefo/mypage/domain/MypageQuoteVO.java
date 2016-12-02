@@ -24,6 +24,7 @@ public class MypageQuoteVO {
 	
 	private int release_price;
 	private String username;
+	
 	public int getNo() {
 		return no;
 	}

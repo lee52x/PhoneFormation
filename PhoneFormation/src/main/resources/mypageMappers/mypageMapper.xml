@@ -39,6 +39,10 @@
  			order by no desc
 	
 	</select>
+	
+	
+	
+	
 
 	<!-- 마이페이지 회원탈퇴 -->
 	<delete id="mypageMemberDel">
