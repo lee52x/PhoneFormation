@@ -82,7 +82,25 @@ $(document).ready(function(){
 
 });
 
+function check() {
 
+	if ($('#userpwd').val() == '' || pwdStatus == -1) {
+		alert('비밀번호를 확인하세요');
+		$('#userpwd').focus();
+	} else if ($('#userpwd2').val() == '' || pwd2Status == -1) {
+		alert('비밀번호를 확인하세요');
+		$('#userpwd2').focus();
+	} else if ($('#tel2').val() == '' || tel2Status == -1) {
+		alert('휴대폰 번호를 확인하세요');
+		$('#tel2').focus();
+	} else if ($('#tel3').val() == '' || tel3Status == -1) {
+		alert('휴대폰 번호를 확인하세요');
+		$('#tel3').focus();
+	}else {
+		document.frm.submit();
+		alert("정보수정이 완료되었습니다.!!");
+	}
+}
 </script>
 </head>
 <body>
@@ -101,8 +119,8 @@ $(document).ready(function(){
                     <!-- Start Contact Form -->
                     <div id="contact-form" class="contatct-form">
                         <div class="loader"></div>
-                        <form name="update" method="post">
-                    
+                        <form name="frm" id="frm" method="post" action="/phonefo/mypageUpdate">
+            
                             <div class="row">
                                 <div class="col-md-3">
                                     <label for="userid">아이디<span class="required"></span></label>
@@ -162,12 +180,12 @@ $(document).ready(function(){
                          
                               
                             <div class="row">
-                     
-                                    <input type="submit" name="submit" class="btn btn-primary btn-md" value="수정하기" />
+                    				 <button class="btn btn-primary btn-md" type="button" onclick="check()">수정하기</button>
                                     <input type="button" name="reset" class="btn btn-danger btn-sm" id="pageback"  value="취소" />
                                 </div>
                         
                         </form>    </div>
+                    
                     
                         
                     </div>

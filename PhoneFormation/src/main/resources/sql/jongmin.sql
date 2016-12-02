@@ -34,7 +34,6 @@ nocache
 nocycle
 
 
-
 --ono and ono 
 
 drop table ph_ono;
@@ -146,6 +145,23 @@ create sequence ph_quoteBoard_seq
 	nocache
 	nocycle;
  
+	
+		
+--중고매입 요청 목록 테이블---
+drop table purchase_request;
+create table purchase_request(
+		purchaseNum number(2) primary key,
+		userid varchar2(50),  
+		no number(10) references ph_quoteBoard(no),
+		state number(5)
+	)
+drop sequence purchase_request_seq;
+create sequence purchase_request_seq
+	start with 1
+	increment by 1 
+	nocache
+	nocycle;
+	
 
 drop table ph_phone;
 drop table ph_color;

@@ -17,9 +17,12 @@
 	var usernameStatus = 0;
 	var email1Status = 0;
 	var email2Status = 0;
+	var birth1Status=0;
 	var tel2Status = 0;
 	var tel3Status = 0;
 	var rootStatus = 0;
+
+
 
 	$(document)
 			.ready(
@@ -186,90 +189,91 @@
 								$('#certifyCheck').html('');
 							}
 						});
-						
+						$('#birth1').change(function(){
+							birth1Status=1;
+						});
 
 						$('#birth2').change(
 								function() {
 									if ($('#birth2').val() == 1) {
 										for (var i = 1; i < 32; i++) {
 											$('#birth3').append(
-													"<option value="+i+">" + i
-															+ "일</option>");
+													"<option value= '"+i+"'>" + i +"일</option>");
 										}
 									} else if ($('#birth2').val() == 2) {
 										for (var i = 1; i < 29; i++) {
 											$('#birth3').append(
-													"<option value=''>" + i
+													"<option value='"+i+"'>" + i
 															+ "일</option>");
 										}
 
 									} else if ($('#birth2').val() == 3) {
 										for (var i = 1; i < 32; i++) {
 											$('#birth3').append(
-													"<option value=''>" + i
+													"<option value='"+i+"'>" + i
 															+ "일</option>");
 										}
 
 									} else if ($('#birth2').val() == 4) {
 										for (var i = 1; i < 31; i++) {
 											$('#birth3').append(
-													"<option value=''>" + i
+													"<option value='"+i+"'>" + i
 															+ "일</option>");
 										}
 
 									} else if ($('#birth2').val() == 5) {
 										for (var i = 1; i < 32; i++) {
 											$('#birth3').append(
-													"<option value=''>" + i
+													"<option value='"+i+"'>" + i
 															+ "일</option>");
 										}
 
 									} else if ($('#birth2').val() == 6) {
 										for (var i = 1; i < 31; i++) {
 											$('#birth3').append(
-													"<option value=''>" + i
+													"<option value='"+i+"'>" + i
 															+ "일</option>");
 										}
 
 									} else if ($('#birth2').val() == 7) {
 										for (var i = 1; i < 32; i++) {
 											$('#birth3').append(
-													"<option value=''>" + i
+													"<option value='"+i+"'>" + i
 															+ "일</option>");
 										}
 
 									} else if ($('#birth2').val() == 8) {
 										for (var i = 1; i < 32; i++) {
 											$('#birth3').append(
-													"<option value=''>" + i
+													"<option value='"+i+"'>" + i
 															+ "일</option>");
 										}
 
 									} else if ($('#birth2').val() == 9) {
 										for (var i = 1; i < 31; i++) {
 											$('#birth3').append(
-													"<option value=''>" + i
+													"<option value='"+i+"'>" + i
 															+ "일</option>");
 										}
 
 									} else if ($('#birth2').val() == 10) {
 										for (var i = 1; i < 32; i++) {
 											$('#birth3').append(
-													"<option value="+i+">" + i
+													"<option value='"+i+"'>" + i
 															+ "일</option>");
 										}
 
 									} else if ($('#birth2').val() == 11) {
 										for (var i = 1; i < 31; i++) {
 											$('#birth3').append(
-													"<option value=''>" + i
+													"<option value='"+i+"'>" + i
 															+ "일</option>");
 										}
 
 									} else if ($('#birth2').val() == 12) {
 										for (var i = 1; i < 32; i++) {
 											$('#birth3').append(
-													"<option value=''>" + i
+													"<option value='"+i+"'>" + i
 															+ "일</option>");
 										}
 									}
@@ -277,6 +281,7 @@
 								});
 
 					});
+	
 
 	function check() {
 
@@ -292,8 +297,7 @@
 		} else if ($('#username').val() == '' || usernameStatus == -1) {
 			alert('이름을 확인하세요');
 			$('#username').focus();
-		} else if ($('#birth1').val() == '' || $('#birth2').val() == ''
-				|| $('#birth3').val() == '') {
+		} else if($('#birth1').val()=='' || $('#birth2').val()=='' || $('#birth3').val()=='' || birth1Status==0){
 			alert('생년월일을 확인하세요')
 			$('#birth1').focus();
 		} else if ($('#email1').val() == '' || email1Status == -1) {

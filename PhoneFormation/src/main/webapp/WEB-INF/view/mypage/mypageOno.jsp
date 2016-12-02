@@ -8,6 +8,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+.list_form{width:100%; border-bottom:1px solid #eee;}
+.list_form .section{background:url(http://www.hunphone.co.kr/img/bg_diagonal.gif);}
+.list_form th{padding:5px; height:30px; border-top:2px solid #eee; border-bottom:3px solid #eee; color:#e54c47; font-size:16px;}
+.list_form td{text-align:left; font-size:14px; padding:5px; line-height:30px; height:30px;}
+.list_form a{font-size:14px;}
+
+.tit_1{margin-top:30px; border-bottom:1px solid #eee; height:30px;}
+.tit_1 .page_name{display:block; background:url(http://www.hunphone.co.kr/img/ico_nowpage.gif) no-repeat 0 2px; padding-left:20px; margin-bottom:10px; height:20px; text-align:left;}
+.tit_1 .page_name span{display:inline-block; background:url(http://www.hunphone.co.kr/img/aw_nowpage.gif) no-repeat right 3px; height:20px; vertical-align:middle; padding-right:15px; margin-right:5px; font-size:16px; color:#e54c47;}
+.tit_1 .page_name span a{display:block; font-size:16px; color:#e54c47;}
+
+
+
+</style>
  <%
 	if (session.getAttribute("userid") == null || session.getAttribute("userid") =="") {
 		out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
@@ -67,20 +82,30 @@ $("#popup2").hide();
 	</div>
 
 	<div class="box-body">
-	<table class="table table-bordered">
+	<table cellpadding=1 cellspacing=0 border=0 class="list_form">
+	<colgroup>
+		<col width="5%" />
+		<col width="10%"/>
+		<col width="15%"/>
+		<col width="15%"/>
+		<col width="5%"/>
+		<col width="10%"/>
+
+		<col width="10%" />
+		<col width="10%" />
+	</colgroup>
 			<thead>
-				<tr>
+				<tr id='mainindex_HeadTR' class="section">
 							<th>ono</th>
 							<th>userid</th>
 							<th>title</th>
 							<th>category</th>
-							<th>content</th>
+
 							<th>image</th>
 							<th>regdate</th>
-							<th>answer</th>
-							<th>answer_regdate</th>
-							<th></th>
-							<th></th>
+
+							<th>내용</th>
+							<th>답변</th>
 						
 						</tr>
 			</thead>
@@ -91,7 +116,7 @@ $("#popup2").hide();
 					<td>${mypageOno.userid}</td>
 					<td>${mypageOno.title}</td>
 					<td>${mypageOno.category}</td>
-					<td>${mypageOno.content}</td>
+
 					<c:choose>
 							<c:when test="${mypageOno.image eq '/resources/upload/'}">
 								<td>무</td>
@@ -100,18 +125,16 @@ $("#popup2").hide();
 								<td>유</td>
 							</c:otherwise>
 						</c:choose>
-					<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+					<td><fmt:formatDate pattern="yyyy-MM-dd"
 										value="${mypageOno.regdate}" /></td>
-					<td>${mypageOno.answer}</td>
-					<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-										value="${mypageOno.answer_regdate}" /></td>
-						<td><button class="btn-custom btn-large border-btn btn-gray" onclick="callTable('${mypageOno.title}','${mypageOno.category}','${mypageOno.content}','${mypageOno.image}')">상세보기</button></td>
+			
+						<td><button class="btn btn-primary"  onclick="callTable('${mypageOno.title}','${mypageOno.category}','${mypageOno.content}','${mypageOno.image}')">상세보기</button></td>
 						<c:choose>
 							<c:when test="${empty mypageOno.answer_regdate}">
 								<td>답변대기</td>
 							</c:when>
 							<c:otherwise>
-								<td><button class="btn-custom btn-large border-btn btn-gray" onclick="callAnsTable('${mypageOno.answer}','<fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${mypageOno.answer_regdate}" />')">답변완료</button></td>
+								<td><button class="btn btn-primary"  onclick="callAnsTable('${mypageOno.answer}','<fmt:formatDate pattern="yyyy-MM-dd" value="${mypageOno.answer_regdate}" />')">답변완료</button></td>
 							</c:otherwise>
 						</c:choose>
 						

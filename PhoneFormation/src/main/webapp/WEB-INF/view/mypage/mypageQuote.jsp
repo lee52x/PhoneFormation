@@ -124,15 +124,17 @@ $("#popup2").hide();
 					<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 										value="${mypageQuote.rdate}" /></td>
 					<c:choose>
-						<c:when test="${mypageQuote.state eq '/resources/upload/'}">
-								<td>무</td>
+						<c:when test="${mypageQuote.state eq '0'}">
+								<td>거래대기</td>
 							</c:when>
+						<c:when test="${mypageQuote.state eq '1'}">
+							<td>거래신청</td>
+						</c:when>
 							<c:otherwise>
-								<td>유</td>
+								<td>거래완료</td>
 							</c:otherwise>
 						</c:choose>
-					<td>${mypageQuote.state}</td>
-					<td><button class="btn-custom btn-large border-btn btn-gray" onclick="callTable
+					<td><button class="btn btn-primary"  onclick="callTable
 					('${mypageQuote.manufacture}','${mypageQuote.machine}','${mypageQuote.quote_price}','${mypageQuote.power}'
 					,'${mypageQuote.glass}','${mypageQuote.equipment}','${mypageQuote.username}','<fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${mypageQuote.rdate}" />','${mypageQuote.tel}'
 					,'${mypageQuote.bank_name}','${mypageQuote.account_number}','${mypageQuote.request_message}')">상세보기</button></td>
