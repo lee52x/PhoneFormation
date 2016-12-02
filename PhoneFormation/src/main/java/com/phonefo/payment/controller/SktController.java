@@ -140,7 +140,7 @@ public class SktController {
 		return "mainView";
 	}
 	
-	@RequestMapping("/payment/skt/skt/band 데이터 퍼펙트S")
+	@RequestMapping("/payment/skt/band 데이터 퍼펙트S")
 	public String band_data_perfectS(String payment, Model model) throws Exception{
 		
 		model.addAttribute("body", "./payment/skt/skt_band_data.jsp");

@@ -211,6 +211,102 @@ public class KtController {
 		return "mainView";
 	}
 	
+	@RequestMapping("/payment/kt/Y24 65.8")
+	public String y24_658(String payment, Model model) throws Exception{
+		
+		model.addAttribute("body", "./payment/kt/kt_y24.jsp");
+		
+		model.addAttribute("y24", service.y24(payment));
+		model.addAttribute("y24_658", service.y24_658(payment));
+		model.addAttribute("y24_548", service.y24_548(payment));
+		model.addAttribute("y24_493", service.y24_438(payment));
+		model.addAttribute("y24_438", service.y24_383(payment));
+		model.addAttribute("y24_328", service.y24_328(payment));
+		
+		
+		return "mainView";
+	}
+	
+	@RequestMapping("/payment/kt/Y24 54.8")
+	public String y24_548(String payment, Model model) throws Exception{
+		
+		model.addAttribute("body", "./payment/kt/kt_y24.jsp");
+		
+		model.addAttribute("y24", service.y24(payment));
+		model.addAttribute("y24_658", service.y24_658(payment));
+		model.addAttribute("y24_548", service.y24_548(payment));
+		model.addAttribute("y24_493", service.y24_438(payment));
+		model.addAttribute("y24_438", service.y24_383(payment));
+		model.addAttribute("y24_328", service.y24_328(payment));
+		
+		
+		return "mainView";
+	}
+	
+	@RequestMapping("/payment/kt/Y24 49.3")
+	public String y24_493(String payment, Model model) throws Exception{
+		
+		model.addAttribute("body", "./payment/kt/kt_y24.jsp");
+		
+		model.addAttribute("y24", service.y24(payment));
+		model.addAttribute("y24_658", service.y24_658(payment));
+		model.addAttribute("y24_548", service.y24_548(payment));
+		model.addAttribute("y24_493", service.y24_438(payment));
+		model.addAttribute("y24_438", service.y24_383(payment));
+		model.addAttribute("y24_328", service.y24_328(payment));
+		
+		
+		return "mainView";
+	}
+	
+	@RequestMapping("/payment/kt/Y24 43.8")
+	public String y24_438(String payment, Model model) throws Exception{
+		
+		model.addAttribute("body", "./payment/kt/kt_y24.jsp");
+		
+		model.addAttribute("y24", service.y24(payment));
+		model.addAttribute("y24_658", service.y24_658(payment));
+		model.addAttribute("y24_548", service.y24_548(payment));
+		model.addAttribute("y24_493", service.y24_438(payment));
+		model.addAttribute("y24_438", service.y24_383(payment));
+		model.addAttribute("y24_328", service.y24_328(payment));
+		
+		
+		return "mainView";
+	}
+	
+	@RequestMapping("/payment/kt/Y24 38.3")
+	public String y24_383(String payment, Model model) throws Exception{
+		
+		model.addAttribute("body", "./payment/kt/kt_y24.jsp");
+		
+		model.addAttribute("y24", service.y24(payment));
+		model.addAttribute("y24_658", service.y24_658(payment));
+		model.addAttribute("y24_548", service.y24_548(payment));
+		model.addAttribute("y24_493", service.y24_438(payment));
+		model.addAttribute("y24_438", service.y24_383(payment));
+		model.addAttribute("y24_328", service.y24_328(payment));
+		
+		
+		return "mainView";
+	}
+	
+	@RequestMapping("/payment/kt/Y24 32.8")
+	public String y24_328(String payment, Model model) throws Exception{
+		
+		model.addAttribute("body", "./payment/kt/kt_y24.jsp");
+		
+		model.addAttribute("y24", service.y24(payment));
+		model.addAttribute("y24_658", service.y24_658(payment));
+		model.addAttribute("y24_548", service.y24_548(payment));
+		model.addAttribute("y24_493", service.y24_438(payment));
+		model.addAttribute("y24_438", service.y24_383(payment));
+		model.addAttribute("y24_328", service.y24_328(payment));
+		
+		
+		return "mainView";
+	}
+	
 	@RequestMapping("/payment/kt/LTE-¾Ë520")
 	public String lteEgg520(String payment, Model model) throws Exception{
 		

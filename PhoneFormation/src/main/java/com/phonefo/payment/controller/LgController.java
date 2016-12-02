@@ -104,6 +104,20 @@ public class LgController {
 		return "mainView";
 	}
 	
+	@RequestMapping("/payment/lg/µ•¿Ã≈Õ Ω∫∆Ûº»A")
+	public String SpecialA(String payment, Model model) throws Exception{
+		
+		model.addAttribute("body", "./payment/lg/lg_dataSpecial.jsp");
+		
+		model.addAttribute("Special", service.payment_special(payment));
+		model.addAttribute("SpecialA", service.payment_specialA(payment));
+		model.addAttribute("SpecialB", service.payment_specialB(payment));
+		model.addAttribute("SpecialC", service.payment_specialC(payment));
+		model.addAttribute("SpecialD", service.payment_specialD(payment));
+		
+		return "mainView";
+	}
+	
 	@RequestMapping("/payment/lg/µ•¿Ã≈Õ Ω∫∆Ûº»B")
 	public String SpecialB(String payment, Model model) throws Exception{
 		

@@ -96,6 +96,9 @@ div{
 		<!-- 수정 2016.04.19 : class="product" 삭제 -->
 		<!-- content -->
 		<div id="content">
+			<div class="post-head container">
+            	<iframe width="640" height="360" src="https://www.youtube.com/embed/sQ09IN1o4Zc" frameborder="0" allowfullscreen></iframe>
+            </div>
 			<!-- 기본정보 -->
 			<!-- 2016.06.23 수정 -->
 			<!-- limited99 -->
