@@ -22,54 +22,54 @@
 		from ph_capacity
 		where no=#{no}
 	</select>
-	<select id="select_Sspec_processor" parameterType="int" resultType="com.phonefo.phone.domain.Sspec_processorVO">
+	<select id="select_Sspec_processor" parameterType="int" resultType="com.phonefo.phone.domain.spec_processorVO">
 		select *
-		from Sspec_processor
+		from spec_processor
 		where no=#{no}
 	</select>
-	<select id="select_Sspec_display" parameterType="int" resultType="com.phonefo.phone.domain.Sspec_displayVO">
+	<select id="select_Sspec_display" parameterType="int" resultType="com.phonefo.phone.domain.spec_displayVO">
 		select *
-		from Sspec_display
+		from spec_display
 		where no=#{no}
 	</select>
-	<select id="select_Sspec_camera" parameterType="int" resultType="com.phonefo.phone.domain.Sspec_cameraVO">
+	<select id="select_Sspec_camera" parameterType="int" resultType="com.phonefo.phone.domain.spec_cameraVO">
 		select *
-		from Sspec_camera
+		from spec_camera
 		where no=#{no}
 	</select>
-	<select id="select_Sspec_memory" parameterType="int" resultType="com.phonefo.phone.domain.Sspec_memoryVO">
+	<select id="select_Sspec_memory" parameterType="int" resultType="com.phonefo.phone.domain.spec_memoryVO">
 		select *
-		from Sspec_memory
+		from spec_memory
 		where no=#{no}
 	</select>
-	<select id="select_Sspec_network" parameterType="int" resultType="com.phonefo.phone.domain.Sspec_networkVO">
+	<select id="select_Sspec_network" parameterType="int" resultType="com.phonefo.phone.domain.spec_networkVO">
 		select *
-		from Sspec_network
+		from spec_network
 		where no=#{no}
 	</select>
-	<select id="select_Sspec_connect" parameterType="int" resultType="com.phonefo.phone.domain.Sspec_connectVO">
+	<select id="select_Sspec_connect" parameterType="int" resultType="com.phonefo.phone.domain.spec_connectVO">
 		select *
-		from Sspec_connect
+		from spec_connect
 		where no=#{no}
 	</select>
-	<select id="select_Sspec_specifications" parameterType="int" resultType="com.phonefo.phone.domain.Sspec_specificationsVO">
+	<select id="select_Sspec_specifications" parameterType="int" resultType="com.phonefo.phone.domain.spec_specificationsVO">
 		select *
-		from Sspec_specifications
+		from spec_specifications
 		where no=#{no}
 	</select>
-	<select id="select_Sspec_battery" parameterType="int" resultType="com.phonefo.phone.domain.Sspec_batteryVO">
+	<select id="select_Sspec_battery" parameterType="int" resultType="com.phonefo.phone.domain.spec_batteryVO">
 		select *
-		from Sspec_battery
+		from spec_battery
 		where no=#{no}
 	</select>
-	<select id="select_Sspec_audio" parameterType="int" resultType="com.phonefo.phone.domain.Sspec_audioVO">
+	<select id="select_Sspec_audio" parameterType="int" resultType="com.phonefo.phone.domain.spec_audioVO">
 		select *
-		from Sspec_audio
+		from spec_audio
 		where no=#{no}
 	</select>
-	<select id="select_Sspec_service" parameterType="int" resultType="com.phonefo.phone.domain.Sspec_serviceVO">
+	<select id="select_Sspec_service" parameterType="int" resultType="com.phonefo.phone.domain.spec_serviceVO">
 		select *
-		from Sspec_service
+		from spec_service
 		where no=#{no}
 	</select>
 </mapper>

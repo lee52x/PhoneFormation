@@ -28,16 +28,16 @@ public class PhoneController {
 		model.addAttribute("list_color", service.select_color(no));
 		model.addAttribute("list_capacity", service.select_capacity(no));
 		model.addAttribute("list_spec_Info", service.select_spec_Info(no));
-		model.addAttribute("list_Sspec_processor", service.select_Sspec_processor(no));
-		model.addAttribute("list_Sspec_display", service.select_Sspec_display(no));
-		model.addAttribute("list_Sspec_camera", service.select_Sspec_camera(no));
-		model.addAttribute("list_Sspec_memory", service.select_Sspec_memory(no));
-		model.addAttribute("list_Sspec_network", service.select_Sspec_network(no));
-		model.addAttribute("list_Sspec_connect", service.select_Sspec_connect(no));
-		model.addAttribute("list_Sspec_specifications", service.select_Sspec_specifications(no));
-		model.addAttribute("list_Sspec_battery", service.select_Sspec_battery(no));
-		model.addAttribute("list_Sspec_audio", service.select_Sspec_audio(no));
-		model.addAttribute("list_Sspec_service", service.select_Sspec_service(no));
+		model.addAttribute("list_spec_processor", service.select_spec_processor(no));
+		model.addAttribute("list_spec_display", service.select_spec_display(no));
+		model.addAttribute("list_spec_camera", service.select_spec_camera(no));
+		model.addAttribute("list_spec_memory", service.select_spec_memory(no));
+		model.addAttribute("list_spec_network", service.select_spec_network(no));
+		model.addAttribute("list_spec_connect", service.select_spec_connect(no));
+		model.addAttribute("list_spec_specifications", service.select_spec_specifications(no));
+		model.addAttribute("list_spec_battery", service.select_spec_battery(no));
+		model.addAttribute("list_spec_audio", service.select_spec_audio(no));
+		model.addAttribute("list_spec_service", service.select_spec_service(no));
 		model.addAttribute("body", "./phone/phoneInfo_spec.jsp");
 		return "mainView";
 	}
