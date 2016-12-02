@@ -35,6 +35,7 @@ public class QuoteController {
 	@RequestMapping("/sell")
 	public String quoteSell(Model model,HttpSession session,QuoteVO quote){
 		MemberVO vo= (MemberVO)session.getAttribute("loginVO");
+		System.out.println("여기오나");
 		model.addAttribute("vo", vo);
 		System.out.println(vo.getTel());
 		model.addAttribute("body", "./quote/sell.jsp");
@@ -48,8 +49,7 @@ public class QuoteController {
 		String userid = (String)session.getAttribute("userid");
 		vo.setUserid(userid);
 		vo.setUsername((String)session.getAttribute("username"));
-		
-		
+		vo.setTel((String)session.getAttribute("tel"));
 		service.insertBoard(vo);
 
 		return "redirect:/phonefo/listBoard";
@@ -69,12 +69,18 @@ public class QuoteController {
 	}
 	//글보기
 	@RequestMapping("/popup")
-	public String popup(Model model,int no)throws Exception{
+	public String popup(Model model,int no,HttpSession session)throws Exception{
 		System.out.println(no);
 		QuoteVO vo = service.quoteConfirm(no);
-		System.out.println(vo.getUsername());
 		model.addAttribute("vo", vo);
+		model.addAttribute("no",no);
+		String userid=(String)session.getAttribute("userid");
+		System.out.println("세션아이디:"+userid);
+
+		
 		
 		return "./quote/popup";
 	}
+	
+	
 }

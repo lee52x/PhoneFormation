@@ -142,4 +142,11 @@ public class QuoteRestController {
 		
 		
 	}
+	
+	@RequestMapping("/purchase_request")
+	public void purchase_request(int no, String userid){
+		System.out.println("여긴오니?");
+		System.out.println("no:"+no);
+		System.out.println("userid:"+userid);
+	}
 }

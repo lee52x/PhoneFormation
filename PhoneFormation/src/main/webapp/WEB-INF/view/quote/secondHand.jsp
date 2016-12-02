@@ -61,9 +61,9 @@ $(document).ready(function(){
 				success:function(result){
 					//alert(result); result==배열 [{name:갤럭시},{}]
 					//alert(result[0].name);
-					var options='';
+					var options='<option>기기명 선택</option>';
 				   for(var i=0;i<result.length;i++){
-					   alert(result[i].name);
+					  /// alert(result[i].name);
 					       options += '<option>'+result[i].name+'</option>';
 				   }
 				   $('#machine').html(options);
@@ -78,9 +78,9 @@ $(document).ready(function(){
 			url:"/phonefo/capacity",
 			data:{machine:$('#machine').val()},
 			success:function(result){
-				var options='';
+				var options='<option>용량선택</option>';
 				for(var i=0;i<result.length;i++){
-					alert(result[i].capacity);
+					//alert(result[i].capacity);
 					options += '<option>'+result[i].capacity+'</option>';
 					
 				}
@@ -104,12 +104,17 @@ $(document).ready(function(){
 		type:'POST',
 		data:{howsend:f.radid_01.value, manufacture:f.manufacture.value, machine:f.machine.value, capacity:f.capacity.value, power:f.radid_02.value, glass:f.radid_03.value, equipment:f.radid_04.value},
 		success:function(vo2){
+			
 			$('#release_price').val(vo2.release_price);
 			$('#quote_price').val(vo2.quote_price);
 			var cut_price=vo2.release_price-vo2.quote_price;
 			$('#cut_price').val('-'+cut_price);
-			$('#quote').show();
-		}
+			$('#quote').show(function(){
+				$("#quote").attr("tabindex", -1).focus();	
+			});
+			}
+		
+
 	});	
 	
 	

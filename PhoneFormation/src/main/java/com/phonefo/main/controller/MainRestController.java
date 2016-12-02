@@ -60,6 +60,7 @@ public class MainRestController {
 			MemberVO vo= service.getVO(userid);
 			session.setAttribute("userid", userid);
 			session.setAttribute("username", vo.getUsername());
+			session.setAttribute("tel", vo.getTel());
 			session.setAttribute("loginVO", vo);
 			
 			return "¼º°ø";

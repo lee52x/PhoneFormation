@@ -31,9 +31,35 @@
 	width: 50%;
 }
 </style>
+
 </head>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#purchase_request').click(function(){
+		alert($('#userid').val() );
+		alert($('#no').val() );
+		
+		$.ajax({
+			url:"/purchase_request",
+			data:{no:$('#no').val(),userid:$('#userid').val()},
+			success:function(){
+				alert('ㅋㅋ');
+			}
+		});
+
+	});
+});
+
+</script>
+
 
 <body>
+<input type="hidden" id="userid" value="${userid }">
+<input type="hidden" id="no" value="${no }">
 <div class="tit_1">
 	<div class="page_name">
 		<span style="background:none; padding:0;">휴대폰 정보</span>
@@ -96,7 +122,8 @@
 	<tr>
 				<th><span>휴대폰</span></th>
 		<td colspan="3">
-			01023123232		</td>
+			${vo.tel }
+		</td>
 			</tr>
 	<tr>
 		<th><span>입금받을 계좌번호</span></th>
@@ -111,8 +138,10 @@
 </table>
 <br><br>
 <center>
-	<button type="button" class="btn_counsel" id="calculator" onclick="check()">매입신청</button>
+	<button type="button" class="btn_counsel" id="purchase_request">매입신청</button>
 </center>	
 
 </body>
+
+
 </html>

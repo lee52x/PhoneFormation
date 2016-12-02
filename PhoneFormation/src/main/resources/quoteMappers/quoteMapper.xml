@@ -23,7 +23,7 @@
 	
  	<insert id="insertBoard">
  		insert into ph_quoteBoard values
- 		(ph_quoteBoard_seq.nextval,#{userid},#{username},#{quote_price},#{request_message},#{bank_name},
+ 		(ph_quoteBoard_seq.nextval,#{userid},#{username},#{tel},#{quote_price},#{request_message},#{bank_name},
  		  #{account_number},sysdate,#{power},#{glass},#{equipment},0,#{manufacture},
  		  #{machine},#{capacity})
 

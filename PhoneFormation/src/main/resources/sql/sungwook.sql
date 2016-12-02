@@ -39,6 +39,8 @@ drop table ph_quoteBoard;
 create table ph_quoteBoard(
 	no number(10) primary key,
 	userid varchar2(50),
+	username varchar2(50),
+	tel varchar2(50),
 	quote_price number(10),
 	request_message varchar2(1000),
 	bank_name varchar2(50),
@@ -376,3 +378,33 @@ insert into ph_capacity values ('GPro', '32GB', 320000);
  		where name='G5' and capacity='32GB';
  		
  		select *from PH_phone;
+ 		
+ 		
+ 		
+ 		
+ 		 		select * from ph_quoteBoard
+ 					order by no desc
+ 					
+ 					
+ 					
+ 					
+ 						no number(10) primary key,
+	userid varchar2(50),
+	quote_price number(10),
+	request_message varchar2(1000),
+	bank_name varchar2(50),
+	account_number varchar2(50),
+	rdate date,
+	power varchar2(50),
+	glass varchar2(50),
+	equipment varchar2(50),
+	state number(10) default 0,
+	manufacture varchar2(50),
+	machine varchar2(50),
+	capacity varchar2(50),
+	select no,userid,username,quote_price,request_message,bank_name,account_number,
+	rdate,power,glass,equipment,state,manufacture,machine,capacity from ph_quoteBoard a
+	LEFT OUTER JOIN ph_member b on b.userid=a.userid
+	
+	select*from ph_member
+ 				
