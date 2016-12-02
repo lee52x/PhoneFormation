@@ -20,12 +20,14 @@ public class MypageServiceImpl implements MypageService {
 	
 	@Override
 	public MypageMemberVO myPageMain(HttpSession session) throws Exception {
-		
+
 		return dao.myPageMain(session);
 	}
 
 	@Override
 	public int myPageUpdate(MypageMemberVO vo) throws Exception {
+		
+
 		
 		return dao.myPageUpdate(vo);
 	}

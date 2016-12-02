@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%
-	if (session.getAttribute("userid") == null) {
-		out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
-				+ "location.replace('/phonefo/login');" + "</script>");
-	}
-%>
+
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,8 +8,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-</head>
-<body>
+ <%
+	if (session.getAttribute("userid") == null || session.getAttribute("userid") =="") {
+		out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
+				+ "location.replace('/phonefo/login');" + "</script>");
+	}
+%>
+<%
+	request.setCharacterEncoding("UTF-8");
+%>
+
 <script type="text/javascript">
 function callTable(title,category,content,image){
 	$("#title").text(title);
@@ -33,7 +36,9 @@ function callTable(title,category,content,image){
 function callAnsTable(answer,answer_regdate){
 	$("#answer").text(answer);
 	$("#answer_regdate").text(answer_regdate);
+	
 	$("#popup2").fadeIn(700);
+
 }
 $(document).ready(function(){
 	
@@ -51,6 +56,8 @@ $("#popup2").hide();
 
 });
 </script>
+</head>
+<body>
 </head>
 <body>
 <div class="container">

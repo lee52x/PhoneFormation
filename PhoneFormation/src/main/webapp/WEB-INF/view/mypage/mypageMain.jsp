@@ -37,7 +37,7 @@
                         <li> <strong>이메일 :</strong>${object.email }</li>
                         <li> <strong>휴대전화 :</strong>${object.tel }</li>
                         <li> <strong>성별 :</strong>${object.gender }</li>
-                        <li> <strong>가입일자 :</strong><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+                        <li> <strong>가입일자 :</strong><fmt:formatDate pattern="yyyy-MM-dd"
 										value="${object.rdate }" /></li>
                     </ul>
                     </div>
