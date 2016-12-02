@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -77,6 +78,20 @@ public class MypageController {
 		
 		return "mainView";
 	}
+	@RequestMapping("/mypageQuote")//마이페이지 중고견적
+	public String myPageQuote(Model model,HttpSession session)throws Exception{
+		
+		
+		model.addAttribute("list",service.mypageQuoteList(session));
+		
+		
+		model.addAttribute("body", "./mypage/mypageQuote.jsp");
+		
+		
+		return "mainView";
+	}
+	
+	
 	@RequestMapping(value="/mypageOut", method=RequestMethod.GET)//마이페이지 회원탈퇴페이지 불러오기
 	public String myPageOutGET(Model model) throws Exception {
 		

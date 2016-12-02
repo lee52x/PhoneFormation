@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.phonefo.mypage.domain.MypageMemberVO;
 import com.phonefo.mypage.domain.MypageOnoVO;
+import com.phonefo.mypage.domain.MypageQuoteVO;
 
 @Repository
 public class MypageDAOImpl implements MypageDAO {
@@ -18,7 +19,7 @@ public class MypageDAOImpl implements MypageDAO {
 	private SqlSession sqlSession;	
 	
 	@Override
-	public MypageMemberVO myPageMain(HttpSession session) throws Exception {
+	public MypageMemberVO myPageMain(HttpSession session) throws Exception { //마이페이지 메인
 		
 		MypageMemberVO vo= new MypageMemberVO();
 		vo =sqlSession.selectOne("mypage.mypageMemberInfo",session.getAttribute("userid"));
@@ -42,22 +43,29 @@ public class MypageDAOImpl implements MypageDAO {
 	}
  
 	@Override
-	public int myPageUpdate(MypageMemberVO vo) throws Exception {
+	public int myPageUpdate(MypageMemberVO vo) throws Exception { //마이페이지 수정
 		
 		
 		return sqlSession.update("mypage.mypageMemberUp", vo);
 	}
 
 	@Override
-	public List<MypageOnoVO> myPageOnoList(HttpSession session) throws Exception {
+	public List<MypageOnoVO> myPageOnoList(HttpSession session) throws Exception { //마이페이지 1대1 리스트
 	
 		return sqlSession.selectList("mypage.mypageOnoInfo",session.getAttribute("userid"));
 	}
 
 	@Override
-	public int myPageDel(HttpSession session) throws Exception {
+	public List<MypageQuoteVO> myPageQuoteList(HttpSession session) throws Exception {// 마이페이지 중고
+
+		return sqlSession.selectList("mypage.mypageQuoteInfo",session.getAttribute("userid"));
+	}
+	
+	@Override
+	public int myPageDel(HttpSession session) throws Exception { // 마이페이지 회원탈퇴
 		
 		return sqlSession.delete("mypage.mypageMemberDel",session.getAttribute("userid"));
 	}
+
 
 }

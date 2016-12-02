@@ -97,6 +97,7 @@ infoArea .list1{overflow:hidden;height:120px}
                          <li><a href="/phonefo/mypageMain" title="내정보">내정보</a></li>
 	 					 <li><a href="/phonefo/mypageUpdate" title="정보수정">정보수정</a></li>
        					<li><a href="/phonefo/mypageOno" title="1대1문의 내역">1대1문의내역</a></li>
+       					<li><a href="/phonefo/mypageQuote" title="내가올린중고견적">중고견적내역</a></li>
        					 <li><a href="/phonefo/mypageOut" title="회원탈퇴">회원탈퇴</a></li>    
                                                 
                      </ul>

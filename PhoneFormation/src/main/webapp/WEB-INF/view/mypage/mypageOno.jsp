@@ -85,15 +85,15 @@ $("#popup2").hide();
 						</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${list}" var="adminOno">
+				<c:forEach items="${list}" var="mypageOno">
 					<tr class="tr">
-					<td>${adminOno.ono}</td>
-					<td>${adminOno.userid}</td>
-					<td>${adminOno.title}</td>
-					<td>${adminOno.category}</td>
-					<td>${adminOno.content}</td>
+					<td>${mypageOno.ono}</td>
+					<td>${mypageOno.userid}</td>
+					<td>${mypageOno.title}</td>
+					<td>${mypageOno.category}</td>
+					<td>${mypageOno.content}</td>
 					<c:choose>
-							<c:when test="${adminOno.image eq '/resources/upload/'}">
+							<c:when test="${mypageOno.image eq '/resources/upload/'}">
 								<td>무</td>
 							</c:when>
 							<c:otherwise>
@@ -101,17 +101,17 @@ $("#popup2").hide();
 							</c:otherwise>
 						</c:choose>
 					<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-										value="${adminOno.regdate}" /></td>
-					<td>${adminOno.answer}</td>
+										value="${mypageOno.regdate}" /></td>
+					<td>${mypageOno.answer}</td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-										value="${adminOno.answer_regdate}" /></td>
-						<td><button class="btn-custom btn-large border-btn btn-gray" onclick="callTable('${adminOno.title}','${adminOno.category}','${adminOno.content}','${adminOno.image}')">상세보기</button></td>
+										value="${mypageOno.answer_regdate}" /></td>
+						<td><button class="btn-custom btn-large border-btn btn-gray" onclick="callTable('${mypageOno.title}','${mypageOno.category}','${mypageOno.content}','${mypageOno.image}')">상세보기</button></td>
 						<c:choose>
-							<c:when test="${empty adminOno.answer_regdate}">
+							<c:when test="${empty mypageOno.answer_regdate}">
 								<td>답변대기</td>
 							</c:when>
 							<c:otherwise>
-								<td><button class="btn-custom btn-large border-btn btn-gray" onclick="callAnsTable('${adminOno.answer}','${adminOno.answer_regdate}')">답변완료</button></td>
+								<td><button class="btn-custom btn-large border-btn btn-gray" onclick="callAnsTable('${mypageOno.answer}','<fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${mypageOno.answer_regdate}" />')">답변완료</button></td>
 							</c:otherwise>
 						</c:choose>
 						
