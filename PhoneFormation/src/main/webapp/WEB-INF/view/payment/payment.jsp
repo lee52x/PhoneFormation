@@ -32,17 +32,19 @@
 		src="http://www.tworld.co.kr/poc/inc/js/lib/jquery.jscrollpane.min.js"></script>
 	<script type="text/javascript"
 		src="http://www.tworld.co.kr/poc/inc/js/lib/wddo.selectbox-1.5.4.js"></script>
-		
 
-<body>
+<style type="text/css">
 
-	<div class="container" >
-		<br><br>
+</style>
+<body id="top">
+
+	<div class="container">
+		<br><br>		
                 <div class="resultTop">
-						<div class="infoBox"><br>
-						<h3 style="margin-left: 20px"><a href="#">SKT</a></h3><br><br>
+						<div class="infoBox" id="SKT T" style="color: #f85641"><br>
+						<h3 style="margin-left: 20px; width: 100px" id=""><a href="/phonefo/payment/skt"><img alt="SKT" src="/resources/images/payment/SKT.png"></a></h3><br><br>
 							<ul class="filtering" style="text-align: left;">
-								<li id="payment" style="font-size: 18px;">T시그니처 요금제 > </li><br>
+								<li id="payment" style="font-size: 18px;"><span style="color: #F85641;"><b>T시그니처 요금제</b></span>  </li><br>
 								
 							
 								<li id="payment"><a href="/phonefo/payment/skt/T 시그니처 Master" title="T시그니처 Master">T시그니처  Master</a></li>
@@ -52,7 +54,7 @@
 							</ul>
 							<br>
 							<ul class="filtering" style="text-align: left;">
-								<li id="payment" style="font-size: 18px;">band YT 요금제</li><br>
+								<li id="payment" style="font-size: 18px;"><b>band YT 요금제</b></li><br>
 								
 							
 								<li id="payment"><a href="/phonefo/payment/skt/band YT 퍼펙트" title="band YT 퍼펙트">band YT 퍼펙트</a></li>
@@ -66,29 +68,30 @@
 								<li id="payment"><a href="/phonefo/payment/skt/band YT 세이브" title="band YT 세이브">band YT 세이브</a></li>
 
 							</ul>
+							
 							<br>
 							<ul class="filtering" style="text-align: left;">
-								<li id="payment" style="font-size: 18px;">band 데이터 요금제</li>
+								<li id="payment" style="font-size: 18px;"><b>band 데이터 요금제</b></li><br>
 								
 							
-								<li id="payment"><a href="/phonefo/payment/skt/band 데이터 퍼펙트S" title="band 데이터 퍼펙트S">퍼펙트S</a></li>
+								<li id="payment"><a href="/phonefo/payment/skt/band 데이터 퍼펙트S" title="band 데이터 퍼펙트S">band 데이터 퍼펙트S</a></li>
 								
-								<li id="payment"><a href="/phonefo/payment/skt/band 데이터 퍼펙트" title="band 데이터 퍼펙트">퍼펙트</a></li>
+								<li id="payment"><a href="/phonefo/payment/skt/band 데이터 퍼펙트" title="band 데이터 퍼펙트">band 데이터 퍼펙트</a></li>
 																
-								<li id="payment"><a href="/phonefo/payment/skt/band 데이터 6.5G" title="band 데이터 6.5G">6.5G</a></li>
+								<li id="payment"><a href="/phonefo/payment/skt/band 데이터 6.5G" title="band 데이터 6.5G">band 데이터 6.5G</a></li><br>
 							
-								<li id="payment"><a href="/phonefo/payment/skt/band 데이터 3.5G" title="band 데이터 3.5G">3.5G</a></li>
+								<li id="payment"><a href="/phonefo/payment/skt/band 데이터 3.5G" title="band 데이터 3.5G">band 데이터 3.5G</a></li>
 								
-								<li id="payment"><a href="/phonefo/payment/skt/band 데이터 2.2G" title="band 데이터 2.2G">2.2G</a></li>
+								<li id="payment"><a href="/phonefo/payment/skt/band 데이터 2.2G" title="band 데이터 2.2G">band 데이터 2.2G</a></li>
 
-								<li id="payment"><a href="/phonefo/payment/skt/band 데이터 1.2G" title="band 데이터 1.2G">1.2G</a></li>
+								<li id="payment"><a href="/phonefo/payment/skt/band 데이터 1.2G" title="band 데이터 1.2G">band 데이터 1.2G</a></li>
 
-								<li id="payment"><a href="/phonefo/payment/skt/band 데이터 세이브" title="band 데이터 세이브">세이브</a></li>
+								<li id="payment"><a href="/phonefo/payment/skt/band 데이터 세이브" title="band 데이터 세이브">band 데이터 세이브</a></li>
 
 							</ul>
 							<br> 
 							<ul class="filtering" style="text-align: left;">
-								<li id="payment" style="font-size: 18px;">전국민 무한 요금제</li><br>
+								<li id="payment" style="font-size: 18px;"><b>전국민 무한 요금제</b></li><br>
 								
 							
 								<li id="payment"><a href="/phonefo/payment/skt/전국민 무한 100" title="전국민 무한 100">전국민 무한 100</a></li>
@@ -104,7 +107,7 @@
 							</ul>
 							<br>
 							<ul class="filtering" style="text-align: left;">
-								<li id="payment" style="font-size: 18px;">T끼리 요금제</li><br>
+								<li id="payment" style="font-size: 18px;"><b>T끼리 요금제</b></li><br>
 								
 							
 								<li id="payment"><a href="/phonefo/payment/skt/T끼리 65" title="T끼리 65">T끼리 65</a></li>
@@ -286,7 +289,7 @@
                                         <img alt="" src="/resources/images/payment/form2.png" /> 
                                    </a> 
                                 </div>
-                                <div class="portfolio-details"> 
+                                <div class="portfolio-details" id="KT"> 
                                    <a href="#">
                                         <h4>생활플랫 폼</h4>
                                         <span>SKT</span> 
@@ -299,12 +302,12 @@
                 </div>
                 <!-- End Recent Projects Carousel --> 
                 
-                <br><br>
+                <br><br><br>
                 <div class="resultTop">
-						<div class="infoBox"><br>
-						<h3 style="margin-left: 20px"><a href="#">KT Olleh</a></h3><br><br>
+						<div class="infoBox" id="K"><br>
+						<h3 style="margin-left: 20px"><a href="/phonefo/payment/kt"><img alt="KT Olleh" src="/resources/images/payment/KTOlleh.png"></a></h3><br><br>
 							<ul class="filtering" style="text-align: left;">
-								<li id="payment" style="font-size: 18px;">순 완전무한 요금제</li><br>
+								<li id="payment" style="font-size: 18px; font: bold;"><b>순 완전무한 요금제</b></li><br>
 								
 							
 								<li id="payment"><a href="/phonefo/payment/skt/순 완전무한 99" title="순 완전무한 99">순 완전무한 99</a></li>
@@ -320,7 +323,7 @@
 							</ul>
 							<br>
 							<ul class="filtering" style="text-align: left;">
-								<li id="payment" style="font-size: 18px;">순 모두다올레 요금제</li><br>
+								<li id="payment" style="font-size: 18px;"><b>순 모두다올레 요금제</b></li><br>
 								
 							
 								<li id="payment"><a href="/phonefo/payment/skt/순 모두다올레 41" title="순 모두다올레 41">순 모두다올레 41</a></li>
@@ -332,7 +335,7 @@
 							</ul>
 							<br>
 							<ul class="filtering" style="text-align: left;">
-								<li id="payment" style="font-size: 18px;">Y틴 요금제</li><br>
+								<li id="payment" style="font-size: 18px;"><b>Y틴 요금제</b></li><br>
 								
 							
 								<li id="payment"><a href="/phonefo/payment/skt/Y틴 38" title="전국민 무한 100">Y틴 38</a></li>
@@ -346,7 +349,7 @@
 							</ul>
 							<br>
 							<ul class="filtering" style="text-align: left;">
-								<li id="payment" style="font-size: 18px;">Y24 요금제</li><br>
+								<li id="payment" style="font-size: 18px;"><b>Y24 요금제</b></li><br>
 								
 							
 								<li id="payment"><a href="/phonefo/payment/skt/Y24 65.8" title="Y24 65.8">Y24 65.8</a></li>
@@ -362,7 +365,7 @@
 							</ul>
 							<br>
 							<ul class="filtering" style="text-align: left;">
-								<li id="payment" style="font-size: 18px;">LTE-알 요금제</li><br>
+								<li id="payment" style="font-size: 18px;"><b>LTE-알 요금제</b></li><br>
 								
 							
 								<li id="payment"><a href="/phonefo/payment/skt/LTE-알520" title="LTE-알520">LTE-알 520</a></li>
@@ -512,7 +515,7 @@
                                         <img alt="IOT@Home" src="/resources/images/payment/GIGA5G.png" /> 
                                    </a> 
                                 </div>
-                                <div class="portfolio-details"> 
+                                <div class="portfolio-details" id="LG"> 
                                    <a href="#">
                                         <h4>GIGA 5G</h4>
                                         <span>KT Olleh</span> 
@@ -531,10 +534,10 @@
                <br>  
                <br><br>
                 <div class="resultTop">
-						<div class="infoBox"><br>
-						<h3 style="margin-left: 20px"><a href="#">LG U+</a></h3><br><br>
+						<div class="infoBox" id="L" style="color: #ff0089;"><br>
+						<h3 style="margin-left: 20px"><a href="/phonefo/payment/lg"><img alt="LG U+" src="/resources/images/payment/LGU+.png"></a></h3><br><br>
 							<ul class="filtering" style="text-align: left;">
-								<li id="payment" style="font-size: 18px;">데이터 요금제 </li><br>
+								<li id="payment" style="font-size: 18px;"><b>데이터 요금제</b></li><br>
 								
 							
 								<li id="payment"><a href="/phonefo/payment/skt/데이터 요금제 일반" title="데이터 요금제 일반">데이터 요금제 일반</a></li>
@@ -550,7 +553,7 @@
 							</ul>
 							<br>
 							<ul class="filtering" style="text-align: left;">
-								<li id="payment" style="font-size: 18px;">데이터 스폐셜 요금제</li><br>
+								<li id="payment" style="font-size: 18px;"><b>데이터 스폐셜 요금제</b></li><br>
 								
 							
 								<li id="payment"><a href="/phonefo/payment/skt/데이터 스폐셜A" title="데이터 스폐셜A">데이터 스폐셜A</a></li>
@@ -564,7 +567,7 @@
 							</ul>
 							<br>
 							<ul class="filtering" style="text-align: left;">
-								<li id="payment" style="font-size: 18px;">LTE 망내 요금제 </li><br>
+								<li id="payment" style="font-size: 18px;"><b>LTE 망내 요금제</b></li><br>
 								
 							
 								<li id="payment"><a href="/phonefo/payment/skt/LTE 망내 34" title="LTE 망내 34">LTE 망내 34</a></li>
@@ -576,7 +579,7 @@
 							</ul>
 							<br>
 							<ul class="filtering" style="text-align: left;">
-								<li id="payment" style="font-size: 18px;">LTE 요금제</li><br>
+								<li id="payment" style="font-size: 18px;"><b>LTE 요금제</b></li><br>
 								
 							
 								<li id="payment"><a href="/phonefo/payment/skt/LTE 34" title="LTE 34">LTE 34</a></li>
@@ -650,7 +653,7 @@
                                 <div class="portfolio-details"> 
                                    <a href="#">
                                         <h4>LTE 요금제</h4>
-                                        <span>SKT</span> 
+                                        <span>LG U+</span> 
                                    </a> 
                                 </div>
                             </div>
@@ -667,7 +670,7 @@
                                 <div class="portfolio-details"> 
                                    <a href="#">
                                         <h4>U+ 페밀리퍕</h4>
-                                        <span>SKT</span> 
+                                        <span>LG U+</span> 
                                    </a> 
                                 </div>
                             </div>
@@ -684,7 +687,7 @@
                                 <div class="portfolio-details"> 
                                    <a href="#">
                                         <h4>LTE 비디오포털</h4>
-                                        <span>KT Olleh</span> 
+                                        <span>LG U+</span> 
                                    </a> 
                                 </div>
                             </div>
@@ -701,7 +704,7 @@
                                 <div class="portfolio-details"> 
                                    <a href="#">
                                         <h4>IOT@home</h4>
-                                        <span>KT Olleh</span> 
+                                        <span>LG U+</span> 
                                    </a> 
                                 </div>
                             </div>
@@ -712,8 +715,35 @@
                 <!-- End Recent Projects Carousel --> 
 		
 		
-		
+		<div style="display: block; position: fixed; top: 400px; left: 80%; z-index: 150; text-align: center; border: 1px solid black; border-radius: 5px; background-color: #F8F8F8; font-family: '돋움',dotum,Helvetica,Sans-serif; width: 100px;">
+			
+			<div class="h_area" style="border-bottom: 1px solid black; background-color: #dddddd; border-radius: 5px 5px 0 0; cursor: move;">
+                  <p><b><strong style="color: black;">리모콘</strong></b><p>
+            </div>
+ 			<div class="remote_cont" style="margin-top: 10px;">
+                        <div style="border-bottom: 1px solid black;">
+                        <p><b><a href="/phonefo/main" class="main" style="text-decoration: none;"><span style="color: red">PHONE</span><br><span style="color: black;">FORMATION</span></a></b></p><br>
+						</div>
+                        
+                        <div class="pg_area2" style="border-bottom: 1px solid black;">
+                                <br><p>
+                                <b><a href="#TOP" style="color: red; text-decoration: none;">SKT</a></b><br>
+                                <b><a href="#KT" style="color: black; text-decoration: none;">KT Olleh</a></b><br>
+                                <b><a href="#LG" style="color: #E952DF; text-decoration: none;">LG U+</a></b>
+                                </p>
+                                <br>
+                        </div>
+                        
+                        <div style="margin: 10px;">
+                        <p><b><a href="#top" style=" text-decoration: none; font-size: 20px;">TOP</a></b></p>
+                        </div>
+            </div>
+	</div>
 		</div>
+
+
+
+		
 
 
 </body>
