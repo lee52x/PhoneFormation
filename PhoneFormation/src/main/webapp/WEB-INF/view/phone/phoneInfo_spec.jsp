@@ -37,6 +37,7 @@
 				</c:forEach>
 			</div>
 		</c:forEach>
+		<c:if test=""></c:if>
 		<hr>
 		<h3>용량</h3>
 		<table>
@@ -49,7 +50,7 @@
 		<hr>
 		<h3>프로세서</h3>
 		<table>
-			<c:forEach items="${list_spec_procesor }" var="list_spec_procesor" varStatus="status">
+			<c:forEach items="${list_spec_processor }" var="list_spec_processor" varStatus="status">
  					<tr>
 						<th>CPU 속도</th><td>${list_spec_procesor.cpu_Speed }</td>
 					</tr>

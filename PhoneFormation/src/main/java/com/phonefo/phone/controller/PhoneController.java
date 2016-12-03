@@ -17,8 +17,9 @@ public class PhoneController {
 	
 	@RequestMapping("phoneInfo")
 	public String phoneInfo(Model model, String manufacture)throws Exception{
-		model.addAttribute("list", service.selectInfo(manufacture));
-		model.addAttribute("manufacture", manufacture);
+		model.addAttribute("list1", service.selectInfo("samsung"));
+		model.addAttribute("list2", service.selectInfo("lg"));
+		model.addAttribute("list3", service.selectInfo("apple"));
 		model.addAttribute("body", "./phone/phoneInfo.jsp");
 		return "mainView";
 	}

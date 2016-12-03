@@ -72,26 +72,38 @@
 	//var manufacture = $('.samsung').attr().val;
 	//alert(manufacture)
 	$(document).ready(function() {
-		if($('.samsung').click(function(){
-			alert('삼성선택');
-			 $.ajax({
-			      type: "post",
-			      url: "queryJSON.jsp",
-			      datatype:"json",
-			      data: { cat: calledCat, point:pPoint[i]},
-			      success:function( data ) {
-			       console.log('check');
-			  		console.log(data.NUM);
-			        }
-			 });
-		}));
-		if($('.lg').click(function(){
-			alert('lg선택');
-		}));
-		if($('.apple').click(function(){
-			alert('apple선택');
-		}));
+		/* loc = location.href.split("?");		
+		if(loc[1]=='manufacture=samsung'){
+			$("#tab_samsung").attr('class','active');	
+			$("#tab_lg").attr('class','');	
+			$("#tab_apple").attr('class','');	
+		}else if(loc[1]=='manufacture=lg'){
+			$("#tab_samsung").attr('class','');	
+			$("#tab_lg").attr('class','active');	
+			alert($('tag_lg').attr('class').val())
+			$("#tab_apple").attr('class','');
+		}else if(loc[1]='manufacture=apple'){
+			$("#tab_samsung").attr('class','');	
+			$("#tab_lg").attr('class','');	
+			$("#tab_apple").attr('class','active');
+		} */
+		 $('#samsung').click(function(){
+			$("#tab_samsung").attr('class','active');	
+			$("#tab_lg").attr('class','');	
+			$("#tab_apple").attr('class','');				
+		})
+		$('#lg').click(function(){
+			$("#tab_samsung").attr('class','');	
+			$("#tab_lg").attr('class','active');	
+			$("#tab_apple").attr('class','');				
+		})
+		$('#apple').click(function(){
+			$("#tab_samsung").attr('class','');	
+			$("#tab_lg").attr('class','');	
+			$("#tab_apple").attr('class','active');				
+		}) 
 	});
+	
 </script>
 </head>
 <body>
@@ -99,28 +111,27 @@
 		<div class="container">
 			<div class="row sidebar-page">
 				<div class="tabs-section">
-					<!-- Nav Tabs -->
 					<ul class="nav nav-tabs" id="manufacture-tab">
-						<li class="active"><a href="#tab-4" data-toggle="tab" class="samsung">삼성전자</a></li>
-						<li class=""><a href="#tab-4" data-toggle="tab" class="lg">LG전자</a></li>
-						<li class=""><a href="#tab-4" data-toggle="tab" class="apple">애플</a></li>
+						<li class="active" id="tab_samsung"><a href="#tab-4" data-toggle="tab" class="samsung">삼성전자</a></li>
+						<li class="" id="tab_lg"><a href="#tab-5" data-toggle="tab" class='lg'>LG전자</a></li>
+						<li class="" id="tab_apple"><a href="#tab-6" data-toggle="tab" class='apple'>애플</a></li>
 					</ul>
 
 					<!-- Tab Panels -->
 					<div class="tab-content">
 						<!-- Tab Content 1 -->
-						<div class="tab-pane fade in active" class="tab-4">
+						<div class="tab-pane fade in active" id="tab-4">
 							<table align="center">
-								<c:forEach items="${list }" var="list" varStatus="status">
-									<c:if test="${status.index%3==0}">
+								<c:forEach items="${list1 }" var="list1" varStatus="status">
+									<c:if test="${status.index%3==0}">                                  
 										<tr>
 									</c:if>
 									<td>
 									<div class="tab-image">
-									<a href="/phonefo/phoneInfo_spec?no=${list.no}">
+									<a href="/phonefo/phoneInfo_spec?no=${list1.no}">
 										<center>
-											<img src="${list.image }">
-											<p>${list.name }</p>
+											<img src="${list1.image }">
+											<p>${list1.name }</p>
 										</center>
 									</a>
 									</div>
@@ -131,7 +142,54 @@
 								</c:forEach>
 							</table>
 						</div>
-					</div>
+						
+						<div class="tab-pane fade in active" id="tab-5">
+								<table align="center">
+								<c:forEach items="${list2 }" var="list2" varStatus="status">
+									<c:if test="${status.index%3==0}">                                  
+										<tr>
+									</c:if>
+									<td>
+									<div class="tab-image">
+									<a href="/phonefo/phoneInfo_spec?no=${list2.no}">
+										<center>
+											<img src="${list2.image }">
+											<p>${list2.name }</p>
+										</center>
+									</a>
+									</div>
+									</td>
+									<c:if test="${status.index%3==2}">
+										</tr>
+									</c:if>
+								</c:forEach>
+							</table>
+						</div>
+						
+						<div class="tab-pane fade in active" id="tab-6">
+						 <table align="center">
+								<c:forEach items="${list3 }" var="list3" varStatus="status">
+									<c:if test="${status.index%3==0}">                                  
+										<tr>
+									</c:if>
+									<td>
+									<div class="tab-image">
+									<a href="/phonefo/phoneInfo_spec?no=${list3.no}">
+										<center>
+											<img src="${list3.image }">
+											<p>${list3.name }</p>
+										</center>
+									</a>
+									</div>
+									</td>
+									<c:if test="${status.index%3==2}">
+										</tr>
+									</c:if>
+								</c:forEach>
+							</table> 
+						
+						</div>
+					</div>                           
 				</div>
 			</div>
 		</div>

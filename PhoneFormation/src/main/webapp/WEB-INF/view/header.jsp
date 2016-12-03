@@ -38,7 +38,6 @@
 				url : "/phonefo/logout",
 				success : function() {
 					location.href = '/phonefo/main';
-
 				}
 			});
 		});
@@ -143,11 +142,11 @@
 				<div class="navbar-collapse collapse">
 					<!-- Start Navigation List -->
 					<ul class="nav navbar-nav navbar-right">
-						<li><a class="active" href="/phonefo/phoneInfo?manufacture=삼성전자">최신폰</a>
+						<li><a class="active" href="/phonefo/phoneInfo">최신폰</a>
 							<ul class="dropdown">
-								<li><a href="/phonefo/phoneInfo?manufacture=삼성전자">삼성전자</a></li>
-								<li><a href="/phonefo/phoneInfo?manufacture=LG전자">LG전자</a></li>
-								<li><a href="/phonefo/phoneInfo?manufacture=애플">애플</a></li>
+								<li><a href="#tab-4"  data-toggle="tab" class="samsung" id="samsung">삼성전자</a></li>
+								<li><a href="#tab-5"  data-toggle="tab" class="lg" id="lg">LG전자</a></li>
+								<li><a href="#tab-6"  data-toggle="tab" class="apple" id="apple">애플</a></li>
 							</ul></li>
 						<li><a href="about.html">견적</a>
 							<ul class="dropdown">

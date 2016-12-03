@@ -43,45 +43,45 @@ create table ph_phone(
 	release_date varchar2(30) not null
 );
 
---삼성전자
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy S7 edge', '/resources/images/phone/GalaxyS7edge_화이트펄.png', '삼성전자', '2016년11월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy S7 edge Olympic Games Limited Edition', '/resources/images/phone/GalaxyS7edgeOlympic_블랙.png', '삼성전자', '2016년07월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy S7 edge Injustice Edition', '/resources/images/phone/GalaxyS7edgeInjustice_블랙.png', '삼성전자', '2016년06월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy S7', '/resources/images/phone/GalaxyS7_블랙오닉스.png', '삼성전자', '2016년07월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy note5', '/resources/images/phone/Galaxynote5_골드플래티넘.png', '삼성전자', '2015년10월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy S6 edge plus', '/resources/images/phone/GalaxyS6_골드플래티넘.png', '삼성전자', '2015년08월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy S6 edge', '/resources/images/phone/GalaxyS6edge_골드플래티넘.png', '삼성전자', '2015년04월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy S6', '/resources/images/phone/GalaxyS6_화이트펄.png', '삼성전자', '2015년04월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy A8(2016)', '/resources/images/phone/GalaxyA8(2016)_실버.png', '삼성전자', '2016년10월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy A3(2016)', '/resources/images/phone/GalaxyA3(2016)_블랙.png', '삼성전자', '2016년03월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy A5(2016)', '/resources/images/phone/GalaxyA5(2016)_블랙.png', '삼성전자', '2016년01월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy A7(2016)', '/resources/images/phone/GalaxyA7(2016)_블랙.png', '삼성전자', '2016년01월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy J3(2016)', '/resources/images/phone/GalaxyJ3(2016)_화이트.png', '삼성전자', '2016년05월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy J5(2016)', '/resources/images/phone/GalaxyJ5(2016)_블랙.png', '삼성전자', '2016년04월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy J7(2016)', '/resources/images/phone/GalaxyJ7(2016)_블랙.png', '삼성전자', '2016년04월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy note edge', '/resources/images/phone/GalaxynoteEdge_화이트.png', '삼성전자', '2014년10월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy note4 S-LTE', '/resources/images/phone/Galaxynote4SLTE_화이트.png', '삼성전자', '2015년01월');
-insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy note4', '/resources/images/phone/Galaxynote4_화이트.png', '삼성전자', '2014년09월');
+--samsung
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy S7 edge', '/resources/images/phone/GalaxyS7edge_화이트펄.png', 'samsung', '2016년11월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy S7 edge Olympic Games Limited Edition', '/resources/images/phone/GalaxyS7edgeOlympic_블랙.png', 'samsung', '2016년07월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy S7 edge Injustice Edition', '/resources/images/phone/GalaxyS7edgeInjustice_블랙.png', 'samsung', '2016년06월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy S7', '/resources/images/phone/GalaxyS7_블랙오닉스.png', 'samsung', '2016년07월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy note5', '/resources/images/phone/Galaxynote5_골드플래티넘.png', 'samsung', '2015년10월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy S6 edge plus', '/resources/images/phone/GalaxyS6_골드플래티넘.png', 'samsung', '2015년08월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy S6 edge', '/resources/images/phone/GalaxyS6edge_골드플래티넘.png', 'samsung', '2015년04월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy S6', '/resources/images/phone/GalaxyS6_화이트펄.png', 'samsung', '2015년04월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy A8(2016)', '/resources/images/phone/GalaxyA8(2016)_실버.png', 'samsung', '2016년10월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy A3(2016)', '/resources/images/phone/GalaxyA3(2016)_블랙.png', 'samsung', '2016년03월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy A5(2016)', '/resources/images/phone/GalaxyA5(2016)_블랙.png', 'samsung', '2016년01월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy A7(2016)', '/resources/images/phone/GalaxyA7(2016)_블랙.png', 'samsung', '2016년01월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy J3(2016)', '/resources/images/phone/GalaxyJ3(2016)_화이트.png', 'samsung', '2016년05월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy J5(2016)', '/resources/images/phone/GalaxyJ5(2016)_블랙.png', 'samsung', '2016년04월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy J7(2016)', '/resources/images/phone/GalaxyJ7(2016)_블랙.png', 'samsung', '2016년04월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy note edge', '/resources/images/phone/GalaxynoteEdge_화이트.png', 'samsung', '2014년10월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy note4 S-LTE', '/resources/images/phone/Galaxynote4SLTE_화이트.png', 'samsung', '2015년01월');
+insert into ph_phone values (ph_phone_seq.nextval, 'Galaxy note4', '/resources/images/phone/Galaxynote4_화이트.png', 'samsung', '2014년09월');
 
---애플
-insert into ph_phone values (ph_phone_seq.nextval, 'iPhone 7', '/resources/images/phone/iPhone7_실버.png', '애플', '2016년10월');
-insert into ph_phone values (ph_phone_seq.nextval, 'iPhone 7 plus', '/resources/images/phone/iPhone7Plus_실버.png', '애플', '2016년10월');
-insert into ph_phone values (ph_phone_seq.nextval, 'iPhone 6s', '/resources/images/phone/iPhone6s_실버.png', '애플', '2015년10월');
-insert into ph_phone values (ph_phone_seq.nextval, 'iPhone 6s Plus', '/resources/images/phone/iPhone6sPlus_실버.png', '애플', '2015년10월');
-insert into ph_phone values (ph_phone_seq.nextval, 'iPhone 6 Plus', '/resources/images/phone/iPhone6Plus_실버.png', '애플', '2014년10월');
-insert into ph_phone values (ph_phone_seq.nextval, 'iPhoneSE', '/resources/images/phone/iPhoneSE_로즈골드.png', '애플', '2016년05월');
+--apple
+insert into ph_phone values (ph_phone_seq.nextval, 'iPhone 7', '/resources/images/phone/iPhone7_실버.png', 'apple', '2016년10월');
+insert into ph_phone values (ph_phone_seq.nextval, 'iPhone 7 plus', '/resources/images/phone/iPhone7Plus_실버.png', 'apple', '2016년10월');
+insert into ph_phone values (ph_phone_seq.nextval, 'iPhone 6s', '/resources/images/phone/iPhone6s_실버.png', 'apple', '2015년10월');
+insert into ph_phone values (ph_phone_seq.nextval, 'iPhone 6s Plus', '/resources/images/phone/iPhone6sPlus_실버.png', 'apple', '2015년10월');
+insert into ph_phone values (ph_phone_seq.nextval, 'iPhone 6 Plus', '/resources/images/phone/iPhone6Plus_실버.png', 'apple', '2014년10월');
+insert into ph_phone values (ph_phone_seq.nextval, 'iPhoneSE', '/resources/images/phone/iPhoneSE_로즈골드.png', 'apple', '2016년05월');
 
---LG전자
-insert into ph_phone values (ph_phone_seq.nextval, 'V20', '/resources/images/phone/V20_실버.png', 'LG전자', '2016년09월');
-insert into ph_phone values (ph_phone_seq.nextval, 'V10', '/resources/images/phone/V10_럭스화이트.png', 'LG전자', '2015년10월');
-insert into ph_phone values (ph_phone_seq.nextval, 'G5', '/resources/images/phone/G5_실버.png', 'LG전자', '2016년03월');
-insert into ph_phone values (ph_phone_seq.nextval, 'G4', '/resources/images/phone/G4_세라믹화이트.png', 'LG전자', '2015년04월');
-insert into ph_phone values (ph_phone_seq.nextval, 'GStylo', '/resources/images/phone/GStylo_화이트.png', 'LG전자', '2015년04월');
-insert into ph_phone values (ph_phone_seq.nextval, 'GFlex2', '/resources/images/phone/GFlex2_플래티넘실버.png', 'LG전자', '2015년01월');
-insert into ph_phone values (ph_phone_seq.nextval, 'G3Screen', '/resources/images/phone/G3Screen_화이트.png', 'LG전자', '2014년10월');
-insert into ph_phone values (ph_phone_seq.nextval, 'G3A', '/resources/images/phone/G3A_화이트.png', 'LG전자', '2014년08월');
-insert into ph_phone values (ph_phone_seq.nextval, 'G3Cat6', '/resources/images/phone/G3Cat6_실크화이트.png', 'LG전자', '2014년08월');
-insert into ph_phone values (ph_phone_seq.nextval, 'G3', '/resources/images/phone/G3_실크화이트.png', 'LG전자', '2014년05월');
+--lg
+insert into ph_phone values (ph_phone_seq.nextval, 'V20', '/resources/images/phone/V20_실버.png', 'lg', '2016년09월');
+insert into ph_phone values (ph_phone_seq.nextval, 'V10', '/resources/images/phone/V10_럭스화이트.png', 'lg', '2015년10월');
+insert into ph_phone values (ph_phone_seq.nextval, 'G5', '/resources/images/phone/G5_실버.png', 'lg', '2016년03월');
+insert into ph_phone values (ph_phone_seq.nextval, 'G4', '/resources/images/phone/G4_세라믹화이트.png', 'lg', '2015년04월');
+insert into ph_phone values (ph_phone_seq.nextval, 'GStylo', '/resources/images/phone/GStylo_화이트.png', 'lg', '2015년04월');
+insert into ph_phone values (ph_phone_seq.nextval, 'GFlex2', '/resources/images/phone/GFlex2_플래티넘실버.png', 'lg', '2015년01월');
+insert into ph_phone values (ph_phone_seq.nextval, 'G3Screen', '/resources/images/phone/G3Screen_화이트.png', 'lg', '2014년10월');
+insert into ph_phone values (ph_phone_seq.nextval, 'G3A', '/resources/images/phone/G3A_화이트.png', 'lg', '2014년08월');
+insert into ph_phone values (ph_phone_seq.nextval, 'G3Cat6', '/resources/images/phone/G3Cat6_실크화이트.png', 'lg', '2014년08월');
+insert into ph_phone values (ph_phone_seq.nextval, 'G3', '/resources/images/phone/G3_실크화이트.png', 'lg', '2014년05월');
 
 
 create table ph_color( --핸드폰 색상
@@ -92,7 +92,7 @@ create table ph_color( --핸드폰 색상
 	primary key(no,color)
 );
 
---삼성전자
+--samsung
 insert into ph_color values (1, '화이트펄', '/resources/images/phone/GalaxyS7edge_화이트펄.png');
 insert into ph_color values (1, '블루코랄', '/resources/images/phone/GalaxyS7edge_블루코랄.png');
 insert into ph_color values (1, '블랙오닉스', '/resources/images/phone/GalaxyS7edge_블랙오닉스.png');
@@ -169,7 +169,7 @@ insert into ph_color values (18, '골드', '/resources/images/phone/Galaxynote4_골
 insert into ph_color values (18, '핑크', '/resources/images/phone/Galaxynote4_핑크.png');
 insert into ph_color values (18, '레드', '/resources/images/phone/Galaxynote4_레드.png');
 
---애플
+--apple
 insert into ph_color values (19, '로즈골드', '/resources/images/phone/iPhone7_로드골드.png');
 insert into ph_color values (19, '골드', '/resources/images/phone/iPhone7_골드.png');
 insert into ph_color values (19, '실버', '/resources/images/phone/iPhone7_실버.png');
@@ -199,7 +199,7 @@ insert into ph_color values (23, '실버', '/resources/images/phone/iPhone6Plus_실
 insert into ph_color values (24, '스페이스그레이', '/resources/images/phone/iPhoneSE_스페이스그레이.png');
 insert into ph_color values (24, '로즈골드', '/resources/images/phone/iPhoneSE_로즈골드.png');
 
---LG전자
+--lg
 insert into ph_color values (25, '티탄', '/resources/images/phone/V20_티탄.png');
 insert into ph_color values (25, '실버', '/resources/images/phone/V20_실버.png');
 insert into ph_color values (25, '핑크', '/resources/images/phone/V20_핑크.png');
@@ -248,7 +248,7 @@ create table ph_capacity( --핸드폰 용량
 	primary key(no, capacity)
 );
 
---삼성전자
+--samsung
 insert into ph_capacity values (1, '32GB', 924000);
 insert into ph_capacity values (1, '64GB', 968000);
 insert into ph_capacity values (2, '32GB', 1067000);
@@ -274,7 +274,7 @@ insert into ph_capacity values (16, '32GB', 1067000);
 insert into ph_capacity values (17, '32GB', 799700);
 insert into ph_capacity values (18, '32GB', 957000);
 
---애플
+--apple
 insert into ph_capacity values (19, '32GB', 869000);
 insert into ph_capacity values (19, '128GB', 999900);
 insert into ph_capacity values (19, '256GB', 1130800);
@@ -292,7 +292,7 @@ insert into ph_capacity values (23, '64GB', 1050600);
 insert into ph_capacity values (24, '16GB', 569800);
 insert into ph_capacity values (24, '64GB', 699600);
 
---LG전자
+--lg
 insert into ph_capacity values (25, '64GB', 899800);
 insert into ph_capacity values (26, '64GB', 599500);
 insert into ph_capacity values (27, '32GB', 699600);
@@ -806,3 +806,12 @@ insert into spec_service values (31,'null','null','예','null','null');
 insert into spec_service values (32,'null','null','예','null','null');
 insert into spec_service values (33,'null','null','예','null','null');
 insert into spec_service values (34,'null','null','예','null','null');
+
+
+
+
+	<select id="selectInfo" parameterType="String" resultType="phone">
+		select *
+		from ph_phone
+		where manufacture='samsung'
+		order by no desc
