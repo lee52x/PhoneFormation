@@ -1166,6 +1166,13 @@ label.checkbox-label {
 	border-bottom: 1px solid #E3E3E3;
 	padding: 10px 0;
 }
+.container2{
+	padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
 </style>
 </head>
 
@@ -1306,10 +1313,10 @@ label.checkbox-label {
 		<br>
 		<br>
 	</form>
+	    
 	
 	
-	
-			<div class="container">
+<div class="container" style="width: 1170px;">
 	<div class="tit_1">
 	<div class="page_name">
 		<span style="background:none; padding:0;" class="glyphicon glyphicon-certificate">고객정보입력</span>
