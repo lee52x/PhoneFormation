@@ -152,7 +152,7 @@
 							<ul class="dropdown">
 								<li><a href="/phonefo/secondHand">중고견적</a></li>
 								<li><a href="/phonefo/listBoard">중고게시판</a></li>
-								<li><a href="about.html">수리견적</a></li>
+								<li><a href="/phonefo/repair">수리견적</a></li>
 							</ul></li>
 						<li><a href="/phonefo/payment">요금제</a>
 							<ul class="dropdown">

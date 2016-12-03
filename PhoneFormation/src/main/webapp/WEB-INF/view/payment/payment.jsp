@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>요금제</title>
 </head>
+<link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css" type="text/css" />
+
 	<link href="http://www.tworld.co.kr/poc/inc/css/common.css"
 		rel="stylesheet" type="text/css">
 	<link href="http://www.tworld.co.kr/poc/inc/css/purchase.css"
@@ -33,9 +35,25 @@
 	<script type="text/javascript"
 		src="http://www.tworld.co.kr/poc/inc/js/lib/wddo.selectbox-1.5.4.js"></script>
 
-<style type="text/css">
+<script type="text/javascript">
 
-</style>
+	$(document).ready(function() {
+		$('#UD').click(function() {
+			var str = $('#UD_img').attr('src');
+			//alert(str);
+			
+			if($('#UD_img').attr('src') === '/resources/images/payment/up.png'){
+			$('#UD_img').attr('src', '/resources/images/payment/down.png');
+			$('#UD_tab').css('bottom', '0px');
+			}else {
+				$('#UD_img').attr('src', '/resources/images/payment/up.png');
+				$('#UD_tab').css('bottom', '-61px');
+			}
+		});
+	});
+
+</script>
+
 <body id="top">
 
 	<div class="container">
@@ -310,15 +328,15 @@
 								<li id="payment" style="font-size: 18px; font: bold;"><b>순 완전무한 요금제</b></li><br>
 								
 							
-								<li id="payment"><a href="/phonefo/payment/skt/순 완전무한 99" title="순 완전무한 99">순 완전무한 99</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/순 완전무한 99" title="순 완전무한 99">순 완전무한 99</a></li>
 																
-								<li id="payment"><a href="/phonefo/payment/skt/순 완전무한 77" title="순 완전무한 77">순 완전무한 77</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/순 완전무한 77" title="순 완전무한 77">순 완전무한 77</a></li>
 								
-								<li id="payment"><a href="/phonefo/payment/skt/순 완전무한 67" title="순 완전무한 67">순 완전무한 67</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/순 완전무한 67" title="순 완전무한 67">순 완전무한 67</a></li>
 								
-								<li id="payment"><a href="/phonefo/payment/skt/순 완전무한 61" title="순 완전무한 61">순 완전무한 61</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/순 완전무한 61" title="순 완전무한 61">순 완전무한 61</a></li>
 								
-								<li id="payment"><a href="/phonefo/payment/skt/순 완전무한 51" title="순 완전무한 51">순 완전무한 51</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/순 완전무한 51" title="순 완전무한 51">순 완전무한 51</a></li>
 							
 							</ul>
 							<br>
@@ -326,11 +344,11 @@
 								<li id="payment" style="font-size: 18px;"><b>순 모두다올레 요금제</b></li><br>
 								
 							
-								<li id="payment"><a href="/phonefo/payment/skt/순 모두다올레 41" title="순 모두다올레 41">순 모두다올레 41</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/순 모두다올레 41" title="순 모두다올레 41">순 모두다올레 41</a></li>
 																
-								<li id="payment"><a href="/phonefo/payment/skt/순 모두다올레 34" title="순 모두다올레 34">순 모두다올레 34</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/순 모두다올레 34" title="순 모두다올레 34">순 모두다올레 34</a></li>
 							
-								<li id="payment"><a href="/phonefo/payment/skt/순 모두다올레 28" title="순 모두다올레 28">순 모두다올레 28</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/순 모두다올레 28" title="순 모두다올레 28">순 모두다올레 28</a></li>
 
 							</ul>
 							<br>
@@ -338,13 +356,13 @@
 								<li id="payment" style="font-size: 18px;"><b>Y틴 요금제</b></li><br>
 								
 							
-								<li id="payment"><a href="/phonefo/payment/skt/Y틴 38" title="전국민 무한 100">Y틴 38</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/Y틴 38" title="전국민 무한 100">Y틴 38</a></li>
 								
-								<li id="payment"><a href="/phonefo/payment/skt/Y틴 32" title="Y틴 32">Y틴 32</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/Y틴 32" title="Y틴 32">Y틴 32</a></li>
 																
-								<li id="payment"><a href="/phonefo/payment/skt/Y틴 27" title="Y틴 27">Y틴 27</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/Y틴 27" title="Y틴 27">Y틴 27</a></li>
 							
-								<li id="payment"><a href="/phonefo/payment/skt/Y틴 20" title="LTE 데이터 무제한 80팩">Y틴 20</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/Y틴 20" title="Y틴 20">Y틴 20</a></li>
 								
 							</ul>
 							<br>
@@ -352,15 +370,15 @@
 								<li id="payment" style="font-size: 18px;"><b>Y24 요금제</b></li><br>
 								
 							
-								<li id="payment"><a href="/phonefo/payment/skt/Y24 65.8" title="Y24 65.8">Y24 65.8</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/Y24 65.8" title="Y24 65.8">Y24 65.8</a></li>
 								
-								<li id="payment"><a href="/phonefo/payment/skt/Y24 54.8" title="Y24 54.8">Y24 54.8</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/Y24 54.8" title="Y24 54.8">Y24 54.8</a></li>
 																
-								<li id="payment"><a href="/phonefo/payment/skt/Y24 49.3" title="Y24 49.3">Y24 49.3</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/Y24 49.3" title="Y24 49.3">Y24 49.3</a></li>
 							
-								<li id="payment"><a href="/phonefo/payment/skt/Y24 38.3" title="Y24 38.3">Y24 38.3</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/Y24 38.3" title="Y24 38.3">Y24 38.3</a></li>
 								
-								<li id="payment"><a href="/phonefo/payment/skt/Y24 32.8" title="Y24 32.8">Y24 32.8</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/Y24 32.8" title="Y24 32.8">Y24 32.8</a></li>
 								
 							</ul>
 							<br>
@@ -368,15 +386,15 @@
 								<li id="payment" style="font-size: 18px;"><b>LTE-알 요금제</b></li><br>
 								
 							
-								<li id="payment"><a href="/phonefo/payment/skt/LTE-알520" title="LTE-알520">LTE-알 520</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/LTE-알520" title="LTE-알520">LTE-알 520</a></li>
 								
-								<li id="payment"><a href="/phonefo/payment/skt/LTE-알420" title="LTE-알420">LTE-알 420</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/LTE-알420" title="LTE-알420">LTE-알 420</a></li>
 																
-								<li id="payment"><a href="/phonefo/payment/skt/LTE-알340" title="LTE-알340">LTE-알 340</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/LTE-알340" title="LTE-알340">LTE-알 340</a></li>
 							
-								<li id="payment"><a href="/phonefo/payment/skt/LTE-알240" title="LTE-알240">LTE-알 240</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/LTE-알240" title="LTE-알240">LTE-알 240</a></li>
 								
-								<li id="payment"><a href="/phonefo/payment/skt/LTE-알190" title="LTE-알190">LTE-알 190</a></li>
+								<li id="payment"><a href="/phonefo/payment/kt/LTE-알190" title="LTE-알190">LTE-알 190</a></li>
 								
 							</ul>
 							<br>
@@ -540,15 +558,15 @@
 								<li id="payment" style="font-size: 18px;"><b>데이터 요금제</b></li><br>
 								
 							
-								<li id="payment"><a href="/phonefo/payment/skt/데이터 요금제 일반" title="데이터 요금제 일반">데이터 요금제 일반</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/데이터 일반" title="데이터 요금제 일반">데이터 요금제 일반</a></li>
 																
-								<li id="payment"><a href="/phonefo/payment/skt/데이터 요금제 1.3" title="데이터 요금제 1.3c">데이터 요금제  1.3</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/데이터 1.3" title="데이터 요금제 1.3c">데이터 요금제  1.3</a></li>
 							
-								<li id="payment"><a href="/phonefo/payment/skt/데이터 요금제 2.3" title="데이터 요금제 2.3">데이터 요금제 2.3</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/데이터 2.3" title="데이터 요금제 2.3">데이터 요금제 2.3</a></li>
 							
-								<li id="payment"><a href="/phonefo/payment/skt/데이터 요금제 3.6" title="데이터 요금제3.6">데이터 요금제 3.6</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/데이터 3.6" title="데이터 요금제3.6">데이터 요금제 3.6</a></li>
 							
-								<li id="payment"><a href="/phonefo/payment/skt/데이터 요금제 6.6" title="데이터 요금제6.6">데이터 요금제 6.6</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/데이터 6.6" title="데이터 요금제6.6">데이터 요금제 6.6</a></li>
 							
 							</ul>
 							<br>
@@ -556,13 +574,13 @@
 								<li id="payment" style="font-size: 18px;"><b>데이터 스폐셜 요금제</b></li><br>
 								
 							
-								<li id="payment"><a href="/phonefo/payment/skt/데이터 스폐셜A" title="데이터 스폐셜A">데이터 스폐셜A</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/데이터 스폐셜A" title="데이터 스폐셜A">데이터 스폐셜A</a></li>
 																
-								<li id="payment"><a href="/phonefo/payment/skt/데이터 스폐셜B" title="데이터 스폐셜B">데이터 스폐셜B</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/데이터 스폐셜B" title="데이터 스폐셜B">데이터 스폐셜B</a></li>
 							
-								<li id="payment"><a href="/phonefo/payment/skt/데이터 스폐셜C" title="데이터 스폐셜C">데이터 스폐셜C</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/데이터 스폐셜C" title="데이터 스폐셜C">데이터 스폐셜C</a></li>
 
-								<li id="payment"><a href="/phonefo/payment/skt/데이터 스폐셜D" title="데이터 스폐셜D">데이터 스폐셜D</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/데이터 스폐셜D" title="데이터 스폐셜D">데이터 스폐셜D</a></li>
 
 							</ul>
 							<br>
@@ -570,11 +588,11 @@
 								<li id="payment" style="font-size: 18px;"><b>LTE 망내 요금제</b></li><br>
 								
 							
-								<li id="payment"><a href="/phonefo/payment/skt/LTE 망내 34" title="LTE 망내 34">LTE 망내 34</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/LTE 망내 34" title="LTE 망내 34">LTE 망내 34</a></li>
 								
-								<li id="payment"><a href="/phonefo/payment/skt/LTE 망내 42" title="LTE 망내 42">LTE 망내 42</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/LTE 망내 42" title="LTE 망내 42">LTE 망내 42</a></li>
 																
-								<li id="payment"><a href="/phonefo/payment/skt/LTE 망내 52" title="LTE 망내 52">LTE 망내 52</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/LTE 망내 52" title="LTE 망내 52">LTE 망내 52</a></li>
 
 							</ul>
 							<br>
@@ -582,21 +600,21 @@
 								<li id="payment" style="font-size: 18px;"><b>LTE 요금제</b></li><br>
 								
 							
-								<li id="payment"><a href="/phonefo/payment/skt/LTE 34" title="LTE 34">LTE 34</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/LTE 34" title="LTE 34">LTE 34</a></li>
 								
-								<li id="payment"><a href="/phonefo/payment/skt/LTE 42" title="LTE 42">LTE 42</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/LTE 42" title="LTE 42">LTE 42</a></li>
 																
-								<li id="payment"><a href="/phonefo/payment/skt/LTE 52" title="LTE 52">LTE 52</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/LTE 52" title="LTE 52">LTE 52</a></li>
 							
-								<li id="payment"><a href="/phonefo/payment/skt/LTE 62" title="LTE 62">LTE 62</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/LTE 62" title="LTE 62">LTE 62</a></li>
 								
-								<li id="payment"><a href="/phonefo/payment/skt/LTE 72" title="LTE 72">LTE 72</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/LTE 72" title="LTE 72">LTE 72</a></li>
 
-								<li id="payment"><a href="/phonefo/payment/skt/LTE 85" title="LTE 85">LTE 85</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/LTE 85" title="LTE 85">LTE 85</a></li>
 
-								<li id="payment"><a href="/phonefo/payment/skt/LTE 100" title="LTE 100">LTE 100</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/LTE 100" title="LTE 100">LTE 100</a></li>
 
-								<li id="payment"><a href="/phonefo/payment/skt/LTE 120" title="LTE 120">LTE 120</a></li>
+								<li id="payment"><a href="/phonefo/payment/lg/LTE 120" title="LTE 120">LTE 120</a></li>
 
 							</ul>
 							<br>
@@ -714,8 +732,8 @@
                 </div>
                 <!-- End Recent Projects Carousel --> 
 		
-		
-		<div style="display: block; position: fixed; top: 400px; left: 80%; z-index: 150; text-align: center; border: 1px solid black; border-radius: 5px; background-color: #F8F8F8; font-family: '돋움',dotum,Helvetica,Sans-serif; width: 100px;">
+		<!-- 퀵메뉴 리모컨 -->
+		<div style="display: block; position: fixed; top: 400px; right:10%; z-index: 150; text-align: center; border: 1px solid black; border-radius: 5px; background-color: #F8F8F8; font-family: '돋움',dotum,Helvetica,Sans-serif; width: 100px;">
 			
 			<div class="h_area" style="border-bottom: 1px solid black; background-color: #dddddd; border-radius: 5px 5px 0 0; cursor: move;">
                   <p><b><strong style="color: black;">리모콘</strong></b><p>
@@ -738,13 +756,36 @@
                         <p><b><a href="#top" style=" text-decoration: none; font-size: 20px;">TOP</a></b></p>
                         </div>
             </div>
-	</div>
 		</div>
-
-
-
 		
+		<!-- 요금제 비교 리모컨 -->
+		<div id="UD_tab" style="display: block; position: fixed; bottom: -61px; left: 20%; z-index: 150; text-align: center; border: 1px solid black; border-radius: 5px; background-color: #F8F8F8; font-family: '돋움',dotum,Helvetica,Sans-serif; width: 60%;">
 
-
+ 			<div class="remote_cont">
+ 						<table>
+ 							<tr style="height: 30px;">
+ 								<td colspan="3" style="border-bottom: 1px solid black;height: 30px; background-color: #dddddd; border-radius: 5px 5px 0 0;"><b>요금제 비교하기</b></td>
+ 								<td style="border-bottom: 1px solid black; font-size: 15px; color: red; width: 10%;"><button id="UD" style="width: 100%; height: 100%;"><img id="UD_img" width="100%" height="100%" alt="탭 올리기 " src="/resources/images/payment/up.png"></button></td>
+ 							</tr>
+ 							<tr>
+ 							</tr>	
+ 							<tr style="height: 30px;font-size: 15px; border-bottom: 1px solid black;">
+ 								<th style="width: 40%; border-right: 1px solid black;" >요금제 A</th>
+ 								<th style="width: 40%; border-right: 1px solid black;" >요금제 B</th>
+ 								<th colspan="2" rowspan="2" style="width: 20%;background-color: skyblue"><button type="button" style="width: 100%;height: 100%; color: black;">비교하기</button></th>
+ 							</tr>
+ 							<tr style="height: 30px;font-size: 15px">
+ 								<td style="border-right: 1px solid black;">123</td>
+ 								<td style="border-right: 1px solid black;">456</td>
+ 							</tr>
+ 						</table>
+                        
+            </div>
+		</div>
+	
+	
+	
+	</div>
+	
 </body>
 </html>

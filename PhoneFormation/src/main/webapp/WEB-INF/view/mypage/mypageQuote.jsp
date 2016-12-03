@@ -123,17 +123,19 @@ $("#popup2").hide();
 					<td>${mypageQuote.username}</td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 										value="${mypageQuote.rdate}" /></td>
+					
 					<c:choose>
 						<c:when test="${mypageQuote.state eq '0'}">
 								<td>거래대기</td>
 							</c:when>
 						<c:when test="${mypageQuote.state eq '1'}">
-							<td>거래신청</td>
+							<td><button class="btn btn-primary" onclick="callPurchase()">거래중</button></td>
 						</c:when>
 							<c:otherwise>
 								<td>거래완료</td>
 							</c:otherwise>
 						</c:choose>
+				
 					<td><button class="btn btn-primary"  onclick="callTable
 					('${mypageQuote.manufacture}','${mypageQuote.machine}','${mypageQuote.quote_price}','${mypageQuote.power}'
 					,'${mypageQuote.glass}','${mypageQuote.equipment}','${mypageQuote.username}','<fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${mypageQuote.rdate}" />','${mypageQuote.tel}'
