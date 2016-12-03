@@ -65,19 +65,43 @@ create sequence ph_quoteBoard_seq
 	nocycle;
 	
 	
---중고매입 요청 목록 테이블---
+--중고매입  테이블---
 	create table purchase_request(
 		purchaseNum number(2) primary key,
 		userid varchar2(50),  
 		no number(10) references ph_quoteBoard(no),
 		state number(5)
 	)
-	
+---중고매입 시퀀스---
 	create sequence purchase_request_seq
 	start with 1
 	increment by 1 
 	nocache
 	nocycle;
+
+--수리테이블--
+drop table ph_repair;
+create table ph_repair(
+	name varchar2(100),
+	glass number(10),
+	backcover number(10),
+	crome number(10),
+	pan number(10),
+	scratch number(10),
+	powerbutton number(10),
+	homebutton number(10),
+	sound number(10),
+	camera number(10),
+	wifi number(10),
+	charge number(10),
+	battery number(10),
+	sensor number(10),
+	afterimage number(10),
+	lcd number(10),
+	foreign key(name) references ph_phone(name)
+)
+insert into ph_repair values('Galaxy S7',120000,50000,20000,20000,30000,50000,50000,70000,100000,100000,50000,50000,20000,20000,30000)
+select*from ph_repair
  
 	select*from purchase_request
 	

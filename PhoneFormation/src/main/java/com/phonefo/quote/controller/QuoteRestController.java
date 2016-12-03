@@ -1,15 +1,14 @@
 package com.phonefo.quote.controller;
 
-import java.lang.reflect.Member;
-import java.util.ArrayList;
+
 import java.util.Calendar;
-import java.util.Date;
+
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.http.HttpMethod;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,6 +18,7 @@ import com.phonefo.main.domain.MemberVO;
 import com.phonefo.quote.domain.PhoneVO;
 import com.phonefo.quote.domain.PurchaseVO;
 import com.phonefo.quote.domain.QuoteVO;
+import com.phonefo.quote.domain.RepairVO;
 import com.phonefo.quote.service.PhoneService;
 
 @RestController
@@ -152,4 +152,13 @@ public class QuoteRestController {
 		
 		
 	}
+	
+	@RequestMapping("/repairPrice")
+	public RepairVO repair(String machine)throws Exception{
+		RepairVO vo = service.repairPrice(machine);
+		
+		
+		return vo;
+	}
+
 }

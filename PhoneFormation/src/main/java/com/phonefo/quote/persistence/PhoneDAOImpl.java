@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.phonefo.quote.domain.PhoneVO;
 import com.phonefo.quote.domain.PurchaseVO;
 import com.phonefo.quote.domain.QuoteVO;
+import com.phonefo.quote.domain.RepairVO;
 
 @Repository
 public class PhoneDAOImpl implements PhoneDAO{
@@ -73,6 +74,13 @@ public class PhoneDAOImpl implements PhoneDAO{
 		
 		 sql.insert("quote.purchase_request",vo);
 		
+	}
+
+	@Override
+	public RepairVO repairPrice(String machine) throws Exception {
+		
+		
+		return sql.selectOne("quote.repairPrice", machine);
 	}
 	
 

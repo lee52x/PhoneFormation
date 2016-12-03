@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.phonefo.quote.domain.PhoneVO;
 import com.phonefo.quote.domain.PurchaseVO;
 import com.phonefo.quote.domain.QuoteVO;
+import com.phonefo.quote.domain.RepairVO;
 import com.phonefo.quote.persistence.PhoneDAO;
 
 
@@ -62,6 +63,15 @@ public class PhoneServiceImpl implements PhoneService{
 	public void purchase(PurchaseVO vo) throws Exception {
 		
 		dao.purchase(vo);
+		
+	}
+
+	@Override
+	public RepairVO repairPrice(String machine) throws Exception {
+		
+		return dao.repairPrice(machine);
+		
+		
 		
 	}
 

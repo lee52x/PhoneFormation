@@ -13,7 +13,7 @@
 	$(document).ready(function() {
 
 		/*셀렉트박스*/
-		$('#quote').hide(); //견적서 숨기기
+		//$('#quote').hide(); //견적서 숨기기
 
 		var manufacture = $("select#manufacture");
 
@@ -95,6 +95,62 @@
 			});
 
 		});
+		
+		
+		$('#calculator').click(function(){
+			//$('#glass').prop('checked')
+			$.ajax({
+				url:"/phonefo/repairPrice",
+				data:{machine:$('#machine').val()},
+				success:function(result){
+					
+					
+					//alert(result.glass);
+					
+					var repairPrice=0;
+					if($('#glass').prop('checked')){
+						repairPrice += result.glass;
+					} if($('#backcover').prop('checked')){
+						repairPrice += result.backcover;
+					} if($('#crome').prop('checked')){
+						repairPrice += result.crome;
+					} if($('#pan').prop('checked')){
+						repairPrice += result.pan;
+					} if($('#scratch').prop('checked')){
+						repairPrice += result.scratch;
+					} if($('#powerbutton').prop('checked')){
+						repairPrice += result.powerbutton;
+					} if($('#homebutton').prop('checked')){
+						repairPrice += result.homebutton;
+					} if($('#sound').prop('checked')){
+						repairPrice += result.sound;
+					} if($('#camera').prop('checked')){
+						repairPrice += result.camera;
+					} if($('#wifi').prop('checked')){
+						repairPrice += result.wifi;
+					} if($('#charge').prop('checked')){
+						repairPrice += result.charge;
+					} if($('#battery').prop('checked')){
+						repairPrice += result.battery;
+					} if($('#sensor').prop('checked')){
+						repairPrice += result.sensor;
+					} if($('#afterimage').prop('checked')){
+						repairPrice += result.afterimage;
+					} if($('#lcd').prop('checked')){
+						repairPrice += result.lcd;
+					}
+					
+					$('#quote_price').val(repairPrice);
+			
+					
+				}
+				
+			});
+
+			
+		
+		});
+		
 
 
 
@@ -102,32 +158,10 @@
 
 	});
 	function check() {
-		var f = document.frm;
-		$.ajax({
-			url : "/phonefo/calculator",
-			type : 'POST',
-			data : {
-				howsend : f.radid_01.value,
-				manufacture : f.manufacture.value,
-				machine : f.machine.value,
-				capacity : f.capacity.value,
-				power : f.radid_02.value,
-				glass : f.radid_03.value,
-				equipment : f.radid_04.value
-			},
-			success : function(vo2) {
-
-				$('#release_price').val(vo2.release_price);
-				$('#quote_price').val(vo2.quote_price);
-				var cut_price = vo2.release_price - vo2.quote_price;
-				$('#cut_price').val('-' + cut_price);
-				$('#quote').show(function() {
-					$("#quote").attr("tabindex", -1).focus();
-				});
-			}
-		});
-
-
+		
+		
+		
+		
 	}
 
 	function sellPhone() {
@@ -139,7 +173,55 @@
 	}
 </script>
 <style type="text/css">
+.tit_1{margin-top:30px; border-bottom:1px solid #eee; height:30px;}
+.tit_1 .page_name{display:block; background:url(/img/ico_nowpage.gif) no-repeat 0 2px; padding-left:20px; margin-bottom:10px; height:20px; text-align:left;}
+.tit_1 .page_name span{display:inline-block; background:url(http://www.hunphone.co.kr//img/aw_nowpage.gif) no-repeat right 3px; height:20px; vertical-align:middle; padding-right:15px; margin-right:5px; font-size:16px; color:#e54c47;}
+.tit_1 .page_name span a{display:block; font-size:16px; color:#e54c47;}
+.write_form{width:100%;}
+.write_form th, td{padding:0; height:30px; line-height:30px; background:url('http://www.hunphone.co.kr//img/dotted.gif') repeat-x bottom;}
+.write_form .last{border-bottom:1px solid #e5e5e5; background:none;}
+.write_form th{width:190px; text-align:left;}
+.write_form th span{display:inline-block; background:url(http://www.hunphone.co.kr//img/aw_none.png) no-repeat 20px 50%; padding-left:30px; font-size:14px; color:#e54c47;}
+.write_form td label{margin-left:5px; margin-right:15px;}
 
+.write_form2{width:100%; background:none;}
+.write_form2 th, td{position:relative; padding:0; height:20px; line-height:20px; background:url('http://www.hunphone.co.kr//img/dotted.gif') repeat-x bottom;}
+.write_form2 .last{border-bottom:1px solid #e5e5e5; background:none;}
+.write_form2 th{width:150px; text-align:left; }
+.write_form2 th span{display:inline-block; background:url(http://www.hunphone.co.kr//img/aw_none.png) no-repeat 20px 50%; padding-left:30px; font-size:12px; color:#e54c47;}
+.write_form2 td label{margin-left:5px; margin-right:15px; border:1px solid #000;}
+.write_form2 th, td input[type=text]{height:20px;}
+.write_form2 td.price{font-weight:bold;}
+.write_form2 td.price input[type=text]{width:150px; position:absolute; left:155px; top:7px;}
+.write_form2 td.price .won{position:absolute; left:330px; }
+.deliveryopt {display:none}
+#tbl_deli {border-collapse: collapse;border-spacing: 0px;border:1px solid #000}
+#tbl_deli td, #tbl_deli th {line-height:16px;border-collapse: collapse;border-spacing: 0px;border:1px solid #000}
+.btn_counsel {
+	background: #FF7B05;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #F0582A;
+	cursor: pointer;
+	color: #fff;
+	font-size: 23px;
+	padding: 20px;
+	font-weight: 700;
+	width: 50%;
+}
+
+.btn_counsel:hover {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#8B8B8B),
+		to(#8B8B8B));
+	background-image: -webkit-linear-gradient(top, #8B8B8B, #8B8B8B);
+	background-image: -moz-linear-gradient(top, #8B8B8B, #8B8B8B);
+	background-image: -ms-linear-gradient(top, #8B8B8B, #8B8B8B);
+	background-image: -o-linear-gradient(top, #8B8B8B, #8B8B8B);
+	background-image: linear-gradient(to bottom, #8B8B8B, #8B8B8B);
+	border: 1px solid #777777;
+	color: #fff;
+}
 
 [class*="entypo-"] {
 	font-family: "entypo", sans-serif;
@@ -1163,26 +1245,25 @@ label.checkbox-label {
 			</tr>
 			<tr>
 
-				<td height="60" class="t_s_title">기기명</td>
+				<td height="60" class="t_s_title">핸드폰 상태</td>
 				<td>
 
-					<ul style="float: left;">
-						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
-						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
-						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
-						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
-						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
-						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
-						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
-						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
-						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
-						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
-						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">OptionOption </label></li>
-						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">OptionOption </label></li>
-						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">OptionOption </label></li>
-						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">OptionOption </label></li>
-						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">OptionOption </label></li>
-						
+					<ul style="float: left;" id="chk">
+						<li style="display: inline-block; width: 150px"><input type="checkbox" id="glass" value="glass"  style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">액정파손 </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" id="backcover" value="backcover" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">뒤커버파손 </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" id="crome" value="crome" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">크롬 및 외관손상 </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" id="pan" value="pan" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">펜소실</label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" id="scratch" value="scratch" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">액정잔기스</label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" id="powerbutton" value="powerbutton" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">전원버튼</label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" id="homebutton" value="homebutton" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">홈버튼</label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" id="sound" value="sound" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">소리 및 진동 불량</label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" id="camera" value="camera" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">카메라불량</label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" id="wifi" value="wifi" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">WIFI불량</label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" id="charge" value="charge" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">충전불량</label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" id="battery" value="battery" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">배터리소실불량</label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" id="sensor" value="sensor" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">근접센서불량</label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" id="afterimage" value="afterimage" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">잔상불량</label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" id="lcd" value="lcd" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">LCD</label></li>
 					</ul>
 
 					
@@ -1205,27 +1286,11 @@ label.checkbox-label {
 					<div style="margin-top: 5px; width: 80%; background: #eee"
 						align="center" id="quote">
 						<table>
-							<tr>
-								<td rowspan="4" width="100"
-									style="text-align: center; font-size: 20px; font-weight: 900">가격</td>
-								<td width="100" style="text-align: right">출고가격</td>
-								<td><input type="text" id="release_price" name="user_add43"
-									value="" readonly style="text-align: right" />원</td>
-							</tr>
-							<tr>
-								<td width="100" style="text-align: right">차감가격</td>
-								<td><input type="text" id="cut_price" name="user_add44"
-									value="" readonly style="text-align: right" />원</td>
-							</tr>
-							<!-- 					<tr>
-						<td width="100" style="text-align:right">차감내역　</td>
-						<td id="itemsReduction"></td>
-					</tr> -->
-							<tr>
-								<td width="100" style="text-align: right">견적가격</td>
-								<td><input type="text" id="quote_price" name="user_add45"
-									value="" readonly style="text-align: right" />원</td>
-							</tr>
+					<tr>
+						<td width="100" style="text-align: right">견적가격</td>
+						<td><input type="text" id="quote_price" name="user_add45"
+							value="" readonly style="text-align: center;" />원</td>
+					</tr>
 
 
 						</table>
@@ -1240,7 +1305,81 @@ label.checkbox-label {
 		<br>
 		<br>
 		<br>
-
 	</form>
+	
+	
+	
+			<div class="container">
+	<div class="tit_1">
+	<div class="page_name">
+		<span style="background:none; padding:0;" class="glyphicon glyphicon-certificate">고객정보입력</span>
+	</div>
+</div>
+<table class="write_form" cellspacing="0" cellpadding="0">
+	<tr>
+		<th><span><h4>이름</h4></span></th>
+		<td>
+			<input type=text id="id_name" style="height: 30px;" name=username1 size=20  maxlength=15 value="${vo.username}" onkeyup="$('#user_add7').val(this.value);" onblur="$('#user_add7').val(this.value);" disabled="disabled">
+		</td>
+	</tr>
+	<tr>
+		<th class="last"><span><h4>비밀번호</h4></span></td>
+		<td class="last">
+							<input type=password id="userpwd" name=userpwd maxlength=20 style="height: 30px;">
+								<div id="checkPwd"></div>					
+			
+		</td>
+		
+	</tr>
+	<tr>
+		<th><span><h4>휴대폰번호</h4></span></td>
+		<td><input type=text id="user_add3" disabled="disabled" style="height: 30px;" name=tel value="${vo.tel}" onkeydown="this.value=this.value.replace(/[^0-9]/g,'')" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')"></td>
+	</tr>
+	
+	
+	<tr>
+		<th class="last"><span><h4>기타 요청사항</h4></span></td>
+		<td class="last" style="line-height:42px; padding:5px 0;">
+			<textarea name='request_message' style="width:90%; height:80px;"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<th><span><h4>입금받을 계좌번호</h4></span></td>
+		<td style="line-height:42px; padding:5px 0;">
+			<span style="margin-right:20px;">은행명</span>
+								<select name=bank_name>
+					<option value="">선택해주세요</option>
+					<option value="농협" >농협</option>
+					<option value="국민" >국민</option>
+					<option value="우리" >우리</option>
+					<option value="신한" >신한</option>
+					<option value="하나" >하나</option>
+					<option value="기업" >기업</option>
+					<option value="씨티" >씨티</option>
+					<option value="외환" >외환</option>
+					<option value="새마을" >새마을</option>
+					<option value="우체국" >우체국</option>
+					<option value="신협" >신협</option>
+					<option value="수협" >수협</option>
+					<option value="산업" >산업</option>
+					<option value="부산" >부산</option>
+					<option value="제일" >제일</option>
+					<option value="대구" >대구</option>
+					<option value="광주" >광주</option>
+					<option value="경남" >경남</option>
+					<option value="전북" >전북</option>
+					<option value="제주" >제주</option>
+				</select>
+			<span style="margin:0 17px;">예금주</span>
+			<input type=text id="username" name="username" value="${vo.username }" disabled="disabled">
+			<br>
+			<span style="margin-right:9px;">계좌번호</span>			
+			<input type=text name=account_number style="width:297px;" value="" onkeydown="this.value=this.value.replace(/[^0-9]/g,'')" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')"> (숫자만 입력해주세요.)
+		</td>
+	</tr>
+</table>
+	</div>
+	
+
 </body>
 </html>
