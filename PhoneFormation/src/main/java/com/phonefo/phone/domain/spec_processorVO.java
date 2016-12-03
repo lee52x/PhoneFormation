@@ -25,6 +25,6 @@ public class spec_processorVO {
 	}
 	@Override
 	public String toString() {
-		return "Sspec_processorVO [no=" + no + ", cpu_Speed=" + cpu_Speed + ", cpu_type=" + cpu_type + "]";
+		return "spec_processorVO [no=" + no + ", cpu_Speed=" + cpu_Speed + ", cpu_type=" + cpu_type + "]";
 	}
 }
