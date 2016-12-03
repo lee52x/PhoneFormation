@@ -10,127 +10,137 @@
 
 
 <script type="text/javascript">
-$(document).ready(function(){
-	
-	/*셀렉트박스*/
-	$('#quote').hide();//견적서 숨기기
-	
-	var manufacture = $("select#manufacture");
-    
-	manufacture.change(function(){
-        var select_name = $(this).children("option:selected").text();
-        $(this).siblings("label").text(select_name);
-        
-    });    
-	var machine = $("select#machine");
-    
-	machine.change(function(){
-        var select_name = $(this).children("option:selected").text();
-        $(this).siblings("label").text(select_name);
-        
-    });
-	var capacity = $("select#capacity");
-    
-	capacity.change(function(){
-        var select_name = $(this).children("option:selected").text();
-        $(this).siblings("label").text(select_name);
-        
-    });
-	
-	var purchaseYear = $("select#purchaseYear");
-    
-	purchaseYear.change(function(){
-        var select_name = $(this).children("option:selected").text();
-        $(this).siblings("label").text(select_name);
-        
-    });
-	var purchaseMonth = $("select#purchaseMonth");
-    
-	purchaseMonth.change(function(){
-        var select_name = $(this).children("option:selected").text();
-        $(this).siblings("label").text(select_name);
-        
-    });
-	
-	$('#manufacture').change(function(){
-	
-		
+	$(document).ready(function() {
+
+		/*셀렉트박스*/
+		$('#quote').hide(); //견적서 숨기기
+
+		var manufacture = $("select#manufacture");
+
+		manufacture.change(function() {
+			var select_name = $(this).children("option:selected").text();
+			$(this).siblings("label").text(select_name);
+
+		});
+		var machine = $("select#machine");
+
+		machine.change(function() {
+			var select_name = $(this).children("option:selected").text();
+			$(this).siblings("label").text(select_name);
+
+		});
+		var capacity = $("select#capacity");
+
+		capacity.change(function() {
+			var select_name = $(this).children("option:selected").text();
+			$(this).siblings("label").text(select_name);
+
+		});
+
+		var purchaseYear = $("select#purchaseYear");
+
+		purchaseYear.change(function() {
+			var select_name = $(this).children("option:selected").text();
+			$(this).siblings("label").text(select_name);
+
+		});
+		var purchaseMonth = $("select#purchaseMonth");
+
+		purchaseMonth.change(function() {
+			var select_name = $(this).children("option:selected").text();
+			$(this).siblings("label").text(select_name);
+
+		});
+
+		$('#manufacture').change(function() {
+
+
 			$.ajax({
-				url:"/phonefo/machine",
-				data:{manufacture:$('#manufacture').val()},
-				success:function(result){
+				url : "/phonefo/machine",
+				data : {
+					manufacture : $('#manufacture').val()
+				},
+				success : function(result) {
 					//alert(result); result==배열 [{name:갤럭시},{}]
 					//alert(result[0].name);
-					var options='<option>기기명 선택</option>';
-				   for(var i=0;i<result.length;i++){
-					  /// alert(result[i].name);
-					       options += '<option>'+result[i].name+'</option>';
-				   }
-				   $('#machine').html(options);
+					var options = '<option>기기명 선택</option>';
+					for (var i = 0; i < result.length; i++) {
+						/// alert(result[i].name);
+						options += '<option>' + result[i].name + '</option>';
+					}
+					$('#machine').html(options);
 				}
 			});
 
-	});
-	
-	$('#machine').change(function(){
-		
-		$.ajax({
-			url:"/phonefo/capacity",
-			data:{machine:$('#machine').val()},
-			success:function(result){
-				var options='<option>용량선택</option>';
-				for(var i=0;i<result.length;i++){
-					//alert(result[i].capacity);
-					options += '<option>'+result[i].capacity+'</option>';
-					
+		});
+
+		$('#machine').change(function() {
+
+			$.ajax({
+				url : "/phonefo/capacity",
+				data : {
+					machine : $('#machine').val()
+				},
+				success : function(result) {
+					var options = '<option>용량선택</option>';
+					for (var i = 0; i < result.length; i++) {
+						//alert(result[i].capacity);
+						options += '<option>' + result[i].capacity + '</option>';
+
+					}
+					$('#capacity').html(options);
+
+
 				}
-				$('#capacity').html(options);
-				
-				
+			});
+
+		});
+
+
+
+
+
+	});
+	function check() {
+		var f = document.frm;
+		$.ajax({
+			url : "/phonefo/calculator",
+			type : 'POST',
+			data : {
+				howsend : f.radid_01.value,
+				manufacture : f.manufacture.value,
+				machine : f.machine.value,
+				capacity : f.capacity.value,
+				power : f.radid_02.value,
+				glass : f.radid_03.value,
+				equipment : f.radid_04.value
+			},
+			success : function(vo2) {
+
+				$('#release_price').val(vo2.release_price);
+				$('#quote_price').val(vo2.quote_price);
+				var cut_price = vo2.release_price - vo2.quote_price;
+				$('#cut_price').val('-' + cut_price);
+				$('#quote').show(function() {
+					$("#quote").attr("tabindex", -1).focus();
+				});
 			}
 		});
-		
-	});
 
-	
-	
-	
 
-	});
-	function check(){
-	var f=document.frm;
-	$.ajax({
-		url:"/phonefo/calculator",
-		type:'POST',
-		data:{howsend:f.radid_01.value, manufacture:f.manufacture.value, machine:f.machine.value, capacity:f.capacity.value, power:f.radid_02.value, glass:f.radid_03.value, equipment:f.radid_04.value},
-		success:function(vo2){
-			
-			$('#release_price').val(vo2.release_price);
-			$('#quote_price').val(vo2.quote_price);
-			var cut_price=vo2.release_price-vo2.quote_price;
-			$('#cut_price').val('-'+cut_price);
-			$('#quote').show(function(){
-				$("#quote").attr("tabindex", -1).focus();	
-			});
-			}
-		
-
-	});	
-	
-	
 	}
-	
-	function sellPhone(){
-		var f=document.frm;
+
+	function sellPhone() {
+		var f = document.frm;
 		f.submit();
-		
-		
-		
-	}
-	
 
+
+
+	}
 </script>
 <style type="text/css">
+
+
 [class*="entypo-"] {
 	font-family: "entypo", sans-serif;
 	text-decoration: none;
@@ -220,10 +230,14 @@ $(document).ready(function(){
 
 
 
+
+
 :
 
 
+
  
+
 
 
 rotate
@@ -231,8 +245,12 @@ rotate
 
 
 
+
+
 (360
 deg
+
+
 
 
 );
@@ -250,10 +268,14 @@ transform
 
 
 
+
+
 :
 
 
+
  
+
 
 
 rotate
@@ -261,8 +283,12 @@ rotate
 
 
 
+
+
 (360
 deg
+
+
 
 
 );
@@ -760,6 +786,7 @@ div#select_box select#color {
 	opacity: 0;
 	filter: alpha(opacity = 0);
 }
+
 div#select_box select#manufacture {
 	width: 100%;
 	height: 30px;
@@ -769,6 +796,7 @@ div#select_box select#manufacture {
 	opacity: 0;
 	filter: alpha(opacity = 0);
 }
+
 div#select_box select#machine {
 	width: 100%;
 	height: 30px;
@@ -778,6 +806,7 @@ div#select_box select#machine {
 	opacity: 0;
 	filter: alpha(opacity = 0);
 }
+
 div#select_box select#capacity {
 	width: 100%;
 	height: 30px;
@@ -797,7 +826,8 @@ div#select_box select#purchaseYear {
 	opacity: 0;
 	filter: alpha(opacity = 0);
 }
-div#select_box select#purchaseMonth{
+
+div#select_box select#purchaseMonth {
 	width: 100%;
 	height: 30px;
 	min-height: 30px;
@@ -1058,123 +1088,159 @@ label.checkbox-label {
 </head>
 
 <body>
-<form name="frm" action="/phonefo/sell" method="post">
-<div class="page-banner">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<h2>수리견적</h2>
-					<p>예상 수리비용</p>
-				</div>
-				<div class="col-md-6">
-					<ul class="breadcrumbs">
-						<li><a href="#">홈</a></li>
-						<li>수리견적</li>
-					</ul>
+	<form name="frm" action="/phonefo/sell" method="post">
+		<div class="page-banner">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<h2>수리견적</h2>
+						<p>예상 수리비용</p>
+					</div>
+					<div class="col-md-6">
+						<ul class="breadcrumbs">
+							<li><a href="#">홈</a></li>
+							<li>수리견적</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
 
-	<div class="big-title text-center">
-		<h1>수리견적</h1>
-		<p class="title-desc">아래의 내용에 따라 기입해 주시기 바랍니다.</p>
-		<hr>
-	</div>
-	<div align="center">
-		<img alt="" src="/resources/images/quote/tel..JPG">
-	</div>
-	<br>
-	<br>
-	<!-- 폼 양식 시작 -->
+		<div class="big-title text-center">
+			<h1>수리견적</h1>
+			<p class="title-desc">아래의 내용에 따라 기입해 주시기 바랍니다.</p>
+			<hr>
+		</div>
+		<div align="center">
+			<img alt="" src="/resources/images/quote/tel..JPG">
+		</div>
+		<br> <br>
+		<!-- 폼 양식 시작 -->
 
 
-	<table width="1160px" border="0" cellspacing="1" cellpadding="10"
-		bgcolor="#DADBDB" align="center">
-		<tr>
-			<td width="310px" height="60px" class="t_b_title">매각 선택</td>
-			<td bgcolor="#FFFFFF"><input type="radio" name="radid_01"
-				id="radio1" class="css-checkbox" value="방문" checked="checked"  /> <label
-				for="radio1" class="radio-label">방문</label>
-				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" value="택배" name="radid_01"
-				id="radio2" class="css-checkbox" /> <label for="radio2"
-				class="radio-label">택배</label></td>
-		</tr>
-	</table>
+		<table width="1160px" border="0" cellspacing="1" cellpadding="10"
+			bgcolor="#DADBDB" align="center">
+			<tr>
+				<td width="310px" height="60px" class="t_b_title">매각 선택</td>
+				<td bgcolor="#FFFFFF"><input type="radio" name="radid_01"
+					id="radio1" class="css-checkbox" value="방문" checked="checked" />
+					<label for="radio1" class="radio-label">방문</label>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" value="택배"
+					name="radid_01" id="radio2" class="css-checkbox" /> <label
+					for="radio2" class="radio-label">택배</label></td>
+			</tr>
+		</table>
 
-	<table width="1160px" border="0" cellspacing="1" cellpadding="10"
-		bgcolor="#DADBDB" align="center">
-		<tr>
-			<td width="150" rowspan="7" valign="middle" class="t_b_title">휴대폰<br />정보
-				입력
-			</td>
-			<td width="160" height="60" class="t_s_title">제조사</td>
-			<td bgcolor="#FFFFFF">
-				<div id="select_box">
-					<label for="color" id="selec">제조사 선택</label> 
-					<select id="manufacture"
-						name="manufacture">
-						<option value="">제조사 선택</option>
-						<option value="삼성전자">삼성</option>
-						<option value="LG전자">LG</option>
-						<option value="애플">애플</option>
-					</select>
-				</div> &nbsp&nbsp&nbsp
-			</td>
-		</tr>
-		<tr>
-			<td height="60" class="t_s_title">기기명</td>
-			<td bgcolor="#FFFFFF">
-				<div id="select_box">
-					<label for="color">기기명 선택</label> <select id="machine"
-						name="machine">
-					</select>
-				</div> &nbsp&nbsp&nbsp
-		</tr>
-	
-		
-	</table>
-		<table width="1160px" border="0" align="center" cellpadding="10" cellspacing="1">
-	<br>
-	<tr>
-		<td height="60" align="center" ><button type="button" class="btn_counsel" id="calculator" onclick="check()">견적보기</button></td>
-	</tr>
-	
-	<tr>
-	<td>
-	<br><br>
-	<div style="margin-top:5px;width:80%;background:#eee" align="center" id="quote">
-				<table>
-					<tr>
-						<td rowspan="4" width="100" style="text-align:center;font-size:20px;font-weight:900">가격</td>
-						<td width="100" style="text-align:right">출고가격　</td>
-						<td><input type="text" id="release_price" name="user_add43"  value="" readonly style="text-align:right"/>원</td>
-					</tr>
-					<tr>
-						<td width="100" style="text-align:right">차감가격　</td>
-						<td><input type="text" id="cut_price" name="user_add44"  value="" readonly style="text-align:right"/>원</td>
-					</tr>
-<!-- 					<tr>
+		<table width="1160px" border="0" cellspacing="1" cellpadding="10"
+			bgcolor="#DADBDB" align="center">
+			<tr>
+				<td width="150" rowspan="7" valign="middle" class="t_b_title">휴대폰<br />정보
+					입력
+				</td>
+				<td width="160" height="60" class="t_s_title">제조사</td>
+				<td bgcolor="#FFFFFF">
+					<div id="select_box">
+						<label for="color" id="selec">제조사 선택</label> <select
+							id="manufacture" name="manufacture">
+							<option value="">제조사 선택</option>
+							<option value="삼성전자">삼성</option>
+							<option value="LG전자">LG</option>
+							<option value="애플">애플</option>
+						</select>
+					</div> &nbsp&nbsp&nbsp
+				</td>
+			</tr>
+			<tr>
+				<td height="60" class="t_s_title">기기명</td>
+				<td bgcolor="#FFFFFF">
+					<div id="select_box">
+						<label for="color">기기명 선택</label> <select id="machine"
+							name="machine">
+						</select>
+					</div> &nbsp&nbsp&nbsp
+					</td>
+			</tr>
+			<tr>
+
+				<td height="60" class="t_s_title">기기명</td>
+				<td>
+
+					<ul style="float: left;">
+						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">Option </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">OptionOption </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">OptionOption </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">OptionOption </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">OptionOption </label></li>
+						<li style="display: inline-block; width: 150px"><input type="checkbox" style="display: inline-block;vertical-align: middle; margin: 10px;"><label style="vertical-align: middle;">OptionOption </label></li>
+						
+					</ul>
+
+					
+				</td>
+			</tr>
+
+
+		</table>
+		<table width="1160px" border="0" align="center" cellpadding="10"
+			cellspacing="1">
+			<br>
+			<tr>
+				<td height="60" align="center"><button type="button"
+						class="btn_counsel" id="calculator" onclick="check()">견적보기</button></td>
+			</tr>
+
+			<tr>
+				<td><br>
+				<br>
+					<div style="margin-top: 5px; width: 80%; background: #eee"
+						align="center" id="quote">
+						<table>
+							<tr>
+								<td rowspan="4" width="100"
+									style="text-align: center; font-size: 20px; font-weight: 900">가격</td>
+								<td width="100" style="text-align: right">출고가격</td>
+								<td><input type="text" id="release_price" name="user_add43"
+									value="" readonly style="text-align: right" />원</td>
+							</tr>
+							<tr>
+								<td width="100" style="text-align: right">차감가격</td>
+								<td><input type="text" id="cut_price" name="user_add44"
+									value="" readonly style="text-align: right" />원</td>
+							</tr>
+							<!-- 					<tr>
 						<td width="100" style="text-align:right">차감내역　</td>
 						<td id="itemsReduction"></td>
 					</tr> -->
-					<tr>
-						<td width="100" style="text-align:right">견적가격　</td>
-						<td><input type="text" id="quote_price" name="user_add45"  value="" readonly style="text-align:right"/>원</td>
-					</tr>
-				</table>
-				<font color="red">※견적금액은 예상금액이며 실제 거래 금액과 차이가 있을 수 있습니다.</font>
-				<br><br>
-				<button type="button"  id="sell" onclick="sellPhone()">판매하기</button>
-			</div>
-	</td>
-	
-	</tr>
+							<tr>
+								<td width="100" style="text-align: right">견적가격</td>
+								<td><input type="text" id="quote_price" name="user_add45"
+									value="" readonly style="text-align: right" />원</td>
+							</tr>
+
+
+						</table>
+						<font color="red">※견적금액은 예상금액이며 실제 거래 금액과 차이가 있을 수 있습니다.</font> <br>
+						<br>
+						<button type="button" id="sell" onclick="sellPhone()">판매하기</button>
+					</div></td>
+
+			</tr>
 		</table>
-		
-<br><br><br>
-			
-</form>
+
+		<br>
+		<br>
+		<br>
+
+	</form>
 </body>
 </html>
