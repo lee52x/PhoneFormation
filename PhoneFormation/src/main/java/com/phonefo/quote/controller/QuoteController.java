@@ -82,5 +82,14 @@ public class QuoteController {
 		return "./quote/popup";
 	}
 	
+	////////////////////////////////////////////¼ö¸®//////////////////////////////////////
+	
+	@RequestMapping("/repair")
+	public String repairMain(Model model){
+		
+
+		model.addAttribute("body","./quote/repair.jsp");
+		return "mainView";
+	}
 	
 }

@@ -418,7 +418,9 @@ insert into ph_capacity values ('GPro', '32GB', 320000);
 	glass varchar2(50),
 	equipment varchar2(50),
 	state number(10) default 0,
-	manufacture varchar2(50),
+	manufacture varchar2(50),8'
+
+
 	machine varchar2(50),
 	capacity varchar2(50),
 	select no,userid,username,quote_price,request_message,bank_name,account_number,
