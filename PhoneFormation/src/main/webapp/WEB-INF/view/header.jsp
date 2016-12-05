@@ -33,6 +33,8 @@
 </head>
 <script type="text/javascript">
 	$(document).ready(function() {
+		console.log("href: "+$(location).attr('href'));
+		//alert($(location).attr('href'));
 		$('#logout').click(function() {
 			$.ajax({
 				url : "/phonefo/logout",
@@ -189,9 +191,9 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a class="active" href="/phonefo/phoneInfo">최신폰</a>
 							<ul class="dropdown">
-								<li><a href="#tab-4"  data-toggle="tab" class="samsung" id="samsung">삼성전자</a></li>
-								<li><a href="#tab-5"  data-toggle="tab" class="lg" id="lg">LG전자</a></li>
-								<li><a href="#tab-6"  data-toggle="tab" class="apple" id="apple">애플</a></li>
+								<li><a href="#tab-4" data-toggle="tab" class="samsung" id="samsung">삼성전자</a></li>
+								<li><a href="#tab-5" data-toggle="tab" class="lg" id="lg">LG전자</a></li>
+								<li><a href="#tab-6" data-toggle="tab" class="apple" id="apple">애플</a></li>
 							</ul></li>
 						<li><a href="about.html">견적</a>
 							<ul class="dropdown">

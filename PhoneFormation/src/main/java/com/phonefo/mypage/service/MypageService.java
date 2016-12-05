@@ -1,6 +1,7 @@
 package com.phonefo.mypage.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -29,4 +30,19 @@ public interface MypageService {
 
 		//내가 중고견적등록한거 구매신청한 업체 리스트
 		public List<MypagePurchaseVO> mypagePurchase(String no)throws Exception;
+		
+		//판매할 업체 정하는거
+		public int mypagePurchaseChoose(Map<String, String> map)throws Exception;
+		
+		//구매중 업체 정보
+		public MypagePurchaseVO mypagePurchaseIng(String no)throws Exception;
+		
+		//거래완료
+		public int mypagePurchaseIngChoose(Map<String, String> map)throws Exception;
+			
+		//구매중 업체 정보
+		public MypagePurchaseVO mypagePurchaseEnd(String no)throws Exception;
+		
+		
+		
 }

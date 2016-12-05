@@ -1,6 +1,7 @@
 package com.phonefo.mypage.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
@@ -52,9 +53,31 @@ public class MypageServiceImpl implements MypageService {
 	}
 
 	@Override
-	public List<MypagePurchaseVO> mypagePurchase(String no) throws Exception {
+	public List<MypagePurchaseVO> mypagePurchase(String no) throws Exception {//마이페이지 거래신청한 기업 리스트
 
 		return dao.myPagePurchaseList(no);
+	}
+
+	@Override
+	public int mypagePurchaseChoose(Map<String, String> map) throws Exception {//마이페이지 거래할 기업선택
+
+		return dao.myPagePurchaseChoose(map);
+	}
+
+	@Override
+	public MypagePurchaseVO mypagePurchaseIng(String no) throws Exception {//마이페이지 거래중인 기업정보
+		
+		return dao.myPagePurchaseIng(no);
+	}
+
+	@Override
+	public int mypagePurchaseIngChoose(Map<String, String> map) throws Exception {//마이페이지 거래완료
+		return dao.myPagePurchaseIngChoose(map);
+	}
+
+	@Override
+	public MypagePurchaseVO mypagePurchaseEnd(String no) throws Exception {
+		return dao.myPagePurchaseEnd(no);
 	}
 
 

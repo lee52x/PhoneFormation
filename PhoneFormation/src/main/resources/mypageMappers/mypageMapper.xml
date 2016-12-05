@@ -42,14 +42,55 @@
 	
 	<!-- 마이페이지 중고 신청 업체 리스트 -->
 	<select id="mypagePurchase" resultType="mypagePurchase">
-	select purchaseNum,userid,no 
-	from purchase_request
-	where no=#{no}
 	
+	
+	select r.no,m.userid,r.purchaseNum,m.tel,m.businessNum,b.companyName,b.address
+	from ph_business b,ph_member m,purchase_request r, PH_QUOTEBOARD q
+	where b.businessNum in((select businessNum from ph_member where m.userid in ((select a.userid from purchase_request a, PH_QUOTEBOARD b where a.no=#{no} and b.no=#{no} and a.no=b.no))))
+	and r.userid = m.userid and m.businessNum = b.businessNum and r.no = q.no and r.no=#{no}
 	
 	</select>
+	<!-- 마이페이지 중고 업체 선택처리 map으로 넣엇음 -->
+	<update id="mypagePurchaseChooseQoute">
+	update ph_quoteBoard set state=2 where no=#{no}
+
+	</update>
 	
+	<!-- 마이페이지 중고 업체 선택처리 map으로 넣엇음 -->
+	<update id="mypagePurchaseChooseRequest">
+	update purchase_request set state=2 where userid=#{userid} and no=#{no}
+
+	</update>
 	
+	<!-- 마이페이지 내가 판매 선택한 업체 정보 -->
+	<select id="mypagePurchaseIng" resultType="mypagePurchase">
+
+	select r.no,m.userid,r.purchaseNum,m.tel,m.businessNum,b.companyName,b.address
+	from ph_business b,ph_member m,purchase_request r, PH_QUOTEBOARD q
+	where b.businessNum in((select businessNum from ph_member where m.userid in ((select a.userid from purchase_request a, PH_QUOTEBOARD b where a.no=#{no} and b.no=#{no} and a.no=b.no and a.state=2))))
+	and r.userid = m.userid and m.businessNum = b.businessNum and r.no = q.no and r.no=#{no}
+	</select>
+	
+	<!-- 마이페이지 거래완료 map으로 넣엇음 -->
+	<update id="mypagePurchaseIngChooseQoute">
+	update ph_quoteBoard set state=3 where no=#{no}
+
+	</update>
+	
+	<!-- 마이페이지 거레완료 map으로 넣엇음 -->
+	<update id="mypagePurchaseIngChooseRequest">
+	update purchase_request set state=3 where userid=#{userid} and no=#{no}
+
+	</update>
+	
+	<!-- 마이페이지 내가 판매 선택한 업체 정보 -->
+	<select id="mypagePurchaseEnd" resultType="mypagePurchase">
+	select r.no,m.userid,r.purchaseNum,m.tel,m.businessNum,b.companyName,b.address
+	from ph_business b,ph_member m,purchase_request r, PH_QUOTEBOARD q
+	where b.businessNum in((select businessNum from ph_member where m.userid in ((select a.userid from purchase_request a, PH_QUOTEBOARD b where a.no=#{no} and b.no=#{no} and a.no=b.no and a.state=3))))
+	and r.userid = m.userid and m.businessNum = b.businessNum and r.no = q.no and r.no=#{no}
+	
+	</select>
 
 	<!-- 마이페이지 회원탈퇴 -->
 	<delete id="mypageMemberDel">

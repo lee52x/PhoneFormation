@@ -46,7 +46,7 @@
 }
 .tab-image{
 	height: 500px;
-	width: 400px;
+	width: 300px;
 }
 
 .tab-image img{
@@ -58,6 +58,7 @@
 	border: 1px solid #eee;
 	border-top: none;
 	padding: 12px 16px;
+	z-index: 10;
 }
 
 .tab-content p {
@@ -67,46 +68,67 @@
 .tab-content p:last-child {
 	margin-bottom: 0;
 }
+
+.ckbox{
+	background-color:yellow;
+	width:600px;
+	height:100px;
+	position: fixed;
+	left: 400px;
+	top: 550px;
+}
+
+.ckbox .ckboxContent{
+	background-color:blue;
+	width: 600px;
+	height: 300px;
+	position: fixed;
+	left: 400px;
+	top : 250px;
+}
+
+.ckbox .button{
+	right: 10px;
+}
 </style>
 <script type="text/javascript">
-	//var manufacture = $('.samsung').attr().val;
-	//alert(manufacture)
 	$(document).ready(function() {
-		/* loc = location.href.split("?");		
-		if(loc[1]=='manufacture=samsung'){
-			$("#tab_samsung").attr('class','active');	
-			$("#tab_lg").attr('class','');	
-			$("#tab_apple").attr('class','');	
-		}else if(loc[1]=='manufacture=lg'){
-			$("#tab_samsung").attr('class','');	
-			$("#tab_lg").attr('class','active');	
-			alert($('tag_lg').attr('class').val())
-			$("#tab_apple").attr('class','');
-		}else if(loc[1]='manufacture=apple'){
-			$("#tab_samsung").attr('class','');	
-			$("#tab_lg").attr('class','');	
-			$("#tab_apple").attr('class','active');
-		} */
-		 $('#samsung').click(function(){
+		$('.ckbox').hide();
+		$('.ckboxContent').hide();
+		
+		$('#samsung').click(function(){
 			$("#tab_samsung").attr('class','active');	
 			$("#tab_lg").attr('class','');	
 			$("#tab_apple").attr('class','');				
 		})
 		$('#lg').click(function(){
 			$("#tab_samsung").attr('class','');	
-			$("#tab_lg").attr('class','active');	
-			$("#tab_apple").attr('class','');				
+			$("#tab_lg").attr('class','active');			  
+			$("#tab_apple").attr('class','');	
 		})
 		$('#apple').click(function(){
 			$("#tab_samsung").attr('class','');	
 			$("#tab_lg").attr('class','');	
 			$("#tab_apple").attr('class','active');				
 		}) 
+		
+		 $(".ckb" ).change(function(){
+				if(this.checked){
+					$('.ckbox').show();
+					$('.btn_click').click(function(){
+						$('.ckboxContent').show();
+					});
+					$('.btn_close').click(function(){
+						$('.ckboxContent').hide();						
+					});
+				}else{
+					$('.ckbox').hide();
+				}
+		 });
 	});
 	
 </script>
 </head>
-<body>
 	<div id="content">
 		<div class="container">
 			<div class="row sidebar-page">
@@ -121,20 +143,21 @@
 					<div class="tab-content">
 						<!-- Tab Content 1 -->
 						<div class="tab-pane fade in active" id="tab-4">
-							<table align="center">
+							<table border="1" bordercolor="#dcdcdc" cellspacing="100">
 								<c:forEach items="${list1 }" var="list1" varStatus="status">
 									<c:if test="${status.index%3==0}">                                  
 										<tr>
 									</c:if>
 									<td>
-									<div class="tab-image">
-									<a href="/phonefo/phoneInfo_spec?no=${list1.no}">
-										<center>
+									<center>
+										<div class="tab-image">
+										<a href="/phonefo/phoneInfo_spec?no=${list1.no}">
 											<img src="${list1.image }">
-											<p>${list1.name }</p>
-										</center>
-									</a>
-									</div>
+											<p>${list1.name }</p><br>
+										</a>
+											<input type="checkbox" class="ckb">비교하기<br>
+										</div>
+									</center>
 									</td>
 									<c:if test="${status.index%3==2}">
 										</tr>
@@ -194,5 +217,14 @@
 			</div>
 		</div>
 	</div>
+	<div class='ckbox'>
+		비교하기
+		<div class='ckboxContent'>
+		내용이 나올 것이다!!
+		</div>
+		<button class='btn_click'>눌러봐</button>
+		<button class='btn_close'>닫아봐</button>
+	</div>
+
 </body>
 </html>
