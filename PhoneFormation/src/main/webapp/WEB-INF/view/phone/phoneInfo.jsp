@@ -58,6 +58,7 @@
 	border: 1px solid #eee;
 	border-top: none;
 	padding: 12px 16px;
+	z-index: 10;
 }
 
 .tab-content p {
@@ -67,10 +68,35 @@
 .tab-content p:last-child {
 	margin-bottom: 0;
 }
+
+.ckbox{
+	background-color:yellow;
+	width:600px;
+	height:100px;
+	position: fixed;
+	left: 400px;
+	top: 550px;
+}
+
+.ckbox .ckboxContent{
+	background-color:blue;
+	width: 600px;
+	height: 300px;
+	position: fixed;
+	left: 400px;
+	top : 250px;
+}
+
+.ckbox .button{
+	right: 10px;
+}
 </style>
 <script type="text/javascript">
 	$(document).ready(function() {
-		 $('#samsung').click(function(){
+		$('.ckbox').hide();
+		$('.ckboxContent').hide();
+		
+		$('#samsung').click(function(){
 			$("#tab_samsung").attr('class','active');	
 			$("#tab_lg").attr('class','');	
 			$("#tab_apple").attr('class','');				
@@ -85,6 +111,20 @@
 			$("#tab_lg").attr('class','');	
 			$("#tab_apple").attr('class','active');				
 		}) 
+		
+		 $(".ckb" ).change(function(){
+				if(this.checked){
+					$('.ckbox').show();
+					$('.btn_click').click(function(){
+						$('.ckboxContent').show();
+					});
+					$('.btn_close').click(function(){
+						$('.ckboxContent').hide();						
+					});
+				}else{
+					$('.ckbox').hide();
+				}
+		 });
 	});
 	
 </script>
@@ -114,8 +154,8 @@
 										<a href="/phonefo/phoneInfo_spec?no=${list1.no}">
 											<img src="${list1.image }">
 											<p>${list1.name }</p><br>
-											<a href="#" id="btnCompare" class="btnS w60 btnRed">비교하기</a>
 										</a>
+											<input type="checkbox" class="ckb">비교하기<br>
 										</div>
 									</center>
 									</td>
@@ -177,5 +217,14 @@
 			</div>
 		</div>
 	</div>
+	<div class='ckbox'>
+		비교하기
+		<div class='ckboxContent'>
+		내용이 나올 것이다!!
+		</div>
+		<button class='btn_click'>눌러봐</button>
+		<button class='btn_close'>닫아봐</button>
+	</div>
+
 </body>
 </html>
