@@ -49,34 +49,28 @@
 			if($('#UD_img').attr('src') === '/resources/images/payment/up.png'){
 			$('#UD_img').attr('src', '/resources/images/payment/down.png');
 			$('#UD_tab').css('bottom', '0px');
+			$('.payment').fadeOut();
 			}else {
 				$('#UD_img').attr('src', '/resources/images/payment/up.png');
 				$('#UD_tab').css('bottom', '-110px');
 			}
 		});
-	
+		
+		
 		$('#compare').click(function() {
+			if($('#payment1').val() =="요금제 선택" || $('#payment2').val() =="요금제 선택"){
+				alert("요금제를 선택해주세요");
+			}else{
 			$('.payment').fadeIn();
+			$('#UD_img').attr('src', '/resources/images/payment/up.png');
+			$('#UD_tab').css('bottom', '-110px');
+			}
 		});
 	
 		$('#close').click(function() {
 			$('.payment').fadeOut();
 		});
 	
-	
-	
-		$('#telecom1').change(function() {
-			//alert("나와라 SKT1");
-		$.ajax({
-			url:"/phonefo/payment/payment",
-			data:{telecom1:$('#telecom1').val()},
-			success:function(result){
-				var options='<option>요금제 선택</option>';			  
-			}			
-			
-		});
-		
-	});
 
 
 		$('#telecom1').change(function() {
@@ -182,7 +176,7 @@
 		
 		
 		$('#payment1').change(function() {
-			alert("안녕 요금제");
+			//alert("안녕 요금제");
 				$.ajax({
 				url:"/phonefo/payment/compareskt1",
 				data:{payment:$('#payment1').val()},
@@ -192,9 +186,10 @@
 					 trs += '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].payment+'</th>'+
 						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].fixed_month+'원</th>'+
 						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].data+'</th>'+
-						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].extra_data+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;" id="extra_data">'+result[0].extra_data+'</th>'+
 						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].call+'</th>'+
 						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].sms+'</th>'
+
 					}
 					 $('#selectpay1').html(trs);
 				}
@@ -241,10 +236,10 @@
 		
 		
 		$('#payment2').change(function() {
-			alert("안녕 요금제");
+			//alert("안녕 요금제");
 				$.ajax({
 				url:"/phonefo/payment/compareskt2",
-				data:{payment:$('#payment1').val()},
+				data:{payment:$('#payment2').val()},
 				success:function(result){
 					var trs;
 					for(var i=0;i<result.length;i++){
@@ -262,7 +257,7 @@
 			
 			$.ajax({
 				url:"/phonefo/payment/comparekt2",
-				data:{payment:$('#payment1').val()},
+				data:{payment:$('#payment2').val()},
 				success:function(result){
 					var trs;
 					for(var i=0;i<result.length;i++){
@@ -279,7 +274,7 @@
 			
 			$.ajax({
 				url:"/phonefo/payment/comparelg2",
-				data:{payment:$('#payment1').val()},
+				data:{payment:$('#payment2').val()},
 				success:function(result){
 					var trs;
 					for(var i=0;i<result.length;i++){
@@ -1029,7 +1024,7 @@
 	
 	 	</div>
 
-	<div class="payment" style="display: block; position: fixed; top: 20%; left:20%; z-index: 150; text-align: center; border: 1px solid black; border-radius: 5px; background-color: #F8F8F8; font-family: '돋움',dotum,Helvetica,Sans-serif; width: 60%; height: 60%;">
+	<div class="payment" style="display: none; position: fixed; top: 20%; left:20%; z-index: 150; text-align: center; border: 1px solid black; border-radius: 5px; background-color: #F8F8F8; font-family: '돋움',dotum,Helvetica,Sans-serif; width: 60%; height: 60%;">
 			
 			<div class="h_area" style=" background-color: #dddddd; border-radius: 5px 5px 0 0; height: 5%;">
                   <p style="width: 100%; display: inline-block; float: left;"><b><strong style="color: black;font-size: 25px;vertical-align: middle;">요금제 비교</strong></b>
