@@ -75,6 +75,25 @@ public class PhoneServiceImpl implements PhoneService{
 		
 	}
 
+	@Override
+	public void insertRepair(RepairVO vo) throws Exception {
+		
+		dao.insertRepair(vo);
+		
+	}
+
+	@Override
+	public List<RepairVO> listRepair() throws Exception {
+		
+		return dao.listRepair();
+	}
+
+	@Override
+	public RepairVO repairConfirm(int no) throws Exception {
+		
+		return dao.repairConfirm(no);
+	}
+
 	
 	
 	

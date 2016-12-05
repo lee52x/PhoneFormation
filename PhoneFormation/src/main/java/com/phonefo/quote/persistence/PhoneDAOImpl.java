@@ -82,6 +82,23 @@ public class PhoneDAOImpl implements PhoneDAO{
 		
 		return sql.selectOne("quote.repairPrice", machine);
 	}
+
+	@Override
+	public void insertRepair(RepairVO vo) throws Exception {
+		sql.insert("quote.insertRepair",vo);
+	}
+
+	@Override
+	public List<RepairVO> listRepair()throws Exception {
+		
+		return sql.selectList("quote.listRepair");
+	}
+
+	@Override
+	public RepairVO repairConfirm(int no) throws Exception {
+	
+		return sql.selectOne("quote.repairConfirm",no);
+	}
 	
 
 

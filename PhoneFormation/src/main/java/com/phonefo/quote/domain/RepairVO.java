@@ -1,9 +1,12 @@
 package com.phonefo.quote.domain;
 
+import java.util.Date;
+
 public class RepairVO {
 
 	
-	private String name;
+	private String machine;
+	private int no;
 	private int glass;
 	private int backcover;
 	private int crome;
@@ -19,6 +22,17 @@ public class RepairVO {
 	private int sensor;
 	private int afterimage;
 	private int lcd;
+	private String manufacture;
+	
+	private String address;
+	private String tel;
+	private String userid;
+	private String username;
+	private String request_message;
+	private String bank_name;
+	private String account_number;
+	private Date rdate;
+	private int quote_price;
 	
 	
 	public RepairVO() {
@@ -26,12 +40,286 @@ public class RepairVO {
 	}
 	
 	
-	public String getName() {
-		return name;
+	
+	
+	
+	
+
+
+
+
+
+
+	@Override
+	public String toString() {
+		return "RepairVO [machine=" + machine + ", glass=" + glass + ", backcover=" + backcover + ", crome=" + crome
+				+ ", pan=" + pan + ", scratch=" + scratch + ", powerbutton=" + powerbutton + ", homebutton="
+				+ homebutton + ", sound=" + sound + ", camera=" + camera + ", wifi=" + wifi + ", charge=" + charge
+				+ ", battery=" + battery + ", sensor=" + sensor + ", afterimage=" + afterimage + ", lcd=" + lcd
+				+ ", address=" + address + ", tel=" + tel + ", userid=" + userid + ", username=" + username
+				+ ", request_message=" + request_message + ", bank_name=" + bank_name + ", account_number="
+				+ account_number + ", rdate=" + rdate + ", quote_price=" + quote_price + "]";
 	}
-	public void setName(String name) {
-		this.name = name;
+
+
+
+
+
+
+
+
+
+
+
+
+	public String getManufacture() {
+		return manufacture;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setManufacture(String manufacture) {
+		this.manufacture = manufacture;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public int getNo() {
+		return no;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setNo(int no) {
+		this.no = no;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public String getUserid() {
+		return userid;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public int getQuote_price() {
+		return quote_price;
+	}
+
+
+
+
+
+
+	public void setQuote_price(int quote_price) {
+		this.quote_price = quote_price;
+	}
+
+
+
+
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+
+
+	public String getTel() {
+		return tel;
+	}
+
+
+
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
+
+
+
+	public String getUsername() {
+		return username;
+	}
+
+
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
+
+
+	public String getRequest_message() {
+		return request_message;
+	}
+
+
+
+
+	public void setRequest_message(String request_message) {
+		this.request_message = request_message;
+	}
+
+
+
+
+	public String getBank_name() {
+		return bank_name;
+	}
+
+
+
+
+	public void setBank_name(String bank_name) {
+		this.bank_name = bank_name;
+	}
+
+
+
+
+	public String getAccount_number() {
+		return account_number;
+	}
+
+
+
+
+	public void setAccount_number(String account_number) {
+		this.account_number = account_number;
+	}
+
+
+
+
+	public Date getRdate() {
+		return rdate;
+	}
+
+
+
+
+	public void setRdate(Date rdate) {
+		this.rdate = rdate;
+	}
+
+
+
+
+
+	public String getMachine() {
+		return machine;
+	}
+
+
+
+
+
+
+	public void setMachine(String machine) {
+		this.machine = machine;
+	}
+
+
+
+
+
+
 	public int getGlass() {
 		return glass;
 	}

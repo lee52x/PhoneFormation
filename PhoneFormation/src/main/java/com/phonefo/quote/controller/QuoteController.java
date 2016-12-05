@@ -1,6 +1,6 @@
 package com.phonefo.quote.controller;
 
-import java.lang.reflect.Member;
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -9,10 +9,11 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 
 import com.phonefo.main.domain.MemberVO;
 import com.phonefo.quote.domain.QuoteVO;
+import com.phonefo.quote.domain.RepairVO;
 import com.phonefo.quote.service.PhoneService;
 
 @Controller
@@ -85,11 +86,48 @@ public class QuoteController {
 	////////////////////////////////////////////수리//////////////////////////////////////
 	
 	@RequestMapping("/repair")
-	public String repairMain(Model model){
+	public String repairMain(Model model, HttpSession session){
+		MemberVO vo = (MemberVO)session.getAttribute("loginVO");
 		
-
+		model.addAttribute("vo",vo);
 		model.addAttribute("body","./quote/repair.jsp");
 		return "mainView";
 	}
 	
+	//수리글 등록하기
+	@RequestMapping("/insertRepair")
+	public String insertRepair(RepairVO vo,Model model,HttpSession session)throws Exception{
+		
+		vo.setUserid((String)session.getAttribute("userid"));
+		System.out.println(vo);
+		service.insertRepair(vo);
+
+		
+		return "redirect:/phonefo/listRepair";
+	}
+	
+	@RequestMapping("/listRepair")
+	public String listRepair(Model model)throws Exception{
+		
+		List<RepairVO> list = service.listRepair();
+		
+		model.addAttribute("list", list);
+		model.addAttribute("body","./quote/listRepair.jsp");
+		return "mainView";
+	}
+	
+	@RequestMapping("/popup2")
+	public String popup2(Model model,int no,HttpSession session)throws Exception{
+		System.out.println(no);
+		System.out.println("여기오지?");
+		RepairVO vo=service.repairConfirm(no);
+		model.addAttribute("vo", vo);
+		model.addAttribute("no",no);
+		String userid=(String)session.getAttribute("userid");
+		System.out.println("세션아이디:"+userid);
+
+		
+		
+		return "./quote/popup2";
+	}
 }

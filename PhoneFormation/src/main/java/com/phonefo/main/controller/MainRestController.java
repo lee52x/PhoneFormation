@@ -62,6 +62,7 @@ public class MainRestController {
 			session.setAttribute("username", vo.getUsername());
 			session.setAttribute("tel", vo.getTel());
 			session.setAttribute("loginVO", vo);
+			session.setAttribute("member", "general");
 			
 			return "성공";
 		}else{
@@ -82,6 +83,7 @@ public class MainRestController {
 			session.setAttribute("userid", userid);
 			session.setAttribute("username", vo.getCompanyName());
 			session.setAttribute("loginVO", vo);
+			session.setAttribute("member", "business");
 			return "성공";
 		}else{
 			return "실패";

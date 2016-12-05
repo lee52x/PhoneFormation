@@ -13,7 +13,19 @@
 	$(document).ready(function() {
 
 		/*셀렉트박스*/
-		//$('#quote').hide(); //견적서 숨기기
+		$('#quote').hide(); //견적서 숨기기
+		$('#information').hide();
+		$('#repairRequest').hide();
+		
+		$('#userpwd').keyup(function(){
+			$.ajax({
+				url:"/phonefo/quotePwd",
+				data:{userpwd:$('#userpwd').val()},
+				success:function(result){
+					$('#checkPwd').html(result);
+				}
+			});
+		});
 
 		var manufacture = $("select#manufacture");
 
@@ -99,6 +111,10 @@
 		
 		$('#calculator').click(function(){
 			//$('#glass').prop('checked')
+			
+			$('#quote').show();
+			$('#information').show();
+			$('#repairRequest').show();
 			$.ajax({
 				url:"/phonefo/repairPrice",
 				data:{machine:$('#machine').val()},
@@ -151,7 +167,12 @@
 		
 		});
 		
-
+	
+		$('#repairRequest').click(function(){
+			var result = confirm('핸드폰:'+$('#machine').val()+'   수리예상가격:'+$('#quote_price').val()+'입니다.판매신청 하시겠습니까?');
+			if(result==true)
+				document.frm.submit();
+		});
 
 
 
@@ -1177,7 +1198,7 @@ label.checkbox-label {
 </head>
 
 <body>
-	<form name="frm" action="/phonefo/sell" method="post">
+	<form name="frm" action="/phonefo/insertRepair" method="post">
 		<div class="page-banner">
 			<div class="container">
 				<div class="row">
@@ -1295,7 +1316,7 @@ label.checkbox-label {
 						<table>
 					<tr>
 						<td width="100" style="text-align: right">견적가격</td>
-						<td><input type="text" id="quote_price" name="user_add45"
+						<td><input type="text" id="quote_price" name="quote_price"
 							value="" readonly style="text-align: center;" />원</td>
 					</tr>
 
@@ -1303,7 +1324,6 @@ label.checkbox-label {
 						</table>
 						<font color="red">※견적금액은 예상금액이며 실제 거래 금액과 차이가 있을 수 있습니다.</font> <br>
 						<br>
-						<button type="button" id="sell" onclick="sellPhone()">판매하기</button>
 					</div></td>
 
 			</tr>
@@ -1312,11 +1332,11 @@ label.checkbox-label {
 		<br>
 		<br>
 		<br>
-	</form>
+	
 	    
 	
 	
-<div class="container" style="width: 1170px;">
+<div class="container" style="width: 1170px;" id="information">
 	<div class="tit_1">
 	<div class="page_name">
 		<span style="background:none; padding:0;" class="glyphicon glyphicon-certificate">고객정보입력</span>
@@ -1340,9 +1360,14 @@ label.checkbox-label {
 	</tr>
 	<tr>
 		<th><span><h4>휴대폰번호</h4></span></td>
-		<td><input type=text id="user_add3" disabled="disabled" style="height: 30px;" name=tel value="${vo.tel}" onkeydown="this.value=this.value.replace(/[^0-9]/g,'')" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')"></td>
+		<td><input type=text id="tel" name="tel" disabled  style="height: 30px;" value="${vo.tel}"></td>
+				<input type="hidden" name="tel" value="${vo.tel}">
 	</tr>
-	
+	<tr>
+		<th><span><h4>주소</h4></span></td>
+		<td><input type=text id="address" style="height: 30px;" name=address ></td>
+	</tr>
+	`
 	
 	<tr>
 		<th class="last"><span><h4>기타 요청사항</h4></span></td>
@@ -1378,14 +1403,21 @@ label.checkbox-label {
 					<option value="제주" >제주</option>
 				</select>
 			<span style="margin:0 17px;">예금주</span>
-			<input type=text id="username" name="username" value="${vo.username }" disabled="disabled">
+			<input type=text id="username" name="username" value="${vo.username }" readonly="readonly">
 			<br>
 			<span style="margin-right:9px;">계좌번호</span>			
 			<input type=text name=account_number style="width:297px;" value="" onkeydown="this.value=this.value.replace(/[^0-9]/g,'')" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')"> (숫자만 입력해주세요.)
 		</td>
 	</tr>
+			
+
 </table>
 	</div>
+</form>
+	<center>
+	<button type="button"
+						class="btn_counsel" id="repairRequest" style="width: 580px;" onclick="check()">수리요청하기</button></td>
+	</center>
 	
 
 </body>

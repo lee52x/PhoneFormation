@@ -16,5 +16,8 @@ public interface PhoneService {
 	public QuoteVO quoteConfirm(int no)throws Exception;
 	public void purchase(PurchaseVO vo)throws Exception;
 	public RepairVO repairPrice(String machine)throws Exception;
+	public void insertRepair(RepairVO vo)throws Exception;
+	public List<RepairVO> listRepair()throws Exception;
+	public RepairVO repairConfirm(int no)throws Exception;
 
 }
