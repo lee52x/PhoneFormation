@@ -147,8 +147,14 @@ create sequence ph_quoteBoard_seq
  
 	select r.no,m.userid,r.purchaseNum,m.tel,m.businessNum,b.companyName,b.address
 	from ph_business b,ph_member m,purchase_request r, PH_QUOTEBOARD q
-	where b.businessNum in((select businessNum from ph_member where m.userid in ((select a.userid from purchase_request a, PH_QUOTEBOARD b where a.no=5 and b.no=5 and a.no=b.no))))
+	where b.businessNum in((select businessNum from ph_member where m.userid in ((select a.userid from purchase_request a, PH_QUOTEBOARD b where a.no=5 and b.no=5 and a.no=b.no and a.state=3))))
 	and r.userid = m.userid and m.businessNum = b.businessNum and r.no = q.no and r.no=5;
+	
+	
+	select r.no,m.userid,r.purchaseNum,m.tel,m.businessNum,b.companyName,b.address
+	from ph_business b,ph_member m,purchase_request r, PH_QUOTEBOARD q
+	where b.businessNum in((select businessNum from ph_member where m.userid in ((select a.userid from purchase_request a, PH_QUOTEBOARD b where a.no=#{no}and b.no=#{no} and a.no=b.no and state=2))))
+	and r.userid = m.userid and m.businessNum = b.businessNum and r.no = q.no and r.no=#{no};
 	
 	select r.userid from purchase_request r, PH_QUOTEBOARD b where r.no=5 and r.no=b.no;
 	

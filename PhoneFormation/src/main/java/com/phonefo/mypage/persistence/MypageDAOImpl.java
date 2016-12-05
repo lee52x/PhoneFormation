@@ -75,7 +75,7 @@ public class MypageDAOImpl implements MypageDAO {
 		return sqlSession.selectList("mypage.mypagePurchase",no);
 	}
 
-	@Override
+	@Override//마이페이지 거래할 기업 선택
 	public int myPagePurchaseChoose(Map<String, String> map) throws Exception {
 		
 		int i=sqlSession.update("mypage.mypagePurchaseChooseQoute", map);
@@ -84,10 +84,23 @@ public class MypageDAOImpl implements MypageDAO {
 		return i;
 	}
 
-	@Override
+	@Override//마이페이지 거래중인 기업정보
 	public MypagePurchaseVO myPagePurchaseIng(String no) throws Exception {
 		
 		return sqlSession.selectOne("mypage.mypagePurchaseIng", no);
+	}
+
+	@Override//마이페이지 거래완료
+	public int myPagePurchaseIngChoose(Map<String, String> map) throws Exception {
+		int i=sqlSession.update("mypage.mypagePurchaseIngChooseQoute",map);
+		i+=sqlSession.update("mypage.mypagePurchaseIngChooseRequest",map);
+		
+		return i;
+	}
+
+	@Override//마이페이지 거래완료된 기업정보
+	public MypagePurchaseVO myPagePurchaseEnd(String no) throws Exception {
+		return sqlSession.selectOne("mypage.mypagePurchaseEnd", no);
 	}
 
 
