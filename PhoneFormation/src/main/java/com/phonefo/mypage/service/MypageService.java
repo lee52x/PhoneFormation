@@ -43,6 +43,9 @@ public interface MypageService {
 		//구매중 업체 정보
 		public MypagePurchaseVO mypagePurchaseEnd(String no)throws Exception;
 		
+		////////////////////////////////////////////기업쪽 마이페이지
 		
+		//기업 중고견적 구매 신청 리스트
+		public List<MypageQuoteVO> mypageB_QuoteList(HttpSession session)throws Exception;
 		
 }

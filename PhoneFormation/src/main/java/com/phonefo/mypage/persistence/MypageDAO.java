@@ -3,6 +3,7 @@ package com.phonefo.mypage.persistence;
 import java.util.List;
 import java.util.Map;
 
+import javax.net.ssl.HttpsURLConnection;
 import javax.servlet.http.HttpSession;
 
 import com.phonefo.mypage.domain.MypageMemberVO;
@@ -41,5 +42,14 @@ public interface MypageDAO {
 	
 	//거래중 업체 정보만 뽑아오기
 	public MypagePurchaseVO myPagePurchaseEnd(String no)throws Exception;
+	
+	///////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////
+	
+	//기업 중고견적 구매 신청 리스트
+	public List<MypageQuoteVO> myPageB_QuoteList(HttpSession session)throws Exception;
+	
+	
+	
 
 }
