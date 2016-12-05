@@ -46,6 +46,23 @@
  	<select id="repairPrice" resultType="com.phonefo.quote.domain.RepairVO">
  		select *from ph_repair where name=#{machine}
  	</select>
+ 	
+ 	<insert id="insertRepair">
+ 		insert into ph_repairBoard 
+ 			values(ph_repairBoard_seq.nextval,#{userid},#{username},#{tel},
+ 			#{quote_price},#{request_message},
+ 			#{bank_name},#{account_number},sysdate,0,#{machine})
+
+ 	</insert>
+ 	
+ 	
+ 	<select id="listRepair" resultType="com.phonefo.quote.domain.RepairVO">
+ 		select *from ph_repairBoard
+ 	</select>
+ 	
+ 	<select id="repairConfirm" resultType="com.phonefo.quote.domain.RepairVO">
+ 		select *from ph_repairBoard where no=#{no}
+ 	</select>
 
 
 </mapper>

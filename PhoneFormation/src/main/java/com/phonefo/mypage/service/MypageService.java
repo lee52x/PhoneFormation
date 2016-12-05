@@ -36,4 +36,13 @@ public interface MypageService {
 		
 		//구매중 업체 정보
 		public MypagePurchaseVO mypagePurchaseIng(String no)throws Exception;
+		
+		//거래완료
+		public int mypagePurchaseIngChoose(Map<String, String> map)throws Exception;
+			
+		//구매중 업체 정보
+		public MypagePurchaseVO mypagePurchaseEnd(String no)throws Exception;
+		
+		
+		
 }

@@ -115,6 +115,7 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 
 
 		
+		$("#popup4").hide();
 		$("#popup3").hide();
 		$("#popup2").hide();
 		$("#popup").hide();
@@ -132,6 +133,11 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 			$("#popup3").fadeOut(10);
 			$("#purchaseIng").empty();
 			contentIng = null;
+		});
+		$("#close4").click(function() {
+			$("#popup4").fadeOut(10);
+			$("#purchaseEnd").empty();
+			contentEnd = null;
 		});
 
 		$('#noPurchase').click(function() {//구매신청한 업체 리스트
@@ -180,7 +186,7 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 		
 		
 		
-$('#ingPurchase').click(function() {//사용자가 판매할 업체를 선택한후 나오는 페이지 선택한 업체만 나오고 거래완료 여부 취소여부
+	$('#ingPurchase').click(function() {//사용자가 판매할 업체를 선택한후 나오는 페이지 선택한 업체만 나오고 거래완료 여부 취소여부
 			
 			var ingNo = $(this).parent().parent().children().first().text();
 			$.ajax({
@@ -190,6 +196,8 @@ $('#ingPurchase').click(function() {//사용자가 판매할 업체를 선택한
 				dataType: 'json',
 				success : function(result) {
 					$("#popup3").fadeIn(700);
+
+		
 
 					 
 						   contentIng =
@@ -202,7 +210,7 @@ $('#ingPurchase').click(function() {//사용자가 판매할 업체를 선택한
 		                    "<td>"+result.companyName+"</td>"+
 		                    "<td>"+result.address+"</td>"+
 		                    "<td><button class='btn btn-primary' onclick=sellSelectEnd("
-		                    		       +result.no +",'"+result.userid+"')>거래완료</button>"+"</td>"
+		                    		       +result.no +",'"+result.userid+"')>거래완료</button>"+"</td>"+
 		                    "<td><button class='btn btn-primary' onclick=sellSelectCancel("
 		                    		       +result.no +",'"+result.userid+"')>거래취소</button>"+"</td>"
 		                "</tr>";
@@ -222,6 +230,48 @@ $('#ingPurchase').click(function() {//사용자가 판매할 업체를 선택한
 		});
 		
 	
+	
+		
+	$('#endPurchase').click(function() {//거래가 완료 그후 거래햇던 기업정보
+		
+		var ingNo = $(this).parent().parent().children().first().text();
+		$.ajax({
+			url : "/phonefo/purchaseEnd",
+			data : {"no" : ingNo},
+			type : "GET",
+			dataType: 'json',
+			success : function(result) {
+				$("#popup4").fadeIn(700);
+
+
+
+				 
+					   contentEnd =
+							 "<tr>"+
+			                 "<td>"+result.no+"</td>"+
+			                 "<td>"+result.userid+"</td>"+
+			                 "<td>"+result.purchaseNum+"</td>"+
+			                 "<td>"+result.tel+"</td>"+
+			                 "<td>"+result.businessNum+"</td>"+
+			                 "<td>"+result.companyName+"</td>"+
+			                 "<td>"+result.address+"</td>"+
+			             "</tr>";
+
+
+				   $("#purchaseEnd").empty();
+				   
+				   $(contentEnd).appendTo("#purchaseEnd");
+				  
+					   
+				   
+			
+			},error:function(e) {
+		    	alert(e.responseText);
+			}
+		});
+		
+	});
+	
 	});
 	
 	var sellSelect=function(no,userid){//판매할 업체 선택
@@ -238,6 +288,27 @@ $('#ingPurchase').click(function() {//사용자가 판매할 업체를 선택한
 
 				$("#purchasetable").empty();
 				content = null;
+				
+			},
+            error:function(e) {
+		    	alert(e.responseText);
+			}
+		}); 
+	}
+	var sellSelectEnd=function(no,userid){//거래완료
+
+		$.ajax({
+			url : "/phonefo/purchaseIngChoose",
+			data : {"no" : no,"userid":userid},
+			type : "POST",
+			dataType: 'json',
+			success :function(){
+			
+				 alert("선택이 완료되었습니다.");
+				$("#popup3").fadeOut(10);
+
+				$("#purchaseIng").empty();
+				contentIng = null;
 				
 			},
             error:function(e) {
@@ -434,10 +505,15 @@ $('#ingPurchase').click(function() {//사용자가 판매할 업체를 선택한
 				style="line-height: 607px; height: 607px; margin-top: 3%; background-color: white; overflow: auto; overflow-x: hidden;">
 
 			<div class="big-title text-center">
-			<h1>신청내역</h1>
+			<h1>거래중</h1>
 			</div>
+
 				<table class="table" id="purchaseIng"
 					style="background-color: white; width: 800px; margin-left: 15%; margin-top: 5%;">
+	
+
+	                
+	   
 				</table>
 				<button type="button"
 					class="btn btn-danger btn-sm col-sm-2 col-sm-offset-5" id="close3"
@@ -448,7 +524,31 @@ $('#ingPurchase').click(function() {//사용자가 판매할 업체를 선택한
 		</div>
 	</div>
 
+	<div id="popup4"
+		class="nivo-lightbox-overlay nivo-lightbox-theme-default nivo-lightbox-effect-fadeScale nivo-lightbox-open">
+		<div class="nivo-lightbox-wrap">
+			<div class="nivo-lightbox-table container"
+				style="line-height: 607px; height: 607px; margin-top: 3%; background-color: white; overflow: auto; overflow-x: hidden;">
 
+			<div class="big-title text-center">
+			<h1>거래완료</h1>
+			</div>
+
+				<table class="table" id="purchaseEnd"
+					style="background-color: white; width: 800px; margin-left: 15%; margin-top: 5%;">
+	
+
+	                
+	   
+				</table>
+				<button type="button"
+					class="btn btn-danger btn-sm col-sm-2 col-sm-offset-5" id="close4"
+					style="margin-bottom: 3%">닫기</button>
+
+			</div>
+
+		</div>
+	</div>
 
 
 </body>

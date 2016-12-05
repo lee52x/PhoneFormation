@@ -33,7 +33,13 @@ public interface MypageDAO {
 	//판매업체 선택
 	public int myPagePurchaseChoose(Map<String, String> map)throws Exception;
 	
-	//거래중 업체 목록만 뽑아오기
+	//거래중 업체 정보만 뽑아오기
 	public MypagePurchaseVO myPagePurchaseIng(String no)throws Exception;
+	
+	//거래 완료
+	public int myPagePurchaseIngChoose(Map<String, String> map)throws Exception;
+	
+	//거래중 업체 정보만 뽑아오기
+	public MypagePurchaseVO myPagePurchaseEnd(String no)throws Exception;
 
 }

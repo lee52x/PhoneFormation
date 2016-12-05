@@ -25,4 +25,9 @@ public interface PhoneDAO {
 
 	public RepairVO repairPrice(String machine)throws Exception;
 	
+	public void insertRepair(RepairVO vo)throws Exception;
+
+	public List<RepairVO> listRepair()throws Exception;
+
+	public RepairVO repairConfirm(int no)throws Exception;
 }
