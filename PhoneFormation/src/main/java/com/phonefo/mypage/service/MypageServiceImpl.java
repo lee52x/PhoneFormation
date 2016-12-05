@@ -1,6 +1,7 @@
 package com.phonefo.mypage.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
@@ -55,6 +56,18 @@ public class MypageServiceImpl implements MypageService {
 	public List<MypagePurchaseVO> mypagePurchase(String no) throws Exception {
 
 		return dao.myPagePurchaseList(no);
+	}
+
+	@Override
+	public int mypagePurchaseChoose(Map<String, String> map) throws Exception {
+
+		return dao.myPagePurchaseChoose(map);
+	}
+
+	@Override
+	public MypagePurchaseVO mypagePurchaseIng(String no) throws Exception {
+		
+		return dao.myPagePurchaseIng(no);
 	}
 
 

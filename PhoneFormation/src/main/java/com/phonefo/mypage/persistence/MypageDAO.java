@@ -1,6 +1,7 @@
 package com.phonefo.mypage.persistence;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -29,5 +30,10 @@ public interface MypageDAO {
 	//구매신청목록 가져오기
 	public List<MypagePurchaseVO> myPagePurchaseList(String no)throws Exception;
 	
+	//판매업체 선택
+	public int myPagePurchaseChoose(Map<String, String> map)throws Exception;
+	
+	//거래중 업체 목록만 뽑아오기
+	public MypagePurchaseVO myPagePurchaseIng(String no)throws Exception;
 
 }

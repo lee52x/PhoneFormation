@@ -1,6 +1,7 @@
 package com.phonefo.mypage.persistence;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
@@ -72,6 +73,21 @@ public class MypageDAOImpl implements MypageDAO {
 	public List<MypagePurchaseVO> myPagePurchaseList(String no) throws Exception {
 		
 		return sqlSession.selectList("mypage.mypagePurchase",no);
+	}
+
+	@Override
+	public int myPagePurchaseChoose(Map<String, String> map) throws Exception {
+		
+		int i=sqlSession.update("mypage.mypagePurchaseChooseQoute", map);
+		i+=sqlSession.update("mypage.mypagePurchaseChooseRequest", map);
+		
+		return i;
+	}
+
+	@Override
+	public MypagePurchaseVO myPagePurchaseIng(String no) throws Exception {
+		
+		return sqlSession.selectOne("mypage.mypagePurchaseIng", no);
 	}
 
 
