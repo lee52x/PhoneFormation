@@ -14,6 +14,16 @@ public class KtServiceDAOImpl implements KtServiceDAO {
 
 	@Inject
 	private KtDAO dao;
+	
+	@Override
+	public List<KtVO> payment(String payment) throws Exception {
+		return dao.payment(payment);
+	}
+	
+	@Override
+	public List<KtVO> paymentAll(String payment) throws Exception {
+		return dao.paymentAll(payment);
+	}
 
 	@Override
 	public List<KtVO> limited(String payment) throws Exception {

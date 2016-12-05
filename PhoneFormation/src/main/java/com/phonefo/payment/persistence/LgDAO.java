@@ -6,6 +6,9 @@ import com.phonefo.payment.domain.LgVO;
 
 public interface LgDAO {
 
+		public List<LgVO> payment(String payment)	throws Exception;
+		public List<LgVO> paymentAll(String payment)	throws Exception;
+
 		public List<LgVO> payment_data(String payment)	throws Exception;
 		public List<LgVO> payment_dataNormal(String payment)	throws Exception;
 		public List<LgVO> payment_data13(String payment)	throws Exception;

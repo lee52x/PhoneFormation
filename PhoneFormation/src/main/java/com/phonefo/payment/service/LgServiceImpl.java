@@ -17,6 +17,16 @@ public class LgServiceImpl implements LgServiceDAO {
 	
 	
 	@Override
+	public List<LgVO> payment(String payment) throws Exception {
+		return dao.payment(payment);
+	}
+	
+	@Override
+	public List<LgVO> paymentAll(String payment) throws Exception {
+		return dao.paymentAll(payment);
+	}
+	
+	@Override
 	public List<LgVO> payment_data(String payment) throws Exception {
 		return dao.payment_data(payment);
 	}

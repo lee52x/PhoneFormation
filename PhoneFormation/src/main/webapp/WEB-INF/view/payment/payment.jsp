@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -36,23 +37,275 @@
 		src="http://www.tworld.co.kr/poc/inc/js/lib/wddo.selectbox-1.5.4.js"></script>
 
 <script type="text/javascript">
-
-	$(document).ready(function() {
+	$('#sktpay').hide();
+	
+	$(document).ready(function() {		
+		
+	// 퀵메뉴 하단 (요금제 비교하기)
 		$('#UD').click(function() {
 			var str = $('#UD_img').attr('src');
 			//alert(str);
-			
+
 			if($('#UD_img').attr('src') === '/resources/images/payment/up.png'){
 			$('#UD_img').attr('src', '/resources/images/payment/down.png');
 			$('#UD_tab').css('bottom', '0px');
 			}else {
 				$('#UD_img').attr('src', '/resources/images/payment/up.png');
-				$('#UD_tab').css('bottom', '-61px');
+				$('#UD_tab').css('bottom', '-110px');
 			}
 		});
+	
+		$('#compare').click(function() {
+			$('.payment').fadeIn();
+		});
+	
+		$('#close').click(function() {
+			$('.payment').fadeOut();
+		});
+	
+	
+	
+		$('#telecom1').change(function() {
+			//alert("나와라 SKT1");
+		$.ajax({
+			url:"/phonefo/payment/payment",
+			data:{telecom1:$('#telecom1').val()},
+			success:function(result){
+				var options='<option>요금제 선택</option>';			  
+			}			
+			
+		});
+		
+	});
+
+
+		$('#telecom1').change(function() {
+				//alert("나와라 SKT1");
+				if($('#telecom1').val() == "SKT"){
+					$.ajax({
+						url:"/phonefo/payment/skt1",
+						data:{payment:$('#telecom1').val()},
+						success:function(result){
+							var options='<option>요금제 선택</option>';
+						   for(var i=0;i<result.length;i++){
+							  //alert(result[i].payment);
+							       options += '<option value="'+result[i].payment+'">'+result[i].payment+'</option>';
+						   }
+						   $('#payment1').html(options);
+						}				
+						
+					});
+				}else if($('#telecom1').val() == "KT"){
+					$.ajax({
+						url:"/phonefo/payment/kt1",
+						data:{payment:$('#telecom1').val()},
+						success:function(result){
+							var options='<option>요금제 선택</option>';
+						   for(var i=0;i<result.length;i++){
+							  //alert(result[i].payment);
+							       options += '<option>'+result[i].payment+'</option>';
+						   }
+						   $('#payment1').html(options);
+						}
+					
+					
+					
+					});
+			}else if($('#telecom1').val() == "LG"){
+				$.ajax({
+					url:"/phonefo/payment/lg1",
+					data:{payment:$('#telecom1').val()},
+					success:function(result){
+						var options='<option>요금제 선택</option>';
+					   for(var i=0;i<result.length;i++){
+						  //alert(result[i].payment);
+						       options += '<option>'+result[i].payment+'</option>';
+					   }
+					   $('#payment1').html(options);
+					}					
+					
+				});
+							
+			}
+			
+		});
+		
+		$('#telecom2').change(function() {
+			//alert("나와라 SKT1");
+			if($('#telecom2').val() == "SKT"){
+				$.ajax({
+					url:"/phonefo/payment/skt2",
+					data:{payment:$('#telecom2').val()},
+					success:function(result){
+						var options='<option>요금제 선택</option>';
+					   for(var i=0;i<result.length;i++){
+						  //alert(result[i].payment);
+						       options += '<option>'+result[i].payment+'</option>';
+					   }
+					   $('#payment2').html(options);
+					}					
+				
+				});
+			}else if($('#telecom2').val() == "KT"){
+				$.ajax({
+					url:"/phonefo/payment/kt2",
+					data:{payment:$('#telecom2').val()},
+					success:function(result){
+						var options='<option>요금제 선택</option>';
+					   for(var i=0;i<result.length;i++){
+						  //alert(result[i].payment);
+						       options += '<option>'+result[i].payment+'</option>';
+					   }
+					   $('#payment2').html(options);
+					}
+				
+				});
+			}else if($('#telecom2').val() == "LG"){
+			$.ajax({
+					url:"/phonefo/payment/lg2",
+					data:{payment:$('#telecom2').val()},
+					success:function(result){
+						var options='<option>요금제 선택</option>';
+					   for(var i=0;i<result.length;i++){
+						  //alert(result[i].payment);
+						       options += '<option>'+result[i].payment+'</option>';
+					   }
+					   $('#payment2').html(options);
+					}				
+				
+				});
+			
+			}
+		
+		});
+		
+		
+		
+		$('#payment1').change(function() {
+			alert("안녕 요금제");
+				$.ajax({
+				url:"/phonefo/payment/compareskt1",
+				data:{payment:$('#payment1').val()},
+				success:function(result){
+					var trs;
+					for(var i=0;i<result.length;i++){
+					 trs += '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].payment+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].fixed_month+'원</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].data+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].extra_data+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].call+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].sms+'</th>'
+					}
+					 $('#selectpay1').html(trs);
+				}
+			});// SKT
+			
+			
+			$.ajax({
+				url:"/phonefo/payment/comparekt1",
+				data:{payment:$('#payment1').val()},
+				success:function(result){
+					var trs;
+					for(var i=0;i<result.length;i++){
+					 trs += '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].payment+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].fixed_month+'원</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].data+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].extra_data+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].call+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].sms+'</th>'
+					}
+					 $('#selectpay1').html(trs);
+				}
+			});// KT
+			
+			$.ajax({
+				url:"/phonefo/payment/comparelg1",
+				data:{payment:$('#payment1').val()},
+				success:function(result){
+					var trs;
+					for(var i=0;i<result.length;i++){
+					 trs += '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].payment+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].fixed_month+'원</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].data+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].extra_data+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].call+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].sms+'</th>'
+					}
+					 $('#selectpay1').html(trs);
+				}
+			});// LG
+			
+			
+			
+		}); 
+		
+		
+		$('#payment2').change(function() {
+			alert("안녕 요금제");
+				$.ajax({
+				url:"/phonefo/payment/compareskt2",
+				data:{payment:$('#payment1').val()},
+				success:function(result){
+					var trs;
+					for(var i=0;i<result.length;i++){
+					 trs += '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].payment+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].fixed_month+'원</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].data+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].extra_data+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].call+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].sms+'</th>'
+					}
+					 $('#selectpay2').html(trs);
+				}
+			});// SKT
+			
+			
+			$.ajax({
+				url:"/phonefo/payment/comparekt2",
+				data:{payment:$('#payment1').val()},
+				success:function(result){
+					var trs;
+					for(var i=0;i<result.length;i++){
+					 trs += '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].payment+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].fixed_month+'원</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].data+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].extra_data+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].call+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].sms+'</th>'
+					}
+					 $('#selectpay2').html(trs);
+				}
+			});// KT
+			
+			$.ajax({
+				url:"/phonefo/payment/comparelg2",
+				data:{payment:$('#payment1').val()},
+				success:function(result){
+					var trs;
+					for(var i=0;i<result.length;i++){
+					 trs += '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].payment+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].fixed_month+'원</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].data+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].extra_data+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].call+'</th>'+
+						 '<tr><th style="border-bottom: 1px solid black; height: 50px;">'+result[0].sms+'</th>'
+					}
+					 $('#selectpay2').html(trs);
+				}
+			});// LG
+			
+			
+			
+		}); 
+		
+		
+		
+		
+
 	});
 
 </script>
+
 
 <body id="top">
 
@@ -155,10 +408,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>T 시그니처</h4>
                                         <span>SKT</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -172,10 +423,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>T끼리</h4>
                                         <span>SKT</span>
-                                   </a>
                                 </div>
                             </div>
                         </div>
@@ -189,10 +438,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>전국민 무한</h4>
                                         <span>SKT</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -206,10 +453,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>Quantum</h4>
                                         <span>SKT</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -223,10 +468,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>Quantum</h4>
                                         <span>SKT</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -240,10 +483,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>T전화</h4>
                                         <span>SKT</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -257,10 +498,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>루나</h4>
                                         <span>SKT</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -274,10 +513,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>루나S</h4>
                                         <span>SKT</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -291,10 +528,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>생활플랫 폼</h4>
                                         <span>SKT</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -307,11 +542,9 @@
                                         <img alt="" src="/resources/images/payment/form2.png" /> 
                                    </a> 
                                 </div>
-                                <div class="portfolio-details" id="KT"> 
-                                   <a href="#">
+                                <div class="portfolio-details" id="KT">
                                         <h4>생활플랫 폼</h4>
                                         <span>SKT</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -415,10 +648,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>순 완전무한</h4>
                                         <span>KT Olleh</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -432,10 +663,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>순 완전무한</h4>
                                         <span>KT Olleh</span>
-                                   </a>
                                 </div>
                             </div>
                         </div>
@@ -449,10 +678,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>Y틴</h4>
                                         <span>KT Olleh</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -466,10 +693,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>Y24</h4>
                                         <span>KT Olleh</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -483,10 +708,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>Y24</h4>
                                         <span>KT Olleh</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -500,10 +723,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>LTE 알 요금제</h4>
-                                        <span>KT Olleh</span> 
-                                   </a> 
+                                        <span>KT Olleh</span>
                                 </div>
                             </div>
                         </div>
@@ -517,10 +738,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>GIGA 5G</h4>
                                         <span>KT Olleh</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -534,10 +753,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details" id="LG"> 
-                                   <a href="#">
                                         <h4>GIGA 5G</h4>
                                         <span>KT Olleh</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -634,11 +851,9 @@
                                         <img alt="" src="/resources/images/payment/data.png" /> 
                                    </a> 
                                 </div>
-                                <div class="portfolio-details"> 
-                                   <a href="#">
+                                <div class="portfolio-details">
                                         <h4>데이터 요금제</h4>
                                         <span>LG U+</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -652,10 +867,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>데이터 요금제</h4>
                                         <span>LG U+</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -669,10 +882,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>LTE 요금제</h4>
                                         <span>LG U+</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -686,10 +897,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>U+ 페밀리퍕</h4>
                                         <span>LG U+</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -703,10 +912,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>LTE 비디오포털</h4>
                                         <span>LG U+</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -720,10 +927,8 @@
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
-                                   <a href="#">
                                         <h4>IOT@home</h4>
                                         <span>LG U+</span> 
-                                   </a> 
                                 </div>
                             </div>
                         </div>
@@ -740,52 +945,165 @@
             </div>
  			<div class="remote_cont" style="margin-top: 10px;">
                         <div style="border-bottom: 1px solid black;">
-                        <p><b><a href="/phonefo/main" class="main" style="text-decoration: none;"><span style="color: red">PHONE</span><br><span style="color: black;">FORMATION</span></a></b></p><br>
+                        <p><b><a href="/phonefo/main" class="main" style="text-decoration: none;" title="험페이지 이동"><span style="color: red">PHONE</span><br><span style="color: black;">FORMATION</span></a></b></p><br>
 						</div>
                         
                         <div class="pg_area2" style="border-bottom: 1px solid black;">
                                 <br><p>
-                                <b><a href="#TOP" style="color: red; text-decoration: none;">SKT</a></b><br>
-                                <b><a href="#KT" style="color: black; text-decoration: none;">KT Olleh</a></b><br>
-                                <b><a href="#LG" style="color: #E952DF; text-decoration: none;">LG U+</a></b>
+                                <b><a href="#TOP" style="color: red; text-decoration: none;" title="SKT로 이동">SKT</a></b><br>
+                                <b><a href="#KT" style="color: black; text-decoration: none;" title="KT로 이동">KT Olleh</a></b><br>
+                                <b><a href="#LG" style="color: #E952DF; text-decoration: none;" title="LG로 이동">LG U+</a></b>
                                 </p>
                                 <br>
                         </div>
                         
                         <div style="margin: 10px;">
-                        <p><b><a href="#top" style=" text-decoration: none; font-size: 20px;">TOP</a></b></p>
+                        <p><b><a href="#top" style=" text-decoration: none; font-size: 20px;" title="위로">TOP</a></b></p>
                         </div>
             </div>
 		</div>
 		
 		<!-- 요금제 비교 리모컨 -->
-		<div id="UD_tab" style="display: block; position: fixed; bottom: -61px; left: 20%; z-index: 150; text-align: center; border: 1px solid black; border-radius: 5px; background-color: #F8F8F8; font-family: '돋움',dotum,Helvetica,Sans-serif; width: 60%;">
+		<div id="UD_tab" style="display: block; position: fixed; bottom: -110px; left: 20%; z-index: 150; text-align: center; border: 1px solid black; border-radius: 5px; background-color: #F8F8F8; font-family: '돋움',dotum,Helvetica,Sans-serif; width: 60%;">
 
  			<div class="remote_cont">
  						<table>
+ 							<col width="40%" />
+    						<col width="40%" />
+   							<col width="10%" />
+   							<col width="10%" />
  							<tr style="height: 30px;">
  								<td colspan="3" style="border-bottom: 1px solid black;height: 30px; background-color: #dddddd; border-radius: 5px 5px 0 0;"><b>요금제 비교하기</b></td>
- 								<td style="border-bottom: 1px solid black; font-size: 15px; color: red; width: 10%;"><button id="UD" style="width: 100%; height: 100%;"><img id="UD_img" width="100%" height="100%" alt="탭 올리기 " src="/resources/images/payment/up.png"></button></td>
+ 								<td style="border-bottom: 1px solid black; font-size: 15px; color: red; width: 10%;"><button id="UD" style="width: 100%; height: 100%;"><img id="UD_img" width="100%" height="100%" alt="탭 올리기 " src="/resources/images/payment/up.png" title="올리기"></button></td>
  							</tr>
  							<tr>
  							</tr>	
  							<tr style="height: 30px;font-size: 15px; border-bottom: 1px solid black;">
- 								<th style="width: 40%; border-right: 1px solid black;" >요금제 A</th>
- 								<th style="width: 40%; border-right: 1px solid black;" >요금제 B</th>
- 								<th colspan="2" rowspan="2" style="width: 20%;background-color: skyblue"><button type="button" style="width: 100%;height: 100%; color: black;">비교하기</button></th>
+ 								
+ 								<th colspan="2" style="width: 80%; border-right: 1px solid black;" id="select1">요금제 선택</th>
+ 								<th colspan="2" rowspan="3" style="width: 20%;background-color: skyblue; font-size: 20px;"><button type="button" style="width: 100%;height: 100%; color: black;" id="compare"><b>비교하기</b></button></th>
  							</tr>
- 							<tr style="height: 30px;font-size: 15px">
- 								<td style="border-right: 1px solid black;">123</td>
- 								<td style="border-right: 1px solid black;">456</td>
+ 							
+ 							<tr style="height: 40px;font-size: 15px">
+ 								<td style="border-right: 1px solid black;">
+ 									<select style="width: 100%;height: 100%;" id="telecom1" name="telecom1">
+ 										<option>통신사</option>
+ 										<option value="SKT">SKT</option>
+ 										<option value="KT">KT</option>
+ 										<option value="LG">LG</option>
+ 									</select> 								
+ 								</td>
+ 								<td style="border-right: 1px solid black;">
+ 									<select style="width: 100%;height: 100%;" id="telecom2" name="telecom2">
+ 										<option>통신사</option>
+ 										<option value="SKT">SKT</option>
+ 										<option value="KT">KT</option>
+ 										<option value="LG">LG</option>
+ 									</select> 	
+								</td>
  							</tr>
+ 							<tr style="height: 40px;font-size: 15px">
+ 								<td style="border-right: 1px solid black;">
+ 									<select id="payment1" style="width: 100%;height: 30px;">
+ 										<option>요금제 선택</option>
+										
+																
+ 									</select>
+ 								</td>
+ 								<td style="border-right: 1px solid black;">
+ 									<select id="payment2" style="width: 100%;height: 40px;">
+										<option>요금제 선택</option>
+ 									</select>
+ 									
+ 								</td>
+ 							</tr>
+
  						</table>
+ 						
+ 						
                         
             </div>
 		</div>
+
+		
 	
+	 	</div>
+
+	<div class="payment" style="display: block; position: fixed; top: 20%; left:20%; z-index: 150; text-align: center; border: 1px solid black; border-radius: 5px; background-color: #F8F8F8; font-family: '돋움',dotum,Helvetica,Sans-serif; width: 60%; height: 60%;">
+			
+			<div class="h_area" style=" background-color: #dddddd; border-radius: 5px 5px 0 0; height: 5%;">
+                  <p style="width: 100%; display: inline-block; float: left;"><b><strong style="color: black;font-size: 25px;vertical-align: middle;">요금제 비교</strong></b>
+            </div>
+ 			<div class="remote_cont" style="display: block; height: 80%; margin-top: 2%;">
+                      <table style="width:80%; border-top: 1px solid black; margin-left: auto;margin-right: auto; margin-top: 3%;">
+                      	<thead style="border-bottom: 1px solid black; font-size: 20px;">
+                      		<tr style="background-color: skyblue;height: 50px;">
+                      			<th style="width: 35%; border-right: 1px solid black;"><b>요금제 A</b></th>
+                      			<th style="width: 30%; border-right: 1px solid black;"><b>내용</b></th>
+                      			<th style="width: 35%;"><b>요금제 B</b></th>
+                      		</tr>
+                      	</thead>
+                      	<tbody>
+                      		<tr>
+                      			<td style="width: 35%; border-right: 1px solid black;">
+                      				<table id="selectpay1">
+										
+										
+										
+									</table>
+                      			
+                      			</td>
+                      			<th style="width: 30%; border-right: 1px solid black;">
+									<table>
+										<tr>
+											<th style="border-bottom: 1px solid black; height: 50px;">요금제</th>
+										</tr>
+										<tr>
+											<th style="border-bottom: 1px solid black; height: 50px;">월정액</th>
+										</tr>
+										<tr>
+											<th style="border-bottom: 1px solid black; height: 50px;">데이터</th>
+										</tr>
+										<tr>
+											<th style="border-bottom: 1px solid black; height: 50px;">추가 데이터</th>
+										</tr>
+										<tr>
+											<th style="border-bottom: 1px solid black; height: 50px;">음성</th>
+										</tr>
+										<tr>
+											<th style="border-bottom: 1px solid black; height: 50px;">문자</th>
+										</tr>
+										
+										
+										
+									</table>
+								</th>
+                      			<th style="width: 35%;">
+                      				<table id="selectpay2">
+										
+										
+									</table>
+                      			</th>
+                      		</tr>
+                      	</tbody>                 
+                      </table>
+                      <div>
+                      	
+                      </div>
+            </div>
+                      	<div>
+							<button type="button" class="btn btn-primary btn-lg" id="close">닫기</button>
+						</div>
+		</div>
 	
-	
-	</div>
-	
+
+
+
+				
+
+						
+
+
 </body>
+
 </html>

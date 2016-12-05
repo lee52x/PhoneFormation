@@ -17,6 +17,16 @@ public class LgDAOImpl implements LgDAO {
 	
 	
 	@Override
+	public List<LgVO> payment(String payment) throws Exception {
+		return sqlSession.selectList("payment.lg", payment);
+	}
+	
+	@Override
+	public List<LgVO> paymentAll(String payment) throws Exception {
+		return sqlSession.selectList("payment.lg_select", payment);
+	}
+	
+	@Override
 	public List<LgVO> payment_data(String payment) throws Exception {
 		return sqlSession.selectList("lg_payment.data", payment);
 	}

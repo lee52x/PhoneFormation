@@ -14,7 +14,17 @@ public class SktDAOImpl implements SktDAO {
 	
 	@Inject
 	private SqlSession sqlSesstion;
+	
+	@Override
+	public List<SktVO> payment(String payment) throws Exception {
+		return sqlSesstion.selectList("payment.skt", payment);
+	}
 
+	@Override
+	public List<SktVO> paymentAll(String payment) throws Exception {
+		return sqlSesstion.selectList("payment.skt_select", payment);
+	}
+	
 	@Override
 	public List<SktVO> payment_signiture(String payment) throws Exception {
 		return sqlSesstion.selectList("skt_payment.signiture", payment);

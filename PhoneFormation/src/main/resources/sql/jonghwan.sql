@@ -253,5 +253,8 @@ INSERT INTO KT_PAY VALUES('LTE-알190', '300MB', '', '20000알', '20000알', 20900,
 		select *
 		from kt_pay
 		where payment like '%Y틴 38%'
+		
+		select *
+		from skt_pay, kt_pay, lg_pay
 
 

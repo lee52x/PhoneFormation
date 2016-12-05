@@ -14,6 +14,16 @@ public class SktServiceImpl implements SktService {
 	
 	@Inject
 	private SktDAO dao;
+	
+	@Override
+	public List<SktVO> payment(String payment) throws Exception {
+		return dao.payment(payment);
+	}
+
+	@Override
+	public List<SktVO> paymentAll(String payment) throws Exception {
+		return dao.paymentAll(payment);
+	}
 
 	@Override
 	public List<SktVO> payment_signiture(String payment) throws Exception {
