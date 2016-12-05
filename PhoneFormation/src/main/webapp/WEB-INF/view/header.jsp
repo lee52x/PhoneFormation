@@ -33,8 +33,6 @@
 </head>
 <script type="text/javascript">
 	$(document).ready(function() {
-		console.log("href: "+$(location).attr('href'));
-		//alert($(location).attr('href'));
 		$('#logout').click(function() {
 			$.ajax({
 				url : "/phonefo/logout",
@@ -43,17 +41,7 @@
 				}
 			});
 		});
-		 /* if($(location).attr('href')=='http://localhost/phonefo/main'){
-			$('#samsung').attr('href','/phonefo/phoneInfo?manufacture=samsung');
-			$('#lg').attr('href','/phonefo/phoneInfo?manufacture=lg');
-			$('#apple').attr('href','/phonefo/phoneInfo?manufacture=apple');
-			
-			$('#samsung').attr('data-toggle','');
-			$('#lg').attr('data-toggle','');
-			$('#apple').attr('data-toggle','');
-			
-		} */
-
+	
 		if ($(location).attr('href') == 'http://localhost/phonefo/phoneInfo?manufacture=samsung') {
 			$('#samsung').attr({'href' : '#tab-4',
 								'data-toggle' : "tab"

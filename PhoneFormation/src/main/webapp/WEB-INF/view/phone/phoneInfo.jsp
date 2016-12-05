@@ -87,6 +87,33 @@
 	top : 250px;
 }
 
+.ckbox .ckboxContent .ckPhone1{
+	background-color: white;
+	position: fixed;
+	top : 300px;
+	left: 450px;
+	width: 200px;
+	height: 200px;	
+}
+
+.ckbox .ckboxContent .ckPhone2{
+	background-color: orange;
+	position: fixed;
+	top : 300px;
+	left: 700px;
+	width: 200px;
+	height: 200px;	
+}
+
+.ckbox .ckboxContent .btn_allremove{
+	background-color: green;
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	top: 500px;
+	left: 600px;
+}
+
 .ckbox .button{
 	right: 10px;
 }
@@ -100,32 +127,61 @@
 			$("#tab_samsung").attr('class','active');	
 			$("#tab_lg").attr('class','');	
 			$("#tab_apple").attr('class','');				
-		})
+		});
 		$('#lg').click(function(){
 			$("#tab_samsung").attr('class','');	
 			$("#tab_lg").attr('class','active');			  
 			$("#tab_apple").attr('class','');	
-		})
+		});
 		$('#apple').click(function(){
 			$("#tab_samsung").attr('class','');	
 			$("#tab_lg").attr('class','');	
 			$("#tab_apple").attr('class','active');				
-		}) 
-		
-		 $(".ckb" ).change(function(){
-				if(this.checked){
-					$('.ckbox').show();
-					$('.btn_click').click(function(){
-						$('.ckboxContent').show();
-					});
-					$('.btn_close').click(function(){
-						$('.ckboxContent').hide();						
-					});
-				}else{
-					$('.ckbox').hide();
-				}
-		 });
+		}); 
 	});
+	var chkcnt=0;
+	var chkMaxcnt=2;
+		 
+	function chk(chkObj){
+		var chk = chkObj.checked; //체크박스 선택 true/false;
+		var name = chkObj.name; //체크박스 이름 "box"
+		var len = document.getElementsByName(name).length; //체크박스 총갯수
+			 
+		if(chk){//체크박스 선택시 chkcnt 1증가
+			chkcnt=chkcnt+1;
+			alert("첫번째 클릭 : "+chkcnt);
+			$('.ckbox').show();
+			$('.btn_click').click(function(){ //보이기 클릭시
+				$('.ckboxContent').show(); //내용 보이기
+			});
+			$('.btn_close').click(function(){ //숨기기 클릭시
+				$('.ckboxContent').hide(); //내용 숨김		
+			});
+			if(chkcnt >= chkMaxcnt){ //2개 초과 시 더 이상 선택 안되게끔 disable시킴
+				alert('비교하기는 최대 2개까지만 가능합니다.');
+				for(var i=0; i<len; i++){
+					if(document.getElementsByName(name)[i].checked == false){
+						document.getElementsByName(name)[i].disabled=true;
+					}//if
+				}//for
+				chkcnt = chkMaxcnt;
+			}
+		}else { //체크박스 해제시 chkcnt 1감소
+			chkcnt = chkcnt-1;
+			alert('취소 클릭 :'+chkcnt);
+			if(chkcnt==chkMaxcnt-1){
+				for(var i=0; i<len; i++){
+					if(document.getElementsByName(name)[i].disabled ==true){
+						document.getElementsByName(name)[i].disabled=false;
+					}//if
+				}//for
+			}//if
+			if(chkcnt==0){
+				$('.ckbox').hide();
+			}
+		}//else
+	} //function
+
 	
 </script>
 </head>
@@ -155,7 +211,7 @@
 											<img src="${list1.image }">
 											<p>${list1.name }</p><br>
 										</a>
-											<input type="checkbox" class="ckb">비교하기<br>
+											<input type="checkbox" class="ckb" name='box' onclick="chk(this)">비교하기<br>
 										</div>
 									</center>
 									</td>
@@ -221,10 +277,12 @@
 		비교하기
 		<div class='ckboxContent'>
 		내용이 나올 것이다!!
+			<div class="ckPhone1">핸드폰1</div>
+			<div class="ckPhone2">핸드폰2</div>
+			<button class='btn_allremove'>모두 지우기</button>
 		</div>
-		<button class='btn_click'>눌러봐</button>
-		<button class='btn_close'>닫아봐</button>
+		<button class='btn_click'>보이기</button>
+		<button class='btn_close'>숨기기</button>
 	</div>
-
 </body>
 </html>
