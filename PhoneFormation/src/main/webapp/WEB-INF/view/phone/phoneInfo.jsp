@@ -46,7 +46,7 @@
 }
 .tab-image{
 	height: 500px;
-	width: 400px;
+	width: 300px;
 }
 
 .tab-image img{
@@ -69,24 +69,7 @@
 }
 </style>
 <script type="text/javascript">
-	//var manufacture = $('.samsung').attr().val;
-	//alert(manufacture)
 	$(document).ready(function() {
-		/* loc = location.href.split("?");		
-		if(loc[1]=='manufacture=samsung'){
-			$("#tab_samsung").attr('class','active');	
-			$("#tab_lg").attr('class','');	
-			$("#tab_apple").attr('class','');	
-		}else if(loc[1]=='manufacture=lg'){
-			$("#tab_samsung").attr('class','');	
-			$("#tab_lg").attr('class','active');	
-			alert($('tag_lg').attr('class').val())
-			$("#tab_apple").attr('class','');
-		}else if(loc[1]='manufacture=apple'){
-			$("#tab_samsung").attr('class','');	
-			$("#tab_lg").attr('class','');	
-			$("#tab_apple").attr('class','active');
-		} */
 		 $('#samsung').click(function(){
 			$("#tab_samsung").attr('class','active');	
 			$("#tab_lg").attr('class','');	
@@ -94,8 +77,8 @@
 		})
 		$('#lg').click(function(){
 			$("#tab_samsung").attr('class','');	
-			$("#tab_lg").attr('class','active');	
-			$("#tab_apple").attr('class','');				
+			$("#tab_lg").attr('class','active');			  
+			$("#tab_apple").attr('class','');	
 		})
 		$('#apple').click(function(){
 			$("#tab_samsung").attr('class','');	
@@ -106,7 +89,6 @@
 	
 </script>
 </head>
-<body>
 	<div id="content">
 		<div class="container">
 			<div class="row sidebar-page">
@@ -121,20 +103,21 @@
 					<div class="tab-content">
 						<!-- Tab Content 1 -->
 						<div class="tab-pane fade in active" id="tab-4">
-							<table align="center">
+							<table border="1" bordercolor="#dcdcdc" cellspacing="100">
 								<c:forEach items="${list1 }" var="list1" varStatus="status">
 									<c:if test="${status.index%3==0}">                                  
 										<tr>
 									</c:if>
 									<td>
-									<div class="tab-image">
-									<a href="/phonefo/phoneInfo_spec?no=${list1.no}">
-										<center>
+									<center>
+										<div class="tab-image">
+										<a href="/phonefo/phoneInfo_spec?no=${list1.no}">
 											<img src="${list1.image }">
-											<p>${list1.name }</p>
-										</center>
-									</a>
-									</div>
+											<p>${list1.name }</p><br>
+											<a href="#" id="btnCompare" class="btnS w60 btnRed">비교하기</a>
+										</a>
+										</div>
+									</center>
 									</td>
 									<c:if test="${status.index%3==2}">
 										</tr>

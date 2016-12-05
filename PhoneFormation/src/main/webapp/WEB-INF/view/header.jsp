@@ -33,6 +33,8 @@
 </head>
 <script type="text/javascript">
 	$(document).ready(function() {
+		console.log("href: "+$(location).attr('href'));
+		//alert($(location).attr('href'));
 		$('#logout').click(function() {
 			$.ajax({
 				url : "/phonefo/logout",
@@ -41,7 +43,43 @@
 				}
 			});
 		});
-	});
+		 if($(location).attr('href')=='http://localhost/phonefo/main'){
+			$('#samsung').attr('href','/phonefo/phoneInfo?manufacture=samsung');
+			$('#lg').attr('href','/phonefo/phoneInfo?manufacture=lg');
+			$('#apple').attr('href','/phonefo/phoneInfo?manufacture=apple');
+			
+			$('#samsung').attr('data-toggle','');
+			$('#lg').attr('data-toggle','');
+			$('#apple').attr('data-toggle','');
+			
+		}
+
+		if ($(location).attr('href') == 'http://localhost//phonefo/phoneInfo?manufacture=samsung') {
+			$('#samsung').attr({'href' : '#tab-4',
+								'data-toggle' : "tab"
+							});
+			$("#tab_samsung").attr('class', 'active');
+			$("#tab_lg").attr('class', '');
+			$("#tab_apple").attr('class', '');
+			$('#samsung').click();
+		} else if ($(location).attr('href') == 'http://localhost/phonefo/phoneInfo?manufacture=lg') {
+			$('#lg').attr({'href' : '#tab-5',
+						   'data-toggle' : "tab"
+							});
+			$("#tab_samsung").attr('class', '');
+			$("#tab_lg").attr('class', 'active');
+			$("#tab_apple").attr('class', '');
+			$('#lg').click();
+		} else if ($(location).attr('href') == 'http://localhost/phonefo/phoneInfo?manufacture=apple') {
+			$('#apple').attr({'href' : '#tab-6',
+							  'data-toggle' : "tab"
+							});
+			$("#tab_samsung").attr('class', '');
+			$("#tab_lg").attr('class', '');
+			$("#tab_apple").attr('class', 'active');
+			$('#apple').click();
+			}
+		});
 </script>
 
 <body>
@@ -144,9 +182,9 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a class="active" href="/phonefo/phoneInfo">최신폰</a>
 							<ul class="dropdown">
-								<li><a href="#tab-4"  data-toggle="tab" class="samsung" id="samsung">삼성전자</a></li>
-								<li><a href="#tab-5"  data-toggle="tab" class="lg" id="lg">LG전자</a></li>
-								<li><a href="#tab-6"  data-toggle="tab" class="apple" id="apple">애플</a></li>
+								<li><a href="#tab-4" data-toggle="tab" class="samsung" id="samsung">삼성전자</a></li>
+								<li><a href="#tab-5" data-toggle="tab" class="lg" id="lg">LG전자</a></li>
+								<li><a href="#tab-6" data-toggle="tab" class="apple" id="apple">애플</a></li>
 							</ul></li>
 						<li><a href="about.html">견적</a>
 							<ul class="dropdown">

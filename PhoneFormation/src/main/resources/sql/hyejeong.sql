@@ -1,17 +1,6 @@
 drop table ph_color;
 drop table ph_capacity;
 
-drop table Sspec_processor;
-drop table Sspec_display;
-drop table Sspec_camera;
-drop table Sspec_memory;
-drop table Sspec_network;
-drop table Sspec_connect;
-drop table Sspec_specifications;
-drop table Sspec_battery;
-drop table Sspec_audio;
-drop table Sspec_service;
-
 drop table spec_processor;
 drop table spec_display;
 drop table spec_camera;
