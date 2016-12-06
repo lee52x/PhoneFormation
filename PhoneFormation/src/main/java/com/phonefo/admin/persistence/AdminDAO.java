@@ -3,6 +3,7 @@ package com.phonefo.admin.persistence;
 import java.util.List;
 
 import com.phonefo.admin.domain.AdminB_MemberVO;
+import com.phonefo.admin.domain.AdminCntVO;
 import com.phonefo.admin.domain.AdminMemberVO;
 import com.phonefo.admin.domain.AdminOnoBoardVO;
 import com.phonefo.admin.domain.AdminRouteVO;
@@ -39,5 +40,23 @@ public interface AdminDAO {
 	   
 	   //가입정보 통계카운트
 	   public int routeInfoCnt()throws Exception;
+	   
+	   //중고 거래성사 카운트
+	   public int quoteDeal()throws Exception;
+	      
+	   //중고 총금액 카운트
+	   public List<AdminCntVO> quotePrice()throws Exception;
+	     
+	   //수리 거래성사 카운트
+	   public int repairDeal()throws Exception;
+	   
+	   //수리 총금액 카운트
+	   public List<AdminCntVO> repairPrice()throws Exception;
+	   
+	   
+	   
+	   
+	   
+	   
 	   
 }

@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.phonefo.admin.domain.AdminB_MemberVO;
+import com.phonefo.admin.domain.AdminCntVO;
 import com.phonefo.admin.domain.AdminMemberVO;
 import com.phonefo.admin.domain.AdminOnoBoardVO;
 import com.phonefo.admin.domain.AdminRouteVO;
@@ -75,6 +76,30 @@ public class AdminDAOImpl implements AdminDAO{
 	
 		return sqlSession.selectOne("admin.routeInfoCnt");
 		
+	}
+
+	@Override   //중고 거래성사 카운트
+	public int quoteDeal() throws Exception {
+		
+		return sqlSession.selectOne("admin.quoteDeal");
+	}
+
+	@Override  //중고 총금액 카운트
+	public List<AdminCntVO> quotePrice() throws Exception {
+		
+		return sqlSession.selectList("admin.quotePrice");
+	}
+
+	@Override  //수리 거래성사 카운트
+	public int repairDeal() throws Exception {
+		
+		return sqlSession.selectOne("admin.repairDeal");
+	}
+
+	@Override   //수리 총금액 카운트
+	public List<AdminCntVO> repairPrice() throws Exception {
+		
+		return sqlSession.selectList("admin.repairPrice");
 	}
 
 

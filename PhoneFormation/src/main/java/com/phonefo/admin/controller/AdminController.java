@@ -97,11 +97,12 @@ public class AdminController {
 		}
 		
 		
-		@RequestMapping("/adminQuoteInfo")
+		@RequestMapping("/adminCntInfo")
 		public String adminQuoteInfo(Model model)throws Exception{
 			//model.addAttribute("object",service.routeInfo());
 			
-			model.addAttribute("body", "./admin/adminQuoteInfo.jsp");
+			model.addAttribute("object",service.allStats());
+			model.addAttribute("body", "./admin/adminCntInfo.jsp");
 			
 			return "mainView";
 		}
