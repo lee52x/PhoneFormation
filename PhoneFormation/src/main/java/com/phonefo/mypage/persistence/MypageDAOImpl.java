@@ -102,6 +102,13 @@ public class MypageDAOImpl implements MypageDAO {
 	public MypagePurchaseVO myPagePurchaseEnd(String no) throws Exception {
 		return sqlSession.selectOne("mypage.mypagePurchaseEnd", no);
 	}
+//////////////////////////////////////////////////////////기업쪽 마이페이지
+	
+	
+	@Override//기업 중고견적 구매 신청 리스트
+	public List<MypageQuoteVO> myPageB_QuoteList(HttpSession session) throws Exception {
+		return sqlSession.selectList("mypage.mypageB_QuoteInfo",session.getAttribute("userid"));
+	}
 
 
 }

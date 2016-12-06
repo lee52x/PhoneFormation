@@ -15,6 +15,17 @@ public class KtDAOImpl implements KtDAO {
 	@Inject
 	private SqlSession sqlSession;
 	
+	@Override
+	public List<KtVO> payment(String payment) throws Exception{
+		return sqlSession.selectList("payment.kt", payment);
+	}
+	
+	@Override
+	public List<KtVO> paymentAll(String payment) throws Exception{
+		return sqlSession.selectList("payment.kt_select", payment);
+	}
+	
+	@Override
 	public List<KtVO> limited(String payment) throws Exception{
 		return sqlSession.selectList("kt_payment.limited", payment);
 	}

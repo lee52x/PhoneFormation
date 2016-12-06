@@ -71,13 +71,19 @@ public class MypageServiceImpl implements MypageService {
 	}
 
 	@Override
-	public int mypagePurchaseIngChoose(Map<String, String> map) throws Exception {//마이페이지 거래완료
+	public int mypagePurchaseIngChoose(Map<String, String> map) throws Exception {//마이페이지 거래완료업데이트
 		return dao.myPagePurchaseIngChoose(map);
 	}
 
-	@Override
+	@Override//마에페이제 거래 완료 목록
 	public MypagePurchaseVO mypagePurchaseEnd(String no) throws Exception {
 		return dao.myPagePurchaseEnd(no);
+	}
+
+	@Override	//기업 중고견적 구매 신청 리스트
+	public List<MypageQuoteVO> mypageB_QuoteList(HttpSession session) throws Exception {
+	
+		return dao.myPageB_QuoteList(session);
 	}
 
 

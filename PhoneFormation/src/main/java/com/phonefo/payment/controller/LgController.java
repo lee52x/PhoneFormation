@@ -201,7 +201,133 @@ public class LgController {
 	}
 	
 	@RequestMapping("/payment/lg/LTE 34")
-	public String lteSinier(String payment, Model model) throws Exception{
+	public String lte34(String payment, Model model) throws Exception{
+		
+		model.addAttribute("body", "./payment/lg/lg_lte.jsp");
+		
+		model.addAttribute("lte", service.payment_lte(payment));
+		model.addAttribute("lte34", service.payment_lte34(payment));
+		model.addAttribute("lte42", service.payment_lte42(payment));
+		model.addAttribute("lte52", service.payment_lte52(payment));
+		model.addAttribute("lte62", service.payment_lte62(payment));
+		model.addAttribute("lte72", service.payment_lte72(payment));
+		model.addAttribute("lte85", service.payment_lte85(payment));
+		model.addAttribute("lte100", service.payment_lte100(payment));
+		model.addAttribute("lte120", service.payment_lte120(payment));
+		
+		return "mainView";
+	}
+	
+	@RequestMapping("/payment/lg/LTE 42")
+	public String lte42(String payment, Model model) throws Exception{
+		
+		model.addAttribute("body", "./payment/lg/lg_lte.jsp");
+		
+		model.addAttribute("lte", service.payment_lte(payment));
+		model.addAttribute("lte34", service.payment_lte34(payment));
+		model.addAttribute("lte42", service.payment_lte42(payment));
+		model.addAttribute("lte52", service.payment_lte52(payment));
+		model.addAttribute("lte62", service.payment_lte62(payment));
+		model.addAttribute("lte72", service.payment_lte72(payment));
+		model.addAttribute("lte85", service.payment_lte85(payment));
+		model.addAttribute("lte100", service.payment_lte100(payment));
+		model.addAttribute("lte120", service.payment_lte120(payment));
+		
+		return "mainView";
+	}
+	
+	@RequestMapping("/payment/lg/LTE 52")
+	public String lte52(String payment, Model model) throws Exception{
+		
+		model.addAttribute("body", "./payment/lg/lg_lte.jsp");
+		
+		model.addAttribute("lte", service.payment_lte(payment));
+		model.addAttribute("lte34", service.payment_lte34(payment));
+		model.addAttribute("lte42", service.payment_lte42(payment));
+		model.addAttribute("lte52", service.payment_lte52(payment));
+		model.addAttribute("lte62", service.payment_lte62(payment));
+		model.addAttribute("lte72", service.payment_lte72(payment));
+		model.addAttribute("lte85", service.payment_lte85(payment));
+		model.addAttribute("lte100", service.payment_lte100(payment));
+		model.addAttribute("lte120", service.payment_lte120(payment));
+		
+		return "mainView";
+	}
+	
+	@RequestMapping("/payment/lg/LTE 62")
+	public String lte62(String payment, Model model) throws Exception{
+		
+		model.addAttribute("body", "./payment/lg/lg_lte.jsp");
+		
+		model.addAttribute("lte", service.payment_lte(payment));
+		model.addAttribute("lte34", service.payment_lte34(payment));
+		model.addAttribute("lte42", service.payment_lte42(payment));
+		model.addAttribute("lte52", service.payment_lte52(payment));
+		model.addAttribute("lte62", service.payment_lte62(payment));
+		model.addAttribute("lte72", service.payment_lte72(payment));
+		model.addAttribute("lte85", service.payment_lte85(payment));
+		model.addAttribute("lte100", service.payment_lte100(payment));
+		model.addAttribute("lte120", service.payment_lte120(payment));
+		
+		return "mainView";
+	}
+	
+	@RequestMapping("/payment/lg/LTE 72")
+	public String lte72(String payment, Model model) throws Exception{
+		
+		model.addAttribute("body", "./payment/lg/lg_lte.jsp");
+		
+		model.addAttribute("lte", service.payment_lte(payment));
+		model.addAttribute("lte34", service.payment_lte34(payment));
+		model.addAttribute("lte42", service.payment_lte42(payment));
+		model.addAttribute("lte52", service.payment_lte52(payment));
+		model.addAttribute("lte62", service.payment_lte62(payment));
+		model.addAttribute("lte72", service.payment_lte72(payment));
+		model.addAttribute("lte85", service.payment_lte85(payment));
+		model.addAttribute("lte100", service.payment_lte100(payment));
+		model.addAttribute("lte120", service.payment_lte120(payment));
+		
+		return "mainView";
+	}
+	
+	@RequestMapping("/payment/lg/LTE 85")
+	public String lte85(String payment, Model model) throws Exception{
+		
+		model.addAttribute("body", "./payment/lg/lg_lte.jsp");
+		
+		model.addAttribute("lte", service.payment_lte(payment));
+		model.addAttribute("lte34", service.payment_lte34(payment));
+		model.addAttribute("lte42", service.payment_lte42(payment));
+		model.addAttribute("lte52", service.payment_lte52(payment));
+		model.addAttribute("lte62", service.payment_lte62(payment));
+		model.addAttribute("lte72", service.payment_lte72(payment));
+		model.addAttribute("lte85", service.payment_lte85(payment));
+		model.addAttribute("lte100", service.payment_lte100(payment));
+		model.addAttribute("lte120", service.payment_lte120(payment));
+		
+		return "mainView";
+	}
+	
+	@RequestMapping("/payment/lg/LTE 100")
+	public String lte100(String payment, Model model) throws Exception{
+		
+		model.addAttribute("body", "./payment/lg/lg_lte.jsp");
+		
+		model.addAttribute("lte", service.payment_lte(payment));
+		model.addAttribute("lte34", service.payment_lte34(payment));
+		model.addAttribute("lte42", service.payment_lte42(payment));
+		model.addAttribute("lte52", service.payment_lte52(payment));
+		model.addAttribute("lte62", service.payment_lte62(payment));
+		model.addAttribute("lte72", service.payment_lte72(payment));
+		model.addAttribute("lte85", service.payment_lte85(payment));
+		model.addAttribute("lte100", service.payment_lte100(payment));
+		model.addAttribute("lte120", service.payment_lte120(payment));
+		
+		return "mainView";
+	}
+	
+	@RequestMapping("/payment/lg/LTE 120")
+	public String lte120(String payment, Model model) throws Exception{
 		
 		model.addAttribute("body", "./payment/lg/lg_lte.jsp");
 		

@@ -110,5 +110,19 @@ public class MypageController {
 		//return "redirect:/mainView";
 		return "redirect:/phonefo/main";
 	}
+	
+	@RequestMapping("/mypageB_Quote")//마이페이지 중고견적
+	public String myPageB_Quote(Model model,HttpSession session)throws Exception{
+		
+	
+		model.addAttribute("list",service.mypageB_QuoteList(session));
+		
+		
+		model.addAttribute("body", "./mypage/mypageB_Quote.jsp");
+		
+		
+		return "mainView";
+	}
+	
 
 }

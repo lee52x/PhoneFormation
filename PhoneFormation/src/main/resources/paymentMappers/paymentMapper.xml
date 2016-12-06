@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="payment">
+	<select id="skt" resultType="skt_payment">
+		select payment
+		from skt_pay
+	</select>
+	<select id="kt" resultType="kt_payment">
+		select payment
+		from kt_pay
+	</select>
+	<select id="lg" resultType="lg_payment">
+		select payment
+		from lg_pay
+	</select>
+	<select id="skt_select" resultType="skt_payment">
+		select *
+		from skt_pay
+		where payment=#{payment}
+	</select>
+	<select id="kt_select" resultType="kt_payment">
+		select * 
+		from kt_pay
+		where payment=#{payment}
+	</select>
+	<select id="lg_select" resultType="lg_payment">
+		select *
+		from lg_pay
+		where payment = #{payment}
+	</select>
+</mapper>

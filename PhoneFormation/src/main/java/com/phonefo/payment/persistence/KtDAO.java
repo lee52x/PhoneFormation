@@ -5,6 +5,9 @@ import java.util.List;
 import com.phonefo.payment.domain.KtVO;
 
 public interface KtDAO {
+	public List<KtVO> payment(String payment) throws Exception;
+	public List<KtVO> paymentAll(String payment) throws Exception;
+	
 	public List<KtVO> limited(String payment) throws Exception;
 	public List<KtVO> limited99(String payment) throws Exception;
 	public List<KtVO> limited77(String payment) throws Exception;

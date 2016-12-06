@@ -6,6 +6,12 @@ import com.phonefo.payment.domain.SktVO;
 
 public interface SktDAO {
 	
+	// 전제 요금제 명만 보내기
+	public List<SktVO> payment(String payment)throws Exception;
+	
+	// 전체 요금제 정보 보내기
+	public List<SktVO> paymentAll(String payment)throws Exception;
+	
 	// T 시그니쳐 요금제 조회
 	public List<SktVO> payment_signiture(String payment)throws Exception;
 	public List<SktVO> payment_signiture_master(String payment)throws Exception;
