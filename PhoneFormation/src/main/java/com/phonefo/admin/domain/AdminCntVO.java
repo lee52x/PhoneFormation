@@ -1,5 +1,5 @@
 package com.phonefo.admin.domain;
 
-public class AdminQuoteCntVO {
+public class AdminCntVO {
 
 }
