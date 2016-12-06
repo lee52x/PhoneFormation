@@ -13,6 +13,9 @@
 					<div>
 <%@include file="adminHeader.jsp"%>
 	</div>		
+	 <!-- Classic Heading -->
+                        <h4 class="classic-title"><span>일반멤버 </span></h4>
+	
 				<div class='widget widget-search'>
 					<select name="searchType">
 						<option value="n"

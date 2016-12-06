@@ -6,6 +6,7 @@
 <typeAlias type="com.phonefo.admin.domain.AdminMemberVO" alias="adminMember"/>
 <typeAlias type="com.phonefo.admin.domain.AdminB_MemberVO" alias="adminB_Member"/>
 <typeAlias type="com.phonefo.admin.domain.AdminOnoBoardVO" alias="adminOno"/>
+<typeAlias type="com.phonefo.admin.domain.AdminRouteVO" alias="adminRoute"/>
 <typeAlias type="com.phonefo.mypage.domain.MypageMemberVO" alias="mypageMember"/>
 <typeAlias type="com.phonefo.mypage.domain.MypageOnoVO" alias="mypageOno"/>
 <typeAlias type="com.phonefo.mypage.domain.MypageQuoteVO" alias="mypageQuote"/>
