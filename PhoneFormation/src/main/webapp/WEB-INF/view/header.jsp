@@ -49,7 +49,7 @@
 			$("#tab_samsung").attr('class', 'active');
 			$("#tab_lg").attr('class', '');
 			$("#tab_apple").attr('class', '');
-			$('#samsung').clickod();
+			$('#samsung').click();
 		} else if ($(location).attr('href') == 'http://localhost/phonefo/phoneInfo?manufacture=lg') {
 			$('#lg').attr({'href' : '#tab-5',
 						   'data-toggle' : "tab"
