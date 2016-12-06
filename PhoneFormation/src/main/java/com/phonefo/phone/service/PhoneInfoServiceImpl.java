@@ -97,4 +97,9 @@ public class PhoneInfoServiceImpl implements PhoneInfoService{
 		return dao.select_spec_service(no);
 	}
 
+	@Override
+	public List<PhoneInfoVO> select_phone(String name) throws Exception {
+		return dao.select_phone(name);
+	}
+
 }

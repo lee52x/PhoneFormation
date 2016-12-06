@@ -120,6 +120,7 @@
 </style>
 <script type="text/javascript">
 	$(document).ready(function() {
+		//alert('sdsd');
 		$('.ckbox').hide();
 		$('.ckboxContent').hide();
 		
@@ -146,11 +147,49 @@
 		var chk = chkObj.checked; //체크박스 선택 true/false;
 		var name = chkObj.name; //체크박스 이름 "box"
 		var len = document.getElementsByName(name).length; //체크박스 총갯수
+		//var items = new Array();
 			 
 		if(chk){//체크박스 선택시 chkcnt 1증가
 			chkcnt=chkcnt+1;
-			alert("첫번째 클릭 : "+chkcnt);
+			//alert("첫번째 클릭 : "+chkcnt);
+			
+			$(".ckb:checked").each(function(){
+				//items.push($(this).val());
+				var item = $(this).val();
+				//alert(item);
+				$.ajax({
+					url:"/phonefo/phonechk",
+					type:'post',
+					data:{name:$(this).val()},
+					success:function(result){
+						for(var i=0; i<result.length; i++){
+							alert('result['+i+'].name'+result[i].name);
+						}
+						//alert(result[0].name);
+						//$('.ckPhone1').html(result);
+						//alert(result); result==배열 [{name:갤럭시},{}]
+						//alert(result[0].name);
+						/* var options = '<option>기기명 선택</option>';
+						for (var i = 0; i < result.length; i++) {
+							/// alert(result[i].name);
+							options += '<option>' + result[i].name + '</option>';
+						}
+						$('#machine').html(options); */
+					}
+				});
+			});
+/* 			$.ajax({
+				url:"/phonefo/phonechk",
+				type:'post',
+				data:{'itemArray':items},
+				success:function(){
+					alert('완료!');
+					//$('.ckPhone1').html(result);
+				}
+			}); */
+			
 			$('.ckbox').show();
+			$('.ckboxContent').show();
 			$('.btn_click').click(function(){ //보이기 클릭시
 				$('.ckboxContent').show(); //내용 보이기
 			});
@@ -168,7 +207,7 @@
 			}
 		}else { //체크박스 해제시 chkcnt 1감소
 			chkcnt = chkcnt-1;
-			alert('취소 클릭 :'+chkcnt);
+			//alert('취소 클릭 :'+chkcnt);
 			if(chkcnt==chkMaxcnt-1){
 				for(var i=0; i<len; i++){
 					if(document.getElementsByName(name)[i].disabled ==true){
@@ -181,6 +220,9 @@
 			}
 		}//else
 	} //function
+	
+	//var arr = $('input[name=box]:checked').serializeArray().map(function(item) { return item.value });
+	//alert(arr);
 
 	
 </script>
@@ -199,7 +241,7 @@
 					<div class="tab-content">
 						<!-- Tab Content 1 -->
 						<div class="tab-pane fade in active" id="tab-4">
-							<table border="1" bordercolor="#dcdcdc" cellspacing="100">
+							<table border="1" bordercolor="#dcdcdc" cellspacing="100" class='tbl'>
 								<c:forEach items="${list1 }" var="list1" varStatus="status">
 									<c:if test="${status.index%3==0}">                                  
 										<tr>
@@ -211,7 +253,7 @@
 											<img src="${list1.image }">
 											<p>${list1.name }</p><br>
 										</a>
-											<input type="checkbox" class="ckb" name='box' onclick="chk(this)">비교하기<br>
+											<input type="checkbox" class="ckb" name='box' value='${list1.name }' onclick="chk(this)">비교하기<br>
 										</div>
 									</center>
 									</td>

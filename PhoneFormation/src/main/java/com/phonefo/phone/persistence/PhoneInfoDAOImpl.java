@@ -96,4 +96,9 @@ public class PhoneInfoDAOImpl implements PhoneInfoDAO {
 		return sqlSession.selectList("phone.select_Sspec_service", no);
 	}
 
+	@Override
+	public List<PhoneInfoVO> select_phone(String name) throws Exception {
+		return sqlSession.selectList("phone.select_phone", name);
+	}
+
 }

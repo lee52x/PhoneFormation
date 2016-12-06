@@ -16,7 +16,7 @@ public class PhoneController {
 	private PhoneInfoService service;
 	
 	@RequestMapping("phoneInfo")
-	public String phoneInfo(Model model, String manufacture)throws Exception{
+	public String phoneInfo(Model model)throws Exception{
 		model.addAttribute("list1", service.selectInfo("samsung"));	
 		model.addAttribute("list2", service.selectInfo("lg"));	
 		model.addAttribute("list3", service.selectInfo("apple"));	
