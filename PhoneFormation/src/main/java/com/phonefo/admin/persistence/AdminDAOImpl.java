@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.phonefo.admin.domain.AdminB_MemberVO;
 import com.phonefo.admin.domain.AdminMemberVO;
 import com.phonefo.admin.domain.AdminOnoBoardVO;
+import com.phonefo.admin.domain.AdminRouteVO;
 import com.phonefo.admin.domain.SearchCriteria;
 
 @Repository
@@ -60,6 +61,20 @@ public class AdminDAOImpl implements AdminDAO{
 	public int OnoAnser(AdminOnoBoardVO vo) throws Exception {
 		
 		return sqlSession.update("admin.onoAnser", vo);
+	}
+
+
+	@Override//가입정보 통계
+	public List<AdminRouteVO> routeInfo() throws Exception {
+
+		return sqlSession.selectList("admin.routeInfo");
+	}
+
+	@Override//가입정보 카운터
+	public int routeInfoCnt() throws Exception {
+	
+		return sqlSession.selectOne("admin.routeInfoCnt");
+		
 	}
 
 

@@ -5,6 +5,7 @@ import java.util.List;
 import com.phonefo.admin.domain.AdminB_MemberVO;
 import com.phonefo.admin.domain.AdminMemberVO;
 import com.phonefo.admin.domain.AdminOnoBoardVO;
+import com.phonefo.admin.domain.AdminRouteVO;
 import com.phonefo.admin.domain.SearchCriteria;
 
 
@@ -33,5 +34,10 @@ public interface AdminDAO {
 	   //1대1문의 답변하기
 	   public int OnoAnser(AdminOnoBoardVO vo)throws Exception;
 	   
+	   //가입정보 통계
+	   public List<AdminRouteVO> routeInfo()throws Exception;
+	   
+	   //가입정보 통계카운트
+	   public int routeInfoCnt()throws Exception;
 	   
 }

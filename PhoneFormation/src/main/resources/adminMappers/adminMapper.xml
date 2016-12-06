@@ -106,5 +106,18 @@
   <update id="onoAnser">
   update ph_ono set answer=#{answer},answer_regdate=sysdate where ono=#{ono}
   </update>
+  
+  <select id="routeInfo" resultType="adminRoute">
+  select root from ph_member
+  
+  </select>
+  
+  <select id="routeInfoCnt" resultType="int">
+  
+  select count(*) from ph_member
+  
+  </select>  
+  
+  
 </mapper>
 
