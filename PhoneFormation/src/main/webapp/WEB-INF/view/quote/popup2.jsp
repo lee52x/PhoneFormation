@@ -75,7 +75,7 @@ $(document).ready(function(){
 	<tr>
 		<th class="last"><span>예상견적가</span></th>
 		<td class="last" colspan="3">
-			${vo.quote_price }
+			${vo.repair_price }
 		</td>
 
 	</tr>

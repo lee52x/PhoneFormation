@@ -111,7 +111,7 @@ select*from ph_repair
 	userid varchar2(50),
 	username varchar2(50),
 	tel varchar2(50),
-	quote_price number(10),
+	repair_price number(10),
 	request_message varchar2(1000),
 	bank_name varchar2(50),
 	account_number varchar2(50),

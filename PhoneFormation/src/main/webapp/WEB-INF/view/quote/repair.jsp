@@ -193,7 +193,7 @@
 						}
 					}
 					$('#machineState').val(str);					
-					$('#quote_price').val(repairPrice);
+					$('#repair_price').val(repairPrice);
 					
 					
 				}
@@ -206,7 +206,7 @@
 		
 	
 		$('#repairRequest').click(function(){
-			var result = confirm('핸드폰:'+$('#machine').val()+'   수리예상가격:'+$('#quote_price').val()+'입니다.판매신청 하시겠습니까?');
+			var result = confirm('핸드폰:'+$('#machine').val()+'   수리예상가격:'+$('#repair_price').val()+'입니다.판매신청 하시겠습니까?');
 			if(result==true)
 				document.frm.submit();
 		});
@@ -1354,7 +1354,7 @@ label.checkbox-label {
 						<table>
 					<tr>
 						<td width="100" style="text-align: right">견적가격</td>
-						<td><input type="text" id="quote_price" name="quote_price"
+						<td><input type="text" id="repair_price" name="repair_price"
 							value="" readonly style="text-align: center;" />원</td>
 					</tr>
 
