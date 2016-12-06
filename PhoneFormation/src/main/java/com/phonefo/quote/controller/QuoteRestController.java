@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.phonefo.main.domain.MemberVO;
 import com.phonefo.quote.domain.PhoneVO;
+import com.phonefo.quote.domain.PurchaseRepairVO;
 import com.phonefo.quote.domain.PurchaseVO;
 import com.phonefo.quote.domain.QuoteVO;
 import com.phonefo.quote.domain.RepairVO;
@@ -143,13 +144,20 @@ public class QuoteRestController {
 		
 		
 	}
-	
+	//기업이 중고폰 구매요청
 	@RequestMapping("/purchase_request")
 	public void purchase_request(PurchaseVO vo)throws Exception{
 
 		service.purchase(vo);
 		
 		
+		
+	}
+	//기업이 수리하겠다 요청
+	@RequestMapping("/repair_request")
+	public void repair_request(PurchaseRepairVO vo)throws Exception{
+		
+		service.requestRepair(vo);
 		
 	}
 	

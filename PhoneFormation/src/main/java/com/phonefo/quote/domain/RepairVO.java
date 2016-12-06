@@ -23,6 +23,7 @@ public class RepairVO {
 	private int afterimage;
 	private int lcd;
 	private String manufacture;
+	private String machineState;
 	
 	private String address;
 	private String tel;
@@ -59,6 +60,36 @@ public class RepairVO {
 				+ ", address=" + address + ", tel=" + tel + ", userid=" + userid + ", username=" + username
 				+ ", request_message=" + request_message + ", bank_name=" + bank_name + ", account_number="
 				+ account_number + ", rdate=" + rdate + ", quote_price=" + quote_price + "]";
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public String getMachineState() {
+		return machineState;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setMachineState(String machineState) {
+		this.machineState = machineState;
 	}
 
 

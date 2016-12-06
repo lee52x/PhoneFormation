@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.phonefo.quote.domain.PhoneVO;
+import com.phonefo.quote.domain.PurchaseRepairVO;
 import com.phonefo.quote.domain.PurchaseVO;
 import com.phonefo.quote.domain.QuoteVO;
 import com.phonefo.quote.domain.RepairVO;
@@ -98,6 +99,12 @@ public class PhoneDAOImpl implements PhoneDAO{
 	public RepairVO repairConfirm(int no) throws Exception {
 	
 		return sql.selectOne("quote.repairConfirm",no);
+	}
+
+	@Override
+	public void requestRepair(PurchaseRepairVO vo) throws Exception {
+		sql.insert("quote.requestRepair",vo);
+		
 	}
 	
 

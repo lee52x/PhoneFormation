@@ -44,7 +44,7 @@ $(document).ready(function(){
 		alert($('#no').val() );
 		
 		$.ajax({
-			url:"/phonefo/purchase_request",
+			url:"/phonefo/repair_request",
 			data:{no:$('#no').val(),userid:$('#userid').val()},
 			success:function(){
 				alert('신청이 완료되었습니다.');
@@ -68,10 +68,6 @@ $(document).ready(function(){
 </div>
 <table class="detail_form" cellspacing="0" cellpadding="0">
 	<tr>
-		<th><span>제조사명</span></th>
-		<td>
-			</td>
-
 		<th><span>모델</span></th>
 		<td>
 			${vo.machine }		</td>
@@ -84,23 +80,9 @@ $(document).ready(function(){
 
 	</tr>
 	<tr>
-		<th class="last"><span>전원상태</span></th>
-		<td class="last" colspan="3">
-	
-		</td>
-
-	</tr>
-	<tr>
-		<th class="last"><span>액정상태</span></th>
-		<td class="last" colspan="3">
-	
-		</td>
-
-	</tr>
-	<tr>
 		<th class="last"><span>기기상태</span></th>
 		<td class="last" colspan="3">
-	
+			${vo.machineState}
 		</td>
 
 	</tr>

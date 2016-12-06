@@ -11,7 +11,7 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-
+		var myArray =new Array();
 		/*셀렉트박스*/
 		$('#quote').hide(); //견적서 숨기기
 		$('#information').hide();
@@ -101,7 +101,7 @@
 
 					}
 					$('#capacity').html(options);
-
+					
 
 				}
 			});
@@ -111,7 +111,7 @@
 		
 		$('#calculator').click(function(){
 			//$('#glass').prop('checked')
-			
+
 			$('#quote').show();
 			$('#information').show();
 			$('#repairRequest').show();
@@ -122,42 +122,79 @@
 					
 					
 					//alert(result.glass);
-					
 					var repairPrice=0;
+	
 					if($('#glass').prop('checked')){
 						repairPrice += result.glass;
+						myArray.push('액정파손');
+					
 					} if($('#backcover').prop('checked')){
 						repairPrice += result.backcover;
+						myArray.push('뒤커버파손');
+					
 					} if($('#crome').prop('checked')){
 						repairPrice += result.crome;
+						myArray.push('크롬 및 외관손상');
+					
 					} if($('#pan').prop('checked')){
 						repairPrice += result.pan;
+						myArray.push('펜소실');
+					
 					} if($('#scratch').prop('checked')){
 						repairPrice += result.scratch;
+						myArray.push('액정잔기스');
+						
 					} if($('#powerbutton').prop('checked')){
 						repairPrice += result.powerbutton;
+						myArray.push('전원버튼');
+					
 					} if($('#homebutton').prop('checked')){
 						repairPrice += result.homebutton;
+						myArray.push('홈버튼');
+				
 					} if($('#sound').prop('checked')){
 						repairPrice += result.sound;
+						myArray.push('소리 및 진동불량');
+					
 					} if($('#camera').prop('checked')){
 						repairPrice += result.camera;
+						myArray.push('카메라불량');
+					
 					} if($('#wifi').prop('checked')){
 						repairPrice += result.wifi;
+						myArray.push('WIFI불량');
+					
 					} if($('#charge').prop('checked')){
 						repairPrice += result.charge;
+						myArray.push('충전불량');
+					
 					} if($('#battery').prop('checked')){
 						repairPrice += result.battery;
+						myArray.push('배터리 불량');
+						
 					} if($('#sensor').prop('checked')){
 						repairPrice += result.sensor;
+						myArray.push('근접센서불량');
+					
 					} if($('#afterimage').prop('checked')){
 						repairPrice += result.afterimage;
+						myArray.push('잔상불량');
+			
 					} if($('#lcd').prop('checked')){
 						repairPrice += result.lcd;
+						myArray.push('LCD불량');
+						
 					}
-					
+					for(var i=0;i<myArray.length;i++){
+						if(i==0){
+							var str=myArray[i];
+						}else{
+							var str=str+','+myArray[i];
+						}
+					}
+					$('#machineState').val(str);					
 					$('#quote_price').val(repairPrice);
-			
+					
 					
 				}
 				
@@ -1199,6 +1236,7 @@ label.checkbox-label {
 
 <body>
 	<form name="frm" action="/phonefo/insertRepair" method="post">
+	<input type="hidden" id="machineState" name="machineState" value="">
 		<div class="page-banner">
 			<div class="container">
 				<div class="row">

@@ -22,7 +22,7 @@ public class MainRestController {
 	public String checkId(String userid)throws Exception{
 		
 		boolean result=service.checkId(userid);
-		
+		  
 		if(result==false){
 			return "<font color='red'>이미 존재하는 아이디 입니다.</font>";
 		}else if(result==true){
