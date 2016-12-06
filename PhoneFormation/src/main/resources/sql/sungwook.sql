@@ -66,6 +66,7 @@ create sequence ph_quoteBoard_seq
 	
 	
 --중고매입  테이블---
+select*From purchase_request;
 	create table purchase_request(
 		purchaseNum number(2) primary key,
 		userid varchar2(50),  
@@ -131,6 +132,7 @@ create sequence ph_repairBoard_seq
 	nocycle;
 	
 --수리매입  테이블---
+	select * from repair_request
 	drop table repair_request;
 	create table repair_request(
 		repairNum number(2) primary key,

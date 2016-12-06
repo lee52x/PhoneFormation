@@ -33,4 +33,8 @@ public interface PhoneDAO {
 	public RepairVO repairConfirm(int no)throws Exception;
 
 	public void requestRepair(PurchaseRepairVO vo)throws Exception;
+
+	public void stateUpdate(PurchaseVO vo)throws Exception;
+
+	public void repair_request(PurchaseRepairVO vo)throws Exception;
 }

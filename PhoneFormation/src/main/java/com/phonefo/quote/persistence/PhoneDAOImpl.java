@@ -106,6 +106,18 @@ public class PhoneDAOImpl implements PhoneDAO{
 		sql.insert("quote.requestRepair",vo);
 		
 	}
+
+	@Override
+	public void stateUpdate(PurchaseVO vo) throws Exception {
+		sql.update("quote.stateUpdate",vo);
+		
+	}
+
+	@Override
+	public void repair_request(PurchaseRepairVO vo) throws Exception {
+		sql.update("quote.stateUpdate2",vo);
+		
+	}
 	
 
 

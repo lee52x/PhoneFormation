@@ -40,7 +40,7 @@
  	</select>
 
  	<insert id="purchase_request">
- 		insert into purchase_request values(purchase_request_seq.nextval,#{userid},#{no},0)
+ 		insert into purchase_request values(purchase_request_seq.nextval,#{userid},#{no},1)
  	</insert>
  	
  	<select id="repairPrice" resultType="com.phonefo.quote.domain.RepairVO">
@@ -65,8 +65,16 @@
  	</select>
  	
  	<insert id="requestRepair">
- 		insert into repair_request values(repair_request_seq.nextval,#{userid},#{no},0)
+ 		insert into repair_request values(repair_request_seq.nextval,#{userid},#{no},1)
  	</insert>
+ 	
+ 	<update id="stateUpdate">
+ 		update ph_quoteBoard set state=1 where no=#{no}
+ 	</update>
+ 	
+ 	<update id="stateUpdate2">
+ 		update ph_repairBoard set state=1 where no=#{no}
+ 	</update>
 
 
 </mapper>

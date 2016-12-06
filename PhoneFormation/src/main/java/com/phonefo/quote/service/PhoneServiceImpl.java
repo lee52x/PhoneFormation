@@ -64,6 +64,7 @@ public class PhoneServiceImpl implements PhoneService{
 	public void purchase(PurchaseVO vo) throws Exception {
 		
 		dao.purchase(vo);
+		dao.stateUpdate(vo);
 		
 	}
 
@@ -98,6 +99,7 @@ public class PhoneServiceImpl implements PhoneService{
 	@Override
 	public void requestRepair(PurchaseRepairVO vo) throws Exception {
 		dao.requestRepair(vo);
+		dao.repair_request(vo);
 		
 	}
 
