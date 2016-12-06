@@ -3,6 +3,7 @@ package com.phonefo.quote.service;
 import java.util.List;
 
 import com.phonefo.quote.domain.PhoneVO;
+import com.phonefo.quote.domain.PurchaseRepairVO;
 import com.phonefo.quote.domain.PurchaseVO;
 import com.phonefo.quote.domain.QuoteVO;
 import com.phonefo.quote.domain.RepairVO;
@@ -19,5 +20,6 @@ public interface PhoneService {
 	public void insertRepair(RepairVO vo)throws Exception;
 	public List<RepairVO> listRepair()throws Exception;
 	public RepairVO repairConfirm(int no)throws Exception;
+	public void requestRepair(PurchaseRepairVO vo)throws Exception;
 
 }

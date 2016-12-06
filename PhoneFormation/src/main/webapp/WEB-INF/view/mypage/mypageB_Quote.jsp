@@ -174,13 +174,13 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 										<td>미신청</td>
 									</c:when>
 									<c:when test="${mypageQuote.state eq '1'}">
-										<td><button class="btn btn-primary" id="noPurchase">거래대기</button></td>
+										<td>거래대기</button></td>
 									</c:when>
 									<c:when test="${mypageQuote.state eq '2'}">
-										<td><button class="btn btn-primary" id="ingPurchase">거래중</button></td>
+										<td>거래중</button></td>
 									</c:when>
 									<c:when test="${mypageQuote.state eq '3'}">
-										<td><button class="btn btn-primary" id="endPurchase">거래완료</button></td>
+										<td>거래완료</button></td>
 									</c:when>
 									<c:otherwise>
 										<td>거래완료</td>

@@ -68,6 +68,8 @@
 					<div>
 <%@include file="adminHeader.jsp"%>
 	</div>		
+	 <!-- Classic Heading -->
+                        <h4 class="classic-title"><span>1대1문의 내역 </span></h4>
 				<div class='widget widget-search'>
 					<select name="searchType">
 						<option value="n"

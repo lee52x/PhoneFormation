@@ -86,4 +86,24 @@ public class AdminController {
 			
 
 		}
+		
+		@RequestMapping("/adminRouteInfo")
+		public String adminRouteInfo(Model model)throws Exception{
+			model.addAttribute("object",service.routeInfo());
+			
+			model.addAttribute("body", "./admin/adminRouteInfo.jsp");
+			
+			return "mainView";
+		}
+		
+		
+		@RequestMapping("/adminCntInfo")
+		public String adminQuoteInfo(Model model)throws Exception{
+			//model.addAttribute("object",service.routeInfo());
+			
+			model.addAttribute("object",service.allStats());
+			model.addAttribute("body", "./admin/adminCntInfo.jsp");
+			
+			return "mainView";
+		}
 }

@@ -66,6 +66,7 @@ create sequence ph_quoteBoard_seq
 	
 	
 --중고매입  테이블---
+select*From purchase_request;
 	create table purchase_request(
 		purchaseNum number(2) primary key,
 		userid varchar2(50),  
@@ -110,25 +111,42 @@ select*from ph_repair
 	userid varchar2(50),
 	username varchar2(50),
 	tel varchar2(50),
-	quote_price number(10),
+	repair_price number(10),
 	request_message varchar2(1000),
 	bank_name varchar2(50),
 	account_number varchar2(50),
 	rdate date,
 	state number(10) default 0,
 	machine varchar2(50),
+	machineState varchar2(200),
 	foreign key(userid) references ph_member(userid)
  )
  select *from ph_repairBoard
  
- drop sequence ph_repairBoard_seq;
  ---수리게시판 시퀀스--
+ drop sequence ph_repairBoard_seq;
 create sequence ph_repairBoard_seq
 	start with 1
 	increment by 1 
 	nocache
 	nocycle;
- 
+	
+--수리매입  테이블---
+	select * from repair_request
+	drop table repair_request;
+	create table repair_request(
+		repairNum number(2) primary key,
+		userid varchar2(50),  
+		no number(10) references ph_repairBoard(no),
+		state number(5)
+	)
+---수리매입 시퀀스---
+	create sequence repair_request_seq
+	start with 1
+	increment by 1 
+	nocache
+	nocycle;
+
 	select*from purchase_request
 	
  	select *from ph_member;		

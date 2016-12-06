@@ -106,5 +106,34 @@
   <update id="onoAnser">
   update ph_ono set answer=#{answer},answer_regdate=sysdate where ono=#{ono}
   </update>
+  
+  <select id="routeInfo" resultType="adminRoute">
+  select root from ph_member
+  
+  </select>
+  
+  <select id="routeInfoCnt" resultType="int">
+  
+  select count(*) from ph_member
+  
+  </select>  
+  
+  <select id="quoteDeal" resultType="int">
+   select count(*) from ph_quoteBoard where state=3
+  </select>
+  
+  <select id="quotePrice" resultType="adminCnt">
+  select quote_price from ph_quoteBoard where state=3
+  </select>
+  
+  <select id="repairDeal" resultType="int">
+  select count(*) from ph_repairBoard where state=3
+  </select>
+  
+  <select id="repairPrice" resultType="adminCnt">
+  select repair_price from ph_repairBoard where state=3
+  </select>
+  
+  
 </mapper>
 

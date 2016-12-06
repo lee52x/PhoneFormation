@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.phonefo.quote.domain.PhoneVO;
+import com.phonefo.quote.domain.PurchaseRepairVO;
 import com.phonefo.quote.domain.PurchaseVO;
 import com.phonefo.quote.domain.QuoteVO;
 import com.phonefo.quote.domain.RepairVO;
@@ -63,6 +64,7 @@ public class PhoneServiceImpl implements PhoneService{
 	public void purchase(PurchaseVO vo) throws Exception {
 		
 		dao.purchase(vo);
+		dao.stateUpdate(vo);
 		
 	}
 
@@ -94,7 +96,14 @@ public class PhoneServiceImpl implements PhoneService{
 		return dao.repairConfirm(no);
 	}
 
-	
+	@Override
+	public void requestRepair(PurchaseRepairVO vo) throws Exception {
+		dao.requestRepair(vo);
+		dao.repair_request(vo);
+		
+	}
+
+
 	
 	
 }

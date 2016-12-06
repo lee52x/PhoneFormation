@@ -91,13 +91,21 @@ infoArea .list1{overflow:hidden;height:120px}
 </style>
 </head>
 <body>
+
+
+							
 			<div class="resultTop" style="margin-top: -2%">
                   <div class="infoBox">
                      <ul class="filtering" style="text-align: left;margin-left: -1.2%">                                                         
                          <li><a href="/phonefo/adminMember" title="일반멤버">일반멤버</a></li>
 	 					 <li><a href="/phonefo/adminB_Member" title="비즈니스멤버">비즈니스멤버</a></li>
        					<li><a href="/phonefo/adminOno" title="1대1문의">1대1문의</a></li>                                               
+       					<li><a href="/phonefo/adminRouteInfo" title="가입경로">가입경로</a></li>
+       					<li><a href="/phonefo/adminCntInfo" title="통계">통계</a></li>
+
                      </ul>
+                 
+                                          
      			   	<hr style="margin-top: -0.5%">
                   </div>
                </div>

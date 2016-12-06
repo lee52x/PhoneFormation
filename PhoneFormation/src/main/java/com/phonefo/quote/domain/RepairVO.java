@@ -23,6 +23,7 @@ public class RepairVO {
 	private int afterimage;
 	private int lcd;
 	private String manufacture;
+	private String machineState;
 	
 	private String address;
 	private String tel;
@@ -32,7 +33,7 @@ public class RepairVO {
 	private String bank_name;
 	private String account_number;
 	private Date rdate;
-	private int quote_price;
+	private int repair_price;
 	
 	
 	public RepairVO() {
@@ -58,7 +59,37 @@ public class RepairVO {
 				+ ", battery=" + battery + ", sensor=" + sensor + ", afterimage=" + afterimage + ", lcd=" + lcd
 				+ ", address=" + address + ", tel=" + tel + ", userid=" + userid + ", username=" + username
 				+ ", request_message=" + request_message + ", bank_name=" + bank_name + ", account_number="
-				+ account_number + ", rdate=" + rdate + ", quote_price=" + quote_price + "]";
+				+ account_number + ", rdate=" + rdate + ", repair_price=" + repair_price + "]";
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public String getMachineState() {
+		return machineState;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setMachineState(String machineState) {
+		this.machineState = machineState;
 	}
 
 
@@ -185,8 +216,8 @@ public class RepairVO {
 
 
 
-	public int getQuote_price() {
-		return quote_price;
+	public int getrepair_price() {
+		return repair_price;
 	}
 
 
@@ -194,8 +225,8 @@ public class RepairVO {
 
 
 
-	public void setQuote_price(int quote_price) {
-		this.quote_price = quote_price;
+	public void setrepair_price(int repair_price) {
+		this.repair_price = repair_price;
 	}
 
 

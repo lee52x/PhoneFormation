@@ -20,6 +20,7 @@ public class QuoteVO {
 	private String tel;
 	
 	
+	
 	private int release_price;
 	private String username;
 
@@ -29,8 +30,6 @@ public class QuoteVO {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
-
 
 
 	public String getTel() {

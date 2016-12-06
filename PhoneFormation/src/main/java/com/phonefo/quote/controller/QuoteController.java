@@ -97,8 +97,8 @@ public class QuoteController {
 	//수리글 등록하기
 	@RequestMapping("/insertRepair")
 	public String insertRepair(RepairVO vo,Model model,HttpSession session)throws Exception{
-		
 		vo.setUserid((String)session.getAttribute("userid"));
+		System.out.println();
 		System.out.println(vo);
 		service.insertRepair(vo);
 
@@ -126,8 +126,6 @@ public class QuoteController {
 		String userid=(String)session.getAttribute("userid");
 		System.out.println("세션아이디:"+userid);
 
-		
-		
 		return "./quote/popup2";
 	}
 }

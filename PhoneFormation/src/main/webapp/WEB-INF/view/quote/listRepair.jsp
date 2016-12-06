@@ -98,7 +98,7 @@ function popup(no) {
 		</td>
 		<!-- 모델명 -->
 		<td>
-			${vo.quote_price}원
+			${vo.repair_price}원
 		<!--작성자-->
 		<td>
 			${vo.username }

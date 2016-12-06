@@ -3,8 +3,10 @@ package com.phonefo.admin.service;
 import java.util.List;
 
 import com.phonefo.admin.domain.AdminB_MemberVO;
+import com.phonefo.admin.domain.AdminCntVO;
 import com.phonefo.admin.domain.AdminMemberVO;
 import com.phonefo.admin.domain.AdminOnoBoardVO;
+import com.phonefo.admin.domain.AdminRouteVO;
 import com.phonefo.admin.domain.SearchCriteria;
 
 public interface AdminService {
@@ -26,4 +28,12 @@ public interface AdminService {
     
     //1대1답변
     public int OnoAnswer(AdminOnoBoardVO vo)throws Exception;
+    
+    //가입정보 통계
+    public AdminRouteVO routeInfo()throws Exception;
+    
+    //중고,수리 수익,거래성사 횟수 통계
+    public AdminCntVO allStats()throws Exception;
+  
+    
 }
