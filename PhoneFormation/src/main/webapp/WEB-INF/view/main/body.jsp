@@ -9,15 +9,54 @@
 <!--<![endif]-->
 
 <head>
-
+<title>Phone Formantion</title>
 </head>
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+		$('#skt_tag').hover(function() {
+			$('#skt_event').css("display", "block");
+			$('#kt_event').css("display", "none");
+			$('#lg_event').css("display", "none");
+		});
+		
+		$('#kt_tag').hover(function() {
+			$('#skt_event').css("display", "none");
+			$('#kt_event').css("display", "block");
+			$('#lg_event').css("display", "none");
+		});
+		
+		$('#lg_tag').hover(function() {
+			$('#skt_event').css("display", "none");
+			$('#kt_event').css("display", "none");
+			$('#lg_event').css("display", "block");
+		});
+		
+		$('#skt_pay').hover(function() {
+			$('#skt_pay_img').css("display", "block");
+			$('#kt_pay_img').css("display", "none");
+			$('#lg_pay_img').css("display", "none");
+		});
+		
+		$('#kt_pay').hover(function() {
+			$('#skt_pay_img').css("display", "none");
+			$('#kt_pay_img').css("display", "block");
+			$('#lg_pay_img').css("display", "none");
+		});
+		
+		$('#lg_pay').hover(function() {
+			$('#skt_pay_img').css("display", "none");
+			$('#kt_pay_img').css("display", "none");
+			$('#lg_pay_img').css("display", "block");
+		});
+		
+	});
 
+
+</script>
 <body>
-
-    <!-- Start Home Page Slider -->
-    <section id="home">
-        <div class="slider-1_container">
-            <div class="slider-1_wrapper">
+<div class="container">
+<div class="slider-1_wrapper" style="margin: 1%;">
                 <div class="slider-1 revslider">
                     <ul>
                         <!-- THE FIRST SLIDE --> 
@@ -32,40 +71,53 @@
                                   data-y="138" 
                                   data-speed="300" 
                                   data-start="1600" 
-                                  data-easing="easeOutExpo">Welcome to Venue. <br/>
-                                Responsive HTML5 Template.</div>
+                                  data-easing="easeOutExpo">핸드폰의 모든 정보<br/>
+                               		PhoneFormation이 알려드립니다</div>
                             <div class="caption small-600-black lfr" 
                                   data-x="58" 
-                                  data-y="210" 
-                                  data-speed="300" 
+                                  data-y="220" 
+                                  data-speed="400" 
                                   data-start="2000" 
-                                  data-easing="easeOutExpo">Venue is best solution for your business, <br/>
-                                Responsive & Flexible, You can present your <br/>
-                                business and services properly.</div>
-                            <div class="caption randomrotate" 
-                                  data-x="58" 
-                                  data-y="285" 
-                                  data-speed="300" 
-                                  data-start="2400" 
-                                  data-easing="easeOutExpo"> <a href="#" class="btn-custom btn-medium">Purchase Item</a> </div>
+                                  data-easing="easeOutExpo">사고 싶은 핸드폰의 정보가 궁금해?<br/>
+                                	원하는 요금제, 바꾸고 싶은 요금제가 궁금해?<br/>
+                                	폰은 팔고 싶은데, 가격이 궁금해?<br>
+                               		당신이 원하는 정보를 phoneFormation에서 검색해 보세요</div>
                             <div class="caption lfl" 
-                                  data-x="595" 
-                                  data-y="51" 
-                                  data-speed="300" 
+                                  data-x="650" 
+                                  data-y="120" 
+                                  data-speed="400" 
                                   data-start="1200" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/slider_1_browser.png" alt="browser" /> </div>
+                                  data-easing="easeOutExpo"><img src="/resources/images/payment/SKT.png" alt="SKT" width="200px" /> </div>
+                            <div class="caption lfl" 
+                                  data-x="470" 
+                                  data-y="230" 
+                                  data-speed="400" 
+                                  data-start="700" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/payment/KTOlleh.png" alt="KT Olleh" width="200px"/> </div>
+                            <div class="caption lfl" 
+                                  data-x="550" 
+                                  data-y="350" 
+                                  data-speed="400" 
+                                  data-start="900" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/payment/LGU+.png" alt="LG U+" width="200px" /> </div>
+                            <div class="caption lfl" 
+                                  data-x="750" 
+                                  data-y="250" 
+                                  data-speed="400" 
+                                  data-start="600" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/Samsung.png" alt="SAMSUNG" width="200px" /> </div>
+                            <div class="caption lfl" 
+                                  data-x="800" 
+                                  data-y="50" 
+                                  data-speed="400" 
+                                  data-start="500" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/LG.png" alt="LG" width="200px" /> </div>
                             <div class="caption lfl" 
                                   data-x="500" 
-                                  data-y="194" 
-                                  data-speed="300" 
+                                  data-y="50" 
+                                  data-speed="400" 
                                   data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/slider_1_tablet.png" alt="tablet" /> </div>
-                            <div class="caption lfl" 
-                                  data-x="460" 
-                                  data-y="304" 
-                                  data-speed="300" 
-                                  data-start="400" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/slider_1_phone.png" alt="phone" /> </div>
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/Apple.png" alt="APPLE" width="100px" /> </div>
                         </li>
                         
                         <!-- THE SECOND SLIDE --> 
@@ -181,559 +233,74 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- End Home Page Slider --> 
-
-    <!-- Start Content -->
-    <div id="content"> 
-        
-        <!-- Start Services Section -->
-        <div class="container"> 
-            <!-- Start Services Icons -->
-            <div class="row">
-                <div class="col-md-3"> 
-                    
-                    <!-- Start Big Heading -->
-                    <div class="big-title">
-                        <h1>Our <span class="accent-color">Features</span></h1>
-                        <p class="title-desc">We Make Your Smile</p>
-                    </div>
-                    <!-- End Big Heading --> 
-                    
-                    <!-- Some Text -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adi elit, sed do eiusmod tempor incididunt enim labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adi elit </p>
-                </div>
-                
-                <!-- Start Service Icon 1 -->
-                <div class="col-md-3 service-box service-icon-left">
-                    <div class="service-icon"> <i class="fa fa-users icon-mini-effect icon-effect-1"></i> </div>
-                    <div class="service-content">
-                        <h4> Easy Customization </h4>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia dolores.</p>
-                    </div>
-                </div>
-                <!-- End Service Icon 1 --> 
-                
-                <!-- Start Service Icon 2 -->
-                <div class="col-md-3 service-box service-icon-left">
-                    <div class="service-icon"> <i class="fa fa-desktop icon-mini-effect icon-effect-1"></i> </div>
-                    <div class="service-content">
-                        <h4> Responsive Design </h4>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia dolores.</p>
-                    </div>
-                </div>
-                <!-- End Service Icon 2 --> 
-                
-                <!-- Start Service Icon 3 -->
-                <div class="col-md-3 service-box service-icon-left">
-                    <div class="service-icon"> <i class="fa fa-eye icon-mini-effect icon-effect-1"></i> </div>
-                    <div class="service-content">
-                        <h4> Retina Ready </h4>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia dolores.</p>
-                    </div>
-                </div>
-                <!-- End Service Icon 3 --> 
-                
-                <!-- Start Service Icon 4 -->
-                <div class="col-md-3 service-box service-icon-left">
-                    <div class="service-icon"> <i class="fa fa-recycle icon-mini-effect icon-effect-1"></i> </div>
-                    <div class="service-content">
-                        <h4> Awesome Support </h4>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia dolores.</p>
-                    </div>
-                </div>
-                <!-- End Service Icon 4 --> 
-                
-                <!-- Start Service Icon 5 -->
-                <div class="col-md-3 service-box service-icon-left">
-                    <div class="service-icon"> <i class="fa fa-tint icon-mini-effect icon-effect-1"></i> </div>
-                    <div class="service-content">
-                        <h4> Unlimited Colors </h4>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia dolores.</p>
-                    </div>
-                </div>
-                <!-- End Service Icon 5 --> 
-                
-                <!-- Start Service Icon 6 -->
-                <div class="col-md-3 service-box service-icon-left">
-                    <div class="service-icon"> <i class="fa fa-trophy icon-mini-effect icon-effect-1"></i> </div>
-                    <div class="service-content">
-                        <h4>High Quality Theme</h4>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia dolores.</p>
-                    </div>
-                </div>
-                <!-- End Service Icon 6 --> 
-                
+            <div style="width: 21%; float: left;">
+            <div style="border: 1px solid black; margin: 1%; text-align: center; vertical-align: middle;height: 100%;width: 100%">
+            	<img alt="핸드폰 수리비" src="/resources/images/main/repair.png" height="100%;">
             </div>
-            <!-- End Services Icons --> 
-        </div>
-        <!-- .container --> 
-        
-        <!-- End Services Section --> 
-        
-        <!-- Start Portfolio Section -->
-        <div class="project">
-            <div class="container"> 
+  			<div style="border: 1px solid black; margin: 1%; text-align: center; vertical-align: middle;height: 100%;width: 100%">
+           	 	<img alt="중고폰 수리비" src="/resources/images/main/joonggo.png" height="100%;">
+            </div>
+            </div>
+            <div style="width: 53%; float: left; border: 1px solid black; margin-left: 2.5%;margin-top: 0.5%; background-color: #eeeeee; text-align: center;">
+            	<div id="skt_pay" style="width: 5%; float: left; height: 100%;">S<br>K<br>T<br>요<br>금<br>제</div>
+            	<div id="skt_pay_img" style="width: 85%; float: left;"><img alt="" src="/resources/images/main/skt_pay.png" width="100%"></div>
+            	<div id="kt_pay" style="width: 5%; float: left;">O<br>l<br>l<br>e<br>h<br>요<br>금<br>제</div>
+            	<div id="kt_pay_img" style="width: 85%; float: left; display: none;"><img alt="" src="/resources/images/main/kt_pay.png" width="100%"></div>
+            	<div id="lg_pay" style="width: 5%; float: left;">L<br>G<br>U<br>+<br>요<br>금<br>제</div>
+            	<div id="lg_pay_img" style="width: 85%; float: left; display: none;"><img alt="" src="/resources/images/main/lg_pay.png" width="100%"></div>
+            </div>
+            <div style="border: 1px solid black; width: 20%;;float: right; vertical-align: middle; text-decoration: none ;margin:1%;text-align: center;vertical-align: middle; font-size: 25px;">
+        			<div id="skt_tag" style="height: ; background-color: #dddddd; margin: auto;"><img alt="SKT 이벤트" src="/resources/images/main/skt_event.png" height="100%" width="100%"></div>
+        			<div style="height: 10px;"></div>
+        			<div style="display:;height: ;" id="skt_event"><img alt="SKT 이벤트" src="/resources/images/payment/SKT.png" width="80%;"></div>
+        			<div id="kt_tag" style="height: ; background-color: #dddddd;"><img alt="" src="/resources/images/main/ktOlleh_event.png" height="100%" width="100%"></div>
+        			<div style="height: 10px;"></div>
+        			<div style="display: none;height: ;" id="kt_event"><img alt="KT 이벤트" src="/resources/images/payment/KTOlleh.png" width="90%;"></div>
+        			<div id="lg_tag" style="height: ; background-color: #dddddd;"><img alt="" src="/resources/images/main/lgU+_event.png" height="100%" width="100%"></div>      			 
+        			<div style="height: 10px;"></div>
+        			<div style=" display: none;height: ;" id="lg_event"><img alt="LG 이벤트" src="/resources/images/payment/LGU+.png" width="90%;"></div>
+        	</div>
+            </div>
+        	<table border="1px solid black;">
+        		<col width="50%;">
+        		<col width="50%;">
+        		<tr>
+        			<td>123</td>
+        			<td>123</td>
+        		</tr>
+        	</table>
+            <table style="width: 50%">
+            		<col width="20%;">
+            		<col width="30%;">
+            		<col width="30%;">
+            		<col width="20%;">
+            	<thead>
+            		<tr>
+            			<th>글번호</th>
+            			<th>제목</th>
+            			<th>작성자</th>
+            			<th>조회수</th>
+            		</tr>
+            	</thead>
+            </table>
+            <table style="width: 50%">
+            		<col width="20%;">
+            		<col width="30%;">
+            		<col width="30%;">
+            		<col width="20%;">
+            	<thead>
+            		<tr>
+            			<th>글번호</th>
+            			<th>제목</th>
+            			<th>작성자</th>
+            			<th>조회수</th>
+            		</tr>
+            	</thead>
+            </table>
+        	<div>
+            </div>
             
-                <!-- Start Recent Projects Carousel -->
-                <div class="recent-projects">
-                    <h4 class="title"><span>Recent Projects</span></h4>
-                    <div class="projects-carousel touch-carousel">
-                    
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border">
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" data-lightbox-type="ajax" href="https://vimeo.com/78468485">
-                                        <div class="thumb-overlay"><i class="fa fa-play"></i></div>
-                                        <img alt="" src="/resources/images/portfolio/1.jpg" /> 
-                                   </a> 
-                                </div>
-                                <div class="portfolio-details"> 
-                                   <a href="#">
-                                        <h4>Lorem Ipsum Dolor</h4>
-                                        <span>Website</span> 
-                                        <span>Drawing</span> 
-                                   </a> 
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border">
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_2@2x.jpg">
-                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/portfolio/2.jpg" /> 
-                                   </a> 
-                                </div>
-                                <div class="portfolio-details"> 
-                                   <a href="#">
-                                        <h4>Lorem Ipsum Dolor</h4>
-                                        <span>Logo</span> 
-                                        <span>Animation</span>
-                                   </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border">
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_3@2x.jpg">
-                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/portfolio/3.jpg" /> 
-                                   </a> 
-                                </div>
-                                <div class="portfolio-details"> 
-                                   <a href="#">
-                                        <h4>Lorem Ipsum Dolor</h4>
-                                        <span>Drawing</span> 
-                                   </a> 
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border">
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_4@2x.jpg">
-                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/portfolio/4.jpg" /> 
-                                   </a> 
-                                </div>
-                                <div class="portfolio-details"> 
-                                   <a href="#">
-                                        <h4>Lorem Ipsum Dolor</h4>
-                                        <span>Website</span> 
-                                        <span>Ilustration</span> 
-                                   </a> 
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border">
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_5@2x.jpg">
-                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/portfolio/5.jpg" /> 
-                                   </a> 
-                                </div>
-                                <div class="portfolio-details"> 
-                                   <a href="#">
-                                        <h4>Lorem Ipsum Dolor</h4>
-                                        <span>Logo</span> 
-                                        <span>Drawing</span> 
-                                   </a> 
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border">
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_6@2x.jpg">
-                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/portfolio/6.jpg" /> 
-                                   </a> 
-                                </div>
-                                <div class="portfolio-details"> 
-                                   <a href="#">
-                                        <h4>Lorem Ipsum Dolor</h4>
-                                        <span>Animation</span> 
-                                   </a> 
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border">
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_7@2x.jpg">
-                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/portfolio/7.jpg" /> 
-                                   </a> 
-                                </div>
-                                <div class="portfolio-details"> 
-                                   <a href="#">
-                                        <h4>Lorem Ipsum Dolor</h4>
-                                        <span>Website</span> 
-                                   </a> 
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border">
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_8@2x.jpg">
-                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/portfolio/8.jpg" /> 
-                                   </a> 
-                                </div>
-                                <div class="portfolio-details"> 
-                                   <a href="#">
-                                        <h4>Lorem Ipsum Dolor</h4>
-                                        <span>Ilustration</span> 
-                                        <span>Animation</span> 
-                                   </a> 
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <!-- End Recent Projects Carousel --> 
-                
-            </div>
-            <!-- .container --> 
-        </div>
-        <!-- End Portfolio Section --> 
-        
-        <!-- Divider -->
-        <div class="hr1 margin-40"></div>
-        
-        <!-- Start News & Skill Section -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7"> 
-                
-                    <!-- Classic Heading -->
-                    <h4 class="classic-title"><span>Latest News</span></h4>
-                    <div class="latest-news custom-carousel touch-carousel" data-appeared-items="2"> 
-                        
-                        <!-- Start Project Item -->
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border"> 
-                                <!-- Start Project Thumb -->
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_8@2x.jpg">
-                                       <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/portfolio/8.jpg" /> 
-                                   </a>
-                                </div>
-                                <!-- End Project Thumb --> 
-                                <!-- Start Project Details -->
-                                <div class="portfolio-details">
-                                    <div class="latest-news"> 
-                                        <!-- Post 1 -->
-                                        <div class="post-row">
-                                            <div class="post-time-section">
-                                                <div class="post-date"> <span class="day">28</span></div>
-                                                <div class="post-month"> <span class="month">Dec</span> </div>
-                                            </div>
-                                            <h4 class="post-title">
-                                              <a href="#">Standard Post With Image</a> 
-                                            </h4>
-                                            <div class="post-content">
-                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Project Details --> 
-                            </div>
-                        </div>
-                        <!-- End Project Item --> 
-                        
-                        <!-- Start Project Item -->
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border"> 
-                                <!-- Start Project Thumb -->
-                                <div class="portfolio-thumb"> 
-                                  <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_7@2x.jpg">
-                                     <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                       <img alt="" src="/resources/images/portfolio/7.jpg" /> 
-                                  </a> 
-                                </div>
-                                <!-- End Project Thumb --> 
-                                <!-- Start Project Details -->
-                                <div class="portfolio-details">
-                                    <div class="latest-news"> 
-                                        <!-- Post 1 -->
-                                        <div class="post-row">
-                                            <div class="post-time-section">
-                                                <div class="post-date"> <span class="day">28</span></div>
-                                                <div class="post-month"> <span class="month">Dec</span> </div>
-                                            </div>
-                                            <h4 class="post-title">
-                                               <a href="#">Standard Post With Image</a> 
-                                            </h4>
-                                            <div class="post-content">
-                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Project Details --> 
-                            </div>
-                        </div>
-                        <!-- End Project Item --> 
-                        
-                        <!-- Start Project Item -->
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border"> 
-                                <!-- Start Project Thumb -->
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_6@2x.jpg">
-                                      <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/portfolio/6.jpg" /> 
-                                   </a> 
-                                </div>
-                                <!-- End Project Thumb --> 
-                                <!-- Start Project Details -->
-                                <div class="portfolio-details">
-                                    <div class="latest-news"> 
-                                        <!-- Post 1 -->
-                                        <div class="post-row">
-                                            <div class="post-time-section">
-                                                <div class="post-date"> <span class="day">28</span></div>
-                                                <div class="post-month"> <span class="month">Dec</span> </div>
-                                            </div>
-                                            <h4 class="post-title">
-                                              <a href="#">Standard Post With Image</a> 
-                                            </h4>
-                                            <div class="post-content">
-                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Project Details --> 
-                            </div>
-                        </div>
-                        <!-- End Project Item --> 
-                        
-                        <!-- Start Project Item -->
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border"> 
-                                <!-- Start Project Thumb -->
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_5@2x.jpg">
-                                      <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/portfolio/5.jpg" /> 
-                                   </a>
-                                </div>
-                                <!-- End Project Thumb --> 
-                                <!-- Start Project Details -->
-                                <div class="portfolio-details">
-                                    <div class="latest-news"> 
-                                        <!-- Post 1 -->
-                                        <div class="post-row">
-                                            <div class="post-time-section">
-                                                <div class="post-date"> <span class="day">28</span></div>
-                                                <div class="post-month"> <span class="month">Dec</span> </div>
-                                            </div>
-                                            <h4 class="post-title">
-                                               <a href="#">Standard Post With Image</a> 
-                                            </h4>
-                                            <div class="post-content">
-                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Project Details --> 
-                            </div>
-                        </div>
-                        <!-- End Project Item --> 
-                        
-                        <!-- Start Project Item -->
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border"> 
-                                <!-- Start Project Thumb -->
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_4@2x.jpg">
-                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/portfolio/4.jpg" /> 
-                                   </a> 
-                                </div>
-                                <!-- End Project Thumb --> 
-                                <!-- Start Project Details -->
-                                <div class="portfolio-details">
-                                    <div class="latest-news"> 
-                                        <!-- Post 1 -->
-                                        <div class="post-row">
-                                            <div class="post-time-section">
-                                                <div class="post-date"> <span class="day">28</span></div>
-                                                <div class="post-month"> <span class="month">Dec</span> </div>
-                                            </div>
-                                            <h4 class="post-title">
-                                               <a href="#">Standard Post With Image</a> 
-                                            </h4>
-                                            <div class="post-content">
-                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Project Details -->
-                            </div>
-                        </div>
-                        <!-- End Project Item --> 
-                        
-                        <!-- Start Project Item -->
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border"> 
-                                <!-- Start Project Thumb -->
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_3@2x.jpg">
-                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/portfolio/3.jpg" /> 
-                                   </a> 
-                                </div>
-                                <!-- End Project Thumb --> 
-                                <!-- Start Project Details -->
-                                <div class="portfolio-details">
-                                    <div class="latest-news"> 
-                                        <!-- Post 1 -->
-                                        <div class="post-row">
-                                            <div class="post-time-section">
-                                                <div class="post-date"> <span class="day">28</span></div>
-                                                <div class="post-month"> <span class="month">Dec</span> </div>
-                                            </div>
-                                            <h4 class="post-title">
-                                              <a href="#">Standard Post With Image</a> 
-                                            </h4>
-                                            <div class="post-content">
-                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Project Details -->
-                            </div>
-                        </div>
-                        <!-- End Project Item --> 
-                    </div>
-                </div>
-                <!-- .col-md-6 -->
-                
-                <div class="col-md-5"> 
-                    
-                    <!-- Classic Heading -->
-                    <h4 class="classic-title"><span>Our Skills</span></h4>
-                    <div class="progress-bars">
-                        <div class="progress-label"> Web Developement </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-primary" data-progress-animation="100%"> <span class="progress-bar-tooltip">100%</span> </div>
-                        </div>
-                        <div class="progress-label"> Web Design </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-primary" data-progress-animation="85%" data-animation-delay="300"> <span class="progress-bar-tooltip">85%</span> </div>
-                        </div>
-                        <div class="progress-label"> HTML/CSS </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-primary" data-progress-animation="75%" data-animation-delay="600"> <span class="progress-bar-tooltip">75%</span> </div>
-                        </div>
-                        <div class="progress-label"> Photoshop </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-primary" data-progress-animation="85%" data-animation-delay="900"> <span class="progress-bar-tooltip">85%</span> </div>
-                        </div>
-                        <div class="progress-label"> Angularjs </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-primary" data-progress-animation="95%" data-animation-delay="1200"> <span class="progress-bar-tooltip">95%</span> </div>
-                        </div>
-                        <div class="progress-label"> Graphic Design </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-primary" data-progress-animation="85%" data-animation-delay="900"> <span class="progress-bar-tooltip">85%</span> </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- .col-md-6 --> 
-            </div>
-            <!-- .row --> 
-        </div>
-        <!-- .container --> 
-        <!-- End News & Skill Section --> 
-        
-        <!-- Divider -->
-        <div class="hr1 margin-top"></div>
-        
-        <!-- Start Clients/Partner Section -->
-        <div class="container">
-            <div class="our-clients"> 
-                
-                <!-- Classic Heading -->
-                <h4 class="classic-title"><span>Our Clients</span></h4>
-                <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5"> 
-                    
-                    <!-- Client 1 -->
-                    <div class="client-item item"> <a href="#"><img src="/resources/images/c1.png" alt="" /></a> </div>
-                    
-                    <!-- Client 2 -->
-                    <div class="client-item item"> <a href="#"><img src="/resources/images/c2.png" alt="" /></a> </div>
-                    
-                    <!-- Client 3 -->
-                    <div class="client-item item"> <a href="#"><img src="/resources/images/c3.png" alt="" /></a> </div>
-                    
-                    <!-- Client 4 -->
-                    <div class="client-item item"> <a href="#"><img src="/resources/images/c4.png" alt="" /></a> </div>
-                    
-                    <!-- Client 5 -->
-                    <div class="client-item item"> <a href="#"><img src="/resources/images/c5.png" alt="" /></a> </div>
-                    
-                    <!-- Client 6 -->
-                    <div class="client-item item"> <a href="#"><img src="/resources/images/c6.png" alt="" /></a> </div>
-                    
-                    <!-- Client 7 -->
-                    <div class="client-item item"> <a href="#"><img src="/resources/images/c7.png" alt="" /></a> </div>
-                    
-                    <!-- Client 8 -->
-                    <div class="client-item item"> <a href="#"><img src="/resources/images/c8.png" alt="" /></a> </div>
-                </div>
-            </div>
-        </div>
-        <!-- .container --> 
-        <!-- End Clients/Partner Section --> 
-        
-    </div>
-    <!-- End Content --> 
-        
-    </div>
-    
-    <!-- End Content --> 
+
   
 </body>
 </html>
