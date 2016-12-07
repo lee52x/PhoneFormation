@@ -102,6 +102,8 @@ infoArea .list1{overflow:hidden;height:120px}
                   <% } else if(session.getAttribute("member").equals("business")) { %>
                   <li><a href="/phonefo/mypageB_Quote" title="신청한중고견적">신청한중고견적</a></li>
              	  <% } %>
+					 <li><a href="/phonefo/mypageRepair" title="올린수리견적">올린수리견적</a></li>    
+					 <li><a href="/phonefo/mypageB_Repair" title="신청한수리견적">신청한수리견적</a></li>    
 					 <li><a href="/phonefo/mypageOut" title="회원탈퇴">회원탈퇴</a></li>    
                                                 
                      </ul>

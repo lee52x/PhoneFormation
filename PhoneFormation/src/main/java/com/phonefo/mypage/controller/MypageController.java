@@ -78,18 +78,6 @@ public class MypageController {
 		
 		return "mainView";
 	}
-	@RequestMapping("/mypageQuote")//마이페이지 중고견적
-	public String myPageQuote(Model model,HttpSession session)throws Exception{
-		
-		
-		model.addAttribute("list",service.mypageQuoteList(session));
-		
-		
-		model.addAttribute("body", "./mypage/mypageQuote.jsp");
-		
-		
-		return "mainView";
-	}
 	
 	
 	@RequestMapping(value="/mypageOut", method=RequestMethod.GET)//마이페이지 회원탈퇴페이지 불러오기
@@ -111,7 +99,20 @@ public class MypageController {
 		return "redirect:/phonefo/main";
 	}
 	
-	@RequestMapping("/mypageB_Quote")//마이페이지 중고견적
+	@RequestMapping("/mypageQuote")//마이페이지 중고견적
+	public String myPageQuote(Model model,HttpSession session)throws Exception{
+		
+		
+		model.addAttribute("list",service.mypageQuoteList(session));
+		
+		
+		model.addAttribute("body", "./mypage/mypageQuote.jsp");
+		
+		
+		return "mainView";
+	}
+	
+	@RequestMapping("/mypageB_Quote")//마이페이지 기업중고견적
 	public String myPageB_Quote(Model model,HttpSession session)throws Exception{
 		
 	
@@ -119,6 +120,32 @@ public class MypageController {
 		
 		
 		model.addAttribute("body", "./mypage/mypageB_Quote.jsp");
+		
+		
+		return "mainView";
+	}
+	
+	@RequestMapping("/mypageRepair")//마이페이지 수리견적
+	public String myPageRepair(Model model,HttpSession session)throws Exception{
+		
+		
+		model.addAttribute("list",service.mypageRepairList(session));
+		
+		
+		model.addAttribute("body", "./mypage/mypageRepair.jsp");
+		
+		
+		return "mainView";
+	}
+	
+	@RequestMapping("/mypageB_Repair")//마이페이지 기업수리견적
+	public String myPageB_Repair(Model model,HttpSession session)throws Exception{
+		
+		
+		model.addAttribute("list",service.mypageB_RepairList(session));
+		
+		
+		model.addAttribute("body", "./mypage/mypageB_Repair.jsp");
 		
 		
 		return "mainView";
