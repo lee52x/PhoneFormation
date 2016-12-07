@@ -1412,8 +1412,8 @@ label.checkbox-label {
 	<tr>
 		<th class="last"><span><h4>비밀번호</h4></span></td>
 		<td class="last">
-							<input type=password id="userpwd" name=userpwd maxlength=20 style="height: 30px;">
-								<div id="checkPwd"></div>					
+							<input type=password id="userpwd" name=userpwd maxlength=20 style="height: 30px; float: left;">
+								<div id="checkPwd" style="width: 25%; float: left; margin-left: 2%;margin-top: 1%;"></div>					
 			
 		</td>
 		
