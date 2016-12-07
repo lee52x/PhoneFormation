@@ -77,7 +77,7 @@ table {
                         <li data-transition="fade" data-slotamount="5" data-masterspeed="300"> 
                             
                             <!-- THE MAIN BACKGROUND IMAGE IN THIS FIRST SLIDE --> 
-                            <img src="/resources/images/main/삼성.png" data-fullwidthcentering="on" alt="background"> 
+                            <img src="/resources/images/main/bgc.png" data-fullwidthcentering="on" alt="background"> 
                             
                             <!-- THE CAPTIONS/LAYERS IN THIS SLIDE -->
                             <!-- 메인화면 슬라이드 -->
@@ -141,7 +141,7 @@ table {
                         <li data-transition="papercut" data-slotamount="5" data-masterspeed="500" data-delay="9400"> 
                             
                             <!-- THE MAIN BACKGROUND IMAGE IN THIS FIRST SLIDE --> 
-                            <img src="/resources/images/main/삼성.png" data-fullwidthcentering="on" alt="background"> 
+                            <img src="/resources/images/main/bgc.png" data-fullwidthcentering="on" alt="background"> 
                             
                             <!-- THE CAPTIONS/LAYERS IN THIS SLIDE -->
                             <div class="caption medium-700-black lfr" 
@@ -215,7 +215,7 @@ table {
                         <li data-transition="turnoff" data-slotamount="5" data-masterspeed="300"> 
                             
                             <!-- THE MAIN BACKGROUND IMAGE IN THIS FIRST SLIDE --> 
-                            <img src="/resources/images/main/삼성.png" alt="background" data-fullwidthcentering="on" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat"> 
+                            <img src="/resources/images/main/bgc.png" alt="background" data-fullwidthcentering="on" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat"> 
                             
                             <!-- THE CAPTIONS/LAYERS IN THIS SLIDE -->
                             <div class="caption medium-700-black lfr" 
@@ -286,7 +286,7 @@ table {
                         <!-- THE FOURTH SLIDE --> 
                         <li data-transition="papercut" data-slotamount="7" data-masterspeed="300"> 
                             <!-- MAIN IMAGE --> 
-                            <img src="/resources/images/main/삼성.png" data-fullwidthcentering="on" alt="background"> 
+                            <img src="/resources/images/main/bgc.png" data-fullwidthcentering="on" alt="background"> 
                             
                             <!-- LAYER NR. 1 -->
                             <div class="caption medium-700-black lfr" 
