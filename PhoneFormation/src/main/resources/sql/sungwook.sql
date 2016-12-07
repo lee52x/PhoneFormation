@@ -53,7 +53,7 @@ create table ph_quoteBoard(
 	manufacture varchar2(50),
 	machine varchar2(50),
 	capacity varchar2(50),
-	foreign key(userid) references ph_member(userid)
+	foreign key(userid) references ph_member(userid) ON DELETE CASCADE
 );
 
 --quote 시퀀스 --
@@ -67,10 +67,11 @@ create sequence ph_quoteBoard_seq
 	
 --중고매입  테이블---
 select*From purchase_request;
+drop table purchase_request;
 	create table purchase_request(
 		purchaseNum number(2) primary key,
 		userid varchar2(50),  
-		no number(10) references ph_quoteBoard(no),
+		no number(10) references ph_quoteBoard(no) ON DELETE CASCADE,
 		state number(5)
 	)
 ---중고매입 시퀀스---

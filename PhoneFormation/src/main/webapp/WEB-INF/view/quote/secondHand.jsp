@@ -121,9 +121,17 @@ $(document).ready(function(){
 	}
 	
 	function sellPhone(){
+		
+		if($('#quote_price').val()<0){
+			alert('해당 상품은 판매할 수 없습니다.');
+		}else{
+			
+		
 		var f=document.frm;
 		f.submit();
 		
+			
+		}
 		
 		
 	}
