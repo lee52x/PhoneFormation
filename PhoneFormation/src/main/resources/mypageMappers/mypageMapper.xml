@@ -115,7 +115,7 @@
 	
 	<!-- 거래취소 -->
 	<delete id="myPagePurchaseCancel">
-	delete from ph_quoteboard where no=#{no} and state=2;
+	delete from ph_quoteboard where no=#{no} and state=2
 	</delete>
 	
 	<!-- 수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리 -->

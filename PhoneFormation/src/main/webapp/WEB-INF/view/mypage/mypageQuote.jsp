@@ -306,7 +306,7 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 			success :function(){
 			
 				 alert("선택이 완료되었습니다.");
-				$("#popup2").fadeOut(10);
+				$("#popup3").fadeOut(10);
 
 				$("#purchasetable").empty();
 				content = null;

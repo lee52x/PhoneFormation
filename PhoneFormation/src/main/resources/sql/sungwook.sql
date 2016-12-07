@@ -25,6 +25,8 @@ businessNum varchar(50),
 foreign key(businessNum)  references ph_business(businessNum)
 );
 
+
+
 --멤버시퀀스--
 drop sequence ph_member_seq;
 create sequence ph_member_seq
@@ -52,9 +54,17 @@ create table ph_quoteBoard(
 	state number(10) default 0,
 	manufacture varchar2(50),
 	machine varchar2(50),
-	capacity varchar2(50),
-	foreign key(userid) references ph_member(userid) ON DELETE CASCADE
+	capacity varchar2(50)
+	
 );
+ALTER TABLE ph_quoteBoard ADD constraint ph_quoteBoardforeign_fk foreign key(userid) references ph_member(userid) on delete cascade;
+
+
+
+insert into PH_QUOTEBOARD values(9,'qweqwe','박종민','010-3333-0619',897000,'테스트','광주','1231234',sysdate,'작동','기스보통','기스없음',0,'삼성전자','Galaxy S7 edge Olympic Games Limited Edition','32GB');
+insert into PURCHASE_REQUEST values(1,'asdasd',9,2);
+
+delete from ph_quoteBoard where no=9;
 
 --quote 시퀀스 --
 drop sequence ph_quoteBoard_seq;
@@ -71,10 +81,16 @@ drop table purchase_request;
 	create table purchase_request(
 		purchaseNum number(2) primary key,
 		userid varchar2(50),  
-		no number(10) references ph_quoteBoard(no) ON DELETE CASCADE,
+		no number(10),
 		state number(5)
-	)
+	);
+	
+ALTER TABLE purchase_request ADD constraint purchase_requestforeign_fk foreign key(no) references ph_quoteBoard(no) on delete cascade;
+--ALTER TABLE purchase_request ADD constraint purchase_requestforeign_fk foreign key(no) references ph_quoteBoard(no);
+--alter table purchase_request drop constraint purchase_requestforeign_fk;
+	
 ---중고매입 시퀀스---
+	drop sequence purchase_request_seq;
 	create sequence purchase_request_seq
 	start with 1
 	increment by 1 
@@ -104,6 +120,7 @@ create table ph_repair(
 )
 insert into ph_repair values('Galaxy S7',120000,50000,20000,20000,30000,50000,50000,70000,100000,100000,50000,50000,20000,20000,30000)
 select*from ph_repair
+
  --수리게시판 테이블--
  select*from ph_repairBoard;
  drop table ph_repairBoard;
@@ -119,9 +136,10 @@ select*from ph_repair
 	rdate date,
 	state number(10) default 0,
 	machine varchar2(50),
-	machineState varchar2(200),
-	foreign key(userid) references ph_member(userid)
+	machineState varchar2(200)
+
  )
+ ALTER TABLE ph_repairBoard ADD constraint ph_repairBoardforeign_fk foreign key(userid) references ph_member(userid) on delete cascade;
  select *from ph_repairBoard
  
  ---수리게시판 시퀀스--
@@ -131,17 +149,22 @@ create sequence ph_repairBoard_seq
 	increment by 1 
 	nocache
 	nocycle;
-	
+ 
+ 
 --수리매입  테이블---
 	select * from repair_request
 	drop table repair_request;
 	create table repair_request(
 		repairNum number(2) primary key,
 		userid varchar2(50),  
-		no number(10) references ph_repairBoard(no),
+		no number(10),
 		state number(5)
 	)
+ ALTER TABLE repair_request ADD constraint repair_requestforeign_fk foreign key(no) references ph_repairBoard(no) on delete cascade;
+
+ 
 ---수리매입 시퀀스---
+	drop sequence repair_request_seq;
 	create sequence repair_request_seq
 	start with 1
 	increment by 1 

@@ -100,11 +100,11 @@ infoArea .list1{overflow:hidden;height:120px}
                   <% if(session.getAttribute("member").equals("general")) { %>
                   <li><a href="/phonefo/mypageQuote" title="올린중고견적">중고</a></li>
 					 <li><a href="/phonefo/mypageRepair" title="올린수리견적">수리</a></li>    
+					 <li><a href="/phonefo/mypageOut" title="회원탈퇴">회원탈퇴</a></li>    
                   <% } else if(session.getAttribute("member").equals("business")) { %>
                   <li><a href="/phonefo/mypageB_Quote" title="신청한중고견적">중고</a></li>
 					 <li><a href="/phonefo/mypageB_Repair" title="신청한수리견적">수리</a></li>    
              	  <% } %>
-					 <li><a href="/phonefo/mypageOut" title="회원탈퇴">회원탈퇴</a></li>    
                                                 
                      </ul>
      			   	<hr style="margin-top: -0.5%">
