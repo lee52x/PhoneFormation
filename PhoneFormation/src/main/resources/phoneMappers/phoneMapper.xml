@@ -72,9 +72,9 @@
 		from spec_service
 		where no=#{no}
 	</select>
-	<select id="select_phone" parameterType="String" resultType="phone">
-		select name, image 
+	<select id="select_phone" resultType="phone">
+		select name, image, manufacture
 		from ph_phone 
-		where name=#{name}
+		where no=#{no}
 	</select>
 </mapper>

@@ -98,8 +98,8 @@ public class PhoneInfoServiceImpl implements PhoneInfoService{
 	}
 
 	@Override
-	public List<PhoneInfoVO> select_phone(String name) throws Exception {
-		return dao.select_phone(name);
+	public List<PhoneInfoVO> select_phone(int no) throws Exception {
+		return dao.select_phone(no);
 	}
 
 }

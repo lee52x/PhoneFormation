@@ -118,7 +118,12 @@
 	right: 10px;
 }
 </style>
-<script type="text/javascript">
+<script type="text/javascript">	
+/* $(function(){
+	   $('.ckb').click(function(){
+	      alert("value"+$(this).val());
+	   });
+}); */
 	$(document).ready(function() {
 		//alert('sdsd');
 		$('.ckbox').hide();
@@ -140,53 +145,108 @@
 			$("#tab_apple").attr('class','active');				
 		}); 
 	});
-	var chkcnt=0;
-	var chkMaxcnt=2;
 		 
+	var chkcnt=0;
+	var chkMaxcnt=1;
+	
+	var chk2=function(){
+		
+		$('.ckb:checked').each(function(idx, ele){
+			alert('index : '+idx+' / element.id : '+ele.id+' / element.name : '+ele.name);
+			var id = ele.id;
+			var name = ele.name;
+			var len = document.getElementsByName(name).length; //체크박스 총갯수
+			//alert(">>>"+$(this).val());
+			
+			if(idx==0){
+				$.ajax({
+   	            		url:"/phonefo/phonechk1",
+   	             		type:'POST',
+   	             		data: {'no':ele.id},
+   	             		success:function(result){
+   	             		for(var i=0; i<result.length; i++){
+   	                		checkPhone =
+   	                		"<img src="+result[i].image+" width='10px' height='10px'>"+
+   	                		"<p>"+result[i].name+"</p>"+
+   	                		"<p>"+result[i].manufacture+"</p>";
+   	             		}
+   	             		$(".ckPhone1").empty();
+   	                	$(checkPhone).appendTo('.ckPhone1');
+   	             	}
+   		         });
+			}else if(idx==1){
+				$.ajax({
+	            		url:"/phonefo/phonechk1",
+	             		type:'POST',
+	             		data: {'no':ele.id},
+	             		success:function(result){
+	             		for(var i=0; i<result.length; i++){
+	                		checkPhone =
+	                		"<img src="+result[i].image+" width='10px' height='10px'>"+
+	                		"<p>"+result[i].name+"</p>"+
+	                		"<p>"+result[i].manufacture+"</p>";
+	             		}
+	             		$(".ckPhone2").empty();
+	                	$(checkPhone).appendTo('.ckPhone2');
+	             	}
+		         });
+			}
+			 
+				  
+					   
+			$('.ckbox').show();
+			$('.ckboxContent').show();
+			$('.btn_click').click(function(){ //보이기 클릭시
+				$('.ckboxContent').show(); //내용 보이기
+			});
+			$('.btn_close').click(function(){ //숨기기 클릭시
+				$('.ckboxContent').hide(); //내용 숨김		
+			});
+			
+			if(idx >= chkMaxcnt){
+				alert('비교하기는 최대 2개까지만 가능합니다.');
+				for(var i=0; i<len; i++){
+					if(document.getElementsByName(name)[i].checked == false){
+						document.getElementsByName(name)[i].disabled=true;
+					}//if
+				}//for
+			}else if(idx>=0 || idx < chkMaxcnt){ 
+				for(var i=0; i<len; i++){
+					if(document.getElementsByName(name)[i].disabled ==true){
+						document.getElementsByName(name)[i].disabled=false;
+					}//if
+				}//for
+			}
+		});
+		if($(".ckb[name='box']:checked").length==0 ){
+			$('.ckbox').hide();
+		}
+		
+	}
+	
 	function chk(chkObj){
 		var chk = chkObj.checked; //체크박스 선택 true/false;
 		var name = chkObj.name; //체크박스 이름 "box"
 		var len = document.getElementsByName(name).length; //체크박스 총갯수
-		//var items = new Array();
-			 
+		
 		if(chk){//체크박스 선택시 chkcnt 1증가
 			chkcnt=chkcnt+1;
 			//alert("첫번째 클릭 : "+chkcnt);
+			if(chk==1){
+				alert('하나클릭');
+				//alert('얍 : '+document.getElementsByName(name).value);
+				//var item = value;
+				//alert('이것은??'+item);
+/* 				$.ajax({
+	                  url:"/phonefo/phonechk1",
+	                  type:'POST',
+	                  data: {'itemarray':items[0]},
+	                  success:function(){
+	                     alert('item[0]완료');
+	            } */
+			} 
 			
-			$(".ckb:checked").each(function(){
-				//items.push($(this).val());
-				var item = $(this).val();
-				//alert(item);
-				$.ajax({
-					url:"/phonefo/phonechk",
-					type:'post',
-					data:{name:$(this).val()},
-					success:function(result){
-						for(var i=0; i<result.length; i++){
-							alert('result['+i+'].name'+result[i].name);
-						}
-						//alert(result[0].name);
-						//$('.ckPhone1').html(result);
-						//alert(result); result==배열 [{name:갤럭시},{}]
-						//alert(result[0].name);
-						/* var options = '<option>기기명 선택</option>';
-						for (var i = 0; i < result.length; i++) {
-							/// alert(result[i].name);
-							options += '<option>' + result[i].name + '</option>';
-						}
-						$('#machine').html(options); */
-					}
-				});
-			});
-/* 			$.ajax({
-				url:"/phonefo/phonechk",
-				type:'post',
-				data:{'itemArray':items},
-				success:function(){
-					alert('완료!');
-					//$('.ckPhone1').html(result);
-				}
-			}); */
+			
 			
 			$('.ckbox').show();
 			$('.ckboxContent').show();
@@ -253,7 +313,8 @@
 											<img src="${list1.image }">
 											<p>${list1.name }</p><br>
 										</a>
-											<input type="checkbox" class="ckb" name='box' value='${list1.name }' onclick="chk(this)">비교하기<br>
+											<input type="checkbox" class="ckb" name='box' id="${list1.no }" onclick="chk2()">비교하기<br>
+											${list1.no }
 										</div>
 									</center>
 									</td>
@@ -319,7 +380,7 @@
 		비교하기
 		<div class='ckboxContent'>
 		내용이 나올 것이다!!
-			<div class="ckPhone1">핸드폰1</div>
+			<div class="ckPhone1" id="ckPhone1">핸드폰1</div>
 			<div class="ckPhone2">핸드폰2</div>
 			<button class='btn_allremove'>모두 지우기</button>
 		</div>

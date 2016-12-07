@@ -31,5 +31,5 @@ public interface PhoneInfoDAO {
 	public List<spec_batteryVO> select_spec_battery(int no)throws Exception;
 	public List<spec_audioVO> select_spec_audio(int no)throws Exception;
 	public List<spec_serviceVO> select_spec_service(int no)throws Exception;
-	public List<PhoneInfoVO> select_phone(String name)throws Exception;
+	public List<PhoneInfoVO> select_phone(int no)throws Exception;
 }
