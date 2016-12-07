@@ -180,7 +180,7 @@ div{
 											<th scope="col">월정액(부가세포함)</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">테이터</th>
+											<th scope="col">테이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -191,7 +191,7 @@ div{
 												<td>${signiture.fixed_month}원</td>
 												<td>${signiture.call }</td>
 												<td>${signiture.sms }</td>
-												<td>${signiture.data}  ${signiture.extra_data}</td>
+												<td>${signiture.data} / ${signiture.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -325,7 +325,7 @@ div{
 											<th scope="col">월정액(부가세포함)</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">테이터</th>
+											<th scope="col">테이터 /추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -336,7 +336,7 @@ div{
 												<td>${signiture.fixed_month}원</td>
 												<td>${signiture.call }</td>
 												<td>${signiture.sms }</td>
-												<td>${signiture.data}  ${signiture.extra_data}</td>
+												<td>${signiture.data} / ${signiture.extra_data}</td>
 											</tr>
 											
 										</c:forEach>

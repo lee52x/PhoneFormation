@@ -225,7 +225,7 @@ div{
 											<th scope="col">월정액</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">데이터</th>
+											<th scope="col">데이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -236,7 +236,7 @@ div{
 												<td>${lteEgg.fixed_month}원</td>
 												<td>${lteEgg.call }</td>
 												<td>${lteEgg.sms }</td>
-												<td>${lteEgg.data}  ${lteEgg.extra_data}</td>
+												<td>${lteEgg.data} / ${lteEgg.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -419,7 +419,7 @@ div{
 											<th scope="col">월정액</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">데이터</th>
+											<th scope="col">데이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -430,7 +430,7 @@ div{
 												<td>${lteEgg.fixed_month}원</td>
 												<td>${lteEgg.call }</td>
 												<td>${lteEgg.sms }</td>
-												<td>${lteEgg.data}  ${lteEgg.extra_data}</td>
+												<td>${lteEgg.data} / ${lteEgg.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -613,7 +613,7 @@ div{
 											<th scope="col">월정액</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">데이터</th>
+											<th scope="col">데이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -624,7 +624,7 @@ div{
 												<td>${lteEgg.fixed_month}원</td>
 												<td>${lteEgg.call }</td>
 												<td>${lteEgg.sms }</td>
-												<td>${lteEgg.data}  ${lteEgg.extra_data}</td>
+												<td>${lteEgg.data} / ${lteEgg.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -807,7 +807,7 @@ div{
 											<th scope="col">월정액</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">데이터</th>
+											<th scope="col">데이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -818,7 +818,7 @@ div{
 												<td>${lteEgg.fixed_month}원</td>
 												<td>${lteEgg.call }</td>
 												<td>${lteEgg.sms }</td>
-												<td>${lteEgg.data}  ${lteEgg.extra_data}</td>
+												<td>${lteEgg.data} / ${lteEgg.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -1001,7 +1001,7 @@ div{
 											<th scope="col">월정액</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">데이터</th>
+											<th scope="col">데이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -1012,7 +1012,7 @@ div{
 												<td>${lteEgg.fixed_month}원</td>
 												<td>${lteEgg.call }</td>
 												<td>${lteEgg.sms }</td>
-												<td>${lteEgg.data}  ${lteEgg.extra_data}</td>
+												<td>${lteEgg.data} / ${lteEgg.extra_data}</td>
 											</tr>
 											
 										</c:forEach>

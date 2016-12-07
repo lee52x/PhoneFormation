@@ -166,8 +166,8 @@ div{
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p style="font-size: 8px">${band_data_perfectS.call }</p>
-									</div> <span>무제한</span></li>
+										<p style="font-size: 5px">${band_data_perfectS.call }</p>
+									</div> <span>무제한<li></span></li>
 								<li class="full"><em class="mail">문자</em>
 									<div class="graph">
 										<span> <!-- design -->
@@ -369,8 +369,8 @@ div{
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p style="font-size: 8px">${band_data_perfect.call }</p>
-									</div> <span>무제한</span></li>
+										<p style="font-size: 5px">${band_data_perfect.call }</p>
+									</div> <span>무제한<li></span></li>
 								<li class="full"><em class="mail">문자</em>
 									<div class="graph">
 										<span> <!-- design -->
@@ -515,7 +515,7 @@ div{
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
 							<ul class="graphArea" style="width: 350px">
 								<!-- 제공량의 텍스트가 길 경우 class="type2" 추가 -->
-								<li class="full">
+								<li>
 									<!-- 무제한일 경우 class="full" --> <em class="data">데이터</em>
 									<div class="graph">
 										<span> <!-- design -->
@@ -528,8 +528,8 @@ div{
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
-										<p style="font-size: 8px">${band_data_6_5g.call }</p>
-									</div> <span>무제한</span></li>
+										<p style="font-size: 6px">${band_data_6_5g.call }</p>
+									</div> <span>무제한<li></span></li>
 								<li class="full"><em class="mail">문자</em>
 									<div class="graph">
 										<span> <!-- design -->
@@ -674,7 +674,7 @@ div{
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
 							<ul class="graphArea" style="width: 350px">
 								<!-- 제공량의 텍스트가 길 경우 class="type2" 추가 -->
-								<li class="full">
+								<li>
 									<!-- 무제한일 경우 class="full" --> <em class="data">데이터</em>
 									<div class="graph">
 										<span> <!-- design -->
@@ -688,7 +688,7 @@ div{
 										<span> <!-- design -->
 										</span>
 										<p style="font-size: 8px">${band_data_3_5g.call }</p>
-									</div> <span>무제한</span></li>
+									</div> <span>무제한<li></span></li>
 								<li class="full"><em class="mail">문자</em>
 									<div class="graph">
 										<span> <!-- design -->
@@ -832,7 +832,7 @@ div{
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
 							<ul class="graphArea" style="width: 350px">
 								<!-- 제공량의 텍스트가 길 경우 class="type2" 추가 -->
-								<li class="full">
+								<li>
 									<!-- 무제한일 경우 class="full" --> <em class="data">데이터</em>
 									<div class="graph">
 										<span> <!-- design -->
@@ -846,7 +846,7 @@ div{
 										<span> <!-- design -->
 										</span>
 										<p style="font-size: 8px">${band_data_2_2g.call }</p>
-									</div> <span>무제한</span></li>
+									</div> <span>무제한<li></span></li>
 								<li class="full"><em class="mail">문자</em>
 									<div class="graph">
 										<span> <!-- design -->
@@ -990,7 +990,7 @@ div{
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
 							<ul class="graphArea" style="width: 350px">
 								<!-- 제공량의 텍스트가 길 경우 class="type2" 추가 -->
-								<li class="full">
+								<li>
 									<!-- 무제한일 경우 class="full" --> <em class="data">데이터</em>
 									<div class="graph">
 										<span> <!-- design -->
@@ -1004,7 +1004,7 @@ div{
 										<span> <!-- design -->
 										</span>
 										<p style="font-size: 8px">${band_data_1_2g.call }</p>
-									</div> <span>무제한</span></li>
+									</div> <span>무제한<li></span></li>
 								<li class="full"><em class="mail">문자</em>
 									<div class="graph">
 										<span> <!-- design -->
@@ -1148,7 +1148,7 @@ div{
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
 							<ul class="graphArea" style="width: 350px">
 								<!-- 제공량의 텍스트가 길 경우 class="type2" 추가 -->
-								<li class="full">
+								<li>
 									<!-- 무제한일 경우 class="full" --> <em class="data">데이터</em>
 									<div class="graph">
 										<span> <!-- design -->
@@ -1162,7 +1162,7 @@ div{
 										<span> <!-- design -->
 										</span>
 										<p style="font-size: 8px">${band_data_save.call }</p>
-									</div> <span>무제한</span></li>
+									</div> <span>무제한<li></span></li>
 								<li class="full"><em class="mail">문자</em>
 									<div class="graph">
 										<span> <!-- design -->

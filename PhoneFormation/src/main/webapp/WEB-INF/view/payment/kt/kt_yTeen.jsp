@@ -209,7 +209,7 @@ div{
 											<th scope="col">월정액</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">데이터</th>
+											<th scope="col">데이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -220,7 +220,7 @@ div{
 												<td>${yTeen.fixed_month}원</td>
 												<td>${yTeen.call }</td>
 												<td>${yTeen.sms }</td>
-												<td>${yTeen.data}  ${yTeen.extra_data}</td>
+												<td>${yTeen.data} / ${yTeen.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -395,7 +395,7 @@ div{
 											<th scope="col">월정액</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">데이터</th>
+											<th scope="col">데이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -406,7 +406,7 @@ div{
 												<td>${yTeen.fixed_month}원</td>
 												<td>${yTeen.call }</td>
 												<td>${yTeen.sms }</td>
-												<td>${yTeen.data}  ${yTeen.extra_data}</td>
+												<td>${yTeen.data} / ${yTeen.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -581,7 +581,7 @@ div{
 											<th scope="col">월정액</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">데이터</th>
+											<th scope="col">데이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -592,7 +592,7 @@ div{
 												<td>${yTeen.fixed_month}원</td>
 												<td>${yTeen.call }</td>
 												<td>${yTeen.sms }</td>
-												<td>${yTeen.data}  ${yTeen.extra_data}</td>
+												<td>${yTeen.data} / ${yTeen.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -767,7 +767,7 @@ div{
 											<th scope="col">월정액</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">데이터</th>
+											<th scope="col">데이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -778,7 +778,7 @@ div{
 												<td>${yTeen.fixed_month}원</td>
 												<td>${yTeen.call }</td>
 												<td>${yTeen.sms }</td>
-												<td>${yTeen.data}  ${yTeen.extra_data}</td>
+												<td>${yTeen.data} / ${yTeen.extra_data}</td>
 											</tr>
 											
 										</c:forEach>

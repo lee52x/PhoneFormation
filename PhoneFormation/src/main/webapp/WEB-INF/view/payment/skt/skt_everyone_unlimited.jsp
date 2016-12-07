@@ -119,7 +119,7 @@ div{
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
 							<ul class="graphArea" style="width: 350px">
 								<!-- 제공량의 텍스트가 길 경우 class="type2" 추가 -->
-								<li>
+								<li class="full">
 									<!-- 무제한일 경우 class="full" --> <em class="data">데이터</em>
 									<div class="graph">
 										<span> <!-- design -->
@@ -128,7 +128,7 @@ div{
 										<!-- 추가 안내 문구가 있을 경우 -->
 									</div> <span>${everyone_unlimited_100.data }</span>
 								</li>
-								<li><em class="call">음성</em>
+								<li class="full"><em class="call">음성</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
@@ -225,7 +225,7 @@ div{
 											<th scope="col">24개월 요금약정 시 이용료(부가세포함)</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">테이터</th>
+											<th scope="col">테이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -237,7 +237,7 @@ div{
 												<td>${everyone_unlimited.fixed_month_dis}원</td>
 												<td>${everyone_unlimited.call }</td>
 												<td>${everyone_unlimited.sms }</td>
-												<td>${everyone_unlimited.data}  ${everyone_unlimited.extra_data}</td>
+												<td>${everyone_unlimited.data} / ${everyone_unlimited.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -317,7 +317,7 @@ div{
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
 							<ul class="graphArea" style="width: 350px">
 								<!-- 제공량의 텍스트가 길 경우 class="type2" 추가 -->
-								<li>
+								<li class="full">
 									<!-- 무제한일 경우 class="full" --> <em class="data">데이터</em>
 									<div class="graph">
 										<span> <!-- design -->
@@ -326,7 +326,7 @@ div{
 										<!-- 추가 안내 문구가 있을 경우 -->
 									</div> <span>${everyone_unlimited_85.data }</span>
 								</li>
-								<li><em class="call">음성</em>
+								<li class="full"><em class="call">음성</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
@@ -423,7 +423,7 @@ div{
 											<th scope="col">24개월 요금약정 시 이용료(부가세포함)</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">테이터</th>
+											<th scope="col">테이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -435,7 +435,7 @@ div{
 												<td>${everyone_unlimited.fixed_month_dis}원</td>
 												<td>${everyone_unlimited.call }</td>
 												<td>${everyone_unlimited.sms }</td>
-												<td>${everyone_unlimited.data}  ${everyone_unlimited.extra_data}</td>
+												<td>${everyone_unlimited.data} / ${everyone_unlimited.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -472,7 +472,7 @@ div{
 							<strong class="tit">제공 데이터 및 음성, 문자량</strong>
 							<ul class="graphArea" style="width: 350px">
 								<!-- 제공량의 텍스트가 길 경우 class="type2" 추가 -->
-								<li>
+								<li class="full">
 									<!-- 무제한일 경우 class="full" --> <em class="data">데이터</em>
 									<div class="graph">
 										<span> <!-- design -->
@@ -481,7 +481,7 @@ div{
 										<!-- 추가 안내 문구가 있을 경우 -->
 									</div> <span>${lte_data_80pack.data }</span>
 								</li>
-								<li><em class="call">음성</em>
+								<li class="full"><em class="call">음성</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
@@ -578,7 +578,7 @@ div{
 											<th scope="col">24개월 요금약정 시 이용료(부가세포함)</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">테이터</th>
+											<th scope="col">테이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -590,7 +590,7 @@ div{
 												<td>${everyone_unlimited.fixed_month_dis}원</td>
 												<td>${everyone_unlimited.call }</td>
 												<td>${everyone_unlimited.sms }</td>
-												<td>${everyone_unlimited.data}  ${everyone_unlimited.extra_data}</td>
+												<td>${everyone_unlimited.data} / ${everyone_unlimited.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -634,7 +634,7 @@ div{
 										<!-- 추가 안내 문구가 있을 경우 -->
 									</div> <span>${everyone_unlimited_75.data }</span>
 								</li>
-								<li><em class="call">음성</em>
+								<li class="full"><em class="call">음성</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
@@ -731,7 +731,7 @@ div{
 											<th scope="col">24개월 요금약정 시 이용료(부가세포함)</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">테이터</th>
+											<th scope="col">테이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -743,7 +743,7 @@ div{
 												<td>${everyone_unlimited.fixed_month_dis}원</td>
 												<td>${everyone_unlimited.call }</td>
 												<td>${everyone_unlimited.sms }</td>
-												<td>${everyone_unlimited.data}  ${everyone_unlimited.extra_data}</td>
+												<td>${everyone_unlimited.data} / ${everyone_unlimited.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -787,7 +787,7 @@ div{
 										<!-- 추가 안내 문구가 있을 경우 -->
 									</div> <span>${everyone_unlimited_69.data }</span>
 								</li>
-								<li><em class="call">음성</em>
+								<li class="full"><em class="call">음성</em>
 									<div class="graph">
 										<span> <!-- design -->
 										</span>
@@ -884,7 +884,7 @@ div{
 											<th scope="col">24개월 요금약정 시 이용료(부가세포함)</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">테이터</th>
+											<th scope="col">테이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -896,7 +896,7 @@ div{
 												<td>${everyone_unlimited.fixed_month_dis}원</td>
 												<td>${everyone_unlimited.call }</td>
 												<td>${everyone_unlimited.sms }</td>
-												<td>${everyone_unlimited.data}  ${everyone_unlimited.extra_data}</td>
+												<td>${everyone_unlimited.data} / ${everyone_unlimited.extra_data}</td>
 											</tr>
 											
 										</c:forEach>

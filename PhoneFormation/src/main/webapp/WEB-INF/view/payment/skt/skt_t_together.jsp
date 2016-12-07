@@ -209,7 +209,7 @@ div{
 											<th scope="col">24개월 요금약정 시 이용료(부가세포함)</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">테이터</th>
+											<th scope="col">테이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -221,7 +221,7 @@ div{
 												<td>${t_together.fixed_month_dis}원</td>
 												<td>${t_together.call }</td>
 												<td>${t_together.sms }</td>
-												<td>${t_together.data}  ${t_together.extra_data}</td>
+												<td>${t_together.data} / ${t_together.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -403,7 +403,7 @@ div{
 											<th scope="col">24개월 요금약정 시 이용료(부가세포함)</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">테이터</th>
+											<th scope="col">테이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -415,7 +415,7 @@ div{
 												<td>${t_together.fixed_month_dis}원</td>
 												<td>${t_together.call }</td>
 												<td>${t_together.sms }</td>
-												<td>${t_together.data}  ${t_together.extra_data}</td>
+												<td>${t_together.data} / ${t_together.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -552,7 +552,7 @@ div{
 											<th scope="col">24개월 요금약정 시 이용료(부가세포함)</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">테이터</th>
+											<th scope="col">테이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -564,7 +564,7 @@ div{
 												<td>${t_together.fixed_month_dis}원</td>
 												<td>${t_together.call }</td>
 												<td>${t_together.sms }</td>
-												<td>${t_together.data}  ${t_together.extra_data}</td>
+												<td>${t_together.data} / ${t_together.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -701,7 +701,7 @@ div{
 											<th scope="col">24개월 요금약정 시 이용료(부가세포함)</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">테이터</th>
+											<th scope="col">테이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -713,7 +713,7 @@ div{
 												<td>${t_together.fixed_month_dis}원</td>
 												<td>${t_together.call }</td>
 												<td>${t_together.sms }</td>
-												<td>${t_together.data}  ${t_together.extra_data}</td>
+												<td>${t_together.data} / ${t_together.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
