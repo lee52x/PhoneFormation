@@ -75,16 +75,18 @@ table {
                             <img src="/resources/images/slider_1_bg.jpg" data-fullwidthcentering="on" alt="background"> 
                             
                             <!-- THE CAPTIONS/LAYERS IN THIS SLIDE -->
+                            <!-- 메인화면 슬라이드 -->
                             <div class="caption medium-700-black lfr" 
                                   data-x="58" 
-                                  data-y="138" 
+                                  data-y="150" 
                                   data-speed="300" 
                                   data-start="1600" 
-                                  data-easing="easeOutExpo">핸드폰의 모든 정보<br/>
+                                  data-easing="easeOutExpo">Welcome to<br>
+                                  	핸드폰의 모든 정보<br/>
                                		PhoneFormation이 알려드립니다</div>
                             <div class="caption small-600-black lfr" 
                                   data-x="58" 
-                                  data-y="220" 
+                                  data-y="250" 
                                   data-speed="400" 
                                   data-start="2000" 
                                   data-easing="easeOutExpo">사고 싶은 핸드폰의 정보가 궁금해?<br/>
@@ -98,20 +100,20 @@ table {
                                   data-start="1200" 
                                   data-easing="easeOutExpo"><img src="/resources/images/payment/SKT.png" alt="SKT" width="200px" /> </div>
                             <div class="caption lfl" 
-                                  data-x="470" 
-                                  data-y="230" 
+                                  data-x="500" 
+                                  data-y="250" 
                                   data-speed="400" 
                                   data-start="700" 
                                   data-easing="easeOutExpo"><img src="/resources/images/payment/KTOlleh.png" alt="KT Olleh" width="200px"/> </div>
                             <div class="caption lfl" 
-                                  data-x="550" 
+                                  data-x="450" 
                                   data-y="350" 
                                   data-speed="400" 
                                   data-start="900" 
                                   data-easing="easeOutExpo"><img src="/resources/images/payment/LGU+.png" alt="LG U+" width="200px" /> </div>
                             <div class="caption lfl" 
-                                  data-x="750" 
-                                  data-y="250" 
+                                  data-x="800" 
+                                  data-y="300" 
                                   data-speed="400" 
                                   data-start="600" 
                                   data-easing="easeOutExpo"><img src="/resources/images/main/Samsung.png" alt="SAMSUNG" width="200px" /> </div>
@@ -122,7 +124,7 @@ table {
                                   data-start="500" 
                                   data-easing="easeOutExpo"><img src="/resources/images/main/LG.png" alt="LG" width="200px" /> </div>
                             <div class="caption lfl" 
-                                  data-x="500" 
+                                  data-x="450" 
                                   data-y="50" 
                                   data-speed="400" 
                                   data-start="800" 
@@ -130,6 +132,7 @@ table {
                         </li>
                         
                         <!-- THE SECOND SLIDE --> 
+                        <!-- 최신폰 슬라이드 -->
                         <li data-transition="papercut" data-slotamount="5" data-masterspeed="500" data-delay="9400"> 
                             
                             <!-- THE MAIN BACKGROUND IMAGE IN THIS FIRST SLIDE --> 
@@ -137,26 +140,26 @@ table {
                             
                             <!-- THE CAPTIONS/LAYERS IN THIS SLIDE -->
                             <div class="caption medium-700-black lfr" 
-                                  data-x="625" 
+                                  data-x="650" 
                                   data-y="150" 
                                   data-speed="300" 
-                                  data-start="400" 
-                                  data-easing="easeOutExpo">EVERYTHING YOU NEED <br/>
-                                TO BUILD EXCEPTIONAL PROJECT. </div>
+                                  data-start="400"
+                                  data-easing="easeOutExpo">SAMSUNG<br/>
+                                	스마트폰을 원하세요?</div>
                             <div class="caption small-600-black lfr" 
-                                  data-x="625" 
+                                  data-x="650" 
                                   data-y="225" 
                                   data-speed="300" 
                                   data-start="800" 
-                                  data-easing="easeOutExpo">Venue is the best solution for your business, Responsive & <br/>
-                                Flexible, You can present your business and services <br/>
-                                properly. </div>
+                                  data-easing="easeOutExpo">아래의 버튼을 눌러<br/>
+                                	나에게 맞는 스마트폰을 찾아보세요 <br>
+                                  	(갤럭시 A 시리즈, J 시리즈, S 시리즈, 노트 시리즈)</div>
                             <div class="caption randomrotate" 
-                                  data-x="625" 
+                                  data-x="650" 
                                   data-y="300" 
                                   data-speed="300" 
                                   data-start="1200" 
-                                  data-easing="easeOutExpo"><a href="#" class="btn-custom btn-medium border-btn">Purchase Item</a> </div>
+                                  data-easing="easeOutExpo"><a href="#" class="btn-custom btn-medium border-btn">SAMSUNG 스마트폰 보러가기</a> </div>
                             <div class="tp-caption sfl start" 
                                   data-x="30" 
                                   data-y="bottom" 
@@ -173,25 +176,26 @@ table {
                             
                             <!-- THE CAPTIONS/LAYERS IN THIS SLIDE -->
                             <div class="caption medium-700-black lfr" 
-                                  data-x="58" 
+                                  data-x="100" 
                                   data-y="138" 
                                   data-speed="300" 
                                   data-start="800" 
-                                  data-easing="easeOutExpo">Fully Responsive. Retina Display Ready. <br/>
-                                Touch Enabled Sliders. </div>
+                                  data-easing="easeOutExpo">LG<br/>
+                                	스마트폰은 어떠신가요?</div>
                             <div class="caption small-600-black lfr" 
-                                  data-x="58" 
+                                  data-x="100" 
                                   data-y="214" 
                                   data-speed="300" 
                                   data-start="1200" 
-                                  data-easing="easeOutExpo">Venue is the best solution for your business, Responsive & Flexible, <br/>
-                                You can present your business and services properly. </div>
+                                  data-easing="easeOutExpo">아래의 버튼을 눌러<br/>
+                                	나에게 맞는 스마트폰을 찾아보세요 <br>
+                                  	(G 시리즈, V 시리즈)</div>
                             <div class="caption randomrotate" 
-                                  data-x="58" 
+                                  data-x="100" 
                                   data-y="275" 
                                   data-speed="300" 
                                   data-start="1600" 
-                                  data-easing="easeOutExpo"><a href="#" class="btn-custom btn-medium border-btn">Explore More Features</a> </div>
+                                  data-easing="easeOutExpo"><a href="#" class="btn-custom btn-medium border-btn">LG 스마트폰 보러기기</a> </div>
                             <div class="caption lfb" 
                                   data-x="420" 
                                   data-y="40" 
@@ -207,29 +211,30 @@ table {
                             
                             <!-- LAYER NR. 1 -->
                             <div class="caption medium-700-black lfr" 
-                                  data-x="540" 
+                                  data-x="700" 
                                   data-y="125" 
                                   data-speed="300" 
                                   data-start="1600" 
-                                  data-easing="easeOutExpo"> <span class="accent-color">Solutions</span> that you need! <br>
-                                The best template to get you started </div>
+                                  data-easing="easeOutExpo">iPhone<br>
+                                  	스마트폰도 있습니다</div>
                             
                             <!-- LAYER NR. 3 -->
                             <div class="caption small-600-black lfr" 
-                                  data-x="540" 
+                                  data-x="700" 
                                   data-y="200" 
                                   data-speed="300" 
                                   data-start="2000" 
-                                  data-easing="easeOutExpo">Venue is best solution for your business, Responsive & Flexible, <br>
-                                You can present your business and services properly. </div>
+                                  data-easing="easeOutExpo">아래의 버튼을 눌러<br>
+                                  	나에게 맞는 스마트폰을 찾아보세요<br>
+                                  	(6 시리즈, 7 시리즈, SE 시리즈)</div>
                             
                             <!-- LAYER NR. 4 -->
                             <div class="tp-caption sfb start" 
-                                  data-x="540" 
+                                  data-x="700" 
                                   data-y="265" 
                                   data-speed="300" 
                                   data-start="2500" 
-                                  data-easing="easeOutExpo"><a href="#" class="btn-custom btn-medium border-btn">Purchase This Now</a> </div>
+                                  data-easing="easeOutExpo"><a href="#" class="btn-custom btn-medium border-btn">iPhone 보러기기</a> </div>
                             
                             <!-- LAYER NR. 5 -->
                             <div class="tp-caption sfl start" 
