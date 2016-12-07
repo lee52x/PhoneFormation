@@ -227,7 +227,7 @@ div{
 											<th scope="col">월정액(부가세포함)</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">테이터</th>
+											<th scope="col">테이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -238,7 +238,7 @@ div{
 												<td>${band_yt.fixed_month}원</td>
 												<td>${band_yt.call }</td>
 												<td>${band_yt.sms }</td>
-												<td>${band_yt.data}  ${band_yt.extra_data}</td>
+												<td>${band_yt.data} / ${band_yt.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -420,7 +420,7 @@ div{
 											<th scope="col">월정액(부가세포함)</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">테이터</th>
+											<th scope="col">테이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -431,7 +431,7 @@ div{
 												<td>${band_yt.fixed_month}원</td>
 												<td>${band_yt.call }</td>
 												<td>${band_yt.sms }</td>
-												<td>${band_yt.data}  ${band_yt.extra_data}</td>
+												<td>${band_yt.data} / ${band_yt.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -614,7 +614,7 @@ div{
 											<th scope="col">월정액(부가세포함)</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">테이터</th>
+											<th scope="col">테이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -625,7 +625,7 @@ div{
 												<td>${band_yt.fixed_month}원</td>
 												<td>${band_yt.call }</td>
 												<td>${band_yt.sms }</td>
-												<td>${band_yt.data}  ${band_yt.extra_data}</td>
+												<td>${band_yt.data} / ${band_yt.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -808,7 +808,7 @@ div{
 											<th scope="col">월정액(부가세포함)</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">테이터</th>
+											<th scope="col">테이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -819,7 +819,7 @@ div{
 												<td>${band_yt.fixed_month}원</td>
 												<td>${band_yt.call }</td>
 												<td>${band_yt.sms }</td>
-												<td>${band_yt.data}  ${band_yt.extra_data}</td>
+												<td>${band_yt.data} / ${band_yt.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -1002,7 +1002,7 @@ div{
 											<th scope="col">월정액(부가세포함)</th>
 											<th scope="col">음성</th>
 											<th scope="col">문자</th>
-											<th scope="col">테이터</th>
+											<th scope="col">테이터 / 추가데이터</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -1013,7 +1013,7 @@ div{
 												<td>${band_yt.fixed_month}원</td>
 												<td>${band_yt.call }</td>
 												<td>${band_yt.sms }</td>
-												<td>${band_yt.data}  ${band_yt.extra_data}</td>
+												<td>${band_yt.data} / ${band_yt.extra_data}</td>
 											</tr>
 											
 										</c:forEach>
@@ -1088,35 +1088,35 @@ div{
 	
 	if(location.href.match('0%ED%8D%BC%ED%8E%99%ED%8A%B8')){
 		// $('div[id=perfect]').css("display", "none");
-		$('#perfect').show();
-		$('#7g').hide();
-		$('#3g').hide();
-		$('#1g').hide();
-		$('#save').hide();
+		$('#perfect').css("display","block");
+		$('#7g').css("display","none");
+		$('#3g').css("display","none");
+		$('#1g').css("display","none");
+		$('#save').css("display","none");
 	}  else if(location.href.match('7G')){
-		$('#perfect').hide();
-		$('#7g').show();
-		$('#3g').hide();
-		$('#1g').hide();
-		$('#save').hide();
+		$('#perfect').css("display","none");
+		$('#7g').css("display","block");
+		$('#3g').css("display","none");
+		$('#1g').css("display","none");
+		$('#save').css("display","none");
 	}else if(location.href.match('3G')){
-		$('#perfect').hide();
-		$('#7g').hide();
-		$('#3g').show();
-		$('#1g').hide();
-		$('#save').hide();
+		$('#perfect').css("display","none");
+		$('#7g').css("display","none");
+		$('#3g').css("display","block");
+		$('#1g').css("display","none");
+		$('#save').css("display","none");
 	}else if(location.href.match('1G')){
-		$('#perfect').hide();
-		$('#7g').hide();
-		$('#3g').hide();
-		$('#1g').show();
-		$('#save').hide();
+		$('#perfect').css("display","none");
+		$('#7g').css("display","none");
+		$('#3g').css("display","none");
+		$('#1g').css("display","block");
+		$('#save').css("display","none");
 	}else{
-		$('#perfect').hide();
-		$('#7g').hide();
-		$('#3g').hide();
-		$('#1g').hide();
-		$('#save').show();
+		$('#perfect').css("display","none");
+		$('#7g').css("display","none");
+		$('#3g').css("display","none");
+		$('#1g').css("display","none");
+		$('#save').css("display","block");
 	}
 	
 </script>

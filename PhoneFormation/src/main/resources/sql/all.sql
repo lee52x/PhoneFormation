@@ -1,11 +1,13 @@
---=================================== ìš”ê¸ˆì œ í…Œì´ë¸” ì‹œìž‘=======================================
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
--- SKT í…Œì´ë¸”
+-- ¿ä±ÝÁ¦ Å×ÀÌÇÃ
+
+-- SKT Å×ÀÌºí
 drop table skt_pay;
 create table skt_pay(
 	payment 			varchar2(50) 	primary key,
 	data 					varchar2(10),
-	extra_data			varchar2(40),
+	extra_data			varchar2(40)	default 'ÇØ´ç»çÇ× ¾øÀ½',
 	call					varchar2(70),
 	sms					varchar2(50),
 	fixed_month		number,
@@ -16,33 +18,16 @@ create table skt_pay(
 
 );
 
---SKT ìš”ê¸ˆì œ INSERT
-INSERT INTO SKT_PAY VALUES('T ì‹œê·¸ë‹ˆì²˜ Master', '35GB',  'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ', 'ê¸°ë³¸ì œê³µ', 110000, 110000, 22000, 528000, 88000);
-INSERT INTO SKT_PAY VALUES('T ì‹œê·¸ë‹ˆì²˜ Classic', '20GB', 'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ', 'ê¸°ë³¸ì œê³µ', 88000, 88000, 17600,	422400,	70400);
-INSERT INTO SKT_PAY VALUES('band YT í¼íŽ™íŠ¸', '12GB', 'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ / ì˜ìƒ ë° ë¶€ê°€í†µí™” 300ë¶„', 'ê¸°ë³¸ì œê³µ', 71000, 71000,	14200, 340800,	56800);
-INSERT INTO SKT_PAY VALUES('band YT 7G', '7G', '(ë°ì´í„° ì˜µì…˜ ì¶”ê°€ ì œê³µ )',  'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ / ì˜ìƒ ë° ë¶€ê°€í†µí™” 300ë¶„', 'ê¸°ë³¸ì œê³µ', 62000, 62000, 12400, 297600, 49600);
-INSERT INTO SKT_PAY VALUES('band YT 3G', '3G', '(ë°ì´í„° ì˜µì…˜ ì¶”ê°€ ì œê³µ )', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ', 'ê¸°ë³¸ì œê³µ', 52000, 52000, 10400, 249600, 41600);
-INSERT INTO SKT_PAY VALUES('band YT 1G', '1G', '(ë°ì´í„° ì˜µì…˜ ì¶”ê°€ ì œê³µ )', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ', 'ê¸°ë³¸ì œê³µ', 42000, 42000, 8400,	201600,	33600);
-INSERT INTO SKT_PAY VALUES('band YT ì„¸ì´ë¸Œ', '500MB', '(ë°ì´í„° ì˜µì…˜ ì¶”ê°€ ì œê³µ )', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ', 'ê¸°ë³¸ì œê³µ', 38000, 38000, 7600, 182400, 30400);
-INSERT INTO SKT_PAY VALUES('band ë°ì´í„° í¼íŽ™íŠ¸S', '16GB', 'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ / ì˜ìƒ ë° ë¶€ê°€í†µí™” 300ë¶„', 'ê¸°ë³¸ì œê³µ', 75000, 75000, 15180, 364320, 59820);
-INSERT INTO SKT_PAY VALUES('band ë°ì´í„° í¼íŽ™íŠ¸', '11GB', 'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ / ì˜ìƒ ë° ë¶€ê°€í†µí™” 300ë¶„', 'ê¸°ë³¸ì œê³µ', 65890, 65890, 13200, 316800, 52690);
-INSERT INTO SKT_PAY VALUES('band ë°ì´í„° 6.5G',	'6.5GB',  '', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ / ì˜ìƒ ë° ë¶€ê°€í†µí™” 300ë¶„', 'ê¸°ë³¸ì œê³µ', 56100, 56100, 11220, 269280, 44880);
-INSERT INTO SKT_PAY VALUES('band ë°ì´í„° 3.5G', '3.5GB', '', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ / ì˜ìƒ ë° ë¶€ê°€í†µí™” 50ë¶„', 'ê¸°ë³¸ì œê³µ', 51700, 51700, 10340, 248160, 41360);
-INSERT INTO SKT_PAY VALUES('band ë°ì´í„° 2.2G', '2.3GB', '', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ / ì˜ìƒ ë° ë¶€ê°€í†µí™” 50ë¶„', 'ê¸°ë³¸ì œê³µ', 46200, 46200,	9240,	221760,	36960);
-INSERT INTO SKT_PAY VALUES('band ë°ì´í„° 1.2G', '1.2GB', '', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ / ì˜ìƒ ë° ë¶€ê°€í†µí™” 50ë¶„', 'ê¸°ë³¸ì œê³µ', 39600, 39600, 7920, 190080, 31680);
-INSERT INTO SKT_PAY VALUES('band ë°ì´í„° ì„¸ì´ë¸Œ', '300MB', '', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ', 'ê¸°ë³¸ì œê³µ', 32890, 32890, 6600, 158400, 26290);
-INSERT INTO SKT_PAY VALUES('ì „êµ­ë¯¼ ë¬´í•œ 100', '16GB', 'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ ë¶€ê°€ / ì˜ìƒ 300ë¶„', 'ê¸°ë³¸ì œê³µ', 110000, 83600, 16720, 401280, 66880);
-INSERT INTO SKT_PAY VALUES('ì „êµ­ë¯¼ ë¬´í•œ 85', '12GB', 'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ ë¶€ê°€ / ì˜ìƒ 300ë¶„', 'ê¸°ë³¸ì œê³µ', 93500, 71500, 14300, 343200, 57200);
-INSERT INTO SKT_PAY VALUES('LTE ë°ì´í„° ë¬´ì œí•œ 80íŒ©', '8GB', 'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ ë¶€ê°€ / ì˜ìƒ 300ë¶„', 'ê¸°ë³¸ì œê³µ',88000, 67375, 12375, 297000, 55000);
-INSERT INTO SKT_PAY VALUES('ì „êµ­ë¯¼ ë¬´í•œ 75', '8GB', '', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ ë¶€ê°€ / ì˜ìƒ 300ë¶„', 'ê¸°ë³¸ì œê³µ', 82500, 61875, 12375 , 297000, 49500);
-INSERT INTO SKT_PAY VALUES('ì „êµ­ë¯¼ ë¬´í•œ 69', '5GB', '', 'ì§‘ì „í™”, ì´ë™ì „í™” ë¬´ì œí•œ ë¶€ê°€ / ì˜ìƒ 200ë¶„', 'ê¸°ë³¸ì œê³µ', 75900, 56650, 11330, 271920, 45320);
-INSERT INTO SKT_PAY VALUES('Të¼ë¦¬ 65', '5GB', '', 'SKT ê³ ê°ê°„ ë¬´ì œí•œ ê·¸ ì™¸ 280ë¶„' , 'ê¸°ë³¸ì œê³µ', 71500, 53075, 10615, 254760, 42460);
-INSERT INTO SKT_PAY VALUES('Të¼ë¦¬ 55', '2GB', '', 'SKT ê³ ê°ê°„ ë¬´ì œí•œ ê·¸ ì™¸ 180ë¶„', 'ê¸°ë³¸ì œê³µ', 60500, 44825, 8965, 215160, 35860);
-INSERT INTO SKT_PAY VALUES('Të¼ë¦¬ 45', '1.1GB', '', 'SKT ê³ ê°ê°„ ë¬´ì œí•œ ê·¸ ì™¸ 130ë¶„', 'ê¸°ë³¸ì œê³µ',49500,  37125, 7425, 178200, 29700);
-INSERT INTO SKT_PAY VALUES('Të¼ë¦¬ 35', '550MB', '', 'SKT ê³ ê°ê°„ ë¬´ì œí•œ ê·¸ ì™¸ 80ë¶„', 'ê¸°ë³¸ì œê³µ', 38500, 30580, 6160, 147840, 24420);
+-- extra_data ÀÖ´Â °æ¿ì
+--payment, data, extra_data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount	
+
+-- extra_data ¾ø´Â °æ¿ì
+--payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount	
 
 
--- SKT band YT ì¶”ê°€ ì˜µì…˜
+
+
+-- SKT band YT Ãß°¡ ¿É¼Ç
 drop table skt_band_yt;
 create table skt_band_yt(
 	data_option1			varchar2(70),
@@ -52,16 +37,18 @@ create table skt_band_yt(
 	Partnership_sale		varchar2(50)
 );
 
-INSERT INTO skt_band_yt VALUES('ì„ íƒ1 -ìº í¼ìŠ¤ ë°ì´í„° ë¬´ì œí•œ*', 'ì„ íƒ2 - ë§¤ì¼ 6ì‹œê°„ ë°ì´í„° ë¬´ì œí•œ*', 'ì„ íƒ3 - ì•ˆì‹¬ì˜µì…˜ ì¤‘ íƒ 1 *ì¼ 1GB ì´í›„ ì†ë„ì œí•œ', '50% í• ì¸', 'íŒŒë¦¬ë°”ê²Œëœ¨ TíŽ˜ì´ ê²°ì œì‹œ í• ì¸ìœ¨ 2ë°°');
-INSERT INTO skt_band_yt VALUES('ì„ íƒ1 -ìº í¼ìŠ¤ ë°ì´í„° ë¬´ì œí•œ*', 'ì„ íƒ2 - ë§¤ì¼ 6ì‹œê°„ ë°ì´í„° ë¬´ì œí•œ*', 'ì„ íƒ3 - ì•ˆì‹¬ì˜µì…˜ ì¤‘ íƒ 1 *ì¼ 1GB ì´í›„ ì†ë„ì œí•œ', 'ë¬´ë£Œ', 'íŒŒë¦¬ë°”ê²Œëœ¨ TíŽ˜ì´ ê²°ì œì‹œ í• ì¸ìœ¨ 2ë°°');
+INSERT INTO skt_band_yt VALUES('¼±ÅÃ1 -Ä·ÆÛ½º µ¥ÀÌÅÍ ¹«Á¦ÇÑ*', '¼±ÅÃ2 - ¸ÅÀÏ 6½Ã°£ µ¥ÀÌÅÍ ¹«Á¦ÇÑ*', '¼±ÅÃ3 - ¾È½É¿É¼Ç Áß ÅÃ 1 *ÀÏ 1GB ÀÌÈÄ ¼ÓµµÁ¦ÇÑ', '50% ÇÒÀÎ', 'ÆÄ¸®¹Ù°Ô¶ß TÆäÀÌ °áÁ¦½Ã ÇÒÀÎÀ² 2¹è');
+INSERT INTO skt_band_yt VALUES('¼±ÅÃ1 -Ä·ÆÛ½º µ¥ÀÌÅÍ ¹«Á¦ÇÑ*', '¼±ÅÃ2 - ¸ÅÀÏ 6½Ã°£ µ¥ÀÌÅÍ ¹«Á¦ÇÑ*', '¼±ÅÃ3 - ¾È½É¿É¼Ç Áß ÅÃ 1 *ÀÏ 1GB ÀÌÈÄ ¼ÓµµÁ¦ÇÑ', '¹«·á', 'ÆÄ¸®¹Ù°Ô¶ß TÆäÀÌ °áÁ¦½Ã ÇÒÀÎÀ² 2¹è');
+
+select * from skt_band_yt;
 
 
--- LG í…Œì´ë¸”
+-- LG Å×ÀÌºí
 drop table lg_pay;
 create table lg_pay(
 	payment 			varchar2(50) 	primary key,
 	data 					varchar2(50),
-	extra_data			varchar2(40),
+	extra_data			varchar2(40)	default 'ÇØ´ç»çÇ× ¾øÀ½',
 	call					varchar2(70),
 	sms					varchar2(50),
 	fixed_month		number,
@@ -71,36 +58,12 @@ create table lg_pay(
 
 );
 
--- LG ìš”ê¸ˆì œ INSERT
-INSERT INTO LG_PAY VALUES('ë°ì´í„° ì¼ë°˜', '300MB', '', 'ìœ ë¬´ì„ ê¸°ë³¸ì œê³µ', 'ê¸°ë³¸ì œê³µ', 32890, 6578, 157872, 26312);
-INSERT INTO LG_PAY VALUES('ë°ì´í„° 1.3', '1.3GB', '', 'ìœ ë¬´ì„ ê¸°ë³¸ì œê³µ', 'ê¸°ë³¸ì œê³µ', 39490, 7898, 189552, 31592);
-INSERT INTO LG_PAY VALUES('ë°ì´í„° 2.3', '2.3GB', '', 'ìœ ë¬´ì„ ê¸°ë³¸ì œê³µ', 'ê¸°ë³¸ì œê³µ', 46090, 9218, 221232, 36872);
-INSERT INTO LG_PAY VALUES('ë°ì´í„° 3.6', '3.6GB', '', 'ìœ ë¬´ì„ ê¸°ë³¸ì œê³µ', 'ê¸°ë³¸ì œê³µ', 51590, 10318, 247632, 41272);
-INSERT INTO LG_PAY VALUES('ë°ì´í„° 6.6', '6.6GB', '', 'ìœ ë¬´ì„ ê¸°ë³¸ì œê³µ', 'ê¸°ë³¸ì œê³µ', 55990, 11198, 268752, 44792);
-INSERT INTO LG_PAY VALUES('ë°ì´í„° ìŠ¤íì…œA', '11GB', 'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ìœ ë¬´ì„ ê¸°ë³¸ì œê³µ', 'ê¸°ë³¸ì œê³µ', 65890, 13178, 316272, 52712);
-INSERT INTO LG_PAY VALUES('ë°ì´í„° ìŠ¤íì…œB', '11GB', 'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ìœ ë¬´ì„ ê¸°ë³¸ì œê³µ', 'ê¸°ë³¸ì œê³µ', 74800, 14960, 359040, 59840);
-INSERT INTO LG_PAY VALUES('ë°ì´í„° ìŠ¤íì…œC', '20GB', 'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ìœ ë¬´ì„ ê¸°ë³¸ì œê³µ', 'ê¸°ë³¸ì œê³µ', 88000, 17600, 422400, 70400);
-INSERT INTO LG_PAY VALUES('ë°ì´í„° ìŠ¤íì…œD', '35GB', 'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ìœ ë¬´ì„ ê¸°ë³¸ì œê³µ', 'ê¸°ë³¸ì œê³µ', 110000, 22000, 528000, 88000);
-INSERT INTO LG_PAY VALUES('LTE ë§ë‚´ 34', '750MB', '', 'ë§ë‚´ ë¬´ì œí•œ (ê·¸ì™¸ 115ë¶„)', 'ê¸°ë³¸ì œê³µ', 37400, 5940, 142560, 31460);
-INSERT INTO LG_PAY VALUES('LTE ë§ë‚´ 42', '1.4GB', '', 'ë§ë‚´ ë¬´ì œí•œ (ê·¸ì™¸ 148ë¶„)',  'ê¸°ë³¸ì œê³µ', 46200, 6930, 166320, 39270);
-INSERT INTO LG_PAY VALUES('LTE ë§ë‚´ 52', '2.1GB', '', 'ë§ë‚´ ë¬´ì œí•œ (ê·¸ì™¸ 205ë¶„)', 'ê¸°ë³¸ì œê³µ', 57200, 8470, 203280, 48730);
-INSERT INTO LG_PAY VALUES('LTE ì‹œë‹ˆì–´', '1G', '', '150ë¶„', '200ê±´', 37400, 5940, 142560, 31460);
-INSERT INTO LG_PAY VALUES('LTE 34', '750MB', '', '160ë¶„', '200ê±´', 37400, 5940, 142560, 31460);
-INSERT INTO LG_PAY VALUES('LTE 42', '1.5GB', '', '200ë¶„', '200ê±´', 46200, 6930, 166320, 39270);
-INSERT INTO LG_PAY VALUES('LTE 52', '2.6GB', '', '250ë¶„', '250', 57200, 8470, 203280, 48730);
-INSERT INTO LG_PAY VALUES('LTE 62', '6GB', '', '350ë¶„', '350ê±´', 68200, 9680, 232320, 58520);
-INSERT INTO LG_PAY VALUES('LTE 72', '10GB', '', '500ë¶„', '450ê±´', 79200, 11440, 274560, 67760);
-INSERT INTO LG_PAY VALUES('LTE 85', '14GB', '', '750ë¶„', '650ê±´', 93500, 13860, 332640, 79640);
-INSERT INTO LG_PAY VALUES('LTE 100', '20GB', '', '1200ë¶„', '1000ê±´', 110000, 16720, 401280, 93280);
-INSERT INTO LG_PAY VALUES('LTE 120', '24GB', '', '1500ë¶„', '1000ê±´', 132000, 21120, 506880, 110880);
-
-
--- KT í…Œì´ë¸”
+-- KT Å×ÀÌºí
 drop table kt_pay;
 create table kt_pay(
 	payment 			varchar2(50) 	primary key,
 	data 					varchar2(50),
-	extra_data			varchar2(40),
+	extra_data			varchar2(80)	default 'ÇØ´ç»çÇ× ¾øÀ½',
 	call					varchar2(70),
 	sms					varchar2(50),
 	fixed_month		number,
@@ -110,29 +73,82 @@ create table kt_pay(
 
 );
 
--- KT ìš”ê¸ˆì œ INSERT
-INSERT INTO KT_PAY VALUES('ìˆœ ì™„ì „ë¬´í•œ99(LTE)', '25GB', 'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ì§‘ / ì´ë™ì „í™” ë¬´ì œí•œ (ìŒì„± / ë¶€ê°€ 200ë¶„)', 'ê¸°ë³¸ì œê³µ', 108900, 21780, 522720, 87120);
-INSERT INTO KT_PAY VALUES('ìˆœ ì™„ì „ë¬´í•œ77(LTE)	', '17GB', 'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ì§‘ / ì´ë™ì „í™” ë¬´ì œí•œ (ìŒì„± / ë¶€ê°€ 200ë¶„)', 'ê¸°ë³¸ì œê³µ', 84700, 16940, 406560, 67760);
-INSERT INTO KT_PAY VALUES('ìˆœ ì™„ì „ë¬´í•œ67(LTE)', '12GB', 'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ì§‘ / ì´ë™ì „í™” ë¬´ì œí•œ (ìŒì„± / ë¶€ê°€ 200ë¶„)', 'ê¸°ë³¸ì œê³µ', 73700, 14740, 353760, 58960);
-INSERT INTO KT_PAY VALUES('ìˆœ ì™„ì „ë¬´í•œ61(LTE)', '10GB', 'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ì§‘ / ì´ë™ì „í™” ë¬´ì œí•œ (ìŒì„± / ë¶€ê°€ 200ë¶„)', 'ê¸°ë³¸ì œê³µ', 67100, 13420, 322080, 53680);
-INSERT INTO KT_PAY VALUES('ìˆœ ì™„ì „ë¬´í•œ51(LTE)', '5GB', 'ë§¤ì¼ 2GB ì´í›„ ì†ë„ ì œì–´', 'ì§‘ / ì´ë™ì „í™” ë¬´ì œí•œ (ìŒì„± / ë¶€ê°€ 200ë¶„)', 'ê¸°ë³¸ì œê³µ', 56100, 11220, 269280, 44880);
-INSERT INTO KT_PAY VALUES('ìˆœ ëª¨ë‘ë‹¤ì˜¬ë ˆ41(LTE)', '2.5GB', '', 'KT ëª¨ë°”ì¼ë¼ë¦¬ ë¬´ì œí•œ + ë§ì™¸ 250ë¶„', 'ê¸°ë³¸ì œê³µ', 45100, 9020, 216480, 36080);
-INSERT INTO KT_PAY VALUES('ìˆœ ëª¨ë‘ë‹¤ì˜¬ë ˆ34(LTE)', '1.5GB', '', 'KT ëª¨ë°”ì¼ë¼ë¦¬ ë¬´ì œí•œ + ë§ì™¸ 185ë¶„', 'ê¸°ë³¸ì œê³µ', 37400, 7480, 179520, 29920);
-INSERT INTO KT_PAY VALUES('ìˆœ ëª¨ë‘ë‹¤ì˜¬ë ˆ28(LTE)', '750MB', '', 'KT ëª¨ë°”ì¼ë¼ë¦¬ ë¬´ì œí•œ + ë§ì™¸ 130ë¶„', 'ê¸°ë³¸ì œê³µ', 30800, 6160, 147840, 24640);
-INSERT INTO KT_PAY VALUES('Yí‹´ 38', '4700MB', 'ìµœëŒ€ 400Kbps ì†ë„ì œì–´', 'ë§¤ì¼ 10ì‹œê°„(45056ì•Œ)', '200ê±´/ì¼', 38390, 7700, 184800, 30690);
-INSERT INTO KT_PAY VALUES('Yí‹´ 32', '3600MB', '', 'ë§¤ì¼ 10ì‹œê°„(45056ì•Œ)', '200ê±´/ì¼', 32890, 6600, 158400, 26290);
-INSERT INTO KT_PAY VALUES('Yí‹´ 27', '2000MB', '', 'ë§¤ì¼ 10ì‹œê°„(45056ì•Œ)', '200ê±´/ì¼', 27390, 5500, 132000, 21890);
-INSERT INTO KT_PAY VALUES('Yí‹´ 20', '1400MB', '', 'ë§¤ì¼ 10ì‹œê°„(45056ì•Œ)', '200ê±´/ì¼', 20900, 4180, 100320, 16720);
-INSERT INTO KT_PAY VALUES('Y24 65.8', '10GB', '', 'ì§‘ / ì´ë™ì „í™” ë¬´ì œí•œ (ì˜ìƒ / ë¶€ê°€ 200ë¶„)', 'ê¸°ë³¸ì œê³µ', 65890, 13200, 316800, 52690);
-INSERT INTO KT_PAY VALUES('Y24 54.8', '6GB', '', 'ì§‘ / ì´ë™ì „í™” ë¬´ì œí•œ (ì˜ìƒ / ë¶€ê°€ 30ë¶„)', 'ê¸°ë³¸ì œê³µ', 54890, 11000, 264000, 43890);
-INSERT INTO KT_PAY VALUES('Y24 49.3', '3GB', '', 'ì§‘ / ì´ë™ì „í™” ë¬´ì œí•œ (ì˜ìƒ / ë¶€ê°€ 30ë¶„)', 'ê¸°ë³¸ì œê³µ', 49390, 9900, 237600, 39490);
-INSERT INTO KT_PAY VALUES('Y24 43.8', '2GB', '', 'ì§‘ / ì´ë™ì „í™” ë¬´ì œí•œ (ì˜ìƒ / ë¶€ê°€ 30ë¶„)', 'ê¸°ë³¸ì œê³µ', 43890, 8800, 211200, 35090);
-INSERT INTO KT_PAY VALUES('Y24 38.3', '1GB', '', 'ì§‘ / ì´ë™ì „í™” ë¬´ì œí•œ (ì˜ìƒ / ë¶€ê°€ 30ë¶„)', 'ê¸°ë³¸ì œê³µ', 38390, 7700, 184800, 30690);
-INSERT INTO KT_PAY VALUES('Y24 32.8', '300MB', '', 'ì§‘ / ì´ë™ì „í™” ë¬´ì œí•œ (ì˜ìƒ / ë¶€ê°€ 30ë¶„)', 'ê¸°ë³¸ì œê³µ', 32890, 6600, 158400, 26290);
-INSERT INTO KT_PAY VALUES('LTE-ì•Œ520', '2.5GB', '', '62000ì•Œ', 'ê¸°ë³¸ì œê³µ', 41800, 8360, 200640, 33440);
-INSERT INTO KT_PAY VALUES('LTE-ì•Œ420', '1.5GB', '', '52000ì•Œ', '20000ì•Œ', 34100, 6820, 163680, 27280);
-INSERT INTO KT_PAY VALUES('LTE-ì•Œ340', '750MB', '', '34000ì•Œ', '20000ì•Œ', 29700, 5940, 142560, 23760);
-INSERT INTO KT_PAY VALUES('LTE-ì•Œ240', '500MB', '', '28000ì•Œ', '20000ì•Œ', 25300, 5060, 121440, 20240);
-INSERT INTO KT_PAY VALUES('LTE-ì•Œ190', '300MB', '', '20000ì•Œ', '20000ì•Œ', 20900, 4180, 100320, 16720);
+--SKT ¿ä±ÝÁ¦ INSERT
+INSERT INTO SKT_PAY VALUES('T ½Ã±×´ÏÃ³ Master', '35GB',  '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ', '±âº»Á¦°ø', 110000, 110000, 22000, 528000, 88000);
+INSERT INTO SKT_PAY VALUES('T ½Ã±×´ÏÃ³ Classic', '20GB', '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ', '±âº»Á¦°ø', 88000, 88000, 17600,	422400,	70400);
+INSERT INTO SKT_PAY VALUES('band YT ÆÛÆåÆ®', '12GB', '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ / ¿µ»ó ¹× ºÎ°¡ÅëÈ­ 300ºÐ', '±âº»Á¦°ø', 71000, 71000,	14200, 340800,	56800);
+INSERT INTO SKT_PAY VALUES('band YT 7G', '7G', '(µ¥ÀÌÅÍ ¿É¼Ç Ãß°¡ Á¦°ø )',  'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ / ¿µ»ó ¹× ºÎ°¡ÅëÈ­ 300ºÐ', '±âº»Á¦°ø', 62000, 62000, 12400, 297600, 49600);
+INSERT INTO SKT_PAY VALUES('band YT 3G', '3G', '(µ¥ÀÌÅÍ ¿É¼Ç Ãß°¡ Á¦°ø )', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ', '±âº»Á¦°ø', 52000, 52000, 10400, 249600, 41600);
+INSERT INTO SKT_PAY VALUES('band YT 1G', '1G', '(µ¥ÀÌÅÍ ¿É¼Ç Ãß°¡ Á¦°ø )', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ', '±âº»Á¦°ø', 42000, 42000, 8400,	201600,	33600);
+INSERT INTO SKT_PAY VALUES('band YT ¼¼ÀÌºê', '500MB', '(µ¥ÀÌÅÍ ¿É¼Ç Ãß°¡ Á¦°ø )', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ', '±âº»Á¦°ø', 38000, 38000, 7600, 182400, 30400);
+INSERT INTO SKT_PAY VALUES('band µ¥ÀÌÅÍ ÆÛÆåÆ®S', '16GB', '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ / ¿µ»ó ¹× ºÎ°¡ÅëÈ­ 300ºÐ', '±âº»Á¦°ø', 75000, 75000, 15180, 364320, 59820);
+INSERT INTO SKT_PAY VALUES('band µ¥ÀÌÅÍ ÆÛÆåÆ®', '11GB', '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ / ¿µ»ó ¹× ºÎ°¡ÅëÈ­ 300ºÐ', '±âº»Á¦°ø', 65890, 65890, 13200, 316800, 52690);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('band µ¥ÀÌÅÍ 6.5G',	'6.5GB', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ / ¿µ»ó ¹× ºÎ°¡ÅëÈ­ 300ºÐ', '±âº»Á¦°ø', 56100, 56100, 11220, 269280, 44880);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('band µ¥ÀÌÅÍ 3.5G', '3.5GB', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ / ¿µ»ó ¹× ºÎ°¡ÅëÈ­ 50ºÐ', '±âº»Á¦°ø', 51700, 51700, 10340, 248160, 41360);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('band µ¥ÀÌÅÍ 2.2G', '2.3GB', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ / ¿µ»ó ¹× ºÎ°¡ÅëÈ­ 50ºÐ', '±âº»Á¦°ø', 46200, 46200,	9240,	221760,	36960);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('band µ¥ÀÌÅÍ 1.2G', '1.2GB', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ / ¿µ»ó ¹× ºÎ°¡ÅëÈ­ 50ºÐ', '±âº»Á¦°ø', 39600, 39600, 7920, 190080, 31680);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('band µ¥ÀÌÅÍ ¼¼ÀÌºê', '300MB', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ', '±âº»Á¦°ø', 32890, 32890, 6600, 158400, 26290);
+INSERT INTO SKT_PAY VALUES('Àü±¹¹Î ¹«ÇÑ 100', '16GB', '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ ºÎ°¡ / ¿µ»ó 300ºÐ', '±âº»Á¦°ø', 110000, 83600, 16720, 401280, 66880);
+INSERT INTO SKT_PAY VALUES('Àü±¹¹Î ¹«ÇÑ 85', '12GB', '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ ºÎ°¡ / ¿µ»ó 300ºÐ', '±âº»Á¦°ø', 93500, 71500, 14300, 343200, 57200);
+INSERT INTO SKT_PAY VALUES('LTE µ¥ÀÌÅÍ ¹«Á¦ÇÑ 80ÆÑ', '8GB', '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ ºÎ°¡ / ¿µ»ó 300ºÐ', '±âº»Á¦°ø',88000, 67375, 12375, 297000, 55000);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('Àü±¹¹Î ¹«ÇÑ 75', '8GB', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ ºÎ°¡ / ¿µ»ó 300ºÐ', '±âº»Á¦°ø', 82500, 61875, 12375 , 297000, 49500);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('Àü±¹¹Î ¹«ÇÑ 69', '5GB', 'ÁýÀüÈ­, ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ ºÎ°¡ / ¿µ»ó 200ºÐ', '±âº»Á¦°ø', 75900, 56650, 11330, 271920, 45320);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('T³¢¸® 65', '5GB', 'SKT °í°´°£ ¹«Á¦ÇÑ ±× ¿Ü 280ºÐ' , '±âº»Á¦°ø', 71500, 53075, 10615, 254760, 42460);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('T³¢¸® 55', '2GB', 'SKT °í°´°£ ¹«Á¦ÇÑ ±× ¿Ü 180ºÐ', '±âº»Á¦°ø', 60500, 44825, 8965, 215160, 35860);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('T³¢¸® 45', '1.1GB', 'SKT °í°´°£ ¹«Á¦ÇÑ ±× ¿Ü 130ºÐ', '±âº»Á¦°ø',49500,  37125, 7425, 178200, 29700);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('T³¢¸® 35', '550MB', 'SKT °í°´°£ ¹«Á¦ÇÑ ±× ¿Ü 80ºÐ', '±âº»Á¦°ø', 38500, 30580, 6160, 147840, 24420);
 
---=================================== ìš”ê¸ˆì œ í…Œì´ë¸” ì‹œìž‘=======================================
+
+select * from LG_PAY;
+
+-- LG ¿ä±ÝÁ¦ Å×ÀÌºí
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('µ¥ÀÌÅÍ ÀÏ¹Ý', '300MB', 'À¯¹«¼±±âº»Á¦°ø', '±âº»Á¦°ø', 32890, 6578, 157872, 26312);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('µ¥ÀÌÅÍ 1.3', '1.3GB', 'À¯¹«¼±±âº»Á¦°ø', '±âº»Á¦°ø', 39490, 7898, 189552, 31592);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('µ¥ÀÌÅÍ 2.3', '2.3GB', 'À¯¹«¼±±âº»Á¦°ø', '±âº»Á¦°ø', 46090, 9218, 221232, 36872);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('µ¥ÀÌÅÍ 3.6', '3.6GB', 'À¯¹«¼±±âº»Á¦°ø', '±âº»Á¦°ø', 51590, 10318, 247632, 41272);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('µ¥ÀÌÅÍ 6.6', '6.6GB', 'À¯¹«¼±±âº»Á¦°ø', '±âº»Á¦°ø', 55990, 11198, 268752, 44792);
+INSERT INTO LG_PAY VALUES('µ¥ÀÌÅÍ ½ºÆó¼ÈA', '11GB', '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'À¯¹«¼±±âº»Á¦°ø', '±âº»Á¦°ø', 65890, 13178, 316272, 52712);
+INSERT INTO LG_PAY VALUES('µ¥ÀÌÅÍ ½ºÆó¼ÈB', '11GB', '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'À¯¹«¼±±âº»Á¦°ø', '±âº»Á¦°ø', 74800, 14960, 359040, 59840);
+INSERT INTO LG_PAY VALUES('µ¥ÀÌÅÍ ½ºÆó¼ÈC', '20GB', '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'À¯¹«¼±±âº»Á¦°ø', '±âº»Á¦°ø', 88000, 17600, 422400, 70400);
+INSERT INTO LG_PAY VALUES('µ¥ÀÌÅÍ ½ºÆó¼ÈD', '35GB', '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'À¯¹«¼±±âº»Á¦°ø', '±âº»Á¦°ø', 110000, 22000, 528000, 88000);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE ¸Á³» 34', '750MB', '¸Á³» ¹«Á¦ÇÑ (±×¿Ü 115ºÐ)', '±âº»Á¦°ø', 37400, 5940, 142560, 31460);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE ¸Á³» 42', '1.4GB', '¸Á³» ¹«Á¦ÇÑ (±×¿Ü 148ºÐ)',  '±âº»Á¦°ø', 46200, 6930, 166320, 39270);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE ¸Á³» 52', '2.1GB', '¸Á³» ¹«Á¦ÇÑ (±×¿Ü 205ºÐ)', '±âº»Á¦°ø', 57200, 8470, 203280, 48730);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 34', '750MB', '160ºÐ', '200°Ç', 37400, 5940, 142560, 31460);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 42', '1.5GB', '200ºÐ', '200°Ç', 46200, 6930, 166320, 39270);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 52', '2.6GB', '250ºÐ', '250', 57200, 8470, 203280, 48730);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 62', '6GB', '350ºÐ', '350°Ç', 68200, 9680, 232320, 58520);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 72', '10GB', '500ºÐ', '450°Ç', 79200, 11440, 274560, 67760);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 85', '14GB', '750ºÐ', '650°Ç', 93500, 13860, 332640, 79640);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 100', '20GB', '1200ºÐ', '1000°Ç', 110000, 16720, 401280, 93280);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 120', '24GB', '1500ºÐ', '1000°Ç', 132000, 21120, 506880, 110880);
+
+
+select * from KT_PAY;
+
+-- KT ¿ä±ÝÁ¦ Å×ÀÌºí
+INSERT INTO KT_PAY VALUES('¼ø ¿ÏÀü¹«ÇÑ99(LTE)', '25GB', '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'Áý / ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ (À½¼º / ºÎ°¡ 200ºÐ)', '±âº»Á¦°ø', 108900, 21780, 522720, 87120);
+INSERT INTO KT_PAY VALUES('¼ø ¿ÏÀü¹«ÇÑ77(LTE)', '17GB', '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'Áý / ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ (À½¼º / ºÎ°¡ 200ºÐ)', '±âº»Á¦°ø', 84700, 16940, 406560, 67760);
+INSERT INTO KT_PAY VALUES('¼ø ¿ÏÀü¹«ÇÑ67(LTE)', '12GB', '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'Áý / ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ (À½¼º / ºÎ°¡ 200ºÐ)', '±âº»Á¦°ø', 73700, 14740, 353760, 58960);
+INSERT INTO KT_PAY VALUES('¼ø ¿ÏÀü¹«ÇÑ61(LTE)', '10GB', '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'Áý / ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ (À½¼º / ºÎ°¡ 200ºÐ)', '±âº»Á¦°ø', 67100, 13420, 322080, 53680);
+INSERT INTO KT_PAY VALUES('¼ø ¿ÏÀü¹«ÇÑ51(LTE)', '5GB', '¸ÅÀÏ 2GB ÀÌÈÄ ¼Óµµ Á¦¾î', 'Áý / ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ (À½¼º / ºÎ°¡ 200ºÐ)', '±âº»Á¦°ø', 56100, 11220, 269280, 44880);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('¼ø ¸ðµÎ´Ù¿Ã·¹41(LTE)', '2.5GB', 'KT ¸ð¹ÙÀÏ³¢¸® ¹«Á¦ÇÑ + ¸Á¿Ü 250ºÐ', '±âº»Á¦°ø', 45100, 9020, 216480, 36080);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('¼ø ¸ðµÎ´Ù¿Ã·¹34(LTE)', '1.5GB', 'KT ¸ð¹ÙÀÏ³¢¸® ¹«Á¦ÇÑ + ¸Á¿Ü 185ºÐ', '±âº»Á¦°ø', 37400, 7480, 179520, 29920);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('¼ø ¸ðµÎ´Ù¿Ã·¹28(LTE)', '750MB', 'KT ¸ð¹ÙÀÏ³¢¸® ¹«Á¦ÇÑ + ¸Á¿Ü 130ºÐ', '±âº»Á¦°ø', 30800, 6160, 147840, 24640);
+INSERT INTO KT_PAY VALUES('YÆ¾ 38', '4700MB', 'ÃÖ´ë 400Kbps ¼ÓµµÁ¦¾î', '¸ÅÀÏ 10½Ã°£(45056¾Ë)', '200°Ç/ÀÏ', 38390, 7700, 184800, 30690);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('YÆ¾ 32', '3600MB', '¸ÅÀÏ 10½Ã°£(45056¾Ë)', '200°Ç/ÀÏ', 32890, 6600, 158400, 26290);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('YÆ¾ 27', '2000MB', '¸ÅÀÏ 10½Ã°£(45056¾Ë)', '200°Ç/ÀÏ', 27390, 5500, 132000, 21890);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('YÆ¾ 20', '1400MB', '¸ÅÀÏ 10½Ã°£(45056¾Ë)', '200°Ç/ÀÏ', 20900, 4180, 100320, 16720);
+INSERT INTO KT_PAY VALUES('Y24 65.8', '10GB', 'ÀÏ2GB ÃÖ´ë 3Mbps¼ÓµµÁ¦¾î', 'Áý / ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ (¿µ»ó / ºÎ°¡ 200ºÐ)', '±âº»Á¦°ø', 65890, 13200, 316800, 52690);
+INSERT INTO KT_PAY VALUES('Y24 54.8', '6GB', '¸ÅÀÏ 3½Ã°£ µ¥ÀÌÅÍ ¹«Á¦ÇÑ (¼ÓµµÁ¦¾î) / ¹Ð´ç', 'Áý / ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ (¿µ»ó / ºÎ°¡ 30ºÐ)', '±âº»Á¦°ø', 54890, 11000, 264000, 43890);
+INSERT INTO KT_PAY VALUES('Y24 49.3', '3GB', '¸ÅÀÏ 3½Ã°£ µ¥ÀÌÅÍ ¹«Á¦ÇÑ (¼ÓµµÁ¦¾î) / ¹Ð´ç', 'Áý / ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ (¿µ»ó / ºÎ°¡ 30ºÐ)', '±âº»Á¦°ø', 49390, 9900, 237600, 39490);
+INSERT INTO KT_PAY VALUES('Y24 43.8', '2GB', '¸ÅÀÏ 3½Ã°£ µ¥ÀÌÅÍ ¹«Á¦ÇÑ (¼ÓµµÁ¦¾î) / ¹Ð´ç', 'Áý / ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ (¿µ»ó / ºÎ°¡ 30ºÐ)', '±âº»Á¦°ø', 43890, 8800, 211200, 35090);
+INSERT INTO KT_PAY VALUES('Y24 38.3', '1GB', '¸ÅÀÏ 3½Ã°£ µ¥ÀÌÅÍ ¹«Á¦ÇÑ (¼ÓµµÁ¦¾î) / ¹Ð´ç', 'Áý / ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ (¿µ»ó / ºÎ°¡ 30ºÐ)', '±âº»Á¦°ø', 38390, 7700, 184800, 30690);
+INSERT INTO KT_PAY VALUES('Y24 32.8', '300MB', '¸ÅÀÏ 3½Ã°£ µ¥ÀÌÅÍ ¹«Á¦ÇÑ (¼ÓµµÁ¦¾î) / ¹Ð´ç', 'Áý / ÀÌµ¿ÀüÈ­ ¹«Á¦ÇÑ (¿µ»ó / ºÎ°¡ 30ºÐ)', '±âº»Á¦°ø', 32890, 6600, 158400, 26290);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('LTE-¾Ë520', '2.5GB', '62000¾Ë', '±âº»Á¦°ø', 41800, 8360, 200640, 33440);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('LTE-¾Ë420', '1.5GB', '52000¾Ë', '20000¾Ë', 34100, 6820, 163680, 27280);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('LTE-¾Ë340', '750MB', '34000¾Ë', '20000¾Ë', 29700, 5940, 142560, 23760);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('LTE-¾Ë240', '500MB', '28000¾Ë', '20000¾Ë', 25300, 5060, 121440, 20240);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('LTE-¾Ë190', '300MB', '20000¾Ë', '20000¾Ë', 20900, 4180, 100320, 16720);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
