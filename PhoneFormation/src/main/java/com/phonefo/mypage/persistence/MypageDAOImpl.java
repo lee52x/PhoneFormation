@@ -110,6 +110,10 @@ public class MypageDAOImpl implements MypageDAO {
 		return sqlSession.selectList("mypage.mypageB_QuoteInfo",session.getAttribute("userid"));
 	}
 
+	@Override//거래취소
+	public int myPagePurchaseCancel(String no) throws Exception {
+		return sqlSession.delete("mypage.myPagePurchaseCancel",no);
+	}
 	
 	
 	////////////////////////수리쪽
@@ -158,4 +162,6 @@ public class MypageDAOImpl implements MypageDAO {
 	public List<MypageRepairVO> myPageB_RepairList(HttpSession session) throws Exception {
 		return sqlSession.selectList("mypage.mypageB_RepairInfo",session.getAttribute("userid"));
 	}
+
+
 }

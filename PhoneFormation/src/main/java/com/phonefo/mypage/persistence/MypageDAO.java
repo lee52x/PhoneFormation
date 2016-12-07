@@ -48,6 +48,9 @@ public interface MypageDAO {
 	//기업 중고견적 구매 신청 리스트
 	public List<MypageQuoteVO> myPageB_QuoteList(HttpSession session)throws Exception;
 	
+	//거래취소
+	public int myPagePurchaseCancel(String no)throws Exception;
+	
 	////////////////////////////////수리견적
 	//내가 수리견적신청목록 가져오기
 	public List<MypageRepairVO> myPageRepairList(HttpSession session)throws Exception;

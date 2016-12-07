@@ -211,7 +211,7 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 		                    "<td>"+result.address+"</td>"+
 		                    "<td><button class='btn btn-primary' onclick=sellSelectEnd("
 		                    		       +result.no +",'"+result.userid+"')>거래완료</button>"+"</td>"+
-		                    "<td><button class='btn btn-primary' onclick=sellSelectCancel("
+		                    "<td><button class='btn btn-primary' onclick=sellCancel("
 		                    		       +result.no +",'"+result.userid+"')>거래취소</button>"+"</td>"
 		                "</tr>";
    
@@ -279,6 +279,28 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 		$.ajax({
 			url : "/phonefo/purchaseChoose",
 			data : {"no" : no,"userid":userid},
+			type : "POST",
+			dataType: 'json',
+			success :function(){
+			
+				 alert("선택이 완료되었습니다.");
+				$("#popup2").fadeOut(10);
+
+				$("#purchasetable").empty();
+				content = null;
+				
+			},
+            error:function(e) {
+		    	alert(e.responseText);
+			}
+		}); 
+	}
+	
+	var sellCancel=function(no){//거래취소
+
+		$.ajax({
+			url : "/phonefo/purchaseCancel",
+			data : {"no" : no},
 			type : "POST",
 			dataType: 'json',
 			success :function(){

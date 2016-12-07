@@ -78,7 +78,7 @@ public class MypageServiceImpl implements MypageService {
 		return dao.myPagePurchaseIngChoose(map);
 	}
 
-	@Override//마에페이제 거래 완료 목록
+	@Override//마이페이지 거래 완료 목록
 	public MypagePurchaseVO mypagePurchaseEnd(String no) throws Exception {
 		return dao.myPagePurchaseEnd(no);
 	}
@@ -89,32 +89,39 @@ public class MypageServiceImpl implements MypageService {
 		return dao.myPageB_QuoteList(session);
 	}
 	
+	@Override//거래취소
+	public int mypagePurchaseCancel(String no) throws Exception {
+
+		return dao.myPagePurchaseCancel(no);
+	}
+	
+	
 	////////////////////////////////////////////////////수리
-	@Override
+	@Override//게시판 내가올린 수리견적 리스트
 	public List<MypageRepairVO> mypageRepairList(HttpSession session) throws Exception {//마이페이지 중고견적
 		
 		return dao.myPageRepairList(session);
 	}
 	
-	@Override
+	@Override//수리신청 기업 리스트
 	public List<MypagePurchaseVO> mypageRepairPurchase(String no) throws Exception {//마이페이지 거래신청한 기업 리스트
 		
 		return dao.myPageRepairPurchaseList(no);
 	}
 	
-	@Override
+	@Override//마이페이지 거래할 기업선택
 	public int mypageRepairPurchaseChoose(Map<String, String> map) throws Exception {//마이페이지 거래할 기업선택
 		
 		return dao.myPageRepairPurchaseChoose(map);
 	}
 	
-	@Override
+	@Override//마이페이지 거래중인 기업정보
 	public MypagePurchaseVO mypageRepairPurchaseIng(String no) throws Exception {//마이페이지 거래중인 기업정보
 		
 		return dao.myPageRepairPurchaseIng(no);
 	}
 	
-	@Override
+	@Override//마이페이지 거래완료업데이트
 	public int mypageRepairPurchaseIngChoose(Map<String, String> map) throws Exception {//마이페이지 거래완료업데이트
 		return dao.myPageRepairPurchaseIngChoose(map);
 	}
@@ -129,6 +136,8 @@ public class MypageServiceImpl implements MypageService {
 		
 		return dao.myPageB_RepairList(session);
 	}
+
+
 
 
 }

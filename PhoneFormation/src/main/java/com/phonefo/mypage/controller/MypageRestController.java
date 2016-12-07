@@ -80,6 +80,15 @@ public class MypageRestController {
 
 	}
 	
+	//거래취소
+	@RequestMapping(value="/purchaseCancel", method = RequestMethod.POST)
+	public int purchaseCancel(String no)throws Exception{
+		
+		int result=service.mypagePurchaseCancel(no);
+		
+		return result;
+	}
+	
 	
 	////////////////////////////////////수리
 	// 구매신청자 목록 가져오기
