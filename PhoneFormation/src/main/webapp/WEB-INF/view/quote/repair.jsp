@@ -10,6 +10,8 @@
 
 
 <script type="text/javascript">
+
+	var pwdState=0;
 	$(document).ready(function() {
 		var myArray =new Array();
 		/*셀렉트박스*/
@@ -23,6 +25,8 @@
 				data:{userpwd:$('#userpwd').val()},
 				success:function(result){
 					$('#checkPwd').html(result);
+					if(result.indexOf('합니다')!=-1)
+						pwdState=1;
 				}
 			});
 		});
@@ -206,9 +210,27 @@
 		
 	
 		$('#repairRequest').click(function(){
+			if($('#userpwd').val()=='' || pwdState==0){
+				alert('비밀번호를 확인하세요');
+				$('#userpwd').focus();
+			}else if($('#address').val()==''){
+				alert('주소를 확인하세요');
+				$('#address').focus();
+			}else if($('#request_message').val()==''){
+				alert('기타요청사항을 확인하세요');
+				$('#request_message').focus();
+			}else if($('#bank_name').val()==''){
+				alert('은행명을 선택하세요');
+				$('#bank_name').focus();
+			}else if($('#account_number').val()==''){
+				alert('계좌번호를 확인하세요');
+				$('#account_number').focus();
+			}else{
+				
 			var result = confirm('핸드폰:'+$('#machine').val()+'   수리예상가격:'+$('#repair_price').val()+'입니다.판매신청 하시겠습니까?');
 			if(result==true)
 				document.frm.submit();
+			}
 		});
 
 
@@ -232,11 +254,11 @@
 </script>
 <style type="text/css">
 .tit_1{margin-top:30px; border-bottom:1px solid #eee; height:30px;}
-.tit_1 .page_name{display:block; background:url(/img/ico_nowpage.gif) no-repeat 0 2px; padding-left:20px; margin-bottom:10px; height:20px; text-align:left;}
+.tit_1 .page_name{display:block; background:url(http://www.hunphone.co.kr/img/ico_nowpage.gif) no-repeat 0 2px; padding-left:20px; margin-bottom:10px; height:20px; text-align:left;}
 .tit_1 .page_name span{display:inline-block; background:url(http://www.hunphone.co.kr//img/aw_nowpage.gif) no-repeat right 3px; height:20px; vertical-align:middle; padding-right:15px; margin-right:5px; font-size:16px; color:#e54c47;}
 .tit_1 .page_name span a{display:block; font-size:16px; color:#e54c47;}
 .write_form{width:100%;}
-.write_form th, td{padding:0; height:30px; line-height:30px; background:url('http://www.hunphone.co.kr//img/dotted.gif') repeat-x bottom;}
+.write_form th, td{padding:0; height:30px; line-height:30px; background:url('http://www.hunphone.co.kr/img/dotted.gif') repeat-x bottom;}
 .write_form .last{border-bottom:1px solid #e5e5e5; background:none;}
 .write_form th{width:190px; text-align:left;}
 .write_form th span{display:inline-block; background:url(http://www.hunphone.co.kr//img/aw_none.png) no-repeat 20px 50%; padding-left:30px; font-size:14px; color:#e54c47;}
@@ -1399,25 +1421,24 @@ label.checkbox-label {
 	<tr>
 		<th><span><h4>휴대폰번호</h4></span></td>
 		<td><input type=text id="tel" name="tel" disabled  style="height: 30px;" value="${vo.tel}"></td>
-				<input type="hidden" name="tel" value="${vo.tel}">
+				<td><input type="hidden" name="tel" value="${vo.tel}"></td>
 	</tr>
 	<tr>
 		<th><span><h4>주소</h4></span></td>
 		<td><input type=text id="address" style="height: 30px;" name=address ></td>
 	</tr>
-	`
 	
 	<tr>
 		<th class="last"><span><h4>기타 요청사항</h4></span></td>
 		<td class="last" style="line-height:42px; padding:5px 0;">
-			<textarea name='request_message' style="width:90%; height:80px;"></textarea>
+			<textarea name='request_message' id="request_message" style="width:90%; height:80px;"></textarea>
 		</td>
 	</tr>
 	<tr>
 		<th><span><h4>입금받을 계좌번호</h4></span></td>
 		<td style="line-height:42px; padding:5px 0;">
 			<span style="margin-right:20px;">은행명</span>
-								<select name=bank_name>
+								<select name=bank_name id="bank_name">
 					<option value="">선택해주세요</option>
 					<option value="농협" >농협</option>
 					<option value="국민" >국민</option>
@@ -1444,7 +1465,7 @@ label.checkbox-label {
 			<input type=text id="username" name="username" value="${vo.username }" readonly="readonly">
 			<br>
 			<span style="margin-right:9px;">계좌번호</span>			
-			<input type=text name=account_number style="width:297px;" value="" onkeydown="this.value=this.value.replace(/[^0-9]/g,'')" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')"> (숫자만 입력해주세요.)
+			<input type=text name=account_number id="account_number" style="width:297px;" value="" onkeydown="this.value=this.value.replace(/[^0-9]/g,'')" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')"> (숫자만 입력해주세요.)
 		</td>
 	</tr>
 			

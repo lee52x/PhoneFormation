@@ -60,6 +60,8 @@
 </head>
 
 <script type="text/javascript">
+var pwdState=0;
+
 $(document).ready(function(){
 	$('#userpwd').keyup(function(){
 		$.ajax({
@@ -67,15 +69,35 @@ $(document).ready(function(){
 			data:{userpwd:$('#userpwd').val()},
 			success:function(result){
 				$('#checkPwd').html(result);
+				if(result.indexOf('합니다')!=-1)
+					pwdState=1;
 			}
 		});
 	});
 });
 
 function check(){
+	
+	if($('#userpwd').val()=='' || pwdState==0){
+		alert('비밀번호를 확인하세요');
+		$('#userpwd').focus();
+	}else if($('#request_message').val()==''){
+		alert('기타요청사항을 확인하세요');
+		$('#request_message').focus();
+	}else if($('#bank_name').val()==''){
+		alert('은행명을 선택하세요');
+		$('#bank_name').focus();
+	}else if($('#account_number').val()==''){
+		alert('계좌번호를 확인하세요');
+		$('#account_number').focus();
+	}else{
+		
+	var result = confirm('판매신청 하시겠습니까?');
+	if(result==true){
 	var f=document.frm;
 	f.submit();
-	
+	}
+}
 	
 }
 
@@ -138,14 +160,14 @@ function check(){
 	<tr>
 		<th class="last"><span><h4>기타 요청사항</h4></span></td>
 		<td class="last" style="line-height:42px; padding:5px 0;">
-			<textarea name='request_message' style="width:90%; height:80px;"></textarea>
+			<textarea name='request_message' id="request_message" style="width:90%; height:80px;"></textarea>
 		</td>
 	</tr>
 	<tr>
 		<th><span><h4>입금받을 계좌번호</h4></span></td>
 		<td style="line-height:42px; padding:5px 0;">
 			<span style="margin-right:20px;">은행명</span>
-								<select name=bank_name>
+								<select name=bank_name id="bank_name">
 					<option value="">선택해주세요</option>
 					<option value="농협" >농협</option>
 					<option value="국민" >국민</option>
@@ -172,7 +194,7 @@ function check(){
 			<input type=text id="username" name="username" value="${vo.username }" disabled="disabled">
 			<br>
 			<span style="margin-right:9px;">계좌번호</span>			
-			<input type=text name=account_number style="width:297px;" value="" onkeydown="this.value=this.value.replace(/[^0-9]/g,'')" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')"> (숫자만 입력해주세요.)
+			<input type=text name=account_number id="account_number" style="width:297px;" value="" onkeydown="this.value=this.value.replace(/[^0-9]/g,'')" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')"> (숫자만 입력해주세요.)
 		</td>
 	</tr>
 </table>
