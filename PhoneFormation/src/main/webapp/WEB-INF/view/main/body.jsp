@@ -98,42 +98,24 @@ table {
                                 	원하는 요금제, 바꾸고 싶은 요금제가 궁금해?<br/>
                                 	폰은 팔고 싶은데, 가격이 궁금해?<br>
                                		당신이 원하는 정보를 phoneFormation에서 검색해 보세요</div>
-                            <div class="caption lfl" 
-                                  data-x="650" 
-                                  data-y="120" 
+							<div class="caption lfl" 
+                                  data-x="850" 
+                                  data-y="30" 
                                   data-speed="400" 
-                                  data-start="1200" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/payment/SKT.png" alt="SKT" width="200px" /> </div>
+                                  data-start="700"
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/S7Edge_T.png" alt="SAMSUNG & SKT" width="150px" /> </div>
                             <div class="caption lfl" 
-                                  data-x="450" 
-                                  data-y="250" 
-                                  data-speed="400" 
-                                  data-start="700" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/payment/KTOlleh.png" alt="KT Olleh" width="200px"/> </div>
-                            <div class="caption lfl" 
-                                  data-x="550" 
-                                  data-y="350" 
+                                  data-x="660" 
+                                  data-y="80" 
                                   data-speed="400" 
                                   data-start="900" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/payment/LGU+.png" alt="LG U+" width="200px" /> </div>
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/iPhone7_Olleh.png" alt="iPHone & Olleh" width="150px"/> </div>
                             <div class="caption lfl" 
-                                  data-x="800" 
-                                  data-y="300" 
+                                  data-x="460" 
+                                  data-y="130" 
                                   data-speed="400" 
-                                  data-start="600" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/Samsung.png" alt="SAMSUNG" width="200px" /> </div>
-                            <div class="caption lfl" 
-                                  data-x="800" 
-                                  data-y="50" 
-                                  data-speed="400" 
-                                  data-start="500" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/LG.png" alt="LG" width="200px" /> </div>
-                            <div class="caption lfl" 
-                                  data-x="450" 
-                                  data-y="50" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/Apple.png" alt="APPLE" width="100px" /> </div>
+                                  data-start="1100" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/V20_U+.png" alt="LG & U+" width="150px" /> </div>
                         </li>
                         
                         <!-- THE SECOND SLIDE --> 
