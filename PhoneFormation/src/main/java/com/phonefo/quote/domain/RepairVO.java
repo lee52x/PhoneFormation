@@ -34,8 +34,39 @@ public class RepairVO {
 	private String account_number;
 	private Date rdate;
 	private int repair_price;
+	private int state;
 	
 	
+	public int getState() {
+		return state;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setState(int state) {
+		this.state = state;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 	public RepairVO() {
 		// TODO Auto-generated constructor stub
 	}

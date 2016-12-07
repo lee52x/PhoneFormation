@@ -87,20 +87,20 @@
 %>
 
 <script type="text/javascript">
-function callTable(manufacture,machine,quote_price,power,glass,equipment,username,rdate,tel,bank_name,account_number,request_message){
+function callTable(no,userid,username,tel,repair_price,request_message,bank_name,rdate,account_number,state,machine,machineState){
 	
-	$("#manufacture").text(manufacture);
-	$("#machine").text(machine);
-	$("#quote_price").text(quote_price);
-	$("#power").text(power);
-	$("#glass").text(glass);
-	$("#equipment").text(equipment);
+	$("#no").text(no);
+	$("#userid").text(userid);
 	$("#username").text(username);
-	$("#rdate").text(rdate);
 	$("#tel").text(tel);
-	$("#bank_name").text(bank_name);
-	$("#account_number").text(account_number);
+	$("#repair_price").text(repair_price);
 	$("#request_message").text(request_message);
+	$("#bank_name").text(bank_name);
+	$("#rdate").text(rdate);
+	$("#account_number").text(account_number);
+	$("#state").text(state);
+	$("#machine").text(machine);
+	$("#machineState").text(machineState);
 
 
 
@@ -150,8 +150,8 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 					<thead>
 						<tr id='mainindex_HeadTR' class="section">
 							<th>No</th>
-							<th>제조사</th>
 							<th>기기명</th>
+							<th>견적가</th>
 							<th>신청자</th>
 							<th>신청일</th>
 							<th>진행상태</th>
@@ -160,27 +160,26 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${list}" var="mypageQuote">
+						<c:forEach items="${list}" var="mypageRepair">
 							<tr align=center>
-								<td>${mypageQuote.no}</td>
-								<td>${mypageQuote.manufacture}</td>
-								<td>${mypageQuote.machine}</td>
-								<td>${mypageQuote.username}</td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd"
-										value="${mypageQuote.rdate}" /></td>
-
+									<td>${mypageRepair.no}</td>
+								<td>${mypageRepair.machine}</td>
+								<td>${mypageRepair.repair_price}</td>
+								<td>${mypageRepair.username}</td>
+								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+										value="${mypageRepair.rdate}" /></td>
 								<c:choose>
-									<c:when test="${mypageQuote.state eq '0'}">
+									<c:when test="${mypageRepair.state eq '0'}">
 										<td>미신청</td>
 									</c:when>
-									<c:when test="${mypageQuote.state eq '1'}">
-										<td>거래대기</button></td>
+									<c:when test="${mypageRepair.state eq '1'}">
+										<td>선택대기</button></td>
 									</c:when>
-									<c:when test="${mypageQuote.state eq '2'}">
-										<td>거래중</button></td>
+									<c:when test="${mypageRepair.state eq '2'}">
+										<td>진행중</button></td>
 									</c:when>
-									<c:when test="${mypageQuote.state eq '3'}">
-										<td>거래완료</button></td>
+									<c:when test="${mypageRepair.state eq '3'}">
+										<td>완료</button></td>
 									</c:when>
 									<c:otherwise>
 										<td>거래완료</td>
@@ -189,10 +188,9 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 
 								<td><button class="btn btn-primary"
 										onclick="callTable
-					('${mypageQuote.manufacture}','${mypageQuote.machine}','${mypageQuote.quote_price}','${mypageQuote.power}'
-					,'${mypageQuote.glass}','${mypageQuote.equipment}','${mypageQuote.username}','<fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${mypageQuote.rdate}" />','${mypageQuote.tel}'
-					,'${mypageQuote.bank_name}','${mypageQuote.account_number}','${mypageQuote.request_message}')">상세보기</button></td>
-
+					('${mypageRepair.no}','${mypageRepair.userid}','${mypageRepair.username}','${mypageRepair.tel}'
+					,'${mypageRepair.repair_price}','${mypageRepair.request_message}','${mypageRepair.bank_name}','<fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${mypageRepair.rdate}" />','${mypageRepair.account_number}'
+					,'${mypageRepair.state}','${mypageRepair.machine}','${mypageRepair.machineState}')">상세보기</button></td>
 
 
 							</tr>

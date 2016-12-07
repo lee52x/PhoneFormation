@@ -13,6 +13,7 @@ import com.phonefo.mypage.domain.MypageMemberVO;
 import com.phonefo.mypage.domain.MypageOnoVO;
 import com.phonefo.mypage.domain.MypagePurchaseVO;
 import com.phonefo.mypage.domain.MypageQuoteVO;
+import com.phonefo.mypage.domain.MypageRepairVO;
 
 @Repository
 public class MypageDAOImpl implements MypageDAO {
@@ -57,11 +58,6 @@ public class MypageDAOImpl implements MypageDAO {
 		return sqlSession.selectList("mypage.mypageOnoInfo",session.getAttribute("userid"));
 	}
 
-	@Override//마이페이지 중고견적등록목록
-	public List<MypageQuoteVO> myPageQuoteList(HttpSession session) throws Exception {// 마이페이지 중고
-
-		return sqlSession.selectList("mypage.mypageQuoteInfo",session.getAttribute("userid"));
-	}
 	
 	@Override//마이페이지회원탈퇴
 	public int myPageDel(HttpSession session) throws Exception { // 마이페이지 회원탈퇴
@@ -69,6 +65,12 @@ public class MypageDAOImpl implements MypageDAO {
 		return sqlSession.delete("mypage.mypageMemberDel",session.getAttribute("userid"));
 	}
 
+	//////////////////////////////////////////////////////중고견적
+	@Override//마이페이지 중고견적등록목록
+	public List<MypageQuoteVO> myPageQuoteList(HttpSession session) throws Exception {// 마이페이지 중고
+		
+		return sqlSession.selectList("mypage.mypageQuoteInfo",session.getAttribute("userid"));
+	}
 	@Override//마에피이지 중고견적 구매신청한 업체 목록
 	public List<MypagePurchaseVO> myPagePurchaseList(String no) throws Exception {
 		
@@ -102,13 +104,58 @@ public class MypageDAOImpl implements MypageDAO {
 	public MypagePurchaseVO myPagePurchaseEnd(String no) throws Exception {
 		return sqlSession.selectOne("mypage.mypagePurchaseEnd", no);
 	}
-//////////////////////////////////////////////////////////기업쪽 마이페이지
-	
 	
 	@Override//기업 중고견적 구매 신청 리스트
 	public List<MypageQuoteVO> myPageB_QuoteList(HttpSession session) throws Exception {
 		return sqlSession.selectList("mypage.mypageB_QuoteInfo",session.getAttribute("userid"));
 	}
 
+	
+	
+	////////////////////////수리쪽
+	
+	@Override//마이페이지 수리견적등록리스트
+	public List<MypageRepairVO> myPageRepairList(HttpSession session) throws Exception {
 
+		return sqlSession.selectList("mypage.mypageRepairInfo",session.getAttribute("userid"));
+	}
+	
+	@Override//마에피이지 수리견적 신청한 업체 목록
+	public List<MypagePurchaseVO> myPageRepairPurchaseList(String no) throws Exception {
+		
+		return sqlSession.selectList("mypage.mypageRepairPurchase",no);
+	}
+
+	@Override//마이페이지 거래할 기업 선택
+	public int myPageRepairPurchaseChoose(Map<String, String> map) throws Exception {
+		
+		int i=sqlSession.update("mypage.mypagePurchaseChooseRepair", map);
+		i+=sqlSession.update("mypage.mypageRepairPurchaseChooseRequest", map);
+		
+		return i;
+	}
+
+	@Override//마이페이지 거래중인 기업정보
+	public MypagePurchaseVO myPageRepairPurchaseIng(String no) throws Exception {
+		
+		return sqlSession.selectOne("mypage.mypageRepairPurchaseIng", no);
+	}
+
+	@Override//마이페이지 거래완료
+	public int myPageRepairPurchaseIngChoose(Map<String, String> map) throws Exception {
+		int i=sqlSession.update("mypage.mypagePurchaseIngChooseRepair",map);
+		i+=sqlSession.update("mypage.mypageRepairPurchaseIngChooseRequest",map);
+		
+		return i;
+	}
+
+	@Override//마이페이지 거래완료된 기업정보
+	public MypagePurchaseVO myPageRepairPurchaseEnd(String no) throws Exception {
+		return sqlSession.selectOne("mypage.mypageRepairPurchaseEnd", no);
+	}
+	
+	@Override//기업 중고견적 구매 신청 리스트
+	public List<MypageRepairVO> myPageB_RepairList(HttpSession session) throws Exception {
+		return sqlSession.selectList("mypage.mypageB_RepairInfo",session.getAttribute("userid"));
+	}
 }

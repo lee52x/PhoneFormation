@@ -9,43 +9,64 @@ import com.phonefo.mypage.domain.MypageMemberVO;
 import com.phonefo.mypage.domain.MypageOnoVO;
 import com.phonefo.mypage.domain.MypagePurchaseVO;
 import com.phonefo.mypage.domain.MypageQuoteVO;
+import com.phonefo.mypage.domain.MypageRepairVO;
 
 public interface MypageService {
 	
 	
-		//³»Á¤º¸ ¸ŞÀÎ
+		//ë‚´ì •ë³´ ë©”ì¸
 		public MypageMemberVO myPageMain(HttpSession session)throws Exception;
 		
-		//³»Á¤º¸ ¼öÁ¤
+		//ë‚´ì •ë³´ ìˆ˜ì •
 		public int myPageUpdate(MypageMemberVO vo)throws Exception;
 		
-		//³»°¡ 1´ë1 ¹®ÀÇ¸®½ºÆ®
+		//ë‚´ê°€ 1ëŒ€1 ë¬¸ì˜ë¦¬ìŠ¤íŠ¸
 		public List<MypageOnoVO> myPageOnoList(HttpSession session)throws Exception;
 		
-		//³»°¡ Áß°íµî·Ï
+		//íšŒì›íƒˆí‡´
+		public int myPageDel(HttpSession session)throws Exception;
+		
+		//////////////////////////////ì¤‘ê³ ìª¾
+		//ë‚´ê°€ ì¤‘ê³ ë“±ë¡
 		public List<MypageQuoteVO> mypageQuoteList(HttpSession session)throws Exception;
 		
-		//È¸¿øÅ»Åğ
-		public int myPageDel(HttpSession session)throws Exception;
-
-		//³»°¡ Áß°í°ßÀûµî·ÏÇÑ°Å ±¸¸Å½ÅÃ»ÇÑ ¾÷Ã¼ ¸®½ºÆ®
+		//ë‚´ê°€ ì¤‘ê³ ê²¬ì ë“±ë¡í•œê±° êµ¬ë§¤ì‹ ì²­í•œ ì—…ì²´ ë¦¬ìŠ¤íŠ¸
 		public List<MypagePurchaseVO> mypagePurchase(String no)throws Exception;
 		
-		//ÆÇ¸ÅÇÒ ¾÷Ã¼ Á¤ÇÏ´Â°Å
+		//íŒë§¤í•  ì—…ì²´ ì •í•˜ëŠ”ê±°
 		public int mypagePurchaseChoose(Map<String, String> map)throws Exception;
 		
-		//±¸¸ÅÁß ¾÷Ã¼ Á¤º¸
+		//êµ¬ë§¤ì¤‘ ì—…ì²´ ì •ë³´
 		public MypagePurchaseVO mypagePurchaseIng(String no)throws Exception;
 		
-		//°Å·¡¿Ï·á
+		//ê±°ë˜ì™„ë£Œ
 		public int mypagePurchaseIngChoose(Map<String, String> map)throws Exception;
 			
-		//±¸¸ÅÁß ¾÷Ã¼ Á¤º¸
+		//êµ¬ë§¤ì¤‘ ì—…ì²´ ì •ë³´
 		public MypagePurchaseVO mypagePurchaseEnd(String no)throws Exception;
 		
-		////////////////////////////////////////////±â¾÷ÂÊ ¸¶ÀÌÆäÀÌÁö
-		
-		//±â¾÷ Áß°í°ßÀû ±¸¸Å ½ÅÃ» ¸®½ºÆ®
+		//ê¸°ì—… ì¤‘ê³ ê²¬ì  êµ¬ë§¤ ì‹ ì²­ ë¦¬ìŠ¤íŠ¸
 		public List<MypageQuoteVO> mypageB_QuoteList(HttpSession session)throws Exception;
 		
+		////////////////////////////////////////////ìˆ˜ë¦¬ìª½
+		//ë‚´ê°€ ì¤‘ê³ ë“±ë¡
+		public List<MypageRepairVO> mypageRepairList(HttpSession session)throws Exception;
+		
+		//ë‚´ê°€ ì¤‘ê³ ê²¬ì ë“±ë¡í•œê±° êµ¬ë§¤ì‹ ì²­í•œ ì—…ì²´ ë¦¬ìŠ¤íŠ¸
+		public List<MypagePurchaseVO> mypageRepairPurchase(String no)throws Exception;
+		
+		//íŒë§¤í•  ì—…ì²´ ì •í•˜ëŠ”ê±°
+		public int mypageRepairPurchaseChoose(Map<String, String> map)throws Exception;
+		
+		//êµ¬ë§¤ì¤‘ ì—…ì²´ ì •ë³´
+		public MypagePurchaseVO mypageRepairPurchaseIng(String no)throws Exception;
+		
+		//ê±°ë˜ì™„ë£Œ
+		public int mypageRepairPurchaseIngChoose(Map<String, String> map)throws Exception;
+			
+		//êµ¬ë§¤ì¤‘ ì—…ì²´ ì •ë³´
+		public MypagePurchaseVO mypageRepairPurchaseEnd(String no)throws Exception;
+		
+		//ê¸°ì—… ì¤‘ê³ ê²¬ì  êµ¬ë§¤ ì‹ ì²­ ë¦¬ìŠ¤íŠ¸
+		public List<MypageRepairVO> mypageB_RepairList(HttpSession session)throws Exception;
 }

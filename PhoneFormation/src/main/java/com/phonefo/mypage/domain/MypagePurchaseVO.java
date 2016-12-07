@@ -3,6 +3,7 @@ package com.phonefo.mypage.domain;
 public class MypagePurchaseVO {
 
 	private int purchaseNum;
+	private int repairNum;
 	private String userid;
 	private int no;
 	
@@ -12,6 +13,14 @@ public class MypagePurchaseVO {
 	private String companyName;
 	private String address;
 	
+	
+	
+	public int getRepairNum() {
+		return repairNum;
+	}
+	public void setRepairNum(int repairNum) {
+		this.repairNum = repairNum;
+	}
 	public int getPurchaseNum() {
 		return purchaseNum;
 	}

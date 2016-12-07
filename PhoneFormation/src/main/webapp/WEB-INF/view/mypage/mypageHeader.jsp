@@ -98,12 +98,12 @@ infoArea .list1{overflow:hidden;height:120px}
 	 					 <li><a href="/phonefo/mypageUpdate" title="정보수정">정보수정</a></li>
        					<li><a href="/phonefo/mypageOno" title="1대1문의 내역">1대1문의내역</a></li>	
                   <% if(session.getAttribute("member").equals("general")) { %>
-                  <li><a href="/phonefo/mypageQuote" title="올린중고견적">올린중고견적</a></li>
+                  <li><a href="/phonefo/mypageQuote" title="올린중고견적">중고</a></li>
+					 <li><a href="/phonefo/mypageRepair" title="올린수리견적">수리</a></li>    
                   <% } else if(session.getAttribute("member").equals("business")) { %>
-                  <li><a href="/phonefo/mypageB_Quote" title="신청한중고견적">신청한중고견적</a></li>
+                  <li><a href="/phonefo/mypageB_Quote" title="신청한중고견적">중고</a></li>
+					 <li><a href="/phonefo/mypageB_Repair" title="신청한수리견적">수리</a></li>    
              	  <% } %>
-					 <li><a href="/phonefo/mypageRepair" title="올린수리견적">올린수리견적</a></li>    
-					 <li><a href="/phonefo/mypageB_Repair" title="신청한수리견적">신청한수리견적</a></li>    
 					 <li><a href="/phonefo/mypageOut" title="회원탈퇴">회원탈퇴</a></li>    
                                                 
                      </ul>

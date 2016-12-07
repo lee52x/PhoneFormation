@@ -35,6 +35,8 @@
 	delete from ph_member where userid=#{userid}
 	</delete>
 	
+	<!-- 중고중고중고중고중고중고중고중고중고중고중고중고중고중고중고중고중고중고중고중고중고중고중고중고 -->
+	
 	
 	<!-- 마이페이지 중고 리스트 -->
 	<select id="mypageQuoteInfo" resultType="mypageQuote">
@@ -110,6 +112,98 @@
  			order by no desc
 	
 	</select>
+	
+	
+	<!-- 수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리수리 -->
+
+
+	<!-- 마이페이지 수리 리스트 -->
+	<select id="mypageRepairInfo" resultType="mypageRepair">
+		select no,userid,username,tel,repair_price,request_message,bank_name,account_number,rdate,state,machine,machinestate
+		 from ph_repairBoard
+		 where userid=#{userid}
+ 			order by no desc
+
+	</select>
+	
+	<!-- 마이페이지 중고 신청 업체 리스트 -->
+	<select id="mypageRepairPurchase" resultType="mypagePurchase">
+	
+	
+	select r.no,m.userid,r.repairNum,m.tel,m.businessNum,b.companyName,b.address
+	from ph_business b,ph_member m,repair_request r, ph_repairboard q
+	where b.businessNum in((select businessNum from ph_member where m.userid in ((select a.userid from repair_request a, ph_repairboard b where a.no=#{no} and b.no=#{no} and a.no=b.no))))
+	and r.userid = m.userid and m.businessNum = b.businessNum and r.no = q.no and r.no=#{no}
+	
+	</select>
+	<!-- 마이페이지 중고 업체 선택처리 map으로 넣엇음 -->
+	<update id="mypagePurchaseChooseRepair">
+	update ph_repairBoard set state=2 where no=#{no}
+
+	</update>
+	
+	<!-- 마이페이지 중고 업체 선택처리 map으로 넣엇음 -->
+	<update id="mypageRepairPurchaseChooseRequest">
+	update repair_request set state=2 where userid=#{userid} and no=#{no}
+
+	</update>
+	
+	<!-- 마이페이지 내가 판매 선택한 업체 정보 -->
+	<select id="mypageRepairPurchaseIng" resultType="mypagePurchase">
+
+	select r.no,m.userid,r.repairNum,m.tel,m.businessNum,b.companyName,b.address
+	from ph_business b,ph_member m,repair_request r, ph_repairboard q
+	where b.businessNum in((select businessNum from ph_member where m.userid in ((select a.userid from repair_request a, ph_repairboard b where a.no=#{no} and b.no=#{no} and a.no=b.no and a.state=2))))
+	and r.userid = m.userid and m.businessNum = b.businessNum and r.no = q.no and r.no=#{no}
+	</select>
+	
+	<!-- 마이페이지 거래완료 map으로 넣엇음 -->
+	<update id="mypagePurchaseIngChooseRepair">
+	update ph_repairBoard set state=3 where no=#{no}
+
+	</update>
+	
+	<!-- 마이페이지 거레완료 map으로 넣엇음 -->
+	<update id="mypageRepairPurchaseIngChooseRequest">
+	update repair_request set state=3 where userid=#{userid} and no=#{no}
+
+	</update>
+	
+	<!-- 마이페이지 내가 판매 선택한 업체 정보 -->
+	<select id="mypageRepairPurchaseEnd" resultType="mypagePurchase">
+	select r.no,m.userid,r.repairNum,m.tel,m.businessNum,b.companyName,b.address
+	from ph_business b,ph_member m,repair_request r, ph_repairboard q
+	where b.businessNum in((select businessNum from ph_member where m.userid in ((select a.userid from repair_request a, ph_repairboard b where a.no=#{no} and b.no=#{no} and a.no=b.no and a.state=3))))
+	and r.userid = m.userid and m.businessNum = b.businessNum and r.no = q.no and r.no=#{no}
+	
+	</select>
+	
+	<!-- 기업마이페이지 -->
+	
+	
+	<!-- 기업마이페이지 내가 신청한 중고견적 리스트 -->
+	<select id="mypageB_RepairInfo" resultType="mypageRepair">
+ 			
+ 		select no,userid,username,tel,repair_price,request_message,bank_name,account_number,rdate,state,machine,machinestate
+		 from ph_repairBoard
+		 where no in(select no from repair_request where userid = #{userid})
+ 			order by no desc
+	
+	</select>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </mapper>

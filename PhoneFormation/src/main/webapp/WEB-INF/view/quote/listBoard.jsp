@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -107,14 +109,27 @@ function popup(no) {
 		</td>
 
 		<!--작성일-->
-		<td>
-			${vo.rdate }
-		</td>
-		<!--진행상태-->
-		<td>
-			<button  type="button" class="btn btn-primary" onclick="popup(${vo.no})">거래대기</button>
 	
-		</td>
+		<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${vo.rdate }" /></td>
+
+		<!--진행상태-->
+			<c:choose>
+									<c:when test="${vo.state eq '0'}">
+										<td><button  type="button" class="btn btn-primary" onclick="popup(${vo.no})">거래대기</button></td>
+									</c:when>
+									<c:when test="${vo.state eq '1'}">
+										<td><button type="button" class="btn btn-primary">진행중</button></td>
+									</c:when>
+									<c:when test="${vo.state eq '2'}">
+										<td><button type="button" class="btn btn-primary">진행중</button></td>
+									</c:when>
+									<c:when test="${vo.state eq '3'}">
+										<td><button type="button" class="btn btn-primary">완료</button></td>
+									</c:when>
+									<c:otherwise>
+										<td>거래완료</td>
+									</c:otherwise>
+			</c:choose>
 
 	</tr>
 	</c:forEach>

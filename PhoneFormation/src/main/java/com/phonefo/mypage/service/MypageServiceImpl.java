@@ -12,6 +12,7 @@ import com.phonefo.mypage.domain.MypageMemberVO;
 import com.phonefo.mypage.domain.MypageOnoVO;
 import com.phonefo.mypage.domain.MypagePurchaseVO;
 import com.phonefo.mypage.domain.MypageQuoteVO;
+import com.phonefo.mypage.domain.MypageRepairVO;
 import com.phonefo.mypage.persistence.MypageDAO;
 
 @Service
@@ -42,14 +43,16 @@ public class MypageServiceImpl implements MypageService {
 	}
 
 	@Override
-	public List<MypageQuoteVO> mypageQuoteList(HttpSession session) throws Exception {//마이페이지 중고견적
-		
-		return dao.myPageQuoteList(session);
-	}
-	@Override
 	public int myPageDel(HttpSession session) throws Exception {//마이페이지 회원탈퇴
 		
 		return dao.myPageDel(session);
+	}
+	
+	/////////////////////////////////////중고
+	@Override
+	public List<MypageQuoteVO> mypageQuoteList(HttpSession session) throws Exception {//마이페이지 중고견적
+		
+		return dao.myPageQuoteList(session);
 	}
 
 	@Override
@@ -84,6 +87,47 @@ public class MypageServiceImpl implements MypageService {
 	public List<MypageQuoteVO> mypageB_QuoteList(HttpSession session) throws Exception {
 	
 		return dao.myPageB_QuoteList(session);
+	}
+	
+	////////////////////////////////////////////////////수리
+	@Override
+	public List<MypageRepairVO> mypageRepairList(HttpSession session) throws Exception {//마이페이지 중고견적
+		
+		return dao.myPageRepairList(session);
+	}
+	
+	@Override
+	public List<MypagePurchaseVO> mypageRepairPurchase(String no) throws Exception {//마이페이지 거래신청한 기업 리스트
+		
+		return dao.myPageRepairPurchaseList(no);
+	}
+	
+	@Override
+	public int mypageRepairPurchaseChoose(Map<String, String> map) throws Exception {//마이페이지 거래할 기업선택
+		
+		return dao.myPageRepairPurchaseChoose(map);
+	}
+	
+	@Override
+	public MypagePurchaseVO mypageRepairPurchaseIng(String no) throws Exception {//마이페이지 거래중인 기업정보
+		
+		return dao.myPageRepairPurchaseIng(no);
+	}
+	
+	@Override
+	public int mypageRepairPurchaseIngChoose(Map<String, String> map) throws Exception {//마이페이지 거래완료업데이트
+		return dao.myPageRepairPurchaseIngChoose(map);
+	}
+	
+	@Override//마에페이제 거래 완료 목록
+	public MypagePurchaseVO mypageRepairPurchaseEnd(String no) throws Exception {
+		return dao.myPageRepairPurchaseEnd(no);
+	}
+	
+	@Override	//기업 중고견적 구매 신청 리스트
+	public List<MypageRepairVO> mypageB_RepairList(HttpSession session) throws Exception {
+		
+		return dao.myPageB_RepairList(session);
 	}
 
 
