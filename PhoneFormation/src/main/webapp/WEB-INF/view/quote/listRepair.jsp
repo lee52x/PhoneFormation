@@ -108,12 +108,17 @@ function popup(no) {
 		<!--작성일-->
 		<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${vo.rdate }" /></td>
 		<!--진행상태-->
+		
+		
+	
+		  <c:if test="${member eq 'business'}">
 			<c:choose>
+						
 									<c:when test="${vo.state eq '0'}">
-										<td><button  type="button" class="btn btn-primary" onclick="popup(${vo.no})">거래대기</button></td>
+									<td><button type="button" class="btn btn-primary" onclick="popup(${vo.no})">대기</button></td>
 									</c:when>
 									<c:when test="${vo.state eq '1'}">
-										<td><button type="button" class="btn btn-primary">진행중</button></td>
+										<td><button  type="button" class="btn btn-primary" onclick="popup(${vo.no})">대기</button></td>
 									</c:when>
 									<c:when test="${vo.state eq '2'}">
 										<td><button type="button" class="btn btn-primary">진행중</button></td>
@@ -125,6 +130,26 @@ function popup(no) {
 										<td>거래완료</td>
 									</c:otherwise>
 			</c:choose>
+			</c:if>
+			 <c:if test="${member != 'business'}">
+				<c:choose>
+									<c:when test="${vo.state eq '0'}">
+										<td><button  type="button" class="btn btn-primary">대기</button></td>
+									</c:when>
+									<c:when test="${vo.state eq '1'}">
+										<td><button  type="button" class="btn btn-primary">대기</button></td>
+									</c:when>
+									<c:when test="${vo.state eq '2'}">
+										<td><button type="button" class="btn btn-primary">진행중</button></td>
+									</c:when>
+									<c:when test="${vo.state eq '3'}">
+										<td><button type="button" class="btn btn-primary">완료</button></td>
+									</c:when>
+									<c:otherwise>
+										<td>거래완료</td>
+									</c:otherwise>
+							</c:choose>
+		</c:if>
 
 	</tr>
 	</c:forEach>

@@ -416,7 +416,7 @@ function callTable(no,userid,username,tel,repair_price,request_message,bank_name
 					style="background-color: white; width: 800px; margin-left: 15%; margin-top: 5%;">
 					<tr>
 						<td colspan="2"
-							style="border-right: medium; border-right-color: black; text-align: center;">중고견적
+							style="border-right: medium; border-right-color: black; text-align: center;">수리견적
 							상세 보기</td>
 					</tr>
 					<tr>

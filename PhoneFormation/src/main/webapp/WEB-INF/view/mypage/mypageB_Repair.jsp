@@ -216,48 +216,37 @@ function callTable(no,userid,username,tel,repair_price,request_message,bank_name
 				style="line-height: 607px; height: 607px; margin-top: 3%; background-color: white; overflow: auto; overflow-x: hidden;">
 
 
-				<table class="table"
+			<table class="table"
 					style="background-color: white; width: 800px; margin-left: 15%; margin-top: 5%;">
 					<tr>
 						<td colspan="2"
-							style="border-right: medium; border-right-color: black; text-align: center;">중고견적
+							style="border-right: medium; border-right-color: black; text-align: center;">수리견적
 							상세 보기</td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">manufacture</td>
-						<td><div id="manufacture"></div></td>
+						<td style="text-align: center;" width="25%">no</td>
+						<td><div id="no"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">machine</td>
-						<td><div id="machine"></div></td>
-					</tr>
-					<tr>
-						<td style="text-align: center;" width="25%">quote_price</td>
-						<td><div id="quote_price"></div></td>
-					</tr>
-					<tr>
-						<td style="text-align: center;" width="25%">power</td>
-						<td><div id="power"></div></td>
-					</tr>
-					<tr>
-						<td style="text-align: center;" width="25%">glass</td>
-						<td><div id="glass"></div></td>
-					</tr>
-					<tr>
-						<td style="text-align: center;" width="25%">equipment</td>
-						<td><div id="equipment"></div></td>
+						<td style="text-align: center;" width="25%">userid</td>
+						<td><div id="userid"></div></td>
 					</tr>
 					<tr>
 						<td style="text-align: center;" width="25%">username</td>
 						<td><div id="username"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">rdate</td>
-						<td><div id="rdate"></div></td>
-					</tr>
-					<tr>
 						<td style="text-align: center;" width="25%">tel</td>
 						<td><div id="tel"></div></td>
+					</tr>
+					
+					<tr>
+						<td style="text-align: center;" width="25%">repair_price</td>
+						<td><div id="repair_price"></div></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;" width="25%">request_message</td>
+						<td><div id="request_message"></div></td>
 					</tr>
 					<tr>
 						<td style="text-align: center;" width="25%">bank_name</td>
@@ -268,8 +257,20 @@ function callTable(no,userid,username,tel,repair_price,request_message,bank_name
 						<td><div id="account_number"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">request_message</td>
-						<td><div id="request_message"></div></td>
+						<td style="text-align: center;" width="25%">rdate</td>
+						<td><div id="rdate"></div></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;" width="25%">state</td>
+						<td><div id="state"></div></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;" width="25%">machine</td>
+						<td><div id="machine"></div></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;" width="25%">machineState</td>
+						<td><div id="machineState"></div></td>
 					</tr>
 
 				</table>
