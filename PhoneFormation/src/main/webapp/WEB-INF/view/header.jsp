@@ -179,9 +179,9 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a class="active" href="/phonefo/phoneInfo">최신폰</a>
 							<ul class="dropdown">
-								<li><a href="#tab-4" data-toggle="tab" class="samsung" id="samsung">삼성전자</a></li>
-								<li><a href="#tab-5" data-toggle="tab" class="lg" id="lg">LG전자</a></li>
-								<li><a href="#tab-6" data-toggle="tab" class="apple" id="apple">애플</a></li>
+								<li><a href="#tab-4" data-toggle="tab" class="samsung" id="samsung"><img alt="SAMSUNG" src="/resources/images/samsung.png" width="130px" height="20px;"></a></li>
+								<li><a href="#tab-5" data-toggle="tab" class="lg" id="lg"><img alt="LG" src="/resources/images/lg.png" width="85px"></a></li>
+								<li><a href="#tab-6" data-toggle="tab" class="apple" id="apple"><img alt="Apple" src="/resources/images/apple.png" width="90px"></a></li>
 							</ul></li>
 						<li><a href="about.html">견적</a>
 							<ul class="dropdown">
@@ -192,15 +192,15 @@
 							</ul></li>
 						<li><a href="/phonefo/payment">요금제</a>
 							<ul class="dropdown">
-								<li><a href="/phonefo/payment/skt"><img alt="SKT" src="/resources/images/payment/SKT.png" width="70px"></a></li>
-								<li><a href="/phonefo/payment/kt"><img alt="KT" src="/resources/images/payment/KTOlleh.png" width="70px"></a></li>
-								<li><a href="/phonefo/payment/lg"><img alt="LG" src="/resources/images/payment/LGU+.png" width="70px"></a></li>
+								<li><a href="/phonefo/payment/skt"><img alt="SKT" src="/resources/images/payment/SKT.png" width="80px"></a></li>
+								<li><a href="/phonefo/payment/kt"><img alt="KT" src="/resources/images/payment/KTOlleh.png" width="80px"></a></li>
+								<li><a href="/phonefo/payment/lg"><img alt="LG" src="/resources/images/payment/LGU+.png" width="80px"></a></li>
 							</ul></li>
 						<li><a href="portfolio-3.html">이벤트</a>
 							<ul class="dropdown">
-								<li><a href="/phonefo/boardlist?tno=1">KT</a></li>
-								<li><a href="/phonefo/boardlist?tno=2">LGU+</a></li>
-								<li><a href="/phonefo/boardlist?tno=3">SKT</a></li>
+								<li><a href="/phonefo/boardlist?tno=3"><img alt="SKT" src="/resources/images/payment/SKT.png" width="80px"></a></li>
+								<li><a href="/phonefo/boardlist?tno=1"><img alt="KT" src="/resources/images/payment/KTOlleh.png" width="80px"></a></li>
+								<li><a href="/phonefo/boardlist?tno=2"><img alt="LG" src="/resources/images/payment/LGU+.png" width="80px"></a></li>
 							</ul></li>
 						<li><a href="blog.html">게시판</a>
 							<ul class="dropdown">
