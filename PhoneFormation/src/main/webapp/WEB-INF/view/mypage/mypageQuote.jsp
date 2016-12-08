@@ -139,10 +139,12 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 			$("#purchaseEnd").empty();
 			contentEnd = null;
 		});
+		
+		
 
-		$('#noPurchase').click(function() {//구매신청한 업체 리스트
+			$('[name=noPurchase]').click(function() {//구매신청한 업체 리스트
 			
-			var searchNo = $(this).parent().parent().children().first().text();
+			var searchNo = $(this).attr('id');
 			$.ajax({
 				url : "/phonefo/purchaseList",
 				data : {"no" : searchNo},
@@ -151,7 +153,35 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 				success : function(result) {
 					$("#popup2").fadeIn(700);
 
-					   for(var i=0;i<result.length;i++){
+					
+					 for(var i=0;i<result.length;i++){
+						   if(i==0){
+							   
+							   content+=
+								   "<tr>"+
+				                    "<th>글번호</th>"+
+				                    "<th>아이디</th>"+
+				                    "<th>구매번호</th>"+
+				                    "<th>전화번호</th>"+
+				                    "<th>사업자번호</th>"+
+				                    "<th>회사명</th>"+
+				                    "<th>주소</th>"+
+				                    "<th>선택</th>"+
+				                "</tr>"+
+				                "<tr>"+
+			                    "<td>"+result[i].no+"</td>"+
+			                    "<td>"+result[i].userid+"</td>"+
+			                    "<td>"+result[i].purchaseNum+"</td>"+
+			                    "<td>"+result[i].tel+"</td>"+
+			                    "<td>"+result[i].businessNum+"</td>"+
+			                    "<td>"+result[i].companyName+"</td>"+
+			                    "<td>"+result[i].address+"</td>"+
+			                    "<td><button class='btn btn-primary' onclick=sellSelect("
+			                    		       +result[i].no +",'"+result[i].userid+"')>선택</button>"+"</td>"+
+			                "</tr>";
+						   }else{
+							
+						  
 						   content +=
 						  "<tr>"+
 		                    "<td>"+result[i].no+"</td>"+
@@ -164,7 +194,7 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 		                    "<td><button class='btn btn-primary' onclick=sellSelect("
 		                    		       +result[i].no +",'"+result[i].userid+"')>선택</button>"+"</td>"
 		                "</tr>";
-
+						   }
 					   }
 					   $("#purchasetable").empty();
 					   
@@ -184,11 +214,11 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 		
 		
 		
+	
 		
-		
-	$('#ingPurchase').click(function() {//사용자가 판매할 업체를 선택한후 나오는 페이지 선택한 업체만 나오고 거래완료 여부 취소여부
+		$('[name=ingPurchase]').click(function() {//사용자가 판매할 업체를 선택한후 나오는 페이지 선택한 업체만 나오고 거래완료 여부 취소여부
 			
-			var ingNo = $(this).parent().parent().children().first().text();
+			var ingNo = $(this).attr('id');
 			$.ajax({
 				url : "/phonefo/purchaseIng",
 				data : {"no" : ingNo},
@@ -196,11 +226,22 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 				dataType: 'json',
 				success : function(result) {
 					$("#popup3").fadeIn(700);
-
+				
 		
 
-					 
+					 		
 						   contentIng =
+							   "<tr>"+
+			                    "<th>글번호</th>"+
+			                    "<th>아이디</th>"+
+			                    "<th>구매번호</th>"+
+			                    "<th>전화번호</th>"+
+			                    "<th>사업자번호</th>"+
+			                    "<th>회사명</th>"+
+			                    "<th>주소</th>"+
+			                    "<th>선택</th>"+
+			                    "<th>선택</th>"+
+			                "</tr>"+  
 						  "<tr>"+
 		                    "<td>"+result.no+"</td>"+
 		                    "<td>"+result.userid+"</td>"+
@@ -230,14 +271,14 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 		});
 		
 	
-	
+
 		
-	$('#endPurchase').click(function() {//거래가 완료 그후 거래햇던 기업정보
+	$('[name=endPurchase]').click(function() {//거래가 완료 그후 거래햇던 기업정보
 		
-		var ingNo = $(this).parent().parent().children().first().text();
+		var endNo = $(this).attr('id');
 		$.ajax({
 			url : "/phonefo/purchaseEnd",
-			data : {"no" : ingNo},
+			data : {"no" : endNo},
 			type : "GET",
 			dataType: 'json',
 			success : function(result) {
@@ -247,6 +288,15 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 
 				 
 					   contentEnd =
+						   "<tr>"+
+		                    "<th>글번호</th>"+
+		                    "<th>아이디</th>"+
+		                    "<th>구매번호</th>"+
+		                    "<th>전화번호</th>"+
+		                    "<th>사업자번호</th>"+
+		                    "<th>회사명</th>"+
+		                    "<th>주소</th>"+
+		                "</tr>"+
 							 "<tr>"+
 			                 "<td>"+result.no+"</td>"+
 			                 "<td>"+result.userid+"</td>"+
@@ -306,8 +356,8 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 				 
 				$("#popup3").fadeOut(10);
 
-				$("#purchasetable").empty();
-				content = null;
+				$("#purchaseIng").empty();
+				contentIng = null;
 				
 			}
 		}); 
@@ -358,6 +408,7 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 						<col width="10%" />
 						<col width="10%" />
 						<col width="10%" />
+
 					</colgroup>
 					<thead>
 						<tr id='mainindex_HeadTR' class="section">
@@ -386,13 +437,13 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 										<td>미신청</td>
 									</c:when>
 									<c:when test="${mypageQuote.state eq '1'}">
-										<td><button class="btn btn-primary" id="noPurchase">거래대기</button></td>
+										<td><button class="btn btn-primary" id="${mypageQuote.no}" name="noPurchase">거래대기</button></td>
 									</c:when>
 									<c:when test="${mypageQuote.state eq '2'}">
-										<td><button class="btn btn-primary" id="ingPurchase">거래중</button></td>
+										<td><button class="btn btn-primary" id="${mypageQuote.no}" name="ingPurchase">거래중</button></td>
 									</c:when>
 									<c:when test="${mypageQuote.state eq '3'}">
-										<td><button class="btn btn-primary" id="endPurchase">거래완료</button></td>
+										<td><button class="btn btn-primary" id="${mypageQuote.no}" name="endPurchase">거래완료</button></td>
 									</c:when>
 									<c:otherwise>
 										<td>거래완료</td>
