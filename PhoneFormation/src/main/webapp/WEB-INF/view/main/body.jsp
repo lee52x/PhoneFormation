@@ -140,7 +140,7 @@ table {
                                   data-start="800" 
                                   data-easing="easeOutExpo">아래의 버튼을 눌러<br/>
                                 	나에게 맞는 스마트폰을 찾아보세요 <br>
-                                  	(갤럭시 A 시리즈, J 시리즈, S 시리즈, 노트 시리즈)</div>
+                                  	(갤럭시 J 시리즈, A 시리즈, 노트 시리즈, S 시리즈)</div>
                             <div class="caption randomrotate" 
                                   data-x="650" 
                                   data-y="300" 
@@ -148,47 +148,89 @@ table {
                                   data-start="1200" 
                                   data-easing="easeOutExpo"><a href="#" class="btn-custom btn-medium border-btn">SAMSUNG 스마트폰 보러가기</a> </div>
                              <div class="caption lfl" 
-                                  data-x="100" 
-                                  data-y="50" 
+                                  data-x="170" 
+                                  data-y="40" 
                                   data-speed="400" 
                                   data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/s7.png" alt="S7" width="100px" /> </div>
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/j3.png" alt="J3" width="100px" /> </div>
                              <div class="caption lfl" 
-                                  data-x="220" 
-                                  data-y="50" 
+                                  data-x="300" 
+                                  data-y="40" 
+                                  data-speed="400" 
+                                  data-start="800" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/j5.png" alt="J5" width="100px" /> </div>
+                             <div class="caption lfl" 
+                                  data-x="430" 
+                                  data-y="40" 
+                                  data-speed="400" 
+                                  data-start="800" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/j7.png" alt="J7" width="100px" /> </div>
+                              <div class="caption lfl" 
+                                  data-x="120" 
+                                  data-y="110" 
+                                  data-speed="400" 
+                                  data-start="800" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/a3.png" alt="A3" width="100px" /> </div>
+                             <div class="caption lfl" 
+                                  data-x="240" 
+                                  data-y="110" 
+                                  data-speed="400" 
+                                  data-start="800" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/a5.png" alt="A5" width="100px" /> </div>
+                             <div class="caption lfl" 
+                                  data-x="360" 
+                                  data-y="110" 
+                                  data-speed="400" 
+                                  data-start="800" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/a7.png" alt="A7" width="100px" /> </div>
+                             <div class="caption lfl" 
+                                  data-x="480" 
+                                  data-y="110" 
+                                  data-speed="400" 
+                                  data-start="800" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/a8.png" alt="A8" width="95px" /> </div>
+                             <div class="caption lfl" 
+                                  data-x="130" 
+                                  data-y="190" 
+                                  data-speed="400" 
+                                  data-start="800" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/note4.png" alt="Note4" width="133px" /> </div>
+                             <div class="caption lfl" 
+                                  data-x="300" 
+                                  data-y="190" 
+                                  data-speed="400" 
+                                  data-start="800" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/noteedge.png" alt="NoteEdge" width="133px" /> </div>
+                             <div class="caption lfl" 
+                                  data-x="440" 
+                                  data-y="190" 
+                                  data-speed="400" 
+                                  data-start="800" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/note5.png" alt="Note5" width="125px" /> </div>
+                             <div class="caption lfl" 
+                                  data-x="80" 
+                                  data-y="240" 
                                   data-speed="400" 
                                   data-start="800" 
                                   data-easing="easeOutExpo"><img src="/resources/images/main/s6.png" alt="S6" width="100px" /> </div>
                              <div class="caption lfl" 
-                                  data-x="340" 
-                                  data-y="50" 
+                                  data-x="230" 
+                                  data-y="240" 
                                   data-speed="400" 
                                   data-start="800" 
                                   data-easing="easeOutExpo"><img src="/resources/images/main/s6edge.png" alt="S6Edge" width="100px" /> </div>
-                              <div class="caption lfl" 
-                                  data-x="460" 
-                                  data-y="50" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/j7.png" alt="J7" width="100px" /> </div>
                              <div class="caption lfl" 
-                                  data-x="120" 
-                                  data-y="150" 
+                                  data-x="380" 
+                                  data-y="240" 
                                   data-speed="400" 
                                   data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/note5.png" alt="Note5" width="135px" /> </div>
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/s7.png" alt="S7" width="100px" /> </div>
                              <div class="caption lfl" 
-                                  data-x="265" 
-                                  data-y="150" 
+                                  data-x="520" 
+                                  data-y="240" 
                                   data-speed="400" 
                                   data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/note4edge.png" alt="NoteEdge" width="145px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="420" 
-                                  data-y="150" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/a8.png" alt="A8" width="100px" /> </div>
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/s7edge.png" alt="S7Edge" width="100px" /> </div>
                             
                         </li>
                         
@@ -241,30 +283,47 @@ table {
                                   data-easing="easeOutExpo"><img src="/resources/images/main/g3cat6.png" alt="G3Cat6" width="100px" /> </div>
                               <div class="caption lfl" 
                                   data-x="520" 
-                                  data-y="150" 
+                                  data-y="140" 
                                   data-speed="400" 
                                   data-start="800" 
                                   data-easing="easeOutExpo"><img src="/resources/images/main/g3screen.png" alt="G3Screen" width="100px" /> </div>
                              <div class="caption lfl" 
                                   data-x="650" 
-                                  data-y="150" 
+                                  data-y="140" 
                                   data-speed="400" 
                                   data-start="800" 
                                   data-easing="easeOutExpo"><img src="/resources/images/main/g5.png" alt="G5" width="100px" /> </div>
                              <div class="caption lfl" 
                                   data-x="770" 
-                                  data-y="150" 
+                                  data-y="140" 
                                   data-speed="400" 
                                   data-start="800" 
                                   data-easing="easeOutExpo"><img src="/resources/images/main/g3a.png" alt="G3A" width="100px" /> </div>
                              <div class="caption lfl" 
                                   data-x="900" 
-                                  data-y="150" 
+                                  data-y="140" 
                                   data-speed="400" 
                                   data-start="800" 
                                   data-easing="easeOutExpo"><img src="/resources/images/main/gstylo.png" alt="GStylo" width="100px" /> </div>
+                             <div class="caption lfl" 
+                                  data-x="580" 
+                                  data-y="200" 
+                                  data-speed="400" 
+                                  data-start="800" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/v10.png" alt="V10" width="100px" /> </div>
+                             <div class="caption lfl" 
+                                  data-x="710" 
+                                  data-y="200" 
+                                  data-speed="400" 
+                                  data-start="800" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/gflex2.png" alt="GFlex2" width="100px" /> </div>
+                             <div class="caption lfl" 
+                                  data-x="840" 
+                                  data-y="200" 
+                                  data-speed="400" 
+                                  data-start="800" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/v20.png" alt="V20" width="100px" /> </div>
                         </li>
-                        
                         <!-- THE FOURTH SLIDE --> 
                         <li data-transition="papercut" data-slotamount="7" data-masterspeed="300"> 
                             <!-- MAIN IMAGE --> 
@@ -287,7 +346,7 @@ table {
                                   data-start="2000" 
                                   data-easing="easeOutExpo">아래의 버튼을 눌러<br>
                                   	나에게 맞는 스마트폰을 찾아보세요<br>
-                                  	(6 시리즈, 7 시리즈, SE 시리즈)</div>
+                                  	(6 시리즈, 6s 시리즈, 7 시리즈, SE 시리즈)</div>
                             
                             <!-- LAYER NR. 4 -->
                             <div class="tp-caption sfb start" 
