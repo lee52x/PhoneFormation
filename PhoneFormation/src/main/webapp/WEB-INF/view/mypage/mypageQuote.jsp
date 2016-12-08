@@ -286,7 +286,7 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 				$("#popup2").fadeOut(10);
 				$("#purchasetable").empty();
 				content = null;
-			},
+			}
 		}); 
 		alert("선택이 완료되었습니다.");
 		location.href='/phonefo/mypageQuote';
@@ -294,7 +294,8 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 	}
 	
 	var sellCancel=function(no){//거래취소
-
+		var selectCancel = confirm("거래를 취소하시겠습니까? 등록한 글이 삭제됩니다.");
+		if(selectCancel==true){
 		$.ajax({
 			url : "/phonefo/purchaseCancel",
 			data : {"no" : no},
@@ -302,20 +303,21 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 			dataType: 'json',
 			success :function(){
 			
-				 alert("선택이 완료되었습니다.");
+				 
 				$("#popup3").fadeOut(10);
 
 				$("#purchasetable").empty();
 				content = null;
 				
-			},
-            error:function(e) {
-		    	alert(e.responseText);
 			}
 		}); 
+		alert("거래가 취소되었습니다.");
+		location.href='/phonefo/mypageQuote';
+		}
 	}
 	var sellSelectEnd=function(no,userid){//거래완료
-
+		var selectEnd=confirm('거래를 완료 하시겠습니까?');
+		if(selectEnd==true){
 		$.ajax({
 			url : "/phonefo/purchaseIngChoose",
 			data : {"no" : no,"userid":userid},
@@ -323,17 +325,17 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 			dataType: 'json',
 			success :function(){
 			
-				 alert("선택이 완료되었습니다.");
+				
 				$("#popup3").fadeOut(10);
 
 				$("#purchaseIng").empty();
 				contentIng = null;
 				
-			},
-            error:function(e) {
-		    	alert(e.responseText);
 			}
 		}); 
+		alert("거래가 완료되었습니다.");
+		location.href='/phonefo/mypageQuote';
+	}
 	}
 </script>
 </head>

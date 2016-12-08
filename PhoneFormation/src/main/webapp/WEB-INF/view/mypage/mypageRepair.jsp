@@ -210,9 +210,8 @@ function callTable(no,userid,username,tel,repair_price,request_message,bank_name
 		                    "<td>"+result.companyName+"</td>"+
 		                    "<td>"+result.address+"</td>"+
 		                    "<td><button class='btn btn-primary' onclick=sellSelectEnd("
-		                    		       +result.no +",'"+result.userid+"')>거래완료</button>"+"</td>"+
-		                    "<td><button class='btn btn-primary' onclick=sellSelectCancel("
-		                    		       +result.no +",'"+result.userid+"')>거래취소</button>"+"</td>"
+		                    		       +result.no +",'"+result.userid+"')>거래완료</button>"+"</td>"
+		                   
 		                "</tr>";
    
 					   $("#purchaseIng").empty();
@@ -292,8 +291,10 @@ function callTable(no,userid,username,tel,repair_price,request_message,bank_name
 		location.href='/phonefo/mypageRepair';
 	}
 	}
+	
 	var sellSelectEnd=function(no,userid){//거래완료
-
+		var selectEnd=confirm('거래를 완료 하시겠습니까?');
+		if(selectEnd==true){
 		$.ajax({
 			url : "/phonefo/purchaseRepairIngChoose",
 			data : {"no" : no,"userid":userid},
@@ -301,17 +302,17 @@ function callTable(no,userid,username,tel,repair_price,request_message,bank_name
 			dataType: 'json',
 			success :function(){
 			
-				 alert("선택이 완료되었습니다.");
+				 
 				$("#popup3").fadeOut(10);
 
 				$("#purchaseIng").empty();
 				contentIng = null;
 				
-			},
-            error:function(e) {
-		    	alert(e.responseText);
 			}
 		}); 
+		alert("거래가 완료되었습니다.");
+		location.href='/phonefo/mypageRepair';
+		}
 	}
 </script>
 </head>
