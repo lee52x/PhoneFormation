@@ -55,4 +55,19 @@ public class BoardServiceImpl implements BoardService{
 		
 	}
 
+	@Override
+	public int select_prevbno(int bno) throws Exception {
+		return dao.select_prevbno(bno);
+	}
+
+	@Override
+	public int select_nextbno(int bno) throws Exception {
+		return dao.select_nextbno(bno);
+	}
+
+	@Override
+	public String select_title(int bno) throws Exception {
+		return dao.select_title(bno);
+	}
+
 }

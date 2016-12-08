@@ -16,4 +16,7 @@ public interface BoardDAO {
 	   public void delete(int bno)throws Exception;
 	   public void update(BoardVO board)throws Exception;
 	   public void update_viewcnt(int bno)throws Exception;
+	   public int select_prevbno(int bno) throws Exception;
+	   public int select_nextbno(int bno) throws Exception;
+	   public String select_title(int bno) throws Exception;
 }

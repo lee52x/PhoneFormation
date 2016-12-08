@@ -27,15 +27,6 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 	@Override
 	public void insert(BoardVO board) throws Exception {	
-		System.out.println("bno"+board.getBno());
-		System.out.println("content"+board.getContent());
-		System.out.println("image"+board.getImage());
-		System.out.println("title"+board.getTitle());
-		System.out.println("tno"+board.getTno());
-		System.out.println("viewcnt"+board.getViewcnt());
-		System.out.println("writer"+board.getWriter());
-		System.out.println("regdate"+board.getRegdate());
-		
 		sqlSession.insert("board.insert",board);
 	}
 	@Override
@@ -59,5 +50,21 @@ public class BoardDAOImpl implements BoardDAO {
 	public void update_viewcnt(int bno) throws Exception {
 		sqlSession.update("board.update_viewcnt",bno);
 		
+	}
+	@Override
+	public int select_prevbno(int bno) throws Exception {
+		if(sqlSession.selectOne("board.select_prevbno", bno)==null)
+			return 0;
+		return sqlSession.selectOne("board.select_prevbno", bno);
+	}
+	@Override
+	public int select_nextbno(int bno) throws Exception {
+		if(sqlSession.selectOne("board.select_nextbno", bno)==null)
+			return 0;
+		return sqlSession.selectOne("board.select_nextbno", bno);
+	}
+	@Override
+	public String select_title(int bno) throws Exception {
+		return sqlSession.selectOne("board.selec_boardttitle",bno);
 	}
 }

@@ -4,7 +4,7 @@ drop table ph_board;
 drop table ph_boardtype;
 drop table ph_ono;
 
-select * from ph_ono;
+select * from ph_reply;
 create table ph_ono(
 ono number primary key,
 userid varchar2(50) ,
@@ -46,7 +46,7 @@ create table ph_reply(
    replytext   varchar2(1000) not null,
    replyer      varchar2(50) not null,
    regdate     date default sysdate,
-   updatedate    date default sysdate
+   image       varchar2(200)
 );
 
 drop sequence ph_boardtype_seq;

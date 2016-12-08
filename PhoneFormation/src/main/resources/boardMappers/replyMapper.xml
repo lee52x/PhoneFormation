@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- replyMapper.xml -->
+<mapper namespace="reply"> <!-- MyBatis주의 : 반드시 네임스페이스를 정의하자!! -->
+   <select id="list" resultType="reply">
+      select rno,bno,replytext,replyer,regdate
+      from ph_reply
+      where bno=#{bno}
+      order by rno desc
+   </select>
+   <insert id="create">
+      insert into ph_reply (rno, bno,replytext,replyer)
+          values (ph_reply_seq.nextval, #{bno}, #{replytext}, #{replyer})
+   </insert>
+   <update id="update">
+      update ph_reply set replytext=#{replytext}
+      where rno=#{rno}
+   </update>
+   <delete id="delete">
+       delete from ph_reply
+       where rno=#{rno}
+   </delete>
+   
+   <!-- <select id="listPage">
+   </select> -->
+   
+   <select id="count" resultType="int">
+       select count(*) from ph_reply
+       where bno=#{bno}
+   </select>
+   
+</mapper>
+
+
+
+
+

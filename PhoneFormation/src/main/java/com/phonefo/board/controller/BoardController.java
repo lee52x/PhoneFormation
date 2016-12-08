@@ -57,9 +57,9 @@ public class BoardController {
 			HttpSession session) throws Exception {
 
 		board.setWriter((String) session.getAttribute("userid"));
+		///여기서부터
 		board.setImage("");
 		String savedName = file.getOriginalFilename();
-		
 		if (savedName != "") {
 			String uploadpath = request.getSession().getServletContext().getRealPath("/resources/upload");
 			File target = new File(uploadpath, savedName);
@@ -67,18 +67,31 @@ public class BoardController {
 
 			board.setImage("/resources/upload/" + savedName);
 		}
+		//여기까지
 		service.insert(board);
 
 		return "redirect:/phonefo/boardlist?tno=" + board.getTno();
 	}
 
 	@RequestMapping("/boardpage")
-	public String read(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
-		System.out.println("bno=" + bno);
+	public String read(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model,HttpSession session) throws Exception {
+		int nextbno = service.select_nextbno(bno);
+		int prevbno = service.select_prevbno(bno);
+		if(nextbno!=0){
+			model.addAttribute("nextbno", nextbno);
+			model.addAttribute("nexttitle", service.select_title(nextbno));
+		}
+		if(prevbno!=0){
+			model.addAttribute("prevbno", prevbno);
+			model.addAttribute("prevtitle", service.select_title(prevbno));
+		}
+
 		service.update_viewcnt(bno);
 		BoardVO board = service.selectpage(bno);
+
 		model.addAttribute("body", "./board/boardpage.jsp");
 		model.addAttribute(board);
+
 		return "mainView";
 	}
 
@@ -107,8 +120,17 @@ public class BoardController {
 			board.setImage("/resources/upload/" + savedName);
 		}
 		attr.addAttribute("bno", board.getBno());
-		attr.addAttribute("cri", cri);
+		attr.addAttribute("tno", cri.getTno());
+		attr.addAttribute("page", cri.getPage());
+		attr.addAttribute("perPageNum", cri.getPerPageNum());
+		attr.addAttribute("searchType", cri.getSearchType());
+		attr.addAttribute("keyword", cri.getKeyword());
+		System.out.println(board.getBno());
+		System.out.println(board.getContent());
+		System.out.println(board.getTitle());
+		System.out.println(board.getImage());
 		service.update(board);
+		System.out.println("dd");
 		return "redirect:/phonefo/boardpage";
 	}
 
