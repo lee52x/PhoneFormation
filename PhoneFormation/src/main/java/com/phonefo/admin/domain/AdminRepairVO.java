@@ -2,7 +2,7 @@ package com.phonefo.admin.domain;
 
 public class AdminRepairVO {
 
-	private int name;
+	private String name;
 	private int glass;
 	private int backcover;
 	private int crome;
@@ -18,10 +18,11 @@ public class AdminRepairVO {
 	private int sensor;
 	private int afterimage;
 	private int lcd;
-	public int getName() {
+	
+	public String getName() {
 		return name;
 	}
-	public void setName(int name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 	public int getGlass() {
@@ -113,6 +114,13 @@ public class AdminRepairVO {
 	}
 	public void setLcd(int lcd) {
 		this.lcd = lcd;
+	}
+	@Override
+	public String toString() {
+		return "AdminRepairVO [name=" + name + ", glass=" + glass + ", backcover=" + backcover + ", crome=" + crome
+				+ ", pan=" + pan + ", scratch=" + scratch + ", powerbutton=" + powerbutton + ", homebutton="
+				+ homebutton + ", sound=" + sound + ", camera=" + camera + ", wifi=" + wifi + ", charge=" + charge
+				+ ", battery=" + battery + ", sensor=" + sensor + ", afterimage=" + afterimage + ", lcd=" + lcd + "]";
 	}
 	
 	

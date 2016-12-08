@@ -10,6 +10,7 @@ import com.phonefo.admin.domain.AdminB_MemberVO;
 import com.phonefo.admin.domain.AdminCntVO;
 import com.phonefo.admin.domain.AdminMemberVO;
 import com.phonefo.admin.domain.AdminOnoBoardVO;
+import com.phonefo.admin.domain.AdminRepairVO;
 import com.phonefo.admin.domain.AdminRouteVO;
 import com.phonefo.admin.domain.SearchCriteria;
 import com.phonefo.admin.persistence.AdminDAO;
@@ -172,6 +173,12 @@ public class AdminServiceImpl implements AdminService {
 
 		
 		return vo;
+	}
+
+	@Override
+	public void repairInsert(AdminRepairVO vo) throws Exception {
+		dao.repairInsert(vo);
+		
 	}
 
 }

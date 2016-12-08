@@ -73,7 +73,8 @@ insert into ph_member
 insert into ph_business
 		values('123-12-23123','코스타','이단형','가산');
 
-
+  insert into ph_repair values('Galaxy S7 edge',1000,1000,1000,1000,1000,100,1000
+		,1000,100,1000,2222,2222,555,5555,77777);
 
 
 insert into ph_member values('qweqwe3','123123','papapap',sysdate,'1992/10/10','남자','qweas@qwerr.com','010-1234-4567','3','1');

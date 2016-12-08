@@ -134,6 +134,13 @@
   select repair_price from ph_repairBoard where state=3
   </select>
   
+  <insert id="repairInsert" parameterType="adminRepair">
+
+  insert into ph_repair values(#{name},#{glass},#{backcover},#{crome},#{pan},#{scratch},#{powerbutton},#{homebutton}
+		,#{sound},#{camera},#{wifi},#{charge},#{battery},#{sensor},#{afterimage},#{lcd})
+		
+
+  </insert>
   
 </mapper>
 

@@ -12,6 +12,7 @@ import com.phonefo.admin.domain.AdminB_MemberVO;
 import com.phonefo.admin.domain.AdminCntVO;
 import com.phonefo.admin.domain.AdminMemberVO;
 import com.phonefo.admin.domain.AdminOnoBoardVO;
+import com.phonefo.admin.domain.AdminRepairVO;
 import com.phonefo.admin.domain.AdminRouteVO;
 import com.phonefo.admin.domain.SearchCriteria;
 
@@ -100,6 +101,13 @@ public class AdminDAOImpl implements AdminDAO{
 	public List<AdminCntVO> repairPrice() throws Exception {
 		
 		return sqlSession.selectList("admin.repairPrice");
+	}
+
+	@Override//수리견적 입력
+	public void repairInsert(AdminRepairVO vo) throws Exception {
+		
+		sqlSession.insert("admin.repairInsert",vo);
+		
 	}
 
 

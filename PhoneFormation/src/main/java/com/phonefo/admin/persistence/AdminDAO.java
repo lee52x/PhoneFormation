@@ -6,6 +6,7 @@ import com.phonefo.admin.domain.AdminB_MemberVO;
 import com.phonefo.admin.domain.AdminCntVO;
 import com.phonefo.admin.domain.AdminMemberVO;
 import com.phonefo.admin.domain.AdminOnoBoardVO;
+import com.phonefo.admin.domain.AdminRepairVO;
 import com.phonefo.admin.domain.AdminRouteVO;
 import com.phonefo.admin.domain.SearchCriteria;
 
@@ -53,8 +54,8 @@ public interface AdminDAO {
 	   //수리 총금액 카운트
 	   public List<AdminCntVO> repairPrice()throws Exception;
 	   
-	   
-	   
+	   //수리견적 입력
+	   public void repairInsert(AdminRepairVO vo)throws Exception;
 	   
 	   
 	   

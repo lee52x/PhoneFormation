@@ -108,11 +108,21 @@ public class AdminController {
 			return "mainView";
 		}
 		
-		@RequestMapping("/adminRepair")
-		public String adminRepair(Model model,AdminRepairVO vo)throws Exception{
-	
+		@RequestMapping(value="/adminRepairInsert", method=RequestMethod.GET)
+		public String adminRepairGET(Model model,AdminRepairVO vo)throws Exception{
+
 			
-			model.addAttribute("body", "./admin/adminRepair.jsp");
+			model.addAttribute("body", "./admin/adminRepairInsert.jsp");
+			
+			return "mainView";
+		}
+		
+		@RequestMapping(value="/adminRepairInsert" ,method=RequestMethod.POST)
+		public String adminRepairPOST(Model model,AdminRepairVO vo)throws Exception{
+			
+			service.repairInsert(vo);
+			
+			model.addAttribute("body", "./admin/adminRepairInsert.jsp");
 			
 			return "mainView";
 		}
