@@ -143,6 +143,7 @@ function callTable(no,userid,username,tel,repair_price,request_message,bank_name
 		
 		$('[name=noPurchase]').click(function() {//구매신청한 업체 리스트
 			
+	
 			var searchNo = $(this).attr('id');
 
 			$.ajax({

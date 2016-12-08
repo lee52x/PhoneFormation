@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.phonefo.admin.domain.AdminOnoBoardVO;
+import com.phonefo.admin.domain.AdminRepairVO;
 import com.phonefo.admin.domain.PageMaker;
 import com.phonefo.admin.domain.SearchCriteria;
 import com.phonefo.admin.service.AdminService;
@@ -103,6 +104,15 @@ public class AdminController {
 			
 			model.addAttribute("object",service.allStats());
 			model.addAttribute("body", "./admin/adminCntInfo.jsp");
+			
+			return "mainView";
+		}
+		
+		@RequestMapping("/adminRepair")
+		public String adminRepair(Model model,AdminRepairVO vo)throws Exception{
+	
+			
+			model.addAttribute("body", "./admin/adminRepair.jsp");
 			
 			return "mainView";
 		}
