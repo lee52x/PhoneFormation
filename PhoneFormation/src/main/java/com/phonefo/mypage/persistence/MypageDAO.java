@@ -73,4 +73,7 @@ public interface MypageDAO {
 	//기업 중고견적 구매 신청 리스트
 	public List<MypageRepairVO> myPageB_RepairList(HttpSession session)throws Exception;
 
+	public void insertCompleteId(String userid)throws Exception;
+
+
 }

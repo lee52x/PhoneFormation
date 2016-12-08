@@ -125,14 +125,27 @@ $(document).ready(function(){
 	</tr>
 	<tr>
 				<th><span>휴대폰</span></th>
+	<c:if test="${pvo==null }">
+		<td colspan="3">
+			010-****-****
+		</td>
+	</c:if>
+	<c:if test="${pvo!=null }">
 		<td colspan="3">
 			${vo.tel }
 		</td>
+	</c:if>
 			</tr>
 	<tr>
 		<th><span>입금받을 계좌번호</span></th>
+		<c:if test="${pvo==null }">
 		<td colspan="3">
-			은행명 :  ${vo.bank_name }　　/　　예금주 : ${vo.username }　　/　　계좌번호 : ${vo.account_number }		</td>
+			은행명 :  ${vo.bank_name }　　/　　예금주 : ${vo.username }　　/　　계좌번호 : **********		</td>
+		</c:if>
+		<c:if test="${pvo!=null}">
+		<td colspan="3">
+			은행명 :  ${vo.bank_name }　　/　　예금주 : ${vo.username }　　/　　계좌번호 : ${vo.account_number}		</td>
+		</c:if>
 	</tr>
 	<tr>
 		<th class="last"><span>기타 요청사항</span></th>

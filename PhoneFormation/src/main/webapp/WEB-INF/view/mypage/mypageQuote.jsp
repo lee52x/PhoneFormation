@@ -292,7 +292,7 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 		                    "<th>글번호</th>"+
 		                    "<th>아이디</th>"+
 		                    "<th>구매번호</th>"+
-		                    "<th>전화번호</th>"+
+		                    "<th>전화번호</th>"+	
 		                    "<th>사업자번호</th>"+
 		                    "<th>회사명</th>"+
 		                    "<th>주소</th>"+
@@ -342,6 +342,7 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 		location.href='/phonefo/mypageQuote';
 		}
 	}
+
 	
 	var sellCancel=function(no){//거래취소
 		var selectCancel = confirm("거래를 취소하시겠습니까? 등록한 글이 삭제됩니다.");

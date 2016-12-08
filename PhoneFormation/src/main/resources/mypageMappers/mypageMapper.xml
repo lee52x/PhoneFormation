@@ -195,6 +195,12 @@
 	
 	</select>
 	
+	
+	<!-- purchase_request에  completeId값 변경하기 -->
+	<update id="insertCompleteId">
+		update purchase_request set completeId=#{completeId}
+	
+	</update>
 
 
 

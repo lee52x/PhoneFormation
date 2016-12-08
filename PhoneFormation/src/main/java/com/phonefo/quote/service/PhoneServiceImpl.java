@@ -103,6 +103,11 @@ public class PhoneServiceImpl implements PhoneService{
 		
 	}
 
+	@Override
+	public PurchaseVO selectCompleteId(int no) throws Exception {
+		return dao.selectCompleteId(no);
+	}
+
 
 	
 	

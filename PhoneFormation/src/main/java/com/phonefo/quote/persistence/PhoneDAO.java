@@ -37,4 +37,6 @@ public interface PhoneDAO {
 	public void stateUpdate(PurchaseVO vo)throws Exception;
 
 	public void repair_request(PurchaseRepairVO vo)throws Exception;
+
+	public PurchaseVO selectCompleteId(int no)throws Exception;
 }

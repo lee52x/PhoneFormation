@@ -118,6 +118,11 @@ public class PhoneDAOImpl implements PhoneDAO{
 		sql.update("quote.stateUpdate2",vo);
 		
 	}
+
+	@Override
+	public PurchaseVO selectCompleteId(int no) throws Exception {
+		return sql.selectOne("quote.selectCompleteId",no);
+	}
 	
 
 

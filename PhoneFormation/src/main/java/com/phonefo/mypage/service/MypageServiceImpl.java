@@ -137,6 +137,12 @@ public class MypageServiceImpl implements MypageService {
 		return dao.myPageB_RepairList(session);
 	}
 
+	@Override	// 기업을 승락했을 때
+	public void insertCompleteId(String userid) throws Exception {
+			dao.insertCompleteId(userid);
+		
+	}
+
 
 
 

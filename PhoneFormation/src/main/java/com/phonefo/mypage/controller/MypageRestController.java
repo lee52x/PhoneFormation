@@ -41,6 +41,9 @@ public class MypageRestController {
 		map.put("no", Integer.toString(no));
 		map.put("userid", userid);
 		int result = service.mypagePurchaseChoose(map);
+		service.insertCompleteId(userid);
+		System.out.println("Àß½ÇÇàµÌ´Ï?");
+		
 
 		return result;
 	}

@@ -21,5 +21,6 @@ public interface PhoneService {
 	public List<RepairVO> listRepair()throws Exception;
 	public RepairVO repairConfirm(int no)throws Exception;
 	public void requestRepair(PurchaseRepairVO vo)throws Exception;
+	public PurchaseVO selectCompleteId(int no)throws Exception;
 
 }

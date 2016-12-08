@@ -163,5 +163,11 @@ public class MypageDAOImpl implements MypageDAO {
 		return sqlSession.selectList("mypage.mypageB_RepairInfo",session.getAttribute("userid"));
 	}
 
+	@Override
+	public void insertCompleteId(String userid) throws Exception {
+		// TODO Auto-generated method stub
+		sqlSession.update("mypage.insertCompleteId",userid);
+	}
+
 
 }

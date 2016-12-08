@@ -7,7 +7,7 @@ companyName varchar(50),
 leaderName varchar(50),
 address varchar(50)
 );
-
+select*From ph_member;
 drop table ph_member;
 --회원 테이블--
 create table ph_member(
@@ -82,8 +82,12 @@ drop table purchase_request;
 		purchaseNum number(2) primary key,
 		userid varchar2(50),  
 		no number(10),
-		state number(5)
+		state number(5),
+		completeId varchar2(50) default '없음'
 	);
+
+	select *from purchase_request
+	select*from ph_quoteBoard 
 	
 ALTER TABLE purchase_request ADD constraint purchase_requestforeign_fk foreign key(no) references ph_quoteBoard(no) on delete cascade;
 --ALTER TABLE purchase_request ADD constraint purchase_requestforeign_fk foreign key(no) references ph_quoteBoard(no);
@@ -191,7 +195,7 @@ create sequence ph_repairBoard_seq
  			
  			select*from ph_business_member;
  			
- 			
+	
  			
  			
  			

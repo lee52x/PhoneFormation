@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 import com.phonefo.main.domain.MemberVO;
+import com.phonefo.quote.domain.PurchaseVO;
 import com.phonefo.quote.domain.QuoteVO;
 import com.phonefo.quote.domain.RepairVO;
 import com.phonefo.quote.service.PhoneService;
@@ -21,6 +22,7 @@ import com.phonefo.quote.service.PhoneService;
 public class QuoteController {
 	
 	
+	private static final Object NullPointerException = null;
 	@Inject
 	PhoneService service;
 
@@ -71,14 +73,20 @@ public class QuoteController {
 	//글보기
 	@RequestMapping("/popup")
 	public String popup(Model model,int no,HttpSession session)throws Exception{
-		QuoteVO vo = service.quoteConfirm(no);
-		model.addAttribute("vo", vo);
-		model.addAttribute("no",no);
+		QuoteVO vo = service.quoteConfirm(no);//글 가져오기
+		
+		if(vo.getState()==2 || vo.getState()==3){
+			PurchaseVO pvo=service.selectCompleteId(no);
+			if(pvo.getUserid().equals(session.getAttribute("userid")))
+				model.addAttribute("pvo",pvo);
+			
+		}
+		
 		String userid=(String)session.getAttribute("userid");
 		System.out.println("세션아이디:"+userid);
-
-		
-		
+		System.out.println(vo.getAccount_number());
+		model.addAttribute("vo", vo);
+		model.addAttribute("no",no);
 		return "./quote/popup";
 	}
 	

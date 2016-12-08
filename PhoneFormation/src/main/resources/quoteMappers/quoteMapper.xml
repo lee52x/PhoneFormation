@@ -35,12 +35,11 @@
  	</select>
  	
  	<select id="quoteConfirm" resultType="com.phonefo.quote.domain.QuoteVO">
- 		select *from ph_quoteBoard 
- 		where no=#{no}
+		select*from ph_quoteBoard where no=#{no}
  	</select>
 
- 	<insert id="purchase_request">
- 		insert into purchase_request values(purchase_request_seq.nextval,#{userid},#{no},1)
+ 	<insert id="purchase_request"><!-- 없음있는곳마지막 -->
+ 		insert into purchase_request values(purchase_request_seq.nextval,#{userid},#{no},1,'없음'ㄴㄴ)
  	</insert>
  	
  	<select id="repairPrice" resultType="com.phonefo.quote.domain.RepairVO">
@@ -75,6 +74,10 @@
  	<update id="stateUpdate2">
  		update ph_repairBoard set state=1 where no=#{no}
  	</update>
+ 	
+ 	<select id="selectCompleteId" resultType="com.phonefo.quote.domain.PurchaseVO"><!-- 기업이 신청후 사용자가 승락한 아이디 가져오기 -->
+ 		select *from purchase_request where no=#{no}
+ 	</select>
 
 
 </mapper>
