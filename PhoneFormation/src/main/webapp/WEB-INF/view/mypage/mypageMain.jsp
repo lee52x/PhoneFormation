@@ -26,16 +26,18 @@
                 <div class="col-md-4">
                     
                     <!-- Classic Heading -->
-                    <h4 class="classic-title"><span>${object.userid }님</span></h4>
+                    <h4 class="classic-title"><span>${object.username }님</span></h4>
                     
                     <!-- Divider -->
                     <div class="hr1 mb-10"></div>
 
                     <!-- Info - Icons List -->
                     <ul class="icons-list">
+                        <li> <strong>아이디 :</strong>${object.userid }</li>
                         <li> <strong>이름 :</strong>${object.username }</li>
-                        <li> <strong>이메일 :</strong>${object.email }</li>
+                        <li> <strong>생일 :</strong>${object.birth}</li>
                         <li> <strong>휴대전화 :</strong>${object.tel }</li>
+                        <li> <strong>이메일 :</strong>${object.email }</li>
                         <li> <strong>성별 :</strong>${object.gender }</li>
                         <li> <strong>가입일자 :</strong><fmt:formatDate pattern="yyyy-MM-dd"
 										value="${object.rdate }" /></li>
