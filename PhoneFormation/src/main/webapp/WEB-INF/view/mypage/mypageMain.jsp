@@ -7,6 +7,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+
+</style>
 </head>
 <body>
 <div class="container">
@@ -23,25 +26,48 @@
                 <div class="col-md-8">
  
                    
-                <div class="col-md-4">
+                <div class="col-md-11 col-sm-offset-3" style="border: 1px solid black;">
                     
                     <!-- Classic Heading -->
-                    <h4 class="classic-title"><span>${object.username }님</span></h4>
+                    <h4 class="classic-title"><span>내정보 보기</span></h4>
                     
                     <!-- Divider -->
                     <div class="hr1 mb-10"></div>
 
                     <!-- Info - Icons List -->
-                    <ul class="icons-list">
-                        <li> <strong>아이디 :</strong>${object.userid }</li>
-                        <li> <strong>이름 :</strong>${object.username }</li>
-                        <li> <strong>생일 :</strong>${object.birth}</li>
-                        <li> <strong>휴대전화 :</strong>${object.tel }</li>
-                        <li> <strong>이메일 :</strong>${object.email }</li>
-                        <li> <strong>성별 :</strong>${object.gender }</li>
-                        <li> <strong>가입일자 :</strong><fmt:formatDate pattern="yyyy-MM-dd"
+                    <div style="width: 20%; float: left;margin-bottom: 5%;">
+                    <ul class="icons-list" style="font-size: 15px; margin-left: 15%; margin-top: 4%; text-align: center;">
+                        <li> <strong>아이디</strong></li><br>
+                        <li> <strong>이 름</strong></li><br>
+                        <li> <strong>성 별</strong></li><br>
+                        <li> <strong>생년월일</strong></li><br>
+                    </ul>
+                    </div>
+                    <div style="width: 30%; float: left;margin-bottom: 5%;">
+                    <ul class="icons-list" style="font-size: 15px; margin-left: 10%; margin-top: 4%;">
+                        <li>${object.userid }</li><br>
+                        <li>${object.username }</li><br>
+                        <li>${object.gender }</li><br>
+                        <li>${object.birth}</li><br>
+                    </ul>
+                    </div>
+                    <div style="width: 20%; float: left; left;margin-bottom: 5%;"">
+                    <ul class="icons-list" style="font-size: 15px; text-align: center;">
+                    <br><br><br>
+                        <li> <strong>휴대전화</strong></li><br>
+                        <li> <strong>이메일</strong></li><br>
+                        <li> <strong>가입일자</strong></li>
+                    </ul>
+                    </div>
+                    <div style="width: 30%; float: left; left;margin-bottom: 5%;"">
+                    <ul class="icons-list" style="font-size: 15px;">
+                    <br><br><br>
+                        <li>${object.tel }</li><br>
+                        <li>${object.email }</li><br>
+                        <li><fmt:formatDate pattern="yyyy-MM-dd"
 										value="${object.rdate }" /></li>
                     </ul>
+                    </div>
                     </div>
                 </div>
             </div>

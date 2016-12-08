@@ -140,15 +140,15 @@ function check() {
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-7">
-                                    <div style="float: left;margin-top: 2%; width: 25%;"><label for="userpwd">비밀번호<span class="required">*</span></label></div>
+                                <div class="col-md-7"  style="margin-bottom: 1%;">
+                                    <div style="float: left; width: 25%;"><label for="userpwd">비밀번호<span class="required">*</span></label></div>
                                     <div style="float: left; margin-left: 10%;"><input id="userpwd" name="userpwd" type="password" maxlength="20"  /></div>
                                 </div>
                                 </div>
                                   <div id="checkPwd"></div>
                             <div class="row">
-                                <div class="col-md-7">
-                                     <div style="float: left;margin-top: 2%; width: 25%;"><label for="userpwd2">비밀번호 확인<span class="required">*</span></label></div>
+                                <div class="col-md-7" style="margin-bottom: 1%;">
+                                     <div style="float: left; width: 25%;"><label for="userpwd2">비밀번호 확인<span class="required">*</span></label></div>
                                     <div style="float: left; margin-left: 10%;"><input id="userpwd2" name="userpwd2" type="password"  maxlength="20"  /></div>
                                 </div>
                                 </div>
