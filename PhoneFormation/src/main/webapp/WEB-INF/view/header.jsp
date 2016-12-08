@@ -183,7 +183,7 @@
 								<li><a href="#tab-5" data-toggle="tab" class="lg" id="lg">LG전자</a></li>
 								<li><a href="#tab-6" data-toggle="tab" class="apple" id="apple">애플</a></li>
 							</ul></li>
-						<li><a href="about.html">견적</a>
+						<li><a href="/phonefo/main">견적</a>
 							<ul class="dropdown">
 								<li><a href="/phonefo/secondHand">중고견적</a></li>
 								<li><a href="/phonefo/listBoard">중고게시판</a></li>
