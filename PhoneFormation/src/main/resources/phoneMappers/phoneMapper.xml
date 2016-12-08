@@ -73,7 +73,7 @@
 		where no=#{no}
 	</select>
 	<select id="select_phone" resultType="phone">
-		select name, image, manufacture
+		select no, name, image, manufacture
 		from ph_phone 
 		where no=#{no}
 	</select>
