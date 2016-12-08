@@ -40,19 +40,20 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#purchase_request').click(function(){
-		alert($('#userid').val() );
-		alert($('#no').val() );
-		
+	
+	$('#purchase_request').click(function(){		
+		var select=confirm('해당상품에 매입신청 하시겠습니까?');
+		if(select==true){
 		$.ajax({
 			url:"/phonefo/purchase_request",
 			data:{no:$('#no').val(),userid:$('#userid').val()},
 			success:function(){
-				alert('신청이 완료되었습니다.');
+				alert('신청이 완료되었습니다. 신청내역은 마이페이지에서 확인할 수 있습니다.');
 				window.close();
 			}
 		});
-
+		}
+		
 	});
 });
 
@@ -140,10 +141,12 @@ $(document).ready(function(){
 </table>
 <br><br>
 <c:if test="${member.equals('business')}">
+
 <center>
 	<button type="button" class="btn_counsel" id="purchase_request">매입신청</button>
 </center>	
 </c:if>
+
 </body>
 
 

@@ -41,9 +41,8 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$('#purchase_request').click(function(){
-		alert($('#userid').val() );
-		alert($('#no').val() );
-		
+		var select=confirm('해당상품에 매입신청 하시겠습니까?');
+		if(select==true){		
 		$.ajax({
 			url:"/phonefo/repair_request",
 			data:{no:$('#no').val(),userid:$('#userid').val()},
@@ -52,7 +51,7 @@ $(document).ready(function(){
 				window.close();
 			}
 		});
-
+		}
 	});
 });
 

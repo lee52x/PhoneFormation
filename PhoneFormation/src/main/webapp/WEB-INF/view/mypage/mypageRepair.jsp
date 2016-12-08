@@ -275,25 +275,22 @@ function callTable(no,userid,username,tel,repair_price,request_message,bank_name
 	});
 	
 	var sellSelect=function(no,userid){//판매할 업체 선택
-
+		var select=confirm('해당 업체를 선택하시겠습니까?');
+	if(select==true){
 		$.ajax({
 			url : "/phonefo/purchaseRepairChoose",
 			data : {"no" : no,"userid":userid},
 			type : "POST",
 			dataType: 'json',
 			success :function(){
-			
-				 alert("선택이 완료되었습니다.");
 				$("#popup2").fadeOut(10);
-
 				$("#purchasetable").empty();
 				content = null;
-				
-			},
-            error:function(e) {
-		    	alert(e.responseText);
 			}
-		}); 
+		});
+		alert("선택이 완료되었습니다.");
+		location.href='/phonefo/mypageRepair';
+	}
 	}
 	var sellSelectEnd=function(no,userid){//거래완료
 
