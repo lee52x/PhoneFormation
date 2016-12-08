@@ -214,6 +214,7 @@
                 </div>
              
                 <div class="hr5 margin-40"></div>
+                <div style="width: 900px; margin-left: 27%;">
                 <h3 style="font: bold;">로그인이 필요한 서비스입니다.</h3>
                 PhoneFormation 회원이 아니면 지금, <font color="blue">회원가입</font>을 해주세요.<br><br>
 				
@@ -280,7 +281,7 @@
                     </ul>
 
 	    	</div>
-
+	    	
 
 
 
@@ -347,7 +348,8 @@
                
                </div>
             </div>
-   
+            </div>
+   			
         <!-- End content -->
 
 

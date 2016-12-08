@@ -310,7 +310,7 @@
 
 	<!-- Start content -->
 	<div id="content">
-		<div class="container">
+		<div class="container" style="width: 900px;">
 			<div class="big-title text-center">
 				<h1>개인회원가입</h1>
 				<p class="title-desc">아래의 내용에 따라 기입해 주시기 바랍니다.</p>
@@ -626,9 +626,9 @@
 									<br>
 									<br>
 									<br>
-									<center>
+									<div style="margin-left: 20%;">
 									<button type="button" onclick="check()"><img alt="" src="/resources/images/join/join5.JPG"></button> 
-									</center>
+									</div>
 								</div>
 								<!-- 회원가입폼 끝 //-->
 							</form>
