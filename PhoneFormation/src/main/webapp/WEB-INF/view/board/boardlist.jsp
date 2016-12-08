@@ -12,23 +12,29 @@
 <link rel="stylesheet" href="http://s1.daumcdn.net/editor/releases/7.4.33-3/css/content_view.css" type="text/css" charset="utf-8"/>
 
 <script type="text/javascript">
-	$(document).ready(
-			function() {
-				$('#searchBtn').on(
-						"click",
-						function(event) {
-							self.location = "boardlist"
-									+ '${pageMaker.makeQuery(1)}'
-									+ "&searchType="
-									+ $("select option:selected").val()
-									+ "&keyword=" + $('#keywordInput').val()
-									+ "&tno=" + $('#tno').val();
-						});
-			});
+$(document).ready(function(){
+	$('#searchBtn').on("click",	function(event) {
+		self.location = "boardlist"
+			+ '${pageMaker.makeQuery(1)}'
+			+ "&searchType="
+			+ $("select option:selected").val()
+			+ "&keyword=" + $('#keywordInput').val()
+			+ "&tno=" + $('#tno').val();
+	});
+	$(".btn_icon_write").on("click", function(){
+		      var formObj = $("form[role='iniputform']");
+		      formObj.submit();
+		   });
+});
 </script>
 
 </head>
 <body>
+	<form role="iniputform" action="boardinput" method="get">
+		<input type='hidden' id='tno' name='tno' value="${cri.tno}">
+		<input type='hidden' name='page' value="${cri.page}">
+		<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
+	</form>
 	<center>
 		<div class="container">
 			<div id="primaryContent">
@@ -123,19 +129,19 @@
 								<div class="search_box_wrap search_box_bottom">
 									<div class="search_box_floated_elem searchBox_bbsList_bottom">
 
-										<select id="item" name="item" class="inp"
-											onchange="checkHeadCont(this); return false;">
-											<option value="preview">게시글+댓글</option>
-											<option disabled="">----------</option>
-											<option value="subject">제목+내용</option>
-											<option value="onlytitle">글제목</option>
-											<option value="writer">글쓴이</option>
-											<option value="no">글번호</option>
-											<option value="head">말머리</option>
-											<option value="filename">첨부파일명</option>
-											<option disabled="">----------</option>
-											<option value="cmtContent">댓글내용</option>
-											<option value="cmtNicknameNgram">댓글작성자</option>
+										<select id="item" name="searchType"  class="inp">
+											<option value="n"
+												<c:out value="${cri.searchType == null?'selected':''}"/>>
+												전체보기</option>
+											<option value="t"
+												<c:out value="${cri.searchType eq 't'?'selected':''}"/>>
+												Title</option>
+											<option value="c"
+												<c:out value="${cri.searchType eq 'c'?'selected':''}"/>>
+												Content</option>
+											<option value="w"
+												<c:out value="${cri.searchType eq 'w'?'selected':''}"/>>
+												Writer</option>
 										</select> <a href="#" class="btn_search" id="suggest_search0"
 											onclick="SearchUtil.searchBBS(this); return false"><img
 											src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif"

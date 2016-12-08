@@ -219,7 +219,12 @@ $(document).ready(function(){
 		   $('#contents').focus();
 		   $('#updateBtn').attr('style', "display: none;");
 		   $('#removeBtn').attr('style', "display: none;");
-		   
+		   $('#inputBtn').attr('style',"display:none");
+		   $('.list_paging').attr('style', "display: none;");
+		   $('#comment_wrap').attr('style', "display: none;");
+		   $('#commentDiv-127961').attr('style', "display: none;");
+		   $('.prenext_paging').attr('style', "display: none;");
+
 		   $('#submitBtn').attr('style', "display: block;");
 		   $('#cancleBtn').attr('style', "display: block;");
 	   });
@@ -270,14 +275,6 @@ $(document).ready(function(){
 				<span class="btn_bg bt03"></span>
 				<span class="btn_txt bt03 w23">삭제</span>
 			</a>
-			<a href="javascript:;" class="btn" id="submitBtn" style="display:none">
-				<span class="btn_bg bt03"></span>
-				<span class="btn_txt bt03 w03">완료</span>
-			</a>
-			<a href="javascript:;" class="btn" id="cancleBtn" style="display:none">
-				<span class="btn_bg bt03"></span>
-				<span class="btn_txt bt03 w23">취소</span>
-			</a>	
 
 			<span class="list_paging">
 			<a href="javascript:;" id="listBtn">목록</a>
@@ -317,13 +314,6 @@ $(document).ready(function(){
         	<input type="file" id="imgInp" name="file" accept=".gif, .jpg, .png" style="display: none"onchange="javascript: document.getElementById('filename').value = this.value"> 
         </div>
 		<!-- end article_writer -->
-
-		<style type="text/css">
-			.bbs_contents p {
-			margin: 0px;
-			}
-		</style>
-
 		<div id="bbs_contents" class="bbs_contents">
 			<div class="bbs_contents_inbox">
 				<div id="user_contents" name="user_contents"
@@ -370,7 +360,14 @@ $(document).ready(function(){
 		<!-- end bbs_contents -->
 
 		<!-- 모바일 작성글인 경우 카페 앱 소개 링크  -->
-
+				<a href="javascript:;" class="btn" id="submitBtn" style="display:none">
+				<span class="btn_bg bt03"></span>
+				<span class="btn_txt bt03 w03">완료</span>
+			</a>
+			<a href="javascript:;" class="btn" id="cancleBtn" style="display:none">
+				<span class="btn_bg bt03"></span>
+				<span class="btn_txt bt03 w23">취소</span>
+			</a>	
 		<div class="comment_scrap" id="comment_wrap">
 			<p class="comment_view fl">
 				<span class="comment_cnt" id="comment_cnt">
@@ -409,8 +406,8 @@ $(document).ready(function(){
 										</td>
 										<td class="longtail_editor_btn">
 											<a href="#"	onclick="return false;" class="btn submit_content">
-												<span class="btn_bg bg01"></span>
-												<span class="btn_txt bt01 b" id="replyAddBtn">등록</span>
+												<span class="btn_bg bg01" style="width:10%"></span>
+												<span class="btn_txt bt01 b" id="replyAddBtn">등록&emsp;</span>
 											</a>
 										</td>
 									</tr>
