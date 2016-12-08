@@ -111,7 +111,7 @@ function popup(no) {
 		
 		
 	
-		  <c:if test="${member eq 'business'}">
+	
 			<c:choose>
 						
 									<c:when test="${vo.state eq '0'}">
@@ -130,7 +130,7 @@ function popup(no) {
 										<td>거래완료</td>
 									</c:otherwise>
 			</c:choose>
-			</c:if>
+	
 			
 
 

@@ -126,7 +126,7 @@ function popup(no) {
 										<td><button  type="button" class="btn btn-primary" onclick="popup(${vo.no})">진행중</button></td>
 									</c:when>
 									<c:when test="${vo.state eq '3'}">
-										<td><button  type="button" class="btn btn-primary" onclick="popup(${vo.no})">완료</button></td>
+										<td><button  type="button" class="btn btn-primary" onclick="popup(${vo.no})" >완료</button></td>
 									</c:when>
 									<c:otherwise>
 										<td>거래완료</td>

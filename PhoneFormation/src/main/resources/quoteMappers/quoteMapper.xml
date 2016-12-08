@@ -57,7 +57,7 @@
  	
  	
  	<select id="listRepair" resultType="com.phonefo.quote.domain.RepairVO">
- 		select *from ph_repairBoard
+ 		select *from ph_repairBoard order by no desc
  	</select>
  	
  	<select id="repairConfirm" resultType="com.phonefo.quote.domain.RepairVO">

@@ -71,7 +71,6 @@ public class QuoteController {
 	//±Ûº¸±â
 	@RequestMapping("/popup")
 	public String popup(Model model,int no,HttpSession session)throws Exception{
-		System.out.println(no);
 		QuoteVO vo = service.quoteConfirm(no);
 		model.addAttribute("vo", vo);
 		model.addAttribute("no",no);

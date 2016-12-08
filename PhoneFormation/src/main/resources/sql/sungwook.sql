@@ -185,7 +185,7 @@ create sequence ph_repairBoard_seq
  			
  			
  			
- 			
+ 			select *from ph_repairBoard order by no desc
  			
  			
  			

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -120,7 +121,7 @@ $(document).ready(function(){
 			${vo.username }		</td>
 		<th><span>신청일</span></th>
 		<td>
-			${vo.rdate }		</td>
+			<fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${vo.rdate }" />		</td>
 	</tr>
 	<tr>
 				<th><span>휴대폰</span></th>
@@ -141,10 +142,11 @@ $(document).ready(function(){
 </table>
 <br><br>
 <c:if test="${member.equals('business')}">
-
+<c:if test="${vo.state==0 || vo.state==1}">
 <center>
 	<button type="button" class="btn_counsel" id="purchase_request">매입신청</button>
 </center>	
+</c:if>
 </c:if>
 
 </body>
