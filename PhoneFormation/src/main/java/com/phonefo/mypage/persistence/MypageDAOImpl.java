@@ -34,9 +34,9 @@ public class MypageDAOImpl implements MypageDAO {
 		String tel2= telsplit[1];
 		String tel3= telsplit[2];
 		
-		System.out.println(tel1);
-		System.out.println(tel2);
-		System.out.println(tel3);
+		//System.out.println(tel1);
+		//System.out.println(tel2);
+		//System.out.println(tel3);
 		
 		vo.setTel1(tel1);
 		vo.setTel2(tel2);
