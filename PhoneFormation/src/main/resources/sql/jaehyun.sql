@@ -16,6 +16,7 @@ create table ph_board(
    title varchar2(200) not null,
    content varchar2(1000) not null,
    image varchar2(200),
+   replycnt number default 0,
    writer varchar2(50) references ph_member(userid),
    regdate date default sysdate,
    viewcnt number default 0
