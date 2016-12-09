@@ -119,6 +119,10 @@
 }
 </style>
 <script type="text/javascript">   
+	var chkcnt=0;
+	var chkMaxcnt=2;
+	var no;
+	
    $(document).ready(function() {
       $('.ckbox').hide();
       $('.ckboxContent').hide();
@@ -138,10 +142,15 @@
          $("#tab_lg").attr('class','');   
          $("#tab_apple").attr('class','active');            
       }); 
+      $('.btn_allremove').click(function(){
+    		$("input:checkbox[name='box']").prop("checked",false);
+    		$(".ckboxContent1").children('div').first().remove();
+    		$(".ckboxContent1").children('div').last().remove();
+    		chkcnt=0;
+    		$('.ckb').removeAttr("disabled");
+    		$('.ckbox').hide();
+      });
    });
-	var chkcnt=0;
-	var chkMaxcnt=2;
-	var no;
    
    var checkBox = function(list_no){
 	   no = list_no;

@@ -26,7 +26,7 @@ create sequence ph_phone_seq
 --핸드폰 정보, 핸드폰명, 핸드폰사진, 제조사명, 출고일
 create table ph_phone(
 	no number primary key,
-	name varchar2(100),
+	name varchar2(100) unique,
 	image LONG not null,
 	manufacture varchar2(15) not null,
 	release_date varchar2(30) not null
@@ -379,7 +379,6 @@ insert into spec_display values (33,'138.78mm','2560x1440 (Quad HD IPS 디스플레�
 insert into spec_display values (34,'138.78mm','2560x1440 (Quad HD IPS 디스플레이)','null', 'null', 'null');
 
 --카메라
-drop table spec_camera;
 create table spec_camera(
 	no number primary key,
 	video_resoluation varchar2(50),
@@ -571,7 +570,6 @@ insert into spec_connect values (33,'null','null','예','null','null','null','예'
 insert into spec_connect values (34,'null','null','예','null','null','null','예','예','예','null','null');
 
 --운영체제, 기본사양, 센서, 외관사양
-drop table spec_specifications;
 create table spec_specifications(
 	no number primary key,
 	os varchar2(50),
@@ -795,12 +793,3 @@ insert into spec_service values (31,'null','null','예','null','null');
 insert into spec_service values (32,'null','null','예','null','null');
 insert into spec_service values (33,'null','null','예','null','null');
 insert into spec_service values (34,'null','null','예','null','null');
-
-
-
-
-	<select id="selectInfo" parameterType="String" resultType="phone">
-		select *
-		from ph_phone
-		where manufacture='samsung'
-		order by no desc
