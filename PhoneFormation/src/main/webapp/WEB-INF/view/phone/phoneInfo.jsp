@@ -87,7 +87,7 @@
    top : 250px;
 }
 
-.ckbox .ckboxContent .ckPhone1{
+.ckPhone1{
    background-color: white;
    position: fixed;
    top : 300px;
@@ -96,7 +96,7 @@
    height: 200px;   
 }
 
-.ckbox .ckboxContent .ckPhone2{
+.ckPhone2{
    background-color: orange;
    position: fixed;
    top : 300px;
@@ -119,13 +119,7 @@
 }
 </style>
 <script type="text/javascript">   
-/* $(function(){
-      $('.ckb').click(function(){
-         alert("value"+$(this).val());
-      });
-}); */
    $(document).ready(function() {
-      //alert('sdsd');
       $('.ckbox').hide();
       $('.ckboxContent').hide();
       
@@ -148,23 +142,28 @@
 	var chkcnt=0;
 	var chkMaxcnt=2;
 	var no;
-	var no2;
    
    var checkBox = function(list_no){
 	   no = list_no;
-	   var len = document.getElementsByName('box').length; //체크박스 총갯수
+	   var len = document.getElementsByName('box').length;
 	   var value = $('input:checkbox[id="'+no+'"]').val();
 	   
-	   if($("input:checkbox[name='box']").is(":checked") == true ){
-		    chkcnt=chkcnt+1;
-		    
+	   chkcnt=chkcnt+1;
+	   if(chkcnt==3){
+			for(var i=0; i<len; i++){
+				document.getElementsByName('box')[i].disabled=false;
+			}
+			chkfalse(no);
+			chkcnt=1;
+			return;
+		}else if($("input:checkbox[name='box']").is(":checked") == true ){
 		    $('.ckbox').show();
 			$('.ckboxContent').show();
-			$('.btn_click').click(function(){ //보이기 클릭시
-				$('.ckboxContent').show(); //내용 보이기
+			$('.btn_click').click(function(){
+				$('.ckboxContent').show();
 			});
-			$('.btn_close').click(function(){ //숨기기 클릭시
-				$('.ckboxContent').hide(); //내용 숨김		
+			$('.btn_close').click(function(){
+				$('.ckboxContent').hide();	
 			});
 			
 			$.ajax({
@@ -173,87 +172,71 @@
             		data:{'no':no},
            			success:function(result){
            			for(var i=0; i<result.length; i++){              			
-               			if(chkcnt==1){ //chkcnt가 1이면 ckPhone0 div에 뿌려줌
+               			if(chkcnt==1){
                				checkPhone =
                					"<div class='ckPhone"+(i+1)+"' value='"+result[i].no+"'>"+
                        			"<img src="+result[i].image+" width='10px' height='10px'>"+
                        			"<p>"+result[i].name+"</p>"+
                        			"<p>"+result[i].manufacture+"</p>"+
                        			"</div>";
-               			}else if(chkcnt==2){//chkcnt가 2이면 ckPhone1 div에 뿌려줌
+               			}else if(chkcnt==2){
                				checkPhone =
                       			"<div class='ckPhone"+(i+2)+"' value='"+result[i].no+"'>"+
                        			"<img src="+result[i].image+" width='10px' height='10px'>"+
                        			"<p>"+result[i].name+"</p>"+
                        			"<p>"+result[i].manufacture+"</p>"+
                        			"</div>";
-            			}else{
-            				chkfalse(no);
             			}
-               			$('.ckboxContent').append(checkPhone);
+               			$('.ckboxContent1').append(checkPhone);
             		}
            			}
 	       	});
-			if(chkcnt==3){ //두번째꺼 다클릭하고 한개 해제하려고할때 cnt값이 3으로 된다.
-				for(var i=0; i<len; i++){
-					document.getElementsByName('box')[i].disabled=false;
-				}
-				chkcnt = chkMaxcnt-1;
-				chkfalse(no);
-			}
 			if(chkcnt == chkMaxcnt){
 					alert('비교하기는 최대 2개까지만 가능합니다.');
 					for(var i=0; i<len; i++){
 						if(document.getElementsByName('box')[i].checked == false){
 							document.getElementsByName('box')[i].disabled=true;
 						}
-					}//for
+					}
 				chkcnt = chkMaxcnt;
 			}
+			return;
 	   }else{
 		   chkcnt = chkcnt-1;
 	 	   chkfalse(no);
-	 	   
 			if(chkcnt<=chkMaxcnt-1){
 				for(var i=0; i<len; i++){
 					if(document.getElementsByName('box')[i].disabled ==true){
 						document.getElementsByName('box')[i].disabled=false;
-					}//if
-				}//for
-			}//if
+					}
+				}
+			}
 		   if($(".ckb[name='box']:checked").length==0 ){
 				$('.ckbox').hide();
 			}
+			return;
 	   }
    }
    
    function chkfalse(no){
-	   //var div_id = document.getElementById(no.getAttribute('id'));
-		//alert(div_id);
-		//var test = $(".ckboxContent").children('div').getElementById(no).text();
-		//var test = $(".ckboxContent").children('div').text();
-		var parents = $(".ckboxContent").children('div').attr('value');
-		var first = $(".ckboxContent").children('div').first().attr('value');
-		var last = $(".ckboxContent").children('div').last().attr('value');
-		//alert(test.length);
-		//alert(test);
-		/* if(no == test){
-			$(this).remove();
-		} */
-		//alert(parents.length);
-		alert('1 )first : '+first +' / last : '+last);
+		var parents = $(".ckboxContent1").children('div').attr('value');
+		var first = $(".ckboxContent1").children('div').first().attr('value');
+		var first_len = $(".ckboxContent1").children('div').first();
+		var last = $(".ckboxContent1").children('div').last().attr('value');
+		var last_len = $(".ckboxContent1").children('div').last();
 		if(parents.length==2){
-			alert('2)no : '+no+' / first : '+first+' / last : '+last);
 			if(no==first){
-				alert('첫번째꺼삭제');
-				$(".ckboxContent").children('div').first().remove();
-				//$(".ckboxContent").children('div').last().remove();
-			}else if(no==last){//no==last
-				alert('두번째꺼 삭제');
-				//$(".ckboxContent").children('div').first().remove();
-				//$(".ckboxContent").children('div').last().remove(); 
+				if(first_len.length != 0){
+					$(".ckboxContent1").children('div').first().remove();
+					last_len.attr('class','ckPhone1');
+					return;
+				}
+				$(".ckboxContent1").children('div').first().remove();
+			}else{
+				$(".ckboxContent1").children('div').last().remove();
 			}
 		}
+		return;
    }
 </script>
 </head>
@@ -350,6 +333,9 @@
       비교하기
       <div class='ckboxContent'>
       내용이 나올 것이다!!
+      		<div class='ckboxContent1'>
+      		
+      		</div>
          <button class='btn_allremove'>모두 지우기</button>
       </div>
       <button class='btn_click'>보이기</button>
