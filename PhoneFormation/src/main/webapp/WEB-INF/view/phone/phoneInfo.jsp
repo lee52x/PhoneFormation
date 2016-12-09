@@ -107,11 +107,11 @@
 
 .ckbox .ckboxContent .btn_allremove{
    background-color: green;
-   position: fixed;
+   position: absolute;
    width: 50px;
    height: 50px;
-   top: 500px;
-   left: 600px;
+   top: 1px;
+   right: 1px;
 }
 
 .ckbox .button{
