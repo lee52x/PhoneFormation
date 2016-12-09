@@ -2894,7 +2894,7 @@ span.progress-bar-tooltip:after {
   margin: 9px 0; }
 
 .testimonial .testimonial_content_inner:before {
-  content: "“";
+  content: "��";
   position: absolute;
   left: 11px;
   top: 18px;
@@ -5002,7 +5002,6 @@ ul.footer-nav li a:hover {
 }
 
 .nivo-lightbox-theme-default .nivo-lightbox-image img {
-	background: #fff;
 	box-shadow: 0 0 8px rgba(0,0,0,0.5);
 	-o-box-shadow: 0 0 8px rgba(0,0,0,0.5);
 	-moz-box-shadow: 0 0 8px rgba(0,0,0,0.5);
