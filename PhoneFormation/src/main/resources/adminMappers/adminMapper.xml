@@ -57,7 +57,7 @@
    <!-- 비즈니스멤버검색카운트 -->
    <select id="b_memberSearchCount" resultType="int">
       select count(*)
-      from ph_business_member where businessNum is not NULL
+      from ph_member where businessNum is not NULL
        <if test="searchType != null">
 	    <if test="searchType == 'i'.toString() ">
 	        and userid like '%'||#{keyword}||'%'
