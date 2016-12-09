@@ -67,6 +67,7 @@ $(document).ready(function(){
 										<caption>${title}</caption>
 										<thead>
 											<tr>
+												<th>글번호</th>
 												<th>제목</th>
 												<th>글쓴이</th>
 												<th nowrap="nowrap">작성일</th>
@@ -77,6 +78,7 @@ $(document).ready(function(){
 										<tbody>
 										<c:forEach items="${list}" var="boardVO">
 											<tr>
+												<td class="num" nowrap="nowrap">${boardVO.bno}</td>
 												<td class="subject">
 													<a href='/phonefo/boardpage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}&tno=${cri.tno}'>
 														${boardVO.title}[0]</a>
@@ -103,22 +105,19 @@ $(document).ready(function(){
 										class="btn_txt bt03 w07 b"><span class="btn_icon_write">글쓰기</span></span></a>
 									<div class="paging ">
 										<c:if test="${pageMaker.prev}">
-											<a	href="list${pageMaker.makeSearch(pageMaker.startPage - 1) }">
-												<span class="num_prev"> <span class="arrow txt_sub">◀</span>
+											<a	href="boardlist${pageMaker.makeSearch(pageMaker.startPage - 1) }&tno=${cri.tno}">
+												<span class="num_prev"> <span class="arrow">◀</span>
 													<span class="txt_sub">이전</span>
 												</span> 
 											</a>
 										</c:if>
 										<c:forEach begin="${pageMaker.startPage }"	end="${pageMaker.endPage }" var="idx">
-											<li
-												<c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
-												<a href="list${pageMaker.makeSearch(idx)}" class="num_box txt_point u b">${idx}</a>
-											</li>
+											<a href="boardlist${pageMaker.makeSearch(idx)}&tno=${cri.tno}" class="<c:out value="${pageMaker.cri.page == idx?'num_box txt_point u b':'num_box'}"/>">${idx}</a>
 										</c:forEach>
 										<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-											<a href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">
+											<a href="boardlist${pageMaker.makeSearch(pageMaker.endPage +1) }&tno=${cri.tno}">
 												<span class="num_next"> 
-													<a href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">다음</a><span class="arrow">▶</span>
+													<span class="txt_sub">다음</span><span class="arrow">▶</span>
 												</span>
 											</a>
 										</c:if>
@@ -142,7 +141,15 @@ $(document).ready(function(){
 											<option value="w"
 												<c:out value="${cri.searchType eq 'w'?'selected':''}"/>>
 												Writer</option>
-										</select> <a href="#" class="btn_search" id="suggest_search0"
+										</select>
+										<div class="suggest">
+											<input type="text" value="" name="q" size="22"
+												autocomplete="off" class="inp query" />
+											<div class="suggest_box_wrap">
+												<div class="suggest_box"></div>
+											</div>
+										</div>
+										<a href="#" class="btn_search" id="suggest_search0"
 											onclick="SearchUtil.searchBBS(this); return false"><img
 											src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif"
 											width="37" height="21" alt="검색"></a> <a
