@@ -22,6 +22,7 @@ $(document).ready(function(){
 			+ "&tno=" + $('#tno').val();
 	});
 	$(".btn_icon_write").on("click", function(){
+
 		      var formObj = $("form[role='iniputform']");
 		      formObj.submit();
 		   });
