@@ -12,6 +12,8 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	
+
+	
 	/*셀렉트박스*/
 	$('#quote').hide();//견적서 숨기기
 	
@@ -1121,9 +1123,9 @@ label.checkbox-label {
 					<select id="manufacture"
 						name="manufacture">
 						<option value="">제조사 선택</option>
-						<option value="삼성전자">삼성</option>
-						<option value="LG전자">LG</option>
-						<option value="애플">애플</option>
+						<option value="samsung">삼성</option>
+						<option value="lg">LG</option>
+						<option value="apple">애플</option>
 					</select>
 				</div> &nbsp&nbsp&nbsp
 			</td>

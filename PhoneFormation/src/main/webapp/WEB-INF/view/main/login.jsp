@@ -142,6 +142,18 @@
 
 
 <script type="text/javascript">
+
+function popup() {
+	window.open(
+	"/phonefo/idpwd",
+	"EventFrame",
+	"menubar=no,width=500,height=400,toolbar=no"
+	);
+	}
+
+
+
+
 	$(document).ready(function(){
 		$("#login").click(function(){
 			$.ajax({
@@ -269,7 +281,7 @@
 	    	<p class="signup-forgotten">
 	    		<a href="/phonefo/join" class="sign-up">회원가입</a>
 	    		<span>l</span>
-	    		<a href="/zf_user/helpdesk/idpw-find" class="forgotten">아이디/비밀번호 찾기</a>
+	    		<a class="forgotten" onclick="popup()">아이디/비밀번호 찾기</a>
 	    		<span>l</span>
 	    		<a href="/zf_user/help" class="service_info_txt">서비스 안내</a>
 	    	</p>

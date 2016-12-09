@@ -133,6 +133,13 @@ public class MainController {
 		
 	}
 	
+	@RequestMapping("/idpwd")
+	public String idpwd(){
+		System.out.println("¿Ô´Ï?");
+		
+		return "./main/searchForm";
+	}
+	
 
 	
 	

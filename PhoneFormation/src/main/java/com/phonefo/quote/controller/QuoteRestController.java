@@ -60,14 +60,7 @@ public class QuoteRestController {
 			String power,String glass, String equipment, Model model,HttpSession session )throws Exception{
 		
 		///해당 핸드폰의 기기명,용량에 따른 출고가, 출고날짜 불러오기
-		PhoneVO vo = service.price(machine,capacity);
-		System.out.println("출고가격:"+vo.getRelease_price());
-		System.out.println("용량"+vo.getCapacity());
-		System.out.println("출고날짜:"+vo.getRelease_date());
-		System.out.println(power);
-		System.out.println(glass);
-		System.out.println(equipment);
-		
+		PhoneVO vo = service.price(machine,capacity);		
 		Calendar cal=Calendar.getInstance();
 		int sysYear = cal.get(Calendar.YEAR);
 		int sysMonth = cal.get(Calendar.MONTH)+1;
@@ -127,6 +120,7 @@ public class QuoteRestController {
 		session.setAttribute("manufacture", manufacture);
 		session.setAttribute("machine", machine);
 		session.setAttribute("capacity", capacity);
+		session.setAttribute("howsend", howsend);
 		
 		return vo2;
 		

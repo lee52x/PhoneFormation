@@ -115,8 +115,10 @@
 		
 		$('#calculator').click(function(){
 			//$('#glass').prop('checked')
-
-			$('#quote').show();
+			
+			$('#quote').show(function(){
+				$("#quote").attr("tabindex", -1).focus();	
+			});
 			$('#information').show();
 			$('#repairRequest').show();
 			$.ajax({
@@ -237,12 +239,7 @@
 
 
 	});
-	function check() {
-		
-		
-		
-		
-	}
+
 
 	function sellPhone() {
 		var f = document.frm;
@@ -1288,15 +1285,15 @@ label.checkbox-label {
 
 		<table width="1160px" border="0" cellspacing="1" cellpadding="10"
 			bgcolor="#DADBDB" align="center">
-			<tr>
-				<td width="310px" height="60px" class="t_b_title">매각 선택</td>
-				<td bgcolor="#FFFFFF"><input type="radio" name="radid_01"
-					id="radio1" class="css-checkbox" value="방문" checked="checked" />
-					<label for="radio1" class="radio-label">방문</label>
-					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" value="택배"
-					name="radid_01" id="radio2" class="css-checkbox" /> <label
-					for="radio2" class="radio-label">택배</label></td>
-			</tr>
+		<tr>
+			<td width="310px" height="60px" class="t_b_title">매각 선택</td>
+			<td bgcolor="#FFFFFF"><input type="radio" name="howsend"
+				id="radio1" class="css-checkbox" value="방문" checked="checked"  /> <label
+				for="radio1" class="radio-label">방문</label>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" value="택배" name="howsend"
+				id="radio2" class="css-checkbox" /> <label for="radio2"
+				class="radio-label">택배</label></td>
+		</tr>
 		</table>
 
 		<table width="1160px" border="0" cellspacing="1" cellpadding="10"
@@ -1311,9 +1308,9 @@ label.checkbox-label {
 						<label for="color" id="selec">제조사 선택</label> <select
 							id="manufacture" name="manufacture">
 							<option value="">제조사 선택</option>
-							<option value="삼성전자">삼성</option>
-							<option value="LG전자">LG</option>
-							<option value="애플">애플</option>
+							<option value="samsung">삼성</option>
+							<option value="lg">LG</option>
+							<option value="apple">애플</option>
 						</select>
 					</div> &nbsp&nbsp&nbsp
 				</td>
@@ -1371,6 +1368,7 @@ label.checkbox-label {
 					<div style="margin-top: 5px; width: 80%; background: #eee"
 						align="center" id="quote">
 						<table>
+				
 					<tr>
 						<td width="100" style="text-align: right">견적가격</td>
 						<td><input type="text" id="repair_price" name="repair_price"
@@ -1422,7 +1420,7 @@ label.checkbox-label {
 	</tr>
 	<tr>
 		<th><span><h4>주소</h4></span></td>
-		<td><input type=text id="address" style="height: 30px;" name=address ></td>
+		<td><input type=text id="address" style="height: 30px;width: 500px;"  name=address ></td>
 	</tr>
 	
 	<tr>
@@ -1472,7 +1470,7 @@ label.checkbox-label {
 </form>
 	<center>
 	<button type="button"
-						class="btn_counsel" id="repairRequest" style="width: 580px;" onclick="check()">수리요청하기</button></td>
+						class="btn_counsel" id="repairRequest" style="width: 580px;">수리요청하기</button></td>
 	</center>
 	
 

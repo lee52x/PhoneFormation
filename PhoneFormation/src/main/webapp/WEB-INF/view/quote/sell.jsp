@@ -76,8 +76,8 @@ $(document).ready(function(){
 	});
 });
 
-function check(){
-	
+function check(){//판매신청 버튼 눌렀을떄
+
 	if($('#userpwd').val()=='' || pwdState==0){
 		alert('비밀번호를 확인하세요');
 		$('#userpwd').focus();
@@ -154,6 +154,10 @@ function check(){
 	<tr>
 		<th><span><h4>휴대폰번호</h4></span></td>
 		<td><input type=text id="user_add3" disabled="disabled" style="height: 30px;" name=tel value="${vo.tel}" onkeydown="this.value=this.value.replace(/[^0-9]/g,'')" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')"></td>
+	</tr>
+	<tr>
+		<th><span><h4>주소(대표 지역명)</h4></span></td>
+		<td><input type=text id="address" style="height: 30px;"  name=address ></td>
 	</tr>
 	
 	
@@ -239,6 +243,7 @@ function check(){
 		<input type="hidden" value="${manufacture}" name="manufacture">
 		<input type="hidden" value="${machine}" name="machine">
 		<input type="hidden" value="${capacity}" name="capacity">
+		<input type="hidden" value="${howsend}" name="howsend">
 		</form>
 	</div>
 	</div>

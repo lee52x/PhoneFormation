@@ -5,6 +5,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
+	<!-- 메일보내기 -->
+
+	
    <!-- DataSource 등록 (Oracle드라이버설정) -->
    <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
          id="dataSource">

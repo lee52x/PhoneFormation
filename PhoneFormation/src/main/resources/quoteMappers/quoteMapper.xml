@@ -4,14 +4,14 @@
 
   	<!-- 삼성 기기명 가져오기 -->	
  	<select id="machine" resultType="com.phonefo.quote.domain.PhoneVO">
- 		select name,manufacture,release_date from ph_phone
+ 		select * from ph_phone
  			where manufacture=#{manufacture}
  	</select>
 
 
  	<select id="capacity" resultType="com.phonefo.quote.domain.PhoneVO">
- 		select name,capacity,release_price from ph_capacity
- 		where name=#{machine}
+ 		select * from ph_capacity 
+ 		where no=(select no from ph_phone where name=#{machine})
  	</select>
  	
  	<select id="price" resultType="com.phonefo.quote.domain.PhoneVO">
@@ -25,7 +25,7 @@
  		insert into ph_quoteBoard values
  		(ph_quoteBoard_seq.nextval,#{userid},#{username},#{tel},#{quote_price},#{request_message},#{bank_name},
  		  #{account_number},sysdate,#{power},#{glass},#{equipment},0,#{manufacture},
- 		  #{machine},#{capacity})
+ 		  #{machine},#{capacity},#{howsend},#{address})
 
  	</insert>
  	
@@ -50,7 +50,7 @@
  		insert into ph_repairBoard 
  			values(ph_repairBoard_seq.nextval,#{userid},#{username},#{tel},
  			#{repair_price},#{request_message},
- 			#{bank_name},#{account_number},sysdate,0,#{machine},#{machineState})
+ 			#{bank_name},#{account_number},sysdate,0,#{machine},#{machineState},#{howsend},#{address})
 
  	</insert>
  	

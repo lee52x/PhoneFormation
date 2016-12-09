@@ -73,19 +73,25 @@ $(document).ready(function(){
 	<tr>
 		<th><span>제조사명</span></th>
 		<td>
-			${vo.manufacture }		</td>
+			${vo.manufacture }
+		</td>
 
 		<th><span>모델</span></th>
 		<td>
-			${vo.machine }		</td>
+			${vo.machine }
+		</td>
 	</tr>
 	<tr>
-		<th class="last"><span>예상견적가</span></th>
-		<td class="last" colspan="3">
+<th><span>예상 견적가</span></th>
+		<td>
 			${vo.quote_price }
 		</td>
 
-	</tr>
+		<th><span>매각방법</span></th>
+		<td>
+			${vo.howsend}(${vo.address})
+		</td>
+
 	<tr>
 		<th class="last"><span>전원상태</span></th>
 		<td class="last" colspan="3">

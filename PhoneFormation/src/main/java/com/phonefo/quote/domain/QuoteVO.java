@@ -18,6 +18,8 @@ public class QuoteVO {
 	private String machine;
 	private String capacity;
 	private String tel;
+	private String howsend;
+	private String address;
 	
 	
 	
@@ -30,6 +32,30 @@ public class QuoteVO {
 		// TODO Auto-generated constructor stub
 	}
 	
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+
+	public String getHowsend() {
+		return howsend;
+	}
+
+
+
+	public void setHowsend(String howsend) {
+		this.howsend = howsend;
+	}
+
 
 
 	public String getTel() {

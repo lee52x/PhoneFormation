@@ -71,7 +71,13 @@ $(document).ready(function(){
 	<tr>
 		<th><span>모델</span></th>
 		<td>
-			${vo.machine }		</td>
+			${vo.machine }
+		</td>
+
+		<th><span>방법선택</span></th>
+		<td>
+			${vo.howsend}(${vo.address})
+		</td>
 	</tr>
 	<tr>
 		<th class="last"><span>예상견적가</span></th>
@@ -106,13 +112,13 @@ $(document).ready(function(){
 	<tr>
 				<th><span>휴대폰</span></th>
 		<td colspan="3">
-			${vo.tel }
+			010-****-****
 		</td>
 			</tr>
 	<tr>
 		<th><span>입금받을 계좌번호</span></th>
 		<td colspan="3">
-			은행명 :  ${vo.bank_name }　　/　　예금주 : ${vo.username }　　/　　계좌번호 : ${vo.account_number }		</td>
+			은행명 :  ${vo.bank_name }　　/　　예금주 : ${vo.username }　　/　　계좌번호 : ***********		</td>
 	</tr>
 	<tr>
 		<th class="last"><span>기타 요청사항</span></th>

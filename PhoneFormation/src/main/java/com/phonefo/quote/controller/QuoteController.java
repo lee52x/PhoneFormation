@@ -52,7 +52,10 @@ public class QuoteController {
 		String userid = (String)session.getAttribute("userid");
 		vo.setUserid(userid);
 		vo.setUsername((String)session.getAttribute("username"));
+		
 		vo.setTel((String)session.getAttribute("tel"));
+		System.out.println(vo.getAddress());
+		
 		service.insertBoard(vo);
 
 		return "redirect:/phonefo/listBoard";
@@ -105,8 +108,8 @@ public class QuoteController {
 	@RequestMapping("/insertRepair")
 	public String insertRepair(RepairVO vo,Model model,HttpSession session)throws Exception{
 		vo.setUserid((String)session.getAttribute("userid"));
-		System.out.println();
-		System.out.println(vo);
+		System.out.println(vo.getAddress());
+		System.out.println(vo.getHowsend());
 		service.insertRepair(vo);
 
 		
