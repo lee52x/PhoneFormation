@@ -39,7 +39,7 @@
  	</select>
 
  	<insert id="purchase_request"><!-- 없음있는곳마지막 -->
- 		insert into purchase_request values(purchase_request_seq.nextval,#{userid},#{no},1,'없음'ㄴㄴ)
+ 		insert into purchase_request values(purchase_request_seq.nextval,#{userid},#{no},1,'없음')
  	</insert>
  	
  	<select id="repairPrice" resultType="com.phonefo.quote.domain.RepairVO">
