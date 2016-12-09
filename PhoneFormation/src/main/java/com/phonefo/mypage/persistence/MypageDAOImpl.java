@@ -169,5 +169,11 @@ public class MypageDAOImpl implements MypageDAO {
 		sqlSession.update("mypage.insertCompleteId",userid);
 	}
 
+	@Override
+	public void subCash(String userid) throws Exception {
+		sqlSession.update("mypage.subCash",userid);
+		
+	}
+
 
 }

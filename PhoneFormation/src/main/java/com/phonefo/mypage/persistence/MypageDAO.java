@@ -76,4 +76,7 @@ public interface MypageDAO {
 	public void insertCompleteId(String userid)throws Exception;
 
 
+	public void subCash(String userid)throws Exception;
+
+
 }

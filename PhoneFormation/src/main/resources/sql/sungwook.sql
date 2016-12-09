@@ -1,15 +1,24 @@
+--관리자 돈 테이블 --
+create table admin(
+profit number(20) default 0
+)
+insert into admin values(0)
+select * from admin
+
 
 --회원 테이블의 부모 --
-drop table ph_business;
+drop table ph_business cascade constraints;
 create table ph_business(
 businessNum varchar(50) primary key,
 companyName varchar(50),
 leaderName varchar(50),
-address varchar(50)
+address varchar(50),
+cash number(20) default 200000
 );
 select*From ph_member;
 drop table ph_member;
 --회원 테이블--
+drop table ph_member cascade constraints;
 create table ph_member(
 memberno number(10) primary key,
 userid varchar2(50) unique,
@@ -24,9 +33,6 @@ root number(20),
 businessNum varchar(50),
 foreign key(businessNum)  references ph_business(businessNum)
 );
-
-
-
 --멤버시퀀스--
 drop sequence ph_member_seq;
 create sequence ph_member_seq
@@ -36,7 +42,6 @@ nocache
 nocycle;
 
 --quote게시판 테이블 --
-select *from ph_quoteBoard;
 drop table ph_quoteBoard;
 create table ph_quoteBoard(
 	no number(10) primary key,
@@ -230,3 +235,13 @@ insert into ph_capacity values (1, '32GB', 924000);
  			
  			
  					select *from ph_repairBoard order by no desc
+ 					
+ 					
+ 					select*from ph_business
+ 					
+ 					select completeId from purchase_request where no=40
+ 					
+ 					select*from PH_BUSINESS
+ 					select*from ph_member
+ 					
+ 					select*From PH_QUOTEBOARD

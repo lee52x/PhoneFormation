@@ -60,25 +60,29 @@ public class MypageRestController {
 
 	}
 
-	// 구매업체 선택
+	// 구매업체 선택   
 	@RequestMapping(value = "/purchaseIngChoose", method = RequestMethod.POST)
 	public int purchaseIngChoose(int no, String userid) throws Exception {
 		Map<String, String> map = new HashMap<>();
 		map.put("no", Integer.toString(no));
 		map.put("userid", userid);
+		System.out.println("번호:"+no);
+		System.out.println("아이디:"+userid);
+		//거래끝난 업체 정보 , 기업 캐쉬 빼고 관리자 캐쉬 올리고
+		
+		
+		
 		int result = service.mypagePurchaseIngChoose(map);
+		
 
 		return result;
 	}
 
-	// 거래끝난 업체 정보
+	// 거래끝난 업체 정보 , 기업 캐쉬 빼고 관리자 캐쉬 올리고
 	@RequestMapping(value = "/purchaseEnd")
 	public MypagePurchaseVO purchaseEnd(String no) throws Exception {
-
 		MypagePurchaseVO object = null;
-
 		object = service.mypagePurchaseEnd(no);
-
 		return object;
 
 	}
@@ -143,7 +147,7 @@ public class MypageRestController {
 	// 거래끝난 업체 정보
 	@RequestMapping(value = "/purchaseRepairEnd")
 	public MypagePurchaseVO purchaseRepairEnd(String no) throws Exception {
-
+		
 		MypagePurchaseVO object = null;
 
 		object = service.mypageRepairPurchaseEnd(no);

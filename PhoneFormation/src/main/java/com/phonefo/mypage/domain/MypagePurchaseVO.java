@@ -13,8 +13,7 @@ public class MypagePurchaseVO {
 	private String companyName;
 	private String address;
 	
-	
-	
+
 	public int getRepairNum() {
 		return repairNum;
 	}

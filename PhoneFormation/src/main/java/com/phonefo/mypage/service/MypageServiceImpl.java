@@ -143,6 +143,14 @@ public class MypageServiceImpl implements MypageService {
 		
 	}
 
+	@Override
+	public void subCash(String userid) throws Exception {
+		dao.subCash(userid);
+		
+	}
+
+
+
 
 
 

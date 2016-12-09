@@ -74,4 +74,9 @@ public interface MypageService {
 		public List<MypageRepairVO> mypageB_RepairList(HttpSession session)throws Exception;
 
 		public void insertCompleteId(String userid)throws Exception;
+
+
+		public void subCash(String userid)throws Exception;
+
+
 }

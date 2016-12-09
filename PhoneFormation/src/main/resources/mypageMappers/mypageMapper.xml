@@ -203,6 +203,14 @@
 	</update>
 
 
+	<select id="getCompanyId" resultType="String">
+			select completeId from purchase_request where no=#{no}
+	</select>
+	
+	<update id="subCash">
+		update ph_business set cash=cash-
+	</update>
+
 
 
 

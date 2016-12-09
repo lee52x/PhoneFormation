@@ -15,7 +15,7 @@
 		
 	<insert id="insertBusiness">
 	insert into ph_business
-		values(#{businessNum},#{companyName},#{leaderName},#{address})
+		values(#{businessNum},#{companyName},#{leaderName},#{address},200000)
 	</insert>
 
 
