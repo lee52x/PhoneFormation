@@ -48,6 +48,8 @@ regdate date default sysdate,
 answer varchar2(100),
 answer_regdate date
 )
+ALTER TABLE ph_ono ADD constraint ph_onoforeign_fk foreign key(userid) references ph_member(userid) on delete cascade;
+
  
 drop sequence ph_ono_seq;
 create sequence ph_ono_seq
