@@ -1,5 +1,7 @@
 package com.phonefo.main.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -69,7 +71,7 @@ public class MainServiceImpl implements MainService {
 	}
 
 	@Override
-	public String selectid(MemberVO vo) throws Exception {
+	public List<String> selectid(MemberVO vo) throws Exception {
 		return dao.selectid(vo);
 	}
 

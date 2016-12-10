@@ -1,6 +1,7 @@
 package com.phonefo.main.persistence;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -101,10 +102,10 @@ public class MainDAOImpl implements MainDAO{
 		
 	}
 	@Override
-	public String selectid(MemberVO vo) throws Exception {
+	public List<String>selectid(MemberVO vo) throws Exception {
 		System.out.println(vo.getUsername());
 		System.out.println(vo.getEmail());
-		return sql.selectOne("selectid", vo);
+		return sql.selectList("selectid", vo);
 	}
 	@Override
 	public String selectpassword(MemberVO vo) throws Exception {

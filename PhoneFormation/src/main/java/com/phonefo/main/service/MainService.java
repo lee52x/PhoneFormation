@@ -1,5 +1,7 @@
 package com.phonefo.main.service;
 
+import java.util.List;
+
 import com.phonefo.main.domain.MemberVO;
 
 public interface MainService {
@@ -27,7 +29,7 @@ public interface MainService {
 	public MemberVO getVO(String userid)throws Exception;
 	//로그인한 기업회원의 아이디의 정보 가져오기
 	public MemberVO getBVO(String userid)throws Exception;
-	public String selectid(MemberVO vo) throws Exception;
+	public List<String> selectid(MemberVO vo) throws Exception;
 	public String selectpassword(MemberVO vo) throws Exception;
 	
 	

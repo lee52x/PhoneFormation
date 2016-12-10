@@ -1,17 +1,25 @@
 package com.phonefo.main.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.phonefo.board.domain.Criteria;
+import com.phonefo.board.domain.PageMaker;
+import com.phonefo.board.domain.ReplyVO;
 import com.phonefo.main.domain.MemberVO;
 import com.phonefo.main.service.MainService;
 
@@ -102,20 +110,36 @@ public class MainRestController {
 	
 	}
 	@RequestMapping("/send_id")
-	public String search_id_result(String username,String email) throws Exception{
+	public ResponseEntity<Map<String, Object>> search_id_result(String username,String email) throws Exception{
+
+		System.out.println("아이디찾기");
 		MemberVO vo=new MemberVO();
 		vo.setUsername(username);
 		vo.setEmail(email);
-		String id = service.selectid(vo);
-		System.out.println("id="+id);
-		if(id==null )
-			return"fail";
-		else{
-			String title="[Phoneformation]   "+username+"회원님 아이디찾기 문의입니다.";
-			String content="회원님의 아이디는:"+id+"입니다";
-			sendmail(email,username,title,content);
-			return "success";
+		
+		ResponseEntity<Map<String, Object>> entity = null;
+		Map<String, Object> map = new HashMap<>();
+
+		try {
+			List<String> id = service.selectid(vo);
+			for(int i=0; i< id.size();i++)
+				System.out.println(id.get(i));
+
+			if(id.size()==0 )
+				map.put("status", "fail");
+			else{
+				map.put("status", "success");
+				map.put("id", id);
+			}
+
+			entity = new ResponseEntity<>(map, HttpStatus.OK);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
+		
+		return entity;
 	}
 	@RequestMapping("/send_password")
 	public String search_password(String userid,String email) throws Exception{

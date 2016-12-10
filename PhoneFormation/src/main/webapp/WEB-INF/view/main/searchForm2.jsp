@@ -71,7 +71,7 @@ $(document).ready(function(){
 									<dd>
 										<p><input id="email1" name="email1" class="tBox" type="text" title="이메일 아이디" maxlength="25" style="width:85px; ime-mode:disabled;"/>&nbsp;@&nbsp;</p>
 										<p><span id="Dev_MEmailstrsp" style="display:none;"><input type="text" style="width:82px;" name="info_mail_etc" id="dev_mail_etc" class="tBox" /></span></p>
-										<p><select id="email2" title="이메일 서비스업체 선택" style="width:92px;" name="eamil2" onchange="email_set(this.value);">
+										<p><select id="email2" title="이메일 서비스업체 선택" style="width:92px;" name="eamil2" >
 												<option value="">선택하세요</option>
 												<option value="naver.com" >naver.com</option>
 												<option value="hanmail.net">hanmail.net</option>

@@ -119,9 +119,6 @@ public class ReplyController {
 
 		try {
 			List<ReplyVO> list = service.listReplyPage(bno, cri);
-			for(int i=0; i<list.size();i++){
-				System.out.println(list.get(i).getReplyer());
-			}
 			// 특정페이지에 대한 댓글 목록
 			map.put("list", list);
 
