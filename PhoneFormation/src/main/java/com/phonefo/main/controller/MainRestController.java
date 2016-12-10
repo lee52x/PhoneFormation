@@ -5,6 +5,10 @@ import java.util.regex.Pattern;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailException;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +20,8 @@ import com.phonefo.main.service.MainService;
 public class MainRestController {
 	@Inject
 	MainService service;
-	
+	@Autowired
+    protected JavaMailSender mailSender;
 	//일반회원  아이디 중복검사
 	@RequestMapping("/checkId")
 	public String checkId(String userid)throws Exception{
@@ -96,6 +101,50 @@ public class MainRestController {
 		session.invalidate();
 	
 	}
-
+	@RequestMapping("/send_id")
+	public String search_id_result(String username,String email) throws Exception{
+		MemberVO vo=new MemberVO();
+		vo.setUsername(username);
+		vo.setEmail(email);
+		String id = service.selectid(vo);
+		System.out.println("id="+id);
+		if(id==null )
+			return"fail";
+		else{
+			String title="[Phoneformation]   "+username+"회원님 아이디찾기 문의입니다.";
+			String content="회원님의 아이디는:"+id+"입니다";
+			sendmail(email,username,title,content);
+			return "success";
+		}
+	}
+	@RequestMapping("/send_password")
+	public String search_password(String userid,String email) throws Exception{
+		MemberVO vo=new MemberVO();
+		vo.setUserid(userid);
+		vo.setEmail(email);
+		String password = service.selectpassword(vo);
+		System.out.println("password="+password);
+		if(password==null )
+			return"fail";
+		else{
+			String title="[Phoneformation]   "+userid+"회원님 비밀번호찾기 문의입니다.";
+			String content="회원님의 비밀번호는:"+password+"입니다";
+			sendmail(email,userid,title,content);
+			return "success";
+		}
+	}
+	public void sendmail(String receiver, String name, String title, String content){
+		SimpleMailMessage msg = new SimpleMailMessage();
+        msg.setFrom("wogus519@gmail.com");
+        msg.setTo(new String[] { receiver });
+        msg.setSubject(title);
+        msg.setText(content);
+ 
+        try {
+            mailSender.send(msg);
+        } catch (MailException ex) {
+            System.out.println("메일실패");
+        }
+	}
 }
 

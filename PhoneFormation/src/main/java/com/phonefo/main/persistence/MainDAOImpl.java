@@ -100,5 +100,17 @@ public class MainDAOImpl implements MainDAO{
 		sql.insert("insertBusiness",vo);
 		
 	}
+	@Override
+	public String selectid(MemberVO vo) throws Exception {
+		System.out.println(vo.getUsername());
+		System.out.println(vo.getEmail());
+		return sql.selectOne("selectid", vo);
+	}
+	@Override
+	public String selectpassword(MemberVO vo) throws Exception {
+		System.out.println(vo.getUserid());
+		System.out.println(vo.getEmail());
+		return sql.selectOne("selectpassword", vo);
+	}
 
 }

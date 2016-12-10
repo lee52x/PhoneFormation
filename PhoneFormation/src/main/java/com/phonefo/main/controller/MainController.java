@@ -4,6 +4,9 @@ package com.phonefo.main.controller;
 
 import javax.inject.Inject;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +21,7 @@ import com.phonefo.main.service.MainService;
 public class MainController {
 	@Inject
 	MainService service;
-
+	
 	//메인화면 띄우기
 	@RequestMapping("/main")
 	public String test(Model model){
@@ -133,18 +136,13 @@ public class MainController {
 		
 	}
 	
-	@RequestMapping("/idpwd")
-	public String idpwd(){
-		System.out.println("왔니?");
-		
+	@RequestMapping("/search_id")
+	public String search_id(){
 		return "./main/searchForm";
 	}
-	
+	@RequestMapping("/search_password")
+	public String search_password(){
+		return "./main/searchForm2";
+	}
 
-	
-	
-	
-
-	
-	
 }

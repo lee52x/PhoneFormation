@@ -6,8 +6,20 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
 	<!-- 메일보내기 -->
-
-	
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.gmail.com" />
+        <property name="port" value="587" />
+        <property name="defaultEncoding" value="utf-8" />
+        <property name="username" value="wogus519@gmail.com" />
+        <property name="password" value="qkrwo905" />
+ 
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.smtp.auth">true</prop>
+             </props>
+        </property>
+    </bean>
    <!-- DataSource 등록 (Oracle드라이버설정) -->
    <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
          id="dataSource">

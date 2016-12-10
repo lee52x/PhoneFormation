@@ -45,8 +45,10 @@
    border-bottom-color: #fff;
 }
 .tab-image{
-   height: 500px;
-   width: 300px;
+    height: 600px;
+    width: 300px;
+    padding-top: 10%;
+    padding-bottom: 10%;
 }
 
 .tab-image img{
@@ -273,6 +275,11 @@
                               <div class="tab-image">
                               <a href="/phonefo/phoneInfo_spec?no=${list1.no}">
                                  <img src="${list1.image }">
+                              	<table>
+                              		<tr>
+                              			<td>나와줘...</td>
+                              		</tr>
+                              	</table>
                                  <p>${list1.name }</p><br>
                               </a>
                                  <input type="checkbox" class="ckb" name='box' onclick="checkBox('${list1.no }')" value="${list1.no }">비교하기<br>
