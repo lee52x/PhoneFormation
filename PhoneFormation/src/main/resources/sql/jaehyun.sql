@@ -1,10 +1,10 @@
 --board.sql
 drop table ph_reply;
-drop table ph_board;
-drop table ph_boardtype;
 drop table ph_ono;
 drop table ph_boardgood;
-
+drop table ph_board;
+drop table ph_boardtype;
+select * from ph_boardtype;
 create table ph_boardtype(
 	tno number primary key,
 	title varchar2(50) not null
@@ -45,9 +45,15 @@ answer_regdate date
 );
 ALTER TABLE ph_ono ADD constraint ph_onoforeign_fk foreign key(userid) references ph_member(userid) on delete cascade;
 
-
 drop sequence ph_ono_seq;
 create sequence ph_ono_seq
+   start with 1
+   increment by 1 
+   nocache
+   nocycle;
+   
+drop sequence ph_boardtype_seq;
+create sequence ph_boardtype_seq
    start with 1
    increment by 1 
    nocache
@@ -64,8 +70,8 @@ ALTER TABLE ph_reply ADD constraint ph_replybnoforeign_fk foreign key(bno) refer
 ALTER TABLE ph_reply ADD constraint ph_replyforeign_fk foreign key(replyer) references ph_member(userid) on delete cascade;
 
 
-drop sequence ph_boardtype_seq;
-create sequence ph_boardtype_seq
+drop sequence ph_board_seq;
+create sequence ph_board_seq
    start with 1
    increment by 1 
    nocache
@@ -78,12 +84,7 @@ create sequence ph_reply_seq
 	nocache
 	nocycle;
 
-drop sequence ph_board_seq;
-create sequence ph_board_seq
-   start with 1
-   increment by 1 
-   nocache
-   nocycle;
+
    
 insert into ph_boardtype values (ph_boardtype_seq.nextval,'KT 이벤트');
 insert into ph_boardtype values (ph_boardtype_seq.nextval,'LGU+ 이벤트');

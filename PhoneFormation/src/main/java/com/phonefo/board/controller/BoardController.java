@@ -43,37 +43,21 @@ public class BoardController {
 
 		model.addAttribute("pageMaker", pageMaker);
 		model.addAttribute("title", service.selecttitle(cri.getTno()));
+		System.out.println(service.selecttitle(cri.getTno()));
 		model.addAttribute("body", "./board/boardlist.jsp");
 
 		return "mainView";
 	}
 
 	// 입력폼요청
-//	@RequestMapping(value = "/boardinput", method = RequestMethod.GET)
-//	public String inputpageGET(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
-//		model.addAttribute("title", service.selecttitle(cri.getTno()));
-//		model.addAttribute("body", "./board/boardinput.jsp");
-//
-//		return "mainView";
-//	}
 	@RequestMapping(value = "/boardinput", method = RequestMethod.GET)
-	public String inputpageGET( Model model) throws Exception {
-		System.out.println("메일보내기44");
-        SimpleMailMessage msg = new SimpleMailMessage();
-        msg.setFrom("wogus519@gmail.com");
-        msg.setTo(new String[] { "wogus519@naver.com" });
-        msg.setSubject("제목이 이러저러합니다");
-        msg.setText("본문이 어쩌구저쩌구합니다");
- 
-        try {
-            mailSender.send(msg);
-        } catch (MailException ex) {
-            System.out.println("메일실패");
-        }
-		model.addAttribute("body","./main/body.jsp");
-		
+	public String inputpageGET(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		model.addAttribute("title", service.selecttitle(cri.getTno()));
+		model.addAttribute("body", "./board/boardinput.jsp");
+
 		return "mainView";
 	}
+	
 	// 입력
 	@RequestMapping(value = "/boardinput", method = RequestMethod.POST)
 	public String inputpagePOST(HttpServletRequest request, MultipartFile file, BoardVO board, RedirectAttributes attr,
