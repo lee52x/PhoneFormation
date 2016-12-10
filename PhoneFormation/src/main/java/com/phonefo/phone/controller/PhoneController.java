@@ -5,7 +5,21 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.phonefo.phone.domain.PhoneCapaVO;
+import com.phonefo.phone.domain.PhoneColorVO;
+import com.phonefo.phone.domain.PhoneInfoVO;
+import com.phonefo.phone.domain.spec_audioVO;
+import com.phonefo.phone.domain.spec_batteryVO;
+import com.phonefo.phone.domain.spec_cameraVO;
+import com.phonefo.phone.domain.spec_connectVO;
+import com.phonefo.phone.domain.spec_displayVO;
+import com.phonefo.phone.domain.spec_memoryVO;
+import com.phonefo.phone.domain.spec_networkVO;
+import com.phonefo.phone.domain.spec_processorVO;
+import com.phonefo.phone.domain.spec_serviceVO;
+import com.phonefo.phone.domain.spec_specificationsVO;
 import com.phonefo.phone.service.PhoneInfoService;
 
 @Controller
@@ -28,7 +42,7 @@ public class PhoneController {
 	public String phoneInfo_spec(Model model, int no)throws Exception{
 		model.addAttribute("list_color", service.select_color(no));
 		model.addAttribute("list_capacity", service.select_capacity(no));
-		model.addAttribute("list_spec_Info", service.select_spec_Info(no));
+		model.addAttribute("list_spec_Info", service.select_phone(no));
 		model.addAttribute("list_spec_processor", service.select_spec_processor(no));
 		model.addAttribute("list_spec_display", service.select_spec_display(no));
 		model.addAttribute("list_spec_camera", service.select_spec_camera(no));
@@ -42,5 +56,20 @@ public class PhoneController {
 		model.addAttribute("body", "./phone/phoneInfo_spec.jsp");
 		return "mainView";
 	}
-
+	@RequestMapping(value="/adminAdd", method=RequestMethod.GET)
+	public String adminAddGet(Model model)throws Exception{
+		model.addAttribute("body", "./phone/adminAdd.jsp");
+		return "mainView";
+	}
+	@RequestMapping(value="/adminAdd", method=RequestMethod.POST)
+	public String adminAddPost(Model model, PhoneCapaVO phonecapaVO, PhoneColorVO phonecolorVO, PhoneInfoVO phoneinfoVO, 
+			spec_audioVO audioVO, spec_batteryVO batteryVO, spec_cameraVO cameraVO, spec_connectVO connectVO, spec_displayVO displayVO,
+			spec_memoryVO memoryVO, spec_networkVO networkVO, spec_processorVO processorVO, spec_serviceVO serviceVO,
+			spec_specificationsVO specificationsVO)throws Exception{
+		
+		
+		model.addAttribute("body", "./phone/phoneInfo.jsp");
+		return "mainView";
+	}
+	
 }

@@ -7,9 +7,9 @@
 		where manufacture=#{manufacture}
 		order by no desc
 	</select>
-	<select id="select_spec_Info" parameterType="int" resultType="phone">
-		select *
-		from ph_phone
+	<select id="select_phone" resultType="phone">
+		select no, name, image, manufacture
+		from ph_phone 
 		where no=#{no}
 	</select>
 	<select id="select_color" parameterType="int" resultType="com.phonefo.phone.domain.PhoneColorVO">
@@ -72,9 +72,31 @@
 		from spec_service
 		where no=#{no}
 	</select>
-	<select id="select_phone" resultType="phone">
-		select no, name, image, manufacture
-		from ph_phone 
-		where no=#{no}
-	</select>
+<!-- 	<insert id="insert_phone">
+		insert into
+		ph_phone(no, name, image, manufacture, release_date)
+		values(ph_phone_seq.nextval,#{name},#{image},#{manufacture},#{release_date})
+	</insert> -->
+<!-- 	<select id="selectno">
+		select max(no)
+		from ph_phone;
+	</select> -->
+<!-- 	<insert id="insert_color">
+		insert into
+		ph_phone()
+	</insert> -->
+	<!-- <insert id=""></insert>
+	<insert id=""></insert>
+	<insert id=""></insert>
+	<insert id=""></insert>
+	<insert id=""></insert>
+	<insert id=""></insert>
+	<insert id=""></insert>
+	<insert id=""></insert>
+	<insert id=""></insert>
+	<insert id=""></insert>
+	<insert id=""></insert>
+	<insert id=""></insert>
+	<insert id=""></insert>
+ -->
 </mapper>

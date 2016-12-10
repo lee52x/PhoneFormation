@@ -21,7 +21,7 @@ create sequence ph_phone_seq
 	increment by 1
 	nocycle
 	nocache;
-
+c
 
 --핸드폰 정보, 핸드폰명, 핸드폰사진, 제조사명, 출고일
 create table ph_phone(

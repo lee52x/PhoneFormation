@@ -7,6 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+#admin_add{
+	position:fixed;
+	padding-left: 88%;
+}
+
+
 .nav-tabs {
    border-color: #eee;
 }
@@ -69,6 +75,24 @@
 
 .tab-content p:last-child {
    margin-bottom: 0;
+}
+.phone_tbl{
+	width: 100%;
+}
+
+.phone_tbl tr{
+	width: 30%;
+}
+
+.phone_tbl td{
+	padding-left: 3.5%;
+	padding-right: 3.5%;
+}
+
+.phone_content_tbl{
+	width: 100%;
+	text-align: center;
+	
 }
 
 .ckbox{
@@ -151,6 +175,9 @@
     		chkcnt=0;
     		$('.ckb').removeAttr("disabled");
     		$('.ckbox').hide();
+      });
+      $('#btn_add').click(function(){
+    	   	$(location).attr('href','/phonefo/adminAdd');
       });
    });
    
@@ -249,9 +276,14 @@
 		}
 		return;
    }
+   
 </script>
+
 </head>
    <div id="content">
+   <div id="admin_add">
+   	<button id='btn_add'>추가</button>
+   </div>
       <div class="container">
          <div class="row sidebar-page">
             <div class="tabs-section">
@@ -265,7 +297,7 @@
                <div class="tab-content">
                   <!-- Tab Content 1 -->
                   <div class="tab-pane fade in active" id="tab-4">
-                     <table border="1" bordercolor="#dcdcdc" cellspacing="100" class='tbl'>
+                     <table class='phone_tbl'>
                         <c:forEach items="${list1 }" var="list1" varStatus="status">
                            <c:if test="${status.index%3==0}">                                  
                               <tr>
@@ -275,15 +307,15 @@
                               <div class="tab-image">
                               <a href="/phonefo/phoneInfo_spec?no=${list1.no}">
                                  <img src="${list1.image }">
-                              	<table>
+                              	<table class="phone_content_tbl">
                               		<tr>
-                              			<td>나와줘...</td>
+                              			<td>${list1.name }</td>
                               		</tr>
                               	</table>
-                                 <p>${list1.name }</p><br>
                               </a>
                                  <input type="checkbox" class="ckb" name='box' onclick="checkBox('${list1.no }')" value="${list1.no }">비교하기<br>
-                                 ${list1.no }
+                                 <button>수정</button>
+                                 <button>삭제</button>
                               </div>
                            </center>
                            </td>
@@ -295,20 +327,25 @@
                   </div>
                   
                   <div class="tab-pane fade in active" id="tab-5">
-                        <table align="center">
+                        <table cellspacing="100" class='phone_tbl'>
                         <c:forEach items="${list2 }" var="list2" varStatus="status">
                            <c:if test="${status.index%3==0}">                                  
                               <tr>
                            </c:if>
                            <td>
+                           <center>
                            <div class="tab-image">
                            <a href="/phonefo/phoneInfo_spec?no=${list2.no}">
-                              <center>
                                  <img src="${list2.image }">
-                                 <p>${list2.name }</p>
-                              </center>
+                                 <table class="phone_content_tbl">
+                              		<tr>
+                              			<td>${list2.name }</td>
+                              		</tr>
+                              	</table>
                            </a>
+                           <input type="checkbox" class="ckb" name='box' onclick="checkBox('${list2.no }')" value="${list2.no }">비교하기<br>
                            </div>
+                           </center>
                            </td>
                            <c:if test="${status.index%3==2}">
                               </tr>
@@ -318,20 +355,26 @@
                   </div>
                   
                   <div class="tab-pane fade in active" id="tab-6">
-                   <table align="center">
+                   <table cellspacing="100" class='phone_tbl'>
                         <c:forEach items="${list3 }" var="list3" varStatus="status">
                            <c:if test="${status.index%3==0}">                                  
                               <tr>
                            </c:if>
                            <td>
+                              <center>
                            <div class="tab-image">
                            <a href="/phonefo/phoneInfo_spec?no=${list3.no}">
-                              <center>
                                  <img src="${list3.image }">
-                                 <p>${list3.name }</p>
-                              </center>
+                                 <table class="phone_content_tbl">
+                              		<tr>
+                              			<td>${list3.name }</td>
+                              		</tr>
+                              	</table>
+                              
                            </a>
+                           <input type="checkbox" class="ckb" name='box' onclick="checkBox('${list3.no }')" value="${list3.no }">비교하기<br>
                            </div>
+                           </center>
                            </td>
                            <c:if test="${status.index%3==2}">
                               </tr>

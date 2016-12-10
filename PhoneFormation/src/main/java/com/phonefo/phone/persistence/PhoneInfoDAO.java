@@ -20,7 +20,7 @@ public interface PhoneInfoDAO {
 	public List<PhoneInfoVO> selectInfo(String manufacture)throws Exception;
 	public List<PhoneColorVO> select_color(int no)throws Exception;
 	public List<PhoneCapaVO> select_capacity(int no)throws Exception;
-	public List<PhoneInfoVO> select_spec_Info(int no)throws Exception;
+	public List<PhoneInfoVO> select_phone(int no)throws Exception;
 	public List<spec_processorVO> select_spec_processor(int no)throws Exception;
 	public List<spec_displayVO> select_spec_display(int no)throws Exception;
 	public List<spec_cameraVO> select_spec_camera(int no)throws Exception;
@@ -31,5 +31,5 @@ public interface PhoneInfoDAO {
 	public List<spec_batteryVO> select_spec_battery(int no)throws Exception;
 	public List<spec_audioVO> select_spec_audio(int no)throws Exception;
 	public List<spec_serviceVO> select_spec_service(int no)throws Exception;
-	public List<PhoneInfoVO> select_phone(int no)throws Exception;
+	
 }
