@@ -207,9 +207,25 @@
 			select completeId from purchase_request where no=#{no}
 	</select>
 	
+	<select id="getQuotePrice" resultType="int">
+	select quote_price from ph_quoteboard where no=#{no}
+	</select>
+	
 	<update id="subCash">
-		update ph_business set cash=cash-
+ 		update ph_business set cash=cash-#{update_price}
+			where businessNum = (select businessNum from ph_member where userid=#{userid})
 	</update>
+
+	<insert id="addMoney">
+		insert into ph_admin values(ph_admin_seq.nextval,#{update_price},sysdate,0)
+	</insert>
+	<insert id="addMoney2">
+		insert into ph_admin values(ph_admin_seq.nextval,#{update_price},sysdate,1)
+	</insert>
+	
+	<select id="getRepairPrice" resultType="int">
+		select repair_price from ph_repairboard where no=#{no}
+	</select>
 
 
 

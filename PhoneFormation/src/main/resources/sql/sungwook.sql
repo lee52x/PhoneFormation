@@ -1,9 +1,19 @@
 --관리자 돈 테이블 --
-create table admin(
-profit number(20) default 0
+select*from ph_admin
+drop table ph_admin;
+create table ph_admin(
+num number(5) primary key,
+money number(20),
+rdate date,
+state number(5)
 )
-insert into admin values(0)
-select * from admin
+--관리자 돈 테이블 시퀀스--
+drop sequence ph_admin_seq;
+create sequence ph_admin_seq
+start with 1
+increment by 1
+nocache
+nocycle;
 
 
 --회원 테이블의 부모 --
@@ -13,7 +23,7 @@ businessNum varchar(50) primary key,
 companyName varchar(50),
 leaderName varchar(50),
 address varchar(50),
-cash number(20) default 200000
+cash number(20) default 1000000
 );
 select*From ph_member;
 drop table ph_member;
@@ -245,3 +255,25 @@ insert into ph_capacity values (1, '32GB', 924000);
  					select*from ph_member
  					
  					select*From PH_QUOTEBOARD
+ 					
+ 					select quote_price from ph_quoteboard where no=55
+ 		select *from ph_member			
+ 		select *from PH_BUSINESS
+ 		select *from ph_admin
+ 		update ph_business set cash=cash-3000
+			where businessNum = (select businessNum from ph_member where userid='lgtelecom')
+			
+			--중고폰 수입--
+			select sum(money) from ph_admin where state=0 
+			--수리폰 수입--
+			select sum(money) from ph_admin where state=1 
+			
+			
+			select*from PH_REPAIRBOARD
+		
+			select repair_price from ph_repairboard where no=20
+			
+				select repair_price from ph_repairboard where no=#{no}
+			
+			
+			

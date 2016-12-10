@@ -75,8 +75,13 @@ public interface MypageDAO {
 
 	public void insertCompleteId(String userid)throws Exception;
 
+	public int getQuotePrice(int no)throws Exception;
 
-	public void subCash(String userid)throws Exception;
+	public void subCash(String userid, int update_price)throws Exception;
+
+	public void addMoney(int update_price,int state)throws Exception;
+
+	public int getRepairPrice(int no)throws Exception;
 
 
 }

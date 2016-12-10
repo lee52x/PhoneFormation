@@ -339,6 +339,7 @@ function callTable(no,userid,username,tel,repair_price,request_message,bank_name
 	}
 	
 	var sellSelectEnd=function(no,userid){//거래완료
+		alert('여기냐?');
 		var selectEnd=confirm('거래를 완료 하시겠습니까?');
 		if(selectEnd==true){
 		$.ajax({

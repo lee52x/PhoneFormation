@@ -1,5 +1,6 @@
 package com.phonefo.mypage.persistence;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -170,9 +171,33 @@ public class MypageDAOImpl implements MypageDAO {
 	}
 
 	@Override
-	public void subCash(String userid) throws Exception {
-		sqlSession.update("mypage.subCash",userid);
+	public int getQuotePrice(int no) throws Exception {
 		
+		return sqlSession.selectOne("mypage.getQuotePrice",no);
+	}
+
+	@Override
+	public void subCash(String userid, int update_price) throws Exception {
+		Map<String, Object> map=new HashMap<>();
+		map.put("userid", userid);
+		map.put("update_price", update_price);
+		sqlSession.update("mypage.subCash",map);
+		
+	}
+
+	@Override
+	public void addMoney(int update_price,int state) throws Exception {
+		if(state==0){
+		sqlSession.insert("mypage.addMoney",update_price);
+		}else{
+		sqlSession.insert("mypage.addMoney2",update_price);
+		}
+	}
+
+	@Override
+	public int getRepairPrice(int no) throws Exception {
+		
+		return sqlSession.selectOne("mypage.getRepairPrice",no);
 	}
 
 

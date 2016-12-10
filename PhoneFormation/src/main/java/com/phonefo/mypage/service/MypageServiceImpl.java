@@ -143,10 +143,30 @@ public class MypageServiceImpl implements MypageService {
 		
 	}
 
+
+
 	@Override
-	public void subCash(String userid) throws Exception {
-		dao.subCash(userid);
+	public int getQuotePrice(int no) throws Exception {
+		return dao.getQuotePrice(no);
 		
+	}
+	//±â¾÷ µ· »©±â
+	@Override
+	public void subCash(String userid, int update_price) throws Exception {
+		dao.subCash(userid,update_price);
+		
+	}
+	//°ü¸®ÀÚ µ· ¿Ã¸®±â
+	@Override
+	public void addMoney(int update_price,int state) throws Exception {
+		dao.addMoney(update_price,state);
+		
+	}
+
+	@Override
+	public int getRepairPrice(int no) throws Exception {
+		
+		return dao.getRepairPrice(no);
 	}
 
 

@@ -68,7 +68,15 @@ public class MypageRestController {
 		map.put("userid", userid);
 		System.out.println("번호:"+no);
 		System.out.println("아이디:"+userid);
-		//거래끝난 업체 정보 , 기업 캐쉬 빼고 관리자 캐쉬 올리고
+		//거래가격 알아오기
+		int quote_price = service.getQuotePrice(no);
+		System.out.println("견적가격:"+quote_price);
+		int update_price = quote_price * 10/100;//거래가격의 10퍼센트
+		//기업 아이디에서 cash빼기
+		service.subCash(userid,update_price);
+		//관리자 돈 늘리기
+		service.addMoney(update_price,0);
+		
 		
 		
 		
@@ -136,10 +144,26 @@ public class MypageRestController {
 	// 구매업체 선택
 	@RequestMapping(value = "/purchaseRepairIngChoose", method = RequestMethod.POST)
 	public int purchaseRepairIngChoose(int no, String userid) throws Exception {
+		
+		///거래완료 확인 누르면 여기다 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		System.out.println("번호:"+no);
+		System.out.println("아이디:"+userid);
 		Map<String, String> map = new HashMap<>();
 		map.put("no", Integer.toString(no));
 		map.put("userid", userid);
 		int result = service.mypageRepairPurchaseIngChoose(map);
+		
+		
+		//수리가격 알아오기
+		int repair_price = service.getRepairPrice(no);
+		System.out.println("견적가격:"+repair_price);
+		int update_price = repair_price * 10/100;//거래가격의 10퍼센트
+		//기업 아이디에서 cash빼기
+		service.subCash(userid,update_price);
+		System.out.println("기업돈 뺏다");
+		//관리자 돈 늘리기
+		service.addMoney(update_price,1);
+		System.out.println("관리자 돈 늘렸다");
 
 		return result;
 	}
