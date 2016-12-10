@@ -31,7 +31,14 @@
 		select count(*) from ph_member
 			where userid=#{userid} and userpwd=#{userpwd}
 	</select>
-	
+	<select id="selectid"  resultType="String">
+		select userid from ph_member
+			where email=#{email} and username=#{username}
+	</select>
+	<select id="selectpassword"  resultType="String">
+		select userpwd from ph_member
+			where email=#{email} and userid=#{userid}
+	</select>
 	<select id="check_business_member"  resultType="String">
 					select businessNum from ph_member
 						where userid=#{userid}

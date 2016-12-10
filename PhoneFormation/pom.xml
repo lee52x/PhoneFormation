@@ -23,6 +23,19 @@
 	</repositories>
 
 	<dependencies>
+		<!-- 메일보내기 -->
+	 	<dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-mail</artifactId>
+            <version>4.3.1.RELEASE</version>
+        </dependency>
+
+		<dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+
 		<!-- 파일업로드 -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>

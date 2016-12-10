@@ -22,19 +22,19 @@ $(document).ready(function(){
 	var email1=$('#email1').val();
 	var email2=$('#email2').val();
 	var email = email1+'@'+email2;
-	var username=$('#username').val();
+	var userid=$('#userid').val();
 	alert(email);
-	alert(username);
+	alert(userid);
 	var result = confirm(email1+'@'+email2+'메일로 전송하시겠습니까?');
 	if(result==true){
 		$.ajax({
-	           url:'/phonefo/send_id',//URL요청
+	           url:'/phonefo/send_password',//URL요청
 	           type:'post', //method요청방식
 	           dataType:'text', //생략가능(클라이언트 <--- 서버)
 	           data:{ //클라이언트 ---> 서버
 	                              //JSON.stringify()함수 : JSON변환 함수
 	              email:email,
-	              username:username,
+	              userid:userid,
 	           },
 	           success:function(result){ //요청 성공시 콜백함수
 	              if(result==='success'){ //=== : 자료형 먼저 검사, 자료형 같을 때 내용비교, 다르면 false ex) if(1==='1') --> false
@@ -57,15 +57,15 @@ $(document).ready(function(){
 <div class="emailBox">
 						<form id="frm_info2" method="post" action="search_id_result">
 							<fieldset>
-								<legend>가입자명, e-메일로 입력</legend>
+								<legend>아이디, e-메일로 입력</legend>
 								<h2>e-메일로 찾기</h2>
 								<p class="subTxt">회원정보에 등록된 e-메일로 아이디를<br/> 찾을 수 있습니다.</p>
 
 								<!-- e-메일로 찾기 -->
 								<dl class="odd">
-									<dt><label for="lb_eName">가입자명</label></dt>
+									<dt><label for="lb_eName">아이디</label></dt>
 									<dd>
-										<input id="username" name="username" type="text" maxlength="40" class="tBox" style="width:195px;" />
+										<input id="userid" name="userid" type="text" maxlength="40" class="tBox" style="width:195px;" />
 									</dd>
 									<dt><label for="lb_email">e-메일</label></dt>
 									<dd>

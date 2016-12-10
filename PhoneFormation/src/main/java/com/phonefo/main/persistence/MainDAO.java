@@ -29,4 +29,6 @@ public interface MainDAO {
 	//로그인한 기업회원 아이디의 정보 가져오기
 	public MemberVO getBVO(String userid)throws Exception;
 	public void insertBusiness(MemberVO vo)throws Exception;
+	public String selectid(MemberVO vo) throws Exception;
+	public String selectpassword(MemberVO vo) throws Exception;
 }

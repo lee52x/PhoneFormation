@@ -5,6 +5,10 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailException;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
@@ -26,6 +30,8 @@ public class BoardController {
 
 	@Inject
 	private BoardService service;
+	@Autowired
+    protected JavaMailSender mailSender;
 
 	@RequestMapping("/boardlist")
 	public String listPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
@@ -43,14 +49,31 @@ public class BoardController {
 	}
 
 	// 입력폼요청
+//	@RequestMapping(value = "/boardinput", method = RequestMethod.GET)
+//	public String inputpageGET(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+//		model.addAttribute("title", service.selecttitle(cri.getTno()));
+//		model.addAttribute("body", "./board/boardinput.jsp");
+//
+//		return "mainView";
+//	}
 	@RequestMapping(value = "/boardinput", method = RequestMethod.GET)
-	public String inputpageGET(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
-		model.addAttribute("title", service.selecttitle(cri.getTno()));
-		model.addAttribute("body", "./board/boardinput.jsp");
-
+	public String inputpageGET( Model model) throws Exception {
+		System.out.println("메일보내기44");
+        SimpleMailMessage msg = new SimpleMailMessage();
+        msg.setFrom("wogus519@gmail.com");
+        msg.setTo(new String[] { "wogus519@naver.com" });
+        msg.setSubject("제목이 이러저러합니다");
+        msg.setText("본문이 어쩌구저쩌구합니다");
+ 
+        try {
+            mailSender.send(msg);
+        } catch (MailException ex) {
+            System.out.println("메일실패");
+        }
+		model.addAttribute("body","./main/body.jsp");
+		
 		return "mainView";
 	}
-
 	// 입력
 	@RequestMapping(value = "/boardinput", method = RequestMethod.POST)
 	public String inputpagePOST(HttpServletRequest request, MultipartFile file, BoardVO board, RedirectAttributes attr,

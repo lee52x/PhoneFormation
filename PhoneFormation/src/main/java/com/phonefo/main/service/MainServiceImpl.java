@@ -68,6 +68,16 @@ public class MainServiceImpl implements MainService {
 		return result;
 	}
 
+	@Override
+	public String selectid(MemberVO vo) throws Exception {
+		return dao.selectid(vo);
+	}
+
+	@Override
+	public String selectpassword(MemberVO vo) throws Exception {
+		return dao.selectpassword(vo);
+	}
+
 
 	
 

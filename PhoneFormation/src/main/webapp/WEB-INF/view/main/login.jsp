@@ -143,12 +143,19 @@
 
 <script type="text/javascript">
 
-function popup() {
+function popup1() {
 	window.open(
-	"/phonefo/idpwd",
-	"EventFrame",
-	"menubar=no,width=500,height=400,toolbar=no"
-	);
+		"/phonefo/search_id",
+		"EventFrame",
+		"menubar=no,width=500,height=400,toolbar=no"
+		);
+	}
+function popup2() {
+	window.open(
+		"/phonefo/search_password",
+		"EventFrame",
+		"menubar=no,width=500,height=400,toolbar=no"
+		);
 	}
 
 
@@ -281,7 +288,8 @@ function popup() {
 	    	<p class="signup-forgotten">
 	    		<a href="/phonefo/join" class="sign-up">회원가입</a>
 	    		<span>l</span>
-	    		<a class="forgotten" onclick="popup()">아이디/비밀번호 찾기</a>
+	    		<a class="forgotten" onclick="popup1()">아이디/</a>
+	    		<a class="forgotten" onclick="popup2()">비밀번호 찾기</a>
 	    		<span>l</span>
 	    		<a href="/zf_user/help" class="service_info_txt">서비스 안내</a>
 	    	</p>
@@ -341,7 +349,8 @@ function popup() {
 	    	<p class="signup-forgotten">
 	    		<a href="/phonefo/join" class="sign-up">회원가입</a>
 	    		<span>l</span>
-	    		<a href="/phonefo/join" class="forgotten">아이디/비밀번호 찾기</a>
+	    		<a href="/phonefo/join" class="forgotten">아이디/</a>
+	    		<a href="/phonefo/join" class="forgotten">비밀번호 찾기</a>
 	    		<span>l</span>
 	    		<a href="/phonefo/join" class="service_info_txt">서비스 안내</a>
 	    	</p>
