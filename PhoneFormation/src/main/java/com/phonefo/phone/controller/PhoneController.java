@@ -1,11 +1,16 @@
 package com.phonefo.phone.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.phonefo.phone.domain.PhoneCapaVO;
 import com.phonefo.phone.domain.PhoneColorVO;
@@ -29,7 +34,7 @@ public class PhoneController {
 	@Inject
 	private PhoneInfoService service;
 	
-	@RequestMapping("phoneInfo")
+	@RequestMapping("/phoneInfo")
 	public String phoneInfo(Model model)throws Exception{
 		model.addAttribute("list1", service.selectInfo("samsung"));	
 		model.addAttribute("list2", service.selectInfo("lg"));	
@@ -65,11 +70,16 @@ public class PhoneController {
 	public String adminAddPost(Model model, PhoneCapaVO phonecapaVO, PhoneColorVO phonecolorVO, PhoneInfoVO phoneinfoVO, 
 			spec_audioVO audioVO, spec_batteryVO batteryVO, spec_cameraVO cameraVO, spec_connectVO connectVO, spec_displayVO displayVO,
 			spec_memoryVO memoryVO, spec_networkVO networkVO, spec_processorVO processorVO, spec_serviceVO serviceVO,
-			spec_specificationsVO specificationsVO)throws Exception{
+			spec_specificationsVO specificationsVO, HttpServletRequest request, MultipartFile file)throws Exception{
 		
+		MultipartHttpServletRequest multipartRequest =  (MultipartHttpServletRequest)request; 
+		List<MultipartFile> files = multipartRequest.getFiles("file");
+		System.out.println(files.size());
+		for(int i=0; i<files.size();i++)
+			System.out.println(files.get(i).getOriginalFilename());
 		
-		model.addAttribute("body", "./phone/phoneInfo.jsp");
-		return "mainView";
+		model.addAttribute("body", "./phone/adminAdd.jsp");
+		return "redirect:/phonefo/adminAdd";
 	}
 	
 }

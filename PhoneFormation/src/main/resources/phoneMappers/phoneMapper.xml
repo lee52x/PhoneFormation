@@ -72,31 +72,73 @@
 		from spec_service
 		where no=#{no}
 	</select>
-<!-- 	<insert id="insert_phone">
+ 	<insert id="insert_phone">
 		insert into
 		ph_phone(no, name, image, manufacture, release_date)
 		values(ph_phone_seq.nextval,#{name},#{image},#{manufacture},#{release_date})
-	</insert> -->
-<!-- 	<select id="selectno">
+	</insert> 
+ 	<select id="selectno">
 		select max(no)
 		from ph_phone;
-	</select> -->
-<!-- 	<insert id="insert_color">
+	</select>
+	<insert id="insert_color">
 		insert into
-		ph_phone()
-	</insert> -->
-	<!-- <insert id=""></insert>
-	<insert id=""></insert>
-	<insert id=""></insert>
-	<insert id=""></insert>
-	<insert id=""></insert>
-	<insert id=""></insert>
-	<insert id=""></insert>
-	<insert id=""></insert>
-	<insert id=""></insert>
-	<insert id=""></insert>
-	<insert id=""></insert>
-	<insert id=""></insert>
-	<insert id=""></insert>
- -->
+		ph_color(no, color, image)
+		values(#{no}, #{color}, #{image})
+	</insert>
+	<insert id="insert_capacity">
+		insert into
+		ph_capacity(no, capacity, release_price)
+		values(#{no}, #{color}, #{release_price})
+	</insert>
+	<insert id="insert_processor">
+		insert into
+		spec_processor(no, cpu_Speed, cpu_type)
+		values(#{no}, #{cpu_Speed}, #{cpu_type})
+	</insert>
+	<insert id="insert_display">
+		insert into
+		spec_display(no, size_main, resoluation_main, type_main, color_depth_main, s_pen)
+		values(#{no}, #{size_main}, #{resoluation_main}, #{type_main}, #{color_depth_main}, #{s_pen})
+	</insert>
+	<insert id="insert_camera">
+		insert into
+		spec_camera(no, video_resoluation, maincamera_pixel, maincamera_aperture, frontcamera_pixel, frontcamera_aperture, maincamera_flash, maincamera_autofocus, camera_detail)
+		values(#{no}, #{video_resoluation}, #{maincamera_pixel}, #{maincamera_aperture}, #{frontcamera_pixel}, #{frontcamera_aperture} ,#{maincamera_flash}, #{maincamera_autofocus}, #{camera_detail})
+	</insert>
+	<insert id="insert_memory">
+		insert into
+		spec_memory(no, ramsize, romsize, usable_memory, outer_memory)
+		values(#{no}, #{ramsize}, #{romsize}, #{usable_memory}, #{outer_memory})
+	</insert>
+	<insert id="insert_network">
+		insert into
+		spec_network(no, type_of_sim_slot, gsm_2g, umts_3g, td_scdma_3g, fdd_lte_4g, tdd_lte_4g)
+		values(#{no}, #{type_of_sim_slot}, #{gsm_2g}, #{umts_3g}, #{td_scdma_3g}, #{fdd_lte_4g}, #{tdd_lte_4g})
+	</insert>
+	<insert id="insert_connect">
+		insert into
+		spec_connect(no, ant, usb_version, location, ear_adapter, mhl, wifi_direct, wifi, bluetooth_version, nfc, bluetooth_profile, pcsynk)
+		values(#{no}, #{ant}, #{usb_version}, #{location}, #{ear_adapter}, #{mhl}, #{wifi_direct}, #{wifi}, #{bluetooth_version}, #{nfc}, #{bluetooth_profile}, #{pcsynk})
+	</insert>
+	<insert id="insert_specifications">
+		insert into
+		spec_specifications(no, os, color, form, phone_size, weight, sensor)
+		values(#{no}, #{os}, #{color}, #{form}, #{phone_size}, #{weight}, #{sensor})
+	</insert>
+	<insert id="insert_battery">
+		insert into
+		spec_battery(no, internet_use_3g, internet_use_lte, internet_use_wifi, video_play, battery_capacity, change_possible, audio_play,audio_play_ondisplay , continuous_call)
+		values(#{no}, #{internet_use_3g}, #{internet_use_lte}, #{internet_use_wifi}, #{video_play}, #{battery_capacity}, #{change_possible}, #{audio_play}, #{audio_play_ondisplay}, #{continuous_call})
+	</insert>
+	<insert id="insert_audio">
+		insert into
+		spec_audio(no, video_format, video_resoluation, audio_format, video_detail, facetime)
+		values(#{no}, #{video_format}, #{video_resoluation}, #{audio_format}, #{video_detail}, #{facetime})
+	</insert>
+	<insert id="insert_service">
+		insert into
+		spec_service(no, gear_support, svoice, mobiletv, siri, waterproof)
+		values(#{no}, #{gear_support}, #{svoice}, #{mobiletv}, #{siri}, #{waterproof})
+	</insert>
 </mapper>
