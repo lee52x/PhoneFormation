@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="mypage">
 
-	<!-- 마이페이지 일반멤버 출력 -->
+	<!-- 마이페이지 멤버 출력 -->
 	<select id="mypageMemberInfo" resultType="mypageMember">
 		select memberno,userid,userpwd,username,birth,gender,email,rdate,tel,root,businessNum 
 		from ph_member
