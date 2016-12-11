@@ -47,8 +47,16 @@ table{
 
 
 </style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#btn_update').click(function(){
+    	   	$(location).attr('href','/phonefo/adminUpdate');
+      });
+	});
+</script>
 </head>
 <body>
+  <form method="post">
     <!-- Start Latest Projects Carousel -->
 	<center>
 		<c:forEach items="${list_spec_Info }" var="list_spec_Info">
@@ -77,20 +85,19 @@ table{
 	<hr width="84%">
 		
 	<div class="container">
-<%-- 				<col width="30%">
-				<col width="*%"> --%>
 		<div class="spec_div">
-		<h3>용량</h3>
+		<h3>기본정보</h3>
 			<table>
 				<c:forEach items="${list_capacity }" var="list_capacity">
 					<c:if test="${!empty list_capacity.capacity}">
 						<tr>
-							<th>${list_capacity.capacity }</th>
+							<th>가격 (용량)</th>
+							<td> ${list_capacity.release_price } (${list_capacity.capacity })</td>
 					</c:if>
-					<c:if test="${!empty list_capacity.release_price}">
+<%-- 					<c:if test="${!empty list_capacity.release_price}">
 							<td>${list_capacity.release_price }</td>
 						</tr>
-					</c:if>
+					</c:if> --%>
 				</c:forEach>
 			</table>
 		</div>
@@ -479,6 +486,9 @@ table{
 			</table>
 		</c:forEach>
 		</div>
+		<input type='submit' id='btn_update' value='수정'>
+		<input type='button' id='btn_del' value='삭제'>
 	</div>
+</form>
 </body>
 </html>

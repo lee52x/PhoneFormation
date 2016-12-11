@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.phonefo.phone.domain.NoVO;
 import com.phonefo.phone.domain.PhoneCapaVO;
@@ -73,7 +74,7 @@ public class PhoneController {
 	}
 	
 	@RequestMapping(value="/adminAdd", method=RequestMethod.POST)
-	public String adminAddPost( String[] colorname, Model model,  HttpServletRequest request, MultipartFile file, PhoneInfoVO phoneinfoVO, NoVO noVO,
+	public String adminAddPost(String[] colorname, String[] capacity, int[] release_price, Model model,  HttpServletRequest request, MultipartFile file, PhoneInfoVO phoneinfoVO, NoVO noVO,
 			PhoneCapaVO phonecapaVO, PhoneColorVO phonecolorVO, spec_audioVO audioVO, spec_batteryVO batteryVO, spec_cameraVO cameraVO,
 			spec_connectVO connectVO, spec_displayVO displayVO, spec_memoryVO memoryVO, spec_networkVO networkVO, 
 			spec_processorVO processorVO,	spec_serviceVO serviceVO, spec_specificationsVO specificationsVO, HttpSession session)throws Exception{
@@ -91,7 +92,6 @@ public class PhoneController {
 		
 		service.insert_phone(phoneinfoVO);
 		int no=service.selectno();
-		phonecapaVO.setNo(no);
 		audioVO.setNo(no);
 		batteryVO.setNo(no);
 		cameraVO.setNo(no);
@@ -103,7 +103,13 @@ public class PhoneController {
 		serviceVO.setNo(no);
 		specificationsVO.setNo(no);
 		
-		service.insert_capacity(phonecapaVO);	
+		for (int i = 0; i < capacity.length; i++) {
+			phonecapaVO.setNo(no);
+			phonecapaVO.setCapacity(capacity[i]);
+			phonecapaVO.setRelease_price(release_price[i]);
+			service.insert_capacity(phonecapaVO);
+		}
+		
 		service.insert_audio(audioVO);
 		service.insert_battery(batteryVO);
 		service.insert_camera(cameraVO);
@@ -129,7 +135,16 @@ public class PhoneController {
 		}
 		
 		model.addAttribute("body", "./phone/adminAdd.jsp");
-		return "redirect:/phonefo/adminAdd";
+		return "redirect:/phonefo/phoneInfo_spec?no="+no;
+	}
+	
+	@RequestMapping(value="/adminUpdate", method=RequestMethod.POST)
+	public String adminUpdatePost(String[] colorname, String[] capacity, int[] release_price, Model model,  HttpServletRequest request, MultipartFile file, PhoneInfoVO phoneinfoVO, NoVO noVO,
+			PhoneCapaVO phonecapaVO, PhoneColorVO phonecolorVO, spec_audioVO audioVO, spec_batteryVO batteryVO, spec_cameraVO cameraVO,
+			spec_connectVO connectVO, spec_displayVO displayVO, spec_memoryVO memoryVO, spec_networkVO networkVO, 
+			spec_processorVO processorVO,	spec_serviceVO serviceVO, spec_specificationsVO specificationsVO,RedirectAttributes attr)throws Exception{
+		model.addAttribute("body", "./phone/adminAdd.jsp");
+		return "mainView";
 	}
 	
 }
