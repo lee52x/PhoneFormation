@@ -84,7 +84,7 @@
 					<th>CPU 속도</th><td><input type="text" name='cpu_Speed'></td>
 				</tr>
 				<tr>
-					<th>CPU 종류</th><td><input type="text" name='cpu_type'></td>
+					<th>CPU 종류</th><td></td>
 				</tr>
 			</table>
 	
@@ -119,10 +119,10 @@
 					<th>메인 카메라 - 화소</th><td><input type='text' name='maincamera_pixel'></td>
 				</tr>
 				<tr>
-					<th>전면 카메라 - 화소</th><td><input type='text' name='maincamera_aperture'></td>
+					<th>메인 카메라 - 조리개 값</th><td><input type='text' name='maincamera_aperture'></td>
 				</tr>
 				<tr>
-					<th>메인 카메라 - 조리개 값</th><td><input type='text' name='frontcamera_pixel'></td>
+					<th>전면 카메라 - 화소</th><td><input type='text' name='frontcamera_pixel'></td>
 				</tr>
 				<tr>
 					<th>전면 카메라 - 조리개 값</th><td><input type='text' name='frontcamera_aperture'></td>

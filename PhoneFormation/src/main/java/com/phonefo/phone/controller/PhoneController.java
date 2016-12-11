@@ -84,7 +84,6 @@ public class PhoneController {
 
 		
 		String savedlistName = file.getOriginalFilename();
-		System.out.println("대표사진="+savedlistName);
 		String uploadlistpath = request.getSession().getServletContext().getRealPath("/resources/images/phone");
 		File listtarget = new File(uploadlistpath, savedlistName);
 		FileCopyUtils.copy(file.getBytes(), listtarget);
@@ -139,11 +138,67 @@ public class PhoneController {
 	}
 	
 	@RequestMapping(value="/adminUpdate", method=RequestMethod.POST)
-	public String adminUpdatePost(String[] colorname, String[] capacity, int[] release_price, Model model,  HttpServletRequest request, MultipartFile file, PhoneInfoVO phoneinfoVO, NoVO noVO,
+	public String adminUpdatePost(String[] colorname, String[] capacity, int[] release_price, Model model,  HttpServletRequest request, MultipartFile file, PhoneInfoVO phoneinfoVO,
 			PhoneCapaVO phonecapaVO, PhoneColorVO phonecolorVO, spec_audioVO audioVO, spec_batteryVO batteryVO, spec_cameraVO cameraVO,
 			spec_connectVO connectVO, spec_displayVO displayVO, spec_memoryVO memoryVO, spec_networkVO networkVO, 
 			spec_processorVO processorVO,	spec_serviceVO serviceVO, spec_specificationsVO specificationsVO,RedirectAttributes attr)throws Exception{
-		model.addAttribute("body", "./phone/adminAdd.jsp");
+		
+		MultipartHttpServletRequest multipartRequest =  (MultipartHttpServletRequest)request; 
+		List<MultipartFile> files = multipartRequest.getFiles("file");
+
+		
+		String savedlistName = file.getOriginalFilename();
+		String uploadlistpath = request.getSession().getServletContext().getRealPath("/resources/images/phone");
+		File listtarget = new File(uploadlistpath, savedlistName);
+		FileCopyUtils.copy(file.getBytes(), listtarget);
+		phoneinfoVO.setImage("/resources/images/phone/"+savedlistName);
+		
+		attr.addAttribute("no", phoneinfoVO.getNo());
+		//attr.addAttribute("no", phonecolorVO.getNo());
+		//attr.addAttribute("no", phonecapaVO.getNo());
+		attr.addAttribute("no", audioVO.getNo());
+		attr.addAttribute("no", batteryVO.getNo());
+		attr.addAttribute("no", cameraVO.getNo());
+		attr.addAttribute("no", connectVO.getNo());
+		attr.addAttribute("no", displayVO.getNo());
+		attr.addAttribute("no", memoryVO.getNo());
+		attr.addAttribute("no", networkVO.getNo());
+		attr.addAttribute("no", processorVO.getNo());
+		attr.addAttribute("no", serviceVO.getNo());
+		attr.addAttribute("no", specificationsVO.getNo());
+		
+		for (int i = 0; i < capacity.length; i++) {
+			attr.addAttribute("no", phonecapaVO.getNo());
+			phonecapaVO.setCapacity(capacity[i]);
+			phonecapaVO.setRelease_price(release_price[i]);
+			service.update_capacity(phonecapaVO);
+		}
+		
+		service.update_phone(phoneinfoVO);
+		service.update_audio(audioVO);
+		service.update_battery(batteryVO);
+		service.update_camera(cameraVO);
+		//service.update_capacity(phonecapaVO);
+		//service.update_color(phonecolorVO);
+		service.update_connect(connectVO);
+		service.update_display(displayVO);
+		service.update_memory(memoryVO);
+		service.update_network(networkVO);
+		service.update_processor(processorVO);
+		service.update_service(serviceVO);
+		service.update_specifications(specificationsVO);
+		
+/*		for (int i = 1; i < files.size(); i++) {
+			String savedName = files.get(i).getOriginalFilename();
+			String uploadpath = request.getSession().getServletContext().getRealPath("/resources/images/phone");
+			File target = new File(uploadpath, savedName);
+			FileCopyUtils.copy(files.get(i).getBytes(), target);
+			attr.addAttribute("no", phonecolorVO.getNo());
+			phonecolorVO.setImage("/resources/images/phone/"+savedName);
+			phonecolorVO.setColor(colorname[i-1]);
+			service.update_color(phonecolorVO);
+		}*/
+		model.addAttribute("body", "./phone/phoneInfo_spec.jsp");
 		return "mainView";
 	}
 	
