@@ -26,7 +26,6 @@ $(document).ready(function(){
 	});
 	$('#btn_search_mine').on("click",	function(event) {
 		userid= "${sessionScope.userid}";
-		alert(userid);
 		self.location = "boardlist"
 			+ '${pageMaker.makeQuery(1)}'
 			+ "&searchType="
@@ -95,16 +94,18 @@ $(document).ready(function(){
 												<td class="num" nowrap="nowrap">${boardVO.bno}</td>
 												<td class="subject">
 													<a href='/phonefo/boardpage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}&tno=${cri.tno}'>
-														${boardVO.title}[0]</a>
-												 	<img src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="11" height="11" alt="사진첨부" class="icon_file_photo">
-													<img src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="8" height="12" alt="새글" class="icon_new">
+														${boardVO.title}[${boardVO.replycnt}]</a>
+													<c:if test="${boardVO.image!=null}">
+												 		<img src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="11" height="11" alt="사진첨부" class="icon_file_photo">
+												 	</c:if>
+													<!-- <img src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="8" height="12" alt="새글" class="icon_new"> -->
 												</td>
 												<td class="nick">
 													${boardVO.writer}
 												</td>
 												<td class="date" nowrap="nowrap">${boardVO.regdate}</td>
 												<td class="count" nowrap="nowrap">${boardVO.viewcnt}</td>
-												<td class="recommend_cnt" nowrap="nowrap">0</td>
+												<td class="recommend_cnt" nowrap="nowrap">${boardVO.goodcnt}</td>
 											</tr>
 											</c:forEach>
 										</tbody>
@@ -163,9 +164,7 @@ $(document).ready(function(){
 										<a href="javascript:;" class="btn_search" id="btn_search"
 											><img src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif"
 											width="37" height="21" alt="검색"></a>
-										<a	href="javascript:;" id="btn_search_mine">내가 쓴 글</a><img
-											src="http://i1.daumcdn.net/cafeimg/cf_img4/img/n.gif"
-											alt="new" class="my_article_new">
+										<a	href="javascript:;" id="btn_search_mine">내가 쓴 글</a>
 									</div>
 									<!-- end cafeSearchBox -->
 								</div>

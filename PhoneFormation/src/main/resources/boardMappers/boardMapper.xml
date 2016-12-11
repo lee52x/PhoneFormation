@@ -21,7 +21,7 @@
 	<!-- 게시판 전체리스트출럭 -->
 	<select id="selectlist" resultType="boardVO">
 		select
-		bno,title,content,writer,regdate,viewcnt
+		bno,title,content,writer,regdate,viewcnt,image,goodcnt,replycnt
 		from ph_board
 		where tno =	#{tno}
 		<if test="searchType != null">
@@ -46,7 +46,7 @@
 	</select>
 	<select id="selectpage" resultType="boardVO">
 		select
-		bno,title,content,writer,regdate,viewcnt,image
+		bno,title,content,writer,regdate,viewcnt,image,goodcnt,replycnt
 		from ph_board
 		where
 		bno=#{bno}
@@ -78,4 +78,32 @@
 		update ph_board set viewcnt=(select viewcnt+1 from ph_board where bno=#{bno})
 		where bno=#{bno}
 	</update>
+	<update id="update_replycnt">
+		<!-- 기존 타이틀과 내용에 대한 수정 -->
+		update ph_board set replycnt=(select count(*) from ph_reply where bno=#{bno})
+		where bno=#{bno}
+	</update>
+	<update id="update_goodcnt">
+		<!-- 기존 타이틀과 내용에 대한 수정 -->
+		update ph_board set goodcnt=(select count(*) from ph_boardgood where bno=#{bno})
+		where bno=#{bno}
+	</update>
+	<insert id="insert_good">
+		insert into ph_boardgood(bno,userid)
+		values(#{bno},#{userid})
+	</insert>
+	<select id="select_count" resultType="int">
+		select count(bno)
+		from ph_boardgood
+		where bno=#{bno} and userid=#{userid}
+	</select>
+	<select id="select_good" resultType="int">
+		select count(*)
+		from ph_boardgood
+		where bno=#{bno} 
+	</select>
+	<delete id="delete_good">
+		delete from ph_boardgood
+		where bno=#{bno} and userid=#{userid}
+	</delete>
 </mapper>

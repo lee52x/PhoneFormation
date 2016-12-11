@@ -24,5 +24,4 @@ public interface ReplyDAO {
 	
 	//특정 게시물 번호에 대한 전체 댓글 수 조회
 	public int count(int bno)throws Exception;
-	
 }

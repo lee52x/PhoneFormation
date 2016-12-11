@@ -51,5 +51,4 @@ public class ReplyDAOImpl implements ReplyDAO {
 	public int count(int bno) throws Exception {
 		return sqlSession.selectOne("reply.count",bno);
 	}
-
 }

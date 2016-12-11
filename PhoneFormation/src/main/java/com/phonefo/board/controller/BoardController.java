@@ -1,6 +1,8 @@
 package com.phonefo.board.controller;
 
 import java.io.File;
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -20,6 +22,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.phonefo.board.domain.PageMaker;
 import com.phonefo.board.domain.SearchCriteria;
 import com.phonefo.board.domain.BoardVO;
+import com.phonefo.board.service.BoardGoodservice;
 import com.phonefo.board.service.BoardService;
 
 @Controller
@@ -35,7 +38,9 @@ public class BoardController {
 	public String listPage(@ModelAttribute("cri") SearchCriteria cri, Model model,HttpSession session) throws Exception {
 		System.out.println(session.getAttribute("userid"));	
 		model.addAttribute("list", service.selectlist(cri));
-
+		List<BoardVO> vo=service.selectlist(cri);
+		for(int i=0; i< vo.size();i++)
+			System.out.println("="+vo.get(i).getImage());
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.setTotalCount(service.listCount(cri.getTno()));
@@ -96,7 +101,6 @@ public class BoardController {
 
 		model.addAttribute("body", "./board/boardpage.jsp");
 		model.addAttribute(board);
-
 		return "mainView";
 	}
 

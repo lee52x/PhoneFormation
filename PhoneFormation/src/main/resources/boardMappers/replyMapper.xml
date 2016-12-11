@@ -28,6 +28,7 @@
        select count(*) from ph_reply
        where bno=#{bno}
    </select>
+
    
 </mapper>
 
