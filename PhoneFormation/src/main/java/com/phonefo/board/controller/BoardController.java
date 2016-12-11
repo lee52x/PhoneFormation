@@ -1,16 +1,11 @@
 package com.phonefo.board.controller;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.MailException;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.phonefo.board.domain.PageMaker;
@@ -34,10 +28,12 @@ public class BoardController {
 
 	@Inject
 	private BoardService service;
+	@Autowired
     protected JavaMailSender mailSender;
 
 	@RequestMapping("/boardlist")
-	public String listPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+	public String listPage(@ModelAttribute("cri") SearchCriteria cri, Model model,HttpSession session) throws Exception {
+		System.out.println(session.getAttribute("userid"));	
 		model.addAttribute("list", service.selectlist(cri));
 
 		PageMaker pageMaker = new PageMaker();
@@ -46,7 +42,6 @@ public class BoardController {
 
 		model.addAttribute("pageMaker", pageMaker);
 		model.addAttribute("title", service.selecttitle(cri.getTno()));
-		System.out.println(service.selecttitle(cri.getTno()));
 		model.addAttribute("body", "./board/boardlist.jsp");
 
 		return "mainView";
@@ -66,7 +61,7 @@ public class BoardController {
 	public String inputpagePOST(HttpServletRequest request, MultipartFile file, BoardVO board, RedirectAttributes attr,
 			HttpSession session) throws Exception {
 
-		board.setWriter("sadfasdf");
+		board.setWriter((String) session.getAttribute("userid"));
 		///여기서부터
 		board.setImage("");
 		String savedName = file.getOriginalFilename();
@@ -135,12 +130,7 @@ public class BoardController {
 		attr.addAttribute("perPageNum", cri.getPerPageNum());
 		attr.addAttribute("searchType", cri.getSearchType());
 		attr.addAttribute("keyword", cri.getKeyword());
-		System.out.println(board.getBno());
-		System.out.println(board.getContent());
-		System.out.println(board.getTitle());
-		System.out.println(board.getImage());
 		service.update(board);
-		System.out.println("dd");
 		return "redirect:/phonefo/boardpage";
 	}
 

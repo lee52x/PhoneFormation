@@ -124,7 +124,14 @@ function getPageList(page){
     });//ajax
  }
 $(document).ready(function(){
-	
+	$('#searchBtn').on("click",
+			function(event) {
+				self.location = "list"
+					+ '${pageMaker.makeQuery(1)}'
+					+ "&searchType="
+					+ $("select option:selected").val()
+					+ "&keyword=" + $('#keywordInput').val();
+		});
     
     function printPaging(pageMaker){
         var str="";
@@ -263,7 +270,7 @@ $(document).ready(function(){
 		<input type='hidden' name='keyword' value="${cri.keyword}">
 
 		<div class="list_btn_area list_btn_top list_btn_bbs_read">
-			<a href="javascript:;" class="btn" id="inputBtn">
+			<a href="javascript:;" class="btn" id="searchBtn">
 				<span class="btn_bg bg03"></span>
 				<span class="btn_txt bt03 w07 b"><span class="btn_icon_write">글쓰기</span></span>
 			</a>

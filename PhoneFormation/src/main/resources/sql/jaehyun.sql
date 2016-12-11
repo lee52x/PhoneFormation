@@ -28,9 +28,17 @@ create table ph_boardgood(
 bno number,
 replyer varchar2(50),
 primary key(bno,replyer)
-)
+);
 ALTER TABLE ph_boardgood ADD constraint ph_boardgoodbnoforeign_fk foreign key(bno) references ph_board(bno) on delete cascade;
 ALTER TABLE ph_boardgood ADD constraint ph_boardgoodforeign_fk foreign key(replyer) references ph_member(userid) on delete cascade;
+
+drop sequence ph_boardgood_seq;
+create sequence ph_boardgood_seq
+   start with 1
+   increment by 1 
+   nocache
+   nocycle;
+
 
 create table ph_ono(
 ono number primary key,
@@ -86,76 +94,76 @@ create sequence ph_reply_seq
 
 
    
-insert into ph_boardtype values (ph_boardtype_seq.nextval,'KT 이벤트');
-insert into ph_boardtype values (ph_boardtype_seq.nextval,'LGU+ 이벤트');
-insert into ph_boardtype values (ph_boardtype_seq.nextval,'SKT 이벤트');
+insert into ph_boardtype values (1,'KT 이벤트');
+insert into ph_boardtype values (2,'LGU+ 이벤트');
+insert into ph_boardtype values (3,'SKT 이벤트');
 
-insert into ph_boardtype values (ph_boardtype_seq.nextval,'공지사항');
-insert into ph_boardtype values (ph_boardtype_seq.nextval,'자유게시판');
+insert into ph_boardtype values (4,'공지사항');
+insert into ph_boardtype values (5,'자유게시판');
 
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
-insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','csa519');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
+insert into ph_board(bno,tno,title,content,writer) values(ph_board_seq.nextval,4,'테스트','테스트내용','qweqwe');
