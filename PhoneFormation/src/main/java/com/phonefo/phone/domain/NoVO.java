@@ -10,5 +10,8 @@ public class NoVO {
 	public void setNo(int no) {
 		this.no = no;
 	}
+	public NoVO() {
+		// TODO Auto-generated constructor stub
+	}	
 
 }

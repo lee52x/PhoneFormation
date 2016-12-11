@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import com.phonefo.phone.domain.NoVO;
 import com.phonefo.phone.domain.PhoneCapaVO;
 import com.phonefo.phone.domain.PhoneColorVO;
 import com.phonefo.phone.domain.PhoneInfoVO;
@@ -98,8 +99,8 @@ public class PhoneInfoServiceImpl implements PhoneInfoService{
 	}
 
 	@Override
-	public void insert_phone() throws Exception {
-		dao.insert_phone();
+	public void insert_phone(PhoneInfoVO phoneinfoVO) throws Exception {
+		dao.insert_phone(phoneinfoVO);		
 	}
 
 	@Override
@@ -108,63 +109,63 @@ public class PhoneInfoServiceImpl implements PhoneInfoService{
 	}
 
 	@Override
-	public void insert_color() throws Exception {
-		dao.insert_color();
+	public void insert_color(PhoneColorVO phonecolorVO) throws Exception {
+		dao.insert_color(phonecolorVO);
 	}
 
 	@Override
-	public void insert_capacity() throws Exception {
-		dao.insert_capacity();
+	public void insert_capacity(PhoneCapaVO phonecapaVO) throws Exception {
+		dao.insert_capacity(phonecapaVO);
 	}
 
 	@Override
-	public void insert_processor() throws Exception {
-		dao.insert_processor();
+	public void insert_processor(spec_processorVO processorVO) throws Exception {
+		dao.insert_processor(processorVO);
 	}
 
 	@Override
-	public void insert_display() throws Exception {
-		dao.insert_display();
+	public void insert_display(spec_displayVO displayVO) throws Exception {
+		dao.insert_display(displayVO);
 	}
 
 	@Override
-	public void insert_camera() throws Exception {
-		dao.insert_camera();
+	public void insert_camera(spec_cameraVO cameraVO) throws Exception {
+		dao.insert_camera(cameraVO);
 	}
 
 	@Override
-	public void insert_memory() throws Exception {
-		dao.insert_memory();
+	public void insert_memory(spec_memoryVO memoryVO) throws Exception {
+		dao.insert_memory(memoryVO);
 	}
 
 	@Override
-	public void insert_network() throws Exception {
-		dao.insert_network();
+	public void insert_network(spec_networkVO networkVO) throws Exception {
+		dao.insert_network(networkVO);
 	}
 
 	@Override
-	public void insert_connect() throws Exception {
-		dao.insert_connect();
+	public void insert_connect(spec_connectVO connectVO) throws Exception {
+		dao.insert_connect(connectVO);
 	}
 
 	@Override
-	public void insert_specifications() throws Exception {
-		dao.insert_specifications();
+	public void insert_specifications(spec_specificationsVO specificationsVO) throws Exception {
+		dao.insert_specifications(specificationsVO);
 	}
 
 	@Override
-	public void insert_battery() throws Exception {
-		dao.insert_battery();
+	public void insert_battery(spec_batteryVO batteryVO) throws Exception {
+		dao.insert_battery(batteryVO);
 	}
 
 	@Override
-	public void insert_audio() throws Exception {
-		dao.insert_audio();
+	public void insert_audio(spec_audioVO audioVO) throws Exception {
+		dao.insert_audio(audioVO);
 	}
 
 	@Override
-	public void insert_service() throws Exception {
-		dao.insert_service();
+	public void insert_service(spec_serviceVO serviceVO) throws Exception {
+		dao.insert_service(serviceVO);
 	}
 
 }

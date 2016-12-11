@@ -4,6 +4,9 @@ public class spec_processorVO {
 	private int no;
 	private String cpu_Speed;
 	private String cpu_type;
+	public spec_processorVO() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public int getNo() {
 		return no;

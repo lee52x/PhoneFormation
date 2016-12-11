@@ -6,6 +6,9 @@ public class spec_memoryVO {
 	private String romsize;
 	private String usable_memory;
 	private String outer_memory;
+	public spec_memoryVO() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getNo() {
 		return no;
 	}

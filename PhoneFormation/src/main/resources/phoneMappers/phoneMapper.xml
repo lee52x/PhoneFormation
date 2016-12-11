@@ -79,7 +79,7 @@
 	</insert> 
  	<select id="selectno" resultType="int">
 		select max(no)
-		from ph_phone;
+		from ph_phone
 	</select>
 	<insert id="insert_color">
 		insert into
@@ -89,7 +89,7 @@
 	<insert id="insert_capacity">
 		insert into
 		ph_capacity(no, capacity, release_price)
-		values(#{no}, #{color}, #{release_price})
+		values(#{no}, #{capacity}, #{release_price})
 	</insert>
 	<insert id="insert_processor">
 		insert into

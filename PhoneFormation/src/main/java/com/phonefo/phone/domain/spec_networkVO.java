@@ -8,6 +8,9 @@ public class spec_networkVO {
 	private String td_scdma_3g;
 	private String fdd_lte_4g;
 	private String tdd_lte_4g;
+	public spec_networkVO() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getNo() {
 		return no;
 	}

@@ -2,6 +2,7 @@ package com.phonefo.phone.persistence;
 
 import java.util.List;
 
+import com.phonefo.phone.domain.NoVO;
 import com.phonefo.phone.domain.PhoneCapaVO;
 import com.phonefo.phone.domain.PhoneColorVO;
 import com.phonefo.phone.domain.PhoneInfoVO;
@@ -31,18 +32,18 @@ public interface PhoneInfoDAO {
 	public List<spec_batteryVO> select_spec_battery(int no)throws Exception;
 	public List<spec_audioVO> select_spec_audio(int no)throws Exception;
 	public List<spec_serviceVO> select_spec_service(int no)throws Exception;
-	public void insert_phone()throws Exception;
+	public void insert_phone(PhoneInfoVO phoneinfoVO)throws Exception;
 	public int selectno()throws Exception;
-	public void insert_color()throws Exception;
-	public void insert_capacity()throws Exception;
-	public void insert_processor()throws Exception;
-	public void insert_display()throws Exception;
-	public void insert_camera()throws Exception;
-	public void insert_memory()throws Exception;
-	public void insert_network()throws Exception;
-	public void insert_connect()throws Exception;
-	public void insert_specifications()throws Exception;
-	public void insert_battery()throws Exception;
-	public void insert_audio()throws Exception;
-	public void insert_service()throws Exception;
+	public void insert_color(PhoneColorVO phonecolorVO)throws Exception;
+	public void insert_capacity(PhoneCapaVO phonecapaVO)throws Exception;
+	public void insert_processor(spec_processorVO processorVO)throws Exception;
+	public void insert_display(spec_displayVO displayVO)throws Exception;
+	public void insert_camera(spec_cameraVO cameraVO)throws Exception;
+	public void insert_memory(spec_memoryVO memoryVO)throws Exception;
+	public void insert_network(spec_networkVO networkVO)throws Exception;
+	public void insert_connect(spec_connectVO connectVO)throws Exception;
+	public void insert_specifications(spec_specificationsVO specificationsVO)throws Exception;
+	public void insert_battery(spec_batteryVO batteryVO)throws Exception;
+	public void insert_audio(spec_audioVO audioVO)throws Exception;
+	public void insert_service(spec_serviceVO serviceVO)throws Exception;
 }

@@ -7,6 +7,9 @@ public class spec_displayVO {
 	private String type_main;
 	private String color_depth_main;
 	private String s_pen;
+	public spec_displayVO() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getNo() {
 		return no;
 	}

@@ -27,4 +27,8 @@ public class PhoneColorVO {
 		return "PhoneColorVO [no=" + no + ", color=" + color + ", image=" + image + "]";
 	}
 	
+	public PhoneColorVO() {
+		// TODO Auto-generated constructor stub
+	}
+	
 }

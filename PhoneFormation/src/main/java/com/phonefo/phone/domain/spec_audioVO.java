@@ -8,6 +8,9 @@ public class spec_audioVO {
 	private String video_detail;
 	private String facetime;
 	
+	public spec_audioVO() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getVideo_detail() {
 		return video_detail;
 	}

@@ -8,6 +8,9 @@ public class spec_specificationsVO {
 	private String phone_size;
 	private String weight;
 	private String sensor;
+	public spec_specificationsVO() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getNo() {
 		return no;
 	}

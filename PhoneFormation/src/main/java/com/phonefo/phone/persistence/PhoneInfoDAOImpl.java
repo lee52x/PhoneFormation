@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.phonefo.phone.domain.NoVO;
 import com.phonefo.phone.domain.PhoneCapaVO;
 import com.phonefo.phone.domain.PhoneColorVO;
 import com.phonefo.phone.domain.PhoneInfoVO;
@@ -97,8 +98,8 @@ public class PhoneInfoDAOImpl implements PhoneInfoDAO {
 	}
 
 	@Override
-	public void insert_phone() throws Exception {
-		sqlSession.insert("phone.insert_phone");
+	public void insert_phone(PhoneInfoVO phoneinfoVO) throws Exception {
+		sqlSession.insert("phone.insert_phone",phoneinfoVO);
 	}
 
 	@Override
@@ -107,63 +108,74 @@ public class PhoneInfoDAOImpl implements PhoneInfoDAO {
 	}
 
 	@Override
-	public void insert_color() throws Exception {
-		sqlSession.insert("phone.insert_color");
+	public void insert_color(PhoneColorVO phonecolorVO) throws Exception {
+		sqlSession.insert("phone.insert_color", phonecolorVO);
 	}
 
 	@Override
-	public void insert_capacity() throws Exception {
-		sqlSession.insert("phone.insert_capacity");
+	public void insert_capacity(PhoneCapaVO phonecapaVO) throws Exception {
+		sqlSession.insert("phone.insert_capacity", phonecapaVO);
 	}
 
 	@Override
-	public void insert_processor() throws Exception {
-		sqlSession.insert("insert_processor");
+	public void insert_processor(spec_processorVO processorVO) throws Exception {
+		sqlSession.insert("phone.insert_processor", processorVO);
 	}
 
 	@Override
-	public void insert_display() throws Exception {
-		sqlSession.insert("phone.insert_display");
+	public void insert_display(spec_displayVO displayVO) throws Exception {
+		sqlSession.insert("phone.insert_display", displayVO);
 	}
 
 	@Override
-	public void insert_camera() throws Exception {
-		sqlSession.insert("phone.insert_camera");
+	public void insert_camera(spec_cameraVO cameraVO) throws Exception {
+		sqlSession.insert("phone.insert_camera", cameraVO);
 	}
 
 	@Override
-	public void insert_memory() throws Exception {
-		sqlSession.insert("phone.insert_memory");
+	public void insert_memory(spec_memoryVO memoryVO) throws Exception {
+		sqlSession.insert("phone.insert_memory", memoryVO);
 	}
 
 	@Override
-	public void insert_network() throws Exception {
-		sqlSession.insert("phone.insert_network");
+	public void insert_network(spec_networkVO networkVO) throws Exception {
+		sqlSession.insert("phone.insert_network", networkVO);
 	}
 
 	@Override
-	public void insert_connect() throws Exception {
-		sqlSession.insert("phone.insert_connect");
+	public void insert_connect(spec_connectVO connectVO) throws Exception {
+		sqlSession.insert("phone.insert_connect", connectVO);
 	}
 
 	@Override
-	public void insert_specifications() throws Exception {
-		sqlSession.insert("phone.insert_specifications");
+	public void insert_specifications(spec_specificationsVO specificationsVO) throws Exception {
+		sqlSession.insert("phone.insert_specifications", specificationsVO);
 	}
 
 	@Override
-	public void insert_battery() throws Exception {
-		sqlSession.insert("phone.insert_battery");
+	public void insert_battery(spec_batteryVO batteryVO) throws Exception {
+//		System.out.println(batteryVO.getAudio_play());
+//		System.out.println(batteryVO.getAudio_play_ondisplay());
+		System.out.println(batteryVO.getBattery_capacity());
+		System.out.println(batteryVO.getChange_possible());
+//		System.out.println(batteryVO.getContinuous_call());
+//		System.out.println(batteryVO.getInternet_use_3g());
+//		System.out.println(batteryVO.getInternet_use_lte());
+//		System.out.println(batteryVO.getInternet_use_wifi());
+//		System.out.println(batteryVO.getNo());
+//		System.out.println(batteryVO.getVideo_play());
+	
+		sqlSession.insert("phone.insert_battery", batteryVO);
 	}
 
 	@Override
-	public void insert_audio() throws Exception {
-		sqlSession.insert("phone.insert_audio");
+	public void insert_audio(spec_audioVO audioVO) throws Exception {
+		sqlSession.insert("phone.insert_audio", audioVO);
 	}
 
 	@Override
-	public void insert_service() throws Exception {
-		sqlSession.insert("phone.insert_service");
+	public void insert_service(spec_serviceVO serviceVO) throws Exception {
+		sqlSession.insert("phone.insert_service", serviceVO);
 	}
 
 }

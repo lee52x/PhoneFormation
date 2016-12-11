@@ -11,6 +11,10 @@ public class spec_cameraVO {
 	private String maincamera_autofocus;
 	private String camera_detail;
 	
+	public spec_cameraVO() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public String getCamera_detail() {
 		return camera_detail;
 	}

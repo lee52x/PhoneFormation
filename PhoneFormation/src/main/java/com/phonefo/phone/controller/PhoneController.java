@@ -1,17 +1,22 @@
 package com.phonefo.phone.controller;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.phonefo.phone.domain.NoVO;
 import com.phonefo.phone.domain.PhoneCapaVO;
 import com.phonefo.phone.domain.PhoneColorVO;
 import com.phonefo.phone.domain.PhoneInfoVO;
@@ -66,17 +71,62 @@ public class PhoneController {
 		model.addAttribute("body", "./phone/adminAdd.jsp");
 		return "mainView";
 	}
+	
 	@RequestMapping(value="/adminAdd", method=RequestMethod.POST)
-	public String adminAddPost(Model model, PhoneCapaVO phonecapaVO, PhoneColorVO phonecolorVO, PhoneInfoVO phoneinfoVO, 
-			spec_audioVO audioVO, spec_batteryVO batteryVO, spec_cameraVO cameraVO, spec_connectVO connectVO, spec_displayVO displayVO,
-			spec_memoryVO memoryVO, spec_networkVO networkVO, spec_processorVO processorVO, spec_serviceVO serviceVO,
-			spec_specificationsVO specificationsVO, HttpServletRequest request, MultipartFile file)throws Exception{
+	public String adminAddPost( String[] colorname, Model model,  HttpServletRequest request, MultipartFile file, PhoneInfoVO phoneinfoVO, NoVO noVO,
+			PhoneCapaVO phonecapaVO, PhoneColorVO phonecolorVO, spec_audioVO audioVO, spec_batteryVO batteryVO, spec_cameraVO cameraVO,
+			spec_connectVO connectVO, spec_displayVO displayVO, spec_memoryVO memoryVO, spec_networkVO networkVO, 
+			spec_processorVO processorVO,	spec_serviceVO serviceVO, spec_specificationsVO specificationsVO, HttpSession session)throws Exception{
 		
 		MultipartHttpServletRequest multipartRequest =  (MultipartHttpServletRequest)request; 
 		List<MultipartFile> files = multipartRequest.getFiles("file");
-		System.out.println(files.size());
-		for(int i=0; i<files.size();i++)
-			System.out.println(files.get(i).getOriginalFilename());
+
+		
+		String savedlistName = file.getOriginalFilename();
+		System.out.println("대표사진="+savedlistName);
+		String uploadlistpath = request.getSession().getServletContext().getRealPath("/resources/images/phone");
+		File listtarget = new File(uploadlistpath, savedlistName);
+		FileCopyUtils.copy(file.getBytes(), listtarget);
+		phoneinfoVO.setImage("/resources/images/phone/"+savedlistName);
+		
+		service.insert_phone(phoneinfoVO);
+		int no=service.selectno();
+		phonecapaVO.setNo(no);
+		audioVO.setNo(no);
+		batteryVO.setNo(no);
+		cameraVO.setNo(no);
+		connectVO.setNo(no);
+		displayVO.setNo(no);
+		memoryVO.setNo(no);
+		networkVO.setNo(no);
+		processorVO.setNo(no);
+		serviceVO.setNo(no);
+		specificationsVO.setNo(no);
+		
+		service.insert_capacity(phonecapaVO);	
+		service.insert_audio(audioVO);
+		service.insert_battery(batteryVO);
+		service.insert_camera(cameraVO);
+		service.insert_connect(connectVO);
+		service.insert_display(displayVO);
+		service.insert_memory(memoryVO);
+		service.insert_network(networkVO);
+		service.insert_processor(processorVO);
+		service.insert_service(serviceVO);
+		service.insert_specifications(specificationsVO);
+		
+		
+		for (int i = 1; i < files.size(); i++) {
+			String savedName = files.get(i).getOriginalFilename();
+			System.out.println("세부사진="+savedName);
+			String uploadpath = request.getSession().getServletContext().getRealPath("/resources/images/phone");
+			File target = new File(uploadpath, savedName);
+			FileCopyUtils.copy(files.get(i).getBytes(), target);
+			phonecolorVO.setImage("/resources/images/phone/"+savedName);
+			phonecolorVO.setColor(colorname[i-1]);
+			phonecolorVO.setNo(no);
+			service.insert_color(phonecolorVO);
+		}
 		
 		model.addAttribute("body", "./phone/adminAdd.jsp");
 		return "redirect:/phonefo/adminAdd";
