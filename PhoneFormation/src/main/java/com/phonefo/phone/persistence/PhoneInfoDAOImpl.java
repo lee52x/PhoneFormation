@@ -96,4 +96,74 @@ public class PhoneInfoDAOImpl implements PhoneInfoDAO {
 		return sqlSession.selectList("phone.select_phone", no);
 	}
 
+	@Override
+	public void insert_phone() throws Exception {
+		sqlSession.insert("phone.insert_phone");
+	}
+
+	@Override
+	public int selectno() throws Exception {
+		return sqlSession.selectOne("phone.selectno");
+	}
+
+	@Override
+	public void insert_color() throws Exception {
+		sqlSession.insert("phone.insert_color");
+	}
+
+	@Override
+	public void insert_capacity() throws Exception {
+		sqlSession.insert("phone.insert_capacity");
+	}
+
+	@Override
+	public void insert_processor() throws Exception {
+		sqlSession.insert("insert_processor");
+	}
+
+	@Override
+	public void insert_display() throws Exception {
+		sqlSession.insert("phone.insert_display");
+	}
+
+	@Override
+	public void insert_camera() throws Exception {
+		sqlSession.insert("phone.insert_camera");
+	}
+
+	@Override
+	public void insert_memory() throws Exception {
+		sqlSession.insert("phone.insert_memory");
+	}
+
+	@Override
+	public void insert_network() throws Exception {
+		sqlSession.insert("phone.insert_network");
+	}
+
+	@Override
+	public void insert_connect() throws Exception {
+		sqlSession.insert("phone.insert_connect");
+	}
+
+	@Override
+	public void insert_specifications() throws Exception {
+		sqlSession.insert("phone.insert_specifications");
+	}
+
+	@Override
+	public void insert_battery() throws Exception {
+		sqlSession.insert("phone.insert_battery");
+	}
+
+	@Override
+	public void insert_audio() throws Exception {
+		sqlSession.insert("phone.insert_audio");
+	}
+
+	@Override
+	public void insert_service() throws Exception {
+		sqlSession.insert("phone.insert_service");
+	}
+
 }

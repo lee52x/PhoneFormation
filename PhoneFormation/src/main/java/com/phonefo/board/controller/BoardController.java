@@ -1,6 +1,9 @@
 package com.phonefo.board.controller;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.phonefo.board.domain.PageMaker;
@@ -30,7 +34,6 @@ public class BoardController {
 
 	@Inject
 	private BoardService service;
-	@Autowired
     protected JavaMailSender mailSender;
 
 	@RequestMapping("/boardlist")
@@ -63,7 +66,7 @@ public class BoardController {
 	public String inputpagePOST(HttpServletRequest request, MultipartFile file, BoardVO board, RedirectAttributes attr,
 			HttpSession session) throws Exception {
 
-		board.setWriter((String) session.getAttribute("userid"));
+		board.setWriter("sadfasdf");
 		///여기서부터
 		board.setImage("");
 		String savedName = file.getOriginalFilename();

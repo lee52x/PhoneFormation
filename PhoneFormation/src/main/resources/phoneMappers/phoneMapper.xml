@@ -77,7 +77,7 @@
 		ph_phone(no, name, image, manufacture, release_date)
 		values(ph_phone_seq.nextval,#{name},#{image},#{manufacture},#{release_date})
 	</insert> 
- 	<select id="selectno">
+ 	<select id="selectno" resultType="int">
 		select max(no)
 		from ph_phone;
 	</select>

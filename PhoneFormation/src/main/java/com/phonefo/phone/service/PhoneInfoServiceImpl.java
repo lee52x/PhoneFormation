@@ -97,4 +97,74 @@ public class PhoneInfoServiceImpl implements PhoneInfoService{
 		return dao.select_phone(no);
 	}
 
+	@Override
+	public void insert_phone() throws Exception {
+		dao.insert_phone();
+	}
+
+	@Override
+	public int selectno() throws Exception {
+		return dao.selectno();
+	}
+
+	@Override
+	public void insert_color() throws Exception {
+		dao.insert_color();
+	}
+
+	@Override
+	public void insert_capacity() throws Exception {
+		dao.insert_capacity();
+	}
+
+	@Override
+	public void insert_processor() throws Exception {
+		dao.insert_processor();
+	}
+
+	@Override
+	public void insert_display() throws Exception {
+		dao.insert_display();
+	}
+
+	@Override
+	public void insert_camera() throws Exception {
+		dao.insert_camera();
+	}
+
+	@Override
+	public void insert_memory() throws Exception {
+		dao.insert_memory();
+	}
+
+	@Override
+	public void insert_network() throws Exception {
+		dao.insert_network();
+	}
+
+	@Override
+	public void insert_connect() throws Exception {
+		dao.insert_connect();
+	}
+
+	@Override
+	public void insert_specifications() throws Exception {
+		dao.insert_specifications();
+	}
+
+	@Override
+	public void insert_battery() throws Exception {
+		dao.insert_battery();
+	}
+
+	@Override
+	public void insert_audio() throws Exception {
+		dao.insert_audio();
+	}
+
+	@Override
+	public void insert_service() throws Exception {
+		dao.insert_service();
+	}
+
 }
