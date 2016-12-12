@@ -314,8 +314,6 @@
                               	</table>
                               </a>
                                  <input type="checkbox" class="ckb" name='box' onclick="checkBox('${list1.no }')" value="${list1.no }">비교하기<br>
-                                 <button>수정</button>
-                                 <button>삭제</button>
                               </div>
                            </center>
                            </td>
