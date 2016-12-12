@@ -71,7 +71,7 @@ function imagedel(image_len){
 $(document).ready(function(){
       var capa_len = document.getElementsByName('release_price').length;
       var image_len = document.getElementsByName('colorname').length;
-      alert(image_len);
+      
       $('#capaadd').click(function(){   //가격,용량 추가
          var str = 
             "<tr id='capadiv"+capa_len+"'>"
@@ -80,44 +80,8 @@ $(document).ready(function(){
          $('#basic_info').append(str);
          capa_len = capa_len+1;
       });
-      $('#phoneimage_add').click(function(){   //가격,용량 추가
-         alert('그림추가?');
-         var str = 
-            "<div class='portfolio-item item' id='div_image"+image_len+"'>"
-            +"<div class='portfolio-border'>"
-            +"<div class='portfolio-thumb'>"
-               +"<a class='lightbox' title='핑크' data-lightbox-type='ajax' href='/resources/images/phone/Galaxynote4_핑크.png'>"
-                  +"<div class='thumb-overlay'> <i class='fa fa-arrows-alt'></i></div>"
-                  +"<img class='img' id='color_image"+image_len+"' src='/resources/images/phone/Galaxynote4_핑크.png'>"
-               +"</a>"
-            +"</div>"
-            +"<div class='portfolio-details'>"
-            +"<p class='p_color' >핑크</p>"
-                  +"<input type='text' name='colorname' value='핑크' style='display:none;'>"
-                  +"<label for='"+image_len+"'>"
-                     +"<div class='btn_image' style='display:none;'>수정</div>"
-                  +"</label>"
-                  +"<input type='file' id='"+image_len+"' name='file' accept='.gif, .jpg, .png' style='display: none'   class='imgInp'>"
-                  +"<input type='button' name='btnimg' id='imgdel"+image_len+"' value='삭제' onclick='imagedel("+image_len+")'style='display:none;'>"
-            +"</div>"
-         +"</div>"
-         +"</div>"
-      +"</div>";
-      image_len=image_len+1;
-      alert(str);
-      $('#image_info').append(str);
-      $('#phoneimage_add').attr('style','display:block;');
-      $("input:button[name='btnimg']").attr('style', 'display:block;');
-      $(".btn_image").attr('style', 'display:block;');
-      $("input:text[name='colorname']").attr('style', 'display:block;');
-      $(".p_color").attr('style','display:none;');
-      $('.spec_show').attr('style','display:none;');
-      $('.spec_mod').attr('style','display:block;');
-      $('#btn_update').attr('style','display:none;');
-      $('#btn_ok').attr('style','display:block;');
-      });
+      
       $('#btn_update').click(function(){
-             $('#phoneimage_add').attr('style','display:block;');
              $("input:button[name='btnimg']").attr('style', 'display:block;');
              $(".btn_image").attr('style', 'display:block;');
              $("input:text[name='colorname']").attr('style', 'display:block;');
@@ -154,14 +118,14 @@ $(document).ready(function(){
 </head>
 <body>
 
-  <form role='specform' method="post" action='adminUpdate'>
+  <form role='specform' method="post" enctype="multipart/form-data" action='adminUpdate'>
     <!-- Start Latest Projects Carousel -->
-    <input type='button' id='phoneimage_add' value='사진 추가' style='display: none;'>
    <center>
+   <input type="hidden" name="no" value="${no}">
       <h1 class="clasic-title"><span>${spec_Info.name }</span></h1>
          <div class="projects-carousel touch-carousel" id="image_info"> <!-- 4개씩 보이기 -->
-            <c:forEach items="${list_color }" var="list_color" varStatus="status">
-               <div class="portfolio-item item" id="div_image${status.index }">
+            <c:forEach items="${list_color }" var="list_color" varStatus="status" >
+           		<div class="portfolio-item item" id="div_image${status.index }">
                   <div class="portfolio-border">
                      <div class="portfolio-thumb">
                         <a class="lightbox" title="${list_color.color }" data-lightbox-type="ajax"
@@ -506,8 +470,6 @@ $(document).ready(function(){
             </c:if>
          </table>
       </div>
-
-<<<<<<< HEAD
       <div class="spec_div">
          <h3>운영체제, 기본사양, 센서, 외관사양</h3>
          <table>
@@ -549,7 +511,6 @@ $(document).ready(function(){
             </c:if>
          </table>
       </div>
-=======
 		<div class="spec_div">
 			<h3>운영체제, 기본사양, 센서, 외관사양</h3>
 			<table>
@@ -591,7 +552,6 @@ $(document).ready(function(){
 				</c:if>
 			</table>
 		</div>
->>>>>>> branch 'master' of https://github.com/lee52x/PhoneFormation
 
       <div class="spec_div">
          <h3>배터리</h3>
