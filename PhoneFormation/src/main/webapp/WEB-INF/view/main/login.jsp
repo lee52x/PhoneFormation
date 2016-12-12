@@ -147,7 +147,7 @@ function popup1() {
 	window.open(
 		"/phonefo/search_id",
 		"EventFrame",
-		"menubar=no,width=450,height=300,top=200,left=400,toolbar=no"
+		"menubar=no,width=450,height=300,top=300,left=650,toolbar=no"
 		);
 	}
 function popup2() {
