@@ -34,4 +34,5 @@ public interface MainDAO {
 	public List<String> selectid(MemberVO vo) throws Exception;
 	public String selectpassword(MemberVO vo) throws Exception;
 	public void addVisit()throws Exception;
+	public int howBusiness()throws Exception;
 }

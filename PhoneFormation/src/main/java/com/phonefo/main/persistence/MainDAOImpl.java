@@ -118,5 +118,9 @@ public class MainDAOImpl implements MainDAO{
 		 sql.insert("member.addVisit");
 		
 	}
+	@Override
+	public int howBusiness() throws Exception {
+		return sql.selectOne("member.howBusiness");
+	}
 
 }

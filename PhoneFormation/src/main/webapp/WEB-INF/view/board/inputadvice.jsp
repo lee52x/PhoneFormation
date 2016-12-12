@@ -5,7 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
+<link rel="stylesheet" type="text/css" href="/resources/css/jaehyuntest.css" title="blue" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://s1.cafe.daumcdn.net/cafe/_c21_/css/mEr9/321/20161123175651.91/20161123175556.27/20160602174211.21.css?grpid=mEr9" />
+<link rel="stylesheet" href="http://s1.daumcdn.net/editor/releases/7.4.33-3/css/content_view.css" type="text/css" charset="utf-8"/>
 <script>
 $(document).ready(function(){
    $("#blah").hide();   
@@ -34,7 +36,7 @@ $(document).ready(function(){
        	readURL(this);
   
     });
-
+    
 	var formObj = $("form[role='addform']");
 	$("#listBtn").on("click", function(){
 		formObj.submit();
@@ -45,64 +47,98 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-	<div class="container"  style="background-color: silver">
-   <div id="content" style="border: 1">
-		<!-- left column -->
-		<div class="col-md-12">
-			<!-- general form elements -->
-			<div class="box box-primary">
-				<div class="box-header">
-					<h3 class="box-title">1대1 문의하기</h3>
-				</div>
-				<!-- /.box-header -->
+	<div class="container">
+		<form role="listform" method="post" action="boardlist">
+			<input type='hidden' name='bno' value="${boardVO.bno}"> <input
+				type='hidden' name='tno' value="${cri.tno}"> <input
+				type='hidden' name='page' value="${cri.page}"> <input
+				type='hidden' name='perPageNum' value="${cri.perPageNum}"> <input
+				type='hidden' name='searchType' value="${cri.searchType}"> <input
+				type='hidden' name='keyword' value="${cri.keyword}">
+		</form>
+		<form role="addform" method="post" enctype="multipart/form-data" action="adviceinputpage">
 
-				<form role="addform" method="post" enctype="multipart/form-data" action="adviceinputpage">
-					<div class="box-body">
-						<div class="form-group">
-							<label for="title">제목</label>
-							<input type="text" id='title' name='title' class="form-control" placeholder="Enter Title">
-						</div>
-						<div class="form-group">
-							<label for="category">분류</label>
-							<select name="category" >
+			<!-- end list_btn_area -->
+			<div class="cl">&nbsp;</div>
+			<div class="article_subject line_sub">
+
+				<div class="subject" id="title_div2">
+				<div style="float:left;">
+				<span class="b">분류</span><span
+						class="bar2">|</span>						
+						<select name="category" >
 							<option value="에러1">에러1</option>
 							<option value="에러2">에러2</option>
 							<option value="에러3">에러3</option>
 							<option value="에러4">에러4</option>
-						</select></div>
-						<div class="form-group">
-							<label for="content">파일첨부</label>
-							<input type="text" id="filename" readonly="readonly" class="form-control">
-							<label for="imgInp"><span id="fileFind">파일찾기</span></label>&nbsp;
-							<input type="file" id="imgInp" name="file" accept=".gif, .jpg, .png" style="display: none"onchange="javascript: document.getElementById('filename').value = this.value"> 
-						</div>
-						<div class="form-group">
-							<label>내용</label>
-							<div id="ta1" align="center" style="overflow-x:auto; width:500px; height: 300px; border: solid; 1px; margin: 20px; line-height: 20px; ">
-							<label for="content">
-								<img id="blah" src="#" />
-								<textarea name="content" id="content"style="border:0;width:490px; height:290px;"></textarea>
-							</label>
-							</div>
-							
-						</div>
+							</select>
+					<span class="bar2">|</span>
 					</div>
-					<!-- /.box-body -->
-
-					<div class="box-footer">
-						<button type="submit" class="btn btn-warning" id="addBtn">등록하기</button>
-						<input type="button" class="btn btn-warning" id="listBtn" value="돌아가기">
-					</div>
-				</form>
+					<span class="headcate"> </span> <span class="b">제목</span><span
+						class="bar2">|</span> <input type="text" name="title"
+						style="width: 500px" value="${boardVO.title}" />
+				</div>
 			</div>
-			<!-- /.box -->
+			<div class="form-group" id="fileselect">
+				<label for="imgInp"><span id="fileFind">파일 첨부</span></label>&nbsp; <input
+					type="file" id="imgInp" name="file" accept=".gif, .jpg, .png"
+					style="display: none"
+					onchange="javascript: document.getElementById('ddd').value = this.value">
+			</div>
+			<!-- end article_writer -->
+			<div id="bbs_contents" class="bbs_contents">
+				<div class="bbs_contents_inbox">
+					<div id="user_contents" name="user_contents"
+						class="user_contents tx-content-container scroll ">
+						<table class="protectTable" id="protectTable">
+							<tbody>
+								<tr>
+									<td>
+										<!-- clix_content 이 안에 본문 내용 외에 다른 내용을 절대 넣지 말 것  <script
+										type="text/javascript">//<![CDATA[
+										document.write(removeRestrictTag());
+										//]]></script> -->
+										<p style="text-align: center;">
+											<img src="${boardVO.image}" class="txc-image" border="0"
+												actualwidth="70" width="70" exif="{}" data-filename="..png"
+												style="clear: none; float: none;" id="blah">
+										</p>
+										<p>
+											<br>
+										</p>
+										<p>
+											<textarea name="content" id="contents"
+												style="border: 1; display: block; width: 1120px; height: 350px;"></textarea>
+										</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="clearTable">
+							<tbody>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!--  <script type="text/javascript">//<![CDATA[
+				redefineLink();
+				//]]></script>-->
+				</div>
+			</div>
+			<div class="cl">&nbsp;</div>
+
+		<div class="box-footer">
+			<button type="submit" class="btn btn-warning" id="addBtn">등록하기</button>
+			<input type="button" class="btn btn-warning" id="listBtn"
+				value="돌아가기">
 		</div>
-		<!--/.col (left) -->
+		</form>
 
 	</div>
-	<!-- /.row -->
-</div>
-<!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
+	<!-- /.content-wrapper -->
+</body>
+
 </html>

@@ -93,8 +93,8 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 	$("#machine").text(machine);
 	$("#quote_price").text(quote_price);
 	$("#power").text(power);
-	$("#glass").text(glass);
 	$("#equipment").text(equipment);
+	$("#glass").text(glass);
 	$("#username").text(username);
 	$("#rdate").text(rdate);
 	$("#tel").text(tel);
@@ -414,7 +414,7 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 					</colgroup>
 					<thead>
 						<tr id='mainindex_HeadTR' class="section">
-							<th>No</th>
+							<th>번호</th>
 							<th>제조사</th>
 							<th>기기명</th>
 							<th>신청자</th>
@@ -491,51 +491,51 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 							상세 보기</td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">manufacture</td>
+						<td style="text-align: center;" width="25%">제조사</td>
 						<td><div id="manufacture"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">machine</td>
+						<td style="text-align: center;" width="25%">기기명</td>
 						<td><div id="machine"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">quote_price</td>
+						<td style="text-align: center;" width="25%">금액</td>
 						<td><div id="quote_price"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">power</td>
+						<td style="text-align: center;" width="25%">전원</td>
 						<td><div id="power"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">glass</td>
-						<td><div id="glass"></div></td>
-					</tr>
-					<tr>
-						<td style="text-align: center;" width="25%">equipment</td>
+						<td style="text-align: center;" width="25%">액정</td>
 						<td><div id="equipment"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">username</td>
+						<td style="text-align: center;" width="25%">기기상태</td>
+						<td><div id="glass"></div></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;" width="25%">이름</td>
 						<td><div id="username"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">rdate</td>
+						<td style="text-align: center;" width="25%">등록일</td>
 						<td><div id="rdate"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">tel</td>
+						<td style="text-align: center;"  width="25%">연락처</td>
 						<td><div id="tel"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">bank_name</td>
+						<td style="text-align: center;" width="25%">은행명</td>
 						<td><div id="bank_name"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">account_number</td>
+						<td style="text-align: center;" width="25%">계좌번호</td>
 						<td><div id="account_number"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">request_message</td>
+						<td style="text-align: center;" width="25%">참고사항</td>
 						<td><div id="request_message"></div></td>
 					</tr>
 

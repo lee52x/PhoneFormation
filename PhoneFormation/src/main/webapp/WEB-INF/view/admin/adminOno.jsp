@@ -12,19 +12,26 @@
 
 
 
-<script>
+<script type="text/javascript">
+
 
 
 	$(document).ready(
 			function() {
 				
 				$("#popup").hide();
+				$("#popup2").hide();
 
-				$(function() {
+		
 					$("#close").click(function() {
 						$("#popup").fadeOut(10);
 					});
-				});
+					$("#close2").click(function() {
+						$("#popup2").fadeOut(10);
+					});
+		
+				
+			
 				$('#searchBtn').on(
 						"click",
 						function(event) {
@@ -41,6 +48,24 @@
 
 			});
 	
+	
+	function callTable(title,category,content,image){
+
+		$("#title").text(title);
+		$("#category").text(category);
+		$("#contents").text(content);
+		if(image=="/resources/upload/"){
+			$("#img").attr("src","/resources/images/noimage.jpg");
+
+		}else{
+		$("#img").attr("src",image);
+		}
+
+
+		$("#popup2").fadeIn(700);
+		
+
+	}
 	
 	function callAnsTable(ono){
 		$('#ono').val(ono);
@@ -98,15 +123,16 @@
 		<div class="box-body">
 					<table class="table table-bordered">
 						<tr>
-							<th>ono</th>
-							<th>userid</th>
-							<th>title</th>
-							<th>category</th>
-							<th>content</th>
-							<th>image</th>
-							<th>regdate</th>
-							<th>answer</th>
-							<th>answer_regdate</th>
+							<th>번호</th>
+							<th>아이디</th>
+							<th>제목</th>
+							<th>분류</th>
+							<th>내용</th>
+							<th>이미지</th>
+							<th>등록일자</th>
+							<th>답변</th>
+							<th>답변날짜</th>
+							<th></th>
 							<th></th>
 						
 						</tr>
@@ -119,12 +145,31 @@
 								<td>${adminOno.title}</td>
 								<td>${adminOno.category}</td>
 								<td>${adminOno.content}</td>
-								<td>${adminOno.image}</td>
+								<c:choose>
+							<c:when test="${adminOno.image eq '/resources/upload/'}">
+								<td>없음</td>
+							</c:when>
+							<c:otherwise>
+								<td>있음</td>
+							</c:otherwise>
+							</c:choose>
+								
 								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 										value="${adminOno.regdate}" /></td>
-								<td>${adminOno.answer}</td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-										value="${adminOno.answer_regdate}" /></td>
+							<c:choose>
+							<c:when test="${adminOno.answer eq null}">
+								<td>없음</td>
+								<td>없음</td>
+							</c:when>
+							<c:otherwise>
+								<td>있음</td>
+							<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+								value="${adminOno.answer_regdate}" /></td>
+							</c:otherwise>
+							</c:choose>
+									<td><button class="btn-custom btn-large border-btn btn-gray"  
+									onclick="callTable('${adminOno.title}','${adminOno.category}'
+									,'${adminOno.content}','${adminOno.image}')">상세보기</button></td>
 									<td><button class="btn-custom btn-large border-btn btn-gray" onclick="callAnsTable('${adminOno.ono}')">답변하기</button></td>
 						
 					
@@ -189,6 +234,39 @@
 										<button type="submit" class="btn btn-primary btn-sm col-sm-1 col-sm-offset-5" style="margin-right: 1%">답변</button>
 										</form>
 										<button type="button" class="btn btn-danger btn-sm col-sm-1 " id="close">닫기</button>
+									
+								</div>
+							
+						</div>
+</div>
+  
+	  <div id="popup2" class="nivo-lightbox-overlay nivo-lightbox-theme-default nivo-lightbox-effect-fadeScale nivo-lightbox-open">
+			<div class="nivo-lightbox-wrap">
+			<div class="nivo-lightbox-table container" style="line-height: 607px; height: 607px; margin-top: 3%; background-color: white;overflow:auto; overflow-x:hidden;">
+
+  						 				
+										<table class="table"  style="background-color: white; width: 800px; margin-left: 15%; margin-top: 5%;">
+											<tr>
+												<td colspan="2"style="border-right: medium; border-right-color: black;  text-align: center;">문의 내역 상세 보기</td>
+											</tr>
+											<tr>
+												<td style=" text-align: center;" width="25%">제목</td>
+												<td><div id="title"></div></td>
+											</tr>
+											<tr>
+												<td style=" text-align: center;" width="25%">카테고리</td>
+												<td><div id="category"></div></td>
+											</tr>
+											<tr>
+												<td style=" text-align: center;" width="25%">내용</td>
+												<td><div id="contents"></div></td>
+											</tr>
+											<tr>
+											
+												<td style=" text-align: center;" colspan="2"><img alt="이미지" id="img"></td>
+											</tr>
+										</table>
+										<button type="button" class="btn btn-danger btn-sm col-sm-2 col-sm-offset-5" id="close2" style="margin-bottom: 3%">닫기</button>
 									
 								</div>
 							

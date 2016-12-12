@@ -86,6 +86,12 @@ public class MainServiceImpl implements MainService {
 		
 	}
 
+	@Override
+	public int howBusiness() throws Exception {
+		
+		return dao.howBusiness();
+	}
+
 
 	
 
