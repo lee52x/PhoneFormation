@@ -21,7 +21,7 @@ $(document).ready(function(){
              }                   
             reader.readAsDataURL(input.files[0]);
         }
-
+   }
 
     
     //file 양식으로 이미지를 선택(값이 변경) 되었을때 처리하는 코드
@@ -35,8 +35,19 @@ $(document).ready(function(){
 		var formObj = $("form[role='listform']");
 		formObj.submit();
 	});
- });
- 
+	$("#addBtn").on("click", function(){
+		var title = $('#title').val();
+		var content = $('#contents').val();
+		if(title=='')
+			alert("제목을 입력하세요");
+		else if(content=='')
+			alert("내용을 입력하세요");
+		else{
+			var formObj = $("form[role='addform']");
+			formObj.submit();
+		}
+	});
+});
 
 </script>
 </head>
@@ -58,7 +69,7 @@ $(document).ready(function(){
 				<div class="subject" id="title_div2">
 					<span class="headcate"> </span> <span class="b" style="float: left;">제목</span><span
 						class="bar2" style="float: left;">|</span> <input type="text" name="title"
-						style="width: 96%; float: left;" value="${boardVO.title}" /><br>
+						id="title" style="width: 96%; float: left;" value="${boardVO.title}" /><br>
 				</div>
 			</div>
 			<div class="form-group" id="fileselect">
@@ -113,7 +124,7 @@ $(document).ready(function(){
 			<div class="cl">&nbsp;</div>
 
 		<div class="box-footer" style="margin-left: 45%;">
-			<button type="submit" class="btn btn-warning" id="addBtn">등록하기</button>
+			<button type="button" class="btn btn-warning" id="addBtn">등록하기</button>
 			<input type="button" class="btn btn-warning" id="listBtn"
 				value="돌아가기">
 		</div>

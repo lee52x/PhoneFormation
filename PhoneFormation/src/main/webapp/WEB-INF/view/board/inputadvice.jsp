@@ -39,7 +39,15 @@ $(document).ready(function(){
     
 	var formObj = $("form[role='addform']");
 	$("#listBtn").on("click", function(){
-		formObj.submit();
+		var title = $('#title').val();
+		var content = $('#contents').val();
+		if(title=='')
+			alert("제목을 입력하세요");
+		else if(content=='')
+			alert("내용을 입력하세요");
+		else{
+			formObj.submit();
+		}
 	});
  });
  
