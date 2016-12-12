@@ -62,6 +62,17 @@
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
+		var capa_len = document.getElementsByName('release_price').length;
+		$('#capaadd').click(function(){	//가격,용량 추가
+			alert('여깄니?');
+			var str = 
+				"<tr id='capadiv"+capa_len+"'>"
+				+"<th>가격(용량)</th><td><input type='text' name='release_price'>(<input type='text' name='capacity'>)<input type='button' class='del_price' onclick='capadel("+capa_len+")'></td>"
+				+"</tr>";
+			$('#basic_info').append(str);
+			capa_len = capa_len+1;
+		});
+
 		$('#btn_update').click(function(){
     	   	$('#phoneimage_add').attr('style','display:block;');
     	   	$("input:button[name='btnimg']").attr('style', 'display:block;');
@@ -81,6 +92,7 @@
 </script>
 </head>
 <body>
+
   <form role='specform' method="post" action='adminUpdate'>
     <!-- Start Latest Projects Carousel -->
     <input type='button' id='phoneimage_add' value='사진 추가' style='display: none;'>
@@ -113,16 +125,17 @@
 	<div class="container">
 		<div class="spec_div">
 		<h3>기본정보</h3>
-			<table>
+			<table id="basic_info">
 				<tr>
 					<th>핸드폰 기종</th><td class='spec_show'>${spec_Info.name }</td>
 							<td class='spec_mod'><input type="text" name='name' value='${spec_Info.name }'></td>
 				</tr>
 					<tr>
-						<th>핸드폰 대표 사진</th><td>
+						<th><div class='spec_mod'>핸드폰 대표 사진</div></th>
+						<td><div class='spec_mod'>
 						<input type='file' id='listimage' name='file' accept='.gif, .jpg, .png' style='display:none'
 						onchange="javascript: document.getElementById('listimage_path').value = this.value">
-						<input type='text' id='listimage_path' style='width:500px;' value="${sepc_Info.image}"readonly="readonly">&nbsp;&nbsp;<label for='listimage'>이미지 첨부</label></td>
+						<input type='text' id='listimage_path' style='width:500px;' value="${image}"readonly="readonly">&nbsp;&nbsp;<label for='listimage'>이미지 첨부</label></div></td>
 					</tr>
 					<tr>
 						<th>제조사</th><td  class='spec_show'>${spec_Info.manufacture }</td>
@@ -132,18 +145,25 @@
 			 						<option>apple</option>
 		   		  					</select></td>
 					</tr>
-							<tr class='spec_mod'>
+							<tr>
 								<th>출고일</th><td  class='spec_show'>${spec_Info.release_date }</td>
 											<td  class='spec_mod'><input type='text' name='release_date' value='${spec_Info.release_date }'></td>
 							</tr>
-					<c:forEach items="${list_capacity }" var="list_capacity">
-						<c:if test="${!empty list_capacity.capacity}">
-							<tr>
+					<c:forEach items="${list_capacity }" var="list_capacity" varStatus="status">
+							<tr id="capadiv${status.index}">
 								<th>가격 (용량)</th>
 								<td class='spec_show'> ${list_capacity.release_price } (${list_capacity.capacity })</td>
-								<td class='spec_mod'> <input type="text" name='release_price' value='${list_capacity.release_price }'> (<input type="text" name='capacity' value='${list_capacity.capacity }'>)</td>
+								<td class='spec_mod'>
+									<input type="text" name='release_price' value='${list_capacity.release_price }'>
+								 	(<input type="text" name='capacity' value='${list_capacity.capacity }'>)
+									<c:if test="${status.index==0}"> 
+										<input type="button" id="capaadd" value="추가">
+									</c:if>
+									<c:if test="${status.index!=0}">
+										<input type="button" class="del_price" value="삭제" onclick="capadel(${status.index})">
+									</c:if>
+									</td>
 							</tr>
-						</c:if>
 					</c:forEach>
 			</table>
 		</div>
