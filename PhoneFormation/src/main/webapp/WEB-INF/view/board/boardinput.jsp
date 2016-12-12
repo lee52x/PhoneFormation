@@ -21,7 +21,7 @@ $(document).ready(function(){
              }                   
             reader.readAsDataURL(input.files[0]);
         }
-   }
+   	}
 
     
     //file 양식으로 이미지를 선택(값이 변경) 되었을때 처리하는 코드
