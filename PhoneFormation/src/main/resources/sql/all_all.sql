@@ -17,6 +17,7 @@ drop sequence ph_phone_seq;
 
 drop table ph_phone;
 
+--Æù ½ÃÄö½º
 create sequence ph_phone_seq
 	start with 1
 	increment by 1
