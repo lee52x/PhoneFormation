@@ -51,9 +51,12 @@ public class PhoneController {
 	
 	@RequestMapping("/phoneInfo_spec")	//상세보기
 	public String phoneInfo_spec(Model model, int no)throws Exception{
+		PhoneInfoVO phoneinfo= service.select_phone(no);
+		String image_path = phoneinfo.getImage();
+		model.addAttribute("image",image_path.substring(24));
 		model.addAttribute("list_color", service.select_color(no));
 		model.addAttribute("list_capacity", service.select_capacity(no));
-		model.addAttribute("spec_Info", service.select_phone(no));
+		model.addAttribute("spec_Info", phoneinfo);
 		model.addAttribute("spec_processor", service.select_spec_processor(no));
 		model.addAttribute("spec_display", service.select_spec_display(no));
 		model.addAttribute("spec_camera", service.select_spec_camera(no));

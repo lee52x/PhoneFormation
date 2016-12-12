@@ -59,5 +59,9 @@
 	<insert id="addVisit">
 		insert into ph_visit values(sysdate)
 	</insert>
+	
+	<select id="howBusiness" resultType="int">
+		select count(*) from ph_business
+	</select>
 
 </mapper>

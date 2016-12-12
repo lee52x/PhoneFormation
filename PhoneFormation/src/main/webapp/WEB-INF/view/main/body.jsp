@@ -82,49 +82,9 @@ table {
                         <li data-transition="fade" data-slotamount="5" data-masterspeed="300"> 
                             
                             <!-- THE MAIN BACKGROUND IMAGE IN THIS FIRST SLIDE --> 
-                            <img src="/resources/images/slider_1_bg.jpg" data-fullwidthcentering="on" alt="background"> 
+                            <img src="/resources/upload/slide1.jpg" data-fullwidthcentering="on" alt="background"> 
                             
-                            <!-- THE CAPTIONS/LAYERS IN THIS SLIDE -->
-                            <div class="caption medium-700-black lfr" 
-                                  data-x="58" 
-                                  data-y="138" 
-                                  data-speed="300" 
-                                  data-start="1600" 
-                                  data-easing="easeOutExpo">PhoneFomation에 오신걸 환영합니다. <br/>
-                               		 핸드폰의 모든 정보!!<br/>
-                               		PhoneFormation이 알려드립니다</div>
-                            <div class="caption small-600-black lfr" 
-                                  data-x="58" 
-                                  data-y="210" 
-                                  data-speed="300" 
-                                  data-start="2000" 
-                                  data-easing="easeOutExpo"> <br/>
-                                 <br/>
-                                </div>
-                            <div class="caption randomrotate" 
-                                  data-x="170" 
-                                  data-y="250" 
-                                  data-speed="300" 
-                                  data-start="2400" 
-                                  data-easing="easeOutExpo"> <a href="#" class="btn-custom btn-medium">핸드폰 보러가기</a> </div>
-                            <div class="caption lfl" 
-                                  data-x="760" 
-                                  data-y="51" 
-                                  data-speed="300" 
-                                  data-start="1200" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/S7Edge_T.png" alt="browser" /> </div>
-                            <div class="caption lfl" 
-                                  data-x="660" 
-                                  data-y="100" 
-                                  data-speed="300" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/iPhone7_Olleh.png" alt="tablet" /> </div>
-                            <div class="caption lfl" 
-                                  data-x="560" 
-                                  data-y="150" 
-                                  data-speed="300" 
-                                  data-start="400" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/V20_U+.png" alt="phone" /> </div>
+                           
                         </li>
                         
                         <!-- THE SECOND SLIDE --> 
@@ -254,30 +214,30 @@ table {
                 <div> 
                                 <div style="width: 21%; float: left;">
             <div style=" margin-left: 2%; margin-right:2%; margin-top:2%;margin-bottom:1.5%; text-align: center; vertical-align: middle;height: 100%;width: 100%">
-            	<a href="#"><img alt="핸드폰 수리비" src="/resources/images/main/soori.png" height="100%;"></a>
+            	<a href="/phonefo/listRepair"><img alt="핸드폰 수리비" src="/resources/images/main/soori.png" height="100%;"></a>
             </div>
   			<div style=" margin-left: 2%; margin-right:2%;margin-top: 1.5%; text-align: center; vertical-align: middle;height: 100%;width: 100%">
-            	<a href="#"><img alt="중고폰 판매가" src="/resources/images/main/joonggo.png" height="100%;"></a>
+            	<a href="/phonefo/listBoard"><img alt="중고폰 판매가" src="/resources/images/main/joonggo.png" height="100%;"></a>
             </div>
             </div>
             <div style="width: 53.5%; float: left; margin-left: 1.5%;margin-top: 0.5%; background-color: #eeeeee; text-align: center;">
             	<div id="skt_pay" style="width: 5%; float: left; height: 100%;">S<br>K<br>T<br>요<br>금<br>제</div>
-            	<div id="skt_pay_img" style="width: 85%; float: left;"><a href=""><img alt="" src="/resources/images/main/skt_pay.png" width="100%"></a></div>
+            	<div id="skt_pay_img" style="width: 85%; float: left;"><a href="/phonefo/payment/skt"><img alt="" src="/resources/images/main/skt_pay.png" width="100%"></a></div>
             	<div id="kt_pay" style="width: 5%; float: left;">K<br>T<br>요<br>금<br>제</div>
-            	<div id="kt_pay_img" style="width: 85%; float: left; display: none;"><a href=""><img alt="" src="/resources/images/main/kt_pay.png" width="100%"></a></div>
+            	<div id="kt_pay_img" style="width: 85%; float: left; display: none;"><a href="/phonefo/payment/kt"><img alt="" src="/resources/images/main/kt_pay.png" width="100%"></a></div>
             	<div id="lg_pay" style="width: 5%; float: left;">L<br>G<br>요<br>금<br>제</div>
-            	<div id="lg_pay_img" style="width: 85%; float: left; display: none;"><a href=""><img alt="" src="/resources/images/main/lg_pay.png" width="100%"></a></div>
+            	<div id="lg_pay_img" style="width: 85%; float: left; display: none;"><a href="/phonefo/payment/lg"><img alt="" src="/resources/images/main/lg_pay.png" width="100%"></a></div>
             </div>
             <div style=" width: 22%;;float: right; vertical-align: middle; text-decoration: none ;margin:0.5%;text-align: center;vertical-align: middle; font-size: 25px;">
         			<div id="skt_tag" style="height: ; background-color: #dddddd; margin: auto;"><img alt="SKT Event" src="/resources/images/main/skt_event.png" height="100%" width="100%"></div>
         			<div style="height: 10px;"></div>
-        			<div style="display:;height: ;" id="skt_event"><a href=""><img alt="SKT Evnet" src="/resources/images/payment/SKT.png" width="60%;" height="85%;"></a></div>
+        			<div style="display:;height: ;" id="skt_event"><a href="/phonefo/boardlist?tno=3"><img alt="SKT Evnet" src="/resources/images/payment/SKT.png" width="60%;" height="85%;"></a></div>
         			<div id="kt_tag" style="height: ; background-color: #dddddd;"><img alt="" src="/resources/images/main/ktOlleh_event.png" height="100%" width="100%"></div>
         			<div style="height: 10px;"></div>
-        			<div style="display: none;height: ;" id="kt_event"><a href=""><img alt="KT Event" src="/resources/images/payment/KTOlleh.png" width="90%;"></a></div>
+        			<div style="display: none;height: ;" id="kt_event"><a href="/phonefo/boardlist?tno=1"><img alt="KT Event" src="/resources/images/payment/KTOlleh.png" width="90%;"></a></div>
         			<div id="lg_tag" style="height: ; background-color: #dddddd;"><img alt="" src="/resources/images/main/lgU+_event.png" height="100%" width="100%"></div>      			 
         			<div style="height: 10px;"></div>
-        			<div style=" display: none;height: ;" id="lg_event"><a href=""><img alt="LG Event" src="/resources/images/payment/LGU+.png" width="90%;"></a></div>
+        			<div style=" display: none;height: ;" id="lg_event"><a href="/phonefo/boardlist?tno=2"><img alt="LG Event" src="/resources/images/payment/LGU+.png" width="90%;"></a></div>
         	</div>
         	<div>
             </div>
@@ -539,7 +499,7 @@ table {
                             <div class="portfolio-border"> 
                                 <!-- Start Project Thumb -->
                                 <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_5@2x.jpg">
+                                   <a class="lightbox" title="This is an image title" href="/phonefo/listRepair">
                                       <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
                                         <img alt="" src="images/portfolio/5.jpg" /> 
                                    </a>
@@ -644,17 +604,17 @@ table {
                     <!-- Classic Heading -->
                     <h4 class="classic-title"><span>통계</span></h4>
                     <div class="progress-bars">
-                        <div class="progress-label">총 방문자(12432명)</div>
+                        <div class="progress-label">총 방문자(${totalVisit}명)</div>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-primary" data-progress-animation="100"> <span class="progress-bar-tooltip">100</span> </div>
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="${totalVisit}"> <span class="progress-bar-tooltip">100</span> </div>
                         </div>
-                        <div class="progress-label">등록된 업체수(52개)</div>
+                        <div class="progress-label">등록된 업체수(${businessCount}개)</div>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-primary" data-progress-animation="85" data-animation-delay="300"> <span class="progress-bar-tooltip">85%</span> </div>
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="${businessCount }" data-animation-delay="300"> <span class="progress-bar-tooltip">${businessCount }</span> </div>
                         </div>
-                        <div class="progress-label">거래완료(1712건)</div>
+                        <div class="progress-label">거래완료(${totalDeal}건)</div>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-primary" data-progress-animation="75" data-animation-delay="600"> <span class="progress-bar-tooltip">75%</span> </div>
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="${totalDeal }" data-animation-delay="300"> <span class="progress-bar-tooltip">${totalDeal }</span> </div>
                         </div>
 
  
