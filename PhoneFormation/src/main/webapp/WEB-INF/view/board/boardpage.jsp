@@ -137,7 +137,8 @@ function removereply(rno){
 						printPaging(data.pageMaker);
 					}
 				});//ajax
-				function printPaging(pageMaker) {
+			}
+				function printPaging(pageMaker) {	//페이징뿌리기
 					alert("시작")
 					var str = "";
 					if (pageMaker.prev) { // '<<' 버튼
@@ -149,7 +150,7 @@ function removereply(rno){
 					}
 					for (var i = pageMaker.startPage; i <= pageMaker.endPage; i++) { //1 2 3 4 버튼
 						var strClass = pageMaker.cri.page == i ? 'class=num_box txt_point u b'	: 'num_box';
-						str += "<a href='javascript:;' class='"+strClass+"'>" + i
+						str += "<a href='javascript:;' onclick='getPageList("+i+")'class='"+strClass+"'>" + i
 								+ "</a>";
 					}
 					if (pageMaker.next&& pageMaker.endPage > 0) { // '>>' 버튼
@@ -163,7 +164,7 @@ function removereply(rno){
 					$('.paging').empty();
 					$('.paging').append(str);
 				}
-	}
+	
 	$(document).ready(function() {
 						var userid = "${sessionScope.userid}";
 						$('#searchBtn').on(
