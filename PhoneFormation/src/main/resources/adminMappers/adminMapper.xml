@@ -205,6 +205,10 @@
 									#{charge},#{battery},#{sensor},#{afterimage},#{lcd})
 	</insert>
 	
+	<insert id="insertLogo">
+		insert into ph_client values(ph_client_seq.nextval,#{path})
+	</insert>
+	
   
 </mapper>
 

@@ -2,6 +2,8 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!doctype html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
@@ -640,35 +642,11 @@ table {
                 <h4 class="classic-title"><span>Our Clients</span></h4>
                 <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5"> 
                     
+                    
+                    <c:forEach items="${logo }" var="l">
                     <!-- Client 1 -->
-                    <div class="client-item item"> <a href="#"><img src="/resources/images/main/our_sk.jpg" alt="" /></a> </div>
-                    
-                    <!-- Client 2 -->
-                    <div class="client-item item"> <a href="#"><img src="/resources/images/main/our_kt.jpg" alt="" /></a> </div>
-                    
-                    <!-- Client 3 -->
-                    <div class="client-item item"> <a href="#"><img src="/resources/images/main/our_lg.jpg" alt="" /></a> </div>
-                    
-                    <!-- Client 4 -->
-                    <div class="client-item item"> <a href="#"><img src="/resources/images/main/our_samsung.jpg" alt="" /></a> </div>
-                    
-                    <!-- Client 5 -->
-                    <div class="client-item item"> <a href="#"><img src="/resources/images/main/our_vo.jpg" alt="" /></a> </div>
-  
-                    <!-- Client 5 -->
-                    <div class="client-item item"> <a href="#"><img src="/resources/images/main/our_hello.jpg" alt="" /></a> </div>
-
-                    <!-- Client 5 -->
-                    <div class="client-item item"> <a href="#"><img src="/resources/images/main/our_apple.png" alt="" /></a> </div>
-
-                    <!-- Client 5 -->
-                    <div class="client-item item"> <a href="#"><img src="/resources/images/main/our_umob.jpg" alt="" /></a> </div>
-                    
-
-                    
-                  
-                    
-
+                    <div class="client-item item"> <a href="#"><img src="${l.path}" alt="" /></a> </div>
+                    </c:forEach>
                 </div>
             </div>
         </div>

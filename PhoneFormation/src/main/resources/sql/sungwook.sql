@@ -1,3 +1,18 @@
+--로고추가 테이블
+select *from ph_client
+drop table ph_client;
+create table ph_client(
+	num number(10) primary key,
+	path varchar2(300)
+)
+insert into ph_client(ph_client_seq.nextval,'/resources/our_sam')
+
+create sequence ph_client_seq
+start with 1
+increment by 1
+nocache
+nocycle;
+
 --메인슬라이드 테이블
 drop table ph_slide;
 create table ph_slide(

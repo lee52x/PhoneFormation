@@ -8,6 +8,8 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+
+import com.phonefo.admin.domain.ClientVO;
 import com.phonefo.main.domain.MemberVO;
 
 
@@ -121,6 +123,13 @@ public class MainDAOImpl implements MainDAO{
 	@Override
 	public int howBusiness() throws Exception {
 		return sql.selectOne("member.howBusiness");
+	}
+	
+	
+	@Override
+	public List<ClientVO> getLogo() throws Exception {
+		
+		return sql.selectList("member.getLogo");
 	}
 
 }

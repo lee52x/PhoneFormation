@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.phonefo.admin.domain.AdminOnoBoardVO;
 import com.phonefo.admin.domain.AdminRepairVO;
+import com.phonefo.admin.domain.ClientVO;
 import com.phonefo.admin.domain.PageMaker;
 import com.phonefo.admin.domain.SearchCriteria;
 import com.phonefo.admin.domain.SlideVO;
@@ -171,10 +172,10 @@ public class AdminController {
 		
 		@RequestMapping(value="/mainSlideUpdate", method=RequestMethod.POST)
 		public String mainSlide(HttpServletRequest request, MultipartFile file, RedirectAttributes attr,
-				HttpSession session,SlideVO vo)throws Exception{
+				HttpSession session)throws Exception{
 			
 			///여기서부터
-			vo=new SlideVO();
+			SlideVO vo=new SlideVO();
 			String filename = file.getOriginalFilename();
 			System.out.println("파일="+filename);
 			if (filename != "") {
@@ -189,5 +190,42 @@ public class AdminController {
 			//여기까지
 
 			return "redirect:/phonefo/mainSlide";
+		}
+		
+		
+		//회사로고 추가 폼
+		@RequestMapping("/mainClient")
+		public String mainClient(Model model)throws Exception{
+			
+			
+			model.addAttribute("body", "./admin/mainClient.jsp");
+			return "mainView";
+		}
+		
+		//회사로고 추가 
+		@RequestMapping("/mainClientInsert")
+		public String mainClient(Model model,HttpServletRequest request, MultipartFile file, RedirectAttributes attr,
+				HttpSession session)throws Exception{
+			
+			System.out.println("오니");
+			///여기서부터
+			ClientVO vo=new ClientVO();
+			String filename = file.getOriginalFilename();
+			System.out.println("파일이름="+filename);
+			if (filename != "") {
+			    String uploadpath = request.getSession().getServletContext().getRealPath("/resources/logo");
+			    File target = new File(uploadpath, filename);
+				FileCopyUtils.copy(file.getBytes(), target);
+
+				vo.setPath("/resources/logo/" + filename);
+			}
+			System.out.println(vo);
+
+			//여기까지
+			service.insertLogo(vo);
+	
+			
+			model.addAttribute("body", "./admin/mainClient.jsp");
+			return "mainView";
 		}
 }

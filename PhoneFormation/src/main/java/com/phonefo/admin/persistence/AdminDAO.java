@@ -8,6 +8,7 @@ import com.phonefo.admin.domain.AdminMemberVO;
 import com.phonefo.admin.domain.AdminOnoBoardVO;
 import com.phonefo.admin.domain.AdminRepairVO;
 import com.phonefo.admin.domain.AdminRouteVO;
+import com.phonefo.admin.domain.ClientVO;
 import com.phonefo.admin.domain.SearchCriteria;
 
 
@@ -79,6 +80,8 @@ public interface AdminDAO {
 	public int todayVisit();
 
 	public void insertRepairPrice(AdminRepairVO vo)throws Exception;
+
+	public void insertLogo(ClientVO vo)throws Exception;
 	   
 	   
 	   

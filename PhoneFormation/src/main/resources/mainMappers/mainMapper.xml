@@ -63,5 +63,9 @@
 	<select id="howBusiness" resultType="int">
 		select count(*) from ph_business
 	</select>
+	
+	<select id="getLogo" resultType="com.phonefo.admin.domain.ClientVO">
+		select*from ph_client
+	</select>
 
 </mapper>

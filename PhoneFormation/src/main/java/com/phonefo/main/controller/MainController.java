@@ -2,6 +2,8 @@ package com.phonefo.main.controller;
 
 
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.phonefo.admin.domain.ClientVO;
 import com.phonefo.admin.service.AdminService;
 import com.phonefo.main.domain.MemberVO;
 import com.phonefo.main.service.MainService;
@@ -39,7 +42,9 @@ public class MainController {
 		model.addAttribute("businessCount", service.howBusiness());
 		//총 방문자
 		model.addAttribute("totalVisit", adminservice.totalVisit());
-		
+		//로고
+		model.addAttribute("logo", service.getLogo()); 
+	
 		
 		
 		

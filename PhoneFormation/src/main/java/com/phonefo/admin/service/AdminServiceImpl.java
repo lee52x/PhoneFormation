@@ -12,6 +12,7 @@ import com.phonefo.admin.domain.AdminMemberVO;
 import com.phonefo.admin.domain.AdminOnoBoardVO;
 import com.phonefo.admin.domain.AdminRepairVO;
 import com.phonefo.admin.domain.AdminRouteVO;
+import com.phonefo.admin.domain.ClientVO;
 import com.phonefo.admin.domain.SearchCriteria;
 import com.phonefo.admin.persistence.AdminDAO;
 
@@ -236,6 +237,12 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public void insertRepairPrice(AdminRepairVO vo) throws Exception {
 		 dao.insertRepairPrice(vo);
+		
+	}
+
+	@Override
+	public void insertLogo(ClientVO vo) throws Exception {
+		dao.insertLogo(vo);
 		
 	}
 

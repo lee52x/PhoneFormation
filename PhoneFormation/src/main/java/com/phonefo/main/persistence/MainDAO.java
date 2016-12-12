@@ -3,6 +3,7 @@ package com.phonefo.main.persistence;
 
 import java.util.List;
 
+import com.phonefo.admin.domain.ClientVO;
 import com.phonefo.main.domain.MemberVO;
 
 public interface MainDAO {
@@ -35,4 +36,5 @@ public interface MainDAO {
 	public String selectpassword(MemberVO vo) throws Exception;
 	public void addVisit()throws Exception;
 	public int howBusiness()throws Exception;
+	public List<ClientVO> getLogo()throws Exception;
 }

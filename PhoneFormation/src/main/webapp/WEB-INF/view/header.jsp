@@ -208,7 +208,6 @@
 								<li><a href="/phonefo/boardlist?tno=5">자유게시판</a></li>
 								<li><a href="/phonefo/adviceinput">1:1상담하기</a></li>
 							</ul></li>
-						<li><a href="contact.html">Contact</a></li>
 					</ul>
 					<!-- End Navigation List -->
 				</div>

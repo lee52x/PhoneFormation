@@ -104,6 +104,7 @@ infoArea .list1{overflow:hidden;height:120px}
        					<li><a href="/phonefo/adminCntInfo" title="통계">통계</a></li>
        					<li><a href="/phonefo/adminRepair" title="통계">수리견적추가</a></li>
        					<li><a href="/phonefo/mainSlide" title="통계">메인 슬라이드</a></li>
+       					<li><a href="/phonefo/mainClient" title="통계">회사로고추가</a></li>
 
                      </ul>
                  

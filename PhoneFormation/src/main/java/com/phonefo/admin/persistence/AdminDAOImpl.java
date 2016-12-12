@@ -14,6 +14,7 @@ import com.phonefo.admin.domain.AdminMemberVO;
 import com.phonefo.admin.domain.AdminOnoBoardVO;
 import com.phonefo.admin.domain.AdminRepairVO;
 import com.phonefo.admin.domain.AdminRouteVO;
+import com.phonefo.admin.domain.ClientVO;
 import com.phonefo.admin.domain.SearchCriteria;
 
 @Repository
@@ -146,6 +147,12 @@ public class AdminDAOImpl implements AdminDAO{
 	public void insertRepairPrice(AdminRepairVO vo) throws Exception {
 		sqlSession.insert("admin.insertRepairPrice",vo);
 		System.out.println(vo.getName());
+		
+	}
+
+	@Override
+	public void insertLogo(ClientVO vo) throws Exception {
+		sqlSession.insert("admin.insertLogo",vo);
 		
 	}
 
