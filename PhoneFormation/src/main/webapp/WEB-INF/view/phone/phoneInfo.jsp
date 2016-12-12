@@ -228,6 +228,24 @@
 	display: none;
 }
 
+#btn_add{
+    height: 30px;
+    width: 73px;
+    line-height: 22px;
+    display: inline-block;
+    zoom: 1;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    margin-left: 4px;
+    border: 1px solid #ccc;
+    position: absolute;
+    right: 7.0%;
+    top: 180px;
+}
+
 </style>
 <script type="text/javascript">   
 	var chkcnt=0;
@@ -267,6 +285,37 @@
       $('#vs_Abtn').click(function(){
     	 var first_no = $('.ckboxContent1').children('div').first().attr('value'); 
     	 var last_no = $('.ckboxContent1').children('div').first().attr('value');
+    	 /* var phoneValues=new Array;
+    	 phoneValues[1] = first_no;
+    	 phoneValues[2] = last_no;
+    	 nivo-lightbox-wrap
+    	 $.ajax({
+    			url:"/phonefo/phonevers",
+     		type:'POST',
+     		data:{'phoneArray':no},
+    			success:function(result){
+     			
+        			if(chkcnt==1){ 
+        				checkPhone =
+        					"<div id='ckPhone1' value='"+result.no+"'>"+
+        					"<input type='button' id='ckPhone1del' value='X' onclick='del("+result.no+")'>"+
+                			"<img src="+result.image+">"+
+                			"<p>"+result.name+"</p>"+
+                			"<p>"+result.manufacture+"</p>"+
+                			"</div>";
+        			}else if(chkcnt==2){
+        				checkPhone =
+               			"<div id='ckPhone2' value='"+result.no+"'>"+
+               			"<input type='button' id='ckPhone2del' value='X' onclick='del("+result.no+")'>"+
+                			"<img src="+result.image+">"+
+                			"<p>"+result.name+"</p>"+
+                			"<p>"+result.manufacture+"</p>"+
+                			"</div>";
+     			}
+        			$('.ckboxContent1').append(checkPhone); 
+     		}
+
+    	}); */
       });
    });
    
@@ -366,8 +415,9 @@
 		var first_len =$(".ckboxContent1").children('div').first();
 		var last = $(".ckboxContent1").children('div').last().attr('value');
 		var last_len = $(".ckboxContent1").children('div').last();
+
 		
-		if(parents.length==1){
+		if(parents.length==2){
 			if(no==first){ 
 				if(first_len.length != 0){
 					$(".ckboxContent1").children('div').first().remove();
@@ -393,54 +443,53 @@
    
    var del = function(result_no){
 	   var len = document.getElementsByName('box').length;
-	    var parent = $(".ckboxContent1").children('div').attr('value');
+	   var parent = $(".ckboxContent1").children('div').attr('value');
 	   var first = $(".ckboxContent1").children('div').attr('value');
 	   var first_len = $(".ckboxContent1").children('div').first();
 	   var last = $(".ckboxContent1").children('div').attr('value');
 	   var last_len = $(".ckboxContent1").children('div').last();
-	   if(parent.length==1){ 
-			if(result_no==first){ 
-				$('.ckboxContent1').children('div').first().remove();
-				last_len.attr('id','ckPhone1');
-				chkcnt=1;
-				$("input:checkbox[name='box']").each(function(){
-						  this.checked=false;
+	   var value = $('input:checkbox[id="'+result_no+'"]').attr('value');
+	   
+	   alert(parent.length);
+	   if(parent.length==2){ 
+			if(result_no==value){
+				if(first_len.length != 0){
+					$('input:checkbox[id="'+result_no+'"]').attr("checked", false);
+					$('.ckboxContent1').children('div').first().remove();
+					last_len.attr('id','ckPhone1');
+					$("input:checkbox[name='box']").each(function(){
 						  for(var i=0; i<len; i++){
 									document.getElementsByName('box')[i].disabled=false;
-							}
-				   });
-				$('#ckbox').hide();	
-				$('#ckboxContent').hide();	
+						  }
+					});
+				}
 				chkcnt=1;
 				return;
-				
-			}else if(result_no==last){
-				$(".ckboxContent1").children('div').last().remove();
-				$("input:checkbox[name='box']").each(function(){
-						  this.checked=false;
-						  for(var i=0; i<len; i++){
-									document.getElementsByName('box')[i].disabled=false;
-							}
-				  });	
-				
-				chkcnt=1;
-				return;
-			}
-	   }
-	   if($(".ckb[name='box']:checked").length==0 ){
-		   $(".ckboxContent1").children('div').remove();
+	   		}
+	   }else if(parent.length==1){
+		   if(result_no==value){
+			   $('.ckboxContent1').children('div').first().remove();
+			   $('input:checkbox[id="'+result_no+'"]').attr("checked", false);
+			   chkcnt=0;
+		   }
+	   }else{
+		   $('.ckboxContent1').children('div').first().remove();
+		   $('.ckboxContent1').children('div').last().remove();
+		   $('#ckbox').attr('display','none');
+		   $('#ckboxContent').attr('display','none');
 		   chkcnt=0;
-		   $('#ckbox').hide();
-		   return;
-		} 
-   }
+	   }	
+	   return;
+ }
    
 </script>
 
 </head>
  <div id="content">
    <div id="admin_add">
-   	<button id='btn_add'>추가</button>
+   <c:if test="${userid !=null}">
+    <input type='button' id='btn_add' value='추가' style="display: display;">
+   </c:if>
    </div>
       <div class="container">
          <div class="row sidebar-page">
@@ -471,7 +520,7 @@
                               		</tr>
                               	</table>
                               </a>
-                                 <input type="checkbox" class="ckb" name='box' onclick="checkBox('${list1.no }')" value="${list1.no }">비교하기<br>
+                                 <input type="checkbox" class="ckb" name='box' onclick="checkBox('${list1.no }')" id='${list1.no }' value="${list1.no }">비교하기<br>
                               </div>
                            </center>
                            </td>
@@ -550,14 +599,18 @@
       		<div class='ckboxContent1'>
       		
       		</div>
+      
+    	<input type='button' id="btn_vs" value='비교하기'>
+        <input type='button' id='btn_allremove' value='모두지우기'>
+      </div>
       <div class="portfolio-thumb" id="vs_Atag"> 
       	<a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_8@2x.jpg">
            <div class="thumb-overlay"><input type='button' id="vs_Abtn" value='비교하기'></div>
      	 </a>
     	</div>
-    	<input type='button' id="btn_vs" value='비교하기'>
-        <input type='button' id='btn_allremove' value='모두지우기'>
-      </div>
+    	<div class='nivo-lightbox-wrap'>
+    	
+    	</div>
       <input type='text' value='비교하기' id='ck_text'>
       <input type='button' id='btn_click' style="display: none;">
       <input type='button' id='btn_close'>

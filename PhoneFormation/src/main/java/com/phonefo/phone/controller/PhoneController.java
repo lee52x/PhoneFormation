@@ -43,7 +43,8 @@ public class PhoneController {
 	private PhoneInfoService service;
 	
 	@RequestMapping("/phoneInfo")		//리스트 페이지 출력
-	public String phoneInfo(Model model)throws Exception{
+	public String phoneInfo(Model model, HttpSession session)throws Exception{
+		session.getAttribute("userid");
 		model.addAttribute("list1", service.selectInfo("samsung"));	
 		model.addAttribute("list2", service.selectInfo("lg"));	
 		model.addAttribute("list3", service.selectInfo("apple"));	
@@ -52,7 +53,8 @@ public class PhoneController {
 	}
 	
 	@RequestMapping("/phoneInfo_spec")	//상세보기
-	public String phoneInfo_spec(Model model, @ModelAttribute("no")int no)throws Exception{
+	public String phoneInfo_spec(Model model, @ModelAttribute("no")int no, HttpSession session)throws Exception{
+		session.getAttribute("userid");
 		PhoneInfoVO phoneinfo= service.select_phone(no);
 		String image_path = phoneinfo.getImage();
 		model.addAttribute("image",image_path.substring(24));
@@ -74,14 +76,15 @@ public class PhoneController {
 	}
 	
 	@RequestMapping(value="/include", method=RequestMethod.POST)	//입력폼
-	public String include(Model model,int no)throws Exception{
-		System.out.println("에aaaaa"+no);
+	public String include(Model model,int no,HttpSession session)throws Exception{
+		session.getAttribute("userid");
 		model.addAttribute("list_color", service.select_color(no));
 		return "/phone/include";
 	}
 	
 	@RequestMapping(value="/modify", method=RequestMethod.GET)	//변경폼
-	public String modify(Model model, @ModelAttribute("no")int no)throws Exception{
+	public String modify(Model model, @ModelAttribute("no")int no, HttpSession session)throws Exception{
+		session.getAttribute("userid");
 		PhoneInfoVO phoneinfo= service.select_phone(no);
 		String image_path = phoneinfo.getImage();
 		model.addAttribute("image",image_path.substring(24));
