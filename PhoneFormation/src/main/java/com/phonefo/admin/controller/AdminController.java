@@ -1,19 +1,28 @@
 package com.phonefo.admin.controller;
 
+import java.io.File;
+import java.util.UUID;
+
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.phonefo.admin.domain.AdminOnoBoardVO;
 import com.phonefo.admin.domain.AdminRepairVO;
 import com.phonefo.admin.domain.PageMaker;
 import com.phonefo.admin.domain.SearchCriteria;
+import com.phonefo.admin.domain.SlideVO;
 import com.phonefo.admin.service.AdminService;
+import com.phonefo.board.domain.BoardVO;
 
 @Controller
 @RequestMapping("/phonefo")
@@ -151,5 +160,35 @@ public class AdminController {
 			model.addAttribute("body", "./admin/adminRepairInsert.jsp");
 			
 			return "mainView";
+		}
+		
+		@RequestMapping(value="/mainSlide")
+		public String mainSlide(Model model)throws Exception{
+
+			model.addAttribute("body", "./admin/mainSlide.jsp");
+			return "mainView";
+		}
+		
+		@RequestMapping(value="/mainSlideUpdate", method=RequestMethod.POST)
+		public String mainSlide(HttpServletRequest request, MultipartFile file, RedirectAttributes attr,
+				HttpSession session,int state)throws Exception{
+			
+			///여기서부터
+			SlideVO vo=new SlideVO();
+			vo.setPath("");
+			String filename = file.getOriginalFilename();
+			System.out.println("파일="+filename);
+			if (filename != "") {
+			    String uploadpath = request.getSession().getServletContext().getRealPath("/resources/slide");
+			    File target = new File(uploadpath, filename);
+				FileCopyUtils.copy(file.getBytes(), target);
+
+				vo.setPath("/resources/slide/" + filename);
+			}
+			System.out.println(vo);
+			
+			//여기까지
+
+			return "redirect:/phonefo/mainSlide";
 		}
 }

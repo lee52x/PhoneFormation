@@ -1,3 +1,10 @@
+--메인슬라이드 테이블
+drop table ph_slide;
+create table ph_slide(
+	state number(2) primary key,
+	path varchar2(20)
+)
+
 --관리자 돈 테이블 --
 select*from ph_admin
 drop table ph_admin;
@@ -339,4 +346,4 @@ insert into ph_capacity values (1, '32GB', 924000);
 			where  to_char(ph.v_date,'YYYYMMDD')=to_char(sys.sd,'YYYYMMDD')
 			
 			select*from ph_repair
-			
+			select count(*) from ph_business
