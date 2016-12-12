@@ -80,6 +80,12 @@ public class MainServiceImpl implements MainService {
 		return dao.selectpassword(vo);
 	}
 
+	@Override
+	public void addVisit() throws Exception {
+		 dao.addVisit();
+		
+	}
+
 
 	
 

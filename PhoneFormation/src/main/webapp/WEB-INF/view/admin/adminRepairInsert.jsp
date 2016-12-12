@@ -12,6 +12,31 @@
 
 <script type="text/javascript">
 
+$(document).ready(function(){
+	$('#manufacture').change(function(){
+		
+		
+		$.ajax({
+			url:"/phonefo/machine",
+			data:{manufacture:$('#manufacture').val()},
+			success:function(result){
+				//alert(result); result==배열 [{name:갤럭시},{}]
+				//alert(result[0].name);
+				var options='<option>기기명 선택</option>';
+			   for(var i=0;i<result.length;i++){
+				  /// alert(result[i].name);
+				       options += '<option>'+result[i].name+'</option>';
+			   }
+			   $('#machine').html(options);
+			}
+		});
+
+});
+
+
+
+});
+
 function check() {
 	
 	if($('#name').val() == '') {
@@ -138,20 +163,34 @@ function check() {
 														<tbody>
 
 															<tr>
-																<th><h3>아이디</h3></th>
+																<th><h3>제조사</h3></th>
 																<td><h3>
-																		<input type="text" name="name" id="name"
-																			class="tBox tPwd" maxlength="20"
-																			placeholder="기기명을 입력하세요" title="이름" />
+																		<select style="width: 350px;" id="manufacture">
+																			<option>제조사 선택</option>
+																			<option value="samsung">삼성</option>
+																			<option value="lg">LG</option>
+																			<option value="apple">애플</option>
+																		</select>
 																	</h3>
 															</tr>
 															<tr>
+																<th><h3>기기명선택</h3></th>
+																<td><h3>
+																		<select style="width: 350px;" id="machine">
+																			<option>기기명 선택</option>
+
+																		</select>
+																	</h3>
+															</tr>
+
+<tr>
 																<th><h3>액정파손</h3></th>
 																<td><h3>
 																		<input type="text" name="glass" id="glass"
 																			class="tBox tPwd" maxlength="8"
 																			placeholder="숫자" title="액정파손" />
 																	</h3>
+																</td>
 															</tr>
 															<tr>
 																<th><h3>뒤커버파손</h3></th>

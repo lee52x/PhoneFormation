@@ -41,22 +41,44 @@ public interface AdminDAO {
 	   
 	   //가입정보 통계카운트
 	   public int routeInfoCnt()throws Exception;
-	   
-	   //중고 거래성사 카운트
-	   public int quoteDeal()throws Exception;
-	      
-	   //중고 총금액 카운트
-	   public List<AdminCntVO> quotePrice()throws Exception;
-	     
-	   //수리 거래성사 카운트
-	   public int repairDeal()throws Exception;
-	   
-	   //수리 총금액 카운트
-	   public List<AdminCntVO> repairPrice()throws Exception;
-	   
-	   //수리견적 입력
-	   public void repairInsert(AdminRepairVO vo)throws Exception;
-	   
+//	   
+//	   //중고 거래성사 카운트
+//	   public int quoteDeal()throws Exception;
+//	      
+//	   //중고 총금액 카운트
+//	   public List<AdminCntVO> quotePrice()throws Exception;
+//	     
+//	   //수리 거래성사 카운트
+//	   public int repairDeal()throws Exception;
+//	   
+//	   //수리 총금액 카운트
+//	   public List<AdminCntVO> repairPrice()throws Exception;
+//	   
+//	   //수리견적 입력
+//	   public void repairInsert(AdminRepairVO vo)throws Exception;
+//	   
+
+	public int cntSecondHand()throws Exception;
+
+	public int profitSecondHand()throws Exception;
+
+	public int cntRepair()throws Exception;
+
+	public int profitRepair()throws Exception;
+
+	public int TodaycntSecondHand();
+
+	public int TodayprofitSecondHand();
+
+	public int TodaycntRepair();
+
+	public int TodayprofitRepair();
+
+	public int totalVisit();
+
+	public int todayVisit();
+
+	public void insertRepairPrice(AdminRepairVO vo)throws Exception;
 	   
 	   
 	   

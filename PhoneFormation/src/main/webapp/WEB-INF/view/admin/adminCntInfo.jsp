@@ -20,7 +20,7 @@
 
 					<!-- Classic Heading -->
 					<h4 class="classic-title">
-						<span>통계${object.quote_price }</span>
+						<span>방문자</span>
 					</h4>
 					<Br>
 					<Br>
@@ -29,48 +29,131 @@
    		                   <div class="milestone-block col-md-2">
                             <div class="milestone-icon"><i class="fa fa-user"></i></div>
                             <div class="milestone-right">
-                                <div class="milestone-number">${object.quoteDeal }</div>
-                                <div class="milestone-text">중고거래수</div>
+                                <div class="milestone-number">${totalVisit }</div>
+                                <div class="milestone-text">총 방문자</div>
                             </div>
                         </div>
-		
 
-	
-
-
-   		
-        <!-- Start Milestone Block -->
-                
-                        
                           <div class="milestone-block col-md-2">
                             <div class="milestone-icon"><i class="fa fa-wordpress"></i></div>
                             <div class="milestone-right">
-                                <div class="milestone-number">${object.quote_price }</div>
-                                <div class="milestone-text">중고수익</div>
+                                <div class="milestone-number">${todayVisit }</div>
+                                <div class="milestone-text">오늘 방문자</div>
+                            </div>
+                        </div>
+				</div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<div class="row sidebar-page">
+
+				<!-- Page Content -->
+				<div class="col-md-12 page-content">
+
+					<!-- Classic Heading -->
+					<h4 class="classic-title">
+						<span>중고폰</span>
+					</h4>
+					<Br>
+					<Br>
+
+                        
+                        <!-- Start Milestone Block -->
+   		                   <div class="milestone-block col-md-2">
+                            <div class="milestone-icon"><i class="fa fa-user"></i></div>
+                            <div class="milestone-right">
+                                <div class="milestone-number">${cntSecondHand}</div>
+                                <div class="milestone-text">총 거래</div>
                             </div>
                         </div>
 
-		 <!-- Start Milestone Block -->
-    
-             
-                        
+                          <div class="milestone-block col-md-2">
+                            <div class="milestone-icon"><i class="fa fa-wordpress"></i></div>
+                            <div class="milestone-right">
+                                <div class="milestone-number">${profitSecondHand}원</div>
+                                <div class="milestone-text">총 수익</div>
+                            </div>
+                        </div>
+
                          <div class="milestone-block col-md-2">
                             <div class="milestone-icon"><i class="fa fa-user"></i></div>
                             <div class="milestone-right">
-                                <div class="milestone-number">${object.repairDeal }</div>
-                                <div class="milestone-text">수리거래수</div>
+                                <div class="milestone-number">${TodaycntSecondHand}</div>
+                                <div class="milestone-text">오늘 거래</div>
                             </div>
                         </div>
                         
                          <div class="milestone-block col-md-2">
                             <div class="milestone-icon"><i class="fa fa-wordpress"></i></div>
                             <div class="milestone-right">
-                                <div class="milestone-number">${object.repair_price }</div>
-                                <div class="milestone-text">수리수익</div>
+                                <div class="milestone-number">${TodayprofitSecondHand}</div>
+                                <div class="milestone-text">오늘 수익</div>
+                            </div>
+                        </div>
+				</div>
+				
+				
+				
+				
+				
+				
+				<div class="col-md-12 page-content">
+
+					<!-- Classic Heading -->
+					<h4 class="classic-title">
+						<span>수리폰</span>
+					</h4>
+					<Br>
+					<Br>
+
+                        
+                        <!-- Start Milestone Block -->
+   		                   <div class="milestone-block col-md-2">
+                            <div class="milestone-icon"><i class="fa fa-user"></i></div>
+                            <div class="milestone-right">
+                                <div class="milestone-number">${cntRepair}</div>
+                                <div class="milestone-text">총 거래</div>
                             </div>
                         </div>
 
+                          <div class="milestone-block col-md-2">
+                            <div class="milestone-icon"><i class="fa fa-wordpress"></i></div>
+                            <div class="milestone-right">
+                                <div class="milestone-number">${profitRepair}원</div>
+                                <div class="milestone-text">총 수익</div>
+                            </div>
+                        </div>
+
+                         <div class="milestone-block col-md-2">
+                            <div class="milestone-icon"><i class="fa fa-user"></i></div>
+                            <div class="milestone-right">
+                                <div class="milestone-number">${TodaycntRepair}</div>
+                                <div class="milestone-text">오늘 거래</div>
+                            </div>
+                        </div>
+                        
+                         <div class="milestone-block col-md-2">
+                            <div class="milestone-icon"><i class="fa fa-wordpress"></i></div>
+                            <div class="milestone-right">
+                                <div class="milestone-number">${TodayprofitRepair}</div>
+                                <div class="milestone-text">오늘 수익</div>
+                            </div>
+                        </div>
+
+
+   		                 
 				</div>
+				
+				
+				
+				
+				
+				
 		</div>
 		
 				<br>

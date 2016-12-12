@@ -79,34 +79,73 @@ public class AdminDAOImpl implements AdminDAO{
 		
 	}
 
-	@Override   //중고 거래성사 카운트
-	public int quoteDeal() throws Exception {
-		
-		return sqlSession.selectOne("admin.quoteDeal");
+	@Override
+	public int cntSecondHand() throws Exception {
+		return sqlSession.selectOne("admin.cntSecondHand");
 	}
 
-	@Override  //중고 총금액 카운트
-	public List<AdminCntVO> quotePrice() throws Exception {
-		
-		return sqlSession.selectList("admin.quotePrice");
+	@Override
+	public int profitSecondHand() throws Exception {
+		return sqlSession.selectOne("admin.profitSecondHand");
 	}
 
-	@Override  //수리 거래성사 카운트
-	public int repairDeal() throws Exception {
-		
-		return sqlSession.selectOne("admin.repairDeal");
+	@Override
+	public int cntRepair() throws Exception {
+		return sqlSession.selectOne("admin.cntRepair");
 	}
 
-	@Override   //수리 총금액 카운트
-	public List<AdminCntVO> repairPrice() throws Exception {
-		
-		return sqlSession.selectList("admin.repairPrice");
+	@Override
+	public int profitRepair() throws Exception {
+		return sqlSession.selectOne("admin.profitRepair");
 	}
 
-	@Override//수리견적 입력
-	public void repairInsert(AdminRepairVO vo) throws Exception {
+	
+	
+	//오늘꺼
+	@Override
+	public int TodaycntSecondHand() {
+		return sqlSession.selectOne("admin.TodaycntSecondHand");
+	}
+
+	@Override
+	public int TodayprofitSecondHand() {
 		
-		sqlSession.insert("admin.repairInsert",vo);
+		if(sqlSession.selectOne("admin.TodayprofitSecondHand")==null)
+		return 0;
+		else
+		return sqlSession.selectOne("admin.TodayprofitSecondHand");
+	}
+
+	@Override
+	public int TodaycntRepair() {
+		return sqlSession.selectOne("admin.TodaycntRepair");
+	}
+
+	@Override
+	public int TodayprofitRepair() {
+		
+		 if(sqlSession.selectOne("admin.TodayprofitRepair")==null)
+			 return 0;
+		 else
+			 return sqlSession.selectOne("admin.TodayprofitRepair");
+			 
+	}
+
+	@Override
+	public int totalVisit() {
+	
+		return sqlSession.selectOne("admin.totalVisit");
+	}
+
+	@Override
+	public int todayVisit() {
+		return sqlSession.selectOne("admin.todayVisit");
+	}
+
+	@Override
+	public void insertRepairPrice(AdminRepairVO vo) throws Exception {
+		sqlSession.insert("admin.insertRepairPrice",vo);
+		System.out.println(vo.getName());
 		
 	}
 

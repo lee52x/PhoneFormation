@@ -138,9 +138,73 @@
 
   insert into ph_repair values(#{name},#{glass},#{backcover},#{crome},#{pan},#{scratch},#{powerbutton},#{homebutton}
 		,#{sound},#{camera},#{wifi},#{charge},#{battery},#{sensor},#{afterimage},#{lcd})
-		
-
   </insert>
+
+	<select id="cntSecondHand" resultType="int">
+			select count(*) from ph_admin where state=0
+	</select>
+	
+	<select id="profitSecondHand" resultType="int">
+			select sum(money) from ph_admin where state=0 
+	</select>
+
+	<select id="cntRepair" resultType="int">
+			select count(*) from ph_admin where state=1
+	</select>
+	
+	<select id="profitRepair" resultType="int">
+			select sum(money) from ph_admin where state=1 
+	</select>
+	
+	<!-- 오늘꺼 -->
+
+	<select id="TodaycntSecondHand" resultType="int">
+			select count(*) 
+			from (select sysdate sd from dual) sys, ph_admin ph 
+			where ph.state=0 and to_char(ph.rdate,'YYYYMMDD')=to_char(sys.sd,'YYYYMMDD')
+			 
+	</select>
+	
+	<select id="TodayprofitSecondHand" resultType="int">
+			select sum(money)
+			from (select sysdate sd from dual) sys, ph_admin ph 
+			where ph.state=0 and to_char(ph.rdate,'YYYYMMDD')=to_char(sys.sd,'YYYYMMDD')
+	</select>
+
+	<select id="TodaycntRepair" resultType="int">
+			select count(*) 
+			from (select sysdate sd from dual) sys, ph_admin ph 
+			where ph.state=1 and to_char(ph.rdate,'YYYYMMDD')=to_char(sys.sd,'YYYYMMDD')
+	</select>
+	
+	<select id="TodayprofitRepair" resultType="int">
+			select sum(money)
+			from (select sysdate sd from dual) sys, ph_admin ph 
+			where ph.state=1 and to_char(ph.rdate,'YYYYMMDD')=to_char(sys.sd,'YYYYMMDD')
+	</select>
+	
+	<insert id="setVisitTotalCount">
+		insert into ph_visit values(sysdate)
+	</insert>
+	
+	<select id="totalVisit" resultType="int">
+		select count(*) from ph_visit
+	</select>
+	
+	<select id="todayVisit" resultType="int">
+					select count(*)
+			from (select sysdate sd from dual) sys, ph_visit ph 
+			where  to_char(ph.v_date,'YYYYMMDD')=to_char(sys.sd,'YYYYMMDD')
+	</select>
+	
+	
+	<insert id="insertRepairPrice">
+		insert into ph_repair values(#{name},#{glass},#{backover},
+									#{crome},#{pan},#{scratch},#{powerbutton},
+									#{homebutton},#{sound},#{camera},#{wifi},
+									#{charge},#{battery},#{sensor},#{afterimage},#{lcd})
+	</insert>
+	
   
 </mapper>
 

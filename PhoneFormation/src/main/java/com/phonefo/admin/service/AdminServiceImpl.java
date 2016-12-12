@@ -138,46 +138,104 @@ public class AdminServiceImpl implements AdminService {
 
 		return vo;
 	}
+//
+//	@Override
+//	public AdminCntVO allStats() throws Exception {
+//
+//		int quote_price=0;
+//
+//
+//		int repair_price=0;
+//
+//		
+//		List<AdminCntVO> list1 = dao.quotePrice();
+//		List<AdminCntVO> list2 = dao.repairPrice();
+//
+//		int repairDeal=dao.repairDeal();
+//		int quoteDeal=dao.quoteDeal();
+//		
+//		
+//		for(int i=0; i<list1.size(); i++){
+//			quote_price += list1.get(i).getQuote_price();
+//		}
+//		
+//		for(int i=0; i<list1.size(); i++){
+//			repair_price += list2.get(i).getRepair_price();
+//		}
+//			
+//		AdminCntVO vo = new AdminCntVO();
+//		vo.setQuote_price(quote_price);
+//		vo.setQuoteDeal(quoteDeal);
+//		vo.setRepair_price(repair_price);
+//		vo.setRepairDeal(repairDeal);
+//
+//		
+//
+//		
+//		return vo;
+//	}
+//
+//	@Override
+//	public void repairInsert(AdminRepairVO vo) throws Exception {
+//		dao.repairInsert(vo);
+//		
+//	}
 
 	@Override
-	public AdminCntVO allStats() throws Exception {
-
-		int quote_price=0;
-
-
-		int repair_price=0;
-
-		
-		List<AdminCntVO> list1 = dao.quotePrice();
-		List<AdminCntVO> list2 = dao.repairPrice();
-
-		int repairDeal=dao.repairDeal();
-		int quoteDeal=dao.quoteDeal();
-		
-		
-		for(int i=0; i<list1.size(); i++){
-			quote_price += list1.get(i).getQuote_price();
-		}
-		
-		for(int i=0; i<list1.size(); i++){
-			repair_price += list2.get(i).getRepair_price();
-		}
-			
-		AdminCntVO vo = new AdminCntVO();
-		vo.setQuote_price(quote_price);
-		vo.setQuoteDeal(quoteDeal);
-		vo.setRepair_price(repair_price);
-		vo.setRepairDeal(repairDeal);
-
-		
-
-		
-		return vo;
+	public int cntSecondHand() throws Exception {
+		return dao.cntSecondHand();
 	}
 
 	@Override
-	public void repairInsert(AdminRepairVO vo) throws Exception {
-		dao.repairInsert(vo);
+	public int profitSecondHand() throws Exception {
+		return dao.profitSecondHand();
+	}
+
+	@Override
+	public int cntRepair() throws Exception {
+		return dao.cntRepair();
+	}
+
+	@Override
+	public int profitRepair() throws Exception {
+		return dao.profitRepair();
+	}
+
+	@Override
+	public int TodaycntSecondHand() throws Exception {
+		return dao.TodaycntSecondHand();
+	}
+
+	@Override
+	public int TodayprofitSecondHand() throws Exception {
+		return dao.TodayprofitSecondHand();
+	}
+
+	@Override
+	public int TodaycntRepair() throws Exception {
+		return dao.TodaycntRepair();
+	}
+
+	@Override
+	public int TodayprofitRepair() throws Exception {
+		return dao.TodayprofitRepair();
+	}
+
+	@Override
+	public int totalVisit() throws Exception {
+		return dao.totalVisit();
+		
+	}
+
+	@Override
+	public int todayVisit() throws Exception {
+		return dao.todayVisit();
+		
+	}
+
+	@Override
+	public void insertRepairPrice(AdminRepairVO vo) throws Exception {
+		 dao.insertRepairPrice(vo);
 		
 	}
 

@@ -31,6 +31,7 @@ public interface MainService {
 	public MemberVO getBVO(String userid)throws Exception;
 	public List<String> selectid(MemberVO vo) throws Exception;
 	public String selectpassword(MemberVO vo) throws Exception;
+	public void addVisit()throws Exception;
 	
 	
 	

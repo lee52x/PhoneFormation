@@ -102,7 +102,30 @@ public class AdminController {
 		public String adminQuoteInfo(Model model)throws Exception{
 			//model.addAttribute("object",service.routeInfo());
 			
-			model.addAttribute("object",service.allStats());
+			//model.addAttribute("object",service.allStats());
+			
+			//총방문자
+			model.addAttribute("totalVisit", service.totalVisit());
+			//오늘의 방문자
+			model.addAttribute("todayVisit", service.todayVisit());
+			
+
+			//총 중고/수리 거래수와 수익
+			model.addAttribute("cntSecondHand", service.cntSecondHand());
+			model.addAttribute("profitSecondHand", service.profitSecondHand());
+			model.addAttribute("cntRepair", service.cntRepair());
+			model.addAttribute("profitRepair", service.profitRepair());
+			
+			//오늘의 중고/수리 거래수와 수익
+			
+			model.addAttribute("TodaycntSecondHand", service.TodaycntSecondHand());
+			model.addAttribute("TodayprofitSecondHand", service.TodayprofitSecondHand());
+			model.addAttribute("TodaycntRepair", service.TodaycntRepair());
+			model.addAttribute("TodayprofitRepair", service.TodayprofitRepair());
+			
+			
+			
+			
 			model.addAttribute("body", "./admin/adminCntInfo.jsp");
 			
 			return "mainView";
@@ -117,13 +140,14 @@ public class AdminController {
 			return "mainView";
 		}
 		
-		@RequestMapping(value="/adminRepairInsert" ,method=RequestMethod.POST)
-		public String adminRepairPOST(Model model,AdminRepairVO vo)throws Exception{
-			
-			service.repairInsert(vo);
-			
-			model.addAttribute("body", "./admin/adminRepairInsert.jsp");
-			
-			return "mainView";
-		}
+//		@RequestMapping(value="/adminRepairInsert" ,method=RequestMethod.POST)
+//		public String adminRepairPOST(Model model,AdminRepairVO vo,String machine)throws Exception{
+//			
+//			vo.setName(machine);
+//			service.insertRepairPrice(vo);
+//			
+//			model.addAttribute("body", "./admin/adminRepairInsert.jsp");
+//			
+//			return "mainView";
+//		}
 }

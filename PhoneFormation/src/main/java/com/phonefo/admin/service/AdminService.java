@@ -32,10 +32,21 @@ public interface AdminService {
     
     //가입정보 통계
     public AdminRouteVO routeInfo()throws Exception;
-    
-    //중고,수리 수익,거래성사 횟수 통계
-    public AdminCntVO allStats()throws Exception;
-  
-    //수리견적 입력
-    public void repairInsert(AdminRepairVO vo)throws Exception;    
+//    
+//    //중고,수리 수익,거래성사 횟수 통계
+//    public AdminCntVO allStats()throws Exception;
+//  
+//    //수리견적 입력
+//    public void repairInsert(AdminRepairVO vo)throws Exception;    
+	public int cntSecondHand()throws Exception;
+	public int profitSecondHand()throws Exception;
+	public int cntRepair()throws Exception;
+	public int profitRepair()throws Exception;
+	public int TodaycntSecondHand()throws Exception;
+	public int TodayprofitSecondHand()throws Exception;
+	public int TodaycntRepair()throws Exception;
+	public int TodayprofitRepair()throws Exception;
+	public int totalVisit()throws Exception;
+	public int todayVisit()throws Exception;
+	public void insertRepairPrice(AdminRepairVO vo)throws Exception;
 }

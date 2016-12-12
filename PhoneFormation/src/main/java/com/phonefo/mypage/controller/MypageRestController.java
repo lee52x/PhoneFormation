@@ -42,7 +42,7 @@ public class MypageRestController {
 		map.put("userid", userid);
 		int result = service.mypagePurchaseChoose(map);
 		service.insertCompleteId(userid);
-		System.out.println("잘실행됫니?");
+
 		
 
 		return result;
@@ -66,11 +66,10 @@ public class MypageRestController {
 		Map<String, String> map = new HashMap<>();
 		map.put("no", Integer.toString(no));
 		map.put("userid", userid);
-		System.out.println("번호:"+no);
-		System.out.println("아이디:"+userid);
+
 		//거래가격 알아오기
 		int quote_price = service.getQuotePrice(no);
-		System.out.println("견적가격:"+quote_price);
+
 		int update_price = quote_price * 10/100;//거래가격의 10퍼센트
 		//기업 아이디에서 cash빼기
 		service.subCash(userid,update_price);
@@ -146,8 +145,6 @@ public class MypageRestController {
 	public int purchaseRepairIngChoose(int no, String userid) throws Exception {
 		
 		///거래완료 확인 누르면 여기다 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-		System.out.println("번호:"+no);
-		System.out.println("아이디:"+userid);
 		Map<String, String> map = new HashMap<>();
 		map.put("no", Integer.toString(no));
 		map.put("userid", userid);
@@ -156,14 +153,14 @@ public class MypageRestController {
 		
 		//수리가격 알아오기
 		int repair_price = service.getRepairPrice(no);
-		System.out.println("견적가격:"+repair_price);
+	
 		int update_price = repair_price * 10/100;//거래가격의 10퍼센트
 		//기업 아이디에서 cash빼기
 		service.subCash(userid,update_price);
-		System.out.println("기업돈 뺏다");
+
 		//관리자 돈 늘리기
 		service.addMoney(update_price,1);
-		System.out.println("관리자 돈 늘렸다");
+	
 
 		return result;
 	}

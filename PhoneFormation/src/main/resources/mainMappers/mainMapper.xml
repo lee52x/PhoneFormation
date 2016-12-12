@@ -55,5 +55,9 @@
 		companyName,leaderName,address from ph_member natural join ph_business
 		where userid=#{userid}
 	</select> 
+	
+	<insert id="addVisit">
+		insert into ph_visit values(sysdate)
+	</insert>
 
 </mapper>

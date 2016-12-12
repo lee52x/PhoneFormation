@@ -229,6 +229,14 @@ create table ph_capacity( --핸드폰 용량
 	foreign key(no) references ph_phone(no),
 	primary key(no, capacity)
 );
+--------------------------------방문자수 테이블
+create table ph_visit(
+v_date date
+)
+
+
+
+
 insert into ph_capacity values (1, '32GB', 924000);
  		select name,capacity,release_price from ph_phone natur
  		where name=#{machine}
@@ -264,7 +272,7 @@ insert into ph_capacity values (1, '32GB', 924000);
 			where businessNum = (select businessNum from ph_member where userid='lgtelecom')
 			
 			--중고폰 수입--
-			select sum(money) from ph_admin where state=0 
+			select sum(money) from` ph_admin where state=0 
 			--수리폰 수입--
 			select sum(money) from ph_admin where state=1 
 			
@@ -275,5 +283,58 @@ insert into ph_capacity values (1, '32GB', 924000);
 			
 				select repair_price from ph_repairboard where no=#{no}
 			
+			select*from ph_admin
 			
+			select cnt(num) from ph_admin
+			
+			select count(*) from ph_admin where state=0
+			select count(*) from ph_admin where state=1
+			
+			select*from PH_ADMIN
+			
+				select count(*) from ph_admin where state=0 and rdate=sysdate
+				
+			
+			select*From ph_admin
+			
+			select count(*)
+			from (select sysdate sd from dual) sys, ph_admin ph 
+			where ph.state=0 and to_char(ph.rdate,'YYYYMMDD')=to_char(sys.sd,'YYYYMMDD')
+			
+			
+			
+			
+			
+			
+			
+						select sum(money)
+			from (select sysdate sd from dual) sys, ph_admin ph 
+			where ph.state=0 and to_char(ph.rdate,'YYYYMMDD')=to_char(sys.sd,'YYYYMMDD')
+			
+			
+						select count(*) 
+			from (select sysdate sd from dual) sys, ph_admin ph 
+			where ph.state=1 and to_char(ph.rdate,'YYYYMMDD')=to_char(sys.sd,'YYYYMMDD')
+			
+			
+						select sum(money)
+			from (select sysdate sd from dual) sys, ph_admin ph 
+			where ph.state=1 and to_char(ph.rdate,'YYYYMMDD')=to_char(sys.sd,'YYYYMMDD')
+			
+			insert into ph_visit values(sysdate)
+			select*from PH_ADMIN
+			select*from ph_visit
+				insert into ph_visit values(sysdate)
+			select sum(money)
+			from (select sysdate sd from dual) sys, ph_admin ph 
+			where ph.state=0 and to_char(ph.rdate,'YYYYMMDD')=to_char(sys.sd,'YYYYMMDD')
+			
+			insert into ph_visit values(sysdate)
+			
+			select count(*) from ph_visit
+			
+			select * from ph_business
+			select count(*)
+			from (select sysdate sd from dual) sys, ph_visit ph 
+			where  to_char(ph.v_date,'YYYYMMDD')=to_char(sys.sd,'YYYYMMDD')
 			

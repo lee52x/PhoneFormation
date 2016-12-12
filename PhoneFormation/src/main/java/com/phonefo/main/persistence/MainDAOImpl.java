@@ -113,5 +113,10 @@ public class MainDAOImpl implements MainDAO{
 		System.out.println(vo.getEmail());
 		return sql.selectOne("selectpassword", vo);
 	}
+	@Override
+	public void addVisit()throws Exception{
+		 sql.insert("member.addVisit");
+		
+	}
 
 }
