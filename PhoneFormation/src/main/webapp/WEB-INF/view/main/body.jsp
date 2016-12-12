@@ -251,33 +251,33 @@ table {
         <div class="container"> 
             <!-- Start Services Icons -->
             <div class="row">
-                <div class="col-md-3"> 
+                <div> 
                                 <div style="width: 21%; float: left;">
-            <div style="border: 1px solid black; margin-left: 2%; margin-right:2%; margin-top:2%;margin-bottom:1.5%; text-align: center; vertical-align: middle;height: 100%;width: 100%">
+            <div style=" margin-left: 2%; margin-right:2%; margin-top:2%;margin-bottom:1.5%; text-align: center; vertical-align: middle;height: 100%;width: 100%">
             	<a href="#"><img alt="핸드폰 수리비" src="/resources/images/main/soori.png" height="100%;"></a>
             </div>
-  			<div style="border: 1px solid black; margin-left: 2%; margin-right:2%;margin-top: 1.5%; text-align: center; vertical-align: middle;height: 100%;width: 100%">
+  			<div style=" margin-left: 2%; margin-right:2%;margin-top: 1.5%; text-align: center; vertical-align: middle;height: 100%;width: 100%">
             	<a href="#"><img alt="중고폰 판매가" src="/resources/images/main/joonggo.png" height="100%;"></a>
             </div>
             </div>
-            <div style="width: 53.5%; float: left; border: 1px solid black; margin-left: 1.5%;margin-top: 0.5%; background-color: #eeeeee; text-align: center;">
+            <div style="width: 53.5%; float: left; margin-left: 1.5%;margin-top: 0.5%; background-color: #eeeeee; text-align: center;">
             	<div id="skt_pay" style="width: 5%; float: left; height: 100%;">S<br>K<br>T<br>요<br>금<br>제</div>
             	<div id="skt_pay_img" style="width: 85%; float: left;"><a href=""><img alt="" src="/resources/images/main/skt_pay.png" width="100%"></a></div>
-            	<div id="kt_pay" style="width: 5%; float: left;">O<br>l<br>l<br>e<br>h<br>요<br>금<br>제</div>
+            	<div id="kt_pay" style="width: 5%; float: left;">K<br>T<br>요<br>금<br>제</div>
             	<div id="kt_pay_img" style="width: 85%; float: left; display: none;"><a href=""><img alt="" src="/resources/images/main/kt_pay.png" width="100%"></a></div>
-            	<div id="lg_pay" style="width: 5%; float: left;">L<br>G<br>U<br>+<br>요<br>금<br>제</div>
+            	<div id="lg_pay" style="width: 5%; float: left;">L<br>G<br>요<br>금<br>제</div>
             	<div id="lg_pay_img" style="width: 85%; float: left; display: none;"><a href=""><img alt="" src="/resources/images/main/lg_pay.png" width="100%"></a></div>
             </div>
-            <div style="border: 1px solid black; width: 22%;;float: right; vertical-align: middle; text-decoration: none ;margin:0.5%;text-align: center;vertical-align: middle; font-size: 25px;">
-        			<div id="skt_tag" style="height: ; background-color: #dddddd; margin: auto;"><img alt="SKT 이벤트" src="/resources/images/main/skt_event.png" height="100%" width="100%"></div>
+            <div style=" width: 22%;;float: right; vertical-align: middle; text-decoration: none ;margin:0.5%;text-align: center;vertical-align: middle; font-size: 25px;">
+        			<div id="skt_tag" style="height: ; background-color: #dddddd; margin: auto;"><img alt="SKT Event" src="/resources/images/main/skt_event.png" height="100%" width="100%"></div>
         			<div style="height: 10px;"></div>
-        			<div style="display:;height: ;" id="skt_event"><a href=""><img alt="SKT 이벤트" src="/resources/images/payment/SKT.png" width="60%;" height="85%;"></a></div>
+        			<div style="display:;height: ;" id="skt_event"><a href=""><img alt="SKT Evnet" src="/resources/images/payment/SKT.png" width="60%;" height="85%;"></a></div>
         			<div id="kt_tag" style="height: ; background-color: #dddddd;"><img alt="" src="/resources/images/main/ktOlleh_event.png" height="100%" width="100%"></div>
         			<div style="height: 10px;"></div>
-        			<div style="display: none;height: ;" id="kt_event"><a href=""><img alt="KT 이벤트" src="/resources/images/payment/KTOlleh.png" width="90%;"></a></div>
+        			<div style="display: none;height: ;" id="kt_event"><a href=""><img alt="KT Event" src="/resources/images/payment/KTOlleh.png" width="90%;"></a></div>
         			<div id="lg_tag" style="height: ; background-color: #dddddd;"><img alt="" src="/resources/images/main/lgU+_event.png" height="100%" width="100%"></div>      			 
         			<div style="height: 10px;"></div>
-        			<div style=" display: none;height: ;" id="lg_event"><a href=""><img alt="LG 이벤트" src="/resources/images/payment/LGU+.png" width="90%;"></a></div>
+        			<div style=" display: none;height: ;" id="lg_event"><a href=""><img alt="LG Event" src="/resources/images/payment/LGU+.png" width="90%;"></a></div>
         	</div>
         	<div>
             </div>
