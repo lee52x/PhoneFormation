@@ -1,3 +1,21 @@
+--재현드랍
+drop table ph_reply;
+drop table ph_ono;
+drop table ph_boardgood;
+drop table ph_board;
+drop table ph_boardtype;
+
+--성욱드랍
+
+drop table ph_visit;
+drop table ph_admin;
+drop table purchase_request;
+drop table ph_quoteBoard;
+drop table ph_repair;
+drop table repair_request;
+drop table ph_repairBoard;
+
+
 --혜정
 drop table ph_color;
 drop table ph_capacity;
@@ -17,6 +35,11 @@ drop sequence ph_phone_seq;
 
 drop table ph_phone;
 
+--성욱드랍
+drop table ph_member;
+drop table ph_business;
+
+
 --폰 시퀀스
 create sequence ph_phone_seq
 	start with 1
@@ -27,7 +50,7 @@ create sequence ph_phone_seq
 --핸드폰 정보, 핸드폰명, 핸드폰사진, 제조사명, 출고일
 create table ph_phone(
 	no number primary key,
-	name varchar2(100) ,
+	name varchar2(100) unique,
 	image LONG not null,
 	manufacture varchar2(15) not null,
 	release_date varchar2(30) not null
@@ -84,7 +107,7 @@ create table ph_color( --핸드폰 색상
 select no, color, image from ph_color ;
 --samsung
 
-update ph_color as t set no = (select no+1 from ph_color tt where t.no=tt.no );
+
 insert into ph_color values (1, '화이트펄', '/resources/images/phone/GalaxyS7edge_화이트펄.png');
 insert into ph_color values (1, '블루코랄', '/resources/images/phone/GalaxyS7edge_블루코랄.png');
 insert into ph_color values (1, '블랙오닉스', '/resources/images/phone/GalaxyS7edge_블랙오닉스.png');
@@ -231,8 +254,7 @@ insert into ph_color values (33, '문바이올렛', '/resources/images/phone/G3Cat6_�
 insert into ph_color values (34, '메탈릭블랙', '/resources/images/phone/G3_메탈릭블랙.png');
 insert into ph_color values (34, '실크화이트', '/resources/images/phone/G3_실크화이트.png');
 insert into ph_color values (34, '샤인골드', '/resources/images/phone/G3_샤인골드.png');
-update ph_color
-	set no = no+1;
+
 create table ph_capacity( --핸드폰 용량
 	no number,
 	capacity varchar2(15) not null,
@@ -296,8 +318,7 @@ insert into ph_capacity values (31, '32GB', 550000);
 insert into ph_capacity values (32, '32GB', 451000);
 insert into ph_capacity values (33, '32GB', 649000);
 insert into ph_capacity values (34, '32GB', 499400);
-update ph_capacity
-	set no = no+1;
+
 --스펙
 
 --프로세서
@@ -336,8 +357,7 @@ insert into spec_processor values(31, '1.5GHz Quad + 1.2GHz Quad', 'Nuclun Octa-
 insert into spec_processor values(32, '2.3GHz Quad Core', '퀄컴 스냅드래곤 800');
 insert into spec_processor values(33, '2.7GHz Quad Core', '퀄컴 스냅드래곤 805');
 insert into spec_processor values(34, '2.5GHz Quad Core', '퀄컴 스냅드래곤 801');
-update spec_processor
-	set no = no+1;
+
 --디스플레이
 create table spec_display(
 	no number primary key,
@@ -383,8 +403,7 @@ insert into spec_display values (31,'152mm','Full HD IPS LCD','', '', '');
 insert into spec_display values (32,'132.2mm','1920 X 1080 (Full HD IPS 디스플레이)','', '', '');
 insert into spec_display values (33,'138.78mm','2560x1440 (Quad HD IPS 디스플레이)','', '', '');
 insert into spec_display values (34,'138.78mm','2560x1440 (Quad HD IPS 디스플레이)','', '', '');
-update spec_display
-	set no = no+1;
+
 --카메라
 create table spec_camera(
 	no number primary key,
@@ -447,8 +466,7 @@ insert into spec_camera values (31,'','1300만화소','','210만화소','','예', '예',
 insert into spec_camera values (32,'','1300만화소','','210만화소','','예', '예', '');
 insert into spec_camera values (33,'','1300만화소','','210만화소','','예', '예', '');
 insert into spec_camera values (34,'','1300만화소','','210만화소','','예', '예', '');
-update spec_camera
-	set no = no+1;
+
 --메모리
 create table spec_memory(
 	no number primary key,
@@ -487,8 +505,7 @@ insert into spec_memory values (31,'2GB','32GB','','MicroSD slot 지원');
 insert into spec_memory values (32,'2GB','32GB','','MicroSD slot 지원');
 insert into spec_memory values (33,'3GB','32GB','','MicroSD slot 지원');
 insert into spec_memory values (34,'3GB','32GB','','MicroSD slot 지원');
-update spec_memory
-	set no = no+1;
+
 --네트워크
 create table spec_network(
 	no number primary key,
@@ -525,8 +542,7 @@ insert into spec_network values (21,'A9 칩(64비트 아키텍처)<br>M9 모션 보조 프로
 insert into spec_network values (22,'A9 칩(64비트 아키텍처)<br>M9 모션 보조 프로세서 내장','GSM/EDGE(850, 900, 1800, 1900MHz)','UMTS/HSPA+/DC-HSDPA(850, 900, 1700/2100, 1900, 2100MHz) ','TD-LTE(대역 38, 39, 40, 41) ','FDD-LTE(대역 1, 2, 3, 4, 5, 7, 8, 12, 13, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30) ','TD-LTE(대역 38, 39, 40, 41) ');
 insert into spec_network values (23,'A9 칩(64비트 아키텍처)<br>M9 모션 보조 프로세서 내장','GSM/EDGE(850, 900, 1800, 1900MHz)','UMTS/HSPA+/DC-HSDPA(850, 900, 1700/2100, 1900, 2100MHz) ','TD-LTE(대역 38, 39, 40, 41) ','FDD-LTE(대역 1, 2, 3, 4, 5, 7, 8, 12, 13, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30) ','TD-LTE(대역 38, 39, 40, 41) ');
 insert into spec_network values (24,'A9 칩(64비트 아키텍처)<br>M9 모션 보조 프로세서 내장','GSM/EDGE(850, 900, 1800, 1900MHz)','UMTS/HSPA+/DC-HSDPA(850, 900, 1700/2100, 1900, 2100MHz) ','TD-LTE(대역 38, 39, 40, 41) ','FDD-LTE(대역 1, 2, 3, 4, 5, 7, 8, 12, 13, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30) ','TD-LTE(대역 38, 39, 40, 41) ');
-update spec_network
-	set no = no+1;
+
 --연결
 create table spec_connect(
 	no number primary key,
@@ -578,8 +594,7 @@ insert into spec_connect values (31,'','','예','','','','예','예','예','','');
 insert into spec_connect values (32,'','','예','','','','예','예','예','','');
 insert into spec_connect values (33,'','','예','','','','예','예','예','','');
 insert into spec_connect values (34,'','','예','','','','예','예','예','','');
-update spec_connect
-	set no = no+1;
+
 --운영체제, 기본사양, 센서, 외관사양
 create table spec_specifications(
 	no number primary key,
@@ -626,8 +641,7 @@ insert into spec_specifications values (31,'Android', '화이트, 블랙','터치 정전�
 insert into spec_specifications values (32,'Android', '티탄, 화이트','터치 정전식','141 x 71.6 x 9.8','146.8','');
 insert into spec_specifications values (33,'Android', '티탄, 화이트','터치 정전식','146.3 x 74.6 x 9.1','154','');
 insert into spec_specifications values (34,'Android', '메탈릭 블랙, 실크 화이트, 샤인 골드','터치 정전식','146.3 x 74.6 x 8.95','151','');
-update spec_specifications
-	set no = no+1;
+
 --배터리
 create table spec_battery(
 	no number primary key,
@@ -677,8 +691,7 @@ insert into spec_battery values (31,'','','','','3000 X 2(착탈식)','','','','최�
 insert into spec_battery values (32,'','','','','2610 (착탈식)','','','','최대12');
 insert into spec_battery values (33,'','','','','3000 (착탈식)','','','','최대17');
 insert into spec_battery values (34,'','','','','3000 (착탈식)','','','','최대17');
-update spec_battery
-	set no = no+1;
+
 --오디오/비디오
 create table spec_audio(
 	no number primary key,
@@ -760,8 +773,7 @@ Dolby Digital Plus(E-AC-3), Audible(포맷 2, 3, 4, Audible Enhanced Audio, AAX, A
 True Tone 플래시<br> 슬로 모션 동영상 지원(1080p는 초당 120 프레임, 720p는 초당 240 프레임)<br> 타임랩스 동영상(동영상 흔들림 보정 포함)<br> 시네마틱 동영상 흔들림 보정(1080p 및 720p)<br> 
 연속 오토포커스 동영상<br> 노이즈 감소<br> 4K 동영상 촬영 중 800만 화소 사진 촬영<br> 재생 중 줌<br> 3배 디지털 줌<br> 얼굴 인식<br> 동영상 위치 표시 기능','v500만 화소 사진<br> 720p HD 동영상 촬영<br> Retina Flash<br> 
 f/2.2 조리개<br> 사진 및 동영상을 위한 자동 HDR<br> 후면 조명 센서<br> 노출 조절<br> 고속 연사 모드<br> 타이머 모드<br> 얼굴 인식');
-update spec_audio
-	set no = no+1;
+
 --서비스
 create table spec_service(
 	no number primary key,
@@ -807,21 +819,9 @@ insert into spec_service values (31,'','','예','','');
 insert into spec_service values (32,'','','예','','');
 insert into spec_service values (33,'','','예','','');
 insert into spec_service values (34,'','','예','','');
-update spec_service
-	set no = no+1;
 
 
 --성욱
-drop table ph_visit;
-drop table ph_admin;
-drop table ph_business cascade constraints;
-drop table ph_member cascade constraints;
-drop table ph_quoteBoard;
-drop table purchase_request;
-drop table ph_repair;
-drop table ph_repairBoard;
-drop table repair_request;
-
 
 create table ph_visit(
 v_date date
@@ -999,12 +999,6 @@ create sequence ph_repairBoard_seq
 	
 --재현 boardsql
 
---board.sql
-drop table ph_reply;
-drop table ph_ono;
-drop table ph_boardgood;
-drop table ph_board;
-drop table ph_boardtype;
 
 create table ph_boardtype(
 	tno number primary key,
@@ -1244,3 +1238,4 @@ INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24
 INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('LTE-알340', '750MB', '34000알', '20000알', 29700, 5940, 142560, 23760);
 INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('LTE-알240', '500MB', '28000알', '20000알', 25300, 5060, 121440, 20240);
 INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('LTE-알190', '300MB', '20000알', '20000알', 20900, 4180, 100320, 16720);
+
