@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.phonefo.admin.service.AdminService;
 import com.phonefo.main.domain.MemberVO;
 import com.phonefo.main.service.MainService;
 
@@ -21,13 +22,29 @@ import com.phonefo.main.service.MainService;
 public class MainController {
 	@Inject
 	MainService service;
+	@Inject
+	AdminService adminservice;
+	
 	
 	//메인화면 띄우기
 	@RequestMapping("/main")
-	public String test(Model model){
-
-		model.addAttribute("body","./main/body.jsp");
+	public String test(Model model)throws Exception{
 		
+		
+		//통계
+		int a =adminservice.cntRepair();
+		int b =adminservice.cntSecondHand();
+		model.addAttribute("totalDeal", a+b);
+		//총 업체수
+		model.addAttribute("businessCount", service.howBusiness());
+		//총 방문자
+		model.addAttribute("totalVisit", adminservice.totalVisit());
+		
+		
+		
+		
+		
+		model.addAttribute("body","./main/body.jsp");
 		return "mainView";
 	}
 	

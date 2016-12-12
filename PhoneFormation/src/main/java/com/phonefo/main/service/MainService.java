@@ -29,6 +29,11 @@ public interface MainService {
 	public MemberVO getVO(String userid)throws Exception;
 	//로그인한 기업회원의 아이디의 정보 가져오기
 	public MemberVO getBVO(String userid)throws Exception;
+	
+	//등록된 비즈니스멤버 수 가져오기
+	public int howBusiness()throws Exception;
+	
+	
 	public List<String> selectid(MemberVO vo) throws Exception;
 	public String selectpassword(MemberVO vo) throws Exception;
 	public void addVisit()throws Exception;

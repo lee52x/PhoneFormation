@@ -40,15 +40,14 @@
 		<div class="box-body">
 					<table class="table table-bordered">
 						<tr>
-							<th>memberno</th>
-							<th>userid</th>
-							<th>username</th>
-							<th>birth</th>
-							<th>gender</th>
+							<th>번호</th>
+							<th>아이디</th>
+							<th>이름</th>
+							<th>생년월일</th>
+							<th>성별</th>
 							<th>email</th>
-							<th>rdate</th>
-							<th>tel</th>
-							<th>root</th>
+							<th>가입일자</th>
+							<th>연락처</th>
 
 						</tr>
 					<c:forEach items="${list}" var="member">
@@ -60,10 +59,9 @@
 								<td>${member.birth}</td>
 								<td>${member.gender}</td>
 								<td>${member.email}</td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+								<td><fmt:formatDate pattern="yyyy-MM-dd"
 										value="${member.rdate}" /></td>
 								<td>${member.tel}</td>
-								<td>${member.root}</td>
 
 								
 							</tr>
