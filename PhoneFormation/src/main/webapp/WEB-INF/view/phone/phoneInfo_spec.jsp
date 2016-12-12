@@ -134,7 +134,7 @@ $(document).ready(function(){
 									<input type='button' name='btnimg' id='imgmod${status.index }' value='수정' style='display:none;'>
 									<label for="imgInp${status.index }">
 									<input type="file" id="imgInp${status.index }" name="file" accept=".gif, .jpg, .png" style="display: none"
-										value=""></label>
+										value="${status.index}"></label>
 									<input type='button' name='btnimg' id='imgdel${status.index }' value='삭제' onclick="imagedel(${status.index})" style='display:none;'>
 							</div>
 						</div>
