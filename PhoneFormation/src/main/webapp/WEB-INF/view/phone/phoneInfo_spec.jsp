@@ -69,6 +69,14 @@ function imagedel(image_len){
 	alert(image_len);
 	$('#div_image'+image_len).empty();
 }
+function readURL(input,no) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $('#color_image'+no).attr('src', e.target.result);
+         }                   
+        reader.readAsDataURL(input.files[0]);
+    }
 $(document).ready(function(){
 		var capa_len = document.getElementsByName('release_price').length;
 		var image_len = document.getElementsByName('release_price').length;
@@ -117,13 +125,16 @@ $(document).ready(function(){
 								<a class="lightbox" title="${list_color.color }" data-lightbox-type="ajax"
 									href="${list_color.image }">
 									<div class="thumb-overlay"> <i class="fa fa-arrows-alt"></i></div>
-									<img class="img" src="${list_color.image }">
+									<img class="img" id="color_image${status.index}" src="${list_color.image }">
 								</a>
 							</div>
 							<div class="portfolio-details">
 									<p class="p_color" >${list_color.color}</p>
 									<input type='text' name="color" value='${list_color.color}' style='display:none;'>
 									<input type='button' name='btnimg' id='imgmod${status.index }' value='수정' style='display:none;'>
+									<label for="imgInp${status.index }">
+									<input type="file" id="imgInp${status.index }" name="file" accept=".gif, .jpg, .png" style="display: none"
+										value=""></label>
 									<input type='button' name='btnimg' id='imgdel${status.index }' value='삭제' onclick="imagedel(${status.index})" style='display:none;'>
 							</div>
 						</div>
