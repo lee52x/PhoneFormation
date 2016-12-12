@@ -14,15 +14,6 @@ public class AdviceDAOImpl implements AdviceDAO {
 	
 	@Override
 	public void insert(AdviceVO advice) throws Exception {
-		System.out.println(advice.getAnswer());
-		System.out.println(advice.getCategory());
-		System.out.println(advice.getContent());
-		System.out.println(advice.getImage());
-		System.out.println(advice.getOno());
-		System.out.println(advice.getTitle());
-		System.out.println(advice.getUserid());
-		System.out.println(advice.getAnswer_regdate());
-		System.out.println(advice.getRegdate());
 		sqlSession.insert("advice.insert",advice);
 	}
 

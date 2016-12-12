@@ -61,13 +61,22 @@
 
 </style>
 <script type="text/javascript">
-	$(document).ready(function(){
+function capadel(capa_len){
+	alert(capa_len);
+	$('#capadiv'+capa_len).remove();
+}
+function imagedel(image_len){
+	alert(image_len);
+	$('#div_image'+image_len).empty();
+}
+$(document).ready(function(){
 		var capa_len = document.getElementsByName('release_price').length;
+		var image_len = document.getElementsByName('release_price').length;
 		$('#capaadd').click(function(){	//가격,용량 추가
 			alert('여깄니?');
 			var str = 
 				"<tr id='capadiv"+capa_len+"'>"
-				+"<th>가격(용량)</th><td><input type='text' name='release_price'>(<input type='text' name='capacity'>)<input type='button' class='del_price' onclick='capadel("+capa_len+")'></td>"
+				+"<th>가격 (용량)</th><td><input type='text' name='release_price'> (<input type='text' name='capacity'>) <input type='button' class='del_price' onclick='capadel("+capa_len+")' value='삭제'></td>"
 				+"</tr>";
 			$('#basic_info').append(str);
 			capa_len = capa_len+1;
@@ -76,6 +85,8 @@
 		$('#btn_update').click(function(){
     	   	$('#phoneimage_add').attr('style','display:block;');
     	   	$("input:button[name='btnimg']").attr('style', 'display:block;');
+    	   	$("input:text[name='color']").attr('style', 'display:block;');
+    	   	$(".p_color").attr('style','display:none;');
     	   	$('.spec_show').attr('style','display:none;');
     	   	$('.spec_mod').attr('style','display:block;');
     	   	$('#btn_update').attr('style','display:none;');
@@ -100,7 +111,7 @@
 		<h1 class="clasic-title"><span>${spec_Info.name }</span></h1>
 			<div class="projects-carousel touch-carousel"> <!-- 4개씩 보이기 -->
 				<c:forEach items="${list_color }" var="list_color" varStatus="status">
-					<div class="portfolio-item item">
+					<div class="portfolio-item item" id="div_image${status.index }">
 						<div class="portfolio-border">
 							<div class="portfolio-thumb">
 								<a class="lightbox" title="${list_color.color }" data-lightbox-type="ajax"
@@ -110,9 +121,10 @@
 								</a>
 							</div>
 							<div class="portfolio-details">
-									<p>${list_color.color }</p>
-									<input type='button' name='btnimg' id='imgmod${status.count }' value='수정' style='display:none;'>
-									<input type='button' name='btnimg' id='imgdel${status.count }' value='삭제' style='display:none;'>
+									<p class="p_color" >${list_color.color}</p>
+									<input type='text' name="color" value='${list_color.color}' style='display:none;'>
+									<input type='button' name='btnimg' id='imgmod${status.index }' value='수정' style='display:none;'>
+									<input type='button' name='btnimg' id='imgdel${status.index }' value='삭제' onclick="imagedel(${status.index})" style='display:none;'>
 							</div>
 						</div>
 					</div>

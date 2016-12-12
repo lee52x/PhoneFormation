@@ -185,7 +185,6 @@
 	   no = list_no;
 	   var len = document.getElementsByName('box').length;
 	   var value = $('input:checkbox[id="'+no+'"]').val();
-	   
 	   chkcnt=chkcnt+1;
 	   if(chkcnt==3){
 			for(var i=0; i<len; i++){
@@ -193,7 +192,6 @@
 			}
 			chkfalse(no);
 			chkcnt=1;
-			return;
 		}else if($("input:checkbox[name='box']").is(":checked") == true ){
 		    $('.ckbox').show();
 			$('.ckboxContent').show();
@@ -230,7 +228,6 @@
 
 	       	});
 			if(chkcnt == chkMaxcnt){
-					alert('비교하기는 최대 2개까지만 가능합니다.');
 					for(var i=0; i<len; i++){
 						if(document.getElementsByName('box')[i].checked == false){
 							document.getElementsByName('box')[i].disabled=true;
@@ -238,9 +235,8 @@
 					}
 				chkcnt = chkMaxcnt;
 			}
-			return;
 	   }else{
-		   chkcnt = chkcnt-1;
+		   chkcnt = 0;
 	 	   chkfalse(no);
 			if(chkcnt<=chkMaxcnt-1){
 				for(var i=0; i<len; i++){
@@ -250,10 +246,10 @@
 				}
 			}
 		   if($(".ckb[name='box']:checked").length==0 ){
-				$('.ckbox').hide();
+			   $('.ckbox').hide();
 			}
-			return;
 	   }
+	   return;   
    }
    
    function chkfalse(no){
