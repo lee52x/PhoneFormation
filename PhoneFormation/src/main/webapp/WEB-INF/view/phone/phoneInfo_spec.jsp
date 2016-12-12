@@ -507,6 +507,7 @@ $(document).ready(function(){
          </table>
       </div>
 
+<<<<<<< HEAD
       <div class="spec_div">
          <h3>운영체제, 기본사양, 센서, 외관사양</h3>
          <table>
@@ -548,6 +549,49 @@ $(document).ready(function(){
             </c:if>
          </table>
       </div>
+=======
+		<div class="spec_div">
+			<h3>운영체제, 기본사양, 센서, 외관사양</h3>
+			<table>
+				<c:if test="${!empty spec_specifications.os }">
+					<tr>
+						<th>운영체제</th><td class='spec_show'>${spec_specifications.os }</td>
+										<td class='spec_mod'><input type='text' name='os' value='${spec_specifications.os }'></td>
+					</tr>
+				</c:if>
+				<c:if test="${!empty spec_specifications.color }">
+					<tr>
+						<th>색상</th><td class='spec_show'>${spec_specifications.color }</td>
+										<td class='spec_mod'><input type='text' name='color' value='${spec_specifications.color }'></td>
+					</tr>
+				</c:if>
+				<c:if test="${!empty spec_specifications.form }">
+					<tr>
+						<th>형태</th><td class='spec_show'>${spec_specifications.form }</td>
+										<td class='spec_mod'><input type='text' name='form' value='${spec_specifications.form }'></td>
+					</tr>
+				</c:if>
+				<c:if test="${!empty spec_specifications.phone_size }">
+					<tr>
+						<th>크기(세로X가로X두께, mm)</th><td class='spec_show'>${spec_specifications.phone_size }</td>
+													<td class='spec_mod'><input type='text' name='phone_size' value='${spec_specifications.phone_size }'></td>
+					</tr>
+				</c:if>
+				<c:if test="${!empty spec_specifications.weight }">
+					<tr>
+						<th>무게(g)</th><td class='spec_show'>${spec_specifications.weight }</td>
+										<td class='spec_mod'><input type='text' name='weight' value='${spec_specifications.weight }'></td>
+					</tr>
+				</c:if>
+				<c:if test="${!empty spec_specifications.sensor }">
+					<tr>
+						<th>센서</th><td class='spec_show'>${spec_specifications.sensor }</td>
+										<td class='spec_mod'><textarea rows="2" cols="20" name='sensor'>${spec_specifications.sensor }</textarea></td>
+					</tr>
+				</c:if>
+			</table>
+		</div>
+>>>>>>> branch 'master' of https://github.com/lee52x/PhoneFormation
 
       <div class="spec_div">
          <h3>배터리</h3>

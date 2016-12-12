@@ -8,7 +8,6 @@
 <title>Insert title here</title>
 <style type="text/css">
 #admin_add{
-	position:fixed;
 	padding-left: 88%;
 }
 
@@ -95,54 +94,140 @@
 	
 }
 
-.ckbox{
-   background-color:yellow;
-   width:600px;
-   height:100px;
-   position: fixed;
-   left: 400px;
-   top: 550px;
+#ckbox{
+    background-color: seashell;
+    width: 450px;
+    bottom: 0px;
+    height: 40px;
+    position: fixed;
+    left: 400px;
+    border: 1px solid gray;
 }
 
-.ckbox .ckboxContent{
-   background-color:blue;
-   width: 600px;
-   height: 300px;
-   position: fixed;
-   left: 400px;
-   top : 250px;
+.ckboxContent1 img{
+	height: 75%;
+	margin-left: 13%;
+    margin-top: 10%;
 }
 
-.ckPhone1{
-   background-color: white;
-   position: fixed;
-   top : 300px;
-   left: 450px;
-   width: 200px;
-   height: 200px;   
+.ckboxContent1 p{
+	font-style: italic;
+	margin: 0;
 }
 
-.ckPhone2{
-   background-color: orange;
-   position: fixed;
-   top : 300px;
-   left: 700px;
-   width: 200px;
-   height: 200px;   
+
+#ckboxContent{
+    background-color: white;
+    width: 450px;
+    height: 60%;
+    position: fixed;
+    left: 400px;
+    bottom: 39px;
+    border: 1px solid gray;
 }
 
-.ckbox .ckboxContent .btn_allremove{
-   background-color: green;
-   position: absolute;
-   width: 50px;
-   height: 50px;
-   top: 1px;
-   right: 1px;
+#ckPhone1{
+    position: fixed;
+    bottom: 92px;
+    width: 200px;
+    height: 50%;
+    margin: auto;
+    text-align: center;
+    left: 417px;
+    border: 1px solid gainsboro;
 }
 
-.ckbox .button{
-   right: 10px;
+#ckPhone1del{
+    background-color: white;
+    border: 0px;
+    float: right;
+    color: gainsboro;
 }
+
+#ckPhone2{
+    position: fixed;
+    bottom: 92px;
+    width: 200px;
+    height: 50%;
+    margin: auto;
+    text-align: center;
+    left: 635px;
+    border: 1px solid gainsboro;
+}
+
+#ckPhone2del{
+    background-color: white;
+    border: 0px;
+    float: right;
+    color: gainsboro;
+}
+
+#btn_allremove{
+    background-color: gainsboro;
+    position: fixed;
+    width: 100px;
+    height: 30px;
+    bottom: 50px;
+    left: 635px;
+    border: 0px;
+}
+
+#btn_vs{
+	background-color: gainsboro;
+    position: fixed;
+    width: 100px;
+    height: 30px;
+    bottom: 50px;
+    left: 515px;
+    border: 0px;
+}
+
+#vs_Abtn{
+	background-color: rgb(255, 59, 59);
+    position: fixed;
+    width: 100px;
+    height: 30px;
+    bottom: 50px;
+    left: 515px;
+    border: 0px;
+}
+
+#btn_click{
+	background: url("/resources/images/up.png") no-repeat;
+	border: none;
+    width: 40px;
+    height: 30px;
+    left: 806px;
+    down: 5px;
+    position: fixed;
+    bottom: 6px;
+}
+
+#btn_close{
+	background: url("/resources/images/down.png") no-repeat;
+	border: none;
+    width: 40px;
+    height: 30px;
+    left: 806px;
+    down: 5px;
+    position: fixed;
+    bottom: 4px;
+}
+
+#ck_text{
+    border: 0px;
+    background: none;
+    font-size: 15pt;
+    bottom: 6px;
+    left: 430px;
+    width: 100px;
+    position: fixed;
+}
+
+#vs_Atag{
+	display: none;
+}
+
 </style>
 <script type="text/javascript">   
 	var chkcnt=0;
@@ -150,8 +235,8 @@
 	var no;
 	
    $(document).ready(function() {
-      $('.ckbox').hide();
-      $('.ckboxContent').hide();
+      $('#ckbox').hide();
+      $('#ckboxContent').hide();
       
       $('#samsung').click(function(){
          $("#tab_samsung").attr('class','active');   
@@ -168,38 +253,51 @@
          $("#tab_lg").attr('class','');   
          $("#tab_apple").attr('class','active');            
       }); 
-      $('.btn_allremove').click(function(){
+      $('#btn_allremove').click(function(){
     		$("input:checkbox[name='box']").prop("checked",false);
     		$(".ckboxContent1").children('div').first().remove();
     		$(".ckboxContent1").children('div').last().remove();
     		chkcnt=0;
     		$('.ckb').removeAttr("disabled");
-    		$('.ckbox').hide();
+    		$('#ckbox').hide();
       });
       $('#btn_add').click(function(){
     	   	$(location).attr('href','/phonefo/adminAdd');
       });
+      $('#vs_Abtn').click(function(){
+    	 var first_no = $('.ckboxContent1').children('div').first().attr('value'); 
+    	 var last_no = $('.ckboxContent1').children('div').first().attr('value');
+      });
    });
    
    var checkBox = function(list_no){
-	   no = list_no;
+	   no = list_no; 
 	   var len = document.getElementsByName('box').length;
 	   var value = $('input:checkbox[id="'+no+'"]').val();
-	   chkcnt=chkcnt+1;
-	   if(chkcnt==3){
+	   
+	   chkcnt=chkcnt+1; 
+	   $('#vs_Atag').hide(); //A태그가 안보이고
+		$('#btn_vs').show(); //걍 버튼이 보인다.
+	   
+	   if(chkcnt==3){ 
 			for(var i=0; i<len; i++){
-				document.getElementsByName('box')[i].disabled=false;
+				document.getElementsByName('box')[i].disabled=false; 
 			}
 			chkfalse(no);
-			chkcnt=1;
-		}else if($("input:checkbox[name='box']").is(":checked") == true ){
-		    $('.ckbox').show();
-			$('.ckboxContent').show();
-			$('.btn_click').click(function(){
-				$('.ckboxContent').show();
+			return;
+			
+		}else if($("input:checkbox[name='box']").is(":checked") == true ){ //chkcnt =1 인상황  //2인상황
+		    $('#ckbox').show();
+			$('#ckboxContent').show();
+			$('#btn_click').click(function(){
+				$('#ckboxContent').show();
+				$('#btn_close').show();
+				$('#btn_click').hide();
 			});
-			$('.btn_close').click(function(){
-				$('.ckboxContent').hide();	
+			$('#btn_close').click(function(){
+				$('#ckboxContent').hide();	
+				$('#btn_click').show();
+				$('#btn_close').hide();
 			});
 			
 			$.ajax({
@@ -208,35 +306,39 @@
             		data:{'no':no},
            			success:function(result){
             			
-               			if(chkcnt==1){
+               			if(chkcnt==1){ 
                				checkPhone =
-               					"<div class='ckPhone"+1+"' value='"+result.no+"'>"+
-                       			"<img src="+result.image+" width='10px' height='10px'>"+
+               					"<div id='ckPhone1' value='"+result.no+"'>"+
+               					"<input type='button' id='ckPhone1del' value='X' onclick='del("+result.no+")'>"+
+                       			"<img src="+result.image+">"+
                        			"<p>"+result.name+"</p>"+
                        			"<p>"+result.manufacture+"</p>"+
                        			"</div>";
                			}else if(chkcnt==2){
                				checkPhone =
-                      			"<div class='ckPhone"+2+"' value='"+result.no+"'>"+
-                       			"<img src="+result.image+" width='10px' height='10px'>"+
+                      			"<div id='ckPhone2' value='"+result.no+"'>"+
+                      			"<input type='button' id='ckPhone2del' value='X' onclick='del("+result.no+")'>"+
+                       			"<img src="+result.image+">"+
                        			"<p>"+result.name+"</p>"+
                        			"<p>"+result.manufacture+"</p>"+
                        			"</div>";
             			}
-               			$('.ckboxContent1').append(checkPhone);
+               			$('.ckboxContent1').append(checkPhone); 
             		}
 
 	       	});
-			if(chkcnt == chkMaxcnt){
+			if(chkcnt == chkMaxcnt){ //chkcnt==2일때
+				alert('비교하기는 최대 2개까지 비교 가능합니다.');
+				$('#vs_Atag').show(); //빨간버튼
+				$('#btn_vs').hide(); //걍 버튼 숨기고.
 					for(var i=0; i<len; i++){
-						if(document.getElementsByName('box')[i].checked == false){
-							document.getElementsByName('box')[i].disabled=true;
+						if(document.getElementsByName('box')[i].checked == false){ 
+							document.getElementsByName('box')[i].disabled=true; 
 						}
 					}
-				chkcnt = chkMaxcnt;
+				return;
 			}
 	   }else{
-		   chkcnt = 0;
 	 	   chkfalse(no);
 			if(chkcnt<=chkMaxcnt-1){
 				for(var i=0; i<len; i++){
@@ -244,39 +346,99 @@
 						document.getElementsByName('box')[i].disabled=false;
 					}
 				}
+				$('#vs_Atag').hide();
+				$('#btn_vs').show();
 			}
 		   if($(".ckb[name='box']:checked").length==0 ){
-			   $('.ckbox').hide();
+			   $(".ckboxContent1").children('div').remove();
+			   chkcnt=0;
+			   $('#ckbox').hide();
+			   return;
 			}
 	   }
 	   return;   
    }
    
    function chkfalse(no){
+	   var len = document.getElementsByName('box').length;
 		var parents = $(".ckboxContent1").children('div').attr('value');
 		var first = $(".ckboxContent1").children('div').first().attr('value');
-		var first_len = $(".ckboxContent1").children('div').first();
+		var first_len =$(".ckboxContent1").children('div').first();
 		var last = $(".ckboxContent1").children('div').last().attr('value');
 		var last_len = $(".ckboxContent1").children('div').last();
-		if(parents.length==2){
-			if(no==first){
+		
+		if(parents.length==1){
+			if(no==first){ 
 				if(first_len.length != 0){
 					$(".ckboxContent1").children('div').first().remove();
-					last_len.attr('class','ckPhone1');
-					return;
+					last_len.attr('id','ckPhone1'); 
+					for(var i=0; i<len; i++){
+						document.getElementsByName('box')[i].disabled=false;
+				     }
+					chkcnt=1;
+					return; 
 				}
 				$(".ckboxContent1").children('div').first().remove();
 			}else{
-				$(".ckboxContent1").children('div').last().remove();
+				$(".ckboxContent1").children('div').last().remove(); 
+				for(var i=0; i<len; i++){
+					document.getElementsByName('box')[i].disabled=false;
+			    }
+				chkcnt=1;
+				return;
 			}
 		}
 		return;
    }
    
+   var del = function(result_no){
+	   var len = document.getElementsByName('box').length;
+	    var parent = $(".ckboxContent1").children('div').attr('value');
+	   var first = $(".ckboxContent1").children('div').attr('value');
+	   var first_len = $(".ckboxContent1").children('div').first();
+	   var last = $(".ckboxContent1").children('div').attr('value');
+	   var last_len = $(".ckboxContent1").children('div').last();
+	   if(parent.length==1){ 
+			if(result_no==first){ 
+				$('.ckboxContent1').children('div').first().remove();
+				last_len.attr('id','ckPhone1');
+				chkcnt=1;
+				$("input:checkbox[name='box']").each(function(){
+						  this.checked=false;
+						  for(var i=0; i<len; i++){
+									document.getElementsByName('box')[i].disabled=false;
+							}
+				   });
+				$('#ckbox').hide();	
+				$('#ckboxContent').hide();	
+				chkcnt=1;
+				return;
+				
+			}else if(result_no==last){
+				$(".ckboxContent1").children('div').last().remove();
+				$("input:checkbox[name='box']").each(function(){
+						  this.checked=false;
+						  for(var i=0; i<len; i++){
+									document.getElementsByName('box')[i].disabled=false;
+							}
+				  });	
+				
+				chkcnt=1;
+				return;
+			}
+	   }
+	   if($(".ckb[name='box']:checked").length==0 ){
+		   $(".ckboxContent1").children('div').remove();
+		   chkcnt=0;
+		   $('#ckbox').hide();
+		   return;
+		} 
+   }
+   
 </script>
 
 </head>
-   <div id="content">
+ <div id="content">
    <div id="admin_add">
    	<button id='btn_add'>추가</button>
    </div>
@@ -381,18 +543,24 @@
             </div>
          </div>
       </div>
+      <a href="#" class="back-to-top"><i class="fa fa-arrow-up"></i></a>
    </div>
-   <div class='ckbox'>
-      비교하기
-      <div class='ckboxContent'>
-      내용이 나올 것이다!!
+   <div id='ckbox'>
+      <div id='ckboxContent'>
       		<div class='ckboxContent1'>
       		
       		</div>
-         <button class='btn_allremove'>모두 지우기</button>
+      <div class="portfolio-thumb" id="vs_Atag"> 
+      	<a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_8@2x.jpg">
+           <div class="thumb-overlay"><input type='button' id="vs_Abtn" value='비교하기'></div>
+     	 </a>
+    	</div>
+    	<input type='button' id="btn_vs" value='비교하기'>
+        <input type='button' id='btn_allremove' value='모두지우기'>
       </div>
-      <button class='btn_click'>보이기</button>
-      <button class='btn_close'>숨기기</button>
-   </div>
+      <input type='text' value='비교하기' id='ck_text'>
+      <input type='button' id='btn_click' style="display: none;">
+      <input type='button' id='btn_close'>
+   </div>  
 </body>
 </html>
