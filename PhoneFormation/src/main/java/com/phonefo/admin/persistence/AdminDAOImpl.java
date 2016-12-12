@@ -135,6 +135,9 @@ public class AdminDAOImpl implements AdminDAO{
 	@Override
 	public int totalVisit() {
 	
+		if(sqlSession.selectOne("admin.totalVisit")==null)
+			return 0;
+		else
 		return sqlSession.selectOne("admin.totalVisit");
 	}
 

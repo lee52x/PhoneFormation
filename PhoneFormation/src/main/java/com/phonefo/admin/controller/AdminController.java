@@ -203,12 +203,12 @@ public class AdminController {
 		}
 		
 		//회사로고 추가 
-		@RequestMapping("/mainClientInsert")
-		public String mainClient(Model model,HttpServletRequest request, MultipartFile file, RedirectAttributes attr,
+		@RequestMapping("/mainSlideUpdate")
+		public String mainClient(Model model,HttpServletRequest request,MultipartFile file1,MultipartFile file2,MultipartFile file3, RedirectAttributes attr,
 				HttpSession session)throws Exception{
 			
 			System.out.println("오니");
-			///여기서부터
+/*			///여기서부터
 			ClientVO vo=new ClientVO();
 			String filename = file.getOriginalFilename();
 			System.out.println("파일이름="+filename);
@@ -223,7 +223,7 @@ public class AdminController {
 
 			//여기까지
 			service.insertLogo(vo);
-	
+	*/
 			
 			model.addAttribute("body", "./admin/mainClient.jsp");
 			return "mainView";

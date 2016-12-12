@@ -1,3 +1,8 @@
+--------------------------------방문자수 테이블
+create table ph_visit(
+v_date date
+)
+
 --로고추가 테이블
 select *from ph_client
 drop table ph_client;
@@ -201,6 +206,7 @@ create sequence ph_repairBoard_seq
  
 --수리매입  테이블---
 	select * from repair_request
+
 	drop table repair_request;
 	create table repair_request(
 		repairNum number(2) primary key,
@@ -251,10 +257,6 @@ create table ph_capacity( --핸드폰 용량
 	foreign key(no) references ph_phone(no),
 	primary key(no, capacity)
 );
---------------------------------방문자수 테이블
-create table ph_visit(
-v_date date
-)
 
 
 

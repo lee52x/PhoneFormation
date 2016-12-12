@@ -7,15 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<script type="text/javascript">
-$(document).ready(function(){
-	var f=document.frm1;
-	$('#bt1').click(function(){
-		alert('누름?');
-		f.submit();
-	});
-});
-</script>
+
 <div class="container">
 		<div id="content">
 			<div>
@@ -41,51 +33,51 @@ $(document).ready(function(){
 								<!-- Start Services Icons -->
 								<div class="row">
 
-									<form action="/phonefo/mainSlideUpdate?state=1" name="frm1"  enctype="multipart/form-data" method="post" >
+									<form action="/phonefo/mainSlideUpdate" name="frm1"  enctype="multipart/form-data" method="post" >
 
 										<!--// 회원가입폼 -->
 
-												<h3>1.첫번째 슬라이드<input type="file" name="file"></h3>
+												<h3>1.첫번째 슬라이드<input type="file" name="file1"></h3>
 													<br>
 														<button type="button" id="bt1" class="btn btn-primary" style="width: 520px;height: 50px;"  >
 															슬라이드 등록			
 												</button>
 												<hr>
-												<input type="hidden" value="1" name="state">
-										</form>
+
+							
 										
 										
 										
 										
-									<form action="/phonefo/mainSlideUpdate" name="frm2"  enctype="multipart/form-data" method="post" >
+									
 
 										<!--// 회원가입폼 -->
 
-												<h3>2.두번째 슬라이드<input type="file" name="file"></h3>
+												<h3>2.두번째 슬라이드<input type="file" name="file2"></h3>
 													<br>
 														<button type="submit" class="btn btn-primary" style="width: 520px;height: 50px;"  >
 															슬라이드 등록			
 												</button>
 												<hr>
-													<input type="hidden" value="2" name="state">
-										</form>
+													
 										
 										
 										
 										
-									<form action="/phonefo/mainSlideUpdate" name="frm3"  enctype="multipart/form-data" method="post" >
+										
+									
 
 										<!--// 회원가입폼 -->
 
-												<h3>3.세번째 슬라이드<input type="file" name="file"></h3>
-												<
+												<h3>3.세번째 슬라이드<input type="file" name="file3"></h3>
+												
 													<br>
 														<button type="submit" class="btn btn-primary" style="width: 520px;height: 50px;"  >
 															슬라이드 등록			
 												</button>
-													<input type="hidden" value="3" name="state">
+												
 												<hr>
-										</form>
+										
 											<!-- 	<h3>2.두번째 슬라이드<input type="file"></h3>
 													<br>
 														<button type="button"  onclick="check()" class="btn btn-primary" style="width: 520px;height: 50px;"  >
@@ -98,37 +90,21 @@ $(document).ready(function(){
 															슬라이드 등록			
 												</button>
 												<hr> -->
-													
+													</form>
 												
 												</div>
 											</div>
 										</div>
 										<!-- 회원가입폼 끝 //-->
-									</form>
+								
 								</div>
 								<!-- 회원가입 끝 //-->
 
-
-
-
-
-
 							</div>
 						</div>
-						<!-- End Clients Carousel -->
-
-
-
-
-
-
-
 					</div>
 				</div>
 				<!-- End Clients Carousel -->
 
-			</div>
-		</div>
-	</div>
 </body>
 </html>
