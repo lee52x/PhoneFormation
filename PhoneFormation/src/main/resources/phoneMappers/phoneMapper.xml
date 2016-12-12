@@ -150,7 +150,7 @@
 		</if>
 		where no=#{no}
 	</update>
-	<update id="update_color">
+<!-- 	<update id="update_color">
 		update ph_color set color=#{color}
 		<if test="image != null">
 			,image = #{image}
@@ -160,7 +160,7 @@
 	<update id="update_capacity">
 		update ph_capacity set capacity=#{capacity},  release_price=#{release_price}
 		where no=#{no}
-	</update>
+	</update> -->
 	<update id="update_processor">
 		update spec_processor set cpu_Speed=#{cpu_Speed},  cpu_type=#{cpu_type} 
 		where no=#{no}

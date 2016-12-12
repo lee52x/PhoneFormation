@@ -1,6 +1,5 @@
 package com.phonefo.phone.controller;
 
-import java.util.List;
 
 import javax.inject.Inject;
 
@@ -19,10 +18,10 @@ public class PhoneRestController {
 	private PhoneInfoService service;
 	
 	@RequestMapping(value="/phonechk1", method=RequestMethod.POST )
-	public List<PhoneInfoVO> phonechk1(int no)throws Exception{
-		List<PhoneInfoVO> list = null;
-		list = service.select_phone(no);
-		return list;
+	public PhoneInfoVO phonechk1(int no)throws Exception{
+		PhoneInfoVO phone = null;
+		phone = service.select_phone(no);
+		return phone;
 	}
 
 }

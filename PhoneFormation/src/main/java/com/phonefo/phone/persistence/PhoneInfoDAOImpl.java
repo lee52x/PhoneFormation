@@ -43,58 +43,58 @@ public class PhoneInfoDAOImpl implements PhoneInfoDAO {
 	}
 
 	@Override
-	public List<spec_processorVO> select_spec_processor(int no) throws Exception {
-		return sqlSession.selectList("phone.select_Sspec_processor", no);
+	public spec_processorVO select_spec_processor(int no) throws Exception {
+		return sqlSession.selectOne("phone.select_Sspec_processor", no);
 	}
 
 	@Override
-	public List<spec_displayVO> select_spec_display(int no) throws Exception {
-		return sqlSession.selectList("phone.select_Sspec_display", no);
+	public spec_displayVO select_spec_display(int no) throws Exception {
+		return sqlSession.selectOne("phone.select_Sspec_display", no);
 	}
 
 	@Override
-	public List<spec_cameraVO> select_spec_camera(int no) throws Exception {
-		return sqlSession.selectList("phone.select_Sspec_camera", no);
+	public spec_cameraVO select_spec_camera(int no) throws Exception {
+		return sqlSession.selectOne("phone.select_Sspec_camera", no);
 	}
 
 	@Override
-	public List<spec_memoryVO> select_spec_memory(int no) throws Exception {
-		return sqlSession.selectList("phone.select_Sspec_memory", no);
+	public spec_memoryVO select_spec_memory(int no) throws Exception {
+		return sqlSession.selectOne("phone.select_Sspec_memory", no);
 	}
 	
 	@Override
-	public List<spec_networkVO> select_spec_network(int no) throws Exception {
-		return sqlSession.selectList("phone.select_Sspec_network", no);
+	public spec_networkVO select_spec_network(int no) throws Exception {
+		return sqlSession.selectOne("phone.select_Sspec_network", no);
 	}
 
 	@Override
-	public List<spec_connectVO> select_spec_connect(int no) throws Exception {
-		return sqlSession.selectList("phone.select_Sspec_connect", no);
+	public spec_connectVO select_spec_connect(int no) throws Exception {
+		return sqlSession.selectOne("phone.select_Sspec_connect", no);
 	}
 
 	@Override
-	public List<spec_specificationsVO> select_spec_specifications(int no) throws Exception {
-		return sqlSession.selectList("phone.select_Sspec_specifications", no);
+	public spec_specificationsVO select_spec_specifications(int no) throws Exception {
+		return sqlSession.selectOne("phone.select_Sspec_specifications", no);
 	}
 	
 	@Override
-	public List<spec_batteryVO> select_spec_battery(int no) throws Exception {
-		return sqlSession.selectList("phone.select_Sspec_battery", no);
+	public spec_batteryVO select_spec_battery(int no) throws Exception {
+		return sqlSession.selectOne("phone.select_Sspec_battery", no);
 	}
 	
 	@Override
-	public List<spec_audioVO> select_spec_audio(int no) throws Exception {
-		return sqlSession.selectList("phone.select_Sspec_audio", no);
+	public spec_audioVO select_spec_audio(int no) throws Exception {
+		return sqlSession.selectOne("phone.select_Sspec_audio", no);
 	}
 
 	@Override
-	public List<spec_serviceVO> select_spec_service(int no) throws Exception {
-		return sqlSession.selectList("phone.select_Sspec_service", no);
+	public spec_serviceVO select_spec_service(int no) throws Exception {
+		return sqlSession.selectOne("phone.select_Sspec_service", no);
 	}
 
 	@Override
-	public List<PhoneInfoVO> select_phone(int no) throws Exception {
-		return sqlSession.selectList("phone.select_phone", no);
+	public PhoneInfoVO select_phone(int no) throws Exception {
+		return sqlSession.selectOne("phone.select_phone", no);
 	}
 
 	@Override
@@ -173,15 +173,15 @@ public class PhoneInfoDAOImpl implements PhoneInfoDAO {
 		
 	}
 
-	@Override
-	public void update_color(PhoneColorVO phonecolorVO) throws Exception {
-		sqlSession.update("phone.update_color", phonecolorVO);
-	}
-
-	@Override
-	public void update_capacity(PhoneCapaVO phonecapaVO) throws Exception {
-		sqlSession.update("phone.update_capacity", phonecapaVO);
-	}
+//	@Override
+//	public void update_color(PhoneColorVO phonecolorVO) throws Exception {
+//		sqlSession.update("phone.update_color", phonecolorVO);
+//	}
+//
+//	@Override
+//	public void update_capacity(PhoneCapaVO phonecapaVO) throws Exception {
+//		sqlSession.update("phone.update_capacity", phonecapaVO);
+//	}
 
 	@Override
 	public void update_processor(spec_processorVO processorVO) throws Exception {

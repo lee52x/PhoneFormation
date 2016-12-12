@@ -209,10 +209,10 @@
             		type:'POST',
             		data:{'no':no},
            			success:function(result){
-           			for(var i=0; i<result.length; i++){              			
+            			
                			if(chkcnt==1){
                				checkPhone =
-               					"<div class='ckPhone"+(i+1)+"' value='"+result[i].no+"'>"+
+               					"<div class='ckPhone"+1)+"' value='"+result[i].no+"'>"+
                        			"<img src="+result[i].image+" width='10px' height='10px'>"+
                        			"<p>"+result[i].name+"</p>"+
                        			"<p>"+result[i].manufacture+"</p>"+
@@ -227,7 +227,7 @@
             			}
                			$('.ckboxContent1').append(checkPhone);
             		}
-           			}
+
 	       	});
 			if(chkcnt == chkMaxcnt){
 					alert('비교하기는 최대 2개까지만 가능합니다.');
