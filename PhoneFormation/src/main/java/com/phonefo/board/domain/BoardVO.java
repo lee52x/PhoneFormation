@@ -11,7 +11,24 @@ public class BoardVO {
 	private String writer;
 	private Date regdate;
 	private int viewcnt;
-	
+	private int goodcnt;
+	private int replycnt;
+	public int getReplycnt() {
+		return replycnt;
+	}
+
+	public void setReplycnt(int replycnt) {
+		this.replycnt = replycnt;
+	}
+
+	public int getGoodcnt() {
+		return goodcnt;
+	}
+
+	public void setGoodcnt(int goodcnt) {
+		this.goodcnt = goodcnt;
+	}
+
 	@Override
 	public String toString() {
 		return "bno="+bno+",tno="+tno+",title="+title+",content="+content+",writer="+writer+"";

@@ -2,6 +2,7 @@ package com.phonefo.phone.persistence;
 
 import java.util.List;
 
+import com.phonefo.phone.domain.NoVO;
 import com.phonefo.phone.domain.PhoneCapaVO;
 import com.phonefo.phone.domain.PhoneColorVO;
 import com.phonefo.phone.domain.PhoneInfoVO;
@@ -31,5 +32,44 @@ public interface PhoneInfoDAO {
 	public List<spec_batteryVO> select_spec_battery(int no)throws Exception;
 	public List<spec_audioVO> select_spec_audio(int no)throws Exception;
 	public List<spec_serviceVO> select_spec_service(int no)throws Exception;
-	
+	public void insert_phone(PhoneInfoVO phoneinfoVO)throws Exception;
+	public int selectno()throws Exception;
+	public void insert_color(PhoneColorVO phonecolorVO)throws Exception;
+	public void insert_capacity(PhoneCapaVO phonecapaVO)throws Exception;
+	public void insert_processor(spec_processorVO processorVO)throws Exception;
+	public void insert_display(spec_displayVO displayVO)throws Exception;
+	public void insert_camera(spec_cameraVO cameraVO)throws Exception;
+	public void insert_memory(spec_memoryVO memoryVO)throws Exception;
+	public void insert_network(spec_networkVO networkVO)throws Exception;
+	public void insert_connect(spec_connectVO connectVO)throws Exception;
+	public void insert_specifications(spec_specificationsVO specificationsVO)throws Exception;
+	public void insert_battery(spec_batteryVO batteryVO)throws Exception;
+	public void insert_audio(spec_audioVO audioVO)throws Exception;
+	public void insert_service(spec_serviceVO serviceVO)throws Exception;
+	public void update_phone(PhoneInfoVO phoneinfoVO)throws Exception;
+	public void update_color(PhoneColorVO phonecolorVO)throws Exception;
+	public void update_capacity(PhoneCapaVO phonecapaVO)throws Exception;
+	public void update_processor(spec_processorVO processorVO)throws Exception;
+	public void update_display(spec_displayVO displayVO)throws Exception;
+	public void update_camera(spec_cameraVO cameraVO)throws Exception;
+	public void update_memory(spec_memoryVO memoryVO)throws Exception;
+	public void update_network(spec_networkVO networkVO)throws Exception;
+	public void update_connect(spec_connectVO connectVO)throws Exception;
+	public void update_specifications(spec_specificationsVO specificationsVO)throws Exception;
+	public void update_battery(spec_batteryVO batteryVO)throws Exception;
+	public void update_audio(spec_audioVO audioVO)throws Exception;
+	public void update_service(spec_serviceVO serviceVO)throws Exception;
+	public void delete_phone(int no)throws Exception;
+	public void delete_color(int no)throws Exception;
+	public void delete_capacity(int no)throws Exception;
+	public void delete_processor(int no)throws Exception;
+	public void delete_display(int no)throws Exception;
+	public void delete_camera(int no)throws Exception;
+	public void delete_memory(int no)throws Exception;
+	public void delete_network(int no)throws Exception;
+	public void delete_connect(int no)throws Exception;
+	public void delete_specifications(int no)throws Exception;
+	public void delete_battery(int no)throws Exception;
+	public void delete_audio(int no)throws Exception;
+	public void delete_service(int no)throws Exception;
 }

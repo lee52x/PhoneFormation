@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.phonefo.board.domain.SearchCriteria;
+import com.phonefo.board.domain.BoardGoodVO;
 import com.phonefo.board.domain.BoardVO;
 import com.phonefo.board.persistence.BoardDAO;
 @Repository
@@ -66,5 +67,14 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public String select_title(int bno) throws Exception {
 		return sqlSession.selectOne("board.selec_boardttitle",bno);
+	}
+	@Override
+	public void update_goodcnt(int bno) throws Exception {
+		sqlSession.update("board.update_goodcnt", bno);
+		
+	}
+	@Override
+	public void update_replycnt(int bno) throws Exception {
+		sqlSession.update("board.update_replycnt",bno);
 	}
 }

@@ -20,7 +20,6 @@ import com.phonefo.board.domain.PageMaker;
 import com.phonefo.board.domain.ReplyVO;
 import com.phonefo.board.service.ReplyService;
 
-
 @RestController // Ajax(요청에 대한) 전용 컨트롤러
 @RequestMapping("/board_replies")
 public class ReplyController {
@@ -31,24 +30,8 @@ public class ReplyController {
 	// 댓글 입력 요청
 	@RequestMapping(value = "", method = RequestMethod.POST)
 	// method: 클라이언트의 요청방식
-	public ResponseEntity<String> register(@RequestBody ReplyVO vo,HttpSession session ) {
-		// @RequestBody는 요청페이지에서 전달되는 데이터가 JSON일때 명시!!
-		
-		//vo.setReplyer((String)session.getAttribute("userid"));
-		System.out.println("리플" + vo);
-		ResponseEntity<String> entity = null;
-		try {
-			service.addReply(vo);
-			
-			// 입력이 잘 되었다면
-			entity = new ResponseEntity<>("SUCCESS", HttpStatus.OK);// 200코드
-		} catch (Exception e) {
-			e.printStackTrace();
-			// 입력시 에러발생
-			entity = new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);// 400코드
-		}
-
-		return entity;
+	public int register(@RequestBody ReplyVO vo, HttpSession session) throws Exception {
+		return service.addReply(vo);
 	}
 
 	// 특정게시물에 대한 모든 댓글 목록요청
@@ -84,20 +67,12 @@ public class ReplyController {
 	}
 
 	// 특정댓글에 대한 삭제
-	@RequestMapping(value = "/{rno}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
 	// replies/2 요청 ----> 2번 댓글에 대한 수정
-	public ResponseEntity<String> remove(@PathVariable("rno") int rno) {
+	public int remove(@RequestBody ReplyVO vo) throws Exception {
 
-		ResponseEntity<String> entity = null;
-		try {
-			service.removeReply(rno);
-			entity = new ResponseEntity<>("SUCCESS", HttpStatus.OK);
-			// HttpStatus: 서버상태
-		} catch (Exception e) {
-			entity = new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-			e.printStackTrace();
-		}
-		return entity;
+		return service.removeReply(vo);
+
 	}// remove
 
 	// 특정게시물에 대한 특정페이지 댓글 목록요청
@@ -137,5 +112,4 @@ public class ReplyController {
 
 		return entity;
 	}
-
 }

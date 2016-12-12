@@ -11,15 +11,6 @@ public class PhoneInfoVO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public PhoneInfoVO(int no, String name, String image, String manufacture, String release_date) {
-		super();
-		this.no = no;
-		this.name = name;
-		this.image = image;
-		this.manufacture = manufacture;
-		this.release_date = release_date;
-	}
-
 	public int getNo() {
 		return no;
 	}

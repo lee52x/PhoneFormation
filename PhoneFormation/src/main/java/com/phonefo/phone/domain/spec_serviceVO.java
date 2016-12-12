@@ -7,6 +7,9 @@ public class spec_serviceVO {
 	private String mobiletv;
 	private String siri;
 	private String waterproof;
+	public spec_serviceVO() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public String getSiri() {
 		return siri;

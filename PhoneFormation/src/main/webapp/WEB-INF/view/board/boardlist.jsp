@@ -1,7 +1,9 @@
+<%@page import="org.springframework.beans.factory.support.SecurityContextProvider"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page session="true" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,13 +14,23 @@
 <link rel="stylesheet" href="http://s1.daumcdn.net/editor/releases/7.4.33-3/css/content_view.css" type="text/css" charset="utf-8"/>
 
 <script type="text/javascript">
+var userid;
 $(document).ready(function(){
-	$('#searchBtn').on("click",	function(event) {
+	$('#btn_search').on("click",	function(event) {
 		self.location = "boardlist"
 			+ '${pageMaker.makeQuery(1)}'
 			+ "&searchType="
 			+ $("select option:selected").val()
 			+ "&keyword=" + $('#keywordInput').val()
+			+ "&tno=" + $('#tno').val();
+	});
+	$('#btn_search_mine').on("click",	function(event) {
+		userid= "${sessionScope.userid}";
+		self.location = "boardlist"
+			+ '${pageMaker.makeQuery(1)}'
+			+ "&searchType="
+			+ 'w'
+			+ "&keyword=" + userid
 			+ "&tno=" + $('#tno').val();
 	});
 	$(".btn_icon_write").on("click", function(){
@@ -82,16 +94,18 @@ $(document).ready(function(){
 												<td class="num" nowrap="nowrap">${boardVO.bno}</td>
 												<td class="subject">
 													<a href='/phonefo/boardpage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}&tno=${cri.tno}'>
-														${boardVO.title}[0]</a>
-												 	<img src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="11" height="11" alt="사진첨부" class="icon_file_photo">
-													<img src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="8" height="12" alt="새글" class="icon_new">
+														${boardVO.title}[${boardVO.replycnt}]</a>
+													<c:if test="${boardVO.image!=null}">
+												 		<img src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="11" height="11" alt="사진첨부" class="icon_file_photo">
+												 	</c:if>
+													<!-- <img src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="8" height="12" alt="새글" class="icon_new"> -->
 												</td>
 												<td class="nick">
 													${boardVO.writer}
 												</td>
 												<td class="date" nowrap="nowrap">${boardVO.regdate}</td>
 												<td class="count" nowrap="nowrap">${boardVO.viewcnt}</td>
-												<td class="recommend_cnt" nowrap="nowrap">0</td>
+												<td class="recommend_cnt" nowrap="nowrap">${boardVO.goodcnt}</td>
 											</tr>
 											</c:forEach>
 										</tbody>
@@ -144,20 +158,13 @@ $(document).ready(function(){
 												Writer</option>
 										</select>
 										<div class="suggest">
-											<input type="text" value="" name="q" size="22"
+											<input type="text" value="" name="keyword" size="22" id="keywordInput"
 												autocomplete="off" class="inp query" />
-											<div class="suggest_box_wrap">
-												<div class="suggest_box"></div>
-											</div>
 										</div>
-										<a href="#" class="btn_search" id="suggest_search0"
-											onclick="SearchUtil.searchBBS(this); return false"><img
-											src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif"
-											width="37" height="21" alt="검색"></a> <a
-											href="/_c21_/member_article_cafesearch?item=userid&amp;grpid=mEr9&amp;fldid=LNQb"
-											class="go_my_article my_article">내가 쓴 글/댓글 보기</a><img
-											src="http://i1.daumcdn.net/cafeimg/cf_img4/img/n.gif"
-											alt="new" class="my_article_new">
+										<a href="javascript:;" class="btn_search" id="btn_search"
+											><img src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif"
+											width="37" height="21" alt="검색"></a>
+										<a	href="javascript:;" id="btn_search_mine">내가 쓴 글</a>
 									</div>
 									<!-- end cafeSearchBox -->
 								</div>

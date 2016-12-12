@@ -71,7 +71,7 @@ $(document).ready(function(){
 				<label for="imgInp"><span id="fileFind">파일 첨부</span></label>&nbsp; <input
 					type="file" id="imgInp" name="file" accept=".gif, .jpg, .png"
 					style="display: none"
-					onchange="javascript: document.getElementById('filename').value = this.value">
+					onchange="javascript: document.getElementById('ddd').value = this.value">
 			</div>
 			<!-- end article_writer -->
 			<div id="bbs_contents" class="bbs_contents">

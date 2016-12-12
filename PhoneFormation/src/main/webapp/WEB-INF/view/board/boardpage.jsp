@@ -14,7 +14,7 @@ var bno =${boardVO.bno};
 var replypage = 1;
 function modifyreply(rno){
 	var replytext = $('#modifytext-'+rno).val();
-	  
+	var userid ="${sessionScope.userid}";  
 	  $.ajax({
 			type:'put',
 			url:'/board_replies/'+rno,
@@ -45,202 +45,281 @@ function modifyform(rno){
 function removereply(rno){
 	  $.ajax({
 			type:'delete',
-			url:'/board_replies/'+rno,
+			url:'/board_replies/delete',
 			headers: { 
 			      "Content-Type": "application/json",
 			      "X-HTTP-Method-Override": "DELETE" },
-			dataType:'text', 
-			success:function(result){
-				console.log("result: " + result);
-				if(result == 'SUCCESS'){
-					getPageList(replypage);
-				}
-		}});
-}	
-function getPageList(page){
-	$('#replies').empty();
-	$.ajax({
-       url:'/board_replies/'+bno+'/'+page,
-       success:function(data){
-          var str="";
-           $(data.list).each(
-               function(){
-            		str+="<div class='comment_pos' style='background-color: rgb(247, 247, 247);'>"
-                    		+"<div class='id_admin '>"
-                    			+"<span> <img src='http://i1.daumcdn.net/cafeimg/cf_img2/bbs2/roleicon/d_level_25.gif' width='13' height='13'>" 
-                    				+this.replyer
-                    			+"</span> <span  class='comment_date txt_sub p11 ls0'>"
-                    			+"12:32 <img src='http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif' alt='new' width='8' height='12' class='icon_new'>"
-                    			+"</span>"
-                    		+"</div>"
-                    		+"<div class='comment'>"
-                    			+"<span id='_cmt_contents-"+this.rno+"' class='comment_contents'"
-                    				+"style='display: block;'>"+this.replytext+"</span>"
-                    		+"</div>"
-                    		+"<div id='_cmt_button-"+this.rno+"' class='txt_btn p11'" 
-                    			+"style='display: block'>"
-                    			+"<span class='bar2 cmt_button_reply'>|</span>"
-                                +"<a href='javascript:;' onclick='modifyform("+this.rno+")' class='p11'>"
-                                +"수정</a> <span class='bar2'>|</span>"
-                    			+"<a href='javascript:;'onclick='removereply("+this.rno+")' class='p11'> 삭제</a>"
-                    		+"</div>"
-                    		+"<div class='cl'>&nbsp;</div>"
-                    		+"<!-- 수정폼  -->"
-                    		+"<div id='_cmt_reply_editor-"+this.rno+"'  class='longtail_editor longtail_reply layout_modify'"
-                    			+"style='display: none;'>"
-                    			+"<span class='write_nominate_mentions b' style='display: none;'></span>"
-                    			+"<div class='longtail_editor_layout'>"
-                    				+"<table>"
-                    				+"<tbody>"
-                    				+"<tr>"
-                    					+"<td class='longtail_comment inp'>"
-                    						+"<div class='longtail_comment_wrap'>"
-                    							+"<textarea id='modifytext-"+this.rno+"'class='inp scroll txt_sub' name='comment_view'rows='3' cols='56'></textarea>"
-                    						+"</div>"
-                    					+"</td>"
-                    					+"<td class='longtail_editor_btn'>"
-                    						+"<a href='javascript:;'onclick='modifyreply("+this.rno+")' class='btn submit_content_sub'style='display: block;'>"
-                    							+"<span class='btn_bg bg05'></span>"
-                    							+"<span class='btn_txt bt05 w02'>수정</span>"
-                    						+"</a>"
-                    						+"<a href='javascript:;' onclick='modifycancle("+this.rno+")' class='btn cancel_content'style='display: block;'>"
-                    							+"<span class='btn_bg bg05'></span>"
-                    							+"<span class='btn_txt bt05 w02'>취소</span>"
-                    						+"</a></td>"
-                    				+"</tr>"
-                    				+"</tbody>"
-                    				+"</table>"
-                    			+"</div>"
-                    		+"</div>"
-                    	+"</div>"
-                    	+"<!-- 인풋타입히든 -->"
-                    	+"<div id='commentData-"+this.rno+"'></div>"
-                    	+"<div class='dotline line_sub'>&nbsp;</div>";
-               }       
-           );//each
-           $('#replies').html(str); 
-           //printPaging(data.pageMaker);
-       }
-    });//ajax
- }
-$(document).ready(function(){
-	
-    
-    function printPaging(pageMaker){
-        var str="";
-        if(pageMaker.prev){ // '<<' 버튼
-           str += "<li><a href='"+(pageMaker.startPage-1)+"'> << </a></li>";
-        }
-        for(var i = pageMaker.startPage; i<= pageMaker.endPage; i++){ //1 2 3 4 버튼
-           var strClass = pageMaker.cri.page == i?'class=active':'';
-           str += "<li "+strClass+"><a href='"+i+"'>"+i+"</a></li>";
-        }
-        if(pageMaker.next){ // '>>' 버튼
-           str += "<li><a href='"+(pageMaker.startPage-1)+"'> >> </a></li>";
-        }
-        $('.pagination').html(str);
-     }
-	$("#replyAddBtn").click(function(){
-		var replyer ='로그인아이디';
-		var replytext =$('#newReplyText').val();
+			dataType : 'text',
+			data : JSON.stringify({ //클라이언트 ---> 서버
+				//JSON.stringify()함수 : JSON변환 함수
+				bno : bno,
+				rno : rno
+			}),
+			success : function(result) {
+				getPageList(replypage);
+				$('#cmtCnt').empty();
+				$('#cmtCnt').append(result);
+			}
+		});
+	}
+	function getPageList(page) {
+		$('#replies').empty();
 		$.ajax({
-           url:'/board_replies',//URL요청
-           type:'post', //method요청방식
-           headers:{
-              "Content-Type":"application/json" //서버에게 데이터 JSON으로 넘기겠음!!
-           },
-           dataType:'text', //생략가능(클라이언트 <--- 서버)
-           data:JSON.stringify({ //클라이언트 ---> 서버
-                              //JSON.stringify()함수 : JSON변환 함수
-              bno:bno,
-              replyer:replyer,
-              replytext:replytext
-           }),
-           success:function(result){ //요청 성공시 콜백함수
-              if(result==='SUCCESS') //=== : 자료형 먼저 검사, 자료형 같을 때 내용비교, 다르면 false ex) if(1==='1') --> false
-                                 //== : 형변화 후 내용 같을 때 검사
-                 getPageList(1);
-           }
-        });
-     });//replyAddBtn
-	
-	   function readURL(input) {
-	        if (input.files && input.files[0]) {
-	            var reader = new FileReader(); //파일을 읽기 위한 FileReader객체 생성
-	            reader.onload = function (e) {
-	               	$("#blah").show();   
-	              	$('#blah').attr('src', e.target.result);
-	            }                   
-	            reader.readAsDataURL(input.files[0]);
-	        }
-	    }//readURL()--
-    	var replycheck=0;
-	    $("#member_cmt").on("click", function(){
-	    	if(replycheck==0){
-	    		$("#comment_box_bg-127961").attr("style","display:block");
-	    		getPageList(1);	
-	        	replycheck=1;
-	        }
-	        else{
-	        	$("#comment_box_bg-127961").attr("style","display:none");
-	        	$('#replies').empty();
-	        	replycheck=0;
-	        }
-	     });
-	    $("#submitBtn").on("click", function(){
-	        var formObj = $("form[role='form']");
-	        formObj.attr("method", "post");
-	        formObj.attr("action", "boardupdate");
-	        formObj.submit();
-	     });
-	    
-	    $("#imgInp").change(function(){
-	          readURL(this);
-	      });
-	    $("#inputBtn").on("click", function(){
-	        var formObj = $("form[role='listform']");
-	        formObj.attr("method", "get");
-	        formObj.attr("action", "boardinput");
-	        formObj.submit();
-	     });
-	    
-	    $("#cancleBtn").on("click", function(){
-	        var formObj = $("form[role='listform']");
-	        formObj.attr("method", "get");
-	        formObj.attr("action", "boardpage");
-	        formObj.submit();
-	     });
-	   $("#updateBtn").on("click", function(){
-		   $('#fileselect').attr('style', "display: block;");
-		   $('#title_div').attr('style', "display: none;");
-		   $('#title_div2').attr('style', "display: block;");
-		   $('#page').attr('style', "display: none;");
-		   $('#contents').attr('style', "border:1; display: block; width:1120px; height:350px;");
-		   $('#contents').focus();
-		   $('#updateBtn').attr('style', "display: none;");
-		   $('#removeBtn').attr('style', "display: none;");
-		   $('#inputBtn').attr('style',"display:none");
-		   $('.list_paging').attr('style', "display: none;");
-		   $('#comment_wrap').attr('style', "display: none;");
-		   $('#commentDiv-127961').attr('style', "display: none;");
-		   $('.prenext_paging').attr('style', "display: none;");
+					url : '/board_replies/' + bno + '/' + page,
+					success : function(data) {
+						var str = "";
+						$(data.list)
+								.each(
+										function() {
+											str += "<div class='comment_pos' style='background-color: rgb(247, 247, 247);'>"
+													+ "<div class='id_admin '>"
+													+ "<span> <img src='http://i1.daumcdn.net/cafeimg/cf_img2/bbs2/roleicon/d_level_25.gif' width='13' height='13'>"
+													+ this.replyer
+													+ "</span> <span  class='comment_date txt_sub p11 ls0'>"
+													+ "12:32 <img src='http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif' alt='new' width='8' height='12' class='icon_new'>"
+													+ "</span>"
+													+ "</div>"
+													+ "<div class='comment'>"
+													+ "<span id='_cmt_contents-"+this.rno+"' class='comment_contents'"
+                    				+"style='display: block;'>"
+													+ this.replytext
+													+ "</span>"
+													+ "</div>"
+													+ "<div id='_cmt_button-"+this.rno+"' class='txt_btn p11'" 
+                    			+"style='display: block'>"
+													+ "<span class='bar2 cmt_button_reply'>|</span>"
+													+ "<a href='javascript:;' onclick='modifyform("
+													+ this.rno
+													+ ")' class='p11'>"
+													+ "수정</a> <span class='bar2'>|</span>"
+													+ "<a href='javascript:;'onclick='removereply("
+													+ this.rno
+													+ ")' class='p11'> 삭제</a>"
+													+ "</div>"
+													+ "<div class='cl'>&nbsp;</div>"
+													+ "<!-- 수정폼  -->"
+													+ "<div id='_cmt_reply_editor-"+this.rno+"'  class='longtail_editor longtail_reply layout_modify'"
+                    			+"style='display: none;'>"
+													+ "<span class='write_nominate_mentions b' style='display: none;'></span>"
+													+ "<div class='longtail_editor_layout'>"
+													+ "<table>"
+													+ "<tbody>"
+													+ "<tr>"
+													+ "<td class='longtail_comment inp'>"
+													+ "<div class='longtail_comment_wrap'>"
+													+ "<textarea id='modifytext-"+this.rno+"'class='inp scroll txt_sub' name='comment_view'rows='3' cols='56'></textarea>"
+													+ "</div>"
+													+ "</td>"
+													+ "<td class='longtail_editor_btn'>"
+													+ "<a href='javascript:;'onclick='modifyreply("
+													+ this.rno
+													+ ")' class='btn submit_content_sub'style='display: block;'>"
+													+ "<span class='btn_bg bg05'></span>"
+													+ "<span class='btn_txt bt05 w02'>수정</span>"
+													+ "</a>"
+													+ "<a href='javascript:;' onclick='modifycancle("
+													+ this.rno
+													+ ")' class='btn cancel_content'style='display: block;'>"
+													+ "<span class='btn_bg bg05'></span>"
+													+ "<span class='btn_txt bt05 w02'>취소</span>"
+													+ "</a></td>"
+													+ "</tr>"
+													+ "</tbody>"
+													+ "</table>"
+													+ "</div>"
+													+ "</div>"
+													+ "</div>"
+													+ "<!-- 인풋타입히든 -->"
+													+ "<div id='commentData-"+this.rno+"'></div>"
+													+ "<div class='dotline line_sub'>&nbsp;</div>";
+										});//each
+						$('#replies').html(str);
+						printPaging(data.pageMaker);
+					}
+				});//ajax
+				function printPaging(pageMaker) {
+					alert("시작")
+					var str = "";
+					if (pageMaker.prev) { // '<<' 버튼
+						str += "<a href='javascript:;' onclick=''>"
+					+"<span class='num_prev'> <span class='arrow'>◀</span>"
+					+"<span class='txt_sub'>이전</span>"
+					+"</span>"
+					+"</a>";
+					}
+					for (var i = pageMaker.startPage; i <= pageMaker.endPage; i++) { //1 2 3 4 버튼
+						var strClass = pageMaker.cri.page == i ? 'class=num_box txt_point u b'	: 'num_box';
+						str += "<a href='javascript:;' class='"+strClass+"'>" + i
+								+ "</a>";
+					}
+					if (pageMaker.next&& pageMaker.endPage > 0) { // '>>' 버튼
+						str += "<a href='javascript:;'>"
+								+"<span class='num_next'> <span class='txt_sub'>다음</span>"
+								+"<span class='arrow'>▶</span>"
+								+"</span>"
+								+"</a>";
+					}
+					alert(str);
+					$('.paging').empty();
+					$('.paging').append(str);
+				}
+	}
+	$(document).ready(function() {
+						var userid = "${sessionScope.userid}";
+						$('#searchBtn').on(
+								"click",
+								function(event) {
+									self.location = "list"
+											+ '${pageMaker.makeQuery(1)}'
+											+ "&searchType="
+											+ $("select option:selected").val()
+											+ "&keyword="
+											+ $('#keywordInput').val();
+								});
 
-		   $('#submitBtn').attr('style', "display: block;");
-		   $('#cancleBtn').attr('style', "display: block;");
-	   });
-	   $("#removeBtn").on("click", function(){
-		      var formObj = $("form[role='listform']");
-		      formObj.attr("method", "delete");
-		      formObj.attr("action", "boardremove");
-		      formObj.submit();
-		   });
-	   $("#listBtn").on("click", function(){
-		      var formObj = $("form[role='listform']");
-		      formObj.attr("method", "get");
-		      formObj.attr("action", "boardlist");
-		      formObj.submit();
-		   });
-});
+						$("#replyAddBtn").click(function() {
+							var replytext = $('#newReplyText').val();
+							$.ajax({
+								url : '/board_replies',//URL요청
+								type : 'post', //method요청방식
+								headers : {
+									"Content-Type" : "application/json" //서버에게 데이터 JSON으로 넘기겠음!!
+								},
+								dataType : 'text', //생략가능(클라이언트 <--- 서버)
+								data : JSON.stringify({ //클라이언트 ---> 서버
+									//JSON.stringify()함수 : JSON변환 함수
+									bno : bno,
+									replyer : userid,
+									replytext : replytext
+								}),
+								success : function(result) { //요청 성공시 콜백함수
+									alert(result);
+									getPageList(1);
+									$('#newReplyText').val('');
+									$('#cmtCnt').empty();
+									$('#cmtCnt').append(result);
+								}
+							});
+						});//replyAddBtn
+
+						function readURL(input) {
+							if (input.files && input.files[0]) {
+								var reader = new FileReader(); //파일을 읽기 위한 FileReader객체 생성
+								reader.onload = function(e) {
+									//$("#blah").attr('style','clear: none; float: none; display:block;');
+									$('#blah').attr('src', e.target.result);
+								}
+								reader.readAsDataURL(input.files[0]);
+							}
+						}//readURL()--
+						var replycheck = 0;
+						$("#member_cmt").on("click",function() {
+									if (replycheck == 0) {
+										$("#comment_box_bg-127961").attr(
+												"style", "display:block");
+										getPageList(1);
+										replycheck = 1;
+									} else {
+										$("#comment_box_bg-127961").attr(
+												"style", "display:none");
+										$('#replies').empty();
+										replycheck = 0;
+									}
+								});
+						$("#goodBtn").on("click", function() {
+							alert(userid);
+							alert(bno);
+							$.ajax({
+								url : '/board_good/good',//URL요청
+								type : 'post', //method요청방식
+								headers : {
+									"Content-Type" : "application/json" //서버에게 데이터 JSON으로 넘기겠음!!
+								},
+								data : JSON.stringify({ //클라이언트 ---> 서버
+									//JSON.stringify()함수 : JSON변환 함수
+									bno : bno,
+									userid : userid,
+								}),
+								success : function(result) { //요청 성공시 콜백함수
+									alert(result.status);
+									$('#recommendCnt').empty();
+									$('#recommendCnt').append(result.goodnum);
+								}
+							});
+						});
+
+						$("#submitBtn").on("click", function() {
+							var formObj = $("form[role='form']");
+							formObj.attr("method", "post");
+							formObj.attr("action", "boardupdate");
+							formObj.submit();
+						});
+
+						$("#imgInp").change(function() {
+							readURL(this);
+						});
+						$("#inputBtn").on("click", function() {
+							var formObj = $("form[role='listform']");
+							formObj.attr("method", "get");
+							formObj.attr("action", "boardinput");
+							formObj.submit();
+						});
+
+						$("#cancleBtn").on("click", function() {
+							var formObj = $("form[role='listform']");
+							formObj.attr("method", "get");
+							formObj.attr("action", "boardpage");
+							formObj.submit();
+						});
+						$("#updateBtn")
+								.on(
+										"click",
+										function() {
+											$('#fileselect').attr('style',
+													"display: block;");
+											$('#title_div').attr('style',
+													"display: none;");
+											$('#title_div2').attr('style',
+													"display: block;");
+											$('#page').attr('style',
+													"display: none;");
+											$('#contents')
+													.attr('style',
+															"border:1; display: block; width:1120px; height:350px;");
+											$('#contents').focus();
+											$('#updateBtn').attr('style',
+													"display: none;");
+											$('#removeBtn').attr('style',
+													"display: none;");
+											$('#inputBtn').attr('style',
+													"display:none");
+											$('.list_paging').attr('style',
+													"display: none;");
+											$('#comment_wrap').attr('style',
+													"display: none;");
+											$('#commentDiv-127961').attr(
+													'style', "display: none;");
+											$('.prenext_paging').attr('style',
+													"display: none;");
+
+											$('#submitBtn').attr('style',
+													"display: block;");
+											$('#cancleBtn').attr('style',
+													"display: block;");
+										});
+						$("#removeBtn").on("click", function() {
+							var formObj = $("form[role='listform']");
+							formObj.attr("method", "delete");
+							formObj.attr("action", "boardremove");
+							formObj.submit();
+						});
+						$("#listBtn").on("click", function() {
+							var formObj = $("form[role='listform']");
+							formObj.attr("method", "get");
+							formObj.attr("action", "boardlist");
+							formObj.submit();
+						});
+					});
 </script>
 </head>
 <body>
@@ -263,7 +342,7 @@ $(document).ready(function(){
 		<input type='hidden' name='keyword' value="${cri.keyword}">
 
 		<div class="list_btn_area list_btn_top list_btn_bbs_read">
-			<a href="javascript:;" class="btn" id="inputBtn">
+			<a href="javascript:;" class="btn" id="searchBtn">
 				<span class="btn_bg bg03"></span>
 				<span class="btn_txt bt03 w07 b"><span class="btn_icon_write">글쓰기</span></span>
 			</a>
@@ -327,11 +406,20 @@ $(document).ready(function(){
 										document.write(removeRestrictTag());
 										//]]></script> -->
 									<p style="text-align: center;">
+									<c:if test="${boardVO.image!=null}">
 										<img src="${boardVO.image}"
 											class="txc-image"  border="0"
 											actualwidth="70" width="70" exif="{}" data-filename="..png"
 											style="clear: none; float: none;"
 											id="blah">
+									</c:if>
+									<c:if test="${boardVO.image==null}">
+										<img
+											class="txc-image"  border="0"
+											actualwidth="70" width="70" exif="{}" data-filename="..png"
+											style="clear: none; float: none;"
+											id="blah">
+									</c:if>
 									</p>
 									<p>
 										<br>
@@ -371,15 +459,14 @@ $(document).ready(function(){
 		<div class="comment_scrap" id="comment_wrap">
 			<p class="comment_view fl">
 				<span class="comment_cnt" id="comment_cnt">
-					<a href="javascript:;" id="member_cmt"	class="comment_on txt_point">댓글 <span id="cmtCnt">2</span>
+					<a href="javascript:;" id="member_cmt"	class="comment_on txt_point">댓글 <span id="cmtCnt">${boardVO.replycnt}</span>
 					</a>
 				</span>
 			</p>
 			<div id="shareMenu" class="fr">
-				<a class="bbs_recommend fl line_sub" href="#"
-					onclick="recommendBBS('mEr9', 'LNQb', '127961', '0', true,  true, 'dotax', 'sadfasdf'); return false;">
+				<a class="bbs_recommend fl line_sub" href="javascript:;" id="goodBtn">
 					<img src="http://i1.daumcdn.net/cafeimg/cf_img4/img/ico_recommend.gif" width="11" height="13" alt="추천하기">
-					<span id="recommendCnt" class="txt_point">0</span>
+					<span id="recommendCnt" class="txt_point">${boardVO.goodcnt}</span>
 				</a>
 			</div>
 		</div>
@@ -391,6 +478,9 @@ $(document).ready(function(){
 				<div id="replies" class="commentPagingDiv"> <!-- 댓글포위치부분? -->
 					<!-- 댓글시작  -->
 					
+				</div>
+				<div class="paging">
+
 				</div>
 					<!-- 댓글 입력 Form -->
 				<div id="comment_box_bg-127961" style="display:none">

@@ -13,6 +13,9 @@ public class spec_connectVO {
 		private String nfc;
 		private String bluetooth_profile;
 		private String pcsynk;
+		public spec_connectVO() {
+			// TODO Auto-generated constructor stub
+		}
 		public int getNo() {
 			return no;
 		}

@@ -21,12 +21,11 @@ create sequence ph_phone_seq
 	increment by 1
 	nocycle
 	nocache;
-c
 
 --핸드폰 정보, 핸드폰명, 핸드폰사진, 제조사명, 출고일
 create table ph_phone(
 	no number primary key,
-	name varchar2(100) unique,
+	name varchar2(100) ,
 	image LONG not null,
 	manufacture varchar2(15) not null,
 	release_date varchar2(30) not null
@@ -80,7 +79,7 @@ create table ph_color( --핸드폰 색상
 	foreign key(no) references ph_phone(no),
 	primary key(no,color)
 );
-
+select no, color, image from ph_color ;
 --samsung
 insert into ph_color values (1, '화이트펄', '/resources/images/phone/GalaxyS7edge_화이트펄.png');
 insert into ph_color values (1, '블루코랄', '/resources/images/phone/GalaxyS7edge_블루코랄.png');

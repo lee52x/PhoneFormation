@@ -1,13 +1,13 @@
 package com.phonefo.board.controller;
 
 import java.io.File;
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.MailException;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +22,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.phonefo.board.domain.PageMaker;
 import com.phonefo.board.domain.SearchCriteria;
 import com.phonefo.board.domain.BoardVO;
+import com.phonefo.board.service.BoardGoodservice;
 import com.phonefo.board.service.BoardService;
 
 @Controller
@@ -34,16 +35,18 @@ public class BoardController {
     protected JavaMailSender mailSender;
 
 	@RequestMapping("/boardlist")
-	public String listPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+	public String listPage(@ModelAttribute("cri") SearchCriteria cri, Model model,HttpSession session) throws Exception {
+		System.out.println(session.getAttribute("userid"));	
 		model.addAttribute("list", service.selectlist(cri));
-
+		List<BoardVO> vo=service.selectlist(cri);
+		for(int i=0; i< vo.size();i++)
+			System.out.println("="+vo.get(i).getImage());
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.setTotalCount(service.listCount(cri.getTno()));
 
 		model.addAttribute("pageMaker", pageMaker);
 		model.addAttribute("title", service.selecttitle(cri.getTno()));
-		System.out.println(service.selecttitle(cri.getTno()));
 		model.addAttribute("body", "./board/boardlist.jsp");
 
 		return "mainView";
@@ -98,7 +101,6 @@ public class BoardController {
 
 		model.addAttribute("body", "./board/boardpage.jsp");
 		model.addAttribute(board);
-
 		return "mainView";
 	}
 
@@ -132,12 +134,7 @@ public class BoardController {
 		attr.addAttribute("perPageNum", cri.getPerPageNum());
 		attr.addAttribute("searchType", cri.getSearchType());
 		attr.addAttribute("keyword", cri.getKeyword());
-		System.out.println(board.getBno());
-		System.out.println(board.getContent());
-		System.out.println(board.getTitle());
-		System.out.println(board.getImage());
 		service.update(board);
-		System.out.println("dd");
 		return "redirect:/phonefo/boardpage";
 	}
 

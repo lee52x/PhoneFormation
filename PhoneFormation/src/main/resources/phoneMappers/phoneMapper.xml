@@ -8,7 +8,7 @@
 		order by no desc
 	</select>
 	<select id="select_phone" resultType="phone">
-		select no, name, image, manufacture
+		select no, name, image, manufacture, release_date
 		from ph_phone 
 		where no=#{no}
 	</select>
@@ -77,10 +77,11 @@
 		ph_phone(no, name, image, manufacture, release_date)
 		values(ph_phone_seq.nextval,#{name},#{image},#{manufacture},#{release_date})
 	</insert> 
- 	<select id="selectno">
+ 	<select id="selectno" resultType="int">
 		select max(no)
-		from ph_phone;
+		from ph_phone
 	</select>
+	
 	<insert id="insert_color">
 		insert into
 		ph_color(no, color, image)
@@ -89,7 +90,7 @@
 	<insert id="insert_capacity">
 		insert into
 		ph_capacity(no, capacity, release_price)
-		values(#{no}, #{color}, #{release_price})
+		values(#{no}, #{capacity}, #{release_price})
 	</insert>
 	<insert id="insert_processor">
 		insert into
@@ -141,4 +142,116 @@
 		spec_service(no, gear_support, svoice, mobiletv, siri, waterproof)
 		values(#{no}, #{gear_support}, #{svoice}, #{mobiletv}, #{siri}, #{waterproof})
 	</insert>
+	
+	<update id="update_phone">
+		update ph_phone set name=#{name}, manufacture=#{manufacture}, release_date=#{release_date}
+		<if test="image != null">
+			,image = #{image}
+		</if>
+		where no=#{no}
+	</update>
+	<update id="update_color">
+		update ph_color set color=#{color}
+		<if test="image != null">
+			,image = #{image}
+		</if>
+		where no=#{no}
+	</update>
+	<update id="update_capacity">
+		update ph_capacity set capacity=#{capacity},  release_price=#{release_price}
+		where no=#{no}
+	</update>
+	<update id="update_processor">
+		update spec_processor set cpu_Speed=#{cpu_Speed},  cpu_type=#{cpu_type} 
+		where no=#{no}
+	</update>
+	<update id="update_display">
+		update spec_display set size_main=#{size_main},  resoluation_main=#{resoluation_main},  type_main=#{type_main},  color_depth_main=#{color_depth_main},  s_pen=#{s_pen}
+		where no=#{no}
+	</update>
+	<update id="update_camera">
+		update spec_camera set video_resoluation=#{video_resoluation},  maincamera_pixel=#{maincamera_pixel},  maincamera_aperture=#{maincamera_aperture},  frontcamera_pixel=#{frontcamera_pixel},  frontcamera_aperture=#{frontcamera_aperture},  maincamera_flash=#{maincamera_flash},  maincamera_autofocus=#{maincamera_autofocus},  camera_detail=#{camera_detail} 
+		where no=#{no}
+	</update>
+	<update id="update_memory">
+		update spec_memory set ramsize=#{ramsize},  romsize=#{romsize},  usable_memory=#{usable_memory},  outer_memory=#{outer_memory}
+		where no=#{no}
+	</update>
+	<update id="update_network">
+		update spec_network set type_of_sim_slot=#{type_of_sim_slot},  gsm_2g=#{gsm_2g},  umts_3g=#{umts_3g},  td_scdma_3g=#{td_scdma_3g},  fdd_lte_4g=#{fdd_lte_4g},  tdd_lte_4g=#{tdd_lte_4g}, 
+		where no=#{no}
+	</update>
+	<update id="update_connect">
+		update spec_connect set ant=#{ant},  usb_version=#{usb_version},  location=#{location},  ear_adapter=#{ear_adapter},  mhl=#{mhl},  wifi_direct=#{wifi_direct},  wifi=#{wifi},  bluetooth_version=#{bluetooth_version},  nfc=#{nfc},  bluetooth_profile=#{bluetooth_profile},  pcsynk=#{pcsynk}
+		where no=#{no}
+	</update>
+	<update id="update_specifications">
+		update spec_specifications set os=#{os},  color=#{color},  form=#{form},  phone_size=#{phone_size},  weight=#{weight},  sensor=#{sensor} 
+		where no=#{no}
+	</update>
+	<update id="update_battery">
+		update spec_battery set internet_use_3g=#{internet_use_3g},  internet_use_lte=#{internet_use_lte},  internet_use_wifi=#{internet_use_wifi},  video_play=#{video_play},  battery_capacity=#{battery_capacity},  change_possible=#{change_possible},  audio_play=#{audio_play},  audio_play_ondisplay=#{audio_play_ondisplay},  continuous_call=#{continuous_call}
+		where no=#{no}
+	</update>
+	<update id="update_audio">
+		update spec_audio set video_format=#{video_format},  video_resoluation=#{video_resoluation},  audio_format=#{audio_format},  video_detail=#{video_detail},  facetime=#{facetime}
+		where no=#{no}
+	</update>
+	<update id="update_service">
+		update spec_service set gear_support=#{gear_support},  svoice=#{svoice},  mobiletv=#{mobiletv},  siri=#{siri},  waterproof=#{waterproof}
+		where no=#{no}
+	</update>
+	
+	<delete id="delete_phone">
+		delete from ph_phone
+		where bno=#{bno}
+	</delete>
+	<delete id="delete_color">
+		delete from ph_color
+		where bno=#{bno}
+	</delete>
+	<delete id="delete_capacity">
+		delete from ph_capacity
+		where bno=#{bno}
+	</delete>
+	<delete id="delete_processor">
+		delete from spec_processor
+		where bno=#{bno}
+	</delete>
+	<delete id="delete_display">
+		delete from spec_display
+		where bno=#{bno}
+	</delete>
+	<delete id="delete_camera">
+		delete from spec_camera
+		where bno=#{bno}
+	</delete>
+	<delete id="delete_memory">
+		delete from spec_memory
+		where bno=#{bno}
+	</delete>
+	<delete id="delete_network">
+		delete from spec_network
+		where bno=#{bno}
+	</delete>
+	<delete id="delete_connect">
+		delete from spec_connect
+		where bno=#{bno}
+	</delete>
+	<delete id="delete_specifications">
+		delete from spec_specifications
+		where bno=#{bno}
+	</delete>
+	<delete id="delete_battery">
+		delete from spec_battery
+		where bno=#{bno}
+	</delete>
+	<delete id="delete_audio">
+		delete from spec_audio
+		where bno=#{bno}
+	</delete>
+	<delete id="delete_service">
+		delete from spec_service
+		where bno=#{bno}
+	</delete>
 </mapper>

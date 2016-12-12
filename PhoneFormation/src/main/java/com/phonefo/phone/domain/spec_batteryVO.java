@@ -11,9 +11,13 @@ public class spec_batteryVO {
 	private String audio_play;
 	private String audio_play_ondisplay;
 	private String continuous_call;
+	public spec_batteryVO() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getNo() {
 		return no;
 	}
+	
 	public void setNo(int no) {
 		this.no = no;
 	}

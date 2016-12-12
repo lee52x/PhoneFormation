@@ -21,7 +21,7 @@
 <typeAlias type="com.phonefo.board.domain.BoardVO" alias="boardVO"/>
 <typeAlias type="com.phonefo.board.domain.AdviceVO" alias="adviceVO"/>
 <typeAlias type="com.phonefo.board.domain.ReplyVO" alias="reply"/>
-
+<typeAlias type="com.phonefo.board.domain.BoardGoodVO" alias="boardgood"/>
 
 <typeAlias type="com.phonefo.phone.domain.PhoneInfoVO" alias="phone"/>
 
