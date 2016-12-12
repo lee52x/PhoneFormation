@@ -58,20 +58,21 @@ $(document).ready(function(){
 						<form id="frm_info2" method="post" action="search_id_result">
 							<fieldset>
 								<legend>아이디, e-메일로 입력</legend>
+								<div style="margin-left: 60px;">
 								<h2>e-메일로 찾기</h2>
 								<p class="subTxt">회원정보에 등록된 e-메일로 아이디를<br/> 찾을 수 있습니다.</p>
 
 								<!-- e-메일로 찾기 -->
 								<dl class="odd">
-									<dt><label for="lb_eName">아이디</label></dt>
-									<dd>
+									<dt style="float: left;"><label for="lb_eName">아이디</label></dt>
+									<dd style="float: left;">
 										<input id="userid" name="userid" type="text" maxlength="40" class="tBox" style="width:195px;" />
-									</dd>
-									<dt><label for="lb_email">e-메일</label></dt>
-									<dd>
-										<p><input id="email1" name="email1" class="tBox" type="text" title="이메일 아이디" maxlength="25" style="width:85px; ime-mode:disabled;"/>&nbsp;@&nbsp;</p>
-										<p><span id="Dev_MEmailstrsp" style="display:none;"><input type="text" style="width:82px;" name="info_mail_etc" id="dev_mail_etc" class="tBox" /></span></p>
-										<p><select id="email2" title="이메일 서비스업체 선택" style="width:92px;" name="eamil2" >
+									</dd><br>
+									<dt style="float: left;"><p><label for="lb_email">e-메일</label></p></dt>
+									<dd style="float: left;">
+										<p style="float: left;"><input id="email1" name="email1" class="tBox" type="text" title="이메일 아이디" maxlength="25" style="width:85px; ime-mode:disabled;"/>@</p>
+										<p style="float: left;"><span id="Dev_MEmailstrsp" style="display:none;"><input type="text" style="width:82px;" name="info_mail_etc" id="dev_mail_etc" class="tBox" /></span></p>
+										<p style="float: left;"><select id="email2" title="이메일 서비스업체 선택" style="width:92px;" name="eamil2" >
 												<option value="">선택하세요</option>
 												<option value="naver.com" >naver.com</option>
 												<option value="hanmail.net">hanmail.net</option>
@@ -85,7 +86,11 @@ $(document).ready(function(){
 										</p>
 									</dd>
 								</dl>
+								<br><br>
+								<div style="margin-left: 40%;">
 								<input id="sendEmail" type="button" value="확인">
+								</div>
+							</div>
 							</fieldset>
 						</form>
 					</div>

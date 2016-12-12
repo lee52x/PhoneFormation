@@ -147,14 +147,14 @@ function popup1() {
 	window.open(
 		"/phonefo/search_id",
 		"EventFrame",
-		"menubar=no,width=500,height=400,toolbar=no"
+		"menubar=no,width=450,height=300,top=200,left=400,toolbar=no"
 		);
 	}
 function popup2() {
 	window.open(
 		"/phonefo/search_password",
 		"EventFrame",
-		"menubar=no,width=500,height=400,toolbar=no"
+		"menubar=no,width=450,height=300,toolbar=no"
 		);
 	}
 
@@ -253,7 +253,7 @@ function popup2() {
                                    	
 
 			<!-- input box -->
-            <div class="setting">
+            <div class="setting"  style="margin-left: 5%;">
 				<input id="autologin" name="autologin" type="checkbox" onclick="if (this.checked) { $('ly_autologin').show() } else { $('ly_autologin').hide() }">
 				<label for="autologin"> 로그인 유지 </label>
 				<div class="dsc_ly" id="ly_autologin" style="display:none;">
@@ -272,7 +272,7 @@ function popup2() {
                     <label for="ssl_login" id="label_type" class="label_type on">보안접속</label>
                 </span>
             </div>
-			<div class="login-form" sty>
+			<div class="login-form" style="margin-left: 5%;">
 				<div class="id-input-box focus" style="width: 420px;">
 	    			
 	    			<input type="text" id="userid" name="userid" class="txt_tool" value="" placeholder="아이디">
@@ -314,7 +314,7 @@ function popup2() {
                                 <div class="tab-pane fade" id="tab-2">
                                 <br>
                                  			<!-- input box -->
-            <div class="setting">
+            <div class="setting" style="margin-left: 5%;">
 				<input id="autologin" name="autologin" type="checkbox" onclick="if (this.checked) { $('ly_autologin').show() } else { $('ly_autologin').hide() }">
 				<label for="autologin"> 로그인 유지 </label>
 				<div class="dsc_ly" id="ly_autologin" style="display:none;">
@@ -333,7 +333,7 @@ function popup2() {
                     <label for="ssl_login" id="label_type" class="label_type on">보안접속</label>
                 </span>
             </div>
-			<div class="login-form" sty>
+			<div class="login-form" style="margin-left: 5%;">
 				<div class="id-input-box focus" style="width: 420px;">
 	    			
 	    			<input type="text" id="userid2" name="userid2" class="txt_tool" value="" placeholder="아이디">
@@ -349,8 +349,8 @@ function popup2() {
 	    	<p class="signup-forgotten">
 	    		<a href="/phonefo/join" class="sign-up">회원가입</a>
 	    		<span>l</span>
-	    		<a href="/phonefo/join" class="forgotten">아이디/</a>
-	    		<a href="/phonefo/join" class="forgotten">비밀번호 찾기</a>
+	    		<a class="forgotten" onclick="popup1()">아이디/</a>
+	    		<a class="forgotten" onclick="popup2()">비밀번호 찾기</a>
 	    		<span>l</span>
 	    		<a href="/phonefo/join" class="service_info_txt">서비스 안내</a>
 	    	</p>
