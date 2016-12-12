@@ -204,54 +204,54 @@
 	
 	<delete id="delete_phone">
 		delete from ph_phone
-		where bno=#{bno}
+		where no=#{no}
 	</delete>
 	<delete id="delete_color">
 		delete from ph_color
-		where bno=#{bno}
+		where no=#{no}
 	</delete>
 	<delete id="delete_capacity">
 		delete from ph_capacity
-		where bno=#{bno}
+		where no=#{no}
 	</delete>
 	<delete id="delete_processor">
 		delete from spec_processor
-		where bno=#{bno}
+		where no=#{no}
 	</delete>
 	<delete id="delete_display">
 		delete from spec_display
-		where bno=#{bno}
+		where no=#{no}
 	</delete>
 	<delete id="delete_camera">
 		delete from spec_camera
-		where bno=#{bno}
+		where no=#{no}
 	</delete>
 	<delete id="delete_memory">
 		delete from spec_memory
-		where bno=#{bno}
+		where no=#{no}
 	</delete>
 	<delete id="delete_network">
 		delete from spec_network
-		where bno=#{bno}
+		where no=#{no}
 	</delete>
 	<delete id="delete_connect">
 		delete from spec_connect
-		where bno=#{bno}
+		where no=#{no}
 	</delete>
 	<delete id="delete_specifications">
 		delete from spec_specifications
-		where bno=#{bno}
+		where no=#{no}
 	</delete>
 	<delete id="delete_battery">
 		delete from spec_battery
-		where bno=#{bno}
+		where no=#{no}
 	</delete>
 	<delete id="delete_audio">
 		delete from spec_audio
-		where bno=#{bno}
+		where no=#{no}
 	</delete>
 	<delete id="delete_service">
 		delete from spec_service
-		where bno=#{bno}
+		where no=#{no}
 	</delete>
 </mapper>

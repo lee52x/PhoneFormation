@@ -3,6 +3,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <%@ page session="true" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -26,17 +27,25 @@ $(document).ready(function(){
 	});
 	$('#btn_search_mine').on("click",	function(event) {
 		userid= "${sessionScope.userid}";
+		if(userid=='')
+			alert("로그인을 해야 사용할 수 있는 기능입니다.");
+		else{
 		self.location = "boardlist"
 			+ '${pageMaker.makeQuery(1)}'
 			+ "&searchType="
 			+ 'w'
 			+ "&keyword=" + userid
 			+ "&tno=" + $('#tno').val();
+		}
 	});
 	$(".btn_icon_write").on("click", function(){
-
+		userid= "${sessionScope.userid}";
+		if(userid=='')
+			alert("로그인을 하고 사용하시기 바랍니다.");
+		else{
 		      var formObj = $("form[role='iniputform']");
 		      formObj.submit();
+		}
 		   });
 });
 </script>
@@ -66,13 +75,14 @@ $(document).ready(function(){
 									<a href="bbs_list?grpid=mEr9&amp;mgrpid=&amp;fldid=LNQb"
 										class="list_title_sub">${title}</a>
 								</h3>
+								<c:if test="${cri.tno>3 || sessionScope.userid =='admin'}">
 								<div class="list_btn_areaT">
 									<a href="#"
 										onclick="caller('/_c21_/united_write?grpid=mEr9&amp;mgrpid=&amp;fldid=LNQb&amp;page=1'); return false;"
 										class="btn"><span class="btn_bg bg03"></span><span
 										class="btn_txt bt03 w07 b"><span class="btn_icon_write">글쓰기</span></span></a>
 								</div>
-
+								</c:if>
 								<form name="listForm" method="post">
 									<input type="hidden" name="moveto" value=""> <input
 										type="hidden" name="changerolecode" value="">
@@ -120,10 +130,12 @@ $(document).ready(function(){
 								</form>
 
 								<div class="list_btn_area">
+									<c:if test="${cri.tno>3 || sessionScope.userid =='admin'}">
 									<a href="#"
 										onclick="caller('/_c21_/united_write?grpid=mEr9&amp;mgrpid=&amp;fldid=LNQb&amp;page=1'); return false;"
 										class="btn"><span class="btn_bg bg03"></span><span
 										class="btn_txt bt03 w07 b"><span class="btn_icon_write">글쓰기</span></span></a>
+										</c:if>
 									<div class="paging ">
 										<c:if test="${pageMaker.prev}">
 											<a	href="boardlist${pageMaker.makeSearch(pageMaker.startPage - 1) }&tno=${cri.tno}">

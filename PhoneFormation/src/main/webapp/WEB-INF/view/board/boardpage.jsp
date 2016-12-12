@@ -63,13 +63,14 @@ function removereply(rno){
 		});
 	}
 	function getPageList(page) {
+		var	userid= "${sessionScope.userid}";
+	
 		$('#replies').empty();
 		$.ajax({
 					url : '/board_replies/' + bno + '/' + page,
 					success : function(data) {
 						var str = "";
-						$(data.list)
-								.each(
+						$(data.list).each(
 										function() {
 											str += "<div class='comment_pos' style='background-color: rgb(247, 247, 247);'>"
 													+ "<div class='id_admin '>"
@@ -81,12 +82,13 @@ function removereply(rno){
 													+ "</div>"
 													+ "<div class='comment'>"
 													+ "<span id='_cmt_contents-"+this.rno+"' class='comment_contents'"
-                    				+"style='display: block;flaot:left;text-align: left;'>"
+                    								+"style='display: block;flaot:left;text-align: left;'>"
 													+ this.replytext
 													+ "</span>"
 													+ "</div>"
+													if(this.replyer ==userid){
 													+ "<div id='_cmt_button-"+this.rno+"' class='txt_btn p11'" 
-                    			+"style='display: block'>"
+                    								+"style='display: block'>"
 													+ "<span class='bar2 cmt_button_reply'>|</span>"
 													+ "<a href='javascript:;' onclick='modifyform("
 													+ this.rno
@@ -96,6 +98,7 @@ function removereply(rno){
 													+ this.rno
 													+ ")' class='p11'> 삭제</a>"
 													+ "</div>"
+													}
 													+ "<div class='cl'>&nbsp;</div>"
 													+ "<!-- 수정폼  -->"
 													+ "<div id='_cmt_reply_editor-"+this.rno+"'  class='longtail_editor longtail_reply layout_modify'"
@@ -139,7 +142,6 @@ function removereply(rno){
 				});//ajax
 			}
 				function printPaging(pageMaker) {	//페이징뿌리기
-					alert("시작")
 					var str = "";
 					if (pageMaker.prev) { // '<<' 버튼
 						str += "<a href='javascript:;' onclick=''>"
@@ -160,7 +162,6 @@ function removereply(rno){
 								+"</span>"
 								+"</a>";
 					}
-					alert(str);
 					$('.paging').empty();
 					$('.paging').append(str);
 				}
@@ -194,7 +195,6 @@ function removereply(rno){
 									replytext : replytext
 								}),
 								success : function(result) { //요청 성공시 콜백함수
-									alert(result);
 									getPageList(1);
 									$('#newReplyText').val('');
 									$('#cmtCnt').empty();
@@ -228,8 +228,6 @@ function removereply(rno){
 									}
 								});
 						$("#goodBtn").on("click", function() {
-							alert(userid);
-							alert(bno);
 							$.ajax({
 								url : '/board_good/good',//URL요청
 								type : 'post', //method요청방식
@@ -343,10 +341,13 @@ function removereply(rno){
 		<input type='hidden' name='keyword' value="${cri.keyword}">
 
 		<div class="list_btn_area list_btn_top list_btn_bbs_read">
+		<c:if test="${cri.tno>3 || sessionScope.userid =='admin'}">
 			<a href="javascript:;" class="btn" id="searchBtn">
 				<span class="btn_bg bg03"></span>
 				<span class="btn_txt bt03 w07 b"><span class="btn_icon_write" style="margin-right: 5px;">글쓰기 </span></span>
 			</a>
+		</c:if>
+		<c:if test="${sessionScope.userid==boardVO.writer || sessionScope.userid =='admin'}">
 			<a href="javascript:;" class="btn" id="updateBtn">
 				<span class="btn_bg bt03" style="width: ;"> </span>
 				<span class="btn_txt bt03 w03" style="float: left; width: 35px;text-align: left;">수정</span>
@@ -355,7 +356,7 @@ function removereply(rno){
 				<span class="btn_bg bt03"></span>
 				<span class="btn_txt bt03 w23" style="text-align: left;width: 35px;">삭제</span>
 			</a>
-
+		</c:if>
 			<span class="list_paging">
 			<a href="javascript:;" id="listBtn">목록</a>
 			<c:if test="${prevbno!=null}">
