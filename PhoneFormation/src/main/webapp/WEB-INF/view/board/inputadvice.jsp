@@ -64,19 +64,19 @@ $(document).ready(function(){
 
 				<div class="subject" id="title_div2">
 				<div style="float:left;">
-				<span class="b">분류</span><span
+				<p><span class="b">분류</span><span
 						class="bar2">|</span>						
-						<select name="category" >
+						<select name="category" style="width: 60px;">
 							<option value="에러1">에러1</option>
 							<option value="에러2">에러2</option>
 							<option value="에러3">에러3</option>
 							<option value="에러4">에러4</option>
 							</select>
-					<span class="bar2">|</span>
-					</div>
-					<span class="headcate"> </span> <span class="b">제목</span><span
-						class="bar2">|</span> <input type="text" name="title"
-						style="width: 500px" value="${boardVO.title}" />
+
+					</p></div><br><br>
+					<span class="headcate"></span>  <p><span class="b" style="float: left;">제목</span><span
+						class="bar2" style="float: left;">|</span> <input type="text" name="title"
+						style="width: 96%;float: left;" value="${boardVO.title}" /></p><br>
 				</div>
 			</div>
 			<div class="form-group" id="fileselect">
@@ -130,7 +130,7 @@ $(document).ready(function(){
 			</div>
 			<div class="cl">&nbsp;</div>
 
-		<div class="box-footer">
+		<div class="box-footer" style="margin-left: 45%;">
 			<button type="submit" class="btn btn-warning" id="addBtn">등록하기</button>
 			<input type="button" class="btn btn-warning" id="listBtn"
 				value="돌아가기">

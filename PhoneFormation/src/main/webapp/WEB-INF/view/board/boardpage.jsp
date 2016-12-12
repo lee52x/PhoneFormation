@@ -81,7 +81,7 @@ function removereply(rno){
 													+ "</div>"
 													+ "<div class='comment'>"
 													+ "<span id='_cmt_contents-"+this.rno+"' class='comment_contents'"
-                    				+"style='display: block;'>"
+                    				+"style='display: block;flaot:left;text-align: left;'>"
 													+ this.replytext
 													+ "</span>"
 													+ "</div>"
@@ -345,15 +345,15 @@ function removereply(rno){
 		<div class="list_btn_area list_btn_top list_btn_bbs_read">
 			<a href="javascript:;" class="btn" id="searchBtn">
 				<span class="btn_bg bg03"></span>
-				<span class="btn_txt bt03 w07 b"><span class="btn_icon_write">글쓰기</span></span>
+				<span class="btn_txt bt03 w07 b"><span class="btn_icon_write" style="margin-right: 5px;">글쓰기 </span></span>
 			</a>
 			<a href="javascript:;" class="btn" id="updateBtn">
-				<span class="btn_bg bt03"></span>
-				<span class="btn_txt bt03 w03">수정</span>
+				<span class="btn_bg bt03" style="width: ;"> </span>
+				<span class="btn_txt bt03 w03" style="float: left; width: 35px;text-align: left;">수정</span>
 			</a>
 			<a href="javascript:;" class="btn" id="removeBtn">
 				<span class="btn_bg bt03"></span>
-				<span class="btn_txt bt03 w23">삭제</span>
+				<span class="btn_txt bt03 w23" style="text-align: left;width: 35px;">삭제</span>
 			</a>
 
 			<span class="list_paging">
@@ -374,12 +374,12 @@ function removereply(rno){
 		<div class="cl">&nbsp;</div>
 		<div class="article_subject line_sub">
 			<div class="subject" id="title_div" style="display:block;">
-				<span class="headcate"> </span> <span class="b">제목</span><span
-					class="bar2">|</span> ${boardVO.title} 
+				<span class="headcate"> </span> <span class="b" style="float: left;">제목</span><span
+					class="bar2" style="float: left;">|</span><span style="float: left;"> ${boardVO.title}</span> <br>
 			</div>
 			<div class="subject" id="title_div2" style="display:none;">
-				<span class="headcate"> </span> <span class="b">제목</span><span
-					class="bar2">|</span> <input type="text" name="title" style="width:500px" value="${boardVO.title}"/> 
+				<span class="headcate"> </span> <span class="b"style="float: left;">제목</span><span
+					class="bar2" style="float: left;">|</span> <input type="text" name="title" style="width:500px; float: left;" value="${boardVO.title}"/> <br>
 			</div>
 		</div>
 		<!-- end article_subject -->
@@ -425,7 +425,7 @@ function removereply(rno){
 									<p>
 										<br>
 									</p>
-									<p><div id="page" style="display: block;">${boardVO.content}</div>
+									<p><div id="page" style="display: block;float: left;">${boardVO.content}</div>
 										<textarea name="content" id="contents" style="border:0; display: none;">${boardVO.content}</textarea>
 									</p>
 								</td>
@@ -465,7 +465,7 @@ function removereply(rno){
 				</span>
 			</p>
 			<div id="shareMenu" class="fr">
-				<a class="bbs_recommend fl line_sub" href="javascript:;" id="goodBtn">
+				<a class="bbs_recommend fl line_sub" href="javascript:;" id="goodBtn" style="height: 30px;">
 					<img src="http://i1.daumcdn.net/cafeimg/cf_img4/img/ico_recommend.gif" width="11" height="13" alt="추천하기">
 					<span id="recommendCnt" class="txt_point">${boardVO.goodcnt}</span>
 				</a>

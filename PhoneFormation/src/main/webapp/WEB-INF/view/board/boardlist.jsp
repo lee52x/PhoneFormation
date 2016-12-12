@@ -77,6 +77,12 @@ $(document).ready(function(){
 									<input type="hidden" name="moveto" value=""> <input
 										type="hidden" name="changerolecode" value="">
 									<table class="bbsList">
+											<col width="10%;">
+											<col width="*%">
+											<col width="15%;">
+											<col width="15%;">
+											<col width="5%;">
+											<col width="5%;">
 										<caption>${title}</caption>
 										<thead>
 											<tr>
@@ -100,7 +106,7 @@ $(document).ready(function(){
 												 	</c:if>
 													<!-- <img src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="8" height="12" alt="새글" class="icon_new"> -->
 												</td>
-												<td class="nick">
+												<td class="nick" style="text-align: center;">
 													${boardVO.writer}
 												</td>
 												<td class="date" nowrap="nowrap">${boardVO.regdate}</td>
@@ -140,7 +146,7 @@ $(document).ready(function(){
 									<!-- end paging -->
 								</div> <!-- end list_btn_area -->
 
-								<div class="search_box_wrap search_box_bottom">
+								<div class="search_box_wrap search_box_bottom" style="margin-left: 30%;">
 									<div class="search_box_floated_elem searchBox_bbsList_bottom">
 
 										<select id="item" name="searchType"  class="inp">
@@ -158,7 +164,7 @@ $(document).ready(function(){
 												Writer</option>
 										</select>
 										<div class="suggest">
-											<input type="text" value="" name="keyword" size="22" id="keywordInput"
+											<input type="text" value="" name="keyword" size="50px;"style="height: 20px; width: 300px;" id="keywordInput"
 												autocomplete="off" class="inp query" />
 										</div>
 										<a href="javascript:;" class="btn_search" id="btn_search"
