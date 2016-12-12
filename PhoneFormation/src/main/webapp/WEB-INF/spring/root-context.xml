@@ -26,12 +26,10 @@
       <property name="driverClassName">
          <value>oracle.jdbc.driver.OracleDriver</value>
       </property>
-  <!-- 
-  	  <property name="url" value="jdbc:oracle:thin:@180.70.132.106:1521:CENTORA"/>
+<!--       <property name="url" value="jdbc:oracle:thin:@180.70.132.106:1521:CENTORA"/>
       <property name="username" value="phone"/>
-      <property name="password" value="1234"/>
-      -->
-    <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+      <property name="password" value="1234"/> -->
+      <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
       <property name="username" value="scott"/>
       <property name="password" value="tiger"/> 
    </bean>
@@ -65,7 +63,6 @@
    <context:component-scan base-package="com.phonefo.phone.persistence"/>
    
    <context:component-scan base-package="com.phonefo.mypage.persistence"/>
-   <context:component-scan base-package="com.phonefo.visit"/>
    
    
 
@@ -80,7 +77,6 @@
    <context:component-scan base-package="com.phonefo.phone.service"></context:component-scan>
    
    <context:component-scan base-package="com.phonefo.mypage.service"></context:component-scan>
-   
 
 
 		
