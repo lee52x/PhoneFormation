@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.phonefo.admin.domain.ClientVO;
+import com.phonefo.admin.domain.SlideVO;
 import com.phonefo.main.domain.MemberVO;
 import com.phonefo.main.persistence.MainDAO;
 
@@ -98,6 +99,11 @@ public class MainServiceImpl implements MainService {
 	public List<ClientVO> getLogo() throws Exception {
 		return dao.getLogo();
 		
+	}
+
+	@Override
+	public List<SlideVO> getSlide() throws Exception {
+		return dao.getSlide();
 	}
 
 

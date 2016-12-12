@@ -16,6 +16,7 @@ import com.phonefo.admin.domain.AdminRepairVO;
 import com.phonefo.admin.domain.AdminRouteVO;
 import com.phonefo.admin.domain.ClientVO;
 import com.phonefo.admin.domain.SearchCriteria;
+import com.phonefo.admin.domain.SlideVO;
 
 @Repository
 public class AdminDAOImpl implements AdminDAO{
@@ -158,6 +159,19 @@ public class AdminDAOImpl implements AdminDAO{
 		sqlSession.insert("admin.insertLogo",vo);
 		
 	}
+
+	@Override
+	public void insertSlide(SlideVO vo) throws Exception {
+		sqlSession.update("admin.insertSlide",vo);
+		
+	}
+
+	@Override
+	public List<SlideVO> getSlide() throws Exception {
+		return sqlSession.selectList("admin.getSlide");
+	}
+	
+	
 
 
 

@@ -14,6 +14,7 @@ import com.phonefo.admin.domain.AdminRepairVO;
 import com.phonefo.admin.domain.AdminRouteVO;
 import com.phonefo.admin.domain.ClientVO;
 import com.phonefo.admin.domain.SearchCriteria;
+import com.phonefo.admin.domain.SlideVO;
 import com.phonefo.admin.persistence.AdminDAO;
 
 @Service
@@ -244,6 +245,17 @@ public class AdminServiceImpl implements AdminService {
 	public void insertLogo(ClientVO vo) throws Exception {
 		dao.insertLogo(vo);
 		
+	}
+
+	@Override
+	public void insertSlide(SlideVO vo) throws Exception {
+		dao.insertSlide(vo);
+		
+	}
+
+	@Override
+	public List<SlideVO> getSlide() throws Exception {
+		return dao.getSlide();
 	}
 
 }

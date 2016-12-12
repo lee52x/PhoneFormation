@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.phonefo.admin.domain.ClientVO;
+import com.phonefo.admin.domain.SlideVO;
 import com.phonefo.main.domain.MemberVO;
 
 
@@ -130,6 +131,10 @@ public class MainDAOImpl implements MainDAO{
 	public List<ClientVO> getLogo() throws Exception {
 		
 		return sql.selectList("member.getLogo");
+	}
+	@Override
+	public List<SlideVO> getSlide() throws Exception {
+		return sql.selectList("member.getSlide");
 	}
 
 }

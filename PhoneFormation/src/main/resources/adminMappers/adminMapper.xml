@@ -209,6 +209,14 @@
 		insert into ph_client values(ph_client_seq.nextval,#{path})
 	</insert>
 	
+	<update id="insertSlide">
+		update ph_slide set path=#{path} where state=#{state}
+	</update>
+	
+	<select id="getSlide" resultType="com.phonefo.admin.domain.SlideVO">
+		select * from ph_slide
+	</select>
+	
   
 </mapper>
 

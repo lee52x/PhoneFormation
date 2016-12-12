@@ -67,5 +67,7 @@
 	<select id="getLogo" resultType="com.phonefo.admin.domain.ClientVO">
 		select*from ph_client
 	</select>
+	
+
 
 </mapper>

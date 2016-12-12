@@ -84,7 +84,7 @@ table {
                         <li data-transition="fade" data-slotamount="5" data-masterspeed="300"> 
                             
                             <!-- THE MAIN BACKGROUND IMAGE IN THIS FIRST SLIDE --> 
-                            <img src="/resources/upload/slide1.jpg" data-fullwidthcentering="on" alt="background"> 
+                            <img src="${slide1 }" data-fullwidthcentering="on" alt="background"> 
                             
                            
                         </li>
@@ -93,111 +93,25 @@ table {
                         <li data-transition="papercut" data-slotamount="5" data-masterspeed="500" data-delay="9400"> 
                             
                             <!-- THE MAIN BACKGROUND IMAGE IN THIS FIRST SLIDE --> 
-                            <img src="images/slider_2_bg.jpg" data-fullwidthcentering="on" alt="background"> 
+                            <img src="${slide2}" data-fullwidthcentering="on" alt="background"> 
                             
-                            <!-- THE CAPTIONS/LAYERS IN THIS SLIDE -->
-                            <div class="caption medium-700-black lfr" 
-                                  data-x="625" 
-                                  data-y="150" 
-                                  data-speed="300" 
-                                  data-start="400" 
-                                  data-easing="easeOutExpo">EVERYTHING YOU NEED <br/>
-                                TO BUILD EXCEPTIONAL PROJECT. </div>
-                            <div class="caption small-600-black lfr" 
-                                  data-x="625" 
-                                  data-y="225" 
-                                  data-speed="300" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo">Venue is the best solution for your business, Responsive & <br/>
-                                Flexible, You can present your business and services <br/>
-                                properly. </div>
-                            <div class="caption randomrotate" 
-                                  data-x="625" 
-                                  data-y="300" 
-                                  data-speed="300" 
-                                  data-start="1200" 
-                                  data-easing="easeOutExpo"><a href="#" class="btn-custom btn-medium border-btn">핸드폰 보러가기</a> </div>
-                            <div class="tp-caption sfl start" 
-                                  data-x="30" 
-                                  data-y="bottom" 
-                                  data-speed="1000" 
-                                  data-start="1000" 
-                                  data-easing="easeOutExpo"><img src="images/slider-3.png" alt="" /> </div>
+                           
                         </li>
                         
                         <!-- THE THIRD SLIDE --> 
                         <li data-transition="turnoff" data-slotamount="5" data-masterspeed="300"> 
                             
                             <!-- THE MAIN BACKGROUND IMAGE IN THIS FIRST SLIDE --> 
-                            <img src="/resources/images/main/bgc.png" alt="background" data-fullwidthcentering="on" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat"> 
+                            <img src="${slide3}" alt="background" data-fullwidthcentering="on" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat"> 
                             
-                            <!-- THE CAPTIONS/LAYERS IN THIS SLIDE -->
-                            <div class="caption medium-700-black lfr" 
-                                  data-x="58" 
-                                  data-y="138" 
-                                  data-speed="300" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo">Fully Responsive. Retina Display Ready. <br/>
-                                Touch Enabled Sliders. </div>
-                            <div class="caption small-600-black lfr" 
-                                  data-x="58" 
-                                  data-y="214" 
-                                  data-speed="300" 
-                                  data-start="1200" 
-                                  data-easing="easeOutExpo">Venue is the best solution for your business, Responsive & Flexible, <br/>
-                                You can present your business and services properly. </div>
-                            <div class="caption randomrotate" 
-                                  data-x="58" 
-                                  data-y="275" 
-                                  data-speed="300" 
-                                  data-start="1600" 
-                                  data-easing="easeOutExpo"><a href="#" class="btn-custom btn-medium border-btn">Explore More Features</a> </div>
-                            <div class="caption lfb" 
-                                  data-x="420" 
-                                  data-y="40" 
-                                  data-speed="300" 
-                                  data-start="400" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/S7Edge_T.png" alt="tablet" /> </div>
-                        </li>
+                            </li>
                         
                         <!-- THE FOURTH SLIDE --> 
                         <li data-transition="papercut" data-slotamount="7" data-masterspeed="300"> 
                             <!-- MAIN IMAGE --> 
                             <img src="images/slider_4_bg.jpg" data-fullwidthcentering="on" alt="background"> 
                             
-                            <!-- LAYER NR. 1 -->
-                            <div class="caption medium-700-black lfr" 
-                                  data-x="540" 
-                                  data-y="125" 
-                                  data-speed="300" 
-                                  data-start="1600" 
-                                  data-easing="easeOutExpo"> <span class="accent-color">Solutions</span> that you need! <br>
-                                The best template to get you started </div>
-                            
-                            <!-- LAYER NR. 3 -->
-                            <div class="caption small-600-black lfr" 
-                                  data-x="540" 
-                                  data-y="200" 
-                                  data-speed="300" 
-                                  data-start="2000" 
-                                  data-easing="easeOutExpo">Venue is best solution for your business, Responsive & Flexible, <br>
-                                You can present your business and services properly. </div>
-                            
-                            <!-- LAYER NR. 4 -->
-                            <div class="tp-caption sfb start" 
-                                  data-x="540" 
-                                  data-y="265" 
-                                  data-speed="300" 
-                                  data-start="2500" 
-                                  data-easing="easeOutExpo"><a href="#" class="btn-custom btn-medium border-btn">Purchase This Now</a> </div>
-                            
-                            <!-- LAYER NR. 5 -->
-                            <div class="tp-caption sfl start" 
-                                  data-x="180" 
-                                  data-y="bottom" 
-                                  data-speed="1000" 
-                                  data-start="1000" 
-                                  data-easing="easeOutExpo"><img src="images/slide-02-image-01.png" alt="" /> </div>
+                           
                         </li>
                     </ul>
                 </div>

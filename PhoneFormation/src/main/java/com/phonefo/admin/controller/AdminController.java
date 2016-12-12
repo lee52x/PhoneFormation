@@ -170,22 +170,37 @@ public class AdminController {
 			return "mainView";
 		}
 		
+		//메인 사진 업데이트
 		@RequestMapping(value="/mainSlideUpdate", method=RequestMethod.POST)
-		public String mainSlide(HttpServletRequest request, MultipartFile file, RedirectAttributes attr,
+		public String mainSlide(HttpServletRequest request, MultipartFile file1,MultipartFile file2,MultipartFile file3, RedirectAttributes attr,
 				HttpSession session)throws Exception{
-			
-			///여기서부터
-			SlideVO vo=new SlideVO();
-			String filename = file.getOriginalFilename();
-			System.out.println("파일="+filename);
-			if (filename != "") {
-			    String uploadpath = request.getSession().getServletContext().getRealPath("/resources/slide");
-			    File target = new File(uploadpath, filename);
-				FileCopyUtils.copy(file.getBytes(), target);
 
-				vo.setFile("/resources/slide/" + filename);
+			
+			SlideVO vo=new SlideVO();
+			if(file1.getOriginalFilename()!=""){
+			    String uploadpath = request.getSession().getServletContext().getRealPath("/resources/slide");
+			    File target = new File(uploadpath, file1.getOriginalFilename());
+				FileCopyUtils.copy(file1.getBytes(), target);
+				vo.setPath("/resources/slide/" + file1.getOriginalFilename());
+				vo.setState(1);
+				service.insertSlide(vo);
 			}
-			System.out.println(vo);
+			if(file2.getOriginalFilename()!=""){
+				String uploadpath = request.getSession().getServletContext().getRealPath("/resources/slide");
+				File target = new File(uploadpath, file2.getOriginalFilename());
+				FileCopyUtils.copy(file2.getBytes(), target);
+				vo.setPath("/resources/slide/" + file2.getOriginalFilename());
+				vo.setState(2);
+				service.insertSlide(vo);
+			}
+			if(file3.getOriginalFilename()!=""){
+				String uploadpath = request.getSession().getServletContext().getRealPath("/resources/slide");
+				File target = new File(uploadpath, file3.getOriginalFilename());
+				FileCopyUtils.copy(file3.getBytes(), target);
+				vo.setPath("/resources/slide/" + file3.getOriginalFilename());
+				vo.setState(3);
+				service.insertSlide(vo);
+			}
 			
 			//여기까지
 
@@ -203,12 +218,12 @@ public class AdminController {
 		}
 		
 		//회사로고 추가 
-		@RequestMapping("/mainSlideUpdate")
-		public String mainClient(Model model,HttpServletRequest request,MultipartFile file1,MultipartFile file2,MultipartFile file3, RedirectAttributes attr,
+		@RequestMapping("/mainClientInsert")
+		public String mainClient(Model model,HttpServletRequest request, MultipartFile file, RedirectAttributes attr,
 				HttpSession session)throws Exception{
 			
 			System.out.println("오니");
-/*			///여기서부터
+			///여기서부터
 			ClientVO vo=new ClientVO();
 			String filename = file.getOriginalFilename();
 			System.out.println("파일이름="+filename);
@@ -223,7 +238,7 @@ public class AdminController {
 
 			//여기까지
 			service.insertLogo(vo);
-	*/
+	
 			
 			model.addAttribute("body", "./admin/mainClient.jsp");
 			return "mainView";

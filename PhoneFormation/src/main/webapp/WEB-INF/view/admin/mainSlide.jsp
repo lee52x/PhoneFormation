@@ -39,7 +39,7 @@
 
 												<h3>1.첫번째 슬라이드<input type="file" name="file1"></h3>
 													<br>
-														<button type="button" id="bt1" class="btn btn-primary" style="width: 520px;height: 50px;"  >
+														<button type="submit"  class="btn btn-primary" style="width: 520px;height: 50px;"  >
 															슬라이드 등록			
 												</button>
 												<hr>

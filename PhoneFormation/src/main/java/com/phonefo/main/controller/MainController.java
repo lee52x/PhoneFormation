@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.phonefo.admin.domain.ClientVO;
+import com.phonefo.admin.domain.SlideVO;
 import com.phonefo.admin.service.AdminService;
 import com.phonefo.main.domain.MemberVO;
 import com.phonefo.main.service.MainService;
@@ -32,6 +33,11 @@ public class MainController {
 	//메인화면 띄우기
 	@RequestMapping("/main")
 	public String test(Model model)throws Exception{
+		//메인슬라이드
+		List<SlideVO> list = adminservice.getSlide();
+		model.addAttribute("slide1", list.get(0).getPath());
+		model.addAttribute("slide2", list.get(1).getPath());
+		model.addAttribute("slide3", list.get(2).getPath());
 		
 		
 		//통계
@@ -44,6 +50,7 @@ public class MainController {
 		model.addAttribute("totalVisit", adminservice.totalVisit());
 		//로고
 		model.addAttribute("logo", service.getLogo()); 
+		
 	
 		
 		
@@ -162,6 +169,8 @@ public class MainController {
 	public String search_id(){
 		return "./main/searchForm";
 	}
+	
+	
 	@RequestMapping("/search_password")
 	public String search_password(){
 		return "./main/searchForm2";

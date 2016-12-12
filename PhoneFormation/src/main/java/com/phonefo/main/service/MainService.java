@@ -3,6 +3,7 @@ package com.phonefo.main.service;
 import java.util.List;
 
 import com.phonefo.admin.domain.ClientVO;
+import com.phonefo.admin.domain.SlideVO;
 import com.phonefo.main.domain.MemberVO;
 
 public interface MainService {
@@ -39,6 +40,7 @@ public interface MainService {
 	public String selectpassword(MemberVO vo) throws Exception;
 	public void addVisit()throws Exception;
 	public List<ClientVO> getLogo()throws Exception;
+	public List<SlideVO> getSlide()throws Exception;
 	
 	
 	

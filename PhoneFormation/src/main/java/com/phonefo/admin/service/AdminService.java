@@ -10,6 +10,7 @@ import com.phonefo.admin.domain.AdminRepairVO;
 import com.phonefo.admin.domain.AdminRouteVO;
 import com.phonefo.admin.domain.ClientVO;
 import com.phonefo.admin.domain.SearchCriteria;
+import com.phonefo.admin.domain.SlideVO;
 
 public interface AdminService {
 
@@ -52,4 +53,6 @@ public interface AdminService {
 	public int todayVisit()throws Exception;
 	public void insertRepairPrice(AdminRepairVO vo)throws Exception;
 	public void insertLogo(ClientVO vo)throws Exception;
+	public void insertSlide(SlideVO vo)throws Exception;
+	public List<SlideVO> getSlide()throws Exception;
 }

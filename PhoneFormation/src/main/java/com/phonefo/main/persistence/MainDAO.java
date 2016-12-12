@@ -4,6 +4,7 @@ package com.phonefo.main.persistence;
 import java.util.List;
 
 import com.phonefo.admin.domain.ClientVO;
+import com.phonefo.admin.domain.SlideVO;
 import com.phonefo.main.domain.MemberVO;
 
 public interface MainDAO {
@@ -37,4 +38,5 @@ public interface MainDAO {
 	public void addVisit()throws Exception;
 	public int howBusiness()throws Exception;
 	public List<ClientVO> getLogo()throws Exception;
+	public List<SlideVO> getSlide()throws Exception;
 }

@@ -1,3 +1,7 @@
+select * from ph_slide
+update ph_slide set state=1, path='123'
+insert into ph_slide values(3,'/resources/upload/slide1.jpg')
+
 --------------------------------방문자수 테이블
 create table ph_visit(
 v_date date
@@ -22,7 +26,7 @@ nocycle;
 drop table ph_slide;
 create table ph_slide(
 	state number(2) primary key,
-	path varchar2(20)
+	path varchar2(500)
 )
 
 --관리자 돈 테이블 --
