@@ -66,8 +66,8 @@ public class BoardController {
 	public String inputpagePOST(HttpServletRequest request, MultipartFile file, BoardVO board, RedirectAttributes attr,
 			HttpSession session) throws Exception {
 
-		//board.setWriter((String) session.getAttribute("userid"));
-		board.setWriter("csa519");
+		board.setWriter((String) session.getAttribute("userid"));
+		//board.setWriter("csa519");
 		///여기서부터
 		board.setImage("");
 		String savedName = file.getOriginalFilename();
