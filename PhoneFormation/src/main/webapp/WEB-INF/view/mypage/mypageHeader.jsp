@@ -89,6 +89,7 @@ infoArea .list1{overflow:hidden;height:120px}
 .infoArea .list3 li strong{display:block;margin-top:10px;font-size:16px;line-height:22px;letter-spacing:-1px}
 .infoArea .list3 li.cp4{padding-left:40px}
 </style>
+
 </head>
 <body>
 			<div class="resultTop" style="margin-top: -2%">

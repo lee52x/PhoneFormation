@@ -406,7 +406,7 @@ function callTable(no,userid,username,tel,repair_price,request_message,bank_name
 								<td>${mypageRepair.machine}</td>
 								<td>${mypageRepair.repair_price}</td>
 								<td>${mypageRepair.username}</td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+								<td><fmt:formatDate pattern="yyyy-MM-dd"
 										value="${mypageRepair.rdate}" /></td>
 
 								<c:choose>
@@ -465,52 +465,48 @@ function callTable(no,userid,username,tel,repair_price,request_message,bank_name
 							상세 보기</td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">no</td>
+						<td style="text-align: center;" width="25%">번호</td>
 						<td><div id="no"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">userid</td>
+						<td style="text-align: center;" width="25%">아이디</td>
 						<td><div id="userid"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">username</td>
+						<td style="text-align: center;" width="25%">이름</td>
 						<td><div id="username"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">tel</td>
+						<td style="text-align: center;" width="25%">연락처</td>
 						<td><div id="tel"></div></td>
 					</tr>
 					
 					<tr>
-						<td style="text-align: center;" width="25%">repair_price</td>
+						<td style="text-align: center;" width="25%">금액</td>
 						<td><div id="repair_price"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">request_message</td>
+						<td style="text-align: center;" width="25%">참고사항</td>
 						<td><div id="request_message"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">bank_name</td>
+						<td style="text-align: center;" width="25%">은행명</td>
 						<td><div id="bank_name"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">account_number</td>
+						<td style="text-align: center;" width="25%">계좌번호</td>
 						<td><div id="account_number"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">rdate</td>
+						<td style="text-align: center;" width="25%">등록일</td>
 						<td><div id="rdate"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">state</td>
-						<td><div id="state"></div></td>
-					</tr>
-					<tr>
-						<td style="text-align: center;" width="25%">machine</td>
+						<td style="text-align: center;" width="25%">기기명</td>
 						<td><div id="machine"></div></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" width="25%">machineState</td>
+						<td style="text-align: center;" width="25%">상태</td>
 						<td><div id="machineState"></div></td>
 					</tr>
 

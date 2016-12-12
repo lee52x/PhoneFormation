@@ -39,19 +39,18 @@
 		<div class="box-body">
 					<table class="table table-bordered">
 						<tr>
-							<th>memberno</th>
-							<th>userid</th>
-							<th>username</th>
-							<th>birth</th>
-							<th>gender</th>
-							<th>email</th>
-							<th>rdate</th>
-							<th>tel</th>
-							<th>root</th>
-							<th>businessNum</th>
-							<th>companyName</th>
-							<th>leaderName</th>
-							<th>address</th>
+							<th>번호</th>
+							<th>아이디</th>
+							<th>이름</th>
+							<th>설립일자</th>
+							<th>성별</th>
+							<th>이메일</th>
+							<th>가입일자</th>
+							<th>연락처</th>
+							<th>사업자번호</th>
+							<th>회사명</th>
+							<th>대표명</th>
+							<th>주소</th>
 						
 						</tr>
 
@@ -64,10 +63,9 @@
 								<td>${member.birth}</td>
 								<td>${member.gender}</td>
 								<td>${member.email}</td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+								<td><fmt:formatDate pattern="yyyy-MM-dd"
 										value="${member.rdate}" /></td>
 								<td>${member.tel}</td>
-								<td>${member.root}</td>
 								<td>${member.businessNum}</td>
 								<td>${member.companyName}</td>
 								<td>${member.leaderName}</td>

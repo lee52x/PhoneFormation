@@ -23,17 +23,15 @@
 
 
 </style>
- <%
-	if (session.getAttribute("userid") == null || session.getAttribute("userid") =="") {
-		out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
-				+ "location.replace('/phonefo/login');" + "</script>");
-	}
-%>
+
 <%
 	request.setCharacterEncoding("UTF-8");
 %>
 
 <script type="text/javascript">
+
+
+
 function callTable(title,category,content,image){
 	$("#title").text(title);
 	$("#category").text(category);
@@ -56,7 +54,7 @@ function callAnsTable(answer,answer_regdate){
 
 }
 $(document).ready(function(){
-	
+
 $("#popup").hide();
 $("#popup2").hide();
 		$(function(){
@@ -96,13 +94,13 @@ $("#popup2").hide();
 	</colgroup>
 			<thead>
 				<tr id='mainindex_HeadTR' class="section">
-							<th>ono</th>
-							<th>userid</th>
-							<th>title</th>
-							<th>category</th>
+							<th>번호</th>
+							<th>아이디</th>
+							<th>제목</th>
+							<th>분류</th>
 
-							<th>image</th>
-							<th>regdate</th>
+							<th>이미지</th>
+							<th>등록일자</th>
 
 							<th>내용</th>
 							<th>답변</th>
