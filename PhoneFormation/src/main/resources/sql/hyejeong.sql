@@ -13,7 +13,7 @@ drop table spec_audio;
 drop table spec_service;
 
 drop sequence ph_phone_seq;
-
+select * from ph_phone;
 drop table ph_phone;
 
 create sequence ph_phone_seq
@@ -158,6 +158,9 @@ insert into ph_color values (18, '블랙', '/resources/images/phone/Galaxynote4_블
 insert into ph_color values (18, '골드', '/resources/images/phone/Galaxynote4_골드.png');
 insert into ph_color values (18, '핑크', '/resources/images/phone/Galaxynote4_핑크.png');
 insert into ph_color values (18, '레드', '/resources/images/phone/Galaxynote4_레드.png');
+insert into ph_color values (18, '골드1', '/resources/images/phone/Galaxynote4_골드.png');
+insert into ph_color values (18, '핑크2', '/resources/images/phone/Galaxynote4_핑크.png');
+insert into ph_color values (18, '레드3', '/resources/images/phone/Galaxynote4_레드.png');
 
 --apple
 insert into ph_color values (19, '로즈골드', '/resources/images/phone/iPhone7_로드골드.png');

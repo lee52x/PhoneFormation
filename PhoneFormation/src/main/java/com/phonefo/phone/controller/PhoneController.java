@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -50,7 +52,7 @@ public class PhoneController {
 	}
 	
 	@RequestMapping("/phoneInfo_spec")	//»ó¼¼º¸±â
-	public String phoneInfo_spec(Model model, int no)throws Exception{
+	public String phoneInfo_spec(Model model, @ModelAttribute("no")int no)throws Exception{
 		PhoneInfoVO phoneinfo= service.select_phone(no);
 		String image_path = phoneinfo.getImage();
 		model.addAttribute("image",image_path.substring(24));
@@ -68,6 +70,35 @@ public class PhoneController {
 		model.addAttribute("spec_audio", service.select_spec_audio(no));
 		model.addAttribute("spec_service", service.select_spec_service(no));
 		model.addAttribute("body", "./phone/phoneInfo_spec.jsp");
+		return "mainView";
+	}
+	
+	@RequestMapping(value="/include", method=RequestMethod.POST)	//ÀÔ·ÂÆû
+	public String include(Model model,int no)throws Exception{
+		System.out.println("¿¡aaaaa"+no);
+		model.addAttribute("list_color", service.select_color(no));
+		return "/phone/include";
+	}
+	
+	@RequestMapping(value="/modify", method=RequestMethod.GET)	//º¯°æÆû
+	public String modify(Model model, @ModelAttribute("no")int no)throws Exception{
+		PhoneInfoVO phoneinfo= service.select_phone(no);
+		String image_path = phoneinfo.getImage();
+		model.addAttribute("image",image_path.substring(24));
+		model.addAttribute("list_color", service.select_color(no));
+		model.addAttribute("list_capacity", service.select_capacity(no));
+		model.addAttribute("spec_Info", phoneinfo);
+		model.addAttribute("spec_processor", service.select_spec_processor(no));
+		model.addAttribute("spec_display", service.select_spec_display(no));
+		model.addAttribute("spec_camera", service.select_spec_camera(no));
+		model.addAttribute("spec_memory", service.select_spec_memory(no));
+		model.addAttribute("spec_network", service.select_spec_network(no));
+		model.addAttribute("spec_connect", service.select_spec_connect(no));
+		model.addAttribute("spec_specifications", service.select_spec_specifications(no));
+		model.addAttribute("spec_battery", service.select_spec_battery(no));
+		model.addAttribute("spec_audio", service.select_spec_audio(no));
+		model.addAttribute("spec_service", service.select_spec_service(no));
+		model.addAttribute("body", "./phone/modifyphone.jsp");
 		return "mainView";
 	}
 	@RequestMapping(value="/adminAdd", method=RequestMethod.GET)	//ÀÔ·ÂÆû

@@ -62,19 +62,17 @@
 </style>
 <script type="text/javascript">
 function capadel(capa_len){
-	alert(capa_len);
 	$('#capadiv'+capa_len).remove();
 }
 function imagedel(image_len){
-	alert(image_len);
 	$('#div_image'+image_len).empty();
 }
 
 $(document).ready(function(){
 		var capa_len = document.getElementsByName('release_price').length;
-		var image_len = document.getElementsByName('release_price').length;
+		var image_len = document.getElementsByName('colorname').length;
+		alert(image_len);
 		$('#capaadd').click(function(){	//가격,용량 추가
-			alert('여깄니?');
 			var str = 
 				"<tr id='capadiv"+capa_len+"'>"
 				+"<th>가격 (용량)</th><td><input type='text' name='release_price'> (<input type='text' name='capacity'>) <input type='button' class='del_price' onclick='capadel("+capa_len+")' value='삭제'></td>"
@@ -82,11 +80,43 @@ $(document).ready(function(){
 			$('#basic_info').append(str);
 			capa_len = capa_len+1;
 		});
-
+		$('#phoneimage_add').click(function(){	//가격,용량 추가
+			alert('그림추가?');
+			var str = 
+				"<div class='owl-item' style='width: 238px;'>"
+				+"<div class='portfolio-item item' id='div_image"+image_len+"'>"
+				+"<div class='portfolio-border'>"
+				+"<div class='portfolio-thumb'>"
+					+"<a class='lightbox' title='핑크' data-lightbox-type='ajax' href='/resources/images/phone/Galaxynote4_핑크.png'>"
+						+"<div class='thumb-overlay'> <i class='fa fa-arrows-alt'></i></div>"
+						+"<img class='img' id='color_image"+image_len+"' src='/resources/images/phone/Galaxynote4_핑크.png'>"
+					+"</a>"
+				+"</div>"
+				+"<div class='portfolio-details'>"
+						+"<input type='text' name='colorname' value='#' >"
+						+"<label for='"+image_len+"'>"
+							+"<div class='btn_image' >수정</div>"
+						+"</label>"
+						+"<input type='file' id='"+image_len+"' name='file' accept='.gif, .jpg, .png' style='display: none'	class='imgInp'>"
+						+"<input type='button' name='btnimg' id='imgdel"+image_len+"' value='삭제' onclick='imagedel("+image_len+")'>"
+				+"</div>"
+			+"</div>"
+			+"</div>"
+		+"</div>";
+		
+		image_len = image_len+1;
+		var width = image_len*452;
+		var minus_width= (4-image_len)*226;
+		alert(width);
+		$('.owl-wrapper').append(str);
+		$('.owl-wrapper').attr("style","width:"+width+"px; left: 0px; display: block; transform: translate3d("+minus_width+"px, 0px, 0px);");	
+			alert(image_len);
+		});
 		$('#btn_update').click(function(){
     	   	$('#phoneimage_add').attr('style','display:block;');
     	   	$("input:button[name='btnimg']").attr('style', 'display:block;');
-    	   	$("input:text[name='color']").attr('style', 'display:block;');
+    	   	$(".btn_image").attr('style', 'display:block;');
+    	   	$("input:text[name='colorname']").attr('style', 'display:block;');
     	   	$(".p_color").attr('style','display:none;');
     	   	$('.spec_show').attr('style','display:none;');
     	   	$('.spec_mod').attr('style','display:block;');
@@ -102,10 +132,19 @@ $(document).ready(function(){
 		});
 		
 	    $(".imgInp").change(function(){
-
-	       	readURL(this);
-	  
+	    	var image_no = $(this).attr("id");
+	   		alert(image_no);
+	    	readURL(this,image_no);
 	    });
+	    function readURL(input,no) {
+	        if (input.files && input.files[0]) {
+	            var reader = new FileReader();
+	            reader.onload = function (e) {
+	              $('#color_image'+no).attr('src', e.target.result);
+	             }                   
+	            reader.readAsDataURL(input.files[0]);
+	        }
+	   	}
 	});
 </script>
 </head>
@@ -116,7 +155,7 @@ $(document).ready(function(){
     <input type='button' id='phoneimage_add' value='사진 추가' style='display: none;'>
 	<center>
 		<h1 class="clasic-title"><span>${spec_Info.name }</span></h1>
-			<div class="projects-carousel touch-carousel"> <!-- 4개씩 보이기 -->
+			<div class="projects-carousel touch-carousel" id="image_info"> <!-- 4개씩 보이기 -->
 				<c:forEach items="${list_color }" var="list_color" varStatus="status">
 					<div class="portfolio-item item" id="div_image${status.index }">
 						<div class="portfolio-border">
@@ -129,11 +168,12 @@ $(document).ready(function(){
 							</div>
 							<div class="portfolio-details">
 									<p class="p_color" >${list_color.color}</p>
-									<input type='text' name="color" value='${list_color.color}' style='display:none;'>
-									<input type='button' name='btnimg' id='imgmod${status.index }' value='수정' style='display:none;'>
-									<label for="imgInp${status.index }">
-									<input type="file" id="imgInp${status.index }" name="file" accept=".gif, .jpg, .png" style="display: none"
-										value="${status.index}" class="imgInp"></label>
+									<input type='text' name="colorname" value='${list_color.color}' style='display:none;'>
+									<label for="${status.index }">
+										<div class="btn_image" style='display:none;'>수정</div>
+									</label>
+									<input type="file" id="${status.index }" name="file" accept=".gif, .jpg, .png" style="display: none"
+										class="imgInp">
 									<input type='button' name='btnimg' id='imgdel${status.index }' value='삭제' onclick="imagedel(${status.index})" style='display:none;'>
 							</div>
 						</div>
