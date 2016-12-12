@@ -44,57 +44,57 @@ public class PhoneInfoServiceImpl implements PhoneInfoService{
 	}
 
 	@Override
-	public List<spec_processorVO> select_spec_processor(int no) throws Exception {
+	public spec_processorVO select_spec_processor(int no) throws Exception {
 		return dao.select_spec_processor(no);
 	}
 
 	@Override
-	public List<spec_displayVO> select_spec_display(int no) throws Exception {
+	public spec_displayVO select_spec_display(int no) throws Exception {
 		return dao.select_spec_display(no);
 	}
 
 	@Override
-	public List<spec_cameraVO> select_spec_camera(int no) throws Exception {
+	public spec_cameraVO select_spec_camera(int no) throws Exception {
 		return dao.select_spec_camera(no);
 	}
 
 	@Override
-	public List<spec_memoryVO> select_spec_memory(int no) throws Exception {
+	public spec_memoryVO select_spec_memory(int no) throws Exception {
 		return dao.select_spec_memory(no);
 	}
 
 	@Override
-	public List<spec_networkVO> select_spec_network(int no) throws Exception {
+	public spec_networkVO select_spec_network(int no) throws Exception {
 		return dao.select_spec_network(no);
 	}
 
 	@Override
-	public List<spec_connectVO> select_spec_connect(int no) throws Exception {
+	public spec_connectVO select_spec_connect(int no) throws Exception {
 		return dao.select_spec_connect(no);
 	}
 
 	@Override
-	public List<spec_specificationsVO> select_spec_specifications(int no) throws Exception {
+	public spec_specificationsVO select_spec_specifications(int no) throws Exception {
 		return dao.select_spec_specifications(no);
 	}
 
 	@Override
-	public List<spec_batteryVO> select_spec_battery(int no) throws Exception {
+	public spec_batteryVO select_spec_battery(int no) throws Exception {
 		return dao.select_spec_battery(no);
 	}
 
 	@Override
-	public List<spec_audioVO> select_spec_audio(int no) throws Exception {
+	public spec_audioVO select_spec_audio(int no) throws Exception {
 		return dao.select_spec_audio(no);
 	}
 	
 	@Override
-	public List<spec_serviceVO> select_spec_service(int no) throws Exception {
+	public spec_serviceVO select_spec_service(int no) throws Exception {
 		return dao.select_spec_service(no);
 	}
 
 	@Override
-	public List<PhoneInfoVO> select_phone(int no) throws Exception {
+	public PhoneInfoVO select_phone(int no) throws Exception {
 		return dao.select_phone(no);
 	}
 
@@ -173,15 +173,15 @@ public class PhoneInfoServiceImpl implements PhoneInfoService{
 		dao.update_phone(phoneinfoVO);
 	}
 
-	@Override
-	public void update_color(PhoneColorVO phonecolorVO) throws Exception {
-		dao.update_color(phonecolorVO);
-	}
-
-	@Override
-	public void update_capacity(PhoneCapaVO phonecapaVO) throws Exception {
-		dao.update_capacity(phonecapaVO);
-	}
+//	@Override
+//	public void update_color(PhoneColorVO phonecolorVO) throws Exception {
+//		dao.update_color(phonecolorVO);
+//	}
+//
+//	@Override
+//	public void update_capacity(PhoneCapaVO phonecapaVO) throws Exception {
+//		dao.update_capacity(phonecapaVO);
+//	}
 
 	@Override
 	public void update_processor(spec_processorVO processorVO) throws Exception {
