@@ -1,3 +1,5 @@
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -68,174 +70,100 @@ table {
 
 </script>
 
+
 <body>
-<div class="container">
-<div class="slider-1_wrapper" style="margin: 1%;">
+    <!-- Start Home Page Slider -->
+    <section id="home">
+        <div class="slider-1_container">
+            <div class="slider-1_wrapper">
                 <div class="slider-1 revslider">
                     <ul>
                         <!-- THE FIRST SLIDE --> 
                         <li data-transition="fade" data-slotamount="5" data-masterspeed="300"> 
                             
                             <!-- THE MAIN BACKGROUND IMAGE IN THIS FIRST SLIDE --> 
-                            <img src="/resources/images/main/bgc.png" data-fullwidthcentering="on" alt="background"> 
+                            <img src="/resources/images/slider_1_bg.jpg" data-fullwidthcentering="on" alt="background"> 
                             
                             <!-- THE CAPTIONS/LAYERS IN THIS SLIDE -->
-                            <!-- 메인화면 슬라이드 -->
                             <div class="caption medium-700-black lfr" 
                                   data-x="58" 
-                                  data-y="150" 
+                                  data-y="138" 
                                   data-speed="300" 
                                   data-start="1600" 
-                                  data-easing="easeOutExpo">Welcome to<br>
-                                  	핸드폰의 모든 정보<br/>
+                                  data-easing="easeOutExpo">PhoneFomation에 오신걸 환영합니다. <br/>
+                               		 핸드폰의 모든 정보!!<br/>
                                		PhoneFormation이 알려드립니다</div>
                             <div class="caption small-600-black lfr" 
                                   data-x="58" 
-                                  data-y="250" 
-                                  data-speed="400" 
+                                  data-y="210" 
+                                  data-speed="300" 
                                   data-start="2000" 
-                                  data-easing="easeOutExpo">사고 싶은 핸드폰의 정보가 궁금해?<br/>
-                                	원하는 요금제, 바꾸고 싶은 요금제가 궁금해?<br/>
-                                	폰은 팔고 싶은데, 가격이 궁금해?<br>
-                               		당신이 원하는 정보를 phoneFormation에서 검색해 보세요</div>
-							<div class="caption lfl" 
-                                  data-x="850" 
-                                  data-y="30" 
-                                  data-speed="400" 
-                                  data-start="700"
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/S7Edge_T.png" alt="SAMSUNG & SKT" width="150px" /> </div>
+                                  data-easing="easeOutExpo"> <br/>
+                                 <br/>
+                                </div>
+                            <div class="caption randomrotate" 
+                                  data-x="170" 
+                                  data-y="250" 
+                                  data-speed="300" 
+                                  data-start="2400" 
+                                  data-easing="easeOutExpo"> <a href="#" class="btn-custom btn-medium">핸드폰 보러가기</a> </div>
+                            <div class="caption lfl" 
+                                  data-x="760" 
+                                  data-y="51" 
+                                  data-speed="300" 
+                                  data-start="1200" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/S7Edge_T.png" alt="browser" /> </div>
                             <div class="caption lfl" 
                                   data-x="660" 
-                                  data-y="80" 
-                                  data-speed="400" 
-                                  data-start="900" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/iPhone7_Olleh.png" alt="iPHone & Olleh" width="150px"/> </div>
+                                  data-y="100" 
+                                  data-speed="300" 
+                                  data-start="800" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/iPhone7_Olleh.png" alt="tablet" /> </div>
                             <div class="caption lfl" 
-                                  data-x="460" 
-                                  data-y="130" 
-                                  data-speed="400" 
-                                  data-start="1100" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/V20_U+.png" alt="LG & U+" width="150px" /> </div>
+                                  data-x="560" 
+                                  data-y="150" 
+                                  data-speed="300" 
+                                  data-start="400" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/V20_U+.png" alt="phone" /> </div>
                         </li>
                         
                         <!-- THE SECOND SLIDE --> 
-                        <!-- SANSUNG 슬라이드 -->
                         <li data-transition="papercut" data-slotamount="5" data-masterspeed="500" data-delay="9400"> 
                             
                             <!-- THE MAIN BACKGROUND IMAGE IN THIS FIRST SLIDE --> 
-                            <img src="/resources/images/main/bgc.png" data-fullwidthcentering="on" alt="background"> 
+                            <img src="images/slider_2_bg.jpg" data-fullwidthcentering="on" alt="background"> 
                             
                             <!-- THE CAPTIONS/LAYERS IN THIS SLIDE -->
                             <div class="caption medium-700-black lfr" 
-                                  data-x="650" 
+                                  data-x="625" 
                                   data-y="150" 
                                   data-speed="300" 
-                                  data-start="400"
-                                  data-easing="easeOutExpo">SAMSUNG<br/>
-                                	스마트폰을 원하세요?</div>
+                                  data-start="400" 
+                                  data-easing="easeOutExpo">EVERYTHING YOU NEED <br/>
+                                TO BUILD EXCEPTIONAL PROJECT. </div>
                             <div class="caption small-600-black lfr" 
-                                  data-x="650" 
+                                  data-x="625" 
                                   data-y="225" 
                                   data-speed="300" 
                                   data-start="800" 
-                                  data-easing="easeOutExpo">아래의 버튼을 눌러<br/>
-                                	나에게 맞는 스마트폰을 찾아보세요 <br>
-                                  	(갤럭시 J 시리즈, A 시리즈, 노트 시리즈, S 시리즈)</div>
+                                  data-easing="easeOutExpo">Venue is the best solution for your business, Responsive & <br/>
+                                Flexible, You can present your business and services <br/>
+                                properly. </div>
                             <div class="caption randomrotate" 
-                                  data-x="650" 
+                                  data-x="625" 
                                   data-y="300" 
                                   data-speed="300" 
                                   data-start="1200" 
-                                  data-easing="easeOutExpo"><a href="#" class="btn-custom btn-medium border-btn">SAMSUNG 스마트폰 보러가기</a> </div>
-                             <div class="caption lfl" 
-                                  data-x="170" 
-                                  data-y="40" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/j3.png" alt="J3" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="300" 
-                                  data-y="40" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/j5.png" alt="J5" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="430" 
-                                  data-y="40" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/j7.png" alt="J7" width="100px" /> </div>
-                              <div class="caption lfl" 
-                                  data-x="120" 
-                                  data-y="110" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/a3.png" alt="A3" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="240" 
-                                  data-y="110" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/a5.png" alt="A5" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="360" 
-                                  data-y="110" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/a7.png" alt="A7" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="480" 
-                                  data-y="110" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/a8.png" alt="A8" width="95px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="130" 
-                                  data-y="190" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/note4.png" alt="Note4" width="133px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="300" 
-                                  data-y="190" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/noteedge.png" alt="NoteEdge" width="133px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="440" 
-                                  data-y="190" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/note5.png" alt="Note5" width="125px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="80" 
-                                  data-y="240" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/s6.png" alt="S6" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="230" 
-                                  data-y="240" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/s6edge.png" alt="S6Edge" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="380" 
-                                  data-y="240" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/s7.png" alt="S7" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="520" 
-                                  data-y="240" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/s7edge.png" alt="S7Edge" width="100px" /> </div>
-                            
+                                  data-easing="easeOutExpo"><a href="#" class="btn-custom btn-medium border-btn">핸드폰 보러가기</a> </div>
+                            <div class="tp-caption sfl start" 
+                                  data-x="30" 
+                                  data-y="bottom" 
+                                  data-speed="1000" 
+                                  data-start="1000" 
+                                  data-easing="easeOutExpo"><img src="images/slider-3.png" alt="" /> </div>
                         </li>
                         
                         <!-- THE THIRD SLIDE --> 
-                        <!-- LG슬라이드 -->
                         <li data-transition="turnoff" data-slotamount="5" data-masterspeed="300"> 
                             
                             <!-- THE MAIN BACKGROUND IMAGE IN THIS FIRST SLIDE --> 
@@ -243,156 +171,88 @@ table {
                             
                             <!-- THE CAPTIONS/LAYERS IN THIS SLIDE -->
                             <div class="caption medium-700-black lfr" 
-                                  data-x="100" 
+                                  data-x="58" 
                                   data-y="138" 
                                   data-speed="300" 
                                   data-start="800" 
-                                  data-easing="easeOutExpo">LG<br/>
-                                	스마트폰은 어떠신가요?</div>
+                                  data-easing="easeOutExpo">Fully Responsive. Retina Display Ready. <br/>
+                                Touch Enabled Sliders. </div>
                             <div class="caption small-600-black lfr" 
-                                  data-x="100" 
+                                  data-x="58" 
                                   data-y="214" 
                                   data-speed="300" 
                                   data-start="1200" 
-                                  data-easing="easeOutExpo">아래의 버튼을 눌러<br/>
-                                	나에게 맞는 스마트폰을 찾아보세요 <br>
-                                  	(G 시리즈, V 시리즈)</div>
+                                  data-easing="easeOutExpo">Venue is the best solution for your business, Responsive & Flexible, <br/>
+                                You can present your business and services properly. </div>
                             <div class="caption randomrotate" 
-                                  data-x="100" 
-                                  data-y="280" 
+                                  data-x="58" 
+                                  data-y="275" 
                                   data-speed="300" 
                                   data-start="1600" 
-                                  data-easing="easeOutExpo"><a href="#" class="btn-custom btn-medium border-btn">LG 스마트폰 보러기기</a> </div>
-                            <div class="caption lfl" 
-                                  data-x="580" 
-                                  data-y="50" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/g3.png" alt="G3" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="710" 
-                                  data-y="50" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/g4.png" alt="G4" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="840" 
-                                  data-y="50" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/g3cat6.png" alt="G3Cat6" width="100px" /> </div>
-                              <div class="caption lfl" 
-                                  data-x="520" 
-                                  data-y="140" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/g3screen.png" alt="G3Screen" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="650" 
-                                  data-y="140" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/g5.png" alt="G5" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="770" 
-                                  data-y="140" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/g3a.png" alt="G3A" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="900" 
-                                  data-y="140" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/gstylo.png" alt="GStylo" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="580" 
-                                  data-y="200" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/v10.png" alt="V10" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="710" 
-                                  data-y="200" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/gflex2.png" alt="GFlex2" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="840" 
-                                  data-y="200" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/v20.png" alt="V20" width="100px" /> </div>
+                                  data-easing="easeOutExpo"><a href="#" class="btn-custom btn-medium border-btn">Explore More Features</a> </div>
+                            <div class="caption lfb" 
+                                  data-x="420" 
+                                  data-y="40" 
+                                  data-speed="300" 
+                                  data-start="400" 
+                                  data-easing="easeOutExpo"><img src="/resources/images/main/S7Edge_T.png" alt="tablet" /> </div>
                         </li>
+                        
                         <!-- THE FOURTH SLIDE --> 
                         <li data-transition="papercut" data-slotamount="7" data-masterspeed="300"> 
                             <!-- MAIN IMAGE --> 
-                            <img src="/resources/images/main/bgc.png" data-fullwidthcentering="on" alt="background"> 
+                            <img src="images/slider_4_bg.jpg" data-fullwidthcentering="on" alt="background"> 
                             
                             <!-- LAYER NR. 1 -->
                             <div class="caption medium-700-black lfr" 
-                                  data-x="700" 
+                                  data-x="540" 
                                   data-y="125" 
                                   data-speed="300" 
                                   data-start="1600" 
-                                  data-easing="easeOutExpo">iPhone<br>
-                                  	스마트폰도 있습니다</div>
+                                  data-easing="easeOutExpo"> <span class="accent-color">Solutions</span> that you need! <br>
+                                The best template to get you started </div>
                             
                             <!-- LAYER NR. 3 -->
                             <div class="caption small-600-black lfr" 
-                                  data-x="700" 
+                                  data-x="540" 
                                   data-y="200" 
                                   data-speed="300" 
                                   data-start="2000" 
-                                  data-easing="easeOutExpo">아래의 버튼을 눌러<br>
-                                  	나에게 맞는 스마트폰을 찾아보세요<br>
-                                  	(6 시리즈, 6s 시리즈, 7 시리즈, SE 시리즈)</div>
+                                  data-easing="easeOutExpo">Venue is best solution for your business, Responsive & Flexible, <br>
+                                You can present your business and services properly. </div>
                             
                             <!-- LAYER NR. 4 -->
                             <div class="tp-caption sfb start" 
-                                  data-x="700" 
+                                  data-x="540" 
                                   data-y="265" 
                                   data-speed="300" 
                                   data-start="2500" 
-                                  data-easing="easeOutExpo"><a href="#" class="btn-custom btn-medium border-btn">iPhone 보러기기</a> </div>
+                                  data-easing="easeOutExpo"><a href="#" class="btn-custom btn-medium border-btn">Purchase This Now</a> </div>
                             
                             <!-- LAYER NR. 5 -->
-                           
-                             <div class="caption lfl" 
-                                  data-x="280" 
-                                  data-y="50" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/iPhone7.png" alt="iPhone7" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="440" 
-                                  data-y="50" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/iPhone7Plus.png" alt="iPhone7Plus" width="100px" /> </div>
-                              <div class="caption lfl" 
-                                  data-x="210" 
-                                  data-y="150" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/iPhone6S.png" alt="iPhone6S" width="100px" /> </div>
-                             <div class="caption lfl" 
-                                  data-x="360" 
-                                  data-y="150" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/iPhone6Plus.png" alt="iPhone6Plus" width="100px" /> </div>
-                              <div class="caption lfl" 
-                                  data-x="500" 
-                                  data-y="150" 
-                                  data-speed="400" 
-                                  data-start="800" 
-                                  data-easing="easeOutExpo"><img src="/resources/images/main/iPhoneSE.png" alt="iPhoneSE" width="100px" /> </div>
+                            <div class="tp-caption sfl start" 
+                                  data-x="180" 
+                                  data-y="bottom" 
+                                  data-speed="1000" 
+                                  data-start="1000" 
+                                  data-easing="easeOutExpo"><img src="images/slide-02-image-01.png" alt="" /> </div>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div style="width: 21%; float: left;">
+        </div>
+    </section>
+    <!-- End Home Page Slider --> 
+
+    <!-- Start Content -->
+    <div id="content"> 
+        
+        <!-- Start Services Section -->
+        <div class="container"> 
+            <!-- Start Services Icons -->
+            <div class="row">
+                <div class="col-md-3"> 
+                                <div style="width: 21%; float: left;">
             <div style="border: 1px solid black; margin-left: 2%; margin-right:2%; margin-top:2%;margin-bottom:1.5%; text-align: center; vertical-align: middle;height: 100%;width: 100%">
             	<a href="#"><img alt="핸드폰 수리비" src="/resources/images/main/soori.png" height="100%;"></a>
             </div>
@@ -422,59 +282,441 @@ table {
         	<div>
             </div>
             </div>
-            <br><br>
-            <div class="container">
-            <div style="width: 48%;float: left; margin-left: 1%;">
-				<table style="width: 100%;">
-					<thead>
-						<tr>
-							<th colspan="2" style="font-size: 20px;">공지사항</th>
-							<th style="float: right;"><a href="#">더보기</a></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr id="head">
-							<th style="width: 20%; margin-left: 1px solid black; text-align: center;">글번호</th>
-							<th style="width: 60%">제목</th>
-							<th style="width: 20%;  text-align: center;">조회수</th>
-						</tr>
-					</tbody>
-					<tfoot>
-						<tr>
-						<td style="text-align: center;">1</td>
-						<td>공지사항</td>
-						<td style="text-align: center;">5</td>
-						</tr>
-					</tfoot>
-				</table>
-			</div>
-           <div style="width: 48%;float: left; margin-left: 1%;">
-				<table style="width: 100%;">
-					<thead>
-						<tr>
-							<th colspan="2" style="font-size: 20px;">자유게시판</th>
-							<th style="float: right;"><a href="#">더보기</a></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr id="head">
-							<th style="width: 20%; text-align: center;">글번호</th>
-							<th style="width: 60%">제목</th>
-							<th style="width: 20%; text-align: center;">조회수</tH>
-						</tr>
-					</tbody>
-					<tfoot>
-						<tr>
-						<td style="text-align: center;">1</td>
-						<td>자유게시판</td>
-						<td style="text-align: center;">3</td>
-						</tr>
-					</tfoot>
-				</table>
-			</div>
-			</div>
-            
 
+
+        	<div>
+            </div>
+            </div>
+                <!-- End Service Icon 6 --> 
+                
+            </div>
+            <!-- End Services Icons --> 
+        </div>
+        <!-- .container --> 
+        
+        <!-- End Services Section --> 
+        
+        <!-- Start Portfolio Section -->
+        <div class="project">
+            <div class="container"> 
+            
+                <!-- Start Recent Projects Carousel -->
+                <div class="recent-projects">
+                    <h4 class="title"><span>최신 핸드폰</span></h4>
+                    <div class="projects-carousel touch-carousel">
+                    
+                        <div class="portfolio-item item">
+                            <div class="portfolio-border">
+                                <div class="portfolio-thumb"> 
+                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_2@2x.jpg">
+                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                        <img alt="" src="/resources/images/phone/main_s7.jpg" /> 
+                                   </a> 
+                                </div>
+                                <div class="portfolio-details"> 
+                                   <a href="#">
+                                        <h4>SAMSUNG</h4>
+                                        <span>Galaxy S7</span>
+                                   </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-item item">
+                            <div class="portfolio-border">
+                                <div class="portfolio-thumb"> 
+                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_2@2x.jpg">
+                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                        <img alt="" src="/resources/images/phone/main_v20.jpg" /> 
+                                   </a> 
+                                </div>
+                                <div class="portfolio-details"> 
+                                   <a href="#">
+                                        <h4>LG</h4> 
+                                        <span>V20</span>
+                                   </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-item item">
+                            <div class="portfolio-border">
+                                <div class="portfolio-thumb"> 
+                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_3@2x.jpg">
+                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                        <img alt="" src="/resources/images/phone/main_ipse.jpg" /> 
+                                   </a> 
+                                </div>
+                                <div class="portfolio-details"> 
+                                   <a href="#">
+                                        <h4>Apple</h4>
+                                        <span>iPhoneSE</span> 
+                                   </a> 
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-item item">
+                            <div class="portfolio-border">
+                                <div class="portfolio-thumb"> 
+                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_4@2x.jpg">
+                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                        <img alt="" src="/resources/images/phone/main_s7edge.jpg" /> 
+                                   </a> 
+                                </div>
+                                <div class="portfolio-details"> 
+                                   <a href="#">
+                                        <h4>SAMSUNG</h4>
+                                        <span>Galaxy S7 edge</span> 
+                                   </a> 
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-item item">
+                            <div class="portfolio-border">
+                                <div class="portfolio-thumb"> 
+                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_5@2x.jpg">
+                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                        <img alt="" src="/resources/images/phone/main_v10.jpg" /> 
+                                   </a> 
+                                </div>
+                                <div class="portfolio-details"> 
+                                   <a href="#">
+                                        <h4>LG</h4> 
+                                        <span>V10</span> 
+                                   </a> 
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-item item">
+                            <div class="portfolio-border">
+                                <div class="portfolio-thumb"> 
+                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_6@2x.jpg">
+                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                        <img alt="" src="/resources/images/phone/main_ips6s.jpg" /> 
+                                   </a> 
+                                </div>
+                                <div class="portfolio-details"> 
+                                   <a href="#">
+                                        <h4>Apple</h4>
+                                        <span>iPhone 6S</span> 
+                                   </a> 
+                                </div>
+                            </div>
+                        </div>
+                        
+                     
+                        
+
+                        
+                    </div>
+                </div>
+                <!-- End Recent Projects Carousel --> 
+                
+            </div>
+            <!-- .container --> 
+        </div>
+        <!-- End Portfolio Section --> 
+        
+        <!-- Divider -->
+        <div class="hr1 margin-40"></div>
+        
+        <!-- Start News & Skill Section -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7"> 
+                
+                    <!-- Classic Heading -->
+                    <h4 class="classic-title"><span>최신 뉴스</span></h4>
+                    <div class="latest-news custom-carousel touch-carousel" data-appeared-items="2"> 
+                        
+                        <!-- Start Project Item -->
+                        <div class="portfolio-item item">
+                            <div class="portfolio-border"> 
+                                <!-- Start Project Thumb -->
+                                <div class="portfolio-thumb"> 
+                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_8@2x.jpg">
+                                       <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                        <img alt="" src="images/portfolio/8.jpg" /> 
+                                   </a>
+                                </div>
+                                <!-- End Project Thumb --> 
+                                <!-- Start Project Details -->
+                                <div class="portfolio-details">
+                                    <div class="latest-news"> 
+                                        <!-- Post 1 -->
+                                        <div class="post-row">
+                                            <div class="post-time-section">
+                                                <div class="post-date"> <span class="day">28</span></div>
+                                                <div class="post-month"> <span class="month">Dec</span> </div>
+                                            </div>
+                                            <h4 class="post-title">
+                                              <a href="#">Standard Post With Image</a> 
+                                            </h4>
+                                            <div class="post-content">
+                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Project Details --> 
+                            </div>
+                        </div>
+                        <!-- End Project Item --> 
+                        
+                        <!-- Start Project Item -->
+                        <div class="portfolio-item item">
+                            <div class="portfolio-border"> 
+                                <!-- Start Project Thumb -->
+                                <div class="portfolio-thumb"> 
+                                  <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_7@2x.jpg">
+                                     <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                       <img alt="" src="images/portfolio/7.jpg" /> 
+                                  </a> 
+                                </div>
+                                <!-- End Project Thumb --> 
+                                <!-- Start Project Details -->
+                                <div class="portfolio-details">
+                                    <div class="latest-news"> 
+                                        <!-- Post 1 -->
+                                        <div class="post-row">
+                                            <div class="post-time-section">
+                                                <div class="post-date"> <span class="day">28</span></div>
+                                                <div class="post-month"> <span class="month">Dec</span> </div>
+                                            </div>
+                                            <h4 class="post-title">
+                                               <a href="#">Standard Post With Image</a> 
+                                            </h4>
+                                            <div class="post-content">
+                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Project Details --> 
+                            </div>
+                        </div>
+                        <!-- End Project Item --> 
+                        
+                        <!-- Start Project Item -->
+                        <div class="portfolio-item item">
+                            <div class="portfolio-border"> 
+                                <!-- Start Project Thumb -->
+                                <div class="portfolio-thumb"> 
+                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_6@2x.jpg">
+                                      <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                        <img alt="" src="images/portfolio/6.jpg" /> 
+                                   </a> 
+                                </div>
+                                <!-- End Project Thumb --> 
+                                <!-- Start Project Details -->
+                                <div class="portfolio-details">
+                                    <div class="latest-news"> 
+                                        <!-- Post 1 -->
+                                        <div class="post-row">
+                                            <div class="post-time-section">
+                                                <div class="post-date"> <span class="day">28</span></div>
+                                                <div class="post-month"> <span class="month">Dec</span> </div>
+                                            </div>
+                                            <h4 class="post-title">
+                                              <a href="#">Standard Post With Image</a> 
+                                            </h4>
+                                            <div class="post-content">
+                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Project Details --> 
+                            </div>
+                        </div>
+                        <!-- End Project Item --> 
+                        
+                        <!-- Start Project Item -->
+                        <div class="portfolio-item item">
+                            <div class="portfolio-border"> 
+                                <!-- Start Project Thumb -->
+                                <div class="portfolio-thumb"> 
+                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_5@2x.jpg">
+                                      <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                        <img alt="" src="images/portfolio/5.jpg" /> 
+                                   </a>
+                                </div>
+                                <!-- End Project Thumb --> 
+                                <!-- Start Project Details -->
+                                <div class="portfolio-details">
+                                    <div class="latest-news"> 
+                                        <!-- Post 1 -->
+                                        <div class="post-row">
+                                            <div class="post-time-section">
+                                                <div class="post-date"> <span class="day">28</span></div>
+                                                <div class="post-month"> <span class="month">Dec</span> </div>
+                                            </div>
+                                            <h4 class="post-title">
+                                               <a href="#">Standard Post With Image</a> 
+                                            </h4>
+                                            <div class="post-content">
+                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Project Details --> 
+                            </div>
+                        </div>
+                        <!-- End Project Item --> 
+                        
+                        <!-- Start Project Item -->
+                        <div class="portfolio-item item">
+                            <div class="portfolio-border"> 
+                                <!-- Start Project Thumb -->
+                                <div class="portfolio-thumb"> 
+                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_4@2x.jpg">
+                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                        <img alt="" src="images/portfolio/4.jpg" /> 
+                                   </a> 
+                                </div>
+                                <!-- End Project Thumb --> 
+                                <!-- Start Project Details -->
+                                <div class="portfolio-details">
+                                    <div class="latest-news"> 
+                                        <!-- Post 1 -->
+                                        <div class="post-row">
+                                            <div class="post-time-section">
+                                                <div class="post-date"> <span class="day">28</span></div>
+                                                <div class="post-month"> <span class="month">Dec</span> </div>
+                                            </div>
+                                            <h4 class="post-title">
+                                               <a href="#">Standard Post With Image</a> 
+                                            </h4>
+                                            <div class="post-content">
+                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Project Details -->
+                            </div>
+                        </div>
+                        <!-- End Project Item --> 
+                        
+                        <!-- Start Project Item -->
+                        <div class="portfolio-item item">
+                            <div class="portfolio-border"> 
+                                <!-- Start Project Thumb -->
+                                <div class="portfolio-thumb"> 
+                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_3@2x.jpg">
+                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                        <img alt="" src="images/portfolio/3.jpg" /> 
+                                   </a> 
+                                </div>
+                                <!-- End Project Thumb --> 
+                                <!-- Start Project Details -->
+                                <div class="portfolio-details">
+                                    <div class="latest-news"> 
+                                        <!-- Post 1 -->
+                                        <div class="post-row">
+                                            <div class="post-time-section">
+                                                <div class="post-date"> <span class="day">28</span></div>
+                                                <div class="post-month"> <span class="month">Dec</span> </div>
+                                            </div>
+                                            <h4 class="post-title">
+                                              <a href="#">Standard Post With Image</a> 
+                                            </h4>
+                                            <div class="post-content">
+                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Project Details -->
+                            </div>
+                        </div>
+                        <!-- End Project Item --> 
+                    </div>
+                </div>
+                <!-- .col-md-6 -->
+                
+                <div class="col-md-5"> 
+                    
+                    <!-- Classic Heading -->
+                    <h4 class="classic-title"><span>통계</span></h4>
+                    <div class="progress-bars">
+                        <div class="progress-label">총 방문자(12432명)</div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="100"> <span class="progress-bar-tooltip">100</span> </div>
+                        </div>
+                        <div class="progress-label">등록된 업체수(52개)</div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="85" data-animation-delay="300"> <span class="progress-bar-tooltip">85%</span> </div>
+                        </div>
+                        <div class="progress-label">거래완료(1712건)</div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" data-progress-animation="75" data-animation-delay="600"> <span class="progress-bar-tooltip">75%</span> </div>
+                        </div>
+
+ 
+
+ 
+                    </div>
+                </div>
+                <!-- .col-md-6 --> 
+            </div>
+            <!-- .row --> 
+        </div>
+        <!-- .container --> 
+        <!-- End News & Skill Section --> 
+        
+        <!-- Divider -->
+        <div class="hr1 margin-top"></div>
+        
+        <!-- Start Clients/Partner Section -->
+        <div class="container">
+            <div class="our-clients"> 
+
+                <!-- Classic Heading -->
+                <h4 class="classic-title"><span>Our Clients</span></h4>
+                <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5"> 
+                    
+                    <!-- Client 1 -->
+                    <div class="client-item item"> <a href="#"><img src="/resources/images/main/our_sk.jpg" alt="" /></a> </div>
+                    
+                    <!-- Client 2 -->
+                    <div class="client-item item"> <a href="#"><img src="/resources/images/main/our_kt.jpg" alt="" /></a> </div>
+                    
+                    <!-- Client 3 -->
+                    <div class="client-item item"> <a href="#"><img src="/resources/images/main/our_lg.jpg" alt="" /></a> </div>
+                    
+                    <!-- Client 4 -->
+                    <div class="client-item item"> <a href="#"><img src="/resources/images/main/our_samsung.jpg" alt="" /></a> </div>
+                    
+                    <!-- Client 5 -->
+                    <div class="client-item item"> <a href="#"><img src="/resources/images/main/our_vo.jpg" alt="" /></a> </div>
+  
+                    <!-- Client 5 -->
+                    <div class="client-item item"> <a href="#"><img src="/resources/images/main/our_hello.jpg" alt="" /></a> </div>
+
+                    <!-- Client 5 -->
+                    <div class="client-item item"> <a href="#"><img src="/resources/images/main/our_apple.png" alt="" /></a> </div>
+
+                    <!-- Client 5 -->
+                    <div class="client-item item"> <a href="#"><img src="/resources/images/main/our_umob.jpg" alt="" /></a> </div>
+                    
+
+                    
+                  
+                    
+
+                </div>
+            </div>
+        </div>
+        <!-- .container --> 
+        <!-- End Clients/Partner Section --> 
+        
+    </div>
+    <!-- End Content --> 
   
 </body>
 </html>

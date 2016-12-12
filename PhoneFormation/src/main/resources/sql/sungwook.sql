@@ -338,3 +338,5 @@ insert into ph_capacity values (1, '32GB', 924000);
 			from (select sysdate sd from dual) sys, ph_visit ph 
 			where  to_char(ph.v_date,'YYYYMMDD')=to_char(sys.sd,'YYYYMMDD')
 			
+			select*from ph_repair
+			
