@@ -1,3 +1,22 @@
+--재현드랍
+drop table ph_reply;
+drop table ph_ono;
+drop table ph_boardgood;
+drop table ph_board;
+drop table ph_boardtype;
+
+--성욱드랍
+
+drop table ph_visit;
+drop table ph_admin;
+drop table purchase_request;
+drop table ph_quoteBoard;
+drop table ph_repair;
+drop table repair_request;
+drop table ph_repairBoard;
+
+
+--혜정
 drop table ph_color;
 drop table ph_capacity;
 
@@ -16,6 +35,12 @@ drop sequence ph_phone_seq;
 
 drop table ph_phone;
 
+--성욱드랍
+drop table ph_member;
+drop table ph_business;
+
+
+--폰 시퀀스
 create sequence ph_phone_seq
 	start with 1
 	increment by 1
@@ -25,7 +50,7 @@ create sequence ph_phone_seq
 --핸드폰 정보, 핸드폰명, 핸드폰사진, 제조사명, 출고일
 create table ph_phone(
 	no number primary key,
-	name varchar2(100) ,
+	name varchar2(100) unique,
 	image LONG not null,
 	manufacture varchar2(15) not null,
 	release_date varchar2(30) not null
@@ -82,7 +107,7 @@ create table ph_color( --핸드폰 색상
 select no, color, image from ph_color ;
 --samsung
 
-update ph_color as t set no = (select no+1 from ph_color tt where t.no=tt.no );
+
 insert into ph_color values (1, '화이트펄', '/resources/images/phone/GalaxyS7edge_화이트펄.png');
 insert into ph_color values (1, '블루코랄', '/resources/images/phone/GalaxyS7edge_블루코랄.png');
 insert into ph_color values (1, '블랙오닉스', '/resources/images/phone/GalaxyS7edge_블랙오닉스.png');
@@ -229,8 +254,7 @@ insert into ph_color values (33, '문바이올렛', '/resources/images/phone/G3Cat6_�
 insert into ph_color values (34, '메탈릭블랙', '/resources/images/phone/G3_메탈릭블랙.png');
 insert into ph_color values (34, '실크화이트', '/resources/images/phone/G3_실크화이트.png');
 insert into ph_color values (34, '샤인골드', '/resources/images/phone/G3_샤인골드.png');
-update ph_color
-	set no = no+1;
+
 create table ph_capacity( --핸드폰 용량
 	no number,
 	capacity varchar2(15) not null,
@@ -294,8 +318,7 @@ insert into ph_capacity values (31, '32GB', 550000);
 insert into ph_capacity values (32, '32GB', 451000);
 insert into ph_capacity values (33, '32GB', 649000);
 insert into ph_capacity values (34, '32GB', 499400);
-update ph_capacity
-	set no = no+1;
+
 --스펙
 
 --프로세서
@@ -334,8 +357,7 @@ insert into spec_processor values(31, '1.5GHz Quad + 1.2GHz Quad', 'Nuclun Octa-
 insert into spec_processor values(32, '2.3GHz Quad Core', '퀄컴 스냅드래곤 800');
 insert into spec_processor values(33, '2.7GHz Quad Core', '퀄컴 스냅드래곤 805');
 insert into spec_processor values(34, '2.5GHz Quad Core', '퀄컴 스냅드래곤 801');
-update spec_processor
-	set no = no+1;
+
 --디스플레이
 create table spec_display(
 	no number primary key,
@@ -381,8 +403,7 @@ insert into spec_display values (31,'152mm','Full HD IPS LCD','', '', '');
 insert into spec_display values (32,'132.2mm','1920 X 1080 (Full HD IPS 디스플레이)','', '', '');
 insert into spec_display values (33,'138.78mm','2560x1440 (Quad HD IPS 디스플레이)','', '', '');
 insert into spec_display values (34,'138.78mm','2560x1440 (Quad HD IPS 디스플레이)','', '', '');
-update spec_display
-	set no = no+1;
+
 --카메라
 create table spec_camera(
 	no number primary key,
@@ -445,8 +466,7 @@ insert into spec_camera values (31,'','1300만화소','','210만화소','','예', '예',
 insert into spec_camera values (32,'','1300만화소','','210만화소','','예', '예', '');
 insert into spec_camera values (33,'','1300만화소','','210만화소','','예', '예', '');
 insert into spec_camera values (34,'','1300만화소','','210만화소','','예', '예', '');
-update spec_camera
-	set no = no+1;
+
 --메모리
 create table spec_memory(
 	no number primary key,
@@ -485,8 +505,7 @@ insert into spec_memory values (31,'2GB','32GB','','MicroSD slot 지원');
 insert into spec_memory values (32,'2GB','32GB','','MicroSD slot 지원');
 insert into spec_memory values (33,'3GB','32GB','','MicroSD slot 지원');
 insert into spec_memory values (34,'3GB','32GB','','MicroSD slot 지원');
-update spec_memory
-	set no = no+1;
+
 --네트워크
 create table spec_network(
 	no number primary key,
@@ -523,8 +542,7 @@ insert into spec_network values (21,'A9 칩(64비트 아키텍처)<br>M9 모션 보조 프로
 insert into spec_network values (22,'A9 칩(64비트 아키텍처)<br>M9 모션 보조 프로세서 내장','GSM/EDGE(850, 900, 1800, 1900MHz)','UMTS/HSPA+/DC-HSDPA(850, 900, 1700/2100, 1900, 2100MHz) ','TD-LTE(대역 38, 39, 40, 41) ','FDD-LTE(대역 1, 2, 3, 4, 5, 7, 8, 12, 13, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30) ','TD-LTE(대역 38, 39, 40, 41) ');
 insert into spec_network values (23,'A9 칩(64비트 아키텍처)<br>M9 모션 보조 프로세서 내장','GSM/EDGE(850, 900, 1800, 1900MHz)','UMTS/HSPA+/DC-HSDPA(850, 900, 1700/2100, 1900, 2100MHz) ','TD-LTE(대역 38, 39, 40, 41) ','FDD-LTE(대역 1, 2, 3, 4, 5, 7, 8, 12, 13, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30) ','TD-LTE(대역 38, 39, 40, 41) ');
 insert into spec_network values (24,'A9 칩(64비트 아키텍처)<br>M9 모션 보조 프로세서 내장','GSM/EDGE(850, 900, 1800, 1900MHz)','UMTS/HSPA+/DC-HSDPA(850, 900, 1700/2100, 1900, 2100MHz) ','TD-LTE(대역 38, 39, 40, 41) ','FDD-LTE(대역 1, 2, 3, 4, 5, 7, 8, 12, 13, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30) ','TD-LTE(대역 38, 39, 40, 41) ');
-update spec_network
-	set no = no+1;
+
 --연결
 create table spec_connect(
 	no number primary key,
@@ -576,8 +594,7 @@ insert into spec_connect values (31,'','','예','','','','예','예','예','','');
 insert into spec_connect values (32,'','','예','','','','예','예','예','','');
 insert into spec_connect values (33,'','','예','','','','예','예','예','','');
 insert into spec_connect values (34,'','','예','','','','예','예','예','','');
-update spec_connect
-	set no = no+1;
+
 --운영체제, 기본사양, 센서, 외관사양
 create table spec_specifications(
 	no number primary key,
@@ -624,8 +641,7 @@ insert into spec_specifications values (31,'Android', '화이트, 블랙','터치 정전�
 insert into spec_specifications values (32,'Android', '티탄, 화이트','터치 정전식','141 x 71.6 x 9.8','146.8','');
 insert into spec_specifications values (33,'Android', '티탄, 화이트','터치 정전식','146.3 x 74.6 x 9.1','154','');
 insert into spec_specifications values (34,'Android', '메탈릭 블랙, 실크 화이트, 샤인 골드','터치 정전식','146.3 x 74.6 x 8.95','151','');
-update spec_specifications
-	set no = no+1;
+
 --배터리
 create table spec_battery(
 	no number primary key,
@@ -675,8 +691,7 @@ insert into spec_battery values (31,'','','','','3000 X 2(착탈식)','','','','최�
 insert into spec_battery values (32,'','','','','2610 (착탈식)','','','','최대12');
 insert into spec_battery values (33,'','','','','3000 (착탈식)','','','','최대17');
 insert into spec_battery values (34,'','','','','3000 (착탈식)','','','','최대17');
-update spec_battery
-	set no = no+1;
+
 --오디오/비디오
 create table spec_audio(
 	no number primary key,
@@ -758,8 +773,7 @@ Dolby Digital Plus(E-AC-3), Audible(포맷 2, 3, 4, Audible Enhanced Audio, AAX, A
 True Tone 플래시<br> 슬로 모션 동영상 지원(1080p는 초당 120 프레임, 720p는 초당 240 프레임)<br> 타임랩스 동영상(동영상 흔들림 보정 포함)<br> 시네마틱 동영상 흔들림 보정(1080p 및 720p)<br> 
 연속 오토포커스 동영상<br> 노이즈 감소<br> 4K 동영상 촬영 중 800만 화소 사진 촬영<br> 재생 중 줌<br> 3배 디지털 줌<br> 얼굴 인식<br> 동영상 위치 표시 기능','v500만 화소 사진<br> 720p HD 동영상 촬영<br> Retina Flash<br> 
 f/2.2 조리개<br> 사진 및 동영상을 위한 자동 HDR<br> 후면 조명 센서<br> 노출 조절<br> 고속 연사 모드<br> 타이머 모드<br> 얼굴 인식');
-update spec_audio
-	set no = no+1;
+
 --서비스
 create table spec_service(
 	no number primary key,
@@ -805,5 +819,423 @@ insert into spec_service values (31,'','','예','','');
 insert into spec_service values (32,'','','예','','');
 insert into spec_service values (33,'','','예','','');
 insert into spec_service values (34,'','','예','','');
-update spec_service
-	set no = no+1;
+
+
+--성욱
+
+create table ph_visit(
+v_date date
+);
+
+--관리자 돈 테이블 --
+
+create table ph_admin(
+num number(5) primary key,
+money number(20),
+rdate date,
+state number(5)
+);
+
+--관리자 돈 테이블 시퀀스--
+drop sequence ph_admin_seq;
+create sequence ph_admin_seq
+start with 1
+increment by 1
+nocache
+nocycle;
+
+--회원 테이블의 부모 --
+create table ph_business(
+businessNum varchar(50) primary key,
+companyName varchar(50),
+leaderName varchar(50),
+address varchar(50),
+cash number(20) default 1000000
+);
+
+--회원 테이블--
+create table ph_member(
+memberno number(10) primary key,
+userid varchar2(50) unique,
+userpwd varchar2(50) ,
+username varchar2(50),
+birth varchar2(50),
+gender varchar2(10),
+email varchar2(50),
+rdate Date ,
+tel varchar2(50),
+root number(20),
+businessNum varchar(50),
+foreign key(businessNum)  references ph_business(businessNum)
+);
+
+--멤버시퀀스--
+drop sequence ph_member_seq;
+create sequence ph_member_seq
+start with 1
+increment by 1
+nocache
+nocycle;
+
+--quote게시판 테이블 --
+
+create table ph_quoteBoard(
+	no number(10) primary key,
+	userid varchar2(50),
+	username varchar2(50),
+	tel varchar2(50),
+	quote_price number(10),
+	request_message varchar2(1000),
+	bank_name varchar2(50),
+	account_number varchar2(50),
+	rdate date,
+	power varchar2(50),
+	glass varchar2(50),
+	equipment varchar2(50),
+	state number(10) default 0,
+	manufacture varchar2(50),
+	machine varchar2(50),
+	capacity varchar2(50),
+	howsend varchar2(50),
+	address varchar2(50)
+);
+ALTER TABLE ph_quoteBoard ADD constraint ph_quoteBoardforeign_fk foreign key(userid) references ph_member(userid) on delete cascade;
+
+--quote 시퀀스 --
+drop sequence ph_quoteBoard_seq;
+create sequence ph_quoteBoard_seq
+	start with 1
+	increment by 1 
+	nocache
+	nocycle;
+	
+--중고매입  테이블---
+	create table purchase_request(
+		purchaseNum number(2) primary key,
+		userid varchar2(50),  
+		no number(10),
+		state number(5),
+		completeId varchar2(50) default '없음'
+	);
+ALTER TABLE purchase_request ADD constraint purchase_requestforeign_fk foreign key(no) references ph_quoteBoard(no) on delete cascade;
+
+	
+---중고매입 시퀀스---
+	drop sequence purchase_request_seq;
+	create sequence purchase_request_seq
+	start with 1
+	increment by 1 
+	nocache
+	nocycle;
+
+--수리테이블--
+
+create table ph_repair(
+	name varchar2(100),
+	glass number(10),
+	backcover number(10),
+	crome number(10),
+	pan number(10),
+	scratch number(10),
+	powerbutton number(10),
+	homebutton number(10),
+	sound number(10),
+	camera number(10),
+	wifi number(10),
+	charge number(10),
+	battery number(10),
+	sensor number(10),
+	afterimage number(10),
+	lcd number(10)
+);
+ALTER TABLE ph_repair ADD constraint ph_repairforeign_fk foreign key(name) references ph_phone(name) on delete cascade;
+
+ --수리게시판 테이블--
+ create table ph_repairBoard(
+ 	no number(10) primary key,
+	userid varchar2(50),
+	username varchar2(50),
+	tel varchar2(50),
+	repair_price number(10),
+	request_message varchar2(1000),
+	bank_name varchar2(50),
+	account_number varchar2(50),
+	rdate date,
+	state number(10) default 0,
+	machine varchar2(50),
+	machineState varchar2(200),
+	howsend varchar2(50),
+	address varchar2(50)
+ );
+ ALTER TABLE ph_repairBoard ADD constraint ph_repairBoardforeign_fk foreign key(userid) references ph_member(userid) on delete cascade;
+
+--수리게시판 시퀀스--
+drop sequence ph_repairBoard_seq;
+create sequence ph_repairBoard_seq
+	start with 1
+	increment by 1 
+	nocache
+	nocycle;
+ 
+ 
+--수리매입  테이블---
+	create table repair_request(
+		repairNum number(2) primary key,
+		userid varchar2(50),  
+		no number(10),
+		state number(5)
+	);
+ ALTER TABLE repair_request ADD constraint repair_requestforeign_fk foreign key(no) references ph_repairBoard(no) on delete cascade;
+
+--수리매입 시퀀스---
+	drop sequence repair_request_seq;
+	create sequence repair_request_seq
+	start with 1
+	increment by 1 
+	nocache
+	nocycle;
+	
+	
+	
+--재현 boardsql
+
+
+create table ph_boardtype(
+	tno number primary key,
+	title varchar2(50) not null
+);
+
+create table ph_board(
+   bno number primary key,
+   tno number,
+   title varchar2(200) not null,
+   content varchar2(1000) not null,
+   image varchar2(200),
+   replycnt number default 0,
+   writer varchar2(50),
+   regdate date default sysdate,
+   viewcnt number default 0,
+   goodcnt number default 0
+);
+ALTER TABLE ph_board ADD constraint ph_boardtnoforeign_fk foreign key(tno) references ph_boardtype(tno) on delete cascade;
+ALTER TABLE ph_board ADD constraint ph_boardforeign_fk foreign key(writer) references ph_member(userid) on delete cascade;
+
+create table ph_boardgood(
+bno number,
+userid varchar2(50),
+primary key(bno,userid)
+);
+ALTER TABLE ph_boardgood ADD constraint ph_boardgoodbnoforeign_fk foreign key(bno) references ph_board(bno) on delete cascade;
+ALTER TABLE ph_boardgood ADD constraint ph_boardgoodforeign_fk foreign key(userid) references ph_member(userid) on delete cascade;
+
+drop sequence ph_boardgood_seq;
+create sequence ph_boardgood_seq
+   start with 1
+   increment by 1 
+   nocache
+   nocycle;
+
+
+create table ph_ono(
+ono number primary key,
+userid varchar2(50),
+title varchar2(100)	not null,
+category varchar2(30) not null,
+content varchar2(100) not null,
+image varchar2(500),
+regdate date default sysdate,
+answer varchar2(100),
+answer_regdate date
+);
+ALTER TABLE ph_ono ADD constraint ph_onoforeign_fk foreign key(userid) references ph_member(userid) on delete cascade;
+
+drop sequence ph_ono_seq;
+create sequence ph_ono_seq
+   start with 1
+   increment by 1 
+   nocache
+   nocycle;
+   
+drop sequence ph_boardtype_seq;
+create sequence ph_boardtype_seq
+   start with 1
+   increment by 1 
+   nocache
+   nocycle;
+
+create table ph_reply(
+   rno         number primary key,
+   bno        number,
+   replytext   varchar2(1000) not null,
+   replyer      varchar2(50) not null,
+   regdate     date default sysdate
+);
+ALTER TABLE ph_reply ADD constraint ph_replybnoforeign_fk foreign key(bno) references ph_board(bno) on delete cascade;
+ALTER TABLE ph_reply ADD constraint ph_replyforeign_fk foreign key(replyer) references ph_member(userid) on delete cascade;
+
+
+drop sequence ph_board_seq;
+create sequence ph_board_seq
+   start with 1
+   increment by 1 
+   nocache
+   nocycle;
+
+drop sequence ph_reply_seq;
+create sequence ph_reply_seq
+	start with 1
+	increment by 1 
+	nocache
+	nocycle;
+
+insert into ph_boardtype values (1,'KT 이벤트');
+insert into ph_boardtype values (2,'LGU+ 이벤트');
+insert into ph_boardtype values (3,'SKT 이벤트');
+
+insert into ph_boardtype values (4,'공지사항');
+insert into ph_boardtype values (5,'자유게시판');
+
+
+
+
+-- 종환 요금제 테이플
+drop table skt_pay;
+drop table skt_band_yt;
+drop table lg_pay;
+drop table kt_pay;
+-- SKT 테이블
+
+create table skt_pay(
+payment varchar2(50) primary key,
+data varchar2(10),
+extra_data varchar2(40) default '해당사항 없음',
+call varchar2(70),
+sms varchar2(50),
+fixed_month number,
+fixed_month_dis number,
+fares_month number,
+fares_24month number,
+discount number
+);
+
+
+
+-- SKT band YT 추가 옵션
+
+create table skt_band_yt(
+data_option1 varchar2(70),
+data_option2 varchar2(70),
+data_option3 varchar2(70),
+contents_sale varchar2(20),
+Partnership_sale varchar2(50)
+);
+
+INSERT INTO skt_band_yt VALUES('선택1 -캠퍼스 데이터 무제한*', '선택2 - 매일 6시간 데이터 무제한*', '선택3 - 안심옵션 중 택 1 *일 1GB 이후 속도제한', '50% 할인', '파리바게뜨 T페이 결제시 할인율 2배');
+INSERT INTO skt_band_yt VALUES('선택1 -캠퍼스 데이터 무제한*', '선택2 - 매일 6시간 데이터 무제한*', '선택3 - 안심옵션 중 택 1 *일 1GB 이후 속도제한', '무료', '파리바게뜨 T페이 결제시 할인율 2배');
+
+
+-- LG 테이블
+
+create table lg_pay(
+payment varchar2(50) primary key,
+data varchar2(50),
+extra_data varchar2(40)	default '해당사항 없음',
+call varchar2(70),
+sms varchar2(50),
+fixed_month number,
+fares_month number,
+fares_24month number,
+discount number
+);
+
+-- KT 테이블
+
+create table kt_pay(
+payment varchar2(50) primary key,
+data varchar2(50),
+extra_data varchar2(80) default '해당사항 없음',
+call varchar2(70),
+sms varchar2(50),
+fixed_month number,
+fares_month number,
+fares_24month number,
+discount number
+);
+--SKT 요금제 INSERT
+INSERT INTO SKT_PAY VALUES('T 시그니처 Master', '35GB',  '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한', '기본제공', 110000, 110000, 22000, 528000, 88000);
+INSERT INTO SKT_PAY VALUES('T 시그니처 Classic', '20GB', '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한', '기본제공', 88000, 88000, 17600,	422400,	70400);
+INSERT INTO SKT_PAY VALUES('band YT 퍼펙트', '12GB', '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한 / 영상 및 부가 300분', '기본제공', 71000, 71000,	14200, 340800,	56800);
+INSERT INTO SKT_PAY VALUES('band YT 7G', '7G', '(데이터 옵션 추가 제공 )',  '집전화, 이동전화 무제한 / 영상 및 부가 300분', '기본제공', 62000, 62000, 12400, 297600, 49600);
+INSERT INTO SKT_PAY VALUES('band YT 3G', '3G', '(데이터 옵션 추가 제공 )', '집전화, 이동전화 무제한', '기본제공', 52000, 52000, 10400, 249600, 41600);
+INSERT INTO SKT_PAY VALUES('band YT 1G', '1G', '(데이터 옵션 추가 제공 )', '집전화, 이동전화 무제한', '기본제공', 42000, 42000, 8400,	201600,	33600);
+INSERT INTO SKT_PAY VALUES('band YT 세이브', '500MB', '(데이터 옵션 추가 제공 )', '집전화, 이동전화 무제한', '기본제공', 38000, 38000, 7600, 182400, 30400);
+INSERT INTO SKT_PAY VALUES('band 데이터 퍼펙트S', '16GB', '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한 / 영상 및 부가 300분', '기본제공', 75000, 75000, 15180, 364320, 59820);
+INSERT INTO SKT_PAY VALUES('band 데이터 퍼펙트', '11GB', '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한 / 영상 및 부가 300분', '기본제공', 65890, 65890, 13200, 316800, 52690);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('band 데이터 6.5G',	'6.5GB', '집전화, 이동전화 무제한 / 영상 및 부가 300분', '기본제공', 56100, 56100, 11220, 269280, 44880);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('band 데이터 3.5G', '3.5GB', '집전화, 이동전화 무제한 / 영상 및 부가 50분', '기본제공', 51700, 51700, 10340, 248160, 41360);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('band 데이터 2.2G', '2.3GB', '집전화, 이동전화 무제한 / 영상 및 부가 50분', '기본제공', 46200, 46200,	9240,	221760,	36960);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('band 데이터 1.2G', '1.2GB', '집전화, 이동전화 무제한 / 영상 및 부가 50분', '기본제공', 39600, 39600, 7920, 190080, 31680);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('band 데이터 세이브', '300MB', '집전화, 이동전화 무제한', '기본제공', 32890, 32890, 6600, 158400, 26290);
+INSERT INTO SKT_PAY VALUES('전국민 무한 100', '16GB', '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한 /영상 및 부가 300분', '기본제공', 110000, 83600, 16720, 401280, 66880);
+INSERT INTO SKT_PAY VALUES('전국민 무한 85', '12GB', '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한 /영상 및 부가 300분', '기본제공', 93500, 71500, 14300, 343200, 57200);
+INSERT INTO SKT_PAY VALUES('LTE 데이터 무제한 80팩', '8GB', '매일 2GB 이후 속도 제어', '집전화, 이동전화 무제한 /영상 및 부가 300분', '기본제공',88000, 67375, 12375, 297000, 55000);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('전국민 무한 75', '8GB', '집전화, 이동전화 무제한 / 영상 및 부가 300분', '기본제공', 82500, 61875, 12375 , 297000, 49500);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('전국민 무한 69', '5GB', '집전화, 이동전화 무제한 / 영상 및 부가 200분', '기본제공', 75900, 56650, 11330, 271920, 45320);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('T끼리 65', '5GB', 'SKT 고객간 무제한 그 외 280분' , '기본제공', 71500, 53075, 10615, 254760, 42460);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('T끼리 55', '2GB', 'SKT 고객간 무제한 그 외 180분', '기본제공', 60500, 44825, 8965, 215160, 35860);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('T끼리 45', '1.1GB', 'SKT 고객간 무제한 그 외 130분', '기본제공',49500,  37125, 7425, 178200, 29700);
+INSERT INTO SKT_PAY (payment, data, call, sms, fixed_month, fixed_month_dis, fares_month, fares_24month, discount) VALUES('T끼리 35', '550MB', 'SKT 고객간 무제한 그 외 80분', '기본제공', 38500, 30580, 6160, 147840, 24420);
+
+
+
+
+-- LG 요금제 테이블
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('데이터 일반', '300MB', '유무선기본제공', '기본제공', 32890, 6578, 157872, 26312);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('데이터 1.3', '1.3GB', '유무선기본제공', '기본제공', 39490, 7898, 189552, 31592);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('데이터 2.3', '2.3GB', '유무선기본제공', '기본제공', 46090, 9218, 221232, 36872);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('데이터 3.6', '3.6GB', '유무선기본제공', '기본제공', 51590, 10318, 247632, 41272);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('데이터 6.6', '6.6GB', '유무선기본제공', '기본제공', 55990, 11198, 268752, 44792);
+INSERT INTO LG_PAY VALUES('데이터 스폐셜A', '11GB', '매일 2GB 이후 속도 제어', '유무선기본제공', '기본제공', 65890, 13178, 316272, 52712);
+INSERT INTO LG_PAY VALUES('데이터 스폐셜B', '11GB', '매일 2GB 이후 속도 제어', '유무선기본제공', '기본제공', 74800, 14960, 359040, 59840);
+INSERT INTO LG_PAY VALUES('데이터 스폐셜C', '20GB', '매일 2GB 이후 속도 제어', '유무선기본제공', '기본제공', 88000, 17600, 422400, 70400);
+INSERT INTO LG_PAY VALUES('데이터 스폐셜D', '35GB', '매일 2GB 이후 속도 제어', '유무선기본제공', '기본제공', 110000, 22000, 528000, 88000);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 망내 34', '750MB', '망내 무제한 (그외 115분)', '기본제공', 37400, 5940, 142560, 31460);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 망내 42', '1.4GB', '망내 무제한 (그외 148분)',  '기본제공', 46200, 6930, 166320, 39270);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 망내 52', '2.1GB', '망내 무제한 (그외 205분)', '기본제공', 57200, 8470, 203280, 48730);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 34', '750MB', '160분', '200건', 37400, 5940, 142560, 31460);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 42', '1.5GB', '200분', '200건', 46200, 6930, 166320, 39270);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 52', '2.6GB', '250분', '250', 57200, 8470, 203280, 48730);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 62', '6GB', '350분', '350건', 68200, 9680, 232320, 58520);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 72', '10GB', '500분', '450건', 79200, 11440, 274560, 67760);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 85', '14GB', '750분', '650건', 93500, 13860, 332640, 79640);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 100', '20GB', '1200분', '1000건', 110000, 16720, 401280, 93280);
+INSERT INTO LG_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount)  VALUES('LTE 120', '24GB', '1500분', '1000건', 132000, 21120, 506880, 110880);
+
+
+
+
+-- KT 요금제 테이블
+INSERT INTO KT_PAY VALUES('순 완전무한99(LTE)', '25GB', '매일 2GB 이후 속도 제어', '집 / 이동전화 무제한 (음성 / 부가 200분)', '기본제공', 108900, 21780, 522720, 87120);
+INSERT INTO KT_PAY VALUES('순 완전무한77(LTE)', '17GB', '매일 2GB 이후 속도 제어', '집 / 이동전화 무제한 (음성 / 부가 200분)', '기본제공', 84700, 16940, 406560, 67760);
+INSERT INTO KT_PAY VALUES('순 완전무한67(LTE)', '12GB', '매일 2GB 이후 속도 제어', '집 / 이동전화 무제한 (음성 / 부가 200분)', '기본제공', 73700, 14740, 353760, 58960);
+INSERT INTO KT_PAY VALUES('순 완전무한61(LTE)', '10GB', '매일 2GB 이후 속도 제어', '집 / 이동전화 무제한 (음성 / 부가 200분)', '기본제공', 67100, 13420, 322080, 53680);
+INSERT INTO KT_PAY VALUES('순 완전무한51(LTE)', '5GB', '매일 2GB 이후 속도 제어', '집 / 이동전화 무제한 (음성 / 부가 200분)', '기본제공', 56100, 11220, 269280, 44880);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('순 모두다올레41(LTE)', '2.5GB', 'KT 모바일끼리 무제한 + 망외 250분', '기본제공', 45100, 9020, 216480, 36080);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('순 모두다올레34(LTE)', '1.5GB', 'KT 모바일끼리 무제한 + 망외 185분', '기본제공', 37400, 7480, 179520, 29920);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('순 모두다올레28(LTE)', '750MB', 'KT 모바일끼리 무제한 + 망외 130분', '기본제공', 30800, 6160, 147840, 24640);
+INSERT INTO KT_PAY VALUES('Y틴 38', '4700MB', '최대 400Kbps 속도제어', '매일 10시간(45056알)', '200건/일', 38390, 7700, 184800, 30690);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('Y틴 32', '3600MB', '매일 10시간(45056알)', '200건/일', 32890, 6600, 158400, 26290);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('Y틴 27', '2000MB', '매일 10시간(45056알)', '200건/일', 27390, 5500, 132000, 21890);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('Y틴 20', '1400MB', '매일 10시간(45056알)', '200건/일', 20900, 4180, 100320, 16720);
+INSERT INTO KT_PAY VALUES('Y24 65.8', '10GB', '일2GB 최대 3Mbps속도제어', '집 / 이동전화 무제한 (영상 / 부가 200분)', '기본제공', 65890, 13200, 316800, 52690);
+INSERT INTO KT_PAY VALUES('Y24 54.8', '6GB', '매일 3시간 데이터 무제한 (속도제어) / 밀당', '집 / 이동전화 무제한 (영상 / 부가 30분)', '기본제공', 54890, 11000, 264000, 43890);
+INSERT INTO KT_PAY VALUES('Y24 49.3', '3GB', '매일 3시간 데이터 무제한 (속도제어) / 밀당', '집 / 이동전화 무제한 (영상 / 부가 30분)', '기본제공', 49390, 9900, 237600, 39490);
+INSERT INTO KT_PAY VALUES('Y24 43.8', '2GB', '매일 3시간 데이터 무제한 (속도제어) / 밀당', '집 / 이동전화 무제한 (영상 / 부가 30분)', '기본제공', 43890, 8800, 211200, 35090);
+INSERT INTO KT_PAY VALUES('Y24 38.3', '1GB', '매일 3시간 데이터 무제한 (속도제어) / 밀당', '집 / 이동전화 무제한 (영상 / 부가 30분)', '기본제공', 38390, 7700, 184800, 30690);
+INSERT INTO KT_PAY VALUES('Y24 32.8', '300MB', '매일 3시간 데이터 무제한 (속도제어) / 밀당', '집 / 이동전화 무제한 (영상 / 부가 30분)', '기본제공', 32890, 6600, 158400, 26290);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('LTE-알520', '2.5GB', '62000알', '기본제공', 41800, 8360, 200640, 33440);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('LTE-알420', '1.5GB', '52000알', '20000알', 34100, 6820, 163680, 27280);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('LTE-알340', '750MB', '34000알', '20000알', 29700, 5940, 142560, 23760);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('LTE-알240', '500MB', '28000알', '20000알', 25300, 5060, 121440, 20240);
+INSERT INTO KT_PAY (payment, data, call, sms, fixed_month, fares_month, fares_24month, discount) VALUES('LTE-알190', '300MB', '20000알', '20000알', 20900, 4180, 100320, 16720);
+
