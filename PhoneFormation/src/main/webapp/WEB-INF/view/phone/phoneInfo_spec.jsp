@@ -521,7 +521,7 @@ $(document).ready(function(){
 				<c:if test="${!empty spec_specifications.form }">
 					<tr>
 						<th>형태</th><td class='spec_show'>${spec_specifications.form }</td>
-										<td class='spec_show'><input type='text' name='form' value='${spec_specifications.form }'></td>
+										<td class='spec_mod'><input type='text' name='form' value='${spec_specifications.form }'></td>
 					</tr>
 				</c:if>
 				<c:if test="${!empty spec_specifications.phone_size }">
