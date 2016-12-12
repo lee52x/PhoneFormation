@@ -14,6 +14,8 @@ drop table ph_quoteBoard;
 drop table ph_repair;
 drop table repair_request;
 drop table ph_repairBoard;
+drop table ph_client;
+drop table ph_slide;
 
 
 --혜정
@@ -822,6 +824,28 @@ insert into spec_service values (34,'','','예','','');
 
 
 --성욱
+create table ph_client(
+num number(10) primary key,
+path varchar2(300)
+);
+
+drop sequence ph_client_seq;
+create sequence ph_client_seq
+start with 1
+increment by 1
+nocache
+nocycle;
+
+insert into ph_client values(ph_client_seq.nextval,'/resources/our_sam');
+
+
+--메인슬라이드 테이블
+
+create table ph_slide(
+state number(2) primary key,
+path varchar2(20)
+);
+
 
 create table ph_visit(
 v_date date
