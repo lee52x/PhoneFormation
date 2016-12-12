@@ -176,7 +176,7 @@ function check() {
 															<tr>
 																<th><h3>기기명선택</h3></th>
 																<td><h3>
-																		<select style="width: 350px;" id="machine">
+																		<select style="width: 350px;" id="machine" name="name">
 																			<option>기기명 선택</option>
 
 																		</select>
@@ -313,20 +313,18 @@ function check() {
 																			placeholder="숫자" title="LCD" />
 																	</h3>
 															</tr>
-															
-															<tr>
-															<th>
-															<button type="button" onclick="check()">
-															<img alt="" src="/resources/images/join/join5.JPG">
-															</button>
-															</th>
-															</tr>
+
 
 
 														
 														
 														</tbody>
 													</table>
+													<br>
+													
+													<button type="button"  onclick="check()" class="btn btn-primary" style="width: 520px;height: 50px;"  >
+															수리금액 등록			
+												</button>
 												</div>
 											</div>
 										</div>

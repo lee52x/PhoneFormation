@@ -199,7 +199,7 @@
 	
 	
 	<insert id="insertRepairPrice">
-		insert into ph_repair values(#{name},#{glass},#{backover},
+		insert into ph_repair values(#{name},#{glass},#{backcover},
 									#{crome},#{pan},#{scratch},#{powerbutton},
 									#{homebutton},#{sound},#{camera},#{wifi},
 									#{charge},#{battery},#{sensor},#{afterimage},#{lcd})

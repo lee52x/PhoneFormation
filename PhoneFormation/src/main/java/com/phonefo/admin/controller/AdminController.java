@@ -131,7 +131,7 @@ public class AdminController {
 			return "mainView";
 		}
 		
-		@RequestMapping(value="/adminRepairInsert", method=RequestMethod.GET)
+		@RequestMapping(value="/adminRepair", method=RequestMethod.GET)
 		public String adminRepairGET(Model model,AdminRepairVO vo)throws Exception{
 
 			
@@ -140,14 +140,16 @@ public class AdminController {
 			return "mainView";
 		}
 		
-//		@RequestMapping(value="/adminRepairInsert" ,method=RequestMethod.POST)
-//		public String adminRepairPOST(Model model,AdminRepairVO vo,String machine)throws Exception{
-//			
-//			vo.setName(machine);
-//			service.insertRepairPrice(vo);
-//			
-//			model.addAttribute("body", "./admin/adminRepairInsert.jsp");
-//			
-//			return "mainView";
-//		}
+		@RequestMapping(value="/adminRepairInsert" ,method=RequestMethod.POST)
+		public String adminRepairPOST(Model model,AdminRepairVO vo)throws Exception{
+			
+
+			System.out.println("¿Ã∏ß¿∫?"+vo.getName());
+			System.out.println(vo);
+			service.insertRepairPrice(vo);
+			
+			model.addAttribute("body", "./admin/adminRepairInsert.jsp");
+			
+			return "mainView";
+		}
 }
