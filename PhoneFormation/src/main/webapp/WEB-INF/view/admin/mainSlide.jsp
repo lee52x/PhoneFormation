@@ -6,13 +6,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-
-<script type="text/javascript">
-function slideup1(){
-	document.frm1.submit();
-}
-</script>
 <body>
+<script type="text/javascript">
+$(document).ready(function(){
+	var f=document.frm1;
+	$('#bt1').click(function(){
+		alert('누름?');
+		f.submit();
+	});
+});
+</script>
 <div class="container">
 		<div id="content">
 			<div>
@@ -44,7 +47,7 @@ function slideup1(){
 
 												<h3>1.첫번째 슬라이드<input type="file" name="file"></h3>
 													<br>
-														<button type="button" onclick="slideup1()" class="btn btn-primary" style="width: 520px;height: 50px;"  >
+														<button type="button" id="bt1" class="btn btn-primary" style="width: 520px;height: 50px;"  >
 															슬라이드 등록			
 												</button>
 												<hr>
@@ -53,7 +56,8 @@ function slideup1(){
 										
 										
 										
-									
+										
+									<form action="/phonefo/mainSlideUpdate" name="frm2"  enctype="multipart/form-data" method="post" >
 
 										<!--// 회원가입폼 -->
 
@@ -64,12 +68,12 @@ function slideup1(){
 												</button>
 												<hr>
 													<input type="hidden" value="2" name="state">
-							
+										</form>
 										
 										
 										
 										
-									
+									<form action="/phonefo/mainSlideUpdate" name="frm3"  enctype="multipart/form-data" method="post" >
 
 										<!--// 회원가입폼 -->
 
@@ -81,6 +85,7 @@ function slideup1(){
 												</button>
 													<input type="hidden" value="3" name="state">
 												<hr>
+										</form>
 											<!-- 	<h3>2.두번째 슬라이드<input type="file"></h3>
 													<br>
 														<button type="button"  onclick="check()" class="btn btn-primary" style="width: 520px;height: 50px;"  >

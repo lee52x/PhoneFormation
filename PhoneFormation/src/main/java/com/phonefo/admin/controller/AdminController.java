@@ -171,11 +171,10 @@ public class AdminController {
 		
 		@RequestMapping(value="/mainSlideUpdate", method=RequestMethod.POST)
 		public String mainSlide(HttpServletRequest request, MultipartFile file, RedirectAttributes attr,
-				HttpSession session,int state)throws Exception{
+				HttpSession session,SlideVO vo)throws Exception{
 			
 			///여기서부터
-			SlideVO vo=new SlideVO();
-			vo.setPath("");
+			vo=new SlideVO();
 			String filename = file.getOriginalFilename();
 			System.out.println("파일="+filename);
 			if (filename != "") {
@@ -183,7 +182,7 @@ public class AdminController {
 			    File target = new File(uploadpath, filename);
 				FileCopyUtils.copy(file.getBytes(), target);
 
-				vo.setPath("/resources/slide/" + filename);
+				vo.setFile("/resources/slide/" + filename);
 			}
 			System.out.println(vo);
 			

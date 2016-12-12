@@ -2,7 +2,7 @@ package com.phonefo.admin.domain;
 
 public class SlideVO {
 	private int state;
-	private String path;
+	private String file;
 	
 	
 	
@@ -13,16 +13,21 @@ public class SlideVO {
 	public void setState(int state) {
 		this.state = state;
 	}
-	public String getPath() {
-		return path;
+	
+	public String getFile() {
+		return file;
 	}
-	public void setPath(String path) {
-		this.path = path;
+	public void setFile(String file) {
+		this.file = file;
 	}
 	@Override
 	public String toString() {
-		return "SlideVO [state=" + state + ", path=" + path + "]";
+		return "SlideVO [state=" + state + ", file=" + file + "]";
 	}
+
+	
+	
+	
 	
 	
 	
