@@ -2,6 +2,7 @@ package com.phonefo.board.controller;
 
 import java.io.File;
 import java.util.List;
+import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -36,11 +37,10 @@ public class BoardController {
 
 	@RequestMapping("/boardlist")
 	public String listPage(@ModelAttribute("cri") SearchCriteria cri, Model model,HttpSession session) throws Exception {
-		System.out.println(session.getAttribute("userid"));	
+
 		model.addAttribute("list", service.selectlist(cri));
 		List<BoardVO> vo=service.selectlist(cri);
-		for(int i=0; i< vo.size();i++)
-			System.out.println("="+vo.get(i).getImage());
+
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.setTotalCount(service.listCount(cri.getTno()));
@@ -66,12 +66,15 @@ public class BoardController {
 	public String inputpagePOST(HttpServletRequest request, MultipartFile file, BoardVO board, RedirectAttributes attr,
 			HttpSession session) throws Exception {
 
-		board.setWriter((String) session.getAttribute("userid"));
+		//board.setWriter((String) session.getAttribute("userid"));
+		board.setWriter("csa519");
 		///여기서부터
 		board.setImage("");
 		String savedName = file.getOriginalFilename();
 		if (savedName != "") {
-			String uploadpath = request.getSession().getServletContext().getRealPath("/resources/upload");
+			UUID uid = UUID.randomUUID();      
+		    savedName = uid.toString()+"_"+savedName;
+		    String uploadpath = request.getSession().getServletContext().getRealPath("/resources/upload");
 			File target = new File(uploadpath, savedName);
 			FileCopyUtils.copy(file.getBytes(), target);
 
@@ -122,6 +125,8 @@ public class BoardController {
 			RedirectAttributes attr) throws Exception {
 		String savedName = file.getOriginalFilename();
 		if (savedName != "") {
+			UUID uid = UUID.randomUUID();      
+		    savedName = uid.toString()+"_"+savedName;
 			String uploadpath = request.getSession().getServletContext().getRealPath("/resources/upload");
 			File target = new File(uploadpath, savedName);
 			FileCopyUtils.copy(file.getBytes(), target);
