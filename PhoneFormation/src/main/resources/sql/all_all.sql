@@ -836,17 +836,16 @@ increment by 1
 nocache
 nocycle;
 
-insert into ph_client values(ph_client_seq.nextval,'/resources/our_sam');
-
-
 --메인슬라이드 테이블
 
 create table ph_slide(
 state number(2) primary key,
-path varchar2(20)
+path varchar2(500)
 );
 
-
+insert into ph_slide values(1,'/resources/slider_1_bg.jpg');
+insert into ph_slide values(2,'/resources/slider_1_bg.jpg');
+insert into ph_slide values(3,'/resources/slider_1_bg.jpg');
 create table ph_visit(
 v_date date
 );
