@@ -169,7 +169,7 @@ public class PhoneController {
    }
    
    @RequestMapping(value="/adminUpdate", method=RequestMethod.POST)
-   public String adminUpdatePost(String[] colorname, String[] capacity, int[] release_price, Model model,  HttpServletRequest request, MultipartFile file, PhoneInfoVO phoneinfoVO,
+   public String adminUpdatePost(int[] color_cno,int[] capacity_cno,String[] colorname, String[] capacity, int[] release_price, Model model,  HttpServletRequest request, MultipartFile file, PhoneInfoVO phoneinfoVO,
          PhoneCapaVO phonecapaVO, PhoneColorVO phonecolorVO, spec_audioVO audioVO, spec_batteryVO batteryVO, spec_cameraVO cameraVO,
          spec_connectVO connectVO, spec_displayVO displayVO, spec_memoryVO memoryVO, spec_networkVO networkVO, 
          spec_processorVO processorVO,   spec_serviceVO serviceVO, spec_specificationsVO specificationsVO,RedirectAttributes attr)throws Exception{
@@ -180,21 +180,20 @@ public class PhoneController {
       for (int i = 0; i < capacity.length; i++) {
          phonecapaVO.setCapacity(capacity[i]);
          phonecapaVO.setRelease_price(release_price[i]);
-         service.delete_capacity(phonecapaVO.getNo());
-         service.insert_capacity(phonecapaVO);
-      }
+         phonecapaVO.setCno(capacity_cno[i]);
+         service.update_capacity(phonecapaVO);
+       }
       int i;
       for (i = 0; i < files.size()-1; i++) {
     	  String savedName = files.get(i).getOriginalFilename();
-    	  System.out.println("파일이름:"+savedName);
 			if (savedName != "") {
 				String uploadpath = request.getSession().getServletContext().getRealPath("/resources/images/phone");
 				File target = new File(uploadpath, savedName);
 				FileCopyUtils.copy(files.get(i).getBytes(), target);
 				phonecolorVO.setImage("/resources/images/phone/" + savedName);
-				phonecolorVO.setColor(colorname[i - 1]);
-				service.delete_color(phonecolorVO.getNo());
-				service.insert_color(phonecolorVO);
+				phonecolorVO.setColor(colorname[i]);
+				phonecolorVO.setCno(color_cno[i]);
+				service.update_color(phonecolorVO);
 			}
       }
 		String savedName = files.get(i).getOriginalFilename();
@@ -205,6 +204,8 @@ public class PhoneController {
 			phoneinfoVO.setImage("/resources/images/phone/" + savedName);
 			service.update_phone(phoneinfoVO);
 		}
+		System.out.println(audioVO);
+		System.out.println(batteryVO);
       service.update_audio(audioVO);
       service.update_battery(batteryVO);
       service.update_camera(cameraVO);

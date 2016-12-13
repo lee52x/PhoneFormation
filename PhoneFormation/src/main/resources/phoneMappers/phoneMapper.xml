@@ -109,8 +109,8 @@
 	</insert>
 	<insert id="insert_camera">
 		insert into
-		spec_camera(no, video_resoluation, maincamera_pixel, maincamera_aperture, frontcamera_pixel, frontcamera_aperture, maincamera_flash, maincamera_autofocus, camera_detail)
-		values(#{no}, #{video_resoluation}, #{maincamera_pixel}, #{maincamera_aperture}, #{frontcamera_pixel}, #{frontcamera_aperture} ,#{maincamera_flash}, #{maincamera_autofocus}, #{camera_detail})
+		spec_camera(no, camera_resoluation, maincamera_pixel, maincamera_aperture, frontcamera_pixel, frontcamera_aperture, maincamera_flash, maincamera_autofocus, camera_detail)
+		values(#{no}, #{camera_resoluation}, #{maincamera_pixel}, #{maincamera_aperture}, #{frontcamera_pixel}, #{frontcamera_aperture} ,#{maincamera_flash}, #{maincamera_autofocus}, #{camera_detail})
 	</insert>
 	<insert id="insert_memory">
 		insert into
@@ -175,7 +175,7 @@
 		where no=#{no}
 	</update>
 	<update id="update_camera">
-		update spec_camera set video_resoluation=#{video_resoluation},  maincamera_pixel=#{maincamera_pixel},  maincamera_aperture=#{maincamera_aperture},  frontcamera_pixel=#{frontcamera_pixel},  frontcamera_aperture=#{frontcamera_aperture},  maincamera_flash=#{maincamera_flash},  maincamera_autofocus=#{maincamera_autofocus},  camera_detail=#{camera_detail} 
+		update spec_camera set camera_resoluation=#{camera_resoluation},  maincamera_pixel=#{maincamera_pixel},  maincamera_aperture=#{maincamera_aperture},  frontcamera_pixel=#{frontcamera_pixel},  frontcamera_aperture=#{frontcamera_aperture},  maincamera_flash=#{maincamera_flash},  maincamera_autofocus=#{maincamera_autofocus},  camera_detail=#{camera_detail} 
 		where no=#{no}
 	</update>
 	<update id="update_memory">

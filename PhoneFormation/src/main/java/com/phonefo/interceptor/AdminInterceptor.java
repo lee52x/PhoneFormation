@@ -16,7 +16,7 @@ public class AdminInterceptor extends HandlerInterceptorAdapter{
 	         System.out.println("贸府 皋家靛 bean : " + method.getBean());
 	         System.out.println("贸府 皋家靛 method : " + method.getMethod());
 	         String userid = (String) request.getSession().getAttribute("userid");
-	         if(userid.endsWith("admin")) return true;
+	         if("admin".equals(userid)) return true;
 	         else{
 	            response.sendRedirect("/phonefo/main");
 	            return false;

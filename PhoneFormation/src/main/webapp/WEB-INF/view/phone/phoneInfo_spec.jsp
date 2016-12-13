@@ -143,6 +143,7 @@ $(document).ready(function(){
                            <input type="file" id="${status.index }" name="file" accept=".gif, .jpg, .png" style="display: none"
                               class="imgInp">
                            <input type='button' name='btnimg' id='imgdel${status.index }' value='삭제' onclick="imagedel(${status.index})" style='display:none;'>
+                     		<input type="hidden" name="color_cno" value="${list_color.cno}">
                      </div>
                   </div>
                </div>
@@ -194,6 +195,7 @@ $(document).ready(function(){
                            </c:if>
                            </td>
                      </tr>
+                     <input type="hidden" name="capacity_cno" value="${list_capacity.cno}">
                </c:forEach>
          </table>
       </div>
@@ -258,10 +260,10 @@ $(document).ready(function(){
       <div class="spec_div">
          <h3>카메라</h3>
          <table>
-            <c:if test="${!empty spec_camera.video_resoluation}">
+            <c:if test="${!empty spec_camera.camera_resoluation}">
                <tr>
-                  <th>동영상 녹화 해상도</th><td class='spec_show'>${spec_camera.video_resoluation }</td>
-                                    <td class='spec_mod'><input type='text' name='video_resoluation' value='${spec_camera.video_resoluation }'></td>
+                  <th>동영상 녹화 해상도</th><td class='spec_show'>${spec_camera.camera_resoluation }</td>
+                                    <td class='spec_mod'><input type='text' name='camera_resoluation' value='${spec_camera.camera_resoluation }'></td>
                </tr>
             </c:if>
             <c:if test="${!empty spec_camera.maincamera_pixel}">

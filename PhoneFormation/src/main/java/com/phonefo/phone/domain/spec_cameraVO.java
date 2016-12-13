@@ -2,7 +2,7 @@ package com.phonefo.phone.domain;
 
 public class spec_cameraVO {
 	private int no;
-	private String video_resoluation;
+	private String camera_resoluation;
 	private String maincamera_pixel;
 	private String maincamera_aperture;
 	private String frontcamera_pixel;
@@ -27,12 +27,7 @@ public class spec_cameraVO {
 	public void setNo(int no) {
 		this.no = no;
 	}
-	public String getVideo_resoluation() {
-		return video_resoluation;
-	}
-	public void setVideo_resoluation(String video_resoluation) {
-		this.video_resoluation = video_resoluation;
-	}
+
 	public String getMaincamera_pixel() {
 		return maincamera_pixel;
 	}
@@ -71,11 +66,19 @@ public class spec_cameraVO {
 	}
 	@Override
 	public String toString() {
-		return "spec_cameraVO [no=" + no + ", video_resoluation=" + video_resoluation + ", maincamera_pixel="
+		return "spec_cameraVO [no=" + no + ", camera_resoluation=" + camera_resoluation + ", maincamera_pixel="
 				+ maincamera_pixel + ", maincamera_aperture=" + maincamera_aperture + ", frontcamera_pixel="
 				+ frontcamera_pixel + ", frontcamera_aperture=" + frontcamera_aperture + ", maincamera_flash="
 				+ maincamera_flash + ", maincamera_autofocus=" + maincamera_autofocus + ", camera_detail="
 				+ camera_detail + "]";
+	}
+
+	public String getCamera_resoluation() {
+		return camera_resoluation;
+	}
+
+	public void setCamera_resoluation(String camera_resoluation) {
+		this.camera_resoluation = camera_resoluation;
 	}
 	
 	

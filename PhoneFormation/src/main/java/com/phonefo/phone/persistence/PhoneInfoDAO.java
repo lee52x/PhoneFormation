@@ -48,8 +48,8 @@ public interface PhoneInfoDAO {
 	public void insert_audio(spec_audioVO audioVO)throws Exception;
 	public void insert_service(spec_serviceVO serviceVO)throws Exception;
 	public void update_phone(PhoneInfoVO phoneinfoVO)throws Exception;
-//	public void update_color(PhoneColorVO phonecolorVO)throws Exception;
-//	public void update_capacity(PhoneCapaVO phonecapaVO)throws Exception;
+	public void update_color(PhoneColorVO phonecolorVO)throws Exception;
+	public void update_capacity(PhoneCapaVO phonecapaVO)throws Exception;
 	public void update_processor(spec_processorVO processorVO)throws Exception;
 	public void update_display(spec_displayVO displayVO)throws Exception;
 	public void update_camera(spec_cameraVO cameraVO)throws Exception;
@@ -61,8 +61,8 @@ public interface PhoneInfoDAO {
 	public void update_audio(spec_audioVO audioVO)throws Exception;
 	public void update_service(spec_serviceVO serviceVO)throws Exception;
 	public void delete_phone(int no)throws Exception;
-	public void delete_color(int no)throws Exception;
-	public void delete_capacity(int no)throws Exception;
+	public void delete_color(int cno)throws Exception;
+	public void delete_capacity(int cno)throws Exception;
 	public void delete_processor(int no)throws Exception;
 	public void delete_display(int no)throws Exception;
 	public void delete_camera(int no)throws Exception;

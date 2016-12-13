@@ -40,7 +40,6 @@
 	<beans:bean id="sampleIntercepter" class="com.phonefo.interceptor.SampleInterceptor" />
 	<interceptors>
 		<interceptor>
-			<mapping path="/phonefo/adm" />
 			<mapping path="/phonefo/mypageMain" />
 			<mapping path="/phonefo/mypageUpdate" />
 			<mapping path="/phonefo/mypageOno" />
@@ -59,9 +58,6 @@
 	<beans:bean id="AdminInterceptor" class="com.phonefo.interceptor.AdminInterceptor" />
 	<interceptors>
 		<interceptor>
-			<mapping path="/phonefo/adm" />
-			<mapping path="/phonefo/mypageMain" />
-			<mapping path="/phonefo/mypageUpdate" />
 			<mapping path="/phonefo/adminMember" />
 			<mapping path="/phonefo/adminB_Member" />
 			<mapping path="/phonefo/adminOno" />

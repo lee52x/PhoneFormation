@@ -13,7 +13,6 @@ drop table spec_audio;
 drop table spec_service;
 
 drop sequence ph_phone_seq;
-select * from ph_phone;
 drop table ph_phone;
 
 create sequence ph_phone_seq
@@ -394,7 +393,7 @@ insert into spec_display values (34,'138.78mm','2560x1440 (Quad HD IPS 디스플레�
 --카메라
 create table spec_camera(
 	no number primary key,
-	video_resoluation varchar2(50),
+	camera_resoluation varchar2(50),
 	maincamera_pixel varchar2(100),
 	maincamera_aperture varchar2(100),
 	frontcamera_pixel varchar2(50),
