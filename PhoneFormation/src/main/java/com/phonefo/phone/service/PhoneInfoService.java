@@ -72,4 +72,5 @@ public interface PhoneInfoService {
 	public void delete_battery(int no)throws Exception;
 	public void delete_audio(int no)throws Exception;
 	public void delete_service(int no)throws Exception;
+	public List<PhoneInfoVO> selectnew() throws Exception;
 }

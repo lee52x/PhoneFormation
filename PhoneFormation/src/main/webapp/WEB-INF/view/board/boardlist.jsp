@@ -119,7 +119,8 @@ $(document).ready(function(){
 												<td class="nick" style="text-align: center;">
 													${boardVO.writer}
 												</td>
-												<td class="date" nowrap="nowrap">${boardVO.regdate}</td>
+												<td class="date" nowrap="nowrap">
+												<fmt:formatDate value="${boardVO.regdate}" pattern="yyyy-MM-dd"/></td>
 												<td class="count" nowrap="nowrap">${boardVO.viewcnt}</td>
 												<td class="recommend_cnt" nowrap="nowrap">${boardVO.goodcnt}</td>
 											</tr>

@@ -71,4 +71,9 @@ public class BoardServiceImpl implements BoardService{
 		return dao.select_title(bno);
 	}
 
+	@Override
+	public List<BoardVO> selectmain() throws Exception {
+		return dao.selectmain();
+	}
+
 }

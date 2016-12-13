@@ -71,234 +71,244 @@ insert into ph_phone values (ph_phone_seq.nextval, 'G3A', '/resources/images/pho
 insert into ph_phone values (ph_phone_seq.nextval, 'G3Cat6', '/resources/images/phone/G3Cat6_실크화이트.png', 'lg', '2014년08월');
 insert into ph_phone values (ph_phone_seq.nextval, 'G3', '/resources/images/phone/G3_실크화이트.png', 'lg', '2014년05월');
 
-
+drop sequence ph_color_seq;
+create sequence ph_color_seq
+   start with 1
+   increment by 1 
+   nocache
+   nocycle;
 create table ph_color( --핸드폰 색상
+	cno number,
 	no number,
 	color varchar2(30) not null,
 	image LONG not null,
 	foreign key(no) references ph_phone(no),
-	primary key(no,color)
+	primary key(cno)
 );
 select no, color, image from ph_color ;
 --samsung
 
-update ph_color as t set no = (select no+1 from ph_color tt where t.no=tt.no );
-insert into ph_color values (1, '화이트펄', '/resources/images/phone/GalaxyS7edge_화이트펄.png');
-insert into ph_color values (1, '블루코랄', '/resources/images/phone/GalaxyS7edge_블루코랄.png');
-insert into ph_color values (1, '블랙오닉스', '/resources/images/phone/GalaxyS7edge_블랙오닉스.png');
-insert into ph_color values (1, '골드플래티넘', '/resources/images/phone/GalaxyS7edge_골드플래티넘.png');
-insert into ph_color values (1, '실버티타늄', '/resources/images/phone/GalaxyS7edge_실버티타늄.png');
-insert into ph_color values (1, '핑크골드', '/resources/images/phone/GalaxyS7edge_핑크골드.png');
 
-insert into ph_color values (2, '블랙', '/resources/images/phone/GalaxyS7edgeOlympic_블랙.png');
+insert into ph_color values (ph_color_seq.nextval,1, '화이트펄', '/resources/images/phone/GalaxyS7edge_화이트펄.png');
+insert into ph_color values (ph_color_seq.nextval,1, '블루코랄', '/resources/images/phone/GalaxyS7edge_블루코랄.png');
+insert into ph_color values (ph_color_seq.nextval,1, '블랙오닉스', '/resources/images/phone/GalaxyS7edge_블랙오닉스.png');
+insert into ph_color values (ph_color_seq.nextval,1, '골드플래티넘', '/resources/images/phone/GalaxyS7edge_골드플래티넘.png');
+insert into ph_color values (ph_color_seq.nextval,1, '실버티타늄', '/resources/images/phone/GalaxyS7edge_실버티타늄.png');
+insert into ph_color values (ph_color_seq.nextval,1, '핑크골드', '/resources/images/phone/GalaxyS7edge_핑크골드.png');
 
-insert into ph_color values (3, '블랙', '/resources/images/phone/GalaxyS7edgeInjustice_블랙.png');
+insert into ph_color values (ph_color_seq.nextval,2, '블랙', '/resources/images/phone/GalaxyS7edgeOlympic_블랙.png');
 
-insert into ph_color values (4, '블랙오닉스', '/resources/images/phone/GalaxyS7_블랙오닉스.png');
-insert into ph_color values (4, '화이트펄', '/resources/images/phone/GalaxyS7_화이트펄.png');
-insert into ph_color values (4, '실버티타늄', '/resources/images/phone/GalaxyS7_실버티타늄.png');
-insert into ph_color values (4, '골드플래티넘', '/resources/images/phone/GalaxyS7_골드플래티넘.png');
-insert into ph_color values (4, '핑크골드', '/resources/images/phone/GalaxyS7_핑크골드.png');
-insert into ph_color values (4, '핑크블로섬', '/resources/images/phone/GalaxyS7_핑크블로섬.png');
+insert into ph_color values (ph_color_seq.nextval,3, '블랙', '/resources/images/phone/GalaxyS7edgeInjustice_블랙.png');
 
-insert into ph_color values (5, '골드플래티넘', '/resources/images/phone/Galaxynote5_골드플래티넘.png');
-insert into ph_color values (5, '블랙사파이어', '/resources/images/phone/Galaxynote5_블랙사파이어.png');
-insert into ph_color values (5, '실버티타늄', '/resources/images/phone/Galaxynote5_실버티타늄.png');
-insert into ph_color values (5, '화이트펄', '/resources/images/phone/Galaxynote5_화이트펄.png');
-insert into ph_color values (5, '핑크골드', '/resources/images/phone/Galaxynote5_핑크골드.png');
+insert into ph_color values (ph_color_seq.nextval,4, '블랙오닉스', '/resources/images/phone/GalaxyS7_블랙오닉스.png');
+insert into ph_color values (ph_color_seq.nextval,4, '화이트펄', '/resources/images/phone/GalaxyS7_화이트펄.png');
+insert into ph_color values (ph_color_seq.nextval,4, '실버티타늄', '/resources/images/phone/GalaxyS7_실버티타늄.png');
+insert into ph_color values (ph_color_seq.nextval,4, '골드플래티넘', '/resources/images/phone/GalaxyS7_골드플래티넘.png');
+insert into ph_color values (ph_color_seq.nextval,4, '핑크골드', '/resources/images/phone/GalaxyS7_핑크골드.png');
+insert into ph_color values (ph_color_seq.nextval,4, '핑크블로섬', '/resources/images/phone/GalaxyS7_핑크블로섬.png');
 
-insert into ph_color values (6, '골드플래티넘', '/resources/images/phone/GalaxyS6edgePlus_골드플래티넘.png');
-insert into ph_color values (6, '블랙사파이어', '/resources/images/phone/GalaxyS6edgePlus_블랙사파이어.png');
+insert into ph_color values (ph_color_seq.nextval,5, '골드플래티넘', '/resources/images/phone/Galaxynote5_골드플래티넘.png');
+insert into ph_color values (ph_color_seq.nextval,5, '블랙사파이어', '/resources/images/phone/Galaxynote5_블랙사파이어.png');
+insert into ph_color values (ph_color_seq.nextval,5, '실버티타늄', '/resources/images/phone/Galaxynote5_실버티타늄.png');
+insert into ph_color values (ph_color_seq.nextval,5, '화이트펄', '/resources/images/phone/Galaxynote5_화이트펄.png');
+insert into ph_color values (ph_color_seq.nextval,5, '핑크골드', '/resources/images/phone/Galaxynote5_핑크골드.png');
 
-insert into ph_color values (7, '골드플래티넘', '/resources/images/phone/GalaxyS6edge_골드플래티넘.png');
-insert into ph_color values (7, '화이트펄', '/resources/images/phone/GalaxyS6edge_화이트펄.png');
-insert into ph_color values (7, '블랙사파이어', '/resources/images/phone/GalaxyS6edge_블랙사파이어.png');
-insert into ph_color values (7, '그린에메랄드', '/resources/images/phone/GalaxyS6edge_그린에메랄드.png');
+insert into ph_color values (ph_color_seq.nextval,6, '골드플래티넘', '/resources/images/phone/GalaxyS6edgePlus_골드플래티넘.png');
+insert into ph_color values (ph_color_seq.nextval,6, '블랙사파이어', '/resources/images/phone/GalaxyS6edgePlus_블랙사파이어.png');
 
-insert into ph_color values (8, '화이트펄', '/resources/images/phone/GalaxyS6_화이트펄.png');
-insert into ph_color values (8, '블랙사파이어', '/resources/images/phone/GalaxyS6_블랙사파이어.png');
-insert into ph_color values (8, '골드플래티넘', '/resources/images/phone/GalaxyS6_골드플래티넘.png');
-insert into ph_color values (8, '블루사파이어', '/resources/images/phone/GalaxyS6_블루사파이어.png');
+insert into ph_color values (ph_color_seq.nextval,7, '골드플래티넘', '/resources/images/phone/GalaxyS6edge_골드플래티넘.png');
+insert into ph_color values (ph_color_seq.nextval,7, '화이트펄', '/resources/images/phone/GalaxyS6edge_화이트펄.png');
+insert into ph_color values (ph_color_seq.nextval,7, '블랙사파이어', '/resources/images/phone/GalaxyS6edge_블랙사파이어.png');
+insert into ph_color values (ph_color_seq.nextval,7, '그린에메랄드', '/resources/images/phone/GalaxyS6edge_그린에메랄드.png');
 
-insert into ph_color values (9, '실버', '/resources/images/phone/GalaxyA8(2016)_실버.png');
-insert into ph_color values (9, '핑크골드', '/resources/images/phone/GalaxyA8(2016)_핑크골드.png');
-insert into ph_color values (9, '화이트블루', '/resources/images/phone/GalaxyA8(2016)_화이트블루.png');
+insert into ph_color values (ph_color_seq.nextval,8, '화이트펄', '/resources/images/phone/GalaxyS6_화이트펄.png');
+insert into ph_color values (ph_color_seq.nextval,8, '블랙사파이어', '/resources/images/phone/GalaxyS6_블랙사파이어.png');
+insert into ph_color values (ph_color_seq.nextval,8, '골드플래티넘', '/resources/images/phone/GalaxyS6_골드플래티넘.png');
+insert into ph_color values (ph_color_seq.nextval,8, '블루사파이어', '/resources/images/phone/GalaxyS6_블루사파이어.png');
 
-insert into ph_color values (10, '블랙', '/resources/images/phone/GalaxyA3(2016)_블랙.png');
-insert into ph_color values (10, '화이트', '/resources/images/phone/GalaxyA3(2016)_화이트.png');
-insert into ph_color values (10, '마샨핑크', '/resources/images/phone/GalaxyA3(2016)_마샨핑크.png');
+insert into ph_color values (ph_color_seq.nextval,9, '실버', '/resources/images/phone/GalaxyA8(2016)_실버.png');
+insert into ph_color values (ph_color_seq.nextval,9, '핑크골드', '/resources/images/phone/GalaxyA8(2016)_핑크골드.png');
+insert into ph_color values (ph_color_seq.nextval,9, '화이트블루', '/resources/images/phone/GalaxyA8(2016)_화이트블루.png');
 
-insert into ph_color values (11, '블랙', '/resources/images/phone/GalaxyA5(2016)_블랙.png');
-insert into ph_color values (11, '화이트', '/resources/images/phone/GalaxyA5(2016)_화이트.png');
-insert into ph_color values (11, '마샨핑크', '/resources/images/phone/GalaxyA5(2016)_마샨핑크.png');
+insert into ph_color values (ph_color_seq.nextval,10, '블랙', '/resources/images/phone/GalaxyA3(2016)_블랙.png');
+insert into ph_color values (ph_color_seq.nextval,10, '화이트', '/resources/images/phone/GalaxyA3(2016)_화이트.png');
+insert into ph_color values (ph_color_seq.nextval,10, '마샨핑크', '/resources/images/phone/GalaxyA3(2016)_마샨핑크.png');
 
-insert into ph_color values (12, '블랙', '/resources/images/phone/GalaxyA7(2016)_블랙.png');
-insert into ph_color values (12, '화이트', '/resources/images/phone/GalaxyA7(2016)_화이트.png');
-insert into ph_color values (12, '마샨핑크', '/resources/images/phone/GalaxyA7(2016)_마샨핑크.png');
+insert into ph_color values (ph_color_seq.nextval,11, '블랙', '/resources/images/phone/GalaxyA5(2016)_블랙.png');
+insert into ph_color values (ph_color_seq.nextval,11, '화이트', '/resources/images/phone/GalaxyA5(2016)_화이트.png');
+insert into ph_color values (ph_color_seq.nextval,11, '마샨핑크', '/resources/images/phone/GalaxyA5(2016)_마샨핑크.png');
 
-insert into ph_color values (13, '화이트', '/resources/images/phone/GalaxyJ3(2016)_화이트.png');
+insert into ph_color values (ph_color_seq.nextval,12, '블랙', '/resources/images/phone/GalaxyA7(2016)_블랙.png');
+insert into ph_color values (ph_color_seq.nextval,12, '화이트', '/resources/images/phone/GalaxyA7(2016)_화이트.png');
+insert into ph_color values (ph_color_seq.nextval,12, '마샨핑크', '/resources/images/phone/GalaxyA7(2016)_마샨핑크.png');
 
-insert into ph_color values (14, '블랙', '/resources/images/phone/GalaxyJ5(2016)_블랙.png');
-insert into ph_color values (14, '화이트', '/resources/images/phone/GalaxyJ5(2016)_화이트.png');
+insert into ph_color values (ph_color_seq.nextval,13, '화이트', '/resources/images/phone/GalaxyJ3(2016)_화이트.png');
 
-insert into ph_color values (15, '골드', '/resources/images/phone/GalaxyJ7(2016)_골드.png');
-insert into ph_color values (15, '블랙', '/resources/images/phone/GalaxyJ7(2016)_블랙.png');
+insert into ph_color values (ph_color_seq.nextval,14, '블랙', '/resources/images/phone/GalaxyJ5(2016)_블랙.png');
+insert into ph_color values (ph_color_seq.nextval,14, '화이트', '/resources/images/phone/GalaxyJ5(2016)_화이트.png');
 
-insert into ph_color values (16, '화이트', '/resources/images/phone/GalaxynoteEdge_화이트.png');
-insert into ph_color values (16, '블랙', '/resources/images/phone/GalaxynoteEdge_블랙.png');
+insert into ph_color values (ph_color_seq.nextval,15, '골드', '/resources/images/phone/GalaxyJ7(2016)_골드.png');
+insert into ph_color values (ph_color_seq.nextval,15, '블랙', '/resources/images/phone/GalaxyJ7(2016)_블랙.png');
 
-insert into ph_color values (17, '화이트', '/resources/images/phone/Galaxynote4SLTE_화이트.png');
-insert into ph_color values (17, '블랙', '/resources/images/phone/Galaxynote4SLTE_블랙.png');
-insert into ph_color values (17, '실버', '/resources/images/phone/Galaxynote4SLTE_실버.png');
-insert into ph_color values (17, '핑크', '/resources/images/phone/Galaxynote4SLTE_핑크.png');
-insert into ph_color values (17, '레드', '/resources/images/phone/Galaxynote4SLTE_레드.png');
+insert into ph_color values (ph_color_seq.nextval,16, '화이트', '/resources/images/phone/GalaxynoteEdge_화이트.png');
+insert into ph_color values (ph_color_seq.nextval,16, '블랙', '/resources/images/phone/GalaxynoteEdge_블랙.png');
 
-insert into ph_color values (18, '화이트', '/resources/images/phone/Galaxynote4_화이트.png');
-insert into ph_color values (18, '블랙', '/resources/images/phone/Galaxynote4_블랙.png');
-insert into ph_color values (18, '골드', '/resources/images/phone/Galaxynote4_골드.png');
-insert into ph_color values (18, '핑크', '/resources/images/phone/Galaxynote4_핑크.png');
-insert into ph_color values (18, '레드', '/resources/images/phone/Galaxynote4_레드.png');
-insert into ph_color values (18, '골드1', '/resources/images/phone/Galaxynote4_골드.png');
-insert into ph_color values (18, '핑크2', '/resources/images/phone/Galaxynote4_핑크.png');
-insert into ph_color values (18, '레드3', '/resources/images/phone/Galaxynote4_레드.png');
+insert into ph_color values (ph_color_seq.nextval,17, '화이트', '/resources/images/phone/Galaxynote4SLTE_화이트.png');
+insert into ph_color values (ph_color_seq.nextval,17, '블랙', '/resources/images/phone/Galaxynote4SLTE_블랙.png');
+insert into ph_color values (ph_color_seq.nextval,17, '실버', '/resources/images/phone/Galaxynote4SLTE_실버.png');
+insert into ph_color values (ph_color_seq.nextval,17, '핑크', '/resources/images/phone/Galaxynote4SLTE_핑크.png');
+insert into ph_color values (ph_color_seq.nextval,17, '레드', '/resources/images/phone/Galaxynote4SLTE_레드.png');
+
+insert into ph_color values (ph_color_seq.nextval,18, '화이트', '/resources/images/phone/Galaxynote4_화이트.png');
+insert into ph_color values (ph_color_seq.nextval,18, '블랙', '/resources/images/phone/Galaxynote4_블랙.png');
+insert into ph_color values (ph_color_seq.nextval,18, '골드', '/resources/images/phone/Galaxynote4_골드.png');
+insert into ph_color values (ph_color_seq.nextval,18, '핑크', '/resources/images/phone/Galaxynote4_핑크.png');
+insert into ph_color values (ph_color_seq.nextval,18, '레드', '/resources/images/phone/Galaxynote4_레드.png');
+insert into ph_color values (ph_color_seq.nextval,18, '골드1', '/resources/images/phone/Galaxynote4_골드.png');
+insert into ph_color values (ph_color_seq.nextval,18, '핑크2', '/resources/images/phone/Galaxynote4_핑크.png');
+insert into ph_color values (ph_color_seq.nextval,18, '레드3', '/resources/images/phone/Galaxynote4_레드.png');
 
 --apple
-insert into ph_color values (19, '로즈골드', '/resources/images/phone/iPhone7_로드골드.png');
-insert into ph_color values (19, '골드', '/resources/images/phone/iPhone7_골드.png');
-insert into ph_color values (19, '실버', '/resources/images/phone/iPhone7_실버.png');
-insert into ph_color values (19, '블랙', '/resources/images/phone/iPhone7_블랙.png');
-insert into ph_color values (19, '제트블랙', '/resources/images/phone/iPhone7_제트블랙.png');
+insert into ph_color values (ph_color_seq.nextval,19, '로즈골드', '/resources/images/phone/iPhone7_로드골드.png');
+insert into ph_color values (ph_color_seq.nextval,19, '골드', '/resources/images/phone/iPhone7_골드.png');
+insert into ph_color values (ph_color_seq.nextval,19, '실버', '/resources/images/phone/iPhone7_실버.png');
+insert into ph_color values (ph_color_seq.nextval,19, '블랙', '/resources/images/phone/iPhone7_블랙.png');
+insert into ph_color values (ph_color_seq.nextval,19, '제트블랙', '/resources/images/phone/iPhone7_제트블랙.png');
 
-insert into ph_color values (20, '로즈골드', '/resources/images/phone/iPhone7Plus_로즈골드.png');
-insert into ph_color values (20, '골드', '/resources/images/phone/iPhone7Plus_골드.png');
-insert into ph_color values (20, '실버', '/resources/images/phone/iPhone7Plus_실버.png');
-insert into ph_color values (20, '블랙', '/resources/images/phone/iPhone7Plus_블랙.png');
-insert into ph_color values (20, '제트블랙', '/resources/images/phone/iPhone7Plus_제트블랙.png');
+insert into ph_color values (ph_color_seq.nextval,20, '로즈골드', '/resources/images/phone/iPhone7Plus_로즈골드.png');
+insert into ph_color values (ph_color_seq.nextval,20, '골드', '/resources/images/phone/iPhone7Plus_골드.png');
+insert into ph_color values (ph_color_seq.nextval,20, '실버', '/resources/images/phone/iPhone7Plus_실버.png');
+insert into ph_color values (ph_color_seq.nextval,20, '블랙', '/resources/images/phone/iPhone7Plus_블랙.png');
+insert into ph_color values (ph_color_seq.nextval,20, '제트블랙', '/resources/images/phone/iPhone7Plus_제트블랙.png');
 
-insert into ph_color values (21, '스페이스그레이', '/resources/images/phone/iPhone6s_스페이스그레이.png');
-insert into ph_color values (21, '실버', '/resources/images/phone/iPhone6s_실버.png');
-insert into ph_color values (21, '골드', '/resources/images/phone/iPhone6s_골드.png');
-insert into ph_color values (21, '로즈골드', '/resources/images/phone/iPhone6s_로즈골드.png');
+insert into ph_color values (ph_color_seq.nextval,21, '스페이스그레이', '/resources/images/phone/iPhone6s_스페이스그레이.png');
+insert into ph_color values (ph_color_seq.nextval,21, '실버', '/resources/images/phone/iPhone6s_실버.png');
+insert into ph_color values (ph_color_seq.nextval,21, '골드', '/resources/images/phone/iPhone6s_골드.png');
+insert into ph_color values (ph_color_seq.nextval,21, '로즈골드', '/resources/images/phone/iPhone6s_로즈골드.png');
 
-insert into ph_color values (22, '스페이스그레이', '/resources/images/phone/iPhone6sPlus_스페이스그레이.png');
-insert into ph_color values (22, '실버', '/resources/images/phone/iPhone6sPlus_실버.png');
-insert into ph_color values (22, '골드', '/resources/images/phone/iPhone6sPlus_골드.png');
-insert into ph_color values (22, '로즈골드', '/resources/images/phone/iPhone6sPlus_로즈골드.png');
+insert into ph_color values (ph_color_seq.nextval,22, '스페이스그레이', '/resources/images/phone/iPhone6sPlus_스페이스그레이.png');
+insert into ph_color values (ph_color_seq.nextval,22, '실버', '/resources/images/phone/iPhone6sPlus_실버.png');
+insert into ph_color values (ph_color_seq.nextval,22, '골드', '/resources/images/phone/iPhone6sPlus_골드.png');
+insert into ph_color values (ph_color_seq.nextval,22, '로즈골드', '/resources/images/phone/iPhone6sPlus_로즈골드.png');
 
-insert into ph_color values (23, '골드', '/resources/images/phone/iPhone6Plus_골드.png');
-insert into ph_color values (23, '스페이스그레이', '/resources/images/phone/iPhone6Plus_스페이스그레이.png');
-insert into ph_color values (23, '실버', '/resources/images/phone/iPhone6Plus_실버.png');
+insert into ph_color values (ph_color_seq.nextval,23, '골드', '/resources/images/phone/iPhone6Plus_골드.png');
+insert into ph_color values (ph_color_seq.nextval,23, '스페이스그레이', '/resources/images/phone/iPhone6Plus_스페이스그레이.png');
+insert into ph_color values (ph_color_seq.nextval,23, '실버', '/resources/images/phone/iPhone6Plus_실버.png');
 
-insert into ph_color values (24, '스페이스그레이', '/resources/images/phone/iPhoneSE_스페이스그레이.png');
-insert into ph_color values (24, '로즈골드', '/resources/images/phone/iPhoneSE_로즈골드.png');
+insert into ph_color values (ph_color_seq.nextval,24, '스페이스그레이', '/resources/images/phone/iPhoneSE_스페이스그레이.png');
+insert into ph_color values (ph_color_seq.nextval,24, '로즈골드', '/resources/images/phone/iPhoneSE_로즈골드.png');
 
 --lg
-insert into ph_color values (25, '티탄', '/resources/images/phone/V20_티탄.png');
-insert into ph_color values (25, '실버', '/resources/images/phone/V20_실버.png');
-insert into ph_color values (25, '핑크', '/resources/images/phone/V20_핑크.png');
+insert into ph_color values (ph_color_seq.nextval,25, '티탄', '/resources/images/phone/V20_티탄.png');
+insert into ph_color values (ph_color_seq.nextval,25, '실버', '/resources/images/phone/V20_실버.png');
+insert into ph_color values (ph_color_seq.nextval,25, '핑크', '/resources/images/phone/V20_핑크.png');
 
-insert into ph_color values (26, '럭스 화이트', '/resources/images/phone/V10_럭스화이트.png');
-insert into ph_color values (26, '모던 베이지', '/resources/images/phone/V10_모던베이지.png');
-insert into ph_color values (26, '오션 블루', '/resources/images/phone/V10_오션블루.png');
+insert into ph_color values (ph_color_seq.nextval,26, '럭스 화이트', '/resources/images/phone/V10_럭스화이트.png');
+insert into ph_color values (ph_color_seq.nextval,26, '모던 베이지', '/resources/images/phone/V10_모던베이지.png');
+insert into ph_color values (ph_color_seq.nextval,26, '오션 블루', '/resources/images/phone/V10_오션블루.png');
 
-insert into ph_color values (27, '티탄', '/resources/images/phone/G5_티탄.png');
-insert into ph_color values (27, '실버', '/resources/images/phone/G5_실버.png');
-insert into ph_color values (27, '핑크', '/resources/images/phone/G5_핑크.png');
-insert into ph_color values (27, '골드', '/resources/images/phone/G5_골드.png');
+insert into ph_color values (ph_color_seq.nextval,27, '티탄', '/resources/images/phone/G5_티탄.png');
+insert into ph_color values (ph_color_seq.nextval,27, '실버', '/resources/images/phone/G5_실버.png');
+insert into ph_color values (ph_color_seq.nextval,27, '핑크', '/resources/images/phone/G5_핑크.png');
+insert into ph_color values (ph_color_seq.nextval,27, '골드', '/resources/images/phone/G5_골드.png');
 
-insert into ph_color values (28, '세라믹화이트', '/resources/images/phone/G4_세라믹화이트.png');
-insert into ph_color values (28, '메탈릭그레이', '/resources/images/phone/G4_메탈릭그레이.png');
-insert into ph_color values (28, '천연가죽브라운', '/resources/images/phone/G4_천연가죽브라운.png');
-insert into ph_color values (28, '천연가죽블랙', '/resources/images/phone/G4_천연가죽블랙.png');
+insert into ph_color values (ph_color_seq.nextval,28, '세라믹화이트', '/resources/images/phone/G4_세라믹화이트.png');
+insert into ph_color values (ph_color_seq.nextval,28, '메탈릭그레이', '/resources/images/phone/G4_메탈릭그레이.png');
+insert into ph_color values (ph_color_seq.nextval,28, '천연가죽브라운', '/resources/images/phone/G4_천연가죽브라운.png');
+insert into ph_color values (ph_color_seq.nextval,28, '천연가죽블랙', '/resources/images/phone/G4_천연가죽블랙.png');
 
-insert into ph_color values (29, '티탄', '/resources/images/phone/GStylo_티탄.png');
-insert into ph_color values (29, '화이트', '/resources/images/phone/GStylo_화이트.png');
+insert into ph_color values (ph_color_seq.nextval,29, '티탄', '/resources/images/phone/GStylo_티탄.png');
+insert into ph_color values (ph_color_seq.nextval,29, '화이트', '/resources/images/phone/GStylo_화이트.png');
 
-insert into ph_color values (30, '플래티넘실버', '/resources/images/phone/GFlex2_플래티넘실버.png');
-insert into ph_color values (30, '플라멩고레드', '/resources/images/phone/GFlex2_플라멩고레드.png');
+insert into ph_color values (ph_color_seq.nextval,30, '플래티넘실버', '/resources/images/phone/GFlex2_플래티넘실버.png');
+insert into ph_color values (ph_color_seq.nextval,30, '플라멩고레드', '/resources/images/phone/GFlex2_플라멩고레드.png');
 
-insert into ph_color values (31, '화이트', '/resources/images/phone/G3Screen_화이트.png');
-insert into ph_color values (31, '블랙', '/resources/images/phone/G3Screen_블랙.png');
+insert into ph_color values (ph_color_seq.nextval,31, '화이트', '/resources/images/phone/G3Screen_화이트.png');
+insert into ph_color values (ph_color_seq.nextval,31, '블랙', '/resources/images/phone/G3Screen_블랙.png');
 
-insert into ph_color values (32, '티탄', '/resources/images/phone/G3A_티탄.png');
-insert into ph_color values (32, '화이트', '/resources/images/phone/G3A_화이트.png');
+insert into ph_color values (ph_color_seq.nextval,32, '티탄', '/resources/images/phone/G3A_티탄.png');
+insert into ph_color values (ph_color_seq.nextval,32, '화이트', '/resources/images/phone/G3A_화이트.png');
 
-insert into ph_color values (33, '메탈릭블랙', '/resources/images/phone/G3Cat6_메탈릭블랙.png');
-insert into ph_color values (33, '실크화이트', '/resources/images/phone/G3Cat6_실크화이트.png');
-insert into ph_color values (33, '샤인골드', '/resources/images/phone/G3Cat6_샤인골드.png');
-insert into ph_color values (33, '와인', '/resources/images/phone/G3Cat6_와인.png');
-insert into ph_color values (33, '문바이올렛', '/resources/images/phone/G3Cat6_문바이올렛.png');
+insert into ph_color values (ph_color_seq.nextval,33, '메탈릭블랙', '/resources/images/phone/G3Cat6_메탈릭블랙.png');
+insert into ph_color values (ph_color_seq.nextval,33, '실크화이트', '/resources/images/phone/G3Cat6_실크화이트.png');
+insert into ph_color values (ph_color_seq.nextval,33, '샤인골드', '/resources/images/phone/G3Cat6_샤인골드.png');
+insert into ph_color values (ph_color_seq.nextval,33, '와인', '/resources/images/phone/G3Cat6_와인.png');
+insert into ph_color values (ph_color_seq.nextval,33, '문바이올렛', '/resources/images/phone/G3Cat6_문바이올렛.png');
 
-insert into ph_color values (34, '메탈릭블랙', '/resources/images/phone/G3_메탈릭블랙.png');
-insert into ph_color values (34, '실크화이트', '/resources/images/phone/G3_실크화이트.png');
-insert into ph_color values (34, '샤인골드', '/resources/images/phone/G3_샤인골드.png');
-update ph_color
-	set no = no+1;
+insert into ph_color values (ph_color_seq.nextval,34, '메탈릭블랙', '/resources/images/phone/G3_메탈릭블랙.png');
+insert into ph_color values (ph_color_seq.nextval,34, '실크화이트', '/resources/images/phone/G3_실크화이트.png');
+insert into ph_color values (ph_color_seq.nextval,34, '샤인골드', '/resources/images/phone/G3_샤인골드.png');
+drop sequence ph_capacity_seq;
+create sequence ph_capacity_seq
+   start with 1
+   increment by 1 
+   nocache
+   nocycle;
 create table ph_capacity( --핸드폰 용량
+	cno number,
 	no number,
 	capacity varchar2(15) not null,
 	release_price number not null, --출고가
 	foreign key(no) references ph_phone(no),
-	primary key(no, capacity)
+	primary key(cno)
 );
 
 --samsung
-insert into ph_capacity values (1, '32GB', 924000);
-insert into ph_capacity values (1, '64GB', 968000);
-insert into ph_capacity values (2, '32GB', 1067000);
-insert into ph_capacity values (3, '32GB', 1199000);
-insert into ph_capacity values (4, '32GB', 836000);
-insert into ph_capacity values (4, '64GB', 880000);
-insert into ph_capacity values (5, '32GB', 899800);
-insert into ph_capacity values (5, '64GB', 965800);
-insert into ph_capacity values (5, '128GB', 999000);
-insert into ph_capacity values (6, '32GB', 599500);
-insert into ph_capacity values (7, '32GB', 735900);
-insert into ph_capacity values (7, '64GB', 755700);
-insert into ph_capacity values (8, '32GB', 858000);
-insert into ph_capacity values (8, '64GB', 924000);
-insert into ph_capacity values (9, '32GB', 649000);
-insert into ph_capacity values (10, '16GB', 352000);
-insert into ph_capacity values (11, '16GB', 429000);
-insert into ph_capacity values (12, '16GB', 528000);
-insert into ph_capacity values (13, '8GB', 231000);
-insert into ph_capacity values (14, '16GB', 297000);
-insert into ph_capacity values (15, '16GB', 363000);
-insert into ph_capacity values (16, '32GB', 1067000);
-insert into ph_capacity values (17, '32GB', 799700);
-insert into ph_capacity values (18, '32GB', 957000);
+insert into ph_capacity values (ph_capacity_seq.nextval,1, '32GB', 924000);
+insert into ph_capacity values (ph_capacity_seq.nextval,1, '64GB', 968000);
+insert into ph_capacity values (ph_capacity_seq.nextval,2, '32GB', 1067000);
+insert into ph_capacity values (ph_capacity_seq.nextval,3, '32GB', 1199000);
+insert into ph_capacity values (ph_capacity_seq.nextval,4, '32GB', 836000);
+insert into ph_capacity values (ph_capacity_seq.nextval,4, '64GB', 880000);
+insert into ph_capacity values (ph_capacity_seq.nextval,5, '32GB', 899800);
+insert into ph_capacity values (ph_capacity_seq.nextval,5, '64GB', 965800);
+insert into ph_capacity values (ph_capacity_seq.nextval,5, '128GB', 999000);
+insert into ph_capacity values (ph_capacity_seq.nextval,6, '32GB', 599500);
+insert into ph_capacity values (ph_capacity_seq.nextval,7, '32GB', 735900);
+insert into ph_capacity values (ph_capacity_seq.nextval,7, '64GB', 755700);
+insert into ph_capacity values (ph_capacity_seq.nextval,8, '32GB', 858000);
+insert into ph_capacity values (ph_capacity_seq.nextval,8, '64GB', 924000);
+insert into ph_capacity values (ph_capacity_seq.nextval,9, '32GB', 649000);
+insert into ph_capacity values (ph_capacity_seq.nextval,10, '16GB', 352000);
+insert into ph_capacity values (ph_capacity_seq.nextval,11, '16GB', 429000);
+insert into ph_capacity values (ph_capacity_seq.nextval,12, '16GB', 528000);
+insert into ph_capacity values (ph_capacity_seq.nextval,13, '8GB', 231000);
+insert into ph_capacity values (ph_capacity_seq.nextval,14, '16GB', 297000);
+insert into ph_capacity values (ph_capacity_seq.nextval,15, '16GB', 363000);
+insert into ph_capacity values (ph_capacity_seq.nextval,16, '32GB', 1067000);
+insert into ph_capacity values (ph_capacity_seq.nextval,17, '32GB', 799700);
+insert into ph_capacity values (ph_capacity_seq.nextval,18, '32GB', 957000);
 
 --apple
-insert into ph_capacity values (19, '32GB', 869000);
-insert into ph_capacity values (19, '128GB', 999900);
-insert into ph_capacity values (19, '256GB', 1130800);
-insert into ph_capacity values (20, '32GB', 1021900);
-insert into ph_capacity values (20, '128GB', 1152800);
-insert into ph_capacity values (20, '256GB', 1283700);
-insert into ph_capacity values (21, '16GB', 869000);
-insert into ph_capacity values (21, '64GB', 999900);
-insert into ph_capacity values (21, '128GB', 1130800);
-insert into ph_capacity values (22, '16GB', 999900);
-insert into ph_capacity values (22, '64GB', 1130800);
-insert into ph_capacity values (22, '128GB', 1261700);
-insert into ph_capacity values (23, '16GB', 899800);
-insert into ph_capacity values (23, '64GB', 1050600);
-insert into ph_capacity values (24, '16GB', 569800);
-insert into ph_capacity values (24, '64GB', 699600);
+insert into ph_capacity values (ph_capacity_seq.nextval,19, '32GB', 869000);
+insert into ph_capacity values (ph_capacity_seq.nextval,19, '128GB', 999900);
+insert into ph_capacity values (ph_capacity_seq.nextval,19, '256GB', 1130800);
+insert into ph_capacity values (ph_capacity_seq.nextval,20, '32GB', 1021900);
+insert into ph_capacity values (ph_capacity_seq.nextval,20, '128GB', 1152800);
+insert into ph_capacity values (ph_capacity_seq.nextval,20, '256GB', 1283700);
+insert into ph_capacity values (ph_capacity_seq.nextval,21, '16GB', 869000);
+insert into ph_capacity values (ph_capacity_seq.nextval,21, '64GB', 999900);
+insert into ph_capacity values (ph_capacity_seq.nextval,21, '128GB', 1130800);
+insert into ph_capacity values (ph_capacity_seq.nextval,22, '16GB', 999900);
+insert into ph_capacity values (ph_capacity_seq.nextval,22, '64GB', 1130800);
+insert into ph_capacity values (ph_capacity_seq.nextval,22, '128GB', 1261700);
+insert into ph_capacity values (ph_capacity_seq.nextval,23, '16GB', 899800);
+insert into ph_capacity values (ph_capacity_seq.nextval,23, '64GB', 1050600);
+insert into ph_capacity values (ph_capacity_seq.nextval,24, '16GB', 569800);
+insert into ph_capacity values (ph_capacity_seq.nextval,24, '64GB', 699600);
 
 --lg
-insert into ph_capacity values (25, '64GB', 899800);
-insert into ph_capacity values (26, '64GB', 599500);
-insert into ph_capacity values (27, '32GB', 699600);
-insert into ph_capacity values (28, '32GB', 599500);
-insert into ph_capacity values (29, '8GB', 517000);
-insert into ph_capacity values (30, '32GB', 899800);
-insert into ph_capacity values (31, '32GB', 550000);
-insert into ph_capacity values (32, '32GB', 451000);
-insert into ph_capacity values (33, '32GB', 649000);
-insert into ph_capacity values (34, '32GB', 499400);
-update ph_capacity
-	set no = no+1;
+insert into ph_capacity values (ph_capacity_seq.nextval,25, '64GB', 899800);
+insert into ph_capacity values (ph_capacity_seq.nextval,26, '64GB', 599500);
+insert into ph_capacity values (ph_capacity_seq.nextval,27, '32GB', 699600);
+insert into ph_capacity values (ph_capacity_seq.nextval,28, '32GB', 599500);
+insert into ph_capacity values (ph_capacity_seq.nextval,29, '8GB', 517000);
+insert into ph_capacity values (ph_capacity_seq.nextval,30, '32GB', 899800);
+insert into ph_capacity values (ph_capacity_seq.nextval,31, '32GB', 550000);
+insert into ph_capacity values (ph_capacity_seq.nextval,32, '32GB', 451000);
+insert into ph_capacity values (ph_capacity_seq.nextval,33, '32GB', 649000);
+insert into ph_capacity values (ph_capacity_seq.nextval,34, '32GB', 499400);
+
 --스펙
 
 --프로세서
@@ -337,8 +347,7 @@ insert into spec_processor values(31, '1.5GHz Quad + 1.2GHz Quad', 'Nuclun Octa-
 insert into spec_processor values(32, '2.3GHz Quad Core', '퀄컴 스냅드래곤 800');
 insert into spec_processor values(33, '2.7GHz Quad Core', '퀄컴 스냅드래곤 805');
 insert into spec_processor values(34, '2.5GHz Quad Core', '퀄컴 스냅드래곤 801');
-update spec_processor
-	set no = no+1;
+
 --디스플레이
 create table spec_display(
 	no number primary key,
@@ -384,8 +393,7 @@ insert into spec_display values (31,'152mm','Full HD IPS LCD','', '', '');
 insert into spec_display values (32,'132.2mm','1920 X 1080 (Full HD IPS 디스플레이)','', '', '');
 insert into spec_display values (33,'138.78mm','2560x1440 (Quad HD IPS 디스플레이)','', '', '');
 insert into spec_display values (34,'138.78mm','2560x1440 (Quad HD IPS 디스플레이)','', '', '');
-update spec_display
-	set no = no+1;
+
 --카메라
 create table spec_camera(
 	no number primary key,
@@ -448,8 +456,7 @@ insert into spec_camera values (31,'','1300만화소','','210만화소','','예', '예',
 insert into spec_camera values (32,'','1300만화소','','210만화소','','예', '예', '');
 insert into spec_camera values (33,'','1300만화소','','210만화소','','예', '예', '');
 insert into spec_camera values (34,'','1300만화소','','210만화소','','예', '예', '');
-update spec_camera
-	set no = no+1;
+
 --메모리
 create table spec_memory(
 	no number primary key,
@@ -488,8 +495,7 @@ insert into spec_memory values (31,'2GB','32GB','','MicroSD slot 지원');
 insert into spec_memory values (32,'2GB','32GB','','MicroSD slot 지원');
 insert into spec_memory values (33,'3GB','32GB','','MicroSD slot 지원');
 insert into spec_memory values (34,'3GB','32GB','','MicroSD slot 지원');
-update spec_memory
-	set no = no+1;
+
 --네트워크
 create table spec_network(
 	no number primary key,
@@ -526,8 +532,7 @@ insert into spec_network values (21,'A9 칩(64비트 아키텍처)<br>M9 모션 보조 프로
 insert into spec_network values (22,'A9 칩(64비트 아키텍처)<br>M9 모션 보조 프로세서 내장','GSM/EDGE(850, 900, 1800, 1900MHz)','UMTS/HSPA+/DC-HSDPA(850, 900, 1700/2100, 1900, 2100MHz) ','TD-LTE(대역 38, 39, 40, 41) ','FDD-LTE(대역 1, 2, 3, 4, 5, 7, 8, 12, 13, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30) ','TD-LTE(대역 38, 39, 40, 41) ');
 insert into spec_network values (23,'A9 칩(64비트 아키텍처)<br>M9 모션 보조 프로세서 내장','GSM/EDGE(850, 900, 1800, 1900MHz)','UMTS/HSPA+/DC-HSDPA(850, 900, 1700/2100, 1900, 2100MHz) ','TD-LTE(대역 38, 39, 40, 41) ','FDD-LTE(대역 1, 2, 3, 4, 5, 7, 8, 12, 13, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30) ','TD-LTE(대역 38, 39, 40, 41) ');
 insert into spec_network values (24,'A9 칩(64비트 아키텍처)<br>M9 모션 보조 프로세서 내장','GSM/EDGE(850, 900, 1800, 1900MHz)','UMTS/HSPA+/DC-HSDPA(850, 900, 1700/2100, 1900, 2100MHz) ','TD-LTE(대역 38, 39, 40, 41) ','FDD-LTE(대역 1, 2, 3, 4, 5, 7, 8, 12, 13, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30) ','TD-LTE(대역 38, 39, 40, 41) ');
-update spec_network
-	set no = no+1;
+
 --연결
 create table spec_connect(
 	no number primary key,
@@ -579,8 +584,7 @@ insert into spec_connect values (31,'','','예','','','','예','예','예','','');
 insert into spec_connect values (32,'','','예','','','','예','예','예','','');
 insert into spec_connect values (33,'','','예','','','','예','예','예','','');
 insert into spec_connect values (34,'','','예','','','','예','예','예','','');
-update spec_connect
-	set no = no+1;
+
 --운영체제, 기본사양, 센서, 외관사양
 create table spec_specifications(
 	no number primary key,
@@ -627,8 +631,7 @@ insert into spec_specifications values (31,'Android', '화이트, 블랙','터치 정전�
 insert into spec_specifications values (32,'Android', '티탄, 화이트','터치 정전식','141 x 71.6 x 9.8','146.8','');
 insert into spec_specifications values (33,'Android', '티탄, 화이트','터치 정전식','146.3 x 74.6 x 9.1','154','');
 insert into spec_specifications values (34,'Android', '메탈릭 블랙, 실크 화이트, 샤인 골드','터치 정전식','146.3 x 74.6 x 8.95','151','');
-update spec_specifications
-	set no = no+1;
+
 --배터리
 create table spec_battery(
 	no number primary key,
@@ -678,8 +681,7 @@ insert into spec_battery values (31,'','','','','3000 X 2(착탈식)','','','','최�
 insert into spec_battery values (32,'','','','','2610 (착탈식)','','','','최대12');
 insert into spec_battery values (33,'','','','','3000 (착탈식)','','','','최대17');
 insert into spec_battery values (34,'','','','','3000 (착탈식)','','','','최대17');
-update spec_battery
-	set no = no+1;
+
 --오디오/비디오
 create table spec_audio(
 	no number primary key,
@@ -761,8 +763,7 @@ Dolby Digital Plus(E-AC-3), Audible(포맷 2, 3, 4, Audible Enhanced Audio, AAX, A
 True Tone 플래시<br> 슬로 모션 동영상 지원(1080p는 초당 120 프레임, 720p는 초당 240 프레임)<br> 타임랩스 동영상(동영상 흔들림 보정 포함)<br> 시네마틱 동영상 흔들림 보정(1080p 및 720p)<br> 
 연속 오토포커스 동영상<br> 노이즈 감소<br> 4K 동영상 촬영 중 800만 화소 사진 촬영<br> 재생 중 줌<br> 3배 디지털 줌<br> 얼굴 인식<br> 동영상 위치 표시 기능','v500만 화소 사진<br> 720p HD 동영상 촬영<br> Retina Flash<br> 
 f/2.2 조리개<br> 사진 및 동영상을 위한 자동 HDR<br> 후면 조명 센서<br> 노출 조절<br> 고속 연사 모드<br> 타이머 모드<br> 얼굴 인식');
-update spec_audio
-	set no = no+1;
+
 --서비스
 create table spec_service(
 	no number primary key,
@@ -808,5 +809,4 @@ insert into spec_service values (31,'','','예','','');
 insert into spec_service values (32,'','','예','','');
 insert into spec_service values (33,'','','예','','');
 insert into spec_service values (34,'','','예','','');
-update spec_service
-	set no = no+1;
+

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
@@ -296,6 +297,12 @@ public class PhoneInfoDAOImpl implements PhoneInfoDAO {
 	@Override
 	public void delete_service(int no) throws Exception {
 		sqlSession.delete("phone.delete_service", no);
+	}
+
+	@Override
+	public List<PhoneInfoVO> selectnew() throws Exception {
+		RowBounds bound = new RowBounds(1,7);
+		return sqlSession.selectList("phone.selectnew",0, bound);
 	}
 
 }

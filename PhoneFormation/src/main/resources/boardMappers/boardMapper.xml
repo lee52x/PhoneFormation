@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="board">
-
-	<select id="selec_boardttitle" resultType="String">
+	
+	<select id="select_main" resultType="boardVO">
+		select *
+		from ph_board
+		order by regdate desc,goodcnt desc
+	</select>
+	<select id="select_boardttitle" resultType="String">
 		select title
 		from ph_board
 		where bno = #{bno}

@@ -23,5 +23,5 @@ public interface BoardDAO {
 	   //------------------여기서부터 추가
 	   public void update_goodcnt(int bno)throws Exception;
 	   public void update_replycnt(int bno)throws Exception;
-
+	   public List<BoardVO> selectmain()throws Exception; 
 }

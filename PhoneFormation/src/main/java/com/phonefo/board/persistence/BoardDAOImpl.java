@@ -66,7 +66,7 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 	@Override
 	public String select_title(int bno) throws Exception {
-		return sqlSession.selectOne("board.selec_boardttitle",bno);
+		return sqlSession.selectOne("board.select_boardttitle",bno);
 	}
 	@Override
 	public void update_goodcnt(int bno) throws Exception {
@@ -76,5 +76,10 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public void update_replycnt(int bno) throws Exception {
 		sqlSession.update("board.update_replycnt",bno);
+	}
+	@Override
+	public List<BoardVO> selectmain() throws Exception {
+		RowBounds bound = new RowBounds(1,7);
+		return sqlSession.selectList("board.select_main");
 	}
 }

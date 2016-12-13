@@ -1,9 +1,6 @@
-
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!doctype html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
@@ -180,117 +177,27 @@ table {
                 <div class="recent-projects">
                     <h4 class="title"><span>최신 핸드폰</span></h4>
                     <div class="projects-carousel touch-carousel">
-                    
+                    <c:forEach items="${phone }" var="phone" varStatus="status" >
                         <div class="portfolio-item item">
                             <div class="portfolio-border">
                                 <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_2@2x.jpg">
+                                   <a class="lightbox" title="This is an image title" href="/phoneInfo_spec?=${phone.no}">
                                         <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/phone/main_s7.jpg" /> 
+                                        <img alt="" width="150" height="370"  src="${phone.image}" /> 
                                    </a> 
                                 </div>
                                 <div class="portfolio-details"> 
                                    <a href="#">
-                                        <h4>SAMSUNG</h4>
-                                        <span>Galaxy S7</span>
+                                        <h4>${phone.manufacture}</h4>
+                                        <span>${phone.name}</span>
                                    </a>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border">
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_2@2x.jpg">
-                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/phone/main_v20.jpg" /> 
-                                   </a> 
-                                </div>
-                                <div class="portfolio-details"> 
-                                   <a href="#">
-                                        <h4>LG</h4> 
-                                        <span>V20</span>
-                                   </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border">
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_3@2x.jpg">
-                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/phone/main_ipse.jpg" /> 
-                                   </a> 
-                                </div>
-                                <div class="portfolio-details"> 
-                                   <a href="#">
-                                        <h4>Apple</h4>
-                                        <span>iPhoneSE</span> 
-                                   </a> 
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border">
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_4@2x.jpg">
-                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/phone/main_s7edge.jpg" /> 
-                                   </a> 
-                                </div>
-                                <div class="portfolio-details"> 
-                                   <a href="#">
-                                        <h4>SAMSUNG</h4>
-                                        <span>Galaxy S7 edge</span> 
-                                   </a> 
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border">
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_5@2x.jpg">
-                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/phone/main_v10.jpg" /> 
-                                   </a> 
-                                </div>
-                                <div class="portfolio-details"> 
-                                   <a href="#">
-                                        <h4>LG</h4> 
-                                        <span>V10</span> 
-                                   </a> 
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border">
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_6@2x.jpg">
-                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="/resources/images/phone/main_ips6s.jpg" /> 
-                                   </a> 
-                                </div>
-                                <div class="portfolio-details"> 
-                                   <a href="#">
-                                        <h4>Apple</h4>
-                                        <span>iPhone 6S</span> 
-                                   </a> 
-                                </div>
-                            </div>
-                        </div>
-                        
-                     
-                        
-
-                        
+                    </c:forEach>
                     </div>
                 </div>
                 <!-- End Recent Projects Carousel --> 
-                
             </div>
             <!-- .container --> 
         </div>
@@ -307,17 +214,17 @@ table {
                     <!-- Classic Heading -->
                     <h4 class="classic-title"><span>최신 뉴스</span></h4>
                     <div class="latest-news custom-carousel touch-carousel" data-appeared-items="2"> 
-                        
+                        <c:forEach items="${board }" var="boardVO" varStatus="status" >
                         <!-- Start Project Item -->
                         <div class="portfolio-item item">
                             <div class="portfolio-border"> 
                                 <!-- Start Project Thumb -->
-                                <div class="portfolio-thumb"> 
+                                <!--  <div class="portfolio-thumb"> 
                                    <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_8@2x.jpg">
                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
                                         <img alt="" src="images/portfolio/8.jpg" /> 
                                    </a>
-                                </div>
+                                </div>-->
                                 <!-- End Project Thumb --> 
                                 <!-- Start Project Details -->
                                 <div class="portfolio-details">
@@ -325,14 +232,14 @@ table {
                                         <!-- Post 1 -->
                                         <div class="post-row">
                                             <div class="post-time-section">
-                                                <div class="post-date"> <span class="day">28</span></div>
-                                                <div class="post-month"> <span class="month">Dec</span> </div>
+                                                <div class="post-date"> <span class="day"><fmt:formatDate value="${boardVO.regdate}" pattern="dd"/></span></div>
+                                                <div class="post-month"> <span class="month"><fmt:formatDate value="${boardVO.regdate}" pattern="MM"/>월</span> </div>
                                             </div>
                                             <h4 class="post-title">
-                                              <a href="#">Standard Post With Image</a> 
+                                              <a href="boardpage?bno=${boardVO.bno}&tno=${boardVO.tno}">${boardVO.title}</a> 
                                             </h4>
                                             <div class="post-content">
-                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
+                                                <p>${boardVO.content}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -341,176 +248,7 @@ table {
                             </div>
                         </div>
                         <!-- End Project Item --> 
-                        
-                        <!-- Start Project Item -->
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border"> 
-                                <!-- Start Project Thumb -->
-                                <div class="portfolio-thumb"> 
-                                  <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_7@2x.jpg">
-                                     <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                       <img alt="" src="images/portfolio/7.jpg" /> 
-                                  </a> 
-                                </div>
-                                <!-- End Project Thumb --> 
-                                <!-- Start Project Details -->
-                                <div class="portfolio-details">
-                                    <div class="latest-news"> 
-                                        <!-- Post 1 -->
-                                        <div class="post-row">
-                                            <div class="post-time-section">
-                                                <div class="post-date"> <span class="day">28</span></div>
-                                                <div class="post-month"> <span class="month">Dec</span> </div>
-                                            </div>
-                                            <h4 class="post-title">
-                                               <a href="#">Standard Post With Image</a> 
-                                            </h4>
-                                            <div class="post-content">
-                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Project Details --> 
-                            </div>
-                        </div>
-                        <!-- End Project Item --> 
-                        
-                        <!-- Start Project Item -->
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border"> 
-                                <!-- Start Project Thumb -->
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_6@2x.jpg">
-                                      <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="images/portfolio/6.jpg" /> 
-                                   </a> 
-                                </div>
-                                <!-- End Project Thumb --> 
-                                <!-- Start Project Details -->
-                                <div class="portfolio-details">
-                                    <div class="latest-news"> 
-                                        <!-- Post 1 -->
-                                        <div class="post-row">
-                                            <div class="post-time-section">
-                                                <div class="post-date"> <span class="day">28</span></div>
-                                                <div class="post-month"> <span class="month">Dec</span> </div>
-                                            </div>
-                                            <h4 class="post-title">
-                                              <a href="#">Standard Post With Image</a> 
-                                            </h4>
-                                            <div class="post-content">
-                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Project Details --> 
-                            </div>
-                        </div>
-                        <!-- End Project Item --> 
-                        
-                        <!-- Start Project Item -->
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border"> 
-                                <!-- Start Project Thumb -->
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="/phonefo/listRepair">
-                                      <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="images/portfolio/5.jpg" /> 
-                                   </a>
-                                </div>
-                                <!-- End Project Thumb --> 
-                                <!-- Start Project Details -->
-                                <div class="portfolio-details">
-                                    <div class="latest-news"> 
-                                        <!-- Post 1 -->
-                                        <div class="post-row">
-                                            <div class="post-time-section">
-                                                <div class="post-date"> <span class="day">28</span></div>
-                                                <div class="post-month"> <span class="month">Dec</span> </div>
-                                            </div>
-                                            <h4 class="post-title">
-                                               <a href="#">Standard Post With Image</a> 
-                                            </h4>
-                                            <div class="post-content">
-                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Project Details --> 
-                            </div>
-                        </div>
-                        <!-- End Project Item --> 
-                        
-                        <!-- Start Project Item -->
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border"> 
-                                <!-- Start Project Thumb -->
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_4@2x.jpg">
-                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="images/portfolio/4.jpg" /> 
-                                   </a> 
-                                </div>
-                                <!-- End Project Thumb --> 
-                                <!-- Start Project Details -->
-                                <div class="portfolio-details">
-                                    <div class="latest-news"> 
-                                        <!-- Post 1 -->
-                                        <div class="post-row">
-                                            <div class="post-time-section">
-                                                <div class="post-date"> <span class="day">28</span></div>
-                                                <div class="post-month"> <span class="month">Dec</span> </div>
-                                            </div>
-                                            <h4 class="post-title">
-                                               <a href="#">Standard Post With Image</a> 
-                                            </h4>
-                                            <div class="post-content">
-                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Project Details -->
-                            </div>
-                        </div>
-                        <!-- End Project Item --> 
-                        
-                        <!-- Start Project Item -->
-                        <div class="portfolio-item item">
-                            <div class="portfolio-border"> 
-                                <!-- Start Project Thumb -->
-                                <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="images/portfolio/portfolio_2_3@2x.jpg">
-                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                        <img alt="" src="images/portfolio/3.jpg" /> 
-                                   </a> 
-                                </div>
-                                <!-- End Project Thumb --> 
-                                <!-- Start Project Details -->
-                                <div class="portfolio-details">
-                                    <div class="latest-news"> 
-                                        <!-- Post 1 -->
-                                        <div class="post-row">
-                                            <div class="post-time-section">
-                                                <div class="post-date"> <span class="day">28</span></div>
-                                                <div class="post-month"> <span class="month">Dec</span> </div>
-                                            </div>
-                                            <h4 class="post-title">
-                                              <a href="#">Standard Post With Image</a> 
-                                            </h4>
-                                            <div class="post-content">
-                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Project Details -->
-                            </div>
-                        </div>
-                        <!-- End Project Item --> 
+                        </c:forEach>
                     </div>
                 </div>
                 <!-- .col-md-6 -->

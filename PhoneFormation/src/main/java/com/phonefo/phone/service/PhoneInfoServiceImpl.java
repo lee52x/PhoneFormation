@@ -298,4 +298,9 @@ public class PhoneInfoServiceImpl implements PhoneInfoService{
 		dao.delete_service(no);
 	}
 
+	@Override
+	public List<PhoneInfoVO> selectnew() throws Exception {
+		return dao.selectnew();
+	}
+
 }

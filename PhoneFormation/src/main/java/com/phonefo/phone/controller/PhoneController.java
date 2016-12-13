@@ -189,21 +189,25 @@ public class PhoneController {
       int i;
       for (i = 0; i < files.size()-1; i++) {
     	  String savedName = files.get(i).getOriginalFilename();
-    	  String uploadpath = request.getSession().getServletContext().getRealPath("/resources/images/phone");
-    	  File target = new File(uploadpath, savedName);
-    	  FileCopyUtils.copy(files.get(i).getBytes(), target);
-    	  phonecolorVO.setImage("/resources/images/phone/"+savedName);
-    	  phonecolorVO.setColor(colorname[i-1]);
-    	  service.delete_color(phonecolorVO.getNo());
-    	  service.insert_color(phonecolorVO);
+    	  System.out.println("파일이름:"+savedName);
+			if (savedName != "") {
+				String uploadpath = request.getSession().getServletContext().getRealPath("/resources/images/phone");
+				File target = new File(uploadpath, savedName);
+				FileCopyUtils.copy(files.get(i).getBytes(), target);
+				phonecolorVO.setImage("/resources/images/phone/" + savedName);
+				phonecolorVO.setColor(colorname[i - 1]);
+				service.delete_color(phonecolorVO.getNo());
+				service.insert_color(phonecolorVO);
+			}
       }
-	  String savedName = files.get(i).getOriginalFilename();
-	  String uploadpath = request.getSession().getServletContext().getRealPath("/resources/images/phone");
-	  File target = new File(uploadpath, savedName);
-	  FileCopyUtils.copy(files.get(i).getBytes(), target);
-	  phoneinfoVO.setImage("/resources/images/phone/"+savedName);
-
-      service.update_phone(phoneinfoVO);
+		String savedName = files.get(i).getOriginalFilename();
+		if (savedName != "") {
+			String uploadpath = request.getSession().getServletContext().getRealPath("/resources/images/phone");
+			File target = new File(uploadpath, savedName);
+			FileCopyUtils.copy(files.get(i).getBytes(), target);
+			phoneinfoVO.setImage("/resources/images/phone/" + savedName);
+			service.update_phone(phoneinfoVO);
+		}
       service.update_audio(audioVO);
       service.update_battery(batteryVO);
       service.update_camera(cameraVO);

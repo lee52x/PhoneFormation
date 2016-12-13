@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.phonefo.admin.domain.ClientVO;
 import com.phonefo.admin.domain.SlideVO;
 import com.phonefo.admin.service.AdminService;
+import com.phonefo.board.service.BoardService;
 import com.phonefo.main.domain.MemberVO;
 import com.phonefo.main.service.MainService;
+import com.phonefo.phone.service.PhoneInfoService;
 
 
 
@@ -28,8 +30,10 @@ public class MainController {
 	MainService service;
 	@Inject
 	AdminService adminservice;
-	
-	
+	@Inject
+	PhoneInfoService phoneservice;
+	@Inject
+	BoardService boardservice;
 	//메인화면 띄우기
 	@RequestMapping("/main")
 	public String test(Model model)throws Exception{
@@ -52,8 +56,8 @@ public class MainController {
 		model.addAttribute("logo", service.getLogo()); 
 		
 	
-		
-		
+		model.addAttribute("phone", phoneservice.selectnew());
+		model.addAttribute("board", boardservice.selectmain());
 		
 		
 		model.addAttribute("body","./main/body.jsp");

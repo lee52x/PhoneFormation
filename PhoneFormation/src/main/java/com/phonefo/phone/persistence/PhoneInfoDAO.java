@@ -18,6 +18,7 @@ import com.phonefo.phone.domain.spec_serviceVO;
 import com.phonefo.phone.domain.spec_specificationsVO;
 
 public interface PhoneInfoDAO {
+	public List<PhoneInfoVO> selectnew()throws Exception;
 	public List<PhoneInfoVO> selectInfo(String manufacture)throws Exception;
 	public List<PhoneColorVO> select_color(int no)throws Exception;
 	public List<PhoneCapaVO> select_capacity(int no)throws Exception;
