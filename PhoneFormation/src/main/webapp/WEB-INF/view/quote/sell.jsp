@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>중고 견적 사용자 정보 등록</title>
 <style type="text/css">
 .tit_1{margin-top:30px; border-bottom:1px solid #eee; height:30px;}
 .tit_1 .page_name{display:block; background:url(/img/ico_nowpage.gif) no-repeat 0 2px; padding-left:20px; margin-bottom:10px; height:20px; text-align:left;}

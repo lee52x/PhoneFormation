@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>유저 중고폰 판매 등록 리스트</title>
 <style type="text/css">
 .list_form {
 	width: 100%;

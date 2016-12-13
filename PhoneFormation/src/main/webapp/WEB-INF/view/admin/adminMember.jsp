@@ -5,7 +5,7 @@
 <%@ page session="false"%>
 
 
-
+<title>일반멤버 리스트</title>
 <!-- Main content -->
 
 <div class="container">
