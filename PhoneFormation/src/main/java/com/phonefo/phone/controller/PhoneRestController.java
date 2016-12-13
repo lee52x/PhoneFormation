@@ -1,6 +1,8 @@
 package com.phonefo.phone.controller;
 
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,5 +25,13 @@ public class PhoneRestController {
 		phone = service.select_phone(no);
 		return phone;
 	}
+	
+/*	public List<PhoneInfoVO> phonevers(String[] phoneArray){
+		List<PhoneInfoVO> list = null;
+		for (int i = 0; i < phoneArray.length; i++) {
+			list = service.select_phone(i);
+		}
+		return list;
+	}*/
 
 }
