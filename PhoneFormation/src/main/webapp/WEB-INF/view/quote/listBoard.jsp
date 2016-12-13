@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>중고폰 견적 게시판</title>
 <style type="text/css">
 .list_form{width:100%; border-bottom:1px solid #eee;}
 .list_form .section{background:url(http://www.hunphone.co.kr/img/bg_diagonal.gif);}
@@ -117,16 +117,16 @@ function popup(no) {
 		
 			<c:choose>
 									<c:when test="${vo.state eq '0'}">
-										<td><button  type="button" class="btn btn-primary" onclick="popup(${vo.no})">대기</button></td>
+										<td><button  type="button" class="btn btn-primary" onclick="popup(${vo.no})">신청가능</button></td>
 									</c:when>
 									<c:when test="${vo.state eq '1'}">
-										<td><button  type="button" class="btn btn-primary" onclick="popup(${vo.no})">대기</button></td>
+										<td><button  type="button" class="btn btn-primary" onclick="popup(${vo.no})">신청가능</button></td>
 									</c:when>
 									<c:when test="${vo.state eq '2'}">
-										<td><button  type="button" class="btn btn-primary" onclick="popup(${vo.no})">진행중</button></td>
+										<td><button  type="button" class="btn btn-warning" onclick="popup(${vo.no})">진행상태</button></td>
 									</c:when>
 									<c:when test="${vo.state eq '3'}">
-										<td><button  type="button" class="btn btn-primary" onclick="popup(${vo.no})" >완료</button></td>
+										<td><button  type="button" class="btn btn-danger" onclick="popup(${vo.no})" >거래완료</button></td>
 									</c:when>
 									<c:otherwise>
 										<td>거래완료</td>

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>유저 수리 신청 리스트</title>
 <style type="text/css">
 .list_form {
 	width: 100%;
@@ -339,7 +339,6 @@ function callTable(no,userid,username,tel,repair_price,request_message,bank_name
 	}
 	
 	var sellSelectEnd=function(no,userid){//거래완료
-		alert('여기냐?');
 		var selectEnd=confirm('거래를 완료 하시겠습니까?');
 		if(selectEnd==true){
 		$.ajax({
@@ -414,13 +413,13 @@ function callTable(no,userid,username,tel,repair_price,request_message,bank_name
 										<td>미신청</td>
 									</c:when>
 									<c:when test="${mypageRepair.state eq '1'}">
-										<td><button class="btn btn-primary" id="${mypageRepair.no}" name="noPurchase">선택대기</button></td>
+										<td><button class="btn btn-primary" id="${mypageRepair.no}" name="noPurchase">선택가능</button></td>
 									</c:when>
 									<c:when test="${mypageRepair.state eq '2'}">
-										<td><button class="btn btn-primary" id="${mypageRepair.no}" name="ingPurchase">진행중</button></td>
+										<td><button class="btn btn-warning" id="${mypageRepair.no}" name="ingPurchase">진행상태</button></td>
 									</c:when>
 									<c:when test="${mypageRepair.state eq '3'}">
-										<td><button class="btn btn-primary" id="${mypageRepair.no}" name="endPurchase">완료</button></td>
+										<td><button class="btn btn-danger" id="${mypageRepair.no}" name="endPurchase">거래완료</button></td>
 									</c:when>
 									<c:otherwise>
 										<td>거래완료</td>

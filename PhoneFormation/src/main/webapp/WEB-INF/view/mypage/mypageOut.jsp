@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<title>회원탈퇴</title>
 <script type="text/javascript">
 
 $(document).ready(function(){

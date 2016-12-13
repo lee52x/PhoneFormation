@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>기업 폰수리 신청 리스트</title>
 <style type="text/css">
 .list_form {
 	width: 100%;
@@ -164,7 +164,7 @@ function callTable(no,userid,username,tel,repair_price,request_message,bank_name
 							<tr align=center>
 									<td>${mypageRepair.no}</td>
 								<td>${mypageRepair.machine}</td>
-								<td>${mypageRepair.repair_price}</td>
+								<td>${mypageRepair.repair_price}원</td>
 								<td>${mypageRepair.username}</td>
 								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 										value="${mypageRepair.rdate}" /></td>

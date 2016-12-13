@@ -76,6 +76,10 @@
 			$('#apple').attr('data-toggle','');
 			
 		}
+		
+		$('#secondHand').click(function(){
+
+		});
 	});
 </script>
 
@@ -177,13 +181,13 @@
 				<div class="navbar-collapse collapse">
 					<!-- Start Navigation List -->
 					<ul class="nav navbar-nav navbar-right">
-						<li><a class="active" href="/phonefo/phoneInfo">최신폰</a>
+						<li><a class="active" href="/phonefo/phoneInfo" id="phoneInfo">최신폰</a>
 							<ul class="dropdown">
 								<li><a href="#tab-4" data-toggle="tab" class="samsung" id="samsung"><img alt="SAMSUNG" src="/resources/images/samsung.png" width="130px" height="20px;"></a></li>
 								<li><a href="#tab-5" data-toggle="tab" class="lg" id="lg"><img alt="LG" src="/resources/images/lg.png" width="85px"></a></li>
 								<li><a href="#tab-6" data-toggle="tab" class="apple" id="apple"><img alt="Apple" src="/resources/images/apple.png" width="90px"></a></li>
 							</ul></li>
-						<li><a href="/phonefo/main">견적</a>
+						<li><a href="/phonefo/secondHand"   id="secondHand">견적</a>
 							<ul class="dropdown">
 								<li><a href="/phonefo/secondHand">중고견적</a></li>
 								<li><a href="/phonefo/listBoard">중고게시판</a></li>

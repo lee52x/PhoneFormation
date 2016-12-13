@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>수리 견적 등록</title>
 
 
 
@@ -1394,7 +1394,7 @@ label.checkbox-label {
 <div class="container" style="width: 1170px;" id="information">
 	<div class="tit_1">
 	<div class="page_name">
-		<span style="background:none; padding:0;" class="glyphicon glyphicon-certificate">고객정보입력</span>
+		<span style="background:none; padding:0;" >고객정보입력</span>
 	</div>
 </div>
 <table class="write_form" cellspacing="0" cellpadding="0">
@@ -1419,8 +1419,8 @@ label.checkbox-label {
 				<td><input type="hidden" name="tel" value="${vo.tel}"></td>
 	</tr>
 	<tr>
-		<th><span><h4>주소</h4></span></td>
-		<td><input type=text id="address" style="height: 30px;width: 500px;"  name=address ></td>
+		<th><span><h4>주소(대표지역명)</h4></span></td>
+		<td><input type=text id="address" style="height: 30px;"  name=address ></td>
 	</tr>
 	
 	<tr>
