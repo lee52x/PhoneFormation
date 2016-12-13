@@ -56,7 +56,59 @@
 .spec_mod{
    display: none;
 }
+#btn_update{
+ height: 30px;
+    width: 73px;
+    line-height: 22px;
+    display: inline-block;
+    zoom: 1;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    margin-left: 4px;
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 7.7%;
+    top: 160px;
+}
 
+#btn_ok{
+ height: 30px;
+    width: 73px;
+    line-height: 22px;
+    display: inline-block;
+    zoom: 1;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    margin-left: 4px;
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 7.7%;
+    top: 160px;
+}
+
+#btn_del{
+ height: 30px;
+    width: 73px;
+    line-height: 22px;
+    display: inline-block;
+    zoom: 1;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    margin-left: 4px;
+    border: 1px solid #ccc;
+    position: absolute;
+	left: 14%;
+    top: 160px;
+}
 
 
 </style>
@@ -696,9 +748,12 @@ $(document).ready(function(){
             </c:if>
          </table>
       </div>
-      <input type='button' id='btn_update' value='수정'>
+      <a href="#" class="back-to-top"><i class="fa fa-arrow-up"></i></a>
+      <c:if test="${userid !=null}">
+      <input type='button' id='btn_update' value='수정' style="display: block;">
       <input type='button' id='btn_ok' value='완료' style='display:none;'>
-      <input type='button' id='btn_del' value='삭제'>
+      <input type='button' id='btn_del' value='삭제' style="display: block;">
+      </c:if>
    </div>
 </form>
 </body>
