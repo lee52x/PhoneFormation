@@ -5,6 +5,7 @@
 	<select id="select_main" resultType="boardVO">
 		select *
 		from ph_board
+		where image !=''
 		order by regdate desc,goodcnt desc
 	</select>
 	<select id="select_boardttitle" resultType="String">
