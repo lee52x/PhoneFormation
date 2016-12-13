@@ -1,6 +1,13 @@
 package com.phonefo.phone.domain;
 
 public class PhoneCapaVO {
+	private int cno;
+	public int getCno() {
+		return cno;
+	}
+	public void setCno(int cno) {
+		this.cno = cno;
+	}
 	private int no;
 	private String capacity;
 	private int release_price;

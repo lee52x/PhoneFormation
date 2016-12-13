@@ -47,8 +47,8 @@ public interface PhoneInfoService {
 	public void insert_audio(spec_audioVO audioVO)throws Exception;
 	public void insert_service(spec_serviceVO serviceVO)throws Exception;
 	public void update_phone(PhoneInfoVO phoneinfoVO)throws Exception;
-//	public void update_color(PhoneColorVO phonecolorVO)throws Exception;
-//	public void update_capacity(PhoneCapaVO phonecapaVO)throws Exception;
+	public void update_color(PhoneColorVO phonecolorVO)throws Exception;
+	public void update_capacity(PhoneCapaVO phonecapaVO)throws Exception;
 	public void update_processor(spec_processorVO processorVO)throws Exception;
 	public void update_display(spec_displayVO displayVO)throws Exception;
 	public void update_camera(spec_cameraVO cameraVO)throws Exception;

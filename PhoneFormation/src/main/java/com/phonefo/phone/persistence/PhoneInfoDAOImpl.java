@@ -174,15 +174,15 @@ public class PhoneInfoDAOImpl implements PhoneInfoDAO {
 		
 	}
 
-//	@Override
-//	public void update_color(PhoneColorVO phonecolorVO) throws Exception {
-//		sqlSession.update("phone.update_color", phonecolorVO);
-//	}
-//
-//	@Override
-//	public void update_capacity(PhoneCapaVO phonecapaVO) throws Exception {
-//		sqlSession.update("phone.update_capacity", phonecapaVO);
-//	}
+	@Override
+	public void update_color(PhoneColorVO phonecolorVO) throws Exception {
+		sqlSession.update("phone.update_color", phonecolorVO);
+	}
+
+	@Override
+	public void update_capacity(PhoneCapaVO phonecapaVO) throws Exception {
+		sqlSession.update("phone.update_capacity", phonecapaVO);
+	}
 
 	@Override
 	public void update_processor(spec_processorVO processorVO) throws Exception {

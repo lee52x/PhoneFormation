@@ -173,15 +173,15 @@ public class PhoneInfoServiceImpl implements PhoneInfoService{
 		dao.update_phone(phoneinfoVO);
 	}
 
-//	@Override
-//	public void update_color(PhoneColorVO phonecolorVO) throws Exception {
-//		dao.update_color(phonecolorVO);
-//	}
-//
-//	@Override
-//	public void update_capacity(PhoneCapaVO phonecapaVO) throws Exception {
-//		dao.update_capacity(phonecapaVO);
-//	}
+	@Override
+	public void update_color(PhoneColorVO phonecolorVO) throws Exception {
+		dao.update_color(phonecolorVO);
+	}
+
+	@Override
+	public void update_capacity(PhoneCapaVO phonecapaVO) throws Exception {
+		dao.update_capacity(phonecapaVO);
+	}
 
 	@Override
 	public void update_processor(spec_processorVO processorVO) throws Exception {

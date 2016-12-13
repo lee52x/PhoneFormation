@@ -16,7 +16,6 @@ drop table ph_repairBoard;
 drop table ph_client;
 drop table ph_slide;
 
-
 --혜정
 drop table ph_color;
 drop table ph_capacity;
@@ -39,7 +38,6 @@ drop table ph_phone;
 --성욱드랍
 drop table ph_member;
 drop table ph_business;
-
 
 --폰 시퀀스
 create sequence ph_phone_seq

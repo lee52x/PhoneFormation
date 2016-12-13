@@ -365,7 +365,6 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 	}
 	var sellSelectEnd=function(no,userid){//거래완료
 		var selectEnd=confirm('거래를 완료 하시겠습니까?');
-		alert($('#companyId').val());
 		if(selectEnd==true){
 		$.ajax({
 			url : "/phonefo/purchaseIngChoose",

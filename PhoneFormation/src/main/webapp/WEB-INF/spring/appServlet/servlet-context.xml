@@ -37,15 +37,38 @@
 	</beans:bean>
 	
   <!-- 인터셉터 등록 -->
-   <beans:bean id="sampleIntercepter" class="com.phonefo.interceptor.SampleInterceptor"/>
-    <interceptors>
-     <interceptor>
-       <mapping path="/phonefo/adm"/>
-
-       <beans:ref bean="sampleIntercepter"/>
-     </interceptor>
-   </interceptors>
-   
+	<beans:bean id="sampleIntercepter" class="com.phonefo.interceptor.SampleInterceptor" />
+	<interceptors>
+		<interceptor>
+			<mapping path="/phonefo/mypageMain" />
+			<mapping path="/phonefo/mypageUpdate" />
+			<mapping path="/phonefo/mypageOno" />
+			<mapping path="/phonefo/mypageQuote" />
+			<mapping path="/phonefo/mypageRepair" />
+			<mapping path="/phonefo/mypageOut" />
+			<mapping path="/phonefo/mypageB_Quote" />
+			<mapping path="/phonefo/mypageB_Repair" />
+			<mapping path="/phonefo/adviceinput" />
+			<mapping path="/phonefo/secondHand" />
+			<mapping path="/phonefo/sell" />
+			<mapping path="/phonefo/repair" />
+			<beans:ref bean="sampleIntercepter" />
+		</interceptor>
+	</interceptors>
+	<beans:bean id="AdminInterceptor" class="com.phonefo.interceptor.AdminInterceptor" />
+	<interceptors>
+		<interceptor>
+			<mapping path="/phonefo/adminMember" />
+			<mapping path="/phonefo/adminB_Member" />
+			<mapping path="/phonefo/adminOno" />
+			<mapping path="/phonefo/adminRouteInfo" />
+			<mapping path="/phonefo/adminCntInfo" />
+			<mapping path="/phonefo/adminRepairInsert" />
+			<beans:ref bean="AdminInterceptor" />
+		</interceptor>
+	</interceptors>
+	
+	
 	<context:component-scan base-package="com.phonefo.main.controller" />
 	<context:component-scan base-package="com.phonefo.admin.controller" />
 
