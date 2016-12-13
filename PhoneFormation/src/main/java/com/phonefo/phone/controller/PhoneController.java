@@ -52,36 +52,7 @@ public class PhoneController {
 		return "mainView";
 	}
 	
-	@RequestMapping("/phoneInfo_spec")	//상세보기
-	public String phoneInfo_spec(Model model, @ModelAttribute("no")int no, HttpSession session)throws Exception{
-		session.getAttribute("userid");
-		PhoneInfoVO phoneinfo= service.select_phone(no);
-		String image_path = phoneinfo.getImage();
-		model.addAttribute("image",image_path.substring(24));
-		model.addAttribute("list_color", service.select_color(no));
-		model.addAttribute("list_capacity", service.select_capacity(no));
-		model.addAttribute("spec_Info", phoneinfo);
-		model.addAttribute("spec_processor", service.select_spec_processor(no));
-		model.addAttribute("spec_display", service.select_spec_display(no));
-		model.addAttribute("spec_camera", service.select_spec_camera(no));
-		model.addAttribute("spec_memory", service.select_spec_memory(no));
-		model.addAttribute("spec_network", service.select_spec_network(no));
-		model.addAttribute("spec_connect", service.select_spec_connect(no));
-		model.addAttribute("spec_specifications", service.select_spec_specifications(no));
-		model.addAttribute("spec_battery", service.select_spec_battery(no));
-		model.addAttribute("spec_audio", service.select_spec_audio(no));
-		model.addAttribute("spec_service", service.select_spec_service(no));
-		model.addAttribute("body", "./phone/phoneInfo_spec.jsp");
-		return "mainView";
-	}
-	
-	@RequestMapping(value="/include", method=RequestMethod.POST)	//입력폼
-	public String include(Model model,int no,HttpSession session)throws Exception{
-		session.getAttribute("userid");
-		model.addAttribute("list_color", service.select_color(no));
-		return "/phone/include";
-	}
-	
+		
 	@RequestMapping(value="/modify", method=RequestMethod.GET)	//변경폼
 	public String modify(Model model, @ModelAttribute("no")int no, HttpSession session)throws Exception{
 		session.getAttribute("userid");
@@ -104,15 +75,6 @@ public class PhoneController {
 		model.addAttribute("body", "./phone/modifyphone.jsp");
 		return "mainView";
 	}
-   
-   @RequestMapping("/phoneInfo")      //리스트 페이지 출력
-   public String phoneInfo(Model model)throws Exception{
-      model.addAttribute("list1", service.selectInfo("samsung"));   
-      model.addAttribute("list2", service.selectInfo("lg"));   
-      model.addAttribute("list3", service.selectInfo("apple"));   
-      model.addAttribute("body", "./phone/phoneInfo.jsp");
-      return "mainView";
-   }
    
    @RequestMapping("/phoneInfo_spec")   //상세보기
    public String phoneInfo_spec(Model model, @ModelAttribute("no")int no)throws Exception{
@@ -137,34 +99,6 @@ public class PhoneController {
       return "mainView";
    }
    
-   @RequestMapping(value="/include", method=RequestMethod.POST)   //입력폼
-   public String include(Model model,int no)throws Exception{
-      System.out.println("에aaaaa"+no);
-      model.addAttribute("list_color", service.select_color(no));
-      return "/phone/include";
-   }
-   
-   @RequestMapping(value="/modify", method=RequestMethod.GET)   //변경폼
-   public String modify(Model model, @ModelAttribute("no")int no)throws Exception{
-      PhoneInfoVO phoneinfo= service.select_phone(no);
-      String image_path = phoneinfo.getImage();
-      model.addAttribute("image",image_path.substring(24));
-      model.addAttribute("list_color", service.select_color(no));
-      model.addAttribute("list_capacity", service.select_capacity(no));
-      model.addAttribute("spec_Info", phoneinfo);
-      model.addAttribute("spec_processor", service.select_spec_processor(no));
-      model.addAttribute("spec_display", service.select_spec_display(no));
-      model.addAttribute("spec_camera", service.select_spec_camera(no));
-      model.addAttribute("spec_memory", service.select_spec_memory(no));
-      model.addAttribute("spec_network", service.select_spec_network(no));
-      model.addAttribute("spec_connect", service.select_spec_connect(no));
-      model.addAttribute("spec_specifications", service.select_spec_specifications(no));
-      model.addAttribute("spec_battery", service.select_spec_battery(no));
-      model.addAttribute("spec_audio", service.select_spec_audio(no));
-      model.addAttribute("spec_service", service.select_spec_service(no));
-      model.addAttribute("body", "./phone/modifyphone.jsp");
-      return "mainView";
-   }
    @RequestMapping(value="/adminAdd", method=RequestMethod.GET)   //입력폼
    public String adminAddGet(Model model)throws Exception{
       model.addAttribute("body", "./phone/adminAdd.jsp");

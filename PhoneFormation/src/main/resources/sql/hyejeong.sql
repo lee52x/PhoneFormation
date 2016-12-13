@@ -164,9 +164,6 @@ insert into ph_color values (ph_color_seq.nextval,18, '블랙', '/resources/images
 insert into ph_color values (ph_color_seq.nextval,18, '골드', '/resources/images/phone/Galaxynote4_골드.png');
 insert into ph_color values (ph_color_seq.nextval,18, '핑크', '/resources/images/phone/Galaxynote4_핑크.png');
 insert into ph_color values (ph_color_seq.nextval,18, '레드', '/resources/images/phone/Galaxynote4_레드.png');
-insert into ph_color values (ph_color_seq.nextval,18, '골드1', '/resources/images/phone/Galaxynote4_골드.png');
-insert into ph_color values (ph_color_seq.nextval,18, '핑크2', '/resources/images/phone/Galaxynote4_핑크.png');
-insert into ph_color values (ph_color_seq.nextval,18, '레드3', '/resources/images/phone/Galaxynote4_레드.png');
 
 --apple
 insert into ph_color values (ph_color_seq.nextval,19, '로즈골드', '/resources/images/phone/iPhone7_로드골드.png');
