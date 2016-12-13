@@ -91,7 +91,11 @@ $(document).ready(function(){
              $('#btn_update').attr('style','display:none;');
              $('#btn_ok').attr('style','display:block;');
       });
-      
+     
+      $('#btn_del').click(function(){
+          var formObj = $("form[role='removerole']");
+          formObj.submit();
+       });
       $('#btn_ok').click(function(){
          var formObj = $("form[role='specform']");
          $('.spec_mod').attr('style','display:none;');
@@ -117,7 +121,9 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-
+	<form role="removerole" method="post" action='removephone' >
+		<input type="hidden" name="no" value="${no}">
+	</form>
   <form role='specform' method="post" enctype="multipart/form-data" action='adminUpdate'>
     <!-- Start Latest Projects Carousel -->
    <center>
