@@ -14,7 +14,7 @@ create table ph_client(
 	num number(10) primary key,
 	path varchar2(300)
 )
-insert into ph_client(ph_client_seq.nextval,'/resources/our_sam')
+insert into ph_client(ph_client_seq.nextval,'/resources/slider_1_bg.jpg')
 
 create sequence ph_client_seq
 start with 1
@@ -28,6 +28,10 @@ create table ph_slide(
 	state number(2) primary key,
 	path varchar2(500)
 )
+select *from ph_slide
+insert into ph_slide values(1,'/resources/slider_1_bg.jpg')
+insert into ph_slide values(2,'/resources/slider_1_bg.jpg')
+insert into ph_slide values(3,'/resources/slider_1_bg.jpg')
 
 --관리자 돈 테이블 --
 select*from ph_admin

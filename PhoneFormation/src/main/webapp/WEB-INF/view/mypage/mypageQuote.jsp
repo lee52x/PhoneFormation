@@ -250,7 +250,7 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 		                    "<td>"+result.businessNum+"</td>"+
 		                    "<td>"+result.companyName+"</td>"+
 		                    "<td>"+result.address+"</td>"+
-		                    "<td><button class='btn btn-primary' onclick=sellSelectEnd("
+		                    "<td><button class='btn btn-danger' onclick=sellSelectEnd("
 		                    		       +result.no +",'"+result.userid+"')>거래완료</button>"+"</td>"+
 		                    "<td><button class='btn btn-primary' onclick=sellCancel("
 		                    		       +result.no +",'"+result.userid+"')>거래취소</button>"+"</td>"
@@ -274,7 +274,6 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 
 		
 	$('[name=endPurchase]').click(function() {//거래가 완료 그후 거래햇던 기업정보
-		alert('완료눌럿지너');
 		var endNo = $(this).attr('id');
 		$.ajax({
 			url : "/phonefo/purchaseEnd",
@@ -315,8 +314,6 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 					   
 				   
 			
-			},error:function(e) {
-		    	alert(e.responseText);
 			}
 		});
 		
@@ -439,13 +436,13 @@ function callTable(manufacture,machine,quote_price,power,glass,equipment,usernam
 										<td>미신청</td>
 									</c:when>
 									<c:when test="${mypageQuote.state eq '1'}">
-										<td><button class="btn btn-primary" id="${mypageQuote.no}" name="noPurchase">거래대기</button></td>
+										<td><button class="btn btn-primary" id="${mypageQuote.no}" name="noPurchase">선택가능</button></td>
 									</c:when>
 									<c:when test="${mypageQuote.state eq '2'}">
-										<td><button class="btn btn-primary" id="${mypageQuote.no}" name="ingPurchase">거래중</button></td>
+										<td><button class="btn btn-warning" id="${mypageQuote.no}" name="ingPurchase">거래중</button></td>
 									</c:when>
 									<c:when test="${mypageQuote.state eq '3'}">
-										<td><button class="btn btn-primary" id="${mypageQuote.no}" name="endPurchase">거래완료</button></td>
+										<td><button class="btn btn-danger" id="${mypageQuote.no}" name="endPurchase">거래완료</button></td>
 									</c:when>
 									<c:otherwise>
 										<td>거래완료</td>
