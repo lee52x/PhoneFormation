@@ -1,3 +1,9 @@
+
+
+select*from ph_business
+insert into ph_business values('132-32-136963','헬로모바일','장영실','인천',1000000)
+insert into ph_member values(ph_member_seq.nextval,'kk123','qldirto','장영실',sysdate,'여자','kk123@naver.com',sysdate,'010-2321-3232',5,122-32-123422)
+select*from ph_member
 select * from ph_slide
 update ph_slide set state=1, path='123'
 insert into ph_slide values(3,'/resources/upload/slide1.jpg')
@@ -81,7 +87,7 @@ foreign key(businessNum)  references ph_business(businessNum)
 --멤버시퀀스--
 drop sequence ph_member_seq;
 create sequence ph_member_seq
-start with 1
+start with 50
 increment by 1
 nocache
 nocycle;
@@ -175,7 +181,7 @@ create table ph_repair(
 	foreign key(name) references ph_phone(name)
 )
 select*from ph_repair
-insert into ph_repair values('Galaxy S7',120000,50000,20000,20000,30000,50000,50000,70000,100000,100000,50000,50000,20000,20000,30000)
+insert into ph_repair values('Galaxy S7 edge',120000,50000,20000,20000,30000,50000,50000,70000,100000,100000,50000,50000,20000,20000,30000)
 
 drop table ph_repair
 select*from ph_repair

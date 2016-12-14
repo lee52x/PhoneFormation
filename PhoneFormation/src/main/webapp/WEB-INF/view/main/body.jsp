@@ -181,7 +181,7 @@ table {
                         <div class="portfolio-item item">
                             <div class="portfolio-border">
                                 <div class="portfolio-thumb"> 
-                                   <a class="lightbox" title="This is an image title" href="/phoneInfo_spec?=${phone.no}">
+                                   <a class="lightbox" title="This is an image title" href="/phonefo/phoneInfo_spec?no=${phone.no}">
                                         <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
                                         <img alt="" width="150" height="370"  src="${phone.image}" /> 
                                    </a> 
@@ -212,7 +212,7 @@ table {
                 <div class="col-md-7"> 
                 
                     <!-- Classic Heading -->
-                    <h4 class="classic-title"><span>최신 뉴스</span></h4>
+                    <h4 class="classic-title"><span>최신 글</span></h4>
                     <div class="latest-news custom-carousel touch-carousel" data-appeared-items="2"> 
                         <c:forEach items="${board }" var="boardVO" varStatus="status" >
                         <!-- Start Project Item -->
@@ -232,7 +232,8 @@ table {
                                         <!-- Post 1 -->
                                         <div class="post-row">
                                             <div class="post-time-section">
-                                                <div class="post-date"> <span class="day"><fmt:formatDate value="${boardVO.regdate}" pattern="dd"/></span></div>
+                                            
+                                                <div class="post-date"><span class="day"><fmt:formatDate value="${boardVO.regdate}" pattern="dd"/></span></div>
                                                 <div class="post-month"> <span class="month"><fmt:formatDate value="${boardVO.regdate}" pattern="MM"/>월</span> </div>
                                             </div>
                                             <h4 class="post-title">

@@ -72,7 +72,7 @@
 												<h3>3.세번째 슬라이드<input type="file" name="file3"></h3>
 												
 													<br>
-														<button type="submit" class="btn btn-primary" style="width: 520px;height: 50px;"  >
+														<button type="submit"  class="btn btn-primary" style="width: 520px;height: 50px;"  >
 															슬라이드 등록			
 												</button>
 												

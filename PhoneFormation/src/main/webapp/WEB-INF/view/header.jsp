@@ -116,6 +116,7 @@
 									class="btn-custom btn-small border-btn btn-gray">로그인</a></li>
 								<li><a href="/phonefo/join"
 									class="btn-custom btn-small border-btn btn-gray">회원가입</a></li>
+
 							</c:if>
 							<c:if test="${loginVO !=null}">
 								<div class="util_option">
@@ -123,7 +124,12 @@
 									<div id="person_header_btn" class="util_menu v_line"
 										onmouseover="try{showSubTab('person_header_btn')}catch(e){}"
 										onmouseout="try{hideSubTab('person_header_btn')}catch(e){}">
+										<c:if test="${userid!='admin' }">
 										<a href="/phonefo/mypageMain" class="util_mypage">마이페이지</a>
+										</c:if>
+										<c:if test="${userid.equals('admin') }">
+										<a href="/phonefo/adminMember" class="util_mypage">관리자페이지</a>
+										</c:if>
 										<div class="membership-pop"
 											style="width: 110px; display: none;">
 											<ul>
@@ -200,13 +206,13 @@
 								<li><a href="/phonefo/payment/kt"><img alt="KT" src="/resources/images/payment/KTOlleh.png" width="80px"></a></li>
 								<li><a href="/phonefo/payment/lg"><img alt="LG" src="/resources/images/payment/LGU+.png" width="80px"></a></li>
 							</ul></li>
-						<li><a href="portfolio-3.html">이벤트</a>
+						<li><a href="/phonefo/boardlist?tno=3">이벤트</a>
 							<ul class="dropdown">
 								<li><a href="/phonefo/boardlist?tno=3"><img alt="SKT" src="/resources/images/payment/SKT.png" width="80px"></a></li>
 								<li><a href="/phonefo/boardlist?tno=1"><img alt="KT" src="/resources/images/payment/KTOlleh.png" width="80px"></a></li>
 								<li><a href="/phonefo/boardlist?tno=2"><img alt="LG" src="/resources/images/payment/LGU+.png" width="80px"></a></li>
 							</ul></li>
-						<li><a href="blog.html">게시판</a>
+						<li><a href="/phonefo/boardlist?tno=4">게시판</a>
 							<ul class="dropdown">
 								<li><a href="/phonefo/boardlist?tno=4">공지사항</a></li>
 								<li><a href="/phonefo/boardlist?tno=5">자유게시판</a></li>

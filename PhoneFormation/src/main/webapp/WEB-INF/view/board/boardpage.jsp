@@ -411,7 +411,7 @@ function removereply(rno){
 									<c:if test="${boardVO.image!=null}">
 										<img src="${boardVO.image}"
 											class="txc-image"  border="0"
-											actualwidth="70" width="70" exif="{}" data-filename="..png"
+											actualwidth="70" width="1000" exif="{}" data-filename="..png"
 											style="clear: none; float: none;"
 											id="blah">
 									</c:if>

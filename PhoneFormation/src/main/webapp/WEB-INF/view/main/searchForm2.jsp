@@ -23,8 +23,6 @@ $(document).ready(function(){
 	var email2=$('#email2').val();
 	var email = email1+'@'+email2;
 	var userid=$('#userid').val();
-	alert(email);
-	alert(userid);
 	var result = confirm(email1+'@'+email2+'메일로 전송하시겠습니까?');
 	if(result==true){
 		$.ajax({
